@@ -1,0 +1,5 @@
+---
+title: "Axiom Systems"
+---
+
+Finally we can say something about axiomatic systems.  An **axiom system** is just any decidable set of axioms.  Of course now I have to tell you what "decidable" means.  

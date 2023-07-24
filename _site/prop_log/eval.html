@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.241">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mathematical Reasoning 2023 - Propositional Evaluation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Mathematical Reasoning 2023</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prop.-logic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Prop. Logic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-prop.-logic">    
+        <li>
+    <a class="dropdown-item" href="../prop_log/ancient_greek.html" rel="" target="">
+ <span class="dropdown-text">Ancient Greece</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/core_examples.html" rel="" target="">
+ <span class="dropdown-text">Two Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/abstract_propositions.html" rel="" target="">
+ <span class="dropdown-text">Abstract Propositions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/parse_tree.html" rel="" target="">
+ <span class="dropdown-text">Parse Trees</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/eval.html" rel="" target="">
+ <span class="dropdown-text">Propositional Evaluation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/op_props.html" rel="" target="">
+ <span class="dropdown-text">Semantic Properties</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/deduction.html" rel="" target="">
+ <span class="dropdown-text">Deduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/axiom_systems.html" rel="" target="">
+ <span class="dropdown-text">Axiom Systems</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fol" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">FOL</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fol">    
+        <li>
+    <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
+ <span class="dropdown-text">Predicate Logic</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arithmetic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Arithmetic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arithmetic">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-geometry" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Geometry</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-geometry">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reals" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Reals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reals">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-combinatorics" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Combinatorics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-combinatorics">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-set-theory" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Set Theory</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-set-theory">    
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/eval.html">Propositional Evaluation</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/ancient_greek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ancient Greece</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/core_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two Examples</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/abstract_propositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract Propositions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/parse_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parse Trees</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/eval.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Propositional Evaluation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/op_props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semantic Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/deduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/axiom_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Axiom Systems</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#variable-evaluations" id="toc-variable-evaluations" class="nav-link active" data-scroll-target="#variable-evaluations">Variable Evaluations</a></li>
+  <li><a href="#evaluations" id="toc-evaluations" class="nav-link" data-scroll-target="#evaluations">Evaluations</a>
+  <ul class="collapse">
+  <li><a href="#true-1-false-0" id="toc-true-1-false-0" class="nav-link" data-scroll-target="#true-1-false-0">True = 1, False = 0</a></li>
+  <li><a href="#the-evaluation-definition" id="toc-the-evaluation-definition" class="nav-link" data-scroll-target="#the-evaluation-definition">The Evaluation Definition</a></li>
+  </ul></li>
+  <li><a href="#a-python-evaluation-implementation" id="toc-a-python-evaluation-implementation" class="nav-link" data-scroll-target="#a-python-evaluation-implementation">A Python Evaluation Implementation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Propositional Evaluation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<p>We will often need to talk about the rows of a truth-table, and therefore in this section we will introduce some language to help us. In particular, we will identify each row of the truth-table with a variable evaluation.</p>
+<section id="variable-evaluations" class="level1">
+<h1>Variable Evaluations</h1>
+<p>Take for example the proposition <span class="math inline">\(P\lor (Q\lor R)\)</span>. One variable evaluation of this proposition is given by <span class="math inline">\(P^{\mathcal E}=F,Q^{\mathcal E} = T, R^{\mathcal E}=F\)</span>. This is just notation for the assignment of <span class="math inline">\(F\)</span> to <span class="math inline">\(P\)</span>, and <span class="math inline">\(T\)</span> to <span class="math inline">\(Q\)</span>, and <span class="math inline">\(F\)</span> to <span class="math inline">\(R\)</span>, and this naturally corresponds to one of the rows of the truth-table.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Note that <span class="math inline">\(\mathcal E\)</span> is the variable evaluation, and it assigns the values <span class="math inline">\(F,T,F\)</span> to the variables <span class="math inline">\(P,Q,R\)</span> – from this perspective, <span class="math inline">\(\mathcal E\)</span> is a function</p>
+<p><span class="math display">\[
+\mathcal E :\text{Var}\to \{T,F\}
+\]</span></p>
+<p>where <span class="math inline">\(\text{Var}\)</span> is the set of variables which occur in the proposition.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> So hopefully it makes sense if we now officially define the term. Let <span class="math inline">\(\alpha\)</span> be any proposition, and <span class="math inline">\(\text{Var}\)</span> be its set of variables. Then a <strong>variable evaluation</strong> for <span class="math inline">\(\alpha\)</span> is any function <span class="math inline">\(\mathcal E:V\to\{T,F\}\)</span> where <span class="math inline">\(\text{Var}\subseteq V\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Find a Variable Evaluation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Find a Variable Evaluation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Give any other example of a variable evaluation for <span class="math inline">\(P\lor (Q\lor R)\)</span>.</p>
+<p>Is it possible to have a variable evaluation for <span class="math inline">\(P\lor (Q\lor R)\)</span> which is also a variable evaluation for <span class="math inline">\(P\land Q\)</span>? Make sure that you explain why the official definition of a variable evaluation requires <span class="math inline">\(\text{Var}\subseteq V\)</span> in order to make sense here.</p>
+</div>
+</div>
+</section>
+<section id="evaluations" class="level1">
+<h1>Evaluations</h1>
+<p>Of course we are not just interested in assigning values to the variables. We are ultimately interested in observing how variable assignments determine a value for the proposition. Returning to the example above, what value does <span class="math inline">\(\mathcal E\)</span> determine for the proposition <span class="math inline">\(P\lor (Q\lor R)\)</span>? Well of course we already calculated this in the truth-table, and found that the value is <span class="math inline">\(T\)</span>.</p>
+<section id="true-1-false-0" class="level2">
+<h2 class="anchored" data-anchor-id="true-1-false-0">True = 1, False = 0</h2>
+<p>To give this an official, technical definition, it will help if we make the identification that <span class="math inline">\(T\)</span> is actually just a symbol for the number 1, and <span class="math inline">\(F\)</span> is actually just a symbol for the number 0. Indeed Python is designed in a way that reflects this reality “under the hood” of what <span class="math inline">\(T\)</span> and <span class="math inline">\(F\)</span> really are.</p>
+<div id="f0c188d8" class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1 and 1 = "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">1</span> <span class="kw">and</span> <span class="dv">1</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1 and 0 = "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">1</span> <span class="kw">and</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 and 1 = 1
+1 and 0 = 0</code></pre>
+</div>
+</div>
+<p>What the code above shows is that, instead of using booleans <code>True</code> and <code>False</code>, one could just as well use the numbers 1 and 0 instead, and the behavior will be the same. In particular, the <code>and</code> operator is comfortable being given inputs which are booleans or the numbers 0 and 1.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Because <span class="math inline">\(T\)</span> and <span class="math inline">\(F\)</span> can be regarded as simply the numbers 1 and 0, we will allow ourselves to therefore perform the usual arithmetic operations on them. That is to say, we will understand that <span class="math inline">\(T+T = 2\)</span> is a true equation, since it merely says <span class="math inline">\(1+1=2\)</span>. Likewise <span class="math inline">\(TF=F\)</span> where we regard the concatenation on the left as multiplication, and so on. Therefore this equation is true because <span class="math inline">\(1\cdot 0=0\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Boolean Formulas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boolean Formulas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In order to compute a particular part of the truth-table for a conjunction, we use the rule that <span class="math inline">\(T\land T=T\)</span> and <span class="math inline">\(T\land F = F\)</span> and <span class="math inline">\(F\land T=F\)</span> and <span class="math inline">\(F\land F=F\)</span>. But these just say the already familiar computations <span class="math inline">\(1\cdot 1=1\)</span> and <span class="math inline">\(1\cdot 0=0\)</span> and <span class="math inline">\(0\cdot 1=0\)</span> and <span class="math inline">\(0\cdot 0=0\)</span>. Therefore we can express a formula for computing the conjunction of truth-values:</p>
+<p><span class="math display">\[
+x\land y = x\cdot y
+\]</span></p>
+<p>Confirm that there is also a formula for disjunction,</p>
+<p><span class="math display">\[
+x\lor y = x+y-xy
+\]</span></p>
+<hr>
+<p>Find a formula for negation.</p>
+</div>
+</div>
+</section>
+<section id="the-evaluation-definition" class="level2">
+<h2 class="anchored" data-anchor-id="the-evaluation-definition">The Evaluation Definition</h2>
+<p>We now have the setup necessary to define an evaluation function. Let <span class="math inline">\(\alpha\)</span> be a proposition and <span class="math inline">\(\mathcal E: V\to\{T,F\}\)</span> any variable evaluation for <span class="math inline">\(\alpha\)</span>. Define the extension of <span class="math inline">\(\mathcal E\)</span>, the function <span class="math inline">\(\mathcal E^*\)</span>, by:</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(P\)</span> is any propositional variable <span class="math inline">\(P\in V\)</span> then define <span class="math inline">\(P^{\mathcal E^*}=P^{\mathcal E}\)</span>.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
+<li><p>If <span class="math inline">\(\alpha\)</span> is a formula of the form <span class="math inline">\(\neg \beta\)</span> then <span class="math inline">\(\alpha^{\mathcal E^*} = 1-\beta^{\mathcal E^*}\)</span>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p></li>
+<li><p>If <span class="math inline">\(\alpha\)</span> is <span class="math inline">\(\beta\lor\gamma\)</span> then <span class="math inline">\(\alpha^{\mathcal E^*} = F\)</span> if <span class="math inline">\(\beta^{\mathcal E^*}=F\)</span> and <span class="math inline">\(\gamma^{\mathcal E^*}=F\)</span>. Otherwise <span class="math inline">\(\alpha^{\mathcal E^*}= T\)</span>.<br>
+</p></li>
+<li><p>For definitions when <span class="math inline">\(\alpha\)</span> is <span class="math inline">\(\beta\land\gamma,\beta\to\gamma,\)</span> or <span class="math inline">\(\beta\leftrightarrow \gamma\)</span>, see the exercises below.</p></li>
+</ol>
+<p>This definition is often confusing to a student seeing this for the first time, so let’s see the idea in practice – hopefully if you see it used enough times, you’ll actually come to see the definition as quite familiar. The new kind of formalism being used here, just takes some getting used to.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled" title="Evaluation Demonstrations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Evaluation Demonstrations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let us consider the propositions <span class="math display">\[
+P
+\]</span></p>
+<p>and <span class="math display">\[
+P\lor (Q\lor (\neg P))
+\]</span></p>
+<p>We will also consider the example variable evaluation <span class="math inline">\(\mathcal E\)</span> given by</p>
+<p><span class="math display">\[
+P^{\mathcal E}=F,Q^{\mathcal E}=T,R^{\mathcal E}=F
+\]</span></p>
+<p>Let us use the definition above to find the evaluations <span class="math inline">\(P^{\mathcal E^*}\)</span> and <span class="math inline">\((P\lor (Q\lor (\neg P)))^{\mathcal E^*}\)</span>.</p>
+<hr>
+<p>For the former, this is very simple and immediate. By clause (1) above, we merely use the variable evaluation.</p>
+<p><span class="math display">\[
+P^{\mathcal E^*} = P^{\mathcal E} = F
+\]</span></p>
+<hr>
+<p>Now let’s find <span class="math inline">\((P\lor(Q\lor (\neg P)))^{\mathcal E^*}\)</span>. Because this is a disjunction, we use clause (3), which indicates that we must find the evaluation of each disjunct.</p>
+<p>We first must find the evaluation of the left disjunct, <span class="math inline">\(P^{\mathcal E^*}\)</span>. But we already did that above and found <span class="math inline">\(P^{\mathcal E^*}=F\)</span>.</p>
+<p>So we now find the right-hand side <span class="math inline">\((Q\lor(\neg P))^{\mathcal E^*}\)</span>. To find this again we need to find the values on either side of the <span class="math inline">\(\lor\)</span>. From a calculation like before, we find that <span class="math inline">\(Q^{\mathcal E^*}=T\)</span>.</p>
+<p>In order to find <span class="math inline">\((\neg P)^{\mathcal E^*}\)</span> we use clause 2. This tells us that</p>
+<p><span class="math display">\[
+(\neg P)^{\mathcal E^*} = 1-P^{\mathcal E^*} = 1-F = 1
+\]</span></p>
+<p>where the first equality is due to clause 2, the second is due to our earlier calcuation, and the last is because <span class="math inline">\(F\)</span> is the same as 0.</p>
+<p>Now we can find</p>
+<p><span class="math display">\[
+(Q\lor(\neg P))^{\mathcal E^*} = T
+\]</span></p>
+<p>by clause 3, because we know that not both sides of the disjunction evaluated to false (in fact both evaluated to true).</p>
+<p>Finally we can now decide</p>
+<p><span class="math display">\[
+(P\lor(Q\lor (\neg P)))^{\mathcal E^*} = T
+\]</span></p>
+<p>because by clause 3, not both sides evaluated to false (the left evaluated to false but the right evaluated to true).</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Now You Evaluate">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Now You Evaluate
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the same variable evaluation <span class="math inline">\(\mathcal E\)</span> above, find <span class="math inline">\((P\lor (\neg R))^{\mathcal E^*}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Other Evaluation Rules">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Other Evaluation Rules
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I left the rule for the evaluation of, for instance, <span class="math inline">\(P\land Q\)</span>, unspecified. However, as you can see from the rule for <span class="math inline">\(\lor\)</span>, this rule merely takes the evaluation of the left-hand disjunct, and the right-hand disjunct, and “puts them together” in the way that we’re familiar with from the truth-table.</p>
+<p>Come write down a rule for conjunction, like the one I explicitly gave for disjunction. Then use it to evaluate <span class="math inline">\(P\land Q\)</span> using the same variable evaluation as above.</p>
+<p>Then do likewise for <span class="math inline">\(\to\)</span> and <span class="math inline">\(\leftrightarrow\)</span>. Make up your own examples to exercise these ideas.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="a-python-evaluation-implementation" class="level1">
+<h1>A Python Evaluation Implementation</h1>
+<p>We can implement the evaluator in code, using what we built previously for the parse tree! First we must reproduce all of the code used to take an input string and produce its parse tree. But we will agument the classes with an <code>eval</code> function, reflected by the rules above.</p>
+<div id="f2b55e78" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PropVariable(Proposition):</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, v):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> (<span class="bu">type</span>(v) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>) <span class="kw">and</span> <span class="bu">len</span>(v) <span class="op">==</span> <span class="dv">1</span>) </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.v <span class="op">=</span> v</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.v)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> prop_eval(<span class="va">self</span>.v)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Negation(Proposition):</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.neg <span class="op">=</span> beta</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"(not "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.neg) <span class="op">+</span> <span class="st">")"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="dv">1</span> <span class="op">-</span> <span class="va">self</span>.neg.<span class="bu">eval</span>(prop_eval))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Disjunction(Proposition):</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta, gamma):</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition) <span class="op">\</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(gamma),Proposition)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left, <span class="va">self</span>.right <span class="op">=</span> beta, gamma</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"("</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.left )<span class="op">+</span><span class="st">" or "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.right) <span class="op">+</span> <span class="st">")"</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        l, r <span class="op">=</span> <span class="va">self</span>.left.<span class="bu">eval</span>(prop_eval), <span class="va">self</span>.right.<span class="bu">eval</span>(prop_eval)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>( l <span class="op">+</span> r <span class="op">-</span> l<span class="op">*</span>r )</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> PropVariable(p)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> parseTree(p[<span class="dv">0</span>])</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span>( p[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"not"</span> )</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Negation(parseTree(p[<span class="dv">1</span>]))</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(parseTree(p[<span class="dv">0</span>]), parseTree(p[<span class="dv">2</span>]))</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length 3 list but unrecognized middle token"</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length of list unrecognized"</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> pyparsing.Word(pyparsing.alphas) <span class="op">|</span> <span class="st">"not"</span> <span class="op">|</span> <span class="st">"and"</span> <span class="op">|</span> <span class="st">"or"</span> <span class="op">|</span> <span class="st">"if"</span> <span class="op">|</span> <span class="st">"then"</span> <span class="op">|</span> <span class="st">"iff"</span> </span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>nesting <span class="op">=</span> pyparsing.nestedExpr( <span class="st">'('</span>, <span class="st">')'</span>, content<span class="op">=</span>terms )</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shape(s): </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> nesting.parseString(<span class="st">"("</span><span class="op">+</span>s<span class="op">+</span><span class="st">")"</span>)[<span class="dv">0</span>]</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parseTree(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>In order to run the code below, one will have to first run the code above.</p>
+<p>In the code below, we will write an evaluation function which essentially just reproduces the rules above, but implemented on the <code>Proposition</code> objects from before.</p>
+<p>Of course, now we need a new object in our program, to represent the variable evaluation. This will be a function which returns <code>True</code> for some instances of <code>PropVariable</code> and <code>False</code> for others. Below is one example of a variable evaluation, which returns <code>True</code> for <code>P</code> and <code>False</code> for everything else.</p>
+<div id="3c6cc24f" class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vareval(pv):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pv <span class="op">==</span> <span class="st">"P"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>And now here is the <code>eval</code> function. Note that it takes two arguments, a string representing a proposition, and a propositional evaluation.</p>
+<div id="7f6b9b68" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">eval</span>(prop_string, prop_eval):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">bool</span>((shape(prop_string)).<span class="bu">eval</span>(prop_eval))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>and finally we can demonstrate the code’s behavior:</p>
+<div id="5f6a6514" class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>prop_string <span class="op">=</span> <span class="st">"Q or (not (not P))"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">eval</span>(prop_string,vareval))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">eval</span>(prop_string, <span class="kw">lambda</span> x: <span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False</code></pre>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Extend Evaluation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extend Evaluation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Extend the <code>eval</code> function to handle conjunction, conditional, and biconditional propositions.</p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The sixth one down, as we have shown the truth-table above.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note: The notation in <span class="math inline">\(P^{\mathcal E}\)</span> is just unusual notation, which is really just function evaluation. Usually we write “the value of the function <span class="math inline">\(f\)</span> on input <span class="math inline">\(x\)</span>” as <span class="math inline">\(f(x)\)</span>. For whatever reason, in logic we instead write “the value of the function <span class="math inline">\(\mathcal E\)</span> on input <span class="math inline">\(P\)</span>” as <span class="math inline">\(P^{\mathcal E}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Python is also comfortable taking other numbers instead of booleans, but this is not important for our current purposes. <a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This merely says: If you want to evaluate a propositional variable, then just use the variable evaluation. So for instance if <span class="math inline">\(\mathcal E\)</span> evaluates <span class="math inline">\(P^{\mathcal E}=T\)</span>, then in the extended evaluation, <span class="math inline">\(\mathcal E^*\)</span>, it does exactly the same thing to <span class="math inline">\(P\)</span>. Namely, <span class="math inline">\(P^{\mathcal E^*}=T\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Explanation: Take for example <span class="math inline">\(\alpha=\neg P\)</span>. In this case, then, <span class="math inline">\(\beta=P\)</span>. Also consider this, with variable evaluation <span class="math inline">\(\mathcal E\)</span> which evaluates <span class="math inline">\(P^{\mathcal E}=T\)</span>. <br> What should we then say is the value of <span class="math inline">\(\neg P\)</span>? Well it’s the negation of <span class="math inline">\(T\)</span>, which is <span class="math inline">\(1-T\)</span> which is <span class="math inline">\(F\)</span>. The rule above reflects this, by saying that <span class="math inline">\((\neg P)^{\mathcal E^*} = 1-P^{\mathcal E^*}\)</span> which is just <span class="math inline">\(1-P^{\mathcal E} = 1-T\)</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
