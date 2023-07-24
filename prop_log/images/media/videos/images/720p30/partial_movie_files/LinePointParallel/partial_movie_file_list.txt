@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/images/media/videos/images/720p30/partial_movie_files/LinePointParallel/274514146_1103298880_223132457.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/images/media/videos/images/720p30/partial_movie_files/LinePointParallel/2789044632_1360713251_1858640073.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/images/media/videos/images/720p30/partial_movie_files/LinePointParallel/2789044632_3073779459_1878024917.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/images/media/videos/images/720p30/partial_movie_files/LinePointParallel/2789044632_3476490402_3485008473.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/images/media/videos/images/720p30/partial_movie_files/LinePointParallel/2789044632_3073779459_2737230447.mp4'

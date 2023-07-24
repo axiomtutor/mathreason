@@ -1,0 +1,41 @@
+{
+  "index.qmd": {
+    "index.html": "1a474c6b"
+  },
+  "about.qmd": {
+    "about.html": "628f6a2e"
+  },
+  "prop_log/ancient_greek.qmd": {
+    "ancient_greek.html": "4081a85e"
+  },
+  "fol/pred.qmd": {
+    "pred.html": "6909ada3"
+  },
+  "prop_log/images/animations.ipynb": {
+    "animations.html": "67ea4ee3"
+  },
+  "prop_log/core_examples.qmd": {
+    "core_examples.html": "9480f232"
+  },
+  "prop_log/abstract_propositions.qmd": {
+    "abstract_propositions.html": "7b60073e"
+  },
+  "prop_log/op_props.qmd": {
+    "op_props.html": "3a40f05e"
+  },
+  "prop_log/connec_contd.qmd": {
+    "connec_contd.html": "098f9f0b"
+  },
+  "prop_log/eval.qmd": {
+    "eval.html": "2ae12c82"
+  },
+  "prop_log/parse_tree.qmd": {
+    "parse_tree.html": "a8b0ec55"
+  },
+  "prop_log/axiom_systems.qmd": {
+    "axiom_systems.html": "83eb7991"
+  },
+  "prop_log/deduction.qmd": {
+    "deduction.html": "40bbe225"
+  }
+}

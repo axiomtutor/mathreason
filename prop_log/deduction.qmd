@@ -1,0 +1,196 @@
+---
+title: "Deduction"
+---
+
+Entailment is about which propositions "make" other propositions "necessary".  That is to say, if $\Delta\vDash \alpha$ then the truth of $\Delta$ "makes" $\alpha$ true, so-to-speak.  Deduction, on the other hand, is about demonstrating something more like "reasons why" the entailment holds.  
+
+Take for example the fact that $\frac{xy}{z}+wx = 1$ for real numbers $w,x,y,z$ with $z\ne 0$, entails $w=\frac 1 x - \frac y z$.  It's all good and well that this entailment holds -- but we want a proof!  A proof is like receipts, something you can check to validate a claim.  
+
+# Negation and Disjunction 
+
+Here we will introduce inference rules for negation and disjunction.  It will be helpful to have this example in mind:  
+
+> Either the enemy will approach by land or by sea.  They will not approach by land.  Therefore they will approach by sea.
+
+The clarify of this inference motivates accepting the following as a rule of inference:
+
+> For any propositions $\alpha$ and $\beta$, if $\alpha\lor\beta$ and also $\neg\beta$ are true, then one may infer $\alpha$.  
+
+We call the above *Disjunction Elimination*.  Every inference rule has some set of **premises**.  These are propositions which need to be true in order for the inference rule to apply.  In *Disjunction Elimination* the premises are the elements of the set $\{\alpha\lor\beta,\neg\beta\}$.  Every inference rule also has a **conclusion**, which is the sentence that one is licensed to accept by the inference rule.  In the case of *Disjunction Elimination* the conclusion is $\alpha$.
+
+There is also a rule called *Disjunction Introduction*.
+
+> If $\alpha$ is true then $\alpha\lor\beta$ is true, for any propositions $\alpha,\beta$.  
+
+The premise of *Disjunction Introduction* is $\{\alpha\}$ and the conclusion is $\alpha\lor\beta$.  
+
+An inference rule is called *valid* if the premise entails the conclusion.  We will only ever use valid inference rules (which the reader is encouraged to check).^[While *Disjunction Elimination* might seem natural, *Disjunction Introduction* might seem strange and unnatural.  However, whether it is strange or not, it is still technically *valid*.  Moreover, not only is it valid but it will also prove to be useful, so we accept it as one of our inference rules.  ]
+
+To help express inference rules, we use the following notation.  
+
+$$\begin{aligned}
+\text{\it Disjunction Elimination:}&&  \{\alpha\lor\beta,\neg\beta\} &\therefore \alpha\\
+\text{\it Disjunction Introduction:}&& \{\alpha\} &\therefore \alpha\lor\beta
+\end{aligned}
+$$
+
+The symbol $\therefore$ is read as "therefore", with the premises to its left and the conclusion to its right.  
+
+The disjunction rules are also fairly unwieldy if we have to use them in the rigid order that they appear above.  Therefore we will augment the rules to make them easier to use.
+
+$$\begin{aligned}
+\text{\it Disjunction Elimination:}&&  \{\alpha\lor\beta,\neg\beta\} &\therefore \alpha\\
+&&\{\alpha\lor\beta,\neg\alpha\}&\therefore\beta\\
+\text{\it Disjunction Introduction:}&& \{\alpha\} &\therefore \alpha\lor\beta\\
+&&\{\alpha\}&\therefore \beta\lor\alpha
+\end{aligned}
+$$
+
+Negation has its own elimination and introduction rules.
+
+$$\begin{aligned}
+\text{\it Negation Elimination:}&& \neg(\neg\alpha)&\therefore\alpha\\
+\text{\it Negation Introduction:}&& \alpha&\therefore\neg(\neg \alpha)
+\end{aligned}$$
+
+All of these rules will be relatively useless if we don't also accept the reasonable principle that if $\Delta$ is any set of propositions, and $\Delta\subseteq\Gamma$, then if $\Delta\therefore \alpha$ then also $\Gamma\therefore \alpha$.  This is known as the principle of monotonicity.  It basically says 
+
+> If $\Delta$ proves $\alpha$ and if $\Gamma$ is even more powerful than $\Delta$, then also $\Gamma$ proves $\alpha$.  
+
+::: {.callout-important title="Exercise Disjunction and Negation" appearance="minimal"}
+Show that with the premises $\{\alpha,\neg\alpha\}$ one can infer $\alpha\lor\beta$ for any proposition $\beta$.  
+
+Then show that $\{\alpha,\neg\alpha,\alpha\lor\beta\}\therefore \beta$.  
+
+Note that it is *not* true that $\{\alpha,\neg\alpha\}\therefore\beta$.  
+:::
+
+# Conjunction, Conditional, Biconditional, and Reiteration
+
+Here are some of the remaining inference rules.  You are invited to check any or all of them to be sure that they are valid.
+
+$$\begin{aligned}
+\text{\it Conjunction Elimination:}&& \{\alpha\land\beta\}&\therefore \alpha\\
+&& \{\alpha\land\beta\}&\therefore \beta\\
+\text{\it Conjunction Introduction:}&& \{\alpha\}&\therefore \alpha\land\beta\\
+&& \{\alpha\}&\therefore \beta\land\alpha\\
+\text{\it Conditional Elimination:}&& \{\alpha\to\beta,\alpha\}&\therefore \beta\\
+\text{\it Biconditional Elimination:}&& \{\alpha\leftrightarrow\beta,\alpha\}&\therefore \beta\\
+&& \{\alpha\leftrightarrow\beta,\beta\}&\therefore \alpha\\
+\text{\it Reiteration:} && \alpha &\therefore \alpha
+\end{aligned}$$
+
+::: {.callout-important title="Conjunction Exercise" appearance="minimal"}
+
+Prove that $\{P,Q,R\}\therefore Q\land R$ and $\{P,Q,R, Q\land R\}\therefore P\land(Q\land R)$.  
+
+:::
+
+# Deduction
+
+We have seen several inference rules.  If we then chain together inference rules, we get what is called a **deduction**.^[Also often called a "derivation".]  We have already seen a few examples, like how $\{\alpha,\neg\alpha\}\therefore \alpha\lor\beta$ and then $\{\alpha,\neg\alpha,\alpha\lor\beta\}\therefore\beta$.  We represent chaining these together by putting them in a so-called two-column proof.
+
+$$
+\definecolor{subtle}{rgb}{.99,.99,.9}
+\begin{array}{|l|c|c|} \hline
+\text{No.}&\text{ Prop } & \text{Reason}\\\hline
+1. & \alpha & \text{Premise} \\ \rowcolor{subtle}
+2. & \neg\alpha & \text{Premise} \\
+3. & \alpha\lor\beta & \lor\text{I}, 1\\ \rowcolor{subtle}
+4. & \beta & \lor\text{E},2,3\\\hline
+\end{array}
+$$
+
+What the table represents is that, on lines 1 and 2, we start from some premises.  As we proceed to next lines, we can always reference earlier lines in the proof, and apply inference rules to derive new lines.  Therefore line 3 is allowed to derive $\alpha\lor\beta$ from line 1, using the *Disjunction Introduction* inference rule.  Because propositions merely "accumulate" as we go, then by the time we reach line 4, it is allows to use all of the lines before it, to derive a new line.  In this particular example, it uses lines 2 and 3 with the inference rule for *Disjunction Elimination*.  
+
+In a two-column proof, every line must contain both a proposition and a "justification".  That justification can be either (1) premise, for propositions in the premise of the deduction, or (2) any inference rule, applied to lines earlier in the proof.  
+
+Since there is a deduction from premise $\{\alpha,\neg\alpha\}$ to proposition $\beta$, we express the existence of this deduction by writing $\{\alpha,\neg\alpha\}\vdash\beta$.  In this case we say that $\{\alpha,\neg\alpha\}$ **proves** $\beta$.  
+
+::: {.callout-important title="Chaining Exercise" appearance="minimal"}
+
+Show that $\{P,Q,R\}\vdash P\land (Q\land R)$ and also $\{P,Q,R\}\vdash R\land(P\land Q)$.
+
+:::
+
+::: {.callout-important title="Arrow Conjunction Exercise" appearance="minimal"}
+
+Show that $\{(P\to Q)\land (P\to R), P\}\vdash Q\land R$.  
+
+:::
+
+## Conditional Introduction
+
+You will no doubt have noticed that most operations have an elimination and an introduction rule, but with one conspicuous exception.  There is no conditional introduction rule!  The reason for this omission is that the conditional introduction rule requires a new technique that we will introduce here.  
+
+It is perhaps easiest to simply give a demonstration.  Suppose that we would like to prove $\{P\lor Q\} \vdash \neg P\to Q$.  Intuitively, the argument would go like this:  "*Suppose* that $\neg P$ is true.  Well then, we now have $\{P\lor Q,\neg P\}$ as our premise.  In that case we can use *Disjunction Elimination* to infer $Q$.  Since the supposition of $\neg P$ leads to $Q$, we can therefore infer that 'If $\neg P$ then $Q$.'"  
+
+This is effectively a "subproof".  That is to say, we assume $\neg P$ and then conduct a proof of something (in this example, that "something" is $Q$).  At the end of the subproof, we then "export" a conditional proposition.  The conditional has, as its antecedent, whatever we assumed for the subproof.  It has as its consequent, whatever the subproof ended with.  In the two-column system we would represent the subproof like this:
+
+$$
+\definecolor{subtl}{rgb}{.95,.95,.85}
+\begin{array}{|c|c|c|} \hline
+\text{No.} & \text{Prop} & \text{Reason} \\\hline
+1. & P\lor Q & \text{Premise} \\ \rowcolor{subtle}
+2. & \neg P\to Q & 
+\begin{array}{|c|c|c|} \hline
+\text{No.} & \text{Prop} & \text{Reason} \\\hline
+2.1. & \neg P & \text{$\to$ Assumption} \\\hline \rowcolor{subtl}
+2.2. & Q & \lor\text{E}, 1, 2.1 \\\hline
+\end{array} \\\hline
+\end{array}
+$$
+
+Notice that the justification for line 2 is the subproof.  Also notice the system that we adopt for numbering lines in a subproof.  In the subproof on line number 2, the reason is $\lor$E, 1, 2.1.  What this means is that, of course, line 1 contains $P\lor Q$.  But where is 2.1?  It is on line 2 of the main proof, but inside of line 2 we refer to line 1 of the subproof there.  This is where we find the proposition $\neg P$.  
+
+And indeed, from $P\lor Q$ and $\neg P$ we are able to infer, with *Disjunction Elimination*, the proposition $Q$.  This is what I have entered at line 2.2.
+
+Here's another example where I prove that $\{P\to Q\}\vdash \{P\to (R\lor Q)\}$.
+
+$$
+\begin{array}{|c|c|c|}\hline
+    \text{No.} & \text{Prop} & \text{Reason} \\\hline
+    1. & P\to Q & \text{Premise} \\\hline \rowcolor{subtle}
+    2. & P\to (R\lor Q) & 
+        \begin{array}{|c|c|c|}\hline 
+        \text{No.} & \text{Prop} & \text{Reason} \\\hline
+        2.1. & P & \text{$\to$Assumption} \\ \rowcolor{subtl} 
+        2.2. & Q & \to\text{E}, 1, 2.1\\
+        2.3. & R\lor Q & \lor\text{I}, 2.2 \\ \hline
+        \end{array}\\\hline
+\end{array}
+$$
+
+Again notice how this works: We want to prove $P\to (R\lor Q)$, so we make a subproof with assumption $P$ and ending at $R\lor Q$.  
+
+### Restrictions on Conditional Proof
+
+I have not yet really specified the rules of conditional proof, because they can be somewhat difficult to understand.  For now I have mostly tried to communicate the method by examples.  However, take the following example which demonstrates that this technique is invalid if used in the wrong ways.  
+
+
+
+## Proof by Contradiction
+
+There is a second proof method which uses subproofs.  This is proof by contradiction.  Consider the following argument which illustrates the technique.
+
+> We will prove that there is no largest number.  For contradiction, suppose that there is a largest number and call it $x$.  Then $x+1$ is a number and larger.  Therefore $x$ is both largest (by assumption) and not largest (because there is a larger number).  This is a contradiction.  Because the assumption that there is a largest number produced a contradiction, then the assumption must be false.  So there is no largest number.  
+
+The idea is that we 
+
+1. Assume the *negation* of what you hope to prove.  (e.g. "there *is* a largest number")
+2. From the assumption, derive a contradiction.  ("$x$ is largest and not largest")
+3. Therefore end the subproof, and infer what you wanted to prove.  ("there is *no* largest number")
+
+Below I'll illustrate this technique in a two-column proof that $\{P\lor Q\}\vdash \neg P\land\neg Q$.  
+
+$$
+\begin{array}{|c|c|c|}\hline
+\text{No.} & \text{Prop} & \text{Reason} \\\hline
+1. & P\lor Q & \text{Premise} \\ \rowcolor{subtle}
+2. & \neg P\land \neg Q & 
+  \begin{array}{|c|c|c|}\hline
+  \text{No.} & \text{Prop} & \text{Reason} \\\hline
+  2.1. & 
+  \end{array} \\\hline
+\end{array}
+$$
