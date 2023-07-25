@@ -264,6 +264,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#proof-by-contradiction" id="toc-proof-by-contradiction" class="nav-link" data-scroll-target="#proof-by-contradiction">Proof by Contradiction</a></li>
   </ul></li>
+  <li><a href="#deductions-in-python" id="toc-deductions-in-python" class="nav-link" data-scroll-target="#deductions-in-python">Deductions in Python</a></li>
   </ul>
 </nav>
     </div>
@@ -600,9 +601,14 @@ Proof Exercises
 </ol>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="deductions-in-python" class="level1">
+<h1>Deductions in Python</h1>
+<p>It is possible to simply give a computer some set of propositions, and a conclusion, and have a program find a deduction from the premise to the conclusion. However, that is quite a challenging task and so we won’t try to implement the idea here.</p>
+<p>What is still challenging, but not THAT challenging, though, is to write a program which check an argument for validity. For instance, we might represent the premises of an argument as <code>["P", "if P then Q"]</code>, and then we might write the argument <code>["P", "if P then Q", "Q"]</code>. If our proof checker is correct, it will take these two inputs and confirm that it is a valid argument from the premise to the conclusion <code>"Q"</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+
+
 </section>
 
 
@@ -611,6 +617,7 @@ Proof Exercises
 <ol>
 <li id="fn1"><p>While <em>Disjunction Elimination</em> might seem natural, <em>Disjunction Introduction</em> might seem strange and unnatural. However, whether it is strange or not, it is still technically <em>valid</em>. Moreover, not only is it valid but it will also prove to be useful, so we accept it as one of our inference rules.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Also often called a “derivation”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The conclusion will always be the final proposition in the list.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

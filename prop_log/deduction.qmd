@@ -313,3 +313,44 @@ Prove the following.
 4. $\{P\lor Q, P\to R, Q\to S\}\vdash R\lor S$
 
 :::
+
+# Deductions in Python
+
+It is possible to simply give a computer some set of propositions, and a conclusion, and have a program find a deduction from the premise to the conclusion.  However, that is quite a challenging task and so we won't try to implement the idea here.  
+
+What is still challenging, but not THAT challenging, though, is to write a program which checks an argument for validity.  For instance we might represent an argument as a list of proposition-inference pairs.
+
+```{python}
+argument = [("Premise","P"), ("Premise","if P then Q"), ("Conditional Elimination,1,2","Q")]
+```
+
+Naturally a component of what we need, is to decide if something like this is an instance of one of our inference rules.  In particular, the easiest case is when it's an instance of an inference rule that does not make use of any subproof.  
+
+Here is a function which can detect if a given list of sentences is an instance of *Disjunction Elimination*.  
+
+```{python}
+def disjunction_elimination(prop_list):
+  if len(prop_list) != 3: return False
+  # For disjunction elimination, one proposition must be a disjunction
+  # and the other must be a negation.
+  disj, neg = prop_list[0], prop_list[1]
+  if type(disj) != Disjunction: 
+    disj, neg = prop_list[1], prop_list[0]
+    if type(disj) != Disjunction or type(neg) != Negation: 
+      return False
+  
+  # In order to reach this line of the function, we must have a disjunction
+  # in `disj` and negation in `neg`.  
+
+  # Now in order to be an instance of *Disjunction Elimination*, the 
+  # propsition under the negation must match one of the two disjuncts.
+  # Whichever disjunct matches, the other disjunct should be the final 
+  # proposition in the inference (the conclusion).
+  under = neg.neg
+  other = disj.right
+  if under != disj.left:
+    other = disj.left
+    if under != disj.right: return False
+  return other == prop_list[2]
+```
+

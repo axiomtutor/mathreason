@@ -401,7 +401,7 @@ Tautological Equivalence
 </div>
 <section id="famous-tautologies" class="level2">
 <h2 class="anchored" data-anchor-id="famous-tautologies">Famous Tautologies</h2>
-<p>The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivaelnt in the following summary.</p>
+<p>The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivalent in the following summary.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Double Negation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -905,7 +905,7 @@ Explain the Difference
 <section id="satisfaction-in-python" class="level1">
 <h1>Satisfaction in Python</h1>
 <p>Here is code from previous sections, which we will need for the code after it.</p>
-<div id="ec7ccdeb" class="cell" data-execution_count="1">
+<div id="a343ce4f" class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
@@ -969,7 +969,7 @@ Explain the Difference
 </details>
 </div>
 <p>Below is code to find the set of all of the propositional variables in a given proposition. It is effectively a depth-first search of the parse tree.</p>
-<div id="e4a0f1a7" class="cell" data-execution_count="2">
+<div id="9ee4d17b" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> all_prop_vars(p):</span>
@@ -982,7 +982,7 @@ Explain the Difference
 </details>
 </div>
 <p>And here is code to take a set of variables, and return a list of all possible variable evaluations for those variables.</p>
-<div id="e87f358b" class="cell" data-execution_count="3">
+<div id="68481bce" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> all_var_evals(var_set):</span>
@@ -1008,7 +1008,7 @@ Explain the Difference
 </details>
 </div>
 <p>The code below demonstrates its use. In summary, this creates a proposition, then turns that proposition into a tree (<code>shape(proposition)</code>), then extracts all of its propositional variables (<code>all_prop_vars(shape(proposition))</code>). This is a list of all possible variable evaluations, so there should be 8 of them in total. We evaluate the proposition using each one, and just like with the truth-table for this proposition, precisely one should be false and all others should be true.</p>
-<div id="e0d0f4a4" class="cell" data-execution_count="4">
+<div id="2f05cc58" class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>proposition <span class="op">=</span> <span class="st">"(P or Q) or R"</span></span>
@@ -1025,6 +1025,36 @@ True
 True
 True
 True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Python Set Satisfaction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Set Satisfaction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function <code>set_sat(prop_set, var_eval)</code>. As you can see, the function should take two arguments, <code>prop_set</code> and <code>var_eval</code>. The argument <code>prop_set</code> is a set of propositions, for example <code>{"P", "if P then Q"}</code>. The argument <code>var_eval</code> is a variable evaluation. The function should return <code>True</code> if <code>var_eval</code> satisfies <code>prop_set</code>.</p>
+<hr>
+<p>Here’s a funny question. Does it make any sense to talk about satisfying the <em>empty</em> set of propositions? That is to say, if <span class="math inline">\(\mathcal E\)</span> is a variable assignment, does it make any sense to talk about whether <span class="math inline">\(\mathcal E\vDash \emptyset\)</span>?</p>
+<p>Here are a few ways to think about the problem.</p>
+<ol type="1">
+<li><p>Run the function you designed above and see what it says.</p></li>
+<li><p>Observe that in general, the fewer premises you have, the “weaker” your premise set is … in the following sense.</p>
+<p>If you have <span class="math inline">\(\{P,Q\}\)</span>, then this is satisfied by relatively few variable evaluations. On the other hand <span class="math inline">\(\{P\}\)</span> is satisfied by relatively more. In particular, every variable evaluation which satisfies <span class="math inline">\(\{P,Q\}\)</span> also satisfies <span class="math inline">\(\{P\}\)</span>, but here is an example of a variable evaluation which satisfies <span class="math inline">\(\{P\}\)</span> but not <span class="math inline">\(\{P,Q\}\)</span>:</p>
+<p><span class="math display">\[
+P^{\mathcal E}=T, \quad Q^{\mathcal E}=F
+\]</span></p>
+<p>Continuing the trend toward the farthest extreme, then what is the set of variable evaluations which satisfy <span class="math inline">\(\emptyset\)</span>?</p></li>
+<li><p>In mathematics we often run into cases, like this, of “vacuous quantification”. In this particular case, it goes like this: “<span class="math inline">\(\mathcal E\vDash \emptyset\)</span> means that for every <span class="math inline">\(\alpha\in\emptyset\)</span> (there isn’t any such <span class="math inline">\(\alpha\)</span>, of course) we have that <span class="math inline">\(\mathcal E \vDash \alpha\)</span>.” Another place where this comes up is with the subset relation between sets. We say that <span class="math inline">\(X\subseteq Y\)</span> means that every <span class="math inline">\(x\in X\)</span> is also <span class="math inline">\(x\in Y\)</span>. When <span class="math inline">\(X=\emptyset\)</span>, then there is no such <span class="math inline">\(x\)</span>.<br>
+<br>
+Whenever empty quantification comes up, we always say that the sentence is true. That is to say, in mathematics we say that <span class="math inline">\(\emptyset\subseteq Y\)</span> for every set <span class="math inline">\(Y\)</span>, because empty quantification is always true. Therefore likewise we also say that <span class="math inline">\(\mathcal E\vDash \emptyset\)</span>.<br>
+<br>
+The reason why we have this convention is, like we have observed in (1.) and (2.), it is a continuation of a trend or pattern. But for another reason, it is a <em>conditional</em> statement! It says “IF <span class="math inline">\(\alpha\in\emptyset\)</span> …” or “IF <span class="math inline">\(x\in \emptyset …\)</span>. Since the antecedent of the conditional here is false, then therefore we regard the conditional proposition as true!</p></li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Tautology, Contradiction, Contingency in Python">
@@ -1050,8 +1080,10 @@ Entailment
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write a Python function which takes two arguments – the first argument is a list (or set) of propostions, and the second argument is a single proposition. The function then returns <code>True</code> if the set of propositions entails the second argument, and <code>False</code> otherwise.</p>
+<p>Write a Python function which takes two arguments – the first argument is a list (or set) of propositions, and the second argument is a single proposition. The function then returns <code>True</code> if the set of propositions entails the second argument, and <code>False</code> otherwise.</p>
 <p>Test your product.</p>
+<hr>
+<p>The officially accepted answer in mathematics and logic is “yes”! If we think about the definition of entailment, applied here, we would need to be able to decide whether a given variable assignment <span class="math inline">\(\mathcal E\)</span> satisfies <span class="math inline">\(\emptyset\)</span>.</p>
 </div>
 </div>
 
