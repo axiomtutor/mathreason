@@ -1,0 +1,25 @@
+---
+title: "Intro"
+---
+
+Welcome to mathematical reasoning! This is a web book which will try to explain how mathematicians reason about their subject. We will see
+
+-   Formal logic
+-   Axiomatic systems
+-   Proof techniques
+-   Attempts to formulate and then answer mathematical questions
+-   Proofs of some famous and essential theorems
+
+# Prerequisites
+
+The only mathematical prerequisite is basic algebra.  
+
+Many exercises will ask you to write and run Python code using the SymPy and matplotlib libraries.  Therefore you will need Python installed with these libraries.  Just about any version of Python 3 should be fine.  
+
+# Who Is This For?
+
+It is for people who are interested in understanding how mathematics gets done. I write this, having in mind some readers who are merely curious, and some readers who hope to become mathematicians. 
+
+# Status
+
+As of July 2023, I have not yet finished the chapter on propositional logic.  This website may undergo heavy redesign before it is finished.

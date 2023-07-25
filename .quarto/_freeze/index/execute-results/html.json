@@ -1,0 +1,11 @@
+{
+  "hash": "bf0bb12be04ce9ed8fffe9011b5ab98b",
+  "result": {
+    "markdown": "---\ntitle: Intro\nformat:\n  html:\n    code-tools: true\n    code-fold: true\n    standalone: true\ncode-block-border-left: '#31BAE9'\nhighlight-style: arrow\nmonobackgroundcolor: lightgray\n---\n\nWelcome to mathematical reasoning! This is a web book which will try to explain how mathematicians reason about their subject. We will see\n\n-   Formal logic\n-   Axiomatic systems\n-   Proof techniques\n-   Attempts to formulate and then answer mathematical questions\n-   Proofs of some famous and essential theorems\n\n# Prerequisites\n\nI'll strive to make the only prerequisite a desire to deeply understand mathematics. Hopefully a reader will not, in principle, need to know anything more than basic arithmetic and common sense ideas of geometry (like that the area of a rectangle is its width multiplied by its height).\n\n# Who Is This For?\n\nIt is for people who are interested in understanding how mathematics gets done. I write this, having in mind some readers who are merely curious, and some readers who hope to become mathematicians. They may be young or old, with less background than a high school student, or more mathematical training than the typical first-year undergraduate at a university.\n\nIt may be more informative to say who this book is not for. Probably it is too much for almost any middle school student. It is probably too boring for people who already feel comfortable with the basic tools of mathematical reasoning -- so it is not for mathematicians.\n\nIt is also not for people who are in a hurry, or who dislike mathematics. My apologies to people who \"aren't math people\" but I am going to assume that the reader wants to know. This means that I will assume the reader has Sitzfleisch[^1].\n\n[^1]: German noun meaning \"butt\" or literally \"sitting flesh\". Also means \"the fortitude to sit down and work out the tedious details of a calculation\".\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

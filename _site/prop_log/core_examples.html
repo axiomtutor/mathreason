@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.241">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mathematical Reasoning 2023 - Two Examples</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Mathematical Reasoning 2023</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prop.-logic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Prop. Logic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-prop.-logic">    
+        <li>
+    <a class="dropdown-item" href="../prop_log/ancient_greek.html" rel="" target="">
+ <span class="dropdown-text">Ancient Greece</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/core_examples.html" rel="" target="">
+ <span class="dropdown-text">Two Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/abstract_propositions.html" rel="" target="">
+ <span class="dropdown-text">Abstract Propositions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/parse_tree.html" rel="" target="">
+ <span class="dropdown-text">Parse Trees</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/eval.html" rel="" target="">
+ <span class="dropdown-text">Propositional Evaluation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/op_props.html" rel="" target="">
+ <span class="dropdown-text">Semantic Properties</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/deduction.html" rel="" target="">
+ <span class="dropdown-text">Deduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/axiom_systems.html" rel="" target="">
+ <span class="dropdown-text">Axiom Systems</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fol" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">FOL</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fol">    
+        <li>
+    <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
+ <span class="dropdown-text">Predicate Logic</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arithmetic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Arithmetic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arithmetic">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-geometry" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Geometry</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-geometry">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reals" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Reals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reals">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-combinatorics" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Combinatorics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-combinatorics">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-set-theory" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Set Theory</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-set-theory">    
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/core_examples.html">Two Examples</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/ancient_greek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ancient Greece</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/core_examples.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Two Examples</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/abstract_propositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract Propositions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/parse_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parse Trees</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/eval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Propositional Evaluation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/op_props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semantic Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/deduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/axiom_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Axiom Systems</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#algebra-by-cases" id="toc-algebra-by-cases" class="nav-link active" data-scroll-target="#algebra-by-cases">Algebra by Cases</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Two Examples</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<p>In this section I want to introduce two arguments. If the lessons in this text are successful, the reader will understand the logic of these arguments in thorough detail.</p>
+<section id="algebra-by-cases" class="level1">
+<h1>Algebra by Cases</h1>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Solve by Cases">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solve by Cases
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example:</p>
+<p>Let <span class="math inline">\(x\)</span> be a number satisfying the equation</p>
+<p><span class="math display">\[
+(x-1)(x-2)=0
+\]</span></p>
+<p>We can easily see that <span class="math inline">\(x=1\)</span> is a solution of this equation.</p>
+<p>On the other hand, if <span class="math inline">\(x\ne 1\)</span> then <span class="math inline">\(x-1\ne 0\)</span>. Therefore in this case we may divide both sides of the equation by <span class="math inline">\(x-1\)</span>. When we do, we obtain the equation <span class="math inline">\(x-2=0\)</span> which implies <span class="math inline">\(x=2\)</span>.</p>
+<p>Therefore there are two solutions: <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Algebra Example Assumption Conclusion">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algebra Example Assumption Conclusion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Every argument starts from some assumptions. In the argument above, which sentences are assumptions?</p>
+<p>Also every argument ends in a conclusion. In the argument above, what is the conclusion of the argument?</p>
+<p>Are there any key-words which seem to indicate an assumption? Are there key-words which indicate a conclusion?</p>
+</div>
+</div>
+<!-- # One Even Prime 
+
+In the argument below, we will prove that there is exactly one even prime number. The entire discussion will only consider natural numbers (i.e. positive whole numbers) since the idea of even and prime only make sense for natural numbers.[^1] That is to say, in this section, assume that every number in it, is a natural number.
+
+[^1]: This is not entirely accurate. It is possible to talk about even integers, but we won't worry about this right now.
+
+Recall that a number is even if it is divisible by 2. A number is prime if it is greater than 1, and its only divisors are "interesting". A divisor of a number is uninteresting if it is 1 or the number itself.
+
+So for instance 3 is prime because it is greater than 1 and its only divisors are 1 and 3. But both 1 and 3 are uninteresting divisors of 3. On the other hand 4 is not prime because it has an interesting divisor: 2.
+
+::: {.callout-important title="List Primes" appearance="minimal"}
+Exercise:
+
+List the first five prime numbers.
+:::
+
+To prove that there is one even prime, we will use an argument called "proof by contradiction". The strategy of a proof by contradiction is:
+
+-   Assume a proposition which we think is actually false.
+
+-   Use the proposition to prove a contradiction.
+
+-   Therefore, the proposition must be false, because it leads to a contradiction. -->
+<p>Below is a proof that the sum of two positive numbers is always positive. It starts from the assumption that this is <em>not</em> true. That means that we start by assuming that some two positive numbers do <em>not</em> sum to a positive number. We will then derive a contradiction, and therefore show that the assumption was false.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Positive Sum of Positives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Positive Sum of Positives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For contradiction, assume that there are some two positive numbers which do not sum to a positive number. Call these numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Since they are positive, <span class="math inline">\(0&lt;a\)</span> and <span class="math inline">\(0&lt;b\)</span>. And since they do not sum to a positive number, then <span class="math inline">\(a+b\le 0\)</span>.</p>
+<p>From <span class="math inline">\(0&lt;b\)</span> we can infer <span class="math inline">\(-b&lt;0\)</span> by subtracting <span class="math inline">\(b\)</span> from both sides. Then from <span class="math inline">\(a+b\le 0\)</span> we can infer <span class="math inline">\(a\le -b\)</span>. But since we have <span class="math inline">\(a\le -b\)</span> and also <span class="math inline">\(-b&lt;0\)</span> it follows that <span class="math inline">\(a&lt;0\)</span>. Therefore <span class="math inline">\(a\)</span> is not positive.</p>
+<p>But we established earlier that <span class="math inline">\(a\)</span> is positive. Hence we have a contradiction: <span class="math inline">\(a\)</span> is both positive and not positive.</p>
+<p>The assumption that “there are some two positive numbers which do not sum to a positive,” led to a contradiction. Therefore the assumption must be false.</p>
+<p>This shows that any two positive real numbers must sum to a positive number.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Negative Sum of Negatives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negative Sum of Negatives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use proof by contradiction to show that the sum of two negatives is always negative.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Negative Irrational">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negative Irrational
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A number is called <strong>irrational</strong> if it is not rational. A number is rational if it can be expressed as <span class="math inline">\(p/q\)</span> where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are two integers and <span class="math inline">\(q\ne 0\)</span>.</p>
+<p>Use proof by contradiction to show that if <span class="math inline">\(x\)</span> is irrational then so is <span class="math inline">\(-x\)</span>.</p>
+<p>Hint: Fill in the following argument, where blanks are marked with <code>%TODO</code>.</p>
+<blockquote class="blockquote">
+<p>Assume, for contradiction, that <code>%TODO</code>. Then <span class="math inline">\(-x\)</span> can be expressed as <span class="math inline">\(p/q\)</span> where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are two integers, <span class="math inline">\(q\ne 0\)</span>. That is to say, <span class="math inline">\(-x=p/q\)</span>. But then <span class="math display">\[
+x = \%TODO
+\]</span> But then <span class="math inline">\(-p\)</span> is an integer, and so is <span class="math inline">\(q\)</span>, and <span class="math inline">\(q\ne 0\)</span> still. Therefore <span class="math inline">\(x\)</span> is <code>%TODO</code>.</p>
+<p>But this is a contradiction, since we now have that <span class="math inline">\(x\)</span> both is and isn’t a rational number. Therefore the assumption was false, which shows that <span class="math inline">\(-x\)</span> is irrational.</p>
+</blockquote>
+</div>
+</div>
+<!-- In particular, in the argument below we will assume that there are two even prime numbers. We will then show that this leads to a contradiction. Therefore, the conclusion is that there are **not** two even primes. -->
+<!-- ::: {.callout-important title="Even Means Two Divides" appearance="minimal"}
+Exercise:
+
+1\.
+
+Think for a minute about what "even" means. Try to give an intuitive definition.
+
+------------------------------------------------------------------------
+
+2\.
+
+Mathematicians give a definition that is likely different from the one that you gave in response to the exercise above. A mathematician says that the number $p$ is even if there is a natural number $k$ such that $p=2k$.
+
+Use the mathematician's definition of "even" to show that 10 is even.
+
+------------------------------------------------------------------------
+
+3\.
+
+"Even" is really just one example of "divisibility". Give an intuitive definition of what it means for a number $q$ to divide another number $p$.
+
+------------------------------------------------------------------------
+
+4\.
+
+Of course mathematicians define it differently. They say that the number $q$ divides $p$ if there is an integer $k$ such that $p=qk$.
+
+Show that, according to the mathematician's definition, 5 divides 25.
+:::
+
+::: {.callout-note title="One Even Prime" style="background-color: #fff5fc" appearance="minimal"}
+Example:
+
+First notice that 2 is even because it can be divided by 2. Also 2 is prime because it is greater than 1, and its only divisors are 1 and 2 which are both uninteresting. Therefore there is *at least one* even prime number.
+
+For the next part, we will show that there are **not** two even prime numbers. For an argument by contradiction, assume that there **are** two even prime numbers. 
+
+Let $p$ be an even prime number other than 2.
+
+Because $p$ is prime, then it is greater than 1. Because it is even, then there must exist some positive natural number $k$ such that $p=2k$. But this shows that, by definition, $p$ is divisible by 2. Since $p$ is not equal to 2, then this must mean that 2 is an interesting divisor. In turn, this means that $p$ is not prime.
+
+But at the start we assumed that $p$ was prime, and therefore we have a contradiction: $p$ is both prime and not prime.
+
+Since the assumption that "there is an even prime number other than 2" leads to a contradiction, then it must be false. Therefore we conclude that there is only one even prime number.
+
+$\Box$
+:::
+
+::: {.callout-important title="Primes Mod Three" appearance="minimal"}
+Exercise:
+
+Prove that there is exactly one prime number which can be divided by 3. (Hint: The proof is almost exactly like the example for even primes above.)
+
+Also prove that there are no primes which can be divided by 4. (Hint: Show that if a number can be divided by 4 then it can be divided by 2. Then use the fact that if a number can be divided by 4, then it cannot be equal to 2, and therefore has an interesting divisor. Note that this argument is totally different from the one above, and will *not* use proof by contradiction.)
+::: -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

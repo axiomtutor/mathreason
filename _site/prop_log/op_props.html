@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.241">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mathematical Reasoning 2023 - Semantic Properties</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Mathematical Reasoning 2023</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prop.-logic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Prop. Logic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-prop.-logic">    
+        <li>
+    <a class="dropdown-item" href="../prop_log/ancient_greek.html" rel="" target="">
+ <span class="dropdown-text">Ancient Greece</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/core_examples.html" rel="" target="">
+ <span class="dropdown-text">Two Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/abstract_propositions.html" rel="" target="">
+ <span class="dropdown-text">Abstract Propositions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/parse_tree.html" rel="" target="">
+ <span class="dropdown-text">Parse Trees</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/eval.html" rel="" target="">
+ <span class="dropdown-text">Propositional Evaluation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/op_props.html" rel="" target="">
+ <span class="dropdown-text">Semantic Properties</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/deduction.html" rel="" target="">
+ <span class="dropdown-text">Deduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/axiom_systems.html" rel="" target="">
+ <span class="dropdown-text">Axiom Systems</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fol" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">FOL</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fol">    
+        <li>
+    <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
+ <span class="dropdown-text">Predicate Logic</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arithmetic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Arithmetic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arithmetic">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-geometry" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Geometry</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-geometry">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reals" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Reals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reals">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-combinatorics" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Combinatorics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-combinatorics">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-set-theory" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Set Theory</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-set-theory">    
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/op_props.html">Semantic Properties</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/ancient_greek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ancient Greece</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/core_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two Examples</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/abstract_propositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract Propositions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/parse_tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parse Trees</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/eval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Propositional Evaluation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/op_props.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Semantic Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/deduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../prop_log/axiom_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Axiom Systems</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tautology-contradiction-and-contingency" id="toc-tautology-contradiction-and-contingency" class="nav-link active" data-scroll-target="#tautology-contradiction-and-contingency">Tautology, Contradiction, and Contingency</a>
+  <ul class="collapse">
+  <li><a href="#famous-tautologies" id="toc-famous-tautologies" class="nav-link" data-scroll-target="#famous-tautologies">Famous Tautologies</a></li>
+  </ul></li>
+  <li><a href="#entailment-and-satisfaction" id="toc-entailment-and-satisfaction" class="nav-link" data-scroll-target="#entailment-and-satisfaction">Entailment and Satisfaction</a></li>
+  <li><a href="#satisfaction-in-python" id="toc-satisfaction-in-python" class="nav-link" data-scroll-target="#satisfaction-in-python">Satisfaction in Python</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Semantic Properties</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<p>In this section we will discuss the logical operators in greater depth. Our focus will be on what are called “semantic properties”, which is to say, properties of these objects which determine their truth-values.</p>
+<section id="tautology-contradiction-and-contingency" class="level1">
+<h1>Tautology, Contradiction, and Contingency</h1>
+<p>A naturally interesting idea, is that of a proposition which is “always true”. The simplest example is <span class="math inline">\(P\lor (\neg P)\)</span>, or if we want to use our assumption that negation takes precedence, we could just write this as <span class="math inline">\(P\lor \neg P\)</span>.</p>
+<p>The formal definition: a <strong>tautology</strong> is a proposition <span class="math inline">\(\alpha\)</span> such that <span class="math inline">\(\alpha^{\mathcal E^*} = T\)</span> for every variable evaluation <span class="math inline">\(\mathcal E\)</span>. Another way that we could say this is “true at every row of the truth-table” since variable evaluations are no different from rows of the truth-table.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Small Tautology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Small Tautology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Draw the truth-table for <span class="math inline">\(P\lor \neg P\)</span> and confirm that it is true at every row.</p>
+<p>Also try to come up with another proposition which is also always true.</p>
+</div>
+</div>
+<p>Of course there is the dual concept of a <strong>contradiction</strong>, which is any proposition which is false at every row of its truth table. The negation of any tautology is a contradiction, and the negation of any contradiction is a tautology. Propositions which are neither a tautology nor contradiction, are called <strong>contingencies</strong>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Negate Contingencies">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negate Contingencies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Give examples of contradictions and contingencies.</p>
+<hr>
+<p>Prove that the negation of a contingency is always a contingency.</p>
+</div>
+</div>
+<p>We will write <span class="math inline">\(\top\)</span> as a symbol which represents <span class="math inline">\(P\lor \neg P\)</span> and we write <span class="math inline">\(\bot\)</span> for <span class="math inline">\(P\land \neg P\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Tautology Properties">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tautology Properties
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that if <span class="math inline">\(\alpha\)</span> is any proposition then <span class="math inline">\(\top \lor \alpha\)</span> is equivalent to <span class="math inline">\(\top\)</span>. Also prove that <span class="math inline">\(\top \land \alpha\)</span> is equivalent to <span class="math inline">\(\alpha\)</span>.</p>
+<p>(Note: Why “<span class="math inline">\(\alpha\)</span>?” Well I don’t just mean the proposition <span class="math inline">\(P\)</span>, made from a single variable, nor do I mean the proposition <span class="math inline">\(P\land Q\)</span>, or any other specific proposition. Rather I want to talk about <em>any</em> proposition. This is what <span class="math inline">\(\alpha\)</span> is meant to represent.)</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Contradiction Properties">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Contradiction Properties
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Discover laws for <span class="math inline">\(\bot\)</span> similar to what we found above for <span class="math inline">\(\top\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Tautological Equivalence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tautological Equivalence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that two propositions, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, are equivalent if and only if <span class="math inline">\(\alpha \leftrightarrow \beta\)</span> is a tautology.</p>
+</div>
+</div>
+<section id="famous-tautologies" class="level2">
+<h2 class="anchored" data-anchor-id="famous-tautologies">Famous Tautologies</h2>
+<p>The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivaelnt in the following summary.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Double Negation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Double Negation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg(\neg \alpha) \leftrightarrow \alpha  
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Top to Bot">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Top to Bot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg \top \leftrightarrow \bot
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Bot to Top">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bot to Top
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg \bot \leftrightarrow \top
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Idempotence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Idempotence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\lor\alpha) \leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Commutativity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Commutativity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\lor \beta) \leftrightarrow (\beta\lor \alpha)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Associativity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Associativity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\lor(\beta\lor\gamma)) \leftrightarrow ((\alpha\lor\beta)\lor\gamma)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Idempotence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Idempotence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\lor\alpha \leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Tautology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Tautology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\lor\top \leftrightarrow \top
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Contradiction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Contradiction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\lor\bot \leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Commutativity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Commutativity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\land\beta) \leftrightarrow (\beta\land\alpha)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Associativity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Associativity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\land(\beta\land \gamma))\leftrightarrow ((\alpha\land\beta)\land \gamma)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Idempotence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Idempotence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\land\alpha\leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Tautology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Tautology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\land\top \leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Contradiction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Contradiction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\alpha\land\bot \leftrightarrow \bot
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And Distribution over Or">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And Distribution over Or
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha \land (\beta\lor\gamma)) \leftrightarrow ((\alpha\land\beta)\lor(\alpha\land\gamma))
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or Distribution over And">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or Distribution over And
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\lor(\beta\land\gamma)) \leftrightarrow ((\alpha\lor\beta)\land(\alpha\lor\gamma))
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Or De Morgan's">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or De Morgan’s
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg(\alpha\lor\beta)\leftrightarrow (\neg\alpha\land\neg\beta)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="And De Morgan's">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And De Morgan’s
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg(\alpha\land\beta) \leftrightarrow (\neg\alpha\lor\neg\beta)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Arrow to Or">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arrow to Or
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\to\beta) \leftrightarrow (\neg\alpha\lor\beta)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Neg Arrow">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Neg Arrow
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\neg(\alpha\to\beta) \leftrightarrow (\alpha\land\neg\beta)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Arrow Almost Idempotence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arrow Almost Idempotence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\to\neg\alpha) \leftrightarrow \neg \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Arrow Top">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arrow Top
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\top\to\alpha)\leftrightarrow \alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Arrow Bot">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arrow Bot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\to\bot)\leftrightarrow \neg\alpha
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Binconditional Sameness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Binconditional Sameness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+(\alpha\leftrightarrow\beta) \leftrightarrow ([\alpha\land\beta]\lor[\neg\alpha\land\neg\beta])
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Prove Famous Equivalences">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Prove Famous Equivalences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove any of the above.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="entailment-and-satisfaction" class="level1">
+<h1>Entailment and Satisfaction</h1>
+<p>Perhaps the most important concept in this section is entailment. It is what allows us to infer some propositions from other propositions in an argument – and that is, after all, our primary interest. Take for example “<span class="math inline">\(x\ne 1\)</span>. And if <span class="math inline">\(x\ne 1\)</span> then <span class="math inline">\(x-1\ne 0\)</span>. Therefore <span class="math inline">\(x-1\ne 0\)</span>.” This is an inference from two sentences</p>
+<ul>
+<li><span class="math inline">\(x\ne 1\)</span></li>
+<li>If <span class="math inline">\(x\ne 1\)</span> then <span class="math inline">\(x-1\ne 0\)</span>.</li>
+</ul>
+<p>to the sentence <span class="math inline">\(x-1\ne 0\)</span>. We can abstract this pattern as the following argument form: “<span class="math inline">\(\alpha\)</span>. And if <span class="math inline">\(\alpha\)</span> then <span class="math inline">\(\beta\)</span>. Therefore <span class="math inline">\(\beta\)</span>.” We can in fact collect all of this into a single abstract proposition using the operators that we’ve studied:</p>
+<p><span class="math display">\[
+(\alpha\land[\alpha\to\beta])\to \beta
+\]</span></p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Modus Ponens Tautology">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Modus Ponens Tautology
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that <span class="math inline">\((\alpha\land[\alpha\to\beta])\to\beta\)</span> is a tautology.</p>
+</div>
+</div>
+<p>More generally we can say that a proposition <span class="math inline">\(\alpha\)</span> <strong>entails</strong> the proposition <span class="math inline">\(\beta\)</span> if <span class="math inline">\(\alpha\to\beta\)</span> is a tautology.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Case Elimination Entailment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case Elimination Entailment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that <span class="math inline">\((\alpha\lor\beta)\land\neg\alpha\)</span> entails <span class="math inline">\(\beta\)</span>.</p>
+<p>Also prove that <span class="math inline">\(\beta\)</span> does <strong>not</strong> entail <span class="math inline">\((\alpha\lor\beta)\land\neg\alpha\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Mutual Entailment Equivalence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mutual Entailment Equivalence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that <span class="math inline">\(\alpha\)</span> is equivalent to <span class="math inline">\(\beta\)</span> if and only if <span class="math inline">\(\alpha\)</span> entails <span class="math inline">\(\beta\)</span> and also <span class="math inline">\(\beta\)</span> entails <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Truth Table Entailment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth Table Entailment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Exercise:</p>
+<p>Prove that <span class="math inline">\(\alpha\)</span> entails <span class="math inline">\(\beta\)</span> if and only if there is no row of the truth-tables of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> at which <span class="math inline">\(\alpha\)</span> is true and <span class="math inline">\(\beta\)</span> is false.</p>
+<hr>
+<p>In particular, use the above to prove that a contradiction entails every proposition. Also, the only proposition that a tautology can entail is another tautology.</p>
+</div>
+</div>
+<p>So far, we have discussed entailment in terms of one proposition entailing another proposition. However, we will have many occasions to talk about an entire <em>set</em> of propositions entailing some particular proposition.</p>
+<p>Take for instance the entire <em>theory</em> of Euclidean geometry. This “theory” is in fact just a collection of related propositions, like propositions about the existence of points and lines and other geometric figures. We will also want to talk about the idea that the theory of geometry entails certain facts. For instance we may want to say that “the theory of Euclidean geometry entails the Pythagorean theorem.”</p>
+<p>In order to help us capture this idea, we will let <span class="math inline">\(\Gamma\)</span> represent any set of propositions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We then say that <span class="math inline">\(\Gamma\)</span> <strong>entails</strong> a proposition <span class="math inline">\(\alpha\)</span> if every variable evaluation which satisfies <span class="math inline">\(\Gamma\)</span> also satisfies <span class="math inline">\(\alpha\)</span>.</p>
+<p>Of course now I have to tell you what “satisfies” means, although one could probably guess its meaning before I tell you. We say that the variable evaluation <span class="math inline">\(\mathcal E\)</span> <strong>satisfies</strong> the proposition <span class="math inline">\(\alpha\)</span> if <span class="math inline">\(\alpha^{\mathcal E^*}=T\)</span>. <span class="math inline">\(\mathcal E\)</span> satisfies the set <span class="math inline">\(\Gamma\)</span> if <span class="math inline">\(\mathcal E\)</span> satisfies every sentence in <span class="math inline">\(\Gamma\)</span>. We say that the set <span class="math inline">\(\Gamma\)</span> is <strong>satisfiable</strong> if there exists a variable evaluation which satisfies it.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Satisfaction Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Satisfaction Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Decide which of the following sets are satisfiable.</li>
+</ol>
+<p><span class="math display">\[
+\{P\}, \quad \{P,\neg P\}, \quad \{P, P\to Q, \neg Q\}
+\]</span></p>
+<hr>
+<ol start="2" type="1">
+<li><p>Give an example of an infinite set of propositions which is satisfiable. (We are allowed to use an infinite set of propositional variables, like for instance <span class="math inline">\(\{P_1,P_2, P_3, \dots\}\)</span>. So this is an example. However, because it is too easy, try this harder challenge: Come up with an infinite set of propositions, using only <strong>one</strong> propositional variable <span class="math inline">\(P\)</span>, which is satisfiable.)</p>
+<p>Also come up with an infinite set of propositional variables which is <em>not</em> satisfiable.</p>
+<p>Notice that infinite sets are important, since the theory of Euclidean geometry – and in fact almost every interesting mathematical theory! – is composed of infinitely many propositions.</p>
+<p>Indeed, we probably wouldn’t really need to talk about evaluation, if it weren’t for the importance of infinite sets. Otherwise we could have just relied on the truth-table for everything. But truth-tables are finite objects and only well-defined and understood for finite sets of propositions.</p></li>
+</ol>
+<hr>
+<ol start="3" type="1">
+<li>Show that the proposition <span class="math inline">\(\alpha\)</span> entails the proposition <span class="math inline">\(\beta\)</span> if and only if the set <span class="math inline">\(\{\alpha\}\)</span> entails the proposition <span class="math inline">\(\beta\)</span>.</li>
+</ol>
+<hr>
+<ol start="4" type="1">
+<li><p>Show that a set <span class="math inline">\(\Gamma\)</span> entails the proposition <span class="math inline">\(\alpha\)</span> if and only if there is no variable evaluation <span class="math inline">\(\mathcal E\)</span> which satisfies <span class="math inline">\(\Gamma\)</span> and not <span class="math inline">\(\alpha\)</span>.</p>
+<p>Use this result to argue that the empty set, <span class="math inline">\(\emptyset\)</span>, entails every proposition.</p></li>
+</ol>
+</div>
+</div>
+<p>We often use the notation <span class="math inline">\(\mathcal E\vDash \alpha\)</span> and <span class="math inline">\(\mathcal E\vDash \Gamma\)</span> to express that <span class="math inline">\(\mathcal E\)</span> satisfies the proposition <span class="math inline">\(\alpha\)</span> or the set <span class="math inline">\(\Gamma\)</span>, respectively. We use the notation <span class="math inline">\(\Gamma\vDash \alpha\)</span> to express that <span class="math inline">\(\Gamma\)</span> entails <span class="math inline">\(\alpha\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Explain the Difference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explain the Difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain the difference between satisfaction and entailment. Hint: Almost all of the difference is explained by the <em>types</em> of objects involved.</p>
+</div>
+</div>
+</section>
+<section id="satisfaction-in-python" class="level1">
+<h1>Satisfaction in Python</h1>
+<p>Here is code from previous sections, which we will need for the code after it.</p>
+<div id="ec7ccdeb" class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PropVariable(Proposition):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, v):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> (<span class="bu">type</span>(v) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>) <span class="kw">and</span> <span class="bu">len</span>(v) <span class="op">==</span> <span class="dv">1</span>) </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.v <span class="op">=</span> v</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.v)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> prop_eval(<span class="va">self</span>.v)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Negation(Proposition):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta):</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.neg <span class="op">=</span> beta</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"(not "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.neg) <span class="op">+</span> <span class="st">")"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="dv">1</span> <span class="op">-</span> <span class="va">self</span>.neg.<span class="bu">eval</span>(prop_eval))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Disjunction(Proposition):</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta, gamma):</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition) <span class="op">\</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(gamma),Proposition)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left, <span class="va">self</span>.right <span class="op">=</span> beta, gamma</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"("</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.left )<span class="op">+</span><span class="st">" or "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.right) <span class="op">+</span> <span class="st">")"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">eval</span>(<span class="va">self</span>, prop_eval):</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        l, r <span class="op">=</span> <span class="va">self</span>.left.<span class="bu">eval</span>(prop_eval), <span class="va">self</span>.right.<span class="bu">eval</span>(prop_eval)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>( l <span class="op">+</span> r <span class="op">-</span> l<span class="op">*</span>r )</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> PropVariable(p)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> parseTree(p[<span class="dv">0</span>])</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span>( p[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"not"</span> )</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Negation(parseTree(p[<span class="dv">1</span>]))</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(parseTree(p[<span class="dv">0</span>]), parseTree(p[<span class="dv">2</span>]))</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length 3 list but unrecognized middle token"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length of list unrecognized"</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> pyparsing.Word(pyparsing.alphas) <span class="op">|</span> <span class="st">"not"</span> <span class="op">|</span> <span class="st">"and"</span> <span class="op">|</span> <span class="st">"or"</span> <span class="op">|</span> <span class="st">"if"</span> <span class="op">|</span> <span class="st">"then"</span> <span class="op">|</span> <span class="st">"iff"</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>nesting <span class="op">=</span> pyparsing.nestedExpr( <span class="st">'('</span>, <span class="st">')'</span>, content<span class="op">=</span>terms )</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shape(s): </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> nesting.parseString(<span class="st">"("</span><span class="op">+</span>s<span class="op">+</span><span class="st">")"</span>)[<span class="dv">0</span>]</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parseTree(p)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">eval</span>(prop_string, prop_eval):</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">bool</span>((shape(prop_string)).<span class="bu">eval</span>(prop_eval))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Below is code to find the set of all of the propositional variables in a given proposition. It is effectively a depth-first search of the parse tree.</p>
+<div id="e4a0f1a7" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> all_prop_vars(p):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> PropVariable:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">set</span>(p.v)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> Negation:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> all_prop_vars(p.neg)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> Disjunction:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">set</span>(all_prop_vars(p.left)).union(<span class="bu">set</span>(all_prop_vars(p.right)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>And here is code to take a set of variables, and return a list of all possible variable evaluations for those variables.</p>
+<div id="e87f358b" class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> all_var_evals(var_set):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The bucket is an "accumulator" variable, into which I will place each evaluation as I </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># construct them.  The bucket will then be returned at the end.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    bucket <span class="op">=</span> []</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    var_list <span class="op">=</span> <span class="bu">list</span>(var_set) <span class="co"># Gives the variables an indexing (ordering)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span><span class="op">**</span>(<span class="bu">len</span>(var_set))): <span class="co"># 2^n evaluations</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># From this part of the code to the end, you may find it a little hard to understand.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The way it's implemented depends the fact that every number can be written in </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># binary, and every binary number can be associated with a variable evaluation.  </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Since this is a bit complicated, feel free to not worry about how the rest of this function is implemented.</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        to_bin <span class="op">=</span> row </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        func_list <span class="op">=</span> []</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> to_bin <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            func_list.insert(<span class="dv">0</span>, to_bin <span class="op">%</span> <span class="dv">2</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            to_bin <span class="op">-=</span> to_bin <span class="op">%</span> <span class="dv">2</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            to_bin <span class="op">//=</span> <span class="dv">2</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="bu">len</span>(func_list) <span class="op">&lt;</span> <span class="bu">len</span>(var_list):</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            func_list.insert(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        bucket.append(<span class="kw">lambda</span> x, fl<span class="op">=</span>func_list: fl[var_list.index(x)])</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> bucket</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The code below demonstrates its use. In summary, this creates a proposition, then turns that proposition into a tree (<code>shape(proposition)</code>), then extracts all of its propositional variables (<code>all_prop_vars(shape(proposition))</code>). This is a list of all possible variable evaluations, so there should be 8 of them in total. We evaluate the proposition using each one, and just like with the truth-table for this proposition, precisely one should be false and all others should be true.</p>
+<div id="e0d0f4a4" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>proposition <span class="op">=</span> <span class="st">"(P or Q) or R"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>evals <span class="op">=</span> all_var_evals(all_prop_vars(shape(proposition)))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> evals:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">eval</span>(proposition, e))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True
+True
+True
+True
+True
+True
+True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Tautology, Contradiction, Contingency in Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tautology, Contradiction, Contingency in Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a Python function, which uses the above, to take a proposition as an argument, and return <code>True</code> if it’s a tautology. Also write a function which decides if a proposition is a contradiction. Also write a function which decides if a proposition is a contingency.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Entailment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Entailment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a Python function which takes two arguments – the first argument is a list (or set) of propostions, and the second argument is a single proposition. The function then returns <code>True</code> if the set of propositions entails the second argument, and <code>False</code> otherwise.</p>
+<p>Test your product.</p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>So <span class="math inline">\(\Gamma\)</span> could be the empty set or the entire theory of Euclidean geometry. It is just any set of propositions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
