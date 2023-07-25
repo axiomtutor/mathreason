@@ -6,9 +6,9 @@ We looked at two examples of arguments in the previous section, but we don't wan
 
 # Propositional Variables
 
-We will write an abstract proposition with a variable, like $P$.  What this means is that $P$ could be any proposition, and we don't know which it is.  So for instance $P$ could represent $x=1$ or "Russia is large", or any other assertion that could be true or false.  
+We will write an abstract proposition with a variable, like $P$. What this means is that $P$ could be any proposition, and we don't know which it is. So for instance $P$ could represent $x=1$ or "Russia is large", or any other assertion that could be true or false.
 
-Because we don't know whether an abstract proposition is true or false, we represent this in a table.  In the table below, naturally we use $T$ to denote "true" and $F$ to denote "false".
+Because we don't know whether an abstract proposition is true or false, we represent this in a table. In the table below, naturally we use $T$ to denote "true" and $F$ to denote "false".
 
 $$
 \begin{array}{|c|} \hline 
@@ -34,7 +34,7 @@ One way to form a new proposition from the variable $P$ is to negate it. If the 
 
 To represent the negation of $P$ we write $\neg P$.
 
-Below is the truth-table for negation. 
+Below is the truth-table for negation.
 
 $$
 \begin{array}{|c||c|} \hline
@@ -44,9 +44,9 @@ F & \color{red}T  \\ \hline
 \end{array}
 $$
 
-Now that the table is getting sophisticated, I'm adding some extra features. First of all, I've shaed the first row and column with a gray background.  This is to indicate that the first row is a header row.  Also the first column as a kind of header column, because we will just use it to "index" the entries in the body of the truth table.  
+Now that the table is getting sophisticated, I'm adding some extra features. First of all, I've shaed the first row and column with a gray background. This is to indicate that the first row is a header row. Also the first column as a kind of header column, because we will just use it to "index" the entries in the body of the truth table.
 
-The first "real" content of the table is emphasized below.  
+The first "real" content of the table is emphasized below.
 
 $$
 \begin{array}{|c||c|} \hline
@@ -56,17 +56,17 @@ F & \color{red}T  \\ \hline
 \end{array}
 $$
 
-This is computed by first finding the value $P$, which is $T$ on this row.  Then we apply the $\neg$ operation to it, flipping it to $F$ and hence this is the value.  The second row of truth-values is computed similarly.  
+This is computed by first finding the value $P$, which is $T$ on this row. Then we apply the $\neg$ operation to it, flipping it to $F$ and hence this is the value. The second row of truth-values is computed similarly.
 
 ::: {.callout-important title="Double Negation" appearance="minimal"}
 Exercise:
 
 Make the truth-table for $\neg (\neg P)$.
 
-We say that two propositions are **equivalent** if they "have the same truth-table".[^2] Are $P$ and $\neg(\neg P)$ equivalent?
+We say that two propositions are **equivalent** if they "have the same truth-table".[^1] Are $P$ and $\neg(\neg P)$ equivalent?
 :::
 
-[^2]: Having the same truth-table means: They have the same truth-value at every row of the table.
+[^1]: Having the same truth-table means: They have the same truth-value at every row of the table.
 
 ------------------------------------------------------------------------
 
@@ -135,7 +135,7 @@ print(not True)
 print(not False)
 ```
 
-could instead be implemented with a for-loop.  Fill in the parts of the following code where it contains `%TODO` so that it does the same thing as the code above.
+could instead be implemented with a for-loop. Fill in the parts of the following code where it contains `%TODO` so that it does the same thing as the code above.
 
 ```{python}
 for P in [True, False]:
@@ -190,16 +190,16 @@ $$
 ::: {.callout-important title="General Row Numbers" appearance="minimal"}
 Exercise:
 
-If there were 4 variables, how many rows would be needed?  (Hint: One variable required two rows.  Two variables, four rows; three variables, eight row; ...)
+If there were 4 variables, how many rows would be needed? (Hint: One variable required two rows. Two variables, four rows; three variables, eight row; ...)
 
 If there were $n$ variables, how many rows would be needed?
 :::
 
-Now that we know the column and row "headers" (I am regarding each of the first three columns as a kind of header column.) we can fill in the table for $P\lor Q\lor R$. However, doing it all at once can be difficult to parse, so let's do this in stages. First let's merely populate the columns under the variables -- this is a tedious transcription.
+Now that we know the column and row "headers" we can fill in the table for $P\lor Q\lor R$. However, doing it all at once can be difficult to parse, so let's do this in stages. First let's merely populate the columns under the variables -- this is a tedious transcription.
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|} \hline
-P&Q&R&&P&\lor &(Q&\lor &R)\\\hline\\\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&\columncolor{lightgray}Q&\columncolor{lightgray}R&&P&\lor &(Q&\lor &R)\\\hline&&&&&&&\\\hline
 T&T&T && T &  & T &  & T\\\hline
 T&T&F && T &  & T &  & F\\\hline
 T&F&T && T &  & F &  & T\\\hline
@@ -217,7 +217,7 @@ To fill in the values under $(Q\lor R)$, we get the following table. Notice that
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|} \hline
-P&Q&R&&P&\lor &(Q&\lor &R)\\\hline\\\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&\columncolor{lightgray}Q&\columncolor{lightgray}R&&P&\lor &(Q&\lor &R)\\\hline &&&&&&&\\\hline
 T&T&T && T &  & T & \color{blue}T & T\\\hline
 T&T&F && T &  & T & \color{blue}T & F\\\hline
 T&F&T && T &  & F & \color{blue}T & T\\\hline
@@ -233,7 +233,7 @@ And now that this column has been populated, the column under the first $\lor$ n
 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|} \hline
-P&Q&R&&P&\lor &(Q&\lor &R)\\\hline\\\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&\columncolor{lightgray}Q&\columncolor{lightgray}R&&P&\lor &(Q&\lor &R)\\\hline&&&&&&&&\\\hline
 T&T&T && T & \color{red}T & T & \color{blue}T & T\\\hline
 T&T&F && T & \color{red}T & T & \color{blue}T & F\\\hline
 T&F&T && T & \color{red}T & F & \color{blue}T & T\\\hline
@@ -245,20 +245,29 @@ F&F&F && F & \color{red}F & F & \color{blue}F & F\\\hline
 \end{array}
 $$
 
+As usual, the truth-table of the proposition is highlighted in red.
+
 ::: {.callout-important title="Python Triple Disjunction" appearance="minimal"}
 Exercise:
 
 Demonstrate a couple of rows of the truth-table above in some Python code. For instance, run stuff like `True or (False or False)`.
-
-Then write a triple-for-loop to reproduce the entire truth-table.
 :::
 
 ::: {.callout-important title="Finite Disjunction" appearance="minimal"}
 Exercise:
 
-Notice that the only row at which $P\lor(Q\lor R)$ is $F$ is the final row. That's also true for $P\lor Q$. In fact, if you make the truth-table for $P\lor (Q\lor (R\lor S))$ it will be the same.
+The following Python code computes the truth-table for $P\lor(Q\lor R)$.
 
-Write a Python program to demonstrate this.
+```{python}
+for P in [True, False]:
+    for Q in [True, False]:
+        for R in [True, False]:
+            print(P or (Q or R))
+```
+
+Write Python code to compute the truth-table for $P\lor(Q\lor (R\lor S))$.
+
+When you have, note that the only row at which the table is false, is the last row.
 
 ------------------------------------------------------------------------
 
@@ -274,7 +283,7 @@ This fact is called the **associativity** of disjunction.
 
 ------------------------------------------------------------------------
 
-I also claim that disjunction is **commutative** which means $P\lor Q$ is equivalent to $Q\lor P$. Write a Python program to prove that this is true.
+I also claim that disjunction is **commutative** which means $P\lor Q$ is equivalent to $Q\lor P$. Write a Python program to prove whether this is true.
 :::
 
 ::: {.callout-important title="Parsing Ambiguity" appearance="minimal"}
@@ -304,10 +313,12 @@ However, although $\neg P\lor Q$ is technically meaningless, we will in fact ass
 
 That is to say, in any abstract logical expression in which negation occurs, we will assume that it applies *first*.
 
-And technically $P\lor Q\lor R$ is meaningless because we technically require parentheses to distinguish between $P\lor (Q\lor R)$ and $(P\lor Q)\lor R$. However, since we have seen that these are equivalent, then we may understand $P\lor Q\lor R$ as shorthand for either of these -- and it doesn't matter which one. Therefore this, too, will be our convention. That is to say, we will gladly write $P\lor Q\lor R$ and allow the reader to interpret this as either $P\lor (Q\lor R)$ or $(P\lor Q)\lor R$, whichever is their favorite.
+------------------------------------------------------------------------
+
+Also, technically $P\lor Q\lor R$ is meaningless because we technically require parentheses to distinguish between $P\lor (Q\lor R)$ and $(P\lor Q)\lor R$.
+
+However, since we have seen that these are equivalent, in fact the ambiguity is unimportant. We will therefore feel free to write down $P\lor Q\lor R$ and the reader is free to decide for themselves whether this means $P\lor (Q\lor R)$ or $(P\lor Q)\lor R$ -- whichever one the reader likes best!
 :::
-
-
 
 ## Conjunction
 
@@ -315,7 +326,7 @@ Having done all that work for disjunction, conjunction is mostly trivial. It rep
 
 $$
 \begin{array}{|c|c|c|c|c|c|}\hline
-P&Q&&P&\land &Q\\\hline\\\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&\columncolor{lightgray}Q&&P&\land &Q\\\hline &&&&&\\\hline
 T&T&&T&\color{red}T&T\\\hline
 T&F&&T&\color{red}F&F\\\hline
 F&T&&F&\color{red}F&T\\\hline
@@ -332,7 +343,7 @@ Re-do all the exercises for disjunction but this time for conjunction, noting an
 ::: {.callout-important title="Distribution" appearance="minimal"}
 Exercise:
 
-Show (either in a table or a program) that $P\land (Q\lor R)$ is **not** equivalent to $(P\land Q)\lor R$ and conclude that "conjunction and disjunction do not associate".[^5]
+Show (either in a table or a program) that $P\land (Q\lor R)$ is **not** equivalent to $(P\land Q)\lor R$ and conclude that "conjunction and disjunction do not associate".[^2]
 
 However, show that $P\land (Q\lor R)$ is equivalent to $(P\land Q) \lor (P\land R)$. Also, come up with a corresponding equivalence for $P\lor (Q\land R)$ and prove that it's equivalent.
 
@@ -351,7 +362,7 @@ $$
 Therefore these logical operators are "more distributive" than the mathematical operators. Each distributes over the other, whereas in mathematics, it is only that multiplication distributes over addition.
 :::
 
-[^5]: It may take an act of interpretation to know exactly what is being asked here. But to say that "conjunction and disjunction do not associate", means that if an expression has both symbols, then you cannot merely switch around the parentheses.
+[^2]: It may take an act of interpretation to know exactly what is being asked here. But to say that "conjunction and disjunction do not associate", means that if an expression has both symbols, then you cannot merely switch around the parentheses.
 
 ## The Conditional
 
@@ -359,7 +370,7 @@ The conditional is, in a sense, no different from the other logical symbols. It 
 
 $$
 \begin{array}{|c|c|c|c|c|c|}\hline
-P&Q&&P&\to &Q\\\hline\\\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&\columncolor{lightgray}Q&&P&\to &Q\\\hline&&&&\\\hline
 T&T&&T&\color{red}T&T\\\hline
 T&F&&T&\color{red}F&F\\\hline
 F&T&&F&\color{red}T&T\\\hline
@@ -383,13 +394,21 @@ So far I think everything makes pretty immediate sense, but the next two possibi
 
 In the table, it is clear that we have decided that, when $P$ is false, the conditional sentence is true (regardless of the truth-value of $Q$). You can imagine that it behaves like a promise: "I promise that, IF the sun is out, then the weather is warm." When the condition of the promise is removed, because say the sun is not out, then the promise is so-to-speak nullified -- and we say that the speaker was speaking the truth.
 
-In the example of the sun and the weather, imagine the "false-true" case in which the sun is not out but the weather is still warm. In that case, we regard the speaker as not wrong, because the condition of the sentence was not met. And similarly, in the false-false case whether the sun is not out and the weather is not warm, again the speaker is still speaking the truth.[^6]
+In the example of the sun and the weather, imagine the "false-true" case in which the sun is not out but the weather is still warm. In that case, we regard the speaker as not wrong, because the condition of the sentence was not met. And similarly, in the false-false case whether the sun is not out and the weather is not warm, again the speaker is still speaking the truth.[^3]
 
-[^6]: The entire topic of the conditional is, in fact, a giant philosophical mess. There has been an enormous literature in linguistics and philosophy on the precise meaning and "truth-conditions" for conditional sentences. The resounding agreement among specialists, is that natural languages do not use a truth-functional conditional. That is to say, real languages have a meaning to their conditional sentences, which cannot be captured in a truth-table. Therefore one should regard the conditional that we use in mathematics as a kind of "formal language" rather than a natural language.
+[^3]: The entire topic of the conditional is, in fact, a giant philosophical mess. There has been an enormous literature in linguistics and philosophy on the precise meaning and "truth-conditions" for conditional sentences. The resounding agreement among specialists, is that natural languages do not use a truth-functional conditional. That is to say, real languages have a meaning to their conditional sentences, which cannot be captured in a truth-table. Therefore one should regard the conditional that we use in mathematics as a kind of "formal language" rather than a natural language.
 
 ::: {.callout-important title="Conditional Properties" appearance="minimal"}
 Show that the conditional is neither associative nor commutative.
 :::
+
+::: {.callout-note title="Antecedent and Consequent" appearance="minimal"}
+Because the conditional is not commutative, it now makes sense to have vocabulary for talking about the left- and right-side of the $\to$ symbol. If $\alpha$ and $\beta$ are any two propositions[^4] then for the conditional proposition $\alpha\to\beta$ we call $\alpha$ the **antecedent** and $\beta$ the **consequent**.
+
+For disjunction and conjunction such a distinction makes no sense, but it will still be worthwhile to have vocabulary to talk about the component sentences. So for instance, in the conjunction proposition $\alpha\land\beta$, we call $\alpha$ and $\beta$ the **conjuncts** of the conjunction. We also call them the **disjuncts** of the disjunction $\alpha\lor\beta$.
+:::
+
+[^4]: Why $\alpha$ and $\beta$, rather than say $P$ and $Q$? Well, $P$ and $Q$ are specifically propositional variables. I want to make a claim for all possible propositions, not just the variables. So for instance, $\alpha$ could itself be $P\to (Q\land R)$.
 
 Besides having the most confusing truth-table, the conditional also is the hardest to translate to and from natural language. Of course if we say "If a polygon has three angles then it is a triangle," then we would align $P$ with the sentence "the polygon has three angles" and $Q$ with "the polygon is a triangle". The the entire proposition is aligned with $P\to Q$.
 
@@ -399,7 +418,7 @@ However, even this is not true! The sentence "The polygon is a triangle only if 
 
 To help make the "only if" construction clearer, imagine a castle which is only accessible by a bridge, which is guarded by a knight.
 
-![](/_site/prop_log\images\knight.png){fig-align="left" width="204"}
+![](/_site/prop_log\images\knight.png){fig-align="center" width="204"}
 
 Then the sentence "You can enter the castle only if you take the bridge" can be stated as the if-then sentence
 
@@ -410,7 +429,7 @@ Note that the reverse is not true: If you take the bridge, you might not enter t
 ::: {.callout-important title="Only If" appearance="minimal"}
 Exercise:
 
-Let $P$ be the proposition "$x+1 = 2$" and let $Q$ be the proposition "$x=1$". Is the proposition "$P$ only if $Q$" the same as $P\to Q$ or $Q\to P$?
+Let $P$ be the proposition "$x+1 = 2$" and let $Q$ be the proposition "$x=1$". Is the proposition "$x+1=2$ only if $x=1$" the same as $P\to Q$ or $Q\to P$?
 :::
 
 ::: {.callout-important title="Only If" appearance="minimal"}
@@ -428,4 +447,3 @@ Exercise:
 
 Produce the truth-table for $P\leftrightarrow Q$, and show that $\leftrightarrow$ is both commutative and associative.
 :::
-
