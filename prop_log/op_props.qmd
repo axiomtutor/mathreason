@@ -2,69 +2,59 @@
 title: "Semantic Properties"
 ---
 
-In this section we will discuss the logical operators in greater depth.  Our focus will be on what are called "semantic properties", which is to say, properties of these objects which determine their truth-values.
+In this section we will discuss the logical operators in greater depth. Our focus will be on what are called "semantic properties", which is to say, properties of these objects which determine their truth-values.
 
 # Tautology, Contradiction, and Contingency
 
-A naturally interesting idea, is that of a proposition which is "always true".  The simplest example is $P\lor (\neg P)$, or if we want to use our assumption that negation takes precedence, we could just write this as $P\lor \neg P$. 
+A naturally interesting idea, is that of a proposition which is "always true". The simplest example is $P\lor (\neg P)$, or if we want to use our assumption that negation takes precedence, we could just write this as $P\lor \neg P$.
 
-The formal definition: a **tautology** is a proposition $\alpha$ such that $\alpha^{\mathcal E^*} = T$ for every variable evaluation $\mathcal E$.  Another way that we could say this is "true at every row of the truth-table" since variable evaluations are no different from rows of the truth-table.  
+The formal definition: a **tautology** is a proposition $\alpha$ such that $\alpha^{\mathcal E^*} = T$ for every variable evaluation $\mathcal E$. Another way that we could say this is "true at every row of the truth-table" since variable evaluations are no different from rows of the truth-table.
 
 ::: {.callout-important title="Small Tautology" appearance="minimal"}
-
 Exercise:
 
-Draw the truth-table for $P\lor \neg P$ and confirm that it is true at every row.  
+Draw the truth-table for $P\lor \neg P$ and confirm that it is true at every row.
 
 Also try to come up with another proposition which is also always true.
-
 :::
 
-Of course there is the dual concept of a **contradiction**, which is any proposition which is false at every row of its truth table.  The negation of any tautology is a contradiction, and the negation of any contradiction is a tautology.  Propositions which are neither a tautology nor contradiction, are called **contingencies**.  
+Of course there is the dual concept of a **contradiction**, which is any proposition which is false at every row of its truth table. The negation of any tautology is a contradiction, and the negation of any contradiction is a tautology. Propositions which are neither a tautology nor contradiction, are called **contingencies**.
 
 ::: {.callout-important title="Negate Contingencies" appearance="minimal"}
-
 Exercise:
 
 Give examples of contradictions and contingencies.
 
--------
+------------------------------------------------------------------------
 
-Prove that the negation of a contingency is always a contingency.  
-
+Prove that the negation of a contingency is always a contingency.
 :::
 
-We will write $\top$ as a symbol which represents $P\lor \neg P$ and we write $\bot$ for $P\land \neg P$.  
+We will write $\top$ as a symbol which represents $P\lor \neg P$ and we write $\bot$ for $P\land \neg P$.
 
 ::: {.callout-important title="Tautology Properties" appearance="minimal"}
-
 Exercise:
 
-Prove that if $\alpha$ is any proposition then $\top \lor \alpha$ is equivalent to $\top$.  Also prove that $\top \land \alpha$ is equivalent to $\alpha$.  
+Prove that if $\alpha$ is any proposition then $\top \lor \alpha$ is equivalent to $\top$. Also prove that $\top \land \alpha$ is equivalent to $\alpha$.
 
-(Note: Why "$\alpha$?"  Well I don't just mean the proposition $P$, made from a single variable, nor do I mean the proposition $P\land Q$, or any other specific proposition.  Rather I want to talk about *any* proposition.  This is what $\alpha$ is meant to represent.)
-
+(Note: Why "$\alpha$?" Well I don't just mean the proposition $P$, made from a single variable, nor do I mean the proposition $P\land Q$, or any other specific proposition. Rather I want to talk about *any* proposition. This is what $\alpha$ is meant to represent.)
 :::
 
 ::: {.callout-important title="Contradiction Properties" appearance="minimal"}
+Exercise:
 
-Exercise: 
-
-Discover laws for $\bot$ similar to what we found above for $\top$.  
-
+Discover laws for $\bot$ similar to what we found above for $\top$.
 :::
 
 ::: {.callout-important title="Tautological Equivalence" appearance="minimal"}
-
 Exercise:
 
-Prove that two propositions, $\alpha$ and $\beta$, are equivalent if and only if $\alpha \leftrightarrow \beta$ is a tautology. 
-
+Prove that two propositions, $\alpha$ and $\beta$, are equivalent if and only if $\alpha \leftrightarrow \beta$ is a tautology.
 :::
 
 ## Famous Tautologies
 
-The following is a summary of famous equivalences.  They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions.  In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivaelnt in the following summary.  
+The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivaelnt in the following summary.
 
 ::: {.callout-note title="Double Negation" appearance="minimal"}
 $$
@@ -109,11 +99,9 @@ $$
 :::
 
 ::: {.callout-note title="Or Tautology" appearance="minimal"}
-
 $$
 \alpha\lor\top \leftrightarrow \top
 $$
-
 :::
 
 ::: {.callout-note title="Or Contradiction" appearance="minimal"}
@@ -159,75 +147,57 @@ $$
 :::
 
 ::: {.callout-note title="Or Distribution over And" appearance="minimal"}
-
 $$
 (\alpha\lor(\beta\land\gamma)) \leftrightarrow ((\alpha\lor\beta)\land(\alpha\lor\gamma))
 $$
-
 :::
 
 ::: {.callout-note title="Or De Morgan's" appearance="minimal"}
-
 $$
 \neg(\alpha\lor\beta)\leftrightarrow (\neg\alpha\land\neg\beta)
 $$
-
 :::
 
 ::: {.callout-note title="And De Morgan's" appearance="minimal"}
-
 $$
 \neg(\alpha\land\beta) \leftrightarrow (\neg\alpha\lor\neg\beta)
 $$
-
 :::
 
 ::: {.callout-note title="Arrow to Or" appearance="minimal"}
-
 $$
 (\alpha\to\beta) \leftrightarrow (\neg\alpha\lor\beta)
 $$
-
 :::
 
 ::: {.callout-note title="Neg Arrow" appearance="minimal"}
-
 $$
 \neg(\alpha\to\beta) \leftrightarrow (\alpha\land\neg\beta)
 $$
-
 :::
 
 ::: {.callout-note title="Arrow Almost Idempotence" appearance="minimal"}
-
 $$
 (\alpha\to\neg\alpha) \leftrightarrow \neg \alpha
 $$
-
 :::
 
 ::: {.callout-note title="Arrow Top" appearance="minimal"}
-
 $$
 (\top\to\alpha)\leftrightarrow \alpha
 $$
-
 :::
 
 ::: {.callout-note title="Arrow Bot" appearance="minimal"}
-
 $$
 (\alpha\to\bot)\leftrightarrow \neg\alpha
 $$
-
 :::
 
 ::: {.callout-note title="Binconditional Sameness" appearance="minimal"}
-
 $$
 (\alpha\leftrightarrow\beta) \leftrightarrow ([\alpha\land\beta]\lor[\neg\alpha\land\neg\beta])
 $$
-
 :::
 
 ::: {.callout-important title="Prove Famous Equivalences" appearance="minimal"}
@@ -238,12 +208,12 @@ Prove any of the above.
 
 # Entailment and Satisfaction
 
-Perhaps the most important concept in this section is entailment.  It is what allows us to infer some propositions from other propositions in an argument -- and that is, after all, our primary interest.  Take for example "$x\ne 1$.  And if $x\ne 1$ then $x-1\ne 0$.  Therefore $x-1\ne 0$."  This is an inference from two sentences 
+Perhaps the most important concept in this section is entailment. It is what allows us to infer some propositions from other propositions in an argument -- and that is, after all, our primary interest. Take for example "$x\ne 1$. And if $x\ne 1$ then $x-1\ne 0$. Therefore $x-1\ne 0$." This is an inference from two sentences
 
-* $x\ne 1$
-* If $x\ne 1$ then $x-1\ne 0$.
+-   $x\ne 1$
+-   If $x\ne 1$ then $x-1\ne 0$.
 
-to the sentence $x-1\ne 0$.  We can abstract this pattern as the following argument form: "$\alpha$.  And if $\alpha$ then $\beta$.  Therefore $\beta$."  We can in fact collect all of this into a single abstract proposition using the operators that we've studied:
+to the sentence $x-1\ne 0$. We can abstract this pattern as the following argument form: "$\alpha$. And if $\alpha$ then $\beta$. Therefore $\beta$." We can in fact collect all of this into a single abstract proposition using the operators that we've studied:
 
 $$
 (\alpha\land[\alpha\to\beta])\to \beta
@@ -252,83 +222,77 @@ $$
 ::: {.callout-important title="Modus Ponens Tautology" appearance="minimal"}
 Exercise:
 
-Prove that $(\alpha\land[\alpha\to\beta])\to\beta$ is a tautology.  
+Prove that $(\alpha\land[\alpha\to\beta])\to\beta$ is a tautology.
 :::
 
-More generally we can say that a proposition $\alpha$ **entails** the proposition $\beta$ if $\alpha\to\beta$ is a tautology.  
+More generally we can say that a proposition $\alpha$ **entails** the proposition $\beta$ if $\alpha\to\beta$ is a tautology.
 
 ::: {.callout-important title="Case Elimination Entailment" appearance="minimal"}
 Exercise:
 
-Prove that $(\alpha\lor\beta)\land\neg\alpha$ entails $\beta$.  
+Prove that $(\alpha\lor\beta)\land\neg\alpha$ entails $\beta$.
 
-Also prove that $\beta$ does **not** entail $(\alpha\lor\beta)\land\neg\alpha$.  
+Also prove that $\beta$ does **not** entail $(\alpha\lor\beta)\land\neg\alpha$.
 :::
 
 ::: {.callout-important title="Mutual Entailment Equivalence" appearance="minimal"}
-
 Exercise:
 
 Prove that $\alpha$ is equivalent to $\beta$ if and only if $\alpha$ entails $\beta$ and also $\beta$ entails $\alpha$.
-
 :::
 
 ::: {.callout-important title="Truth Table Entailment" appearance="minimal"}
-
 Exercise:
 
-Prove that $\alpha$ entails $\beta$ if and only if there is no row of the truth-tables of $\alpha$ and $\beta$ at which $\alpha$ is true and $\beta$ is false. 
+Prove that $\alpha$ entails $\beta$ if and only if there is no row of the truth-tables of $\alpha$ and $\beta$ at which $\alpha$ is true and $\beta$ is false.
 
-----------------------------------
+------------------------------------------------------------------------
 
-In particular, use the above to prove that a contradiction entails every proposition.  Also, the only proposition that a tautology can entail is another tautology.  
-
+In particular, use the above to prove that a contradiction entails every proposition. Also, the only proposition that a tautology can entail is another tautology.
 :::
 
-So far, we have discussed entailment in terms of one proposition entailing another proposition.  However, we will have many occasions to talk about an entire *set* of propositions entailing some particular proposition.  
+So far, we have discussed entailment in terms of one proposition entailing another proposition. However, we will have many occasions to talk about an entire *set* of propositions entailing some particular proposition.
 
-Take for instance the entire *theory* of Euclidean geometry.  This "theory" is in fact just a collection of related propositions, like propositions about the existence of points and lines and other geometric figures.  We will also want to talk about the idea that the theory of geometry entails certain facts.  For instance we may want to say that "the theory of Euclidean geometry entails the Pythagorean theorem."  
+Take for instance the entire *theory* of Euclidean geometry. This "theory" is in fact just a collection of related propositions, like propositions about the existence of points and lines and other geometric figures. We will also want to talk about the idea that the theory of geometry entails certain facts. For instance we may want to say that "the theory of Euclidean geometry entails the Pythagorean theorem."
 
-In order to help us capture this idea, we will let $\Gamma$ represent any set of propositions.^[So $\Gamma$ could be the empty set or the entire theory of Euclidean geometry.  It is just any set of propositions.]  We then say that $\Gamma$ **entails** a proposition $\alpha$ if every variable evaluation which satisfies $\Gamma$ also satisfies $\alpha$.
+In order to help us capture this idea, we will let $\Gamma$ represent any set of propositions.[^1] We then say that $\Gamma$ **entails** a proposition $\alpha$ if every variable evaluation which satisfies $\Gamma$ also satisfies $\alpha$.
 
-Of course now I have to tell you what "satisfies" means, although one could probably guess its meaning before I tell you.  We say that the variable evaluation $\mathcal E$ **satisfies** the proposition $\alpha$ if $\alpha^{\mathcal E^*}=T$.  $\mathcal E$ satisfies the set $\Gamma$ if $\mathcal E$ satisfies every sentence in $\Gamma$.  We say that the set $\Gamma$ is **satisfiable** if there exists a variable evaluation which satisfies it.  
+[^1]: So $\Gamma$ could be the empty set or the entire theory of Euclidean geometry. It is just any set of propositions.
+
+Of course now I have to tell you what "satisfies" means, although one could probably guess its meaning before I tell you. We say that the variable evaluation $\mathcal E$ **satisfies** the proposition $\alpha$ if $\alpha^{\mathcal E^*}=T$. $\mathcal E$ satisfies the set $\Gamma$ if $\mathcal E$ satisfies every sentence in $\Gamma$. We say that the set $\Gamma$ is **satisfiable** if there exists a variable evaluation which satisfies it.
 
 ::: {.callout-important title="Satisfaction Exercise" appearance="minimal"}
-
-1. Decide which of the following sets are satisfiable.
+1.  Decide which of the following sets are satisfiable.
 
 $$
 \{P\}, \quad \{P,\neg P\}, \quad \{P, P\to Q, \neg Q\}
 $$
 
-----
+------------------------------------------------------------------------
 
-2. Give an example of an infinite set of propositions which is satisfiable.  (We are allowed to use an infinite set of propositional variables, like for instance $\{P_1,P_2, P_3, \dots\}$.  So this is an example.  However, because it is too easy, try this harder challenge:  Come up with an infinite set of propositions, using only **one** propositional variable $P$, which is satisfiable.)
+2.  Give an example of an infinite set of propositions which is satisfiable. (We are allowed to use an infinite set of propositional variables, like for instance $\{P_1,P_2, P_3, \dots\}$. So this is an example. However, because it is too easy, try this harder challenge: Come up with an infinite set of propositions, using only **one** propositional variable $P$, which is satisfiable.)
 
-   Also come up with an infinite set of propositional variables which is *not* satisfiable.  
+    Also come up with an infinite set of propositional variables which is *not* satisfiable.
 
-   Notice that infinite sets are important, since the theory of Euclidean geometry -- and in fact almost every interesting mathematical theory! -- is composed of infinitely many propositions.  
-   
-   Indeed, we probably wouldn't really need to talk about evaluation, if it weren't for the importance of infinite sets.  Otherwise we could have just relied on the truth-table for everything.  But truth-tables are finite objects and only well-defined and understood for finite sets of propositions.  
+    Notice that infinite sets are important, since the theory of Euclidean geometry -- and in fact almost every interesting mathematical theory! -- is composed of infinitely many propositions.
 
-----
+    Indeed, we probably wouldn't really need to talk about evaluation, if it weren't for the importance of infinite sets. Otherwise we could have just relied on the truth-table for everything. But truth-tables are finite objects and only well-defined and understood for finite sets of propositions.
 
-3. Show that the proposition $\alpha$ entails the proposition $\beta$ if and only if the set $\{\alpha\}$ entails the proposition $\beta$.  
+------------------------------------------------------------------------
 
-----
+3.  Show that the proposition $\alpha$ entails the proposition $\beta$ if and only if the set $\{\alpha\}$ entails the proposition $\beta$.
 
-4. Show that a set $\Gamma$ entails the proposition $\alpha$ if and only if there is no variable evaluation $\mathcal E$ which satisfies $\Gamma$ and not $\alpha$.  
+------------------------------------------------------------------------
 
-   Use this result to argue that the empty set, $\emptyset$, entails every proposition.  
+4.  Show that a set $\Gamma$ entails the proposition $\alpha$ if and only if there is no variable evaluation $\mathcal E$ which satisfies $\Gamma$ and not $\alpha$.
 
+    Use this result to argue that the empty set, $\emptyset$, entails every proposition.
 :::
 
-We often use the notation $\mathcal E\vDash \alpha$ and $\mathcal E\vDash \Gamma$ to express that $\mathcal E$ satisfies the proposition $\alpha$ or the set $\Gamma$, respectively.  We use the notation $\Gamma\vDash \alpha$ to express that $\Gamma$ entails $\alpha$.
+We often use the notation $\mathcal E\vDash \alpha$ and $\mathcal E\vDash \Gamma$ to express that $\mathcal E$ satisfies the proposition $\alpha$ or the set $\Gamma$, respectively. We use the notation $\Gamma\vDash \alpha$ to express that $\Gamma$ entails $\alpha$.
 
 ::: {.callout-important title="Explain the Difference" appearance="minimal"}
-
-Explain the difference between satisfaction and entailment.  Hint: Almost all of the difference is explained by the *types* of objects involved.  
-
+Explain the difference between satisfaction and entailment. Hint: Almost all of the difference is explained by the *types* of objects involved.
 :::
 
 # Satisfaction in Python
@@ -396,7 +360,7 @@ def eval(prop_string, prop_eval):
     return bool((shape(prop_string)).eval(prop_eval))
 ```
 
-Below is code to find the set of all of the propositional variables in a given proposition.  It is effectively a depth-first search of the parse tree.  
+Below is code to find the set of all of the propositional variables in a given proposition. It is effectively a depth-first search of the parse tree.
 
 ```{python}
 def all_prop_vars(p):
@@ -433,7 +397,7 @@ def all_var_evals(var_set):
     return bucket
 ```
 
-The code below demonstrates its use.  In summary, this creates a proposition, then turns that proposition into a tree (`shape(proposition)`), then extracts all of its propositional variables (`all_prop_vars(shape(proposition))`).  This is a list of all possible variable evaluations, so there should be 8 of them in total.  We evaluate the proposition using each one, and just like with the truth-table for this proposition, precisely one should be false and all others should be true.  
+The code below demonstrates its use. In summary, this creates a proposition, then turns that proposition into a tree (`shape(proposition)`), then extracts all of its propositional variables (`all_prop_vars(shape(proposition))`). This is a list of all possible variable evaluations, so there should be 8 of them in total. We evaluate the proposition using each one, and just like with the truth-table for this proposition, precisely one should be false and all others should be true.
 
 ```{python}
 proposition = "(P or Q) or R"
@@ -442,14 +406,44 @@ for e in evals:
     print(eval(proposition, e))
 ```
 
+::: {.callout-important title="Python Set Satisfaction" appearance="minimal"}
+Write a function `set_sat(prop_set, var_eval)`. As you can see, the function should take two arguments, `prop_set` and `var_eval`. The argument `prop_set` is a set of propositions, for example `{"P", "if P then Q"}`. The argument `var_eval` is a variable evaluation. The function should return `True` if `var_eval` satisfies `prop_set`.
+
+------------------------------------------------------------------------
+
+Here's a funny question. Does it make any sense to talk about satisfying the *empty* set of propositions? That is to say, if $\mathcal E$ is a variable assignment, does it make any sense to talk about whether $\mathcal E\vDash \emptyset$?
+
+Here are a few ways to think about the problem.
+
+1.  Run the function you designed above and see what it says.
+
+2.  Observe that in general, the fewer premises you have, the "weaker" your premise set is ... in the following sense.
+
+    If you have $\{P,Q\}$, then this is satisfied by relatively few variable evaluations. On the other hand $\{P\}$ is satisfied by relatively more. In particular, every variable evaluation which satisfies $\{P,Q\}$ also satisfies $\{P\}$, but here is an example of a variable evaluation which satisfies $\{P\}$ but not $\{P,Q\}$:
+
+    $$
+    P^{\mathcal E}=T, \quad Q^{\mathcal E}=F
+    $$
+
+    Continuing the trend toward the farthest extreme, then what is the set of variable evaluations which satisfy $\emptyset$?
+
+3.  In mathematics we often run into cases, like this, of "vacuous quantification". In this particular case, it goes like this: "$\mathcal E\vDash \emptyset$ means that for every $\alpha\in\emptyset$ (there isn't any such $\alpha$, of course) we have that $\mathcal E \vDash \alpha$." Another place where this comes up is with the subset relation between sets. We say that $X\subseteq Y$ means that every $x\in X$ is also $x\in Y$. When $X=\emptyset$, then there is no such $x$. \
+    \
+    Whenever empty quantification comes up, we always say that the sentence is true. That is to say, in mathematics we say that $\emptyset\subseteq Y$ for every set $Y$, because empty quantification is always true. Therefore likewise we also say that $\mathcal E\vDash \emptyset$. \
+    \
+    The reason why we have this convention is, like we have observed in (1.) and (2.), it is a continuation of a trend or pattern. But for another reason, it is a *conditional* statement! It says "IF $\alpha\in\emptyset$ ..." or "IF $x\in \emptyset …$. Since the antecedent of the conditional here is false, then therefore we regard the conditional proposition as true!
+:::
+
 ::: {.callout-important title="Tautology, Contradiction, Contingency in Python" appearance="minimal"}
-
-Write a Python function, which uses the above, to take a proposition as an argument, and return `True` if it's a tautology.  Also write a function which decides if a proposition is a contradiction.  Also write a function which decides if a proposition is a contingency.  
-
+Write a Python function, which uses the above, to take a proposition as an argument, and return `True` if it's a tautology. Also write a function which decides if a proposition is a contradiction. Also write a function which decides if a proposition is a contingency.
 :::
 
 ::: {.callout-important title="Entailment" appearance="minimal"}
-Write a Python function which takes two arguments -- the first argument is a list (or set) of propostions, and the second argument is a single proposition.  The function then returns `True` if the set of propositions entails the second argument, and `False` otherwise.
+Write a Python function which takes two arguments -- the first argument is a list (or set) of propostions, and the second argument is a single proposition. The function then returns `True` if the set of propositions entails the second argument, and `False` otherwise.
 
 Test your product.
+
+------------------------------------------------------------------------
+
+The officially accepted answer in mathematics and logic is "yes"! If we think about the definition of entailment, applied here, we would need to be able to decide whether a given variable assignment $\mathcal E$ satisfies $\emptyset$.
 :::

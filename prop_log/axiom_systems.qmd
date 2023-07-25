@@ -2,4 +2,14 @@
 title: "Axiom Systems"
 ---
 
-Finally we can say something about axiomatic systems.  An **axiom system** is just any decidable set of axioms.  Of course now I have to tell you what "decidable" means.  
+Finally we can say something about axiomatic systems.  In order to discuss this, we should have in mind a few examples of axiomatic systems.
+
+# Euclidean Geometry
+
+Euclidean geometry is the axiom system which describes most of the familiar ideas of geometry.  It is made from the following list of axioms.  
+
+1. There are some three points which are not colinear.  
+2. For any two points there is a unique line which runs through them.
+3. A line segment can be prolonged indefinitely.
+4. For any two points there is a circle which is centered on one of the points and passing through the other.
+5. For any line and point not on the line, there exists a line parallel to the first line, which runs through the point.  
