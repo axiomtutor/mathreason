@@ -381,7 +381,7 @@ Double Negation
 </div>
 <hr>
 <p>Negation is also represented in almost every programming language. Below we can see how Python represents truth values, and then see how Python gives the ability to negate them.</p>
-<div id="05da5987" class="cell" data-execution_count="1">
+<div id="f70811f9" class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">True</span>)</span>
@@ -422,7 +422,7 @@ F&amp;F&amp;&amp;\color{red}F&amp;\\\hline
 \]</span></p>
 <p>Note that this time the table has four rows (not counting the header row which declares the variables and proposition). This is because there are more possibilities with two variables than with just one. We could have both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> true, which is the first row – or we could have one true and the other false, which is the next two rows – or both could be false, which is the final row.</p>
 <p>In Python we can model this with the disjunction operator.</p>
-<div id="7ff09a22" class="cell" data-execution_count="2">
+<div id="7f84de5c" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="kw">or</span> <span class="va">True</span>)</span>
@@ -438,7 +438,7 @@ False</code></pre>
 </div>
 </div>
 <p>In fact, the above can be done more simply in a couple of “embedded for-loops”, as shown below.</p>
-<div id="69d37710" class="cell" data-execution_count="3">
+<div id="b1143d4f" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>truth_values <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>] <span class="co"># A list of all truth values</span></span>
@@ -468,7 +468,7 @@ Not Loop
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
 <p>This code:</p>
-<div id="b1ebea5b" class="cell" data-execution_count="4">
+<div id="7c6150e8" class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">True</span>)</span>
@@ -480,7 +480,7 @@ True</code></pre>
 </div>
 </div>
 <p>could instead be implemented with a for-loop. Fill in the parts of the following code where it contains <code>%TODO</code> so that it does the same thing as the code above.</p>
-<div id="d964b5be" class="cell" data-execution_count="5">
+<div id="36378d7c" class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
@@ -610,7 +610,7 @@ Finite Disjunction
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
 <p>The following Python code computes the truth-table for <span class="math inline">\(P\lor(Q\lor R)\)</span>.</p>
-<div id="5503bf30" class="cell" data-execution_count="6">
+<div id="84297ae7" class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
@@ -664,7 +664,7 @@ Parsing Ambiguity
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
 <p>Make a truth table for both <span class="math inline">\(\neg (P\lor Q)\)</span> and <span class="math inline">\((\neg P)\lor Q\)</span>, and check your answers with the following Python code.</p>
-<div id="1ccf9f6a" class="cell" data-execution_count="7">
+<div id="21f19e2b" class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
@@ -798,11 +798,25 @@ Conditional Properties
 <p>Show that the conditional is neither associative nor commutative.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Antecedent and Consequent">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Antecedent and Consequent
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because the conditional is not commutative, it now makes sense to have vocabulary for talking about the left- and right-side of the <span class="math inline">\(\to\)</span> symbol. If <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are any two propositions<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> then for the conditional proposition <span class="math inline">\(\alpha\to\beta\)</span> we call <span class="math inline">\(\alpha\)</span> the <strong>antecedent</strong> and <span class="math inline">\(\beta\)</span> the <strong>consequent</strong>.</p>
+<p>For disjunction and conjunction such a distinction makes no sense, but it will still be worthwhile to have vocabulary to talk about the component sentences. So for instance, in the conjunction proposition <span class="math inline">\(\alpha\land\beta\)</span>, we call <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> the <strong>conjuncts</strong> of the conjunction. We also call them the <strong>disjuncts</strong> of the disjunction <span class="math inline">\(\alpha\lor\beta\)</span>.</p>
+</div>
+</div>
 <p>Besides having the most confusing truth-table, the conditional also is the hardest to translate to and from natural language. Of course if we say “If a polygon has three angles then it is a triangle,” then we would align <span class="math inline">\(P\)</span> with the sentence “the polygon has three angles” and <span class="math inline">\(Q\)</span> with “the polygon is a triangle”. The the entire proposition is aligned with <span class="math inline">\(P\to Q\)</span>.</p>
 <p>However, the first clause is not always the one that goes to the left of the <span class="math inline">\(\to\)</span>. The example sentence is equivalent to “The polygon is a triangle if it has three angles.” This makes it seem as though the clause after the word “if” will always appear to the left of the <span class="math inline">\(\to\)</span>.</p>
 <p>However, even this is not true! The sentence “The polygon is a triangle only if it has three angles” is equivalent to “If the polygon is a triangle then it has three angles”! This one is often especially confusing to a new student, learning about the conditional.</p>
 <p>To help make the “only if” construction clearer, imagine a castle which is only accessible by a bridge, which is guarded by a knight.</p>
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="..\_site/prop_log\images\knight.png" class="img-fluid figure-img" width="204"></p>
 </figure>
@@ -823,7 +837,7 @@ Only If
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>Let <span class="math inline">\(P\)</span> be the proposition “<span class="math inline">\(x+1 = 2\)</span>” and let <span class="math inline">\(Q\)</span> be the proposition “<span class="math inline">\(x=1\)</span>”. Is the proposition “<span class="math inline">\(P\)</span> only if <span class="math inline">\(Q\)</span>” the same as <span class="math inline">\(P\to Q\)</span> or <span class="math inline">\(Q\to P\)</span>?</p>
+<p>Let <span class="math inline">\(P\)</span> be the proposition “<span class="math inline">\(x+1 = 2\)</span>” and let <span class="math inline">\(Q\)</span> be the proposition “<span class="math inline">\(x=1\)</span>”. Is the proposition “<span class="math inline">\(x+1=2\)</span> only if <span class="math inline">\(x=1\)</span>” the same as <span class="math inline">\(P\to Q\)</span> or <span class="math inline">\(Q\to P\)</span>?</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Only If">
@@ -870,6 +884,7 @@ Biconditional Truth Table
 <li id="fn1"><p>Having the same truth-table means: They have the same truth-value at every row of the table.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>It may take an act of interpretation to know exactly what is being asked here. But to say that “conjunction and disjunction do not associate”, means that if an expression has both symbols, then you cannot merely switch around the parentheses.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The entire topic of the conditional is, in fact, a giant philosophical mess. There has been an enormous literature in linguistics and philosophy on the precise meaning and “truth-conditions” for conditional sentences. The resounding agreement among specialists, is that natural languages do not use a truth-functional conditional. That is to say, real languages have a meaning to their conditional sentences, which cannot be captured in a truth-table. Therefore one should regard the conditional that we use in mathematics as a kind of “formal language” rather than a natural language.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Why <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, rather than say <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>? Well, <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are specifically propositional variables. I want to make a claim for all possible propositions, not just the variables. So for instance, <span class="math inline">\(\alpha\)</span> could itself be <span class="math inline">\(P\to (Q\land R)\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

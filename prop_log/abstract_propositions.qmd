@@ -418,7 +418,7 @@ However, even this is not true! The sentence "The polygon is a triangle only if 
 
 To help make the "only if" construction clearer, imagine a castle which is only accessible by a bridge, which is guarded by a knight.
 
-![](/_site/prop_log\images\knight.png){fig-align="left" width="204"}
+![](/_site/prop_log\images\knight.png){fig-align="center" width="204"}
 
 Then the sentence "You can enter the castle only if you take the bridge" can be stated as the if-then sentence
 
@@ -429,7 +429,7 @@ Note that the reverse is not true: If you take the bridge, you might not enter t
 ::: {.callout-important title="Only If" appearance="minimal"}
 Exercise:
 
-Let $P$ be the proposition "$x+1 = 2$" and let $Q$ be the proposition "$x=1$". Is the proposition "\$x+1=2\$ only if $x=1$" the same as $P\to Q$ or $Q\to P$?
+Let $P$ be the proposition "$x+1 = 2$" and let $Q$ be the proposition "$x=1$". Is the proposition "$x+1=2$ only if $x=1$" the same as $P\to Q$ or $Q\to P$?
 :::
 
 ::: {.callout-important title="Only If" appearance="minimal"}

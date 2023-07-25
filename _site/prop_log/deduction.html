@@ -430,12 +430,13 @@ Arrow Conjunction Exercise
 \begin{array}{|c|c|c|} \hline
 \text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
 2.1. &amp; \neg P &amp; \text{$\to$ Assumption} \\\hline \rowcolor{subtl}
-2.2. &amp; Q &amp; \lor\text{E}, 1, 2.1 \\\hline
+2.2. &amp; Q &amp; \lor\text{E}, 1., 2.1. \\\hline
 \end{array} \\\hline
 \end{array}
 \]</span></p>
 <p>Notice that the justification for line 2 is the subproof. Also notice the system that we adopt for numbering lines in a subproof. In the subproof on line number 2, the reason is <span class="math inline">\(\lor\)</span>E, 1, 2.1. What this means is that, of course, line 1 contains <span class="math inline">\(P\lor Q\)</span>. But where is 2.1? It is on line 2 of the main proof, but inside of line 2 we refer to line 1 of the subproof there. This is where we find the proposition <span class="math inline">\(\neg P\)</span>.</p>
 <p>And indeed, from <span class="math inline">\(P\lor Q\)</span> and <span class="math inline">\(\neg P\)</span> we are able to infer, with <em>Disjunction Elimination</em>, the proposition <span class="math inline">\(Q\)</span>. This is what I have entered at line 2.2.</p>
+<hr>
 <p>Here’s another example where I prove that <span class="math inline">\(\{P\to Q\}\vdash \{P\to (R\lor Q)\}\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}\hline
@@ -445,15 +446,86 @@ Arrow Conjunction Exercise
         \begin{array}{|c|c|c|}\hline
         \text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
         2.1. &amp; P &amp; \text{$\to$Assumption} \\ \rowcolor{subtl}
-        2.2. &amp; Q &amp; \to\text{E}, 1, 2.1\\
-        2.3. &amp; R\lor Q &amp; \lor\text{I}, 2.2 \\ \hline
+        2.2. &amp; Q &amp; \to\text{E}, 1., 2.1.\\
+        2.3. &amp; R\lor Q &amp; \lor\text{I}, 2.2. \\ \hline
         \end{array}\\\hline
 \end{array}
 \]</span></p>
 <p>Again notice how this works: We want to prove <span class="math inline">\(P\to (R\lor Q)\)</span>, so we make a subproof with assumption <span class="math inline">\(P\)</span> and ending at <span class="math inline">\(R\lor Q\)</span>.</p>
+<hr>
+<p>Here’s an example of a proof <em>with no premises</em>. This is in fact possible because the <em>Conditional Introduction</em> does not require there to be any premises – it allows you to make any assumption that you want, at any time!</p>
+<p>We will prove <span class="math inline">\(\emptyset\vdash P\to P\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}\hline
+\text{No.} &amp; \text{Prop} &amp; \text{Reason} \\ \hline
+1. &amp; P\to P &amp;
+  \begin{array}{|c|c|c|}\hline
+  \text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
+  1.1. &amp; P &amp; \to\text{Assumption} \\ \rowcolor{subtle}
+  1.2. &amp; P &amp; \text{Reit}, 1.1. \\ \hline
+  \end{array}\\\hline
+\end{array}
+\]</span></p>
+<p>This might seem like a strange argument. What is this “Reit”? It is the <em>Reiteration</em> rule that was introduced in the long list of various inference rules. It says, effectively, that if a proposition is on any line in a proof, then on a later line we can always choose to “reiterate” it on a new line.</p>
+<p>This is pretty much only useful in conditional proofs, where we really <em>need</em> the last line of the proof to be our “target” consequent of the conditional. In this case we needed it to be <span class="math inline">\(P\)</span>, because that is the consequent of the proposition that we’re proving, <span class="math inline">\(P\to P\)</span>.</p>
+<hr>
+<p>Let’s next see a proof from no premises that <span class="math inline">\(\emptyset\vdash (P\land (P\to Q))\to Q\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}\hline
+\text{No.}&amp;\text{Prop}&amp;\text{Reason}\\\hline
+1. &amp; (P\land(P\to Q))\to Q &amp;
+  \begin{array}{|c|c|c|}\hline
+  1.1. &amp; P\land(P\to Q)&amp; \to\text{Assumption} \\ \rowcolor{subtle}
+  1.2. &amp; P &amp; \land\text{E},1.1.\\
+  1.3. &amp; P\to Q &amp; \land\text{E},1.1\\\rowcolor{subtle}
+  1.4. &amp; Q &amp; \to\text{E},1.2.,1.3. \\
+  \hline
+  \end{array}\\\hline
+\end{array}
+\]</span></p>
 <section id="restrictions-on-conditional-proof" class="level3">
 <h3 class="anchored" data-anchor-id="restrictions-on-conditional-proof">Restrictions on Conditional Proof</h3>
 <p>I have not yet really specified the rules of conditional proof, because they can be somewhat difficult to understand. For now I have mostly tried to communicate the method by examples. However, take the following example which demonstrates that this technique is invalid if used in the wrong ways.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|} \hline
+\text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
+1. &amp; P\to (P\lor Q) &amp;
+  \begin{array}{|c|c|c|} \hline
+  1.1. &amp; P &amp; \text{Assumption} \\ \rowcolor{subtle}
+  1.2. &amp; P\lor Q &amp; \lor\text{I},1.1\\\hline
+  \end{array} \\ \rowcolor{subtle}
+2. &amp; P &amp; \text{Reit}, 1.1 \\\hline
+\end{array}
+\]</span></p>
+<p>Notice that the above argument only uses our inference rules, so it seems like an acceptable proof! Does that mean that our <em>Conditional Introduction</em> rule is invalid?</p>
+<p>If it is used “unrestrictedly” then yes. Therefore we must place restrictions on it, so that the rule will be valid. The problem with the above proof, is the very last step. On line 2, it justifies writing a proposition ( <span class="math inline">\(P\)</span>) based on a line (1.1.) which was only introduced for conditional proof. But lines that occur in a subproof are only meant to be used for the subproof and not outside of it.</p>
+<p>Since this is the source of the invalidity, this is precisely the restriction that we place on all proofs: On any line of a proof, one is only allowed to reference lines which do not come from a “closed” subproof. So for instance, in the above proof it is fine for like 1.2 to reference 1.1, because at line 1.2 the subproof is not yet closed. But at line 2. it is not acceptable to reference line 1.1 because that occurs in a subproof which, by line 2 has already been closed.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Valid References">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Valid References
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the following proof.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}\hline
+  \text{No.}&amp;\text{Prop}&amp;\text{Reason}\\\hline
+  1. &amp; (P\land Q) \to P &amp;
+    \begin{array}{|c|c|c|}\hline
+    \text{No.}&amp;\text{Prop}&amp;\text{Reason}\\\hline
+    1.1. &amp; P\land Q &amp; \to\text{Assumption}\\\rowcolor{subtle}
+    1.2. &amp; P &amp; \land\text{E} \\\hline
+    \end{array}\\\hline\rowcolor{subtle}
+  2. &amp; P &amp; \to\text{E}, 1., 1.1. \\\hline
+\end{array}
+\]</span></p>
+<p>Is this a valid argument? If not, at which line is an invalid inference made?</p>
+</div>
+</div>
 </section>
 </section>
 <section id="proof-by-contradiction" class="level2">
@@ -468,18 +540,66 @@ Arrow Conjunction Exercise
 <li>From the assumption, derive a contradiction. (“<span class="math inline">\(x\)</span> is largest and not largest”)</li>
 <li>Therefore end the subproof, and infer what you wanted to prove. (“there is <em>no</em> largest number”)</li>
 </ol>
-<p>Below I’ll illustrate this technique in a two-column proof that <span class="math inline">\(\{P\lor Q\}\vdash \neg P\land\neg Q\)</span>.</p>
+<p>Below I’ll illustrate this technique in a two-column proof that <span class="math inline">\(\{P\lor Q\}\vdash \neg(\neg P\land\neg Q)\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}\hline
 \text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
 1. &amp; P\lor Q &amp; \text{Premise} \\ \rowcolor{subtle}
-2. &amp; \neg P\land \neg Q &amp;
+2. &amp; \neg(\neg P\land \neg Q) &amp;
   \begin{array}{|c|c|c|}\hline
   \text{No.} &amp; \text{Prop} &amp; \text{Reason} \\\hline
-  2.1. &amp;
-  \end{array} \\\hline
+  2.1. &amp; \neg(\neg(\neg P\land \neg Q)) &amp; \unicode{x21af} \text{Assumption}\\\rowcolor{subtl}
+  2.2. &amp; \neg P\land \neg Q &amp; \neg\text{E},2.1. \\
+  2.3. &amp; \neg P &amp; \land\text{E},2.2. \\ \rowcolor{subtl}
+  2.4. &amp; \neg Q &amp; \land \text{E},2.2. \\
+  2.5. &amp; Q &amp; \lor\text{E},1.,2.4. \\ \rowcolor{subtl}
+  2.6. &amp; Q\land\neg Q&amp; \land\text{I}, 2.4.,2.5.\\\hline
+\end{array} \\ \hline
 \end{array}
 \]</span></p>
+<p>Notice how the subproof in line 2 ends on the contradiction <span class="math inline">\(Q\land\neg Q\)</span>. Every proof by contradiction must end on a line containing <span class="math inline">\(\alpha\land\neg\alpha\)</span> or <span class="math inline">\(\neg\alpha\land\alpha\)</span>, for some proposition <span class="math inline">\(\alpha\)</span>.</p>
+<hr>
+<p>Here is a proof that <span class="math inline">\(\{\neg(P\land Q)\}\vdash \neg P\lor\neg Q\)</span>. This will be somewhat interesting in that it has a subproof within a subproof!</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}\hline
+\text{No.}&amp;\text{Prop}&amp;\text{Reason} \\\hline
+1. &amp; \neg(P\land Q) &amp; \text{Premise}\\ \rowcolor{subtle}
+2. &amp; \neg P\lor\neg Q &amp;
+  \begin{array}{|c|c|c|}\hline
+  \text{No.}&amp;\text{Prop}&amp;\text{Reason} \\\hline
+  2.1 &amp; \neg(\neg P\lor \neg Q) &amp; \unicode{x21af}\text{Assumption}\\ \rowcolor{subtl}
+  2.2. &amp; P &amp;
+    \begin{array}{|c|c|c|}\hline
+    \text{No.}&amp;\text{Prop}&amp;\text{Reason} \\\hline
+    2.2.1. &amp; \neg P &amp; \unicode{x21af}\text{Assumption}\\
+    2.2.2. &amp; \neg P\lor\neg Q &amp; \lor\text{I},2.2.1\\
+    2.2.3. &amp; \begin{array}{c} \\\neg(\neg P\lor\neg Q)\land \\ \neg P\lor\neg Q\end{array} &amp; \land\text I, 2.1, 2.2.3. \\\hline
+    \end{array}\\
+  2.3. &amp; Q &amp; \text{Similar to above.} \\ \rowcolor{subtl}
+  2.4. &amp; P\land Q &amp; \land\text{I}, 2.2, 2.3 \\
+  2.5. &amp; (P\land Q)\land \neg (P\land Q) &amp; \land\text I, 1., 2.4 \\\hline
+  \end{array}\\\hline
+\end{array}
+\]</span></p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Proof Exercises">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof Exercises
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove the following.</p>
+<ol type="1">
+<li><span class="math inline">\(\{\neg(P\to Q) \}\vdash P\)</span></li>
+<li><span class="math inline">\(\emptyset \vdash P\lor\neg P\)</span></li>
+<li><span class="math inline">\(\{P\land\neg P\}\vdash \alpha\)</span> for any proposition <span class="math inline">\(\alpha\)</span></li>
+<li><span class="math inline">\(\{P\lor Q, P\to R, Q\to S\}\vdash R\lor S\)</span></li>
+</ol>
+</div>
+</div>
 
 
 </section>
@@ -489,7 +609,7 @@ Arrow Conjunction Exercise
 <div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>While <em>Disjunction Elimination</em> might seem natural, <em>Disjunction Introduction</em> might seem strange and unnatural. However, whether it is strange or not, it is still technically <em>valid</em>. Moreover, not only is it valid but it will also prove to be useful, so we accept it as one of our inference rules. <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>While <em>Disjunction Elimination</em> might seem natural, <em>Disjunction Introduction</em> might seem strange and unnatural. However, whether it is strange or not, it is still technically <em>valid</em>. Moreover, not only is it valid but it will also prove to be useful, so we accept it as one of our inference rules.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Also often called a “derivation”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
