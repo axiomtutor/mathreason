@@ -349,7 +349,7 @@ Find a Variable Evaluation
 <section id="true-1-false-0" class="level2">
 <h2 class="anchored" data-anchor-id="true-1-false-0">True = 1, False = 0</h2>
 <p>To give this an official, technical definition, it will help if we make the identification that <span class="math inline">\(T\)</span> is actually just a symbol for the number 1, and <span class="math inline">\(F\)</span> is actually just a symbol for the number 0. Indeed Python is designed in a way that reflects this reality “under the hood” of what <span class="math inline">\(T\)</span> and <span class="math inline">\(F\)</span> really are.</p>
-<div id="f0c188d8" class="cell" data-execution_count="1">
+<div id="f23d4b7f" class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1 and 1 = "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">1</span> <span class="kw">and</span> <span class="dv">1</span>))</span>
@@ -476,7 +476,7 @@ Other Evaluation Rules
 <section id="a-python-evaluation-implementation" class="level1">
 <h1>A Python Evaluation Implementation</h1>
 <p>We can implement the evaluator in code, using what we built previously for the parse tree! First we must reproduce all of the code used to take an input string and produce its parse tree. But we will agument the classes with an <code>eval</code> function, reflected by the rules above.</p>
-<div id="f2b55e78" class="cell" data-execution_count="2">
+<div id="a18e9e08" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
@@ -539,7 +539,7 @@ Other Evaluation Rules
 <p>In order to run the code below, one will have to first run the code above.</p>
 <p>In the code below, we will write an evaluation function which essentially just reproduces the rules above, but implemented on the <code>Proposition</code> objects from before.</p>
 <p>Of course, now we need a new object in our program, to represent the variable evaluation. This will be a function which returns <code>True</code> for some instances of <code>PropVariable</code> and <code>False</code> for others. Below is one example of a variable evaluation, which returns <code>True</code> for <code>P</code> and <code>False</code> for everything else.</p>
-<div id="3c6cc24f" class="cell" data-execution_count="3">
+<div id="d11d4808" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vareval(pv):</span>
@@ -547,7 +547,7 @@ Other Evaluation Rules
 </details>
 </div>
 <p>And now here is the <code>eval</code> function. Note that it takes two arguments, a string representing a proposition, and a propositional evaluation.</p>
-<div id="7f6b9b68" class="cell" data-execution_count="4">
+<div id="2e0f5b19" class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">eval</span>(prop_string, prop_eval):</span>
@@ -555,7 +555,7 @@ Other Evaluation Rules
 </details>
 </div>
 <p>and finally we can demonstrate the code’s behavior:</p>
-<div id="5f6a6514" class="cell" data-execution_count="5">
+<div id="16f92f37" class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>prop_string <span class="op">=</span> <span class="st">"Q or (not (not P))"</span></span>

@@ -255,7 +255,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#algebra-by-cases" id="toc-algebra-by-cases" class="nav-link active" data-scroll-target="#algebra-by-cases">Algebra by Cases</a></li>
-  <li><a href="#one-even-prime" id="toc-one-even-prime" class="nav-link" data-scroll-target="#one-even-prime">One Even Prime</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this section I want to introduce two arguments. If the lessons in this text are successful, the reader will understand the logic of these arguments in thorough detail.</p>
 <section id="algebra-by-cases" class="level1">
 <h1>Algebra by Cases</h1>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Solve by Cases" style="background-color: #fff5fc">
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Solve by Cases">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -298,7 +297,9 @@ Solve by Cases
 <p><span class="math display">\[
 (x-1)(x-2)=0
 \]</span></p>
-<p>We can easily see that <span class="math inline">\(x=1\)</span> is a solution of this equation. On the other hand, if <span class="math inline">\(x\ne 1\)</span> then <span class="math inline">\(x-1\ne 0\)</span>. Therefore in this case we may divide both sides of the equation by <span class="math inline">\(x-1\)</span>. When we do, we obtain the equation <span class="math inline">\(x-2=0\)</span> which implies <span class="math inline">\(x=2\)</span>. Therefore there are two solutions: <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p>We can easily see that <span class="math inline">\(x=1\)</span> is a solution of this equation.</p>
+<p>On the other hand, if <span class="math inline">\(x\ne 1\)</span> then <span class="math inline">\(x-1\ne 0\)</span>. Therefore in this case we may divide both sides of the equation by <span class="math inline">\(x-1\)</span>. When we do, we obtain the equation <span class="math inline">\(x-2=0\)</span> which implies <span class="math inline">\(x=2\)</span>.</p>
+<p>Therefore there are two solutions: <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 <p><span class="math inline">\(\Box\)</span></p>
 </div>
 </div>
@@ -318,104 +319,143 @@ Algebra Example Assumption Conclusion
 <p>Are there any key-words which seem to indicate an assumption? Are there key-words which indicate a conclusion?</p>
 </div>
 </div>
-</section>
-<section id="one-even-prime" class="level1">
-<h1>One Even Prime</h1>
-<p>In the argument below, we will prove that there is exactly one even prime number. The entire discussion will only consider natural numbers (i.e.&nbsp;positive whole numbers) since the idea of even and prime only make sense for natural numbers.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> That is to say, in this section, assume that every number in it, is a natural number.</p>
-<p>Recall that a number is even if it is divisible by 2. A number is prime if it is greater than 1, and its only divisors are “interesting”. A divisor of a number is uninteresting if it is 1 or the number itself.</p>
-<p>So for instance 3 is prime because it is greater than 1 and its only divisors are 1 and 3. But both 1 and 3 are uninteresting divisors of 3. On the other hand 4 is not prime because it has an interesting divisor: 2.</p>
-<div class="callout callout-style-simple callout-important no-icon callout-titled" title="List Primes">
+<!-- # One Even Prime 
+
+In the argument below, we will prove that there is exactly one even prime number. The entire discussion will only consider natural numbers (i.e. positive whole numbers) since the idea of even and prime only make sense for natural numbers.[^1] That is to say, in this section, assume that every number in it, is a natural number.
+
+[^1]: This is not entirely accurate. It is possible to talk about even integers, but we won't worry about this right now.
+
+Recall that a number is even if it is divisible by 2. A number is prime if it is greater than 1, and its only divisors are "interesting". A divisor of a number is uninteresting if it is 1 or the number itself.
+
+So for instance 3 is prime because it is greater than 1 and its only divisors are 1 and 3. But both 1 and 3 are uninteresting divisors of 3. On the other hand 4 is not prime because it has an interesting divisor: 2.
+
+::: {.callout-important title="List Primes" appearance="minimal"}
+Exercise:
+
+List the first five prime numbers.
+:::
+
+To prove that there is one even prime, we will use an argument called "proof by contradiction". The strategy of a proof by contradiction is:
+
+-   Assume a proposition which we think is actually false.
+
+-   Use the proposition to prove a contradiction.
+
+-   Therefore, the proposition must be false, because it leads to a contradiction. -->
+<p>Below is a proof that the sum of two positive numbers is always positive. It starts from the assumption that this is <em>not</em> true. That means that we start by assuming that some two positive numbers do <em>not</em> sum to a positive number. We will then derive a contradiction, and therefore show that the assumption was false.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Positive Sum of Positives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-List Primes
+Positive Sum of Positives
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Exercise:</p>
-<p>List the first five prime numbers.</p>
-</div>
-</div>
-<p>To prove that there is one even prime, we will use an argument called “proof by contradiction”. The strategy of a proof by contradiction is:</p>
-<ul>
-<li><p>Assume a proposition which we think is actually false.</p></li>
-<li><p>Use the proposition to prove a contradiction.</p></li>
-<li><p>Therefore, the proposition must be false, because it leads to a contradiction.</p></li>
-</ul>
-<p>In particular, in the argument below we will assume that there are two even prime numbers. We will then show that this leads to a contradiction. Therefore, the conclusion is that there are <strong>not</strong> two even primes.</p>
-<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Even Means Two Divides">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Even Means Two Divides
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Exercise:</p>
-<p>1.</p>
-<p>Think for a minute about what “even” means. Try to give an intuitive definition.</p>
-<hr>
-<p>2.</p>
-<p>Mathematicians give a definition that is likely different from the one that you gave in response to the exercise above. A mathematician says that the number <span class="math inline">\(p\)</span> is even if there is a natural number <span class="math inline">\(k\)</span> such that <span class="math inline">\(p=2k\)</span>.</p>
-<p>Use the mathematician’s definition of “even” to show that 10 is even.</p>
-<hr>
-<p>3.</p>
-<p>“Even” is really just one example of “divisibility”. Give an intuitive definition of what it means for a number <span class="math inline">\(q\)</span> to divide another number <span class="math inline">\(p\)</span>.</p>
-<hr>
-<p>4.</p>
-<p>Of course mathematicians define it differently. They say that the number <span class="math inline">\(q\)</span> divides <span class="math inline">\(p\)</span> if there is an integer <span class="math inline">\(k\)</span> such that <span class="math inline">\(p=qk\)</span>.</p>
-<p>Show that, according to the mathematician’s definition, 5 divides 25.</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="One Even Prime" style="background-color: #fff5fc">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-One Even Prime
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Example:</p>
-<p>First notice that 2 is even because it can be divided by 2. Also 2 is prime because it is greater than 1, and its only divisors are 1 and 2 which are both uninteresting. Therefore there is <em>at least one</em> even prime number.</p>
-<p>For the next part, we will show that there are <strong>not</strong> two even prime numbers. For an argument by contradiction, assume that there <strong>are</strong> two prime numbers. Let <span class="math inline">\(p\)</span> be an even prime number other than 2.</p>
-<p>Because <span class="math inline">\(p\)</span> is prime, then it is greater than 1. Because it is even, then there must exist some positive natural number <span class="math inline">\(k\)</span> such that <span class="math inline">\(p=2k\)</span>. But this shows that, by definition, <span class="math inline">\(p\)</span> is divisible by 2. Since <span class="math inline">\(p\)</span> is not equal to 2, then this must mean that 2 is an interesting divisor. In turn, this means that <span class="math inline">\(p\)</span> is not prime.</p>
-<p>But at the start we assumed that <span class="math inline">\(p\)</span> was prime, and therefore we have a contradiction: <span class="math inline">\(p\)</span> is both prime and not prime.</p>
-<p>Since the assumption that “there is an even prime number other than 2” leads to a contradiction, then it must be false. Therefore we conclude that there is only one even prime number.</p>
+<p>For contradiction, assume that there are some two positive numbers which do not sum to a positive number. Call these numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Since they are positive, <span class="math inline">\(0&lt;a\)</span> and <span class="math inline">\(0&lt;b\)</span>. And since they do not sum to a positive number, then <span class="math inline">\(a+b\le 0\)</span>.</p>
+<p>From <span class="math inline">\(0&lt;b\)</span> we can infer <span class="math inline">\(-b&lt;0\)</span> by subtracting <span class="math inline">\(b\)</span> from both sides. Then from <span class="math inline">\(a+b\le 0\)</span> we can infer <span class="math inline">\(a\le -b\)</span>. But since we have <span class="math inline">\(a\le -b\)</span> and also <span class="math inline">\(-b&lt;0\)</span> it follows that <span class="math inline">\(a&lt;0\)</span>. Therefore <span class="math inline">\(a\)</span> is not positive.</p>
+<p>But we established earlier that <span class="math inline">\(a\)</span> is positive. Hence we have a contradiction: <span class="math inline">\(a\)</span> is both positive and not positive.</p>
+<p>The assumption that “there are some two positive numbers which do not sum to a positive,” led to a contradiction. Therefore the assumption must be false.</p>
+<p>This shows that any two positive real numbers must sum to a positive number.</p>
 <p><span class="math inline">\(\Box\)</span></p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Primes Mod Three">
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Negative Sum of Negatives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Primes Mod Three
+Negative Sum of Negatives
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Exercise:</p>
-<p>Prove that there is exactly one prime number which can be divided by 3. (Hint: The proof is almost exactly like the example for even primes above.)</p>
-<p>Also prove that there are no primes which can be divided by 4. (Hint: Show that if a number can be divided by 4 then it can be divided by 2. Then use the fact that if a number can be divided by 4, then it cannot be equal to 2, and therefore has an interesting divisor. Note that this argument is totally different from the one above, and will <em>not</em> use proof by contradiction.)</p>
+<p>Use proof by contradiction to show that the sum of two negatives is always negative.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Negative Irrational">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negative Irrational
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A number is called <strong>irrational</strong> if it is not rational. A number is rational if it can be expressed as <span class="math inline">\(p/q\)</span> where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are two integers and <span class="math inline">\(q\ne 0\)</span>.</p>
+<p>Use proof by contradiction to show that if <span class="math inline">\(x\)</span> is irrational then so is <span class="math inline">\(-x\)</span>.</p>
+<p>Hint: Fill in the following argument, where blanks are marked with <code>%TODO</code>.</p>
+<blockquote class="blockquote">
+<p>Assume, for contradiction, that <code>%TODO</code>. Then <span class="math inline">\(-x\)</span> can be expressed as <span class="math inline">\(p/q\)</span> where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are two integers, <span class="math inline">\(q\ne 0\)</span>. That is to say, <span class="math inline">\(-x=p/q\)</span>. But then <span class="math display">\[
+x = \%TODO
+\]</span> But then <span class="math inline">\(-p\)</span> is an integer, and so is <span class="math inline">\(q\)</span>, and <span class="math inline">\(q\ne 0\)</span> still. Therefore <span class="math inline">\(x\)</span> is <code>%TODO</code>.</p>
+<p>But this is a contradiction, since we now have that <span class="math inline">\(x\)</span> both is and isn’t a rational number. Therefore the assumption was false, which shows that <span class="math inline">\(-x\)</span> is irrational.</p>
+</blockquote>
+</div>
+</div>
+<!-- In particular, in the argument below we will assume that there are two even prime numbers. We will then show that this leads to a contradiction. Therefore, the conclusion is that there are **not** two even primes. -->
+<!-- ::: {.callout-important title="Even Means Two Divides" appearance="minimal"}
+Exercise:
+
+1\.
+
+Think for a minute about what "even" means. Try to give an intuitive definition.
+
+------------------------------------------------------------------------
+
+2\.
+
+Mathematicians give a definition that is likely different from the one that you gave in response to the exercise above. A mathematician says that the number $p$ is even if there is a natural number $k$ such that $p=2k$.
+
+Use the mathematician's definition of "even" to show that 10 is even.
+
+------------------------------------------------------------------------
+
+3\.
+
+"Even" is really just one example of "divisibility". Give an intuitive definition of what it means for a number $q$ to divide another number $p$.
+
+------------------------------------------------------------------------
+
+4\.
+
+Of course mathematicians define it differently. They say that the number $q$ divides $p$ if there is an integer $k$ such that $p=qk$.
+
+Show that, according to the mathematician's definition, 5 divides 25.
+:::
+
+::: {.callout-note title="One Even Prime" style="background-color: #fff5fc" appearance="minimal"}
+Example:
+
+First notice that 2 is even because it can be divided by 2. Also 2 is prime because it is greater than 1, and its only divisors are 1 and 2 which are both uninteresting. Therefore there is *at least one* even prime number.
+
+For the next part, we will show that there are **not** two even prime numbers. For an argument by contradiction, assume that there **are** two even prime numbers. 
+
+Let $p$ be an even prime number other than 2.
+
+Because $p$ is prime, then it is greater than 1. Because it is even, then there must exist some positive natural number $k$ such that $p=2k$. But this shows that, by definition, $p$ is divisible by 2. Since $p$ is not equal to 2, then this must mean that 2 is an interesting divisor. In turn, this means that $p$ is not prime.
+
+But at the start we assumed that $p$ was prime, and therefore we have a contradiction: $p$ is both prime and not prime.
+
+Since the assumption that "there is an even prime number other than 2" leads to a contradiction, then it must be false. Therefore we conclude that there is only one even prime number.
+
+$\Box$
+:::
+
+::: {.callout-important title="Primes Mod Three" appearance="minimal"}
+Exercise:
+
+Prove that there is exactly one prime number which can be divided by 3. (Hint: The proof is almost exactly like the example for even primes above.)
+
+Also prove that there are no primes which can be divided by 4. (Hint: Show that if a number can be divided by 4 then it can be divided by 2. Then use the fact that if a number can be divided by 4, then it cannot be equal to 2, and therefore has an interesting divisor. Note that this argument is totally different from the one above, and will *not* use proof by contradiction.)
+::: -->
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>This is not entirely accurate. It is possible to talk about even integers, but we won’t worry about this right now.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</aside></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

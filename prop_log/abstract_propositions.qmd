@@ -6,13 +6,9 @@ We looked at two examples of arguments in the previous section, but we don't wan
 
 # Propositional Variables
 
-We will usually write **propositional variables** with the symbols $P,Q,R$. Each one is mean to represent any possible sentence, so that $P$ could be the sentence $x=1$ and $Q$ could be the sentence $x=2$. In principle there's no reason to even restrict the conversation to mathematics -- $P$ could be the sentence "Russia is large". Just so long as it expresses a meaning which is either true or false, it's an acceptable instance of an abstract proposition.[^1]
+We will write an abstract proposition with a variable, like $P$.  What this means is that $P$ could be any proposition, and we don't know which it is.  So for instance $P$ could represent $x=1$ or "Russia is large", or any other assertion that could be true or false.  
 
-[^1]: Small note, if you're wondering about the difference between an abstract proposition and a propositional variable: "propositional variable" refers to the symbols $P,Q,R$ which are meant to represent an abstract proposition.
-
-## Truth-value
-
-Because the propositions are abstract, we don't know whether a given abstract proposition is true or false. We represent this in a table to show its possible **truth-values**, which are $T$ for true and $F$ for false.
+Because we don't know whether an abstract proposition is true or false, we represent this in a table.  In the table below, naturally we use $T$ to denote "true" and $F$ to denote "false".
 
 $$
 \begin{array}{|c|} \hline 
@@ -38,23 +34,29 @@ One way to form a new proposition from the variable $P$ is to negate it. If the 
 
 To represent the negation of $P$ we write $\neg P$.
 
-Below is the truth-table for negation.
+Below is the truth-table for negation. 
 
 $$
-\begin{array}{|c|c|c|c|} \hline
-P && \neg & P \\ \hline \\\hline
-T && \color{red}F & T \\ \hline
-F && \color{red}T & F \\ \hline
+\begin{array}{|c||c|} \hline
+\columncolor{lightgray}\rowcolor{lightgray}P & \neg  P \\ \hline \\\hline
+T & \color{red}F  \\ \hline
+F & \color{red}T  \\ \hline
 \end{array}
 $$
 
-Now that the table is getting sophisticated I'm adding extra space to keep things easy to read. There's a space to help distinguish the first row and the first column, since they will be used for headers, in some sense, while the rest of the table contains "data" in some sense. The first row and first column contains the propositional variable, $P$, isolated. The rest of the first row contains the sentence that we will analyze, in this case, $\neg P$. It is separated by a line to help the viewer's eye align each symbol with corresponding truth-values below it.
+Now that the table is getting sophisticated, I'm adding some extra features. First of all, I've shaed the first row and column with a gray background.  This is to indicate that the first row is a header row.  Also the first column as a kind of header column, because we will just use it to "index" the entries in the body of the truth table.  
 
-The rest of the first column runs through every possible truth-value -- in this case, it is just the familiar two possibilities of true and false. In the next subsection we will see an example of more than one propositional variable, and there we will run through more possibilities.
+The first "real" content of the table is emphasized below.  
 
-Finally this leaves the remaining rows and columns. Under the propositional variable, we merely copy the truth-values in the first column. Then under the negation symbol, we flip the truth-values.
+$$
+\begin{array}{|c||c|} \hline
+\columncolor{lightgray}\rowcolor{lightgray}P & \neg  P \\ \hline \\\hline
+T & \bf \color{red}F  \\ \hline
+F & \color{red}T  \\ \hline
+\end{array}
+$$
 
-Because the values under the negation symbol *are* the truth-values of the entire proposition, I've highlighted them in red.
+This is computed by first finding the value $P$, which is $T$ on this row.  Then we apply the $\neg$ operation to it, flipping it to $F$ and hence this is the value.  The second row of truth-values is computed similarly.  
 
 ::: {.callout-important title="Double Negation" appearance="minimal"}
 Exercise:
@@ -71,8 +73,6 @@ We say that two propositions are **equivalent** if they "have the same truth-tab
 Negation is also represented in almost every programming language. Below we can see how Python represents truth values, and then see how Python gives the ability to negate them.
 
 ```{python}
-print(True)
-print(False)
 print(not True)
 print(not False)
 ```
@@ -80,7 +80,7 @@ print(not False)
 ::: {.callout-important title="DN in Python" appearance="minimal"}
 Exercise:
 
-Demonstrate double-negation (i.e. the equivalence of $P$ and $\neg(\neg P)$ in a Python program.
+Demonstrate double-negation (i.e. the equivalence of $P$ and $\neg(\neg P)$) in a Python program.
 :::
 
 ## Disjunction
@@ -90,12 +90,12 @@ If $P$ and $Q$ are any two propositional variables, then to express "$P$ or $Q$"
 This is called the **disjunction** of $P$ and $Q$, and it has the following truth-table.
 
 $$
-\begin{array}{|c|c|c|c|c|c|}\hline
-P&Q&&P&\lor &Q\\\hline\\\hline
-T&T&&T&\color{red}T&T\\\hline
-T&F&&T&\color{red}T&F\\\hline
-F&T&&F&\color{red}T&T\\\hline
-F&F&&F&\color{red}F&F\\\hline
+\begin{array}{|c|c|ccc|}\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&Q\columncolor{lightgray}&P&\lor &Q\\\hline&&&&\\\hline
+T&T&&\color{red}T&\\\hline
+T&F&&\color{red}T&\\\hline
+F&T&&\color{red}T&\\\hline
+F&F&&\color{red}F&\\\hline
 \end{array}
 $$
 
@@ -113,9 +113,10 @@ print(False or False)
 In fact, the above can be done more simply in a couple of "embedded for-loops", as shown below.
 
 ```{python}
-for P in [True, False]:
-    for Q in [True, False]:
-        print(P or Q)
+truth_values = [True, False] # A list of all truth values
+for P in truth_values: # Iterate through all truth values
+    for Q in truth_values: # Q does likewise
+        print(P or Q) # Compute "their 'or'" and print it.
 ```
 
 The way that the above code works is: `P` is a variable, and it will eventually "take" every value from the list `[True,False]`. Initially it takes the value `True`.
@@ -127,7 +128,19 @@ Making a long story short, on the next loop iteration, `P` is still true but `Q`
 ::: {.callout-important title="Not Loop" appearance="minimal"}
 Exercise:
 
-Take the code written to demonstrate the negation, and re-write it as a for-loop. (Hint: It should only require a single `for`.)
+This code:
+
+```{python}
+print(not True)
+print(not False)
+```
+
+could instead be implemented with a for-loop.  Fill in the parts of the following code where it contains `%TODO` so that it does the same thing as the code above.
+
+```{python}
+for P in [True, False]:
+    "\%TODO"
+```
 :::
 
 ------------------------------------------------------------------------
@@ -177,7 +190,7 @@ $$
 ::: {.callout-important title="General Row Numbers" appearance="minimal"}
 Exercise:
 
-If there were 4 variables, how many rows would be needed?
+If there were 4 variables, how many rows would be needed?  (Hint: One variable required two rows.  Two variables, four rows; three variables, eight row; ...)
 
 If there were $n$ variables, how many rows would be needed?
 :::
@@ -321,7 +334,7 @@ Exercise:
 
 Show (either in a table or a program) that $P\land (Q\lor R)$ is **not** equivalent to $(P\land Q)\lor R$ and conclude that "conjunction and disjunction do not associate".[^5]
 
-However, show that $P\land (Q\lor R)$ is equivalent to $(P\lor Q) \land (P\lor R)$. Also, come up with a corresponding equivalence for $P\lor (Q\land R)$ and prove that it's equivalent.
+However, show that $P\land (Q\lor R)$ is equivalent to $(P\land Q) \lor (P\land R)$. Also, come up with a corresponding equivalence for $P\lor (Q\land R)$ and prove that it's equivalent.
 
 The above is called the **distribution** of $\land$ over $\lor$ (and conversely). This is similar to how multiplication distributes over addition.
 
