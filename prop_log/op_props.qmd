@@ -54,7 +54,7 @@ Prove that two propositions, $\alpha$ and $\beta$, are equivalent if and only if
 
 ## Famous Tautologies
 
-The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivaelnt in the following summary.
+The following is a summary of famous equivalences. They are each stated as a biconditional, so what I am showing is a collection of tautological biconditional propositions. In light of the exercise above, showing that propositions are equivalent if and only if their corresponding biconditional is a tautology, it should be clear which propositions are equivalent in the following summary.
 
 ::: {.callout-note title="Double Negation" appearance="minimal"}
 $$
@@ -439,7 +439,7 @@ Write a Python function, which uses the above, to take a proposition as an argum
 :::
 
 ::: {.callout-important title="Entailment" appearance="minimal"}
-Write a Python function which takes two arguments -- the first argument is a list (or set) of propostions, and the second argument is a single proposition. The function then returns `True` if the set of propositions entails the second argument, and `False` otherwise.
+Write a Python function which takes two arguments -- the first argument is a list (or set) of propositions, and the second argument is a single proposition. The function then returns `True` if the set of propositions entails the second argument, and `False` otherwise.
 
 Test your product.
 
