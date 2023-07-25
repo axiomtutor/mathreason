@@ -288,10 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#propositional-variables" id="toc-propositional-variables" class="nav-link active" data-scroll-target="#propositional-variables">Propositional Variables</a>
-  <ul class="collapse">
-  <li><a href="#truth-value" id="toc-truth-value" class="nav-link" data-scroll-target="#truth-value">Truth-value</a></li>
-  </ul></li>
+  <li><a href="#propositional-variables" id="toc-propositional-variables" class="nav-link active" data-scroll-target="#propositional-variables">Propositional Variables</a></li>
   <li><a href="#truth-functional-connectives" id="toc-truth-functional-connectives" class="nav-link" data-scroll-target="#truth-functional-connectives">Truth-functional Connectives</a>
   <ul class="collapse">
   <li><a href="#negation" id="toc-negation" class="nav-link" data-scroll-target="#negation">Negation</a></li>
@@ -327,10 +324,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We looked at two examples of arguments in the previous section, but we don’t want to be too focused on specific cases. Eventually we want to analyze logic itself, so that it can be applied to any propositions that may come up.</p>
 <section id="propositional-variables" class="level1">
 <h1>Propositional Variables</h1>
-<p>We will usually write <strong>propositional variables</strong> with the symbols <span class="math inline">\(P,Q,R\)</span>. Each one is mean to represent any possible sentence, so that <span class="math inline">\(P\)</span> could be the sentence <span class="math inline">\(x=1\)</span> and <span class="math inline">\(Q\)</span> could be the sentence <span class="math inline">\(x=2\)</span>. In principle there’s no reason to even restrict the conversation to mathematics – <span class="math inline">\(P\)</span> could be the sentence “Russia is large”. Just so long as it expresses a meaning which is either true or false, it’s an acceptable instance of an abstract proposition.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<section id="truth-value" class="level2">
-<h2 class="anchored" data-anchor-id="truth-value">Truth-value</h2>
-<p>Because the propositions are abstract, we don’t know whether a given abstract proposition is true or false. We represent this in a table to show its possible <strong>truth-values</strong>, which are <span class="math inline">\(T\)</span> for true and <span class="math inline">\(F\)</span> for false.</p>
+<p>We will write an abstract proposition with a variable, like <span class="math inline">\(P\)</span>. What this means is that <span class="math inline">\(P\)</span> could be any proposition, and we don’t know which it is. So for instance <span class="math inline">\(P\)</span> could represent <span class="math inline">\(x=1\)</span> or “Russia is large”, or any other assertion that could be true or false.</p>
+<p>Because we don’t know whether an abstract proposition is true or false, we represent this in a table. In the table below, naturally we use <span class="math inline">\(T\)</span> to denote “true” and <span class="math inline">\(F\)</span> to denote “false”.</p>
 <p><span class="math display">\[
 \begin{array}{|c|} \hline
 P \\ \hline
@@ -339,7 +334,6 @@ F \\ \hline
 \end{array}
 \]</span></p>
 <p>For now, the table may seem like making too big a deal over a small thing. As the abstract propositions get more complex, though, the tables will help us to manage that complexity. So if this doesn’t make sense right now, don’t worry too much about it. As you see the table really do its job in the next few subsections, it will make more sense.</p>
-</section>
 </section>
 <section id="truth-functional-connectives" class="level1">
 <h1>Truth-functional Connectives</h1>
@@ -354,16 +348,22 @@ F \\ \hline
 <p>To represent the negation of <span class="math inline">\(P\)</span> we write <span class="math inline">\(\neg P\)</span>.</p>
 <p>Below is the truth-table for negation.</p>
 <p><span class="math display">\[
-\begin{array}{|c|c|c|c|} \hline
-P &amp;&amp; \neg &amp; P \\ \hline \\\hline
-T &amp;&amp; \color{red}F &amp; T \\ \hline
-F &amp;&amp; \color{red}T &amp; F \\ \hline
+\begin{array}{|c||c|} \hline
+\columncolor{lightgray}\rowcolor{lightgray}P &amp; \neg  P \\ \hline \\\hline
+T &amp; \color{red}F  \\ \hline
+F &amp; \color{red}T  \\ \hline
 \end{array}
 \]</span></p>
-<p>Now that the table is getting sophisticated I’m adding extra space to keep things easy to read. There’s a space to help distinguish the first row and the first column, since they will be used for headers, in some sense, while the rest of the table contains “data” in some sense. The first row and first column contains the propositional variable, <span class="math inline">\(P\)</span>, isolated. The rest of the first row contains the sentence that we will analyze, in this case, <span class="math inline">\(\neg P\)</span>. It is separated by a line to help the viewer’s eye align each symbol with corresponding truth-values below it.</p>
-<p>The rest of the first column runs through every possible truth-value – in this case, it is just the familiar two possibilities of true and false. In the next subsection we will see an example of more than one propositional variable, and there we will run through more possibilities.</p>
-<p>Finally this leaves the remaining rows and columns. Under the propositional variable, we merely copy the truth-values in the first column. Then under the negation symbol, we flip the truth-values.</p>
-<p>Because the values under the negation symbol <em>are</em> the truth-values of the entire proposition, I’ve highlighted them in red.</p>
+<p>Now that the table is getting sophisticated, I’m adding some extra features. First of all, I’ve shaed the first row and column with a gray background. This is to indicate that the first row is a header row. Also the first column as a kind of header column, because we will just use it to “index” the entries in the body of the truth table.</p>
+<p>The first “real” content of the table is emphasized below.</p>
+<p><span class="math display">\[
+\begin{array}{|c||c|} \hline
+\columncolor{lightgray}\rowcolor{lightgray}P &amp; \neg  P \\ \hline \\\hline
+T &amp; \bf \color{red}F  \\ \hline
+F &amp; \color{red}T  \\ \hline
+\end{array}
+\]</span></p>
+<p>This is computed by first finding the value <span class="math inline">\(P\)</span>, which is <span class="math inline">\(T\)</span> on this row. Then we apply the <span class="math inline">\(\neg\)</span> operation to it, flipping it to <span class="math inline">\(F\)</span> and hence this is the value. The second row of truth-values is computed similarly.</p>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Double Negation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,23 +376,19 @@ Double Negation
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
 <p>Make the truth-table for <span class="math inline">\(\neg (\neg P)\)</span>.</p>
-<p>We say that two propositions are <strong>equivalent</strong> if they “have the same truth-table”.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Are <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg(\neg P)\)</span> equivalent?</p>
+<p>We say that two propositions are <strong>equivalent</strong> if they “have the same truth-table”.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Are <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg(\neg P)\)</span> equivalent?</p>
 </div>
 </div>
 <hr>
 <p>Negation is also represented in almost every programming language. Below we can see how Python represents truth values, and then see how Python gives the ability to negate them.</p>
-<div id="c7ab0fe8" class="cell" data-execution_count="1">
+<div id="3d69602c" class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">False</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">True</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">True</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>True
-False
-False
+<pre><code>False
 True</code></pre>
 </div>
 </div>
@@ -407,7 +403,7 @@ DN in Python
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>Demonstrate double-negation (i.e.&nbsp;the equivalence of <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg(\neg P)\)</span> in a Python program.</p>
+<p>Demonstrate double-negation (i.e.&nbsp;the equivalence of <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg(\neg P)\)</span>) in a Python program.</p>
 </div>
 </div>
 </section>
@@ -416,17 +412,17 @@ DN in Python
 <p>If <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are any two propositional variables, then to express “<span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span>” we write <span class="math inline">\(P\lor Q\)</span>. Note that by saying that either sentence is true, it is enough if just one of them is true. Take for example the sentence “Either the prize is behind the first door or the second door.” If the prize is behind the first door, then that sentence was true. But if the prize was behind the third door (i.e.&nbsp;not the first and not the second), the sentence was false.</p>
 <p>This is called the <strong>disjunction</strong> of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, and it has the following truth-table.</p>
 <p><span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}\hline
-P&amp;Q&amp;&amp;P&amp;\lor &amp;Q\\\hline\\\hline
-T&amp;T&amp;&amp;T&amp;\color{red}T&amp;T\\\hline
-T&amp;F&amp;&amp;T&amp;\color{red}T&amp;F\\\hline
-F&amp;T&amp;&amp;F&amp;\color{red}T&amp;T\\\hline
-F&amp;F&amp;&amp;F&amp;\color{red}F&amp;F\\\hline
+\begin{array}{|c|c|ccc|}\hline
+\columncolor{lightgray}\rowcolor{lightgray}P&amp;Q\columncolor{lightgray}&amp;P&amp;\lor &amp;Q\\\hline&amp;&amp;&amp;&amp;\\\hline
+T&amp;T&amp;&amp;\color{red}T&amp;\\\hline
+T&amp;F&amp;&amp;\color{red}T&amp;\\\hline
+F&amp;T&amp;&amp;\color{red}T&amp;\\\hline
+F&amp;F&amp;&amp;\color{red}F&amp;\\\hline
 \end{array}
 \]</span></p>
 <p>Note that this time the table has four rows (not counting the header row which declares the variables and proposition). This is because there are more possibilities with two variables than with just one. We could have both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> true, which is the first row – or we could have one true and the other false, which is the next two rows – or both could be false, which is the final row.</p>
 <p>In Python we can model this with the disjunction operator.</p>
-<div id="adbb741b" class="cell" data-execution_count="2">
+<div id="af086d53" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="kw">or</span> <span class="va">True</span>)</span>
@@ -442,12 +438,13 @@ False</code></pre>
 </div>
 </div>
 <p>In fact, the above can be done more simply in a couple of “embedded for-loops”, as shown below.</p>
-<div id="7c86e748" class="cell" data-execution_count="3">
+<div id="2eca68ec" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(P <span class="kw">or</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>truth_values <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>] <span class="co"># A list of all truth values</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> truth_values: <span class="co"># Iterate through all truth values</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> truth_values: <span class="co"># Q does likewise</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(P <span class="kw">or</span> Q) <span class="co"># Compute "their 'or'" and print it.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>True
@@ -470,7 +467,26 @@ Not Loop
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>Take the code written to demonstrate the negation, and re-write it as a for-loop. (Hint: It should only require a single <code>for</code>.)</p>
+<p>This code:</p>
+<div id="1a49af42" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">True</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True</code></pre>
+</div>
+</div>
+<p>could instead be implemented with a for-loop. Fill in the parts of the following code where it contains <code>%TODO</code> so that it does the same thing as the code above.</p>
+<div id="42e68a10" class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"\%TODO"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </div>
 </div>
 <hr>
@@ -520,7 +536,7 @@ General Row Numbers
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>If there were 4 variables, how many rows would be needed?</p>
+<p>If there were 4 variables, how many rows would be needed? (Hint: One variable required two rows. Two variables, four rows; three variables, eight row; …)</p>
 <p>If there were <span class="math inline">\(n\)</span> variables, how many rows would be needed?</p>
 </div>
 </div>
@@ -628,18 +644,18 @@ Parsing Ambiguity
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
 <p>Make a truth table for both <span class="math inline">\(\neg (P\lor Q)\)</span> and <span class="math inline">\((\neg P)\lor Q\)</span>, and check your answers with the following Python code.</p>
-<div id="05f52d4e" class="cell" data-execution_count="4">
+<div id="feaa1aac" class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="kw">not</span> (P <span class="kw">or</span> Q))</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>() <span class="co"># Just print a blank line to help see the separation of the two tables.</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>((<span class="kw">not</span> P) <span class="kw">or</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="kw">not</span> (P <span class="kw">or</span> Q))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>() <span class="co"># Just print a blank line to help see the separation of the two tables.</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> Q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>((<span class="kw">not</span> P) <span class="kw">or</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>False
@@ -701,8 +717,8 @@ Distribution
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>Show (either in a table or a program) that <span class="math inline">\(P\land (Q\lor R)\)</span> is <strong>not</strong> equivalent to <span class="math inline">\((P\land Q)\lor R\)</span> and conclude that “conjunction and disjunction do not associate”.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>However, show that <span class="math inline">\(P\land (Q\lor R)\)</span> is equivalent to <span class="math inline">\((P\lor Q) \land (P\lor R)\)</span>. Also, come up with a corresponding equivalence for <span class="math inline">\(P\lor (Q\land R)\)</span> and prove that it’s equivalent.</p>
+<p>Show (either in a table or a program) that <span class="math inline">\(P\land (Q\lor R)\)</span> is <strong>not</strong> equivalent to <span class="math inline">\((P\land Q)\lor R\)</span> and conclude that “conjunction and disjunction do not associate”.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>However, show that <span class="math inline">\(P\land (Q\lor R)\)</span> is equivalent to <span class="math inline">\((P\land Q) \lor (P\land R)\)</span>. Also, come up with a corresponding equivalence for <span class="math inline">\(P\lor (Q\land R)\)</span> and prove that it’s equivalent.</p>
 <p>The above is called the <strong>distribution</strong> of <span class="math inline">\(\land\)</span> over <span class="math inline">\(\lor\)</span> (and conversely). This is similar to how multiplication distributes over addition.</p>
 <p><span class="math display">\[
 x(y+z) = xy+xz
@@ -746,7 +762,7 @@ If Then Example
 <p>Next consider the possibility that the sun is out, but because you live in the South Pole, the weather is cold. In this case, the sentence was false. This explains the second row since <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> false.</p>
 <p>So far I think everything makes pretty immediate sense, but the next two possibilities are the ones that most people struggle with the most. What is especially difficult about them is that <span class="math inline">\(P\)</span> is false. A sentence of the form “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>.” is quite literally predicated upon the assumption of <span class="math inline">\(P\)</span>, so it becomes quite difficult to think about what one should say if <span class="math inline">\(P\)</span> is false.</p>
 <p>In the table, it is clear that we have decided that, when <span class="math inline">\(P\)</span> is false, the conditional sentence is true (regardless of the truth-value of <span class="math inline">\(Q\)</span>). You can imagine that it behaves like a promise: “I promise that, IF the sun is out, then the weather is warm.” When the condition of the promise is removed, because say the sun is not out, then the promise is so-to-speak nullified – and we say that the speaker was speaking the truth.</p>
-<p>In the example of the sun and the weather, imagine the “false-true” case in which the sun is not out but the weather is still warm. In that case, we regard the speaker as not wrong, because the condition of the sentence was not met. And similarly, in the false-false case whether the sun is not out and the weather is not warm, again the speaker is still speaking the truth.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>In the example of the sun and the weather, imagine the “false-true” case in which the sun is not out but the weather is still warm. In that case, we regard the speaker as not wrong, because the condition of the sentence was not met. And similarly, in the false-false case whether the sun is not out and the weather is not warm, again the speaker is still speaking the truth.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Conditional Properties">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -829,10 +845,9 @@ Biconditional Truth Table
 <div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Small note, if you’re wondering about the difference between an abstract proposition and a propositional variable: “propositional variable” refers to the symbols <span class="math inline">\(P,Q,R\)</span> which are meant to represent an abstract proposition.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Having the same truth-table means: They have the same truth-value at every row of the table.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>It may take an act of interpretation to know exactly what is being asked here. But to say that “conjunction and disjunction do not associate”, means that if an expression has both symbols, then you cannot merely switch around the parentheses.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>The entire topic of the conditional is, in fact, a giant philosophical mess. There has been an enormous literature in linguistics and philosophy on the precise meaning and “truth-conditions” for conditional sentences. The resounding agreement among specialists, is that natural languages do not use a truth-functional conditional. That is to say, real languages have a meaning to their conditional sentences, which cannot be captured in a truth-table. Therefore one should regard the conditional that we use in mathematics as a kind of “formal language” rather than a natural language.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Having the same truth-table means: They have the same truth-value at every row of the table.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It may take an act of interpretation to know exactly what is being asked here. But to say that “conjunction and disjunction do not associate”, means that if an expression has both symbols, then you cannot merely switch around the parentheses.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The entire topic of the conditional is, in fact, a giant philosophical mess. There has been an enormous literature in linguistics and philosophy on the precise meaning and “truth-conditions” for conditional sentences. The resounding agreement among specialists, is that natural languages do not use a truth-functional conditional. That is to say, real languages have a meaning to their conditional sentences, which cannot be captured in a truth-table. Therefore one should regard the conditional that we use in mathematics as a kind of “formal language” rather than a natural language.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
