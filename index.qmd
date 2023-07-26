@@ -30,9 +30,9 @@ It is for people who are interested in understanding how mathematics gets done. 
 
 The above is well-known and often repeated by mathematicians. This is a pretty serious and technical mathematics book, so you won't have much chance of learning from it without doing the exercises! But in this textbook, many of the exercises are programming exercises written in Python.  So besides a pencil, you'll also need a Python IDE.
 
-This is published at [How to Become a Mathematician](https://axiomtutor.quarto.pub/mathreason) and the source documents are publicly available at my [Axiom Tutor](https://github.com/axiomtutor/mathreason).
+This is published at [How to Become a Mathematician](https://axiomtutor.quarto.pub/mathematical-reasoning-2023) and the source documents are publicly available at my [Axiom Tutor](https://github.com/axiomtutor/mathreason).
 
-1.  One way to use this online textbook is to put the textbook on one side of your screen and a Python IDE on the other. For this, the QuartoPub page is sufficient.\
+1.  One way to use this online textbook is to put the textbook on one side of your screen and a Python IDE on the other. For this, this website is sufficient.\
 2.  Another way is to download the source files from the GitHub repository. Then open them either in VSCode or RStudio. The source files (the ones with extension `.qmd`) are written in Quarto, which is a slightly beefy version of Markdown. Therefore, once you've opened the source files in an appropriate editor, you can edit them directly and insert code cells to write your solutions for exercises.
 
 I think the second way sounds the nicest to me. You can then make the textbook "your own", with notes and exercise solutions inserted in the middle of the text, where and how you want them. 

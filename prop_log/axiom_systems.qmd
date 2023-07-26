@@ -6,7 +6,8 @@ Finally we can say something about axiomatic systems.  In order to discuss this,
 
 Note that I will present these systems at a relatively introductory and intuitive level -- we will not say anything very detailed, about how to use them, or what they mean.
 
-# Euclidean Geometry
+# Examples of Axiom Systems
+## Euclidean Geometry
 
 Euclidean geometry is the axiom system which describes most of the familiar ideas of geometry.  It is made from the following list of axioms.^[These are largely adapted from Hartshorne's *Beyond Euclid* textbook.]
 
@@ -39,7 +40,7 @@ $\Box$
 
 Euclidean geometry just is the set of all "logical consequences" of the axioms.  That is to say, Euclidean geometry is the set of propositions which are entailed by the set of axioms.  
 
-# Peano Arithmetic
+## Peano Arithmetic
 
 Here are the axioms of Peano arithmetic:
 
@@ -59,10 +60,18 @@ Theorem: If two numbers have different successors, then they are different numbe
 
 Proof:  Suppose $m,n$ are two natural numbers and $S(m)\ne S(n)$.  
 
-Suppose for contradiction that $m=n$.  Then $S(m)=S(n)$.  But then we have a contradiction.  
+Suppose for contradiction that $m=n$.  Then $S(m)=S(n)$ but this contradicts $S(m)\ne S(n)$.  
 
 Therefore $m\ne n$.  
 
 $\Box$
 
 :::
+
+## Vector Spaces
+
+Although the reader is likely familiar with Euclidean geometry (which is really, pretty much the same as standard geometry in the plane), and natural numbers, the reader may not be familiar with vector spaces.  However, vector spaces are perhaps the most fundamentally important object in all of mathematics.  So whomever you are out there, hi!  If you've made it this far, you should definitely learn a little bit of vector space stuff!
+
+
+
+1. 

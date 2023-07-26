@@ -254,8 +254,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#euclidean-geometry" id="toc-euclidean-geometry" class="nav-link active" data-scroll-target="#euclidean-geometry">Euclidean Geometry</a></li>
+  <li><a href="#examples-of-axiom-systems" id="toc-examples-of-axiom-systems" class="nav-link active" data-scroll-target="#examples-of-axiom-systems">Examples of Axiom Systems</a>
+  <ul class="collapse">
+  <li><a href="#euclidean-geometry" id="toc-euclidean-geometry" class="nav-link" data-scroll-target="#euclidean-geometry">Euclidean Geometry</a></li>
   <li><a href="#peano-arithmetic" id="toc-peano-arithmetic" class="nav-link" data-scroll-target="#peano-arithmetic">Peano Arithmetic</a></li>
+  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link" data-scroll-target="#vector-spaces">Vector Spaces</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -282,8 +286,10 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Finally we can say something about axiomatic systems. In order to discuss this, we should have in mind a few examples of axiomatic systems.</p>
 <p>Note that I will present these systems at a relatively introductory and intuitive level – we will not say anything very detailed, about how to use them, or what they mean.</p>
-<section id="euclidean-geometry" class="level1">
-<h1>Euclidean Geometry</h1>
+<section id="examples-of-axiom-systems" class="level1">
+<h1>Examples of Axiom Systems</h1>
+<section id="euclidean-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="euclidean-geometry">Euclidean Geometry</h2>
 <p>Euclidean geometry is the axiom system which describes most of the familiar ideas of geometry. It is made from the following list of axioms.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="1">
 <li>There are some three points which are not colinear.<br>
@@ -316,8 +322,8 @@ Two Lines, One Intersection
 </div>
 <p>Euclidean geometry just is the set of all “logical consequences” of the axioms. That is to say, Euclidean geometry is the set of propositions which are entailed by the set of axioms.</p>
 </section>
-<section id="peano-arithmetic" class="level1">
-<h1>Peano Arithmetic</h1>
+<section id="peano-arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="peano-arithmetic">Peano Arithmetic</h2>
 <p>Here are the axioms of Peano arithmetic:</p>
 <ol type="1">
 <li>0 is a natural number.</li>
@@ -340,13 +346,21 @@ Two Successors
 <div class="callout-body-container callout-body">
 <p>Theorem: If two numbers have different successors, then they are different numbers.</p>
 <p>Proof: Suppose <span class="math inline">\(m,n\)</span> are two natural numbers and <span class="math inline">\(S(m)\ne S(n)\)</span>.</p>
-<p>Suppose for contradiction that <span class="math inline">\(m=n\)</span>. Then <span class="math inline">\(S(m)=S(n)\)</span>. But then we have a contradiction.</p>
+<p>Suppose for contradiction that <span class="math inline">\(m=n\)</span>. Then <span class="math inline">\(S(m)=S(n)\)</span> but this contradicts <span class="math inline">\(S(m)\ne S(n)\)</span>.</p>
 <p>Therefore <span class="math inline">\(m\ne n\)</span>.</p>
 <p><span class="math inline">\(\Box\)</span></p>
 </div>
 </div>
+</section>
+<section id="vector-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="vector-spaces">Vector Spaces</h2>
+<p>Although the reader is likely familiar with Euclidean geometry (which is really, pretty much the same as standard geometry in the plane), and natural numbers, the reader may not be familiar with vector spaces. However, vector spaces are perhaps the most fundamentally important object in all of mathematics. So whomever you are out there, hi! If you’ve made it this far, you should definitely learn a little bit of vector space stuff!</p>
+<ol type="1">
+<li></li>
+</ol>
 
 
+</section>
 </section>
 
 
