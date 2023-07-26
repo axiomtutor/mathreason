@@ -1,0 +1,12 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/274514146_2768910466_223132457.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_39236274_2152029483.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_4114223442_370102927.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_2491982048_370102927.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_591100683_370102927.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_1789373965_3622826795.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_2713250762_3802323746.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_1471627295_228335244.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_1400301314_3885514395.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/207390714_1250087299_488047654.mp4'
+file 'file:C:/Users/adamt/Desktop/Tutoring/Brandon/mathreason2023/prop_log/media/videos/prop_log/720p30/partial_movie_files/R2/2789044632_3073779459_1756411768.mp4'

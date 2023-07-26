@@ -39,6 +39,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -355,6 +357,11 @@ Two Successors
 <section id="vector-spaces" class="level2">
 <h2 class="anchored" data-anchor-id="vector-spaces">Vector Spaces</h2>
 <p>Although the reader is likely familiar with Euclidean geometry (which is really, pretty much the same as standard geometry in the plane), and natural numbers, the reader may not be familiar with vector spaces. However, vector spaces are perhaps the most fundamentally important object in all of mathematics. So whomever you are out there, hi! If you’ve made it this far, you should definitely learn a little bit of vector space stuff!</p>
+<p>Vector spaces are not intrinsically geometric, but it is easiest to warm up to them if you start with a geometric view. We can start with the plane.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="media_log\720p302.mp4"></video></div>
+<p>These arrows are each vectors. We primarily conceive of vectors as emanating out of the origin and pointing to some point in space.</p>
+<p>However, they don’t have to start at the origin – a vector can start anywhere and terminate anywhere. So for instance you can see the yellow vector, which starts at the tip of the red vector, in the animation above.</p>
+<p>Note that vectors are represented by a list of coordinates. The red vector is the same as <span class="math inline">\(\begin{bmatrix}-1\\-3\end{bmatrix}\)</span>, and here you probably feel no sense of mystery. But the yellow matrix is <span class="math inline">\(\begin{bmatrix}1\\1\end{bmatrix}\)</span>, and this may seem strange. Notice that the start- and end-points of this vector are <span class="math inline">\((-1,-3)\)</span> and <span class="math inline">\((0,-2)\)</span>. The coordinates of the vector is then the end-point coordinates, minus the start-point coordinates.</p>
 <ol type="1">
 <li></li>
 </ol>
@@ -689,6 +696,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
