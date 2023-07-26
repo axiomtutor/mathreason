@@ -329,6 +329,7 @@ Below is a function which can detect if a given list of sentences is an instance
 Note that the classes need to be extended by an implementation of `__eq__`. If you check the implementation of `disjunction_elimination` you can see that we need to check the equality of various propositions, hence the need for this extension.
 
 ```{python}
+### OLD CODE ###
 import pyparsing as pp
 
 class Proposition:
@@ -353,7 +354,7 @@ class Negation(Proposition):
     def __str__(self):
         return("(not " + str(self.neg) + ")")
     def eval(self, prop_eval):
-        return(1 - self.neg.eval(prop_eval))
+        return(not self.neg.eval(prop_eval))
     def __eq__(self, p):
         if type(p) == Negation: return p.neg == self.neg
         return False
@@ -367,10 +368,25 @@ class Disjunction(Proposition):
         return("(" + str(self.left )+" or " + str(self.right) + ")")
     def eval(self, prop_eval):
         l, r = self.left.eval(prop_eval), self.right.eval(prop_eval)
-        return( l + r - l*r )
+        return( l or r )
     def __eq__(self, p): 
         if type(p) == Disjunction: 
             return p.left == self.left and p.right == self.right
+        return False
+
+class Conditional(Proposition):
+    def __init__(self, beta, gamma):
+        assert issubclass(type(beta),Proposition) \
+            and issubclass(type(gamma),Proposition)
+        self.ante, self.conseq = beta, gamma
+    def __str__(self):
+        return("(if " + str(self.ante) + " then " + str(self.conseq) + ")")
+    def eval(self, prop_eval):
+        ante, conseq = self.ante.eval(prop_eval), self.conseq.eval(prop_eval)
+        return (not ante) or conseq
+    def __eq__(self, p) -> bool:
+        if type(p) == Conditional:
+            return p.ante==self.ante and p.conseq==self.conseq
         return False
 
 def parseTree(p):
@@ -385,25 +401,29 @@ def parseTree(p):
     if len(p) == 3:
         if p[1] == "or": return Disjunction(parseTree(p[0]), parseTree(p[2]))
         raise Exception("length 3 list but unrecognized middle token")
+    if len(p) == 4:
+        if p[0] == "if" and p[2] == "then":
+            return Conditional(parseTree(p[1]),parseTree(p[3]))
     raise Exception("length of list unrecognized")
 
 terms = pp.Word(pp.alphas) | "not" | "and" | "or" | "if" | "then" | "iff" 
 nesting = pp.nestedExpr( '(', ')', content=terms )
 
 def shape(s): 
+    if s.strip() == "": return ""
     p = nesting.parseString("("+s+")")[0]
     
     return parseTree(p)
 ```
 
 ```{python}
-def disjunction_elimination(prop_list):
-    if len(prop_list) != 3: return False
+### NEW CODE ###
+def disjunction_elimination(sup1,sup2,conc):
     # For disjunction elimination, one proposition must be a disjunction
     # and the other must be a negation.
-    disj, neg = prop_list[0], prop_list[1]
+    disj, neg = sup1, sup2
     if type(disj) != Disjunction: 
-        disj, neg = prop_list[1], prop_list[0]
+        disj, neg = sup2, sup1
     if type(disj) != Disjunction or type(neg) != Negation: 
         return False
   
@@ -421,13 +441,13 @@ def disjunction_elimination(prop_list):
         other = disj.left
         if under != disj.right: 
             return False
-    return other == prop_list[2]
+    return other == conc
 
 # disj = shape("P or Q")
 # neg = shape("not P")
 # conc = shape("Q")
 
-# print(disjunction_elimination([disj,neg,conc]))
+# print(disjunction_elimination(disj,neg,conc))
 ```
 
 ::: {.callout-important title="Other Inference Rules in Python" appearance="minimal"}
@@ -441,10 +461,11 @@ To check an entire proof, we need to iterate over each pair of reason and propos
 We will assume that proofs are formatted in a comma-separated string. The commas will separate triples, which are themselves separated by semi-colons. Each triple will contain the information in a row of a two-column proof: Row number, proposition, and reason. Here is an example, with extra spaces for readability.
 
 ```{python}
-argument = "(1.; P and Q; Premise), (2.; if P then (Q or R); Conditional Proof), (2.1; P; Assumption), (2.2; Q or R; Or Introduction, 2.)"
+argument = "(1.; P and Q; Premise), (2.; if P then (Q or R); Conditional Proof), (2.1.; P; Assumption), (2.2.; Q or R; Or Introduction, 2.), (2.2.3.; ; End Subproof)"
 ```
 
 ```{python}
+### BORING CODE ###
 def rows_list(argument):
     level = 0
     bucket = []
@@ -458,6 +479,126 @@ def rows_list(argument):
         if level > 0: row += c
         if c == "(": level += 1
     return bucket
-
-print(rows_list(argument))
 ```
+
+```{python}
+def incr_rownum(num, reason_name):
+    if reason_name == "Assumption":
+        num += [1]
+    elif reason_name == "End Subproof":
+        num = num[:-1]
+        num[-1] += 1
+    else:
+        num[-1] += 1
+```
+
+```{python}
+def row_string_to_list(rs):
+    bucket = rs.split(".")[:-1]
+    for i in range(len(bucket)):
+        bucket[i] = int(bucket[i])
+    return bucket
+```
+
+```{python}
+def x_sees_y(x, y):
+    n1, n2 = len(y), len(x)
+    if n2 < n1: return False
+    for i in range(n1-1):
+        if y[i] != x[i]: 
+            return False
+    return y[n1-1] <= x[n1-1]
+```
+
+```{python}
+### INTERESTING CODE ###
+def validate(argument):
+    # Preprocess the argument into a list of lists.  
+    rl = rows_list(argument)
+    for i in range(len(rl)):
+        rl[i] = rl[i].split("; ")
+        rl[i][0] = row_string_to_list(rl[i][0])
+        rl[i][1] = shape(rl[i][1])
+    # When the preprocessing is done, the input 
+    # "(1.; P or Q; Premise), (2.; R or (P or Q); Disjunction Introduction, 1.)" 
+    # looks like 
+    # [[[1], Disjunction(...), "Premise"], \
+    #  [[2], Disjunction(...), "Disjunction Introduction, 1."]]
+
+    # We will validate the row numbering of the argument, by 
+    # building our own row numbering as we iterate through the 
+    # list, and check that it matches the given numbering.
+    rownum = [1]
+    for i, row in enumerate(rl):
+        
+        if rownum != row[0]:
+            raise Exception("Invalid row numbering.")
+        
+        reason = row[2].split(", ")
+        reason_name = reason[0]
+        incr_rownum(rownum, reason_name)
+
+        if reason_name in ["Premise", "Assumption", "End Subproof"]: 
+            continue
+
+        # Validating *Disjunction Elimination* requires 
+        if reason_name == "Disjunction Elimination":
+            # finding the referenced row numbers
+            sup_ind1 = row_string_to_list(reason[1]) 
+            sup_ind2 = row_string_to_list(reason[2])
+
+            # checking that they're not in a closed 
+            # subproof
+            if not (x_sees_y(row[0],sup_ind1) and \
+                    x_sees_y(row[0],sup_ind2)):
+                return False
+            
+            # getting the row at these numbers
+            for r in rl:
+                if r[0] == sup_ind1:
+                    sup1 = r[1]
+                if r[0] == sup_ind2:
+                    sup2 = r[1]
+            
+            # and checking that they match the pattern.
+            if not disjunction_elimination(sup1,sup2,row[1]):
+                return False
+        
+        if reason_name == "Conditional Introduction":
+            cond_prop = row[1]
+            next_row = rl[i+1]
+            if type(cond_prop) != Conditional:
+                return False
+            # Conditional introduction checks the next row to see
+            # that it's the beginning of an assumption with the 
+            # same proposition as is the antecedent of the 
+            # conditional.
+            cert = next_row[2] == "Assumption"
+            cert *= cond_prop.ante == next_row[1]
+            if not cert: return False
+            # Then it finds the closing "End Subproof", and checks
+            # that on the line before, the subproof ended at the 
+            # consequent of the conditional.
+            cert = False
+            for j in range(i+1,len(rl)):
+                if len(rl[j][0]) == len(next_row[0]) \
+                    and rl[j][2] == "End Subproof" \
+                    and rl[j-1][1] == row[1].conseq:
+                    cert = True
+            if not cert: return cert
+        
+        return True
+
+        
+# disj_argument = "(1.; P or Q; Premise), (2.; not Q; Premise), (3.; P; Disjunction Elimination, 1., 2.)"
+# print(validate(disj_argument))
+
+# cond_argument = "(1.; if P then Q; Conditional Introduction), (1.1.; P; Assumption), (1.2.; Q; Premise), (1.3.; ; End Subproof))"
+# print(validate(cond_argument))
+        
+
+```
+
+::: {.callout-important title="Full Proof Assist" appearance="minimal"}
+Implement the remaining inference rules and use them to extend the proof checker.
+:::
