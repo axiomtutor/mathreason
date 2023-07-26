@@ -98,6 +98,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -496,6 +499,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>config.media_width <span class="op">=</span> <span class="st">"100%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-8" class="cell" data-execution_count="32">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>manim <span class="op">-</span>qm <span class="op">-</span>v WARNING R2</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> R2(Scene):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        plane <span class="op">=</span> NumberPlane()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(plane))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        vec <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec))</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        vec2 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec,vec2))</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.remove(vec)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        vec3 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        vec4 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        vec5 <span class="op">=</span> Arrow([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"YELLOW"</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec2,vec4))</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.remove(vec2)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec4,vec3))</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec5))</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        label1 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs"> -1\\-2\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>, color<span class="op">=</span>RED).move_to([<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>])</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label1))</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        label2 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs"> 1\\1\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>, color<span class="op">=</span>YELLOW).move_to([<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>])</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        vec6 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label2))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        label3 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs">1\\1\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>).move_to([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>])</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec6))</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label3))</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.wait(<span class="dv">3</span>)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>                                                                                                                    </code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<video src="media\jupyter\R2@2023-07-26@16-24-09.mp4" controls="" autoplay="" loop="" style="max-width: 100%;">
+      Your browser does not support the <code>video</code> element.
+    </video>
 </div>
 </div>
 
