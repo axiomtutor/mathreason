@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.241">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mathematical Reasoning 2023 - Parse Trees</title>
+<title>How to Become a Mathematician - Parse Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,11 +80,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,9 +106,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Mathematical Reasoning 2023</span>
+    <span class="navbar-title">How to Become a Mathematician</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -208,9 +203,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -218,9 +213,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/parse_tree.html">Parse Trees</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/parse_tree.html">Parse Trees</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -316,7 +311,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
 
 <p>The ambiguity between <span class="math inline">\(\neg(P\lor Q)\)</span> and <span class="math inline">\((\neg P)\lor Q\)</span> makes visible the need for the idea of a “parse tree”. To see what a parse tree is, let’s start with the example of the simpler proposition <span class="math inline">\(P\lor Q\)</span>.</p>
@@ -333,37 +327,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 134.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 130,-112 130,4 -4,4"></polygon>
-<!-- v -->
-<g id="node1" class="node">
-<title>v</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">v</text>
-</g>
-<!-- P -->
-<g id="node2" class="node">
-<title>P</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text>
-</g>
-<!-- v&#45;&#45;P -->
-<g id="edge1" class="edge">
-<title>v--P</title>
-<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path>
-</g>
-<!-- Q -->
-<g id="node3" class="node">
-<title>Q</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">Q</text>
-</g>
-<!-- v&#45;&#45;Q -->
-<g id="edge2" class="edge">
-<title>v--Q</title>
-<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 130,-112 130,4 -4,4"></polygon> <!-- v --> <g id="node1" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- P --> <g id="node2" class="node">
+<title>
+P
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text> </g> <!-- v&#45;&#45;P --> <g id="edge1" class="edge">
+<title>
+v–P
+</title>
+<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path> </g> <!-- Q --> <g id="node3" class="node">
+<title>
+Q
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">Q</text> </g> <!-- v&#45;&#45;Q --> <g id="edge2" class="edge">
+<title>
+v–Q
+</title>
+<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path> </g> </g>
 </svg>
 </div>
 </div>
@@ -384,48 +371,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon>
-<!-- &#45; -->
-<g id="node1" class="node">
-<title>-</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">-</text>
-</g>
-<!-- v -->
-<g id="node2" class="node">
-<title>v</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">v</text>
-</g>
-<!-- &#45;&#45;&#45;v -->
-<g id="edge1" class="edge">
-<title>---v</title>
-<path fill="none" stroke="black" d="M63,-143.7C63,-132.85 63,-118.92 63,-108.1"></path>
-</g>
-<!-- P -->
-<g id="node3" class="node">
-<title>P</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text>
-</g>
-<!-- v&#45;&#45;P -->
-<g id="edge2" class="edge">
-<title>v--P</title>
-<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path>
-</g>
-<!-- Q -->
-<g id="node4" class="node">
-<title>Q</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">Q</text>
-</g>
-<!-- v&#45;&#45;Q -->
-<g id="edge3" class="edge">
-<title>v--Q</title>
-<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- &#45; --> <g id="node1" class="node">
+<title>
+-
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- v --> <g id="node2" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- &#45;&#45;&#45;v --> <g id="edge1" class="edge">
+<title>
+—v
+</title>
+<path fill="none" stroke="black" d="M63,-143.7C63,-132.85 63,-118.92 63,-108.1"></path> </g> <!-- P --> <g id="node3" class="node">
+<title>
+P
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text> </g> <!-- v&#45;&#45;P --> <g id="edge2" class="edge">
+<title>
+v–P
+</title>
+<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path> </g> <!-- Q --> <g id="node4" class="node">
+<title>
+Q
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">Q</text> </g> <!-- v&#45;&#45;Q --> <g id="edge3" class="edge">
+<title>
+v–Q
+</title>
+<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path> </g> </g>
 </svg>
 </div>
 </div>
@@ -462,26 +439,22 @@ Parse Tree Basic
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 62.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 58,-112 58,4 -4,4"></polygon>
-<!-- &#45; -->
-<g id="node1" class="node">
-<title>-</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">-</text>
-</g>
-<!-- P -->
-<g id="node2" class="node">
-<title>P</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text>
-</g>
-<!-- &#45;&#45;&#45;P -->
-<g id="edge1" class="edge">
-<title>---P</title>
-<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 58,-112 58,4 -4,4"></polygon> <!-- &#45; --> <g id="node1" class="node">
+<title>
+-
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- P --> <g id="node2" class="node">
+<title>
+P
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">P</text> </g> <!-- &#45;&#45;&#45;P --> <g id="edge1" class="edge">
+<title>
+—P
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> </g>
 </svg>
 </div>
 </div>
@@ -502,48 +475,38 @@ Parse Tree Basic
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon>
-<!-- &#45;&gt; -->
-<g id="node1" class="node">
-<title>-&gt;</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">-&gt;</text>
-</g>
-<!-- Q -->
-<g id="node2" class="node">
-<title>Q</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">Q</text>
-</g>
-<!-- &#45;&gt;&#45;&#45;Q -->
-<g id="edge1" class="edge">
-<title>-&gt;--Q</title>
-<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path>
-</g>
-<!-- &#45; -->
-<g id="node3" class="node">
-<title>-</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">-</text>
-</g>
-<!-- &#45;&gt;&#45;&#45;&#45; -->
-<g id="edge2" class="edge">
-<title>-&gt;---</title>
-<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path>
-</g>
-<!-- R -->
-<g id="node4" class="node">
-<title>R</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#45;&#45;&#45;R -->
-<g id="edge3" class="edge">
-<title>---R</title>
-<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- &#45;&gt; --> <g id="node1" class="node">
+<title>
+-&gt;
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">-&gt;</text> </g> <!-- Q --> <g id="node2" class="node">
+<title>
+Q
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">Q</text> </g> <!-- &#45;&gt;&#45;&#45;Q --> <g id="edge1" class="edge">
+<title>
+-&gt;–Q
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- &#45; --> <g id="node3" class="node">
+<title>
+-
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- &#45;&gt;&#45;&#45;&#45; --> <g id="edge2" class="edge">
+<title>
+-&gt;—
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- R --> <g id="node4" class="node">
+<title>
+R
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">R</text> </g> <!-- &#45;&#45;&#45;R --> <g id="edge3" class="edge">
+<title>
+—R
+</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> </g>
 </svg>
 </div>
 </div>
@@ -579,82 +542,62 @@ Parse Tree Basic
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 206.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 202,-256 202,4 -4,4"></polygon>
-<!-- onp -->
-<g id="node1" class="node">
-<title>onp</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">-</text>
-</g>
-<!-- P -->
-<g id="node7" class="node">
-<title>P</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">P</text>
-</g>
-<!-- onp&#45;&#45;P -->
-<g id="edge5" class="edge">
-<title>onp--P</title>
-<path fill="none" stroke="black" d="M27,-143.7C27,-132.85 27,-118.92 27,-108.1"></path>
-</g>
-<!-- onr -->
-<g id="node2" class="node">
-<title>onr</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">-</text>
-</g>
-<!-- R -->
-<g id="node5" class="node">
-<title>R</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- onr&#45;&#45;R -->
-<g id="edge3" class="edge">
-<title>onr--R</title>
-<path fill="none" stroke="black" d="M171,-71.7C171,-60.85 171,-46.92 171,-36.1"></path>
-</g>
-<!-- &#45;&gt; -->
-<g id="node3" class="node">
-<title>-&gt;</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">-&gt;</text>
-</g>
-<!-- &#45;&gt;&#45;&#45;onr -->
-<g id="edge2" class="edge">
-<title>-&gt;--onr</title>
-<path fill="none" stroke="black" d="M113.57,-146.83C125.98,-134.77 143.73,-117.51 156.2,-105.38"></path>
-</g>
-<!-- Q -->
-<g id="node4" class="node">
-<title>Q</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">Q</text>
-</g>
-<!-- &#45;&gt;&#45;&#45;Q -->
-<g id="edge1" class="edge">
-<title>-&gt;--Q</title>
-<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path>
-</g>
-<!-- Q&#45;&#45;onr -->
-<!-- /\\ -->
-<g id="node6" class="node">
-<title>/\\</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-234" rx="27" ry="18"></ellipse>
-<text text-anchor="middle" x="63" y="-229.8" font-family="Times,serif" font-size="14.00">/\</text>
-</g>
-<!-- /\\&#45;&#45;onp -->
-<g id="edge4" class="edge">
-<title>/\\--onp</title>
-<path fill="none" stroke="black" d="M54.65,-216.76C48.83,-205.46 41.11,-190.44 35.3,-179.15"></path>
-</g>
-<!-- /\\&#45;&#45;&#45;&gt; -->
-<g id="edge6" class="edge">
-<title>/\\---&gt;</title>
-<path fill="none" stroke="black" d="M71.35,-216.76C77.17,-205.46 84.89,-190.44 90.7,-179.15"></path>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 202,-256 202,4 -4,4"></polygon> <!-- onp --> <g id="node1" class="node">
+<title>
+onp
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- P --> <g id="node7" class="node">
+<title>
+P
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">P</text> </g> <!-- onp&#45;&#45;P --> <g id="edge5" class="edge">
+<title>
+onp–P
+</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-132.85 27,-118.92 27,-108.1"></path> </g> <!-- onr --> <g id="node2" class="node">
+<title>
+onr
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- R --> <g id="node5" class="node">
+<title>
+R
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">R</text> </g> <!-- onr&#45;&#45;R --> <g id="edge3" class="edge">
+<title>
+onr–R
+</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-60.85 171,-46.92 171,-36.1"></path> </g> <!-- &#45;&gt; --> <g id="node3" class="node">
+<title>
+-&gt;
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">-&gt;</text> </g> <!-- &#45;&gt;&#45;&#45;onr --> <g id="edge2" class="edge">
+<title>
+-&gt;–onr
+</title>
+<path fill="none" stroke="black" d="M113.57,-146.83C125.98,-134.77 143.73,-117.51 156.2,-105.38"></path> </g> <!-- Q --> <g id="node4" class="node">
+<title>
+Q
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">Q</text> </g> <!-- &#45;&gt;&#45;&#45;Q --> <g id="edge1" class="edge">
+<title>
+-&gt;–Q
+</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path> </g> <!-- Q&#45;&#45;onr --> <!-- /\\ --> <g id="node6" class="node">
+<title>
+/\
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-234" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-229.8" font-family="Times,serif" font-size="14.00">/&lt;/text&gt; </text></g> <!-- /\\&#45;&#45;onp --> <g id="edge4" class="edge">
+<title>
+/\–onp
+</title>
+<path fill="none" stroke="black" d="M54.65,-216.76C48.83,-205.46 41.11,-190.44 35.3,-179.15"></path> </g> <!-- /\\&#45;&#45;&#45;&gt; --> <g id="edge6" class="edge">
+<title>
+/\—&gt;
+</title>
+<path fill="none" stroke="black" d="M71.35,-216.76C77.17,-205.46 84.89,-190.44 90.7,-179.15"></path> </g> </g>
 </svg>
 </div>
 </div>
@@ -705,7 +648,7 @@ Proposition Representation
 <p>We will have a <code>Negation</code> class which represents the negation of some other proposition. This will contain a single piece of information, <code>self.neg</code>, which is the tree structure of the proposition that is negated.</p>
 <p>Then we will have a <code>Disjunction</code> class which represents the disjunction of two propositions. It contains two pieces of information, <code>self.left</code> and <code>self.right</code>, representing the two disjuncts.</p>
 <p>It will also be useful to have an abstract class <code>Proposition</code> which gives these three classes a common superclass.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div id="a3917ce7" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
@@ -758,7 +701,7 @@ Make Proposition Instances
 </div>
 <div class="callout-body-container callout-body">
 <p>The following code makes instances of these classes and prints their string representations.</p>
-<div id="19a4aa57" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> PropVariable(<span class="st">"P"</span>)</span>
@@ -782,7 +725,7 @@ Make Proposition Instances
 <section id="structuring" class="level2">
 <h2 class="anchored" data-anchor-id="structuring">Structuring</h2>
 <p>The above was necessary to make the Python code work. But it was not the most interesting for the analysis of logic. The function below is the code that most reflects the idea of the parse tree. This takes a proposition, represented as we have described, and returns a tree structure, as we have defined with the <code>Proposition</code> class.</p>
-<div id="873ea3ac" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
@@ -811,7 +754,7 @@ Explain parseTree
 </div>
 <div class="callout-body-container callout-body">
 <p>Explain the lines of code</p>
-<div id="64140bf9" class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
@@ -820,7 +763,7 @@ Explain parseTree
 </div>
 <hr>
 <p>Explain</p>
-<div id="73bab020" class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
@@ -830,7 +773,7 @@ Explain parseTree
 <p>(Note: I have omitted the “assertion”, since this is there mostly for debugging purposes – it is not especially interesting for the logic.)</p>
 <hr>
 <p>Explain</p>
-<div id="057dec06" class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
@@ -858,7 +801,7 @@ Other parseTree Operations
 <h2 class="anchored" data-anchor-id="parsing">Parsing</h2>
 <p>It can be a little unsatisfying to input propositions in such an artificial way. Can’t we find a way to input a string like `“if (not P) then (Q or (R and S))” and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!</p>
 <p>However, to understand it, you have to get a little familiar with the <code>pyparsing</code> library. Since none of this is very interesting for logic, I’ll just leave the code but won’t try to explain it.</p>
-<div id="3d1f099e" class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
@@ -878,12 +821,12 @@ Other parseTree Operations
 </section>
 
 
-<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>This abstract class is not strictly necessary for the code to work. However, I like to check the inputs to the functions, to make sure that they have the right types. The abstract class allows us to regard each kind of proposition as a subclass of this larger abstract class – and this makes it possible to check an input to ensure that it is some kind of proposition.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside></div></main> <!-- /main -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -963,9 +906,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -975,17 +919,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -998,81 +933,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        return container.innerHTML
-      } else {
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1116,7 +976,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1202,7 +1061,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
