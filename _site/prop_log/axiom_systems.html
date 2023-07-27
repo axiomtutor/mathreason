@@ -39,8 +39,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -260,8 +258,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#euclidean-geometry" id="toc-euclidean-geometry" class="nav-link" data-scroll-target="#euclidean-geometry">Euclidean Geometry</a></li>
   <li><a href="#peano-arithmetic" id="toc-peano-arithmetic" class="nav-link" data-scroll-target="#peano-arithmetic">Peano Arithmetic</a></li>
-  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link" data-scroll-target="#vector-spaces">Vector Spaces</a></li>
+  <li><a href="#real-numbers" id="toc-real-numbers" class="nav-link" data-scroll-target="#real-numbers">Real Numbers</a></li>
+  <li><a href="#zfc" id="toc-zfc" class="nav-link" data-scroll-target="#zfc">ZFC</a></li>
   </ul></li>
+  <li><a href="#sets-of-propositions" id="toc-sets-of-propositions" class="nav-link" data-scroll-target="#sets-of-propositions">Sets of Propositions</a></li>
   </ul>
 </nav>
     </div>
@@ -294,8 +294,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="euclidean-geometry">Euclidean Geometry</h2>
 <p>Euclidean geometry is the axiom system which describes most of the familiar ideas of geometry. It is made from the following list of axioms.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="1">
-<li>There are some three points which are not colinear.<br>
-</li>
+<li>There are some three points which are not colinear.</li>
 <li>For any two points there is a unique line which runs through them.</li>
 <li>For any line it contains at least two points.</li>
 <li>A line segment can be prolonged indefinitely.</li>
@@ -354,20 +353,59 @@ Two Successors
 </div>
 </div>
 </section>
-<section id="vector-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="vector-spaces">Vector Spaces</h2>
-<p>Although the reader is likely familiar with Euclidean geometry (which is really, pretty much the same as standard geometry in the plane), and natural numbers, the reader may not be familiar with vector spaces. However, vector spaces are perhaps the most fundamentally important object in all of mathematics. So whomever you are out there, hi! If you’ve made it this far, you should definitely learn a little bit of vector space stuff!</p>
-<p>Vector spaces are not intrinsically geometric, but it is easiest to warm up to them if you start with a geometric view. We can start with the plane.</p>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="media_log\720p302.mp4"></video></div>
-<p>These arrows are each vectors. We primarily conceive of vectors as emanating out of the origin and pointing to some point in space.</p>
-<p>However, they don’t have to start at the origin – a vector can start anywhere and terminate anywhere. So for instance you can see the yellow vector, which starts at the tip of the red vector, in the animation above.</p>
-<p>Note that vectors are represented by a list of coordinates. The red vector is the same as <span class="math inline">\(\begin{bmatrix}-1\\-3\end{bmatrix}\)</span>, and here you probably feel no sense of mystery. But the yellow matrix is <span class="math inline">\(\begin{bmatrix}1\\1\end{bmatrix}\)</span>, and this may seem strange. Notice that the start- and end-points of this vector are <span class="math inline">\((-1,-3)\)</span> and <span class="math inline">\((0,-2)\)</span>. The coordinates of the vector is then the end-point coordinates, minus the start-point coordinates.</p>
+<section id="real-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="real-numbers">Real Numbers</h2>
 <ol type="1">
-<li></li>
+<li>Addition and multiplication are operations on real numbers. The set of real numbers is closed under this operation.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>Both operations are associative and commutative.</li>
+<li>Addition has an identity element, written as <span class="math inline">\(0\)</span>. The fact that <span class="math inline">\(0\)</span> is an identity element, means that for any other real number, <span class="math inline">\(x\)</span>, the equality <span class="math inline">\(0+x=x=x+0\)</span> holds.</li>
+<li>Every real number has an “additive inverse”. If <span class="math inline">\(x\)</span> is any real number, then we write its additive inverse as <span class="math inline">\(-x\)</span>. The fact that <span class="math inline">\(-x\)</span> is the additive inverse of <span class="math inline">\(x\)</span>, means that their sum is the identity. I.e.<br>
+$$<br>
+-x+x = 0<br>
+$$</li>
+<li>Every real number other than <span class="math inline">\(0\)</span> has a multiplicative inverse. If <span class="math inline">\(x\)</span> is a nonzero real number then we write its multiplicative inverse as <span class="math inline">\(x^{-1}\)</span> or <span class="math inline">\(1/x\)</span>. Being the multiplicative inverse means that <span class="math inline">\(x\)</span> and <span class="math inline">\(x^{-1}\)</span> multiply to the identity – but notice that this time the identity is <span class="math inline">\(1\)</span>!<br>
+$$<br>
+x^{-1}\cdot x = 1<br>
+$$</li>
+<li>Multiplication distributes over addition: For any three real numbers <span class="math inline">\(x,y,z\)</span> we have<br>
+$$<br>
+x(y+z)=xy+xz<br>
+$$</li>
 </ol>
-
-
+<div class="callout callout-style-simple callout-tip no-icon callout-titled" title="Real Number Demo">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Real Number Demo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Theorem: Zero times any number is zero.</p>
+<p>Proof: Let <span class="math inline">\(x\)</span> be any real number. Then the following chain of equations holds.</p>
+<p><span class="math display">\[
+0x = (-1+1)x = (-1)x + 1x = (-1)x + x
+\]</span></p>
+<p>The first equation is true because <span class="math inline">\(0=-1+1\)</span>, which is an instance of axiom 4. The second equaiton is an application of axiom 6. The third equation is an instance of axiom 3.</p>
+<p>I claim, as a lemma, that <span class="math inline">\((-1)x=-x\)</span>. We will see the proof of this lemma in a later section, but for now we take it for granted. Therefore we have</p>
+<p><span class="math display">\[
+0x = -x+x = 0
+\]</span></p>
+<p>where the first equation is due to the lemma, and the second equation is an instance of axiom 4.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+</div>
+</div>
 </section>
+<section id="zfc" class="level2">
+<h2 class="anchored" data-anchor-id="zfc">ZFC</h2>
+<p>ZFC is perhaps “the big one” because it can be taken as a foundation for almost all of mathematics. However, the axioms can be quite complex and abstract, and therefore it doesn’t make much sense to present them until after we have discussed first-order logic in the next chapter. First-order logic will then equip us with some of the language and concepts that we will need to make sense of these axioms.</p>
+</section>
+</section>
+<section id="sets-of-propositions" class="level1">
+<h1>Sets of Propositions</h1>
+
+
 </section>
 
 
@@ -376,6 +414,7 @@ Two Successors
 <ol>
 <li id="fn1"><p>These are largely adapted from Hartshorne’s <em>Beyond Euclid</em> textbook.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Note that this uses set membership notation, and this is no accident. While you should feel free to read “<span class="math inline">\(P_1\in\ell_1\)</span>” as “point <span class="math inline">\(P_1\)</span> is on line <span class="math inline">\(\ell_1\)</span>” – it is also correct to say <span class="math inline">\(P_1\)</span> is an element of the set <span class="math inline">\(\ell_1\)</span>, because we will understand lines to be sets of points.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Saying that “the real numbers are closed under addition”, for example, means that if you add two real numbers, then the result is again a real number.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -696,7 +735,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

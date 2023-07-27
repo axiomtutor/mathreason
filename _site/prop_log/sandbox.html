@@ -501,12 +501,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="5">
+<div id="cell-7" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>config.media_width <span class="op">=</span> <span class="st">"100%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Manim Community <span style="color: #008000; text-decoration-color: #008000">v0.17.3</span>
+
+</pre>
+</div>
 </div>
 <div id="cell-8" class="cell" data-execution_count="32">
 <details>
@@ -553,6 +558,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 <video src="media\jupyter\R2@2023-07-26@16-24-09.mp4" controls="" autoplay="" loop="" style="max-width: 100%;">
+      Your browser does not support the <code>video</code> element.
+    </video>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="22">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>manim <span class="op">-</span>qm <span class="op">-</span>v WARNING R3</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> R3(ThreeDScene):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.set_camera_orientation(phi<span class="op">=</span><span class="dv">2</span><span class="op">*</span>PI<span class="op">/</span><span class="dv">5</span>, theta<span class="op">=</span>PI<span class="op">/</span><span class="dv">5</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        space <span class="op">=</span> ThreeDAxes()</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(space))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        vec <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        vec2 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        vec3 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        vec4 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">4</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"RED"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        vec5 <span class="op">=</span> Arrow([<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>], buff<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">"YELLOW"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        vec6 <span class="op">=</span> Arrow([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>], buff<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec,vec2))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.remove(vec)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec2,vec4))</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.remove(vec2)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Transform(vec4,vec3))</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec5)) </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        label1 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs"> -1\\-3\\3\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>, color<span class="op">=</span>RED).move_to([<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>])</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label1))</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        label2 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs"> 1\\1\\-2\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>, color<span class="op">=</span>YELLOW).move_to([<span class="fl">.5</span>,<span class="op">-</span><span class="fl">1.5</span>,<span class="op">-</span><span class="fl">2.5</span>])</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label2))</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>        label3 <span class="op">=</span> MathTex(<span class="vs">r"\begin</span><span class="sc">{bmatrix}</span><span class="vs">1\\1\\0\end</span><span class="sc">{bmatrix}</span><span class="vs">"</span>).move_to([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>])</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Create(vec6))</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.play(Write(label3))</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.move_camera(phi<span class="op">=</span><span class="dv">2</span><span class="op">*</span>PI<span class="op">/</span><span class="dv">5</span>, theta<span class="op">=-</span><span class="dv">85</span> <span class="op">*</span> DEGREES, zoom<span class="op">=</span><span class="fl">.5</span>, run_time<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.move_camera(phi<span class="op">=</span><span class="fl">1.5</span><span class="op">*</span>PI<span class="op">/</span><span class="dv">5</span>, theta<span class="op">=-</span><span class="dv">85</span> <span class="op">*</span> DEGREES, zoom<span class="op">=</span><span class="fl">.5</span>, run_time<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.wait(<span class="dv">3</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>                                                                                                                             </code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<video src="media\jupyter\R3@2023-07-26@18-49-32.mp4" controls="" autoplay="" loop="" style="max-width: 100%;">
       Your browser does not support the <code>video</code> element.
     </video>
 </div>
