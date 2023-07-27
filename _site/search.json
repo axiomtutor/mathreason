@@ -126,11 +126,18 @@
     "text": "Peano Arithmetic\nHere are the axioms of Peano arithmetic:\n\n0 is a natural number.\nEvery natural number has a successor.\nIf two numbers share the same successor then they are the same number.\n0 is not the successor of any number.\nInduction is valid.\n\nI’m sure that especially axiom number 5 seems provocative! We will have much more to say about it in the chapter on First Order Logic, but for now I just want to show the various axioms systems at an introductory level. So we won’t currently worry about exactly what is meant by these.\nHere is a very simple example theorem.\n\n\n\n\n\n\nTwo Successors\n\n\n\nTheorem: If two numbers have different successors, then they are different numbers.\nProof: Suppose \\(m,n\\) are two natural numbers and \\(S(m)\\ne S(n)\\).\nSuppose for contradiction that \\(m=n\\). Then \\(S(m)=S(n)\\) but this contradicts \\(S(m)\\ne S(n)\\).\nTherefore \\(m\\ne n\\).\n\\(\\Box\\)"
   },
   {
-    "objectID": "prop_log/axiom_systems.html#vector-spaces",
-    "href": "prop_log/axiom_systems.html#vector-spaces",
+    "objectID": "prop_log/axiom_systems.html#real-numbers",
+    "href": "prop_log/axiom_systems.html#real-numbers",
     "title": "Axiom Systems",
-    "section": "Vector Spaces",
-    "text": "Vector Spaces\nAlthough the reader is likely familiar with Euclidean geometry (which is really, pretty much the same as standard geometry in the plane), and natural numbers, the reader may not be familiar with vector spaces. However, vector spaces are perhaps the most fundamentally important object in all of mathematics. So whomever you are out there, hi! If you’ve made it this far, you should definitely learn a little bit of vector space stuff!\nHowever, doing the subject any amount of justice would require too large a digression. Therefore I will simply present the axioms of a vector space."
+    "section": "Real Numbers",
+    "text": "Real Numbers\n\nAddition and multiplication are operations on real numbers. The set of real numbers is closed under this operation.3\nBoth operations are associative and commutative.\nAddition has an identity element, written as \\(0\\). The fact that \\(0\\) is an identity element, means that for any other real number, \\(x\\), the equality \\(0+x=x=x+0\\) holds.\nEvery real number has an “additive inverse”. If \\(x\\) is any real number, then we write its additive inverse as \\(-x\\). The fact that \\(-x\\) is the additive inverse of \\(x\\), means that their sum is the identity. I.e.\n$$\n-x+x = 0\n$$\nEvery real number other than \\(0\\) has a multiplicative inverse. If \\(x\\) is a nonzero real number then we write its multiplicative inverse as \\(x^{-1}\\) or \\(1/x\\). Being the multiplicative inverse means that \\(x\\) and \\(x^{-1}\\) multiply to the identity – but notice that this time the identity is \\(1\\)!\n$$\nx^{-1}\\cdot x = 1\n$$\nMultiplication distributes over addition: For any three real numbers \\(x,y,z\\) we have\n$$\nx(y+z)=xy+xz\n$$\n\n\n\n\n\n\n\nReal Number Demo\n\n\n\nTheorem: Zero times any number is zero.\nProof: Let \\(x\\) be any real number. Then the following chain of equations holds.\n\\[\n0x = (-1+1)x = (-1)x + 1x = (-1)x + x\n\\]\nThe first equation is true because \\(0=-1+1\\), which is an instance of axiom 4. The second equaiton is an application of axiom 6. The third equation is an instance of axiom 3.\nI claim, as a lemma, that \\((-1)x=-x\\). We will see the proof of this lemma in a later section, but for now we take it for granted. Therefore we have\n\\[\n0x = -x+x = 0\n\\]\nwhere the first equation is due to the lemma, and the second equation is an instance of axiom 4.\n\\(\\Box\\)"
+  },
+  {
+    "objectID": "prop_log/axiom_systems.html#zfc",
+    "href": "prop_log/axiom_systems.html#zfc",
+    "title": "Axiom Systems",
+    "section": "ZFC",
+    "text": "ZFC\nZFC is perhaps “the big one” because it can be taken as a foundation for almost all of mathematics. However, the axioms can be quite complex and abstract, and therefore it doesn’t make much sense to present them until after we have discussed first-order logic in the next chapter. First-order logic will then equip us with some of the language and concepts that we will need to make sense of these axioms."
   },
   {
     "objectID": "prop_log/deduction.html",
@@ -187,19 +194,5 @@
     "title": "Parse Trees",
     "section": "Parsing",
     "text": "Parsing\nIt can be a little unsatisfying to input propositions in such an artificial way. Can’t we find a way to input a string like `“if (not P) then (Q or (R and S))” and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!\nHowever, to understand it, you have to get a little familiar with the pyparsing library. Since none of this is very interesting for logic, I’ll just leave the code but won’t try to explain it.\n\n\nCode\nimport pyparsing\n\nterms = pyparsing.Word(pyparsing.alphas) | \"not\" | \"and\" | \"or\" | \"if\" | \"then\" | \"iff\" \nnesting = pyparsing.nestedExpr( '(', ')', content=terms)\n\ndef shape(s): \n    p = nesting.parseString(\"(\"+s+\")\")[0]\n    \n    return parseTree(p)"
-  },
-  {
-    "objectID": "prop_log/axiom_systems.html#real-numbers",
-    "href": "prop_log/axiom_systems.html#real-numbers",
-    "title": "Axiom Systems",
-    "section": "Real Numbers",
-    "text": "Real Numbers\n\nAddition and multiplication are operations on real numbers. The set of real numbers is closed under this operation.3\nBoth operations are associative and commutative.\nAddition has an identity element, written as \\(0\\). The fact that \\(0\\) is an identity element, means that for any other real number, \\(x\\), the equality \\(0+x=x=x+0\\) holds.\nEvery real number has an “additive inverse”. If \\(x\\) is any real number, then we write its additive inverse as \\(-x\\). The fact that \\(-x\\) is the additive inverse of \\(x\\), means that their sum is the identity. I.e.\n$$\n-x+x = 0\n$$\nEvery real number other than \\(0\\) has a multiplicative inverse. If \\(x\\) is a nonzero real number then we write its multiplicative inverse as \\(x^{-1}\\) or \\(1/x\\). Being the multiplicative inverse means that \\(x\\) and \\(x^{-1}\\) multiply to the identity – but notice that this time the identity is \\(1\\)!\n$$\nx^{-1}\\cdot x = 1\n$$\nMultiplication distributes over addition: For any three real numbers \\(x,y,z\\) we have\n$$\nx(y+z)=xy+xz\n$$\n\n\n\n\n\n\n\nReal Number Demo\n\n\n\nTheorem: Zero times any number is zero.\nProof: Let \\(x\\) be any real number. Then the following chain of equations holds.\n\\[\n0x = (-1+1)x = (-1)x + 1x = (-1)x + x\n\\]\nThe first equation is true because \\(0=-1+1\\), which is an instance of axiom 4. The second equaiton is an application of axiom 6. The third equation is an instance of axiom 3.\nI claim, as a lemma, that \\((-1)x=-x\\). We will see the proof of this lemma in a later section, but for now we take it for granted. Therefore we have\n\\[\n0x = -x+x = 0\n\\]\nwhere the first equation is due to the lemma, and the second equation is an instance of axiom 4.\n\\(\\Box\\)"
-  },
-  {
-    "objectID": "prop_log/axiom_systems.html#zfc",
-    "href": "prop_log/axiom_systems.html#zfc",
-    "title": "Axiom Systems",
-    "section": "ZFC",
-    "text": "ZFC\nZFC is perhaps “the big one” because it can be taken as a foundation for almost all of mathematics. However, the axioms can be quite complex and abstract, and therefore it doesn’t make much sense to present them until after we have discussed first-order logic in the next chapter. First-order logic will then equip us with some of the language and concepts that we will need to make sense of these axioms."
   }
 ]

@@ -464,6 +464,8 @@ We will assume that proofs are formatted in a comma-separated string. The commas
 argument = "(1.; P and Q; Premise), (2.; if P then (Q or R); Conditional Proof), (2.1.; P; Assumption), (2.2.; Q or R; Or Introduction, 2.), (2.2.3.; ; End Subproof)"
 ```
 
+The following code is not terribly interesting -- it mostly handles tedious issues of parsing and structuring the argument string.  
+
 ```{python}
 ### BORING CODE ###
 def rows_list(argument):
@@ -509,6 +511,8 @@ def x_sees_y(x, y):
             return False
     return y[n1-1] <= x[n1-1]
 ```
+
+Here is where the more interesting part of the code begins, as it implements a lot of the concepts of argument validity.  Note that, if you'd like to see the details, the function above `x_sees_y`, could be interesting too.  It determines, for some two row numbers, whether one is allowed to "see" the other.  If `y` is in a subproof closed off from `x`, then it returns `False`.  Also if `y` is further along in the proof than `x`, it returns `False`.  But if `y` is supposed to be accessible from `x`, then it returns `True`.  
 
 ```{python}
 ### INTERESTING CODE ###
@@ -599,6 +603,6 @@ def validate(argument):
 
 ```
 
-::: {.callout-important title="Full Proof Assist" appearance="minimal"}
+::: {.callout-important title="Full Proof Assistant" appearance="minimal"}
 Implement the remaining inference rules and use them to extend the proof checker.
 :::
