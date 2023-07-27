@@ -705,7 +705,7 @@ Proposition Representation
 <p>We will have a <code>Negation</code> class which represents the negation of some other proposition. This will contain a single piece of information, <code>self.neg</code>, which is the tree structure of the proposition that is negated.</p>
 <p>Then we will have a <code>Disjunction</code> class which represents the disjunction of two propositions. It contains two pieces of information, <code>self.left</code> and <code>self.right</code>, representing the two disjuncts.</p>
 <p>It will also be useful to have an abstract class <code>Proposition</code> which gives these three classes a common superclass.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div id="9c867fd5" class="cell" data-execution_count="1">
+<div id="a3917ce7" class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
@@ -758,7 +758,7 @@ Make Proposition Instances
 </div>
 <div class="callout-body-container callout-body">
 <p>The following code makes instances of these classes and prints their string representations.</p>
-<div id="e0753fc8" class="cell" data-execution_count="2">
+<div id="19a4aa57" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> PropVariable(<span class="st">"P"</span>)</span>
@@ -782,7 +782,7 @@ Make Proposition Instances
 <section id="structuring" class="level2">
 <h2 class="anchored" data-anchor-id="structuring">Structuring</h2>
 <p>The above was necessary to make the Python code work. But it was not the most interesting for the analysis of logic. The function below is the code that most reflects the idea of the parse tree. This takes a proposition, represented as we have described, and returns a tree structure, as we have defined with the <code>Proposition</code> class.</p>
-<div id="434921f1" class="cell" data-execution_count="3">
+<div id="873ea3ac" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
@@ -811,7 +811,7 @@ Explain parseTree
 </div>
 <div class="callout-body-container callout-body">
 <p>Explain the lines of code</p>
-<div id="3474ff51" class="cell" data-execution_count="4">
+<div id="64140bf9" class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
@@ -820,7 +820,7 @@ Explain parseTree
 </div>
 <hr>
 <p>Explain</p>
-<div id="27e7b7bf" class="cell" data-execution_count="5">
+<div id="73bab020" class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
@@ -830,7 +830,7 @@ Explain parseTree
 <p>(Note: I have omitted the “assertion”, since this is there mostly for debugging purposes – it is not especially interesting for the logic.)</p>
 <hr>
 <p>Explain</p>
-<div id="f50eaf76" class="cell" data-execution_count="6">
+<div id="057dec06" class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
@@ -858,7 +858,7 @@ Other parseTree Operations
 <h2 class="anchored" data-anchor-id="parsing">Parsing</h2>
 <p>It can be a little unsatisfying to input propositions in such an artificial way. Can’t we find a way to input a string like `“if (not P) then (Q or (R and S))” and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!</p>
 <p>However, to understand it, you have to get a little familiar with the <code>pyparsing</code> library. Since none of this is very interesting for logic, I’ll just leave the code but won’t try to explain it.</p>
-<div id="60562dc7" class="cell" data-execution_count="7">
+<div id="3d1f099e" class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
