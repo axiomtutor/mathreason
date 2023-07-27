@@ -74,7 +74,7 @@ $\Box$
 1.  Addition and multiplication are operations on real numbers. The set of real numbers is closed under this operation.[^3]
 2.  Both operations are associative and commutative.
 3.  Addition has an identity element, written as $0$. The fact that $0$ is an identity element, means that for any other real number, $x$, the equality $0+x=x=x+0$ holds.
-4.  Every real number has an "additive inverse". If $x$ is any real number, then we write its additive inverse as $-x$. The fact that $-x$ is the additive inverse of $x$, means that their sum is the identity. I.e. \
+4.  Every real number has an "additive inverse". If $x$ is any real number, then we write its additive inverse as $-x$. The fact that $-x$ is the additive inverse of $x$, means that their sum is the identity. I.e.\
     \$\$\
     -x+x = 0\
     \$\$
@@ -82,7 +82,7 @@ $\Box$
     \$\$\
     x\^{-1}\\cdot x = 1\
     \$\$
-6.  Multiplication distributes over addition: For any three real numbers $x,y,z$ we have \
+6.  Multiplication distributes over addition: For any three real numbers $x,y,z$ we have\
     \$\$\
     x(y+z)=xy+xz\
     \$\$
@@ -98,9 +98,9 @@ $$
 0x = (-1+1)x = (-1)x + 1x = (-1)x + x
 $$
 
-The first equation is true because $0=-1+1$, which is an instance of axiom 4.  The second equaiton is an application of axiom 6.  The third equation is an instance of axiom 3.
+The first equation is true because $0=-1+1$, which is an instance of axiom 4. The second equaiton is an application of axiom 6. The third equation is an instance of axiom 3.
 
-I claim, as a lemma, that $(-1)x=-x$.  We will see the proof of this lemma in a later section, but for now we take it for granted.  Therefore we have 
+I claim, as a lemma, that $(-1)x=-x$. We will see the proof of this lemma in a later section, but for now we take it for granted. Therefore we have
 
 $$
 0x = -x+x = 0
@@ -113,7 +113,40 @@ $\Box$
 
 ## ZFC
 
-ZFC is perhaps "the big one" because it can be taken as a foundation for almost all of mathematics.  However, the axioms can be quite complex and abstract, and therefore it doesn't make much sense to present them until after we have discussed first-order logic in the next chapter.  First-order logic will then equip us with some of the language and concepts that we will need to make sense of these axioms.  
+ZFC is perhaps "the big one" because it can be taken as a foundation for almost all of mathematics. However, the axioms can be quite complex and abstract, and therefore it doesn't make much sense to present them until after we have discussed first-order logic in the next chapter. First-order logic will then equip us with some of the language and concepts that we will need to make sense of these axioms.
 
 # Sets of Propositions
 
+An **axiom system** is really just any set of axioms, which really just means any set of propositions.[^4] Our hope, however, is to take this set of propositions to be as small as possible. If done right, we will not lose anything, because all of the true propositions will become "consequences" of the axioms.
+
+[^4]: This is not entirely accurate. More formally, we take an axiom system to be any any "decidable" set of propositions. However, saying exactly what "decidable" means is difficult and so I will avoid the issue. Just know that every set of axioms that we will discuss in this textbook are decidable sets. Therefore, under just about anyone's definition, they count as axioms.
+
+The **theory** of an axiom system is the set of all of its consequences. More formally, if $A$ is any set of axioms, then the theory of $A$ is
+
+$$
+\text{Th}(A) = \{ \alpha: A\vDash \alpha\}
+$$
+
+If $\alpha\in\text{Th}(A)$ then we call $\alpha$ a **theorem**. Note that $\alpha$ is a theorem of $A$ if and only if $\alpha$ is entailed by $A$, and this fact deserves no proof because it is immediately from definitions.
+
+::: {.callout-important title="Theory Monotonicity" appearance="minimal"}
+Prove that for any axiom system $A$,
+
+$$ 
+A\subseteq \text{Th}(A)
+$$
+:::
+
+::: {.callout-important title="Make a Theory Example" appearance="minimal"}
+Make an example of an axiom system and theory, such that its theory contains a proposition which the axioms system does not. Also make an example of an axiom system, such that it has all the same propositions as its theory.
+:::
+
+It turns out that, for propositional logic, there is no difference between $A\vDash \alpha$ and $A\vdash \alpha$. That is to say $A\vDash \alpha$ if and only if $A\vdash \alpha$.
+
+The fact that $A\vdash\alpha$ implies $A\vDash\alpha$ is called the **soundness** of propositional logic. It effectively "says" that if there is a proof, then you can trust it. That is to say, proofs guarantee truth.
+
+The fact that $A\vDash\alpha$ implies $A\vdash \alpha$ is called the **completeness** of propositional logic. It effectively says that everything true has a proof.
+
+We could prove the soundness and completeness for propositional logic. However, this would not significantly help us to understand how to do mathematics, which is the goal of the textbook. It is, however, worth knowing about soundness and completeness.
+
+In particular, it is interesting because there are other interesting logical systems. None of them fail soundness, because that would make the system entirely useless. The whole point of a proof is to guarantee truth! But some of them will be important, useful, and yet fail completeness. That is to say, there are some systems with some true propositions, for which a proof is not possible.

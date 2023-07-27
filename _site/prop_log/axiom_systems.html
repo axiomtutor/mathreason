@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mathematical Reasoning 2023 - Axiom Systems</title>
+<title>How to Become a Mathematician - Axiom Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Mathematical Reasoning 2023</span>
+    <span class="navbar-title">How to Become a Mathematician</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -404,6 +404,45 @@ Real Number Demo
 </section>
 <section id="sets-of-propositions" class="level1">
 <h1>Sets of Propositions</h1>
+<p>An <strong>axiom system</strong> is really just any set of axioms, which really just means any set of propositions.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Our hope, however, is to take this set of propositions to be as small as possible. If done right, we will not lose anything, because all of the true propositions will become “consequences” of the axioms.</p>
+<p>The <strong>theory</strong> of an axiom system is the set of all of its consequences. More formally, if <span class="math inline">\(A\)</span> is any set of axioms, then the theory of <span class="math inline">\(A\)</span> is</p>
+<p><span class="math display">\[
+\text{Th}(A) = \{ \alpha: A\vDash \alpha\}
+\]</span></p>
+<p>If <span class="math inline">\(\alpha\in\text{Th}(A)\)</span> then we call <span class="math inline">\(\alpha\)</span> a <strong>theorem</strong>. Note that <span class="math inline">\(\alpha\)</span> is a theorem of <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\alpha\)</span> is entailed by <span class="math inline">\(A\)</span>, and this fact deserves no proof because it is immediately from definitions.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Theory Monotonicity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theory Monotonicity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove that for any axiom system <span class="math inline">\(A\)</span>,</p>
+<p><span class="math display">\[
+A\subseteq \text{Th}(A)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Make a Theory Example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Make a Theory Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make an example of an axiom system and theory, such that its theory contains a proposition which the axioms system does not. Also make an example of an axiom system, such that it has all the same propositions as its theory.</p>
+</div>
+</div>
+<p>It turns out that, for propositional logic, there is no difference between <span class="math inline">\(A\vDash \alpha\)</span> and <span class="math inline">\(A\vdash \alpha\)</span>. That is to say <span class="math inline">\(A\vDash \alpha\)</span> if and only if <span class="math inline">\(A\vdash \alpha\)</span>.</p>
+<p>The fact that <span class="math inline">\(A\vdash\alpha\)</span> implies <span class="math inline">\(A\vDash\alpha\)</span> is called the <strong>soundness</strong> of propositional logic. It effectively “says” that if there is a proof, then you can trust it. That is to say, proofs guarantee truth.</p>
+<p>The fact that <span class="math inline">\(A\vDash\alpha\)</span> implies <span class="math inline">\(A\vdash \alpha\)</span> is called the <strong>completeness</strong> of propositional logic. It effectively says that everything true has a proof.</p>
+<p>We could prove the soundness and completeness for propositional logic. However, this would not significantly help us to understand how to do mathematics, which is the goal of the textbook. It is, however, worth knowing these theorems – in particular, because there are other interesting logical systems. None of them fail soundness, because that would make the system entirely useless. The whole point of a proof is to guarantee truth! But some of them will be important, useful, and yet fail completeness. That is to say, there are some systems with some true propositions, for which a proof is not possible.</p>
 
 
 </section>
@@ -415,6 +454,7 @@ Real Number Demo
 <li id="fn1"><p>These are largely adapted from Hartshorne’s <em>Beyond Euclid</em> textbook.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Note that this uses set membership notation, and this is no accident. While you should feel free to read “<span class="math inline">\(P_1\in\ell_1\)</span>” as “point <span class="math inline">\(P_1\)</span> is on line <span class="math inline">\(\ell_1\)</span>” – it is also correct to say <span class="math inline">\(P_1\)</span> is an element of the set <span class="math inline">\(\ell_1\)</span>, because we will understand lines to be sets of points.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Saying that “the real numbers are closed under addition”, for example, means that if you add two real numbers, then the result is again a real number.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This is not entirely accurate. More formally, we take an axiom system to be any any “decidable” set of propositions. However, saying exactly what “decidable” means is difficult and so I will avoid the issue. Just know that every set of axioms that we will discuss in this textbook are decidable sets. Therefore, under just about anyone’s definition, they count as axioms.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
