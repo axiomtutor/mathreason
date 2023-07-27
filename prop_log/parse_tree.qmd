@@ -101,31 +101,31 @@ Make up a complex example proposition and find its main operator.
 
 # A Python Parser
 
-In this section we will see how you can make Python understand the parse tree of a proposition.  We will implement a function which, given an input string, will return an instance of a `Proposition` class representing the hierarchical structure of the proposition.  
+In this section we will see how you can make Python understand the parse tree of a proposition. We will implement a function which, given an input string, will return an instance of a `Proposition` class representing the hierarchical structure of the proposition.
 
 ## Representation
 
 This will first require us to make two decisions: How do we represent the input proposition, and how do we represent the output tree?
 
-The input propositions will be represented by strings and lists.  It's easiest just to give some examples.  
+The input propositions will be represented by strings and lists. It's easiest just to give some examples.
 
-* `"P"` represents the propositional variable $P$.
-* `["not", "P"]` represents $\neg P$.
-* `[["not", "P"], "or", "Q"]` represents $(\neg P)\lor Q$.  
+-   `"P"` represents the propositional variable $P$.
+-   `["not", "P"]` represents $\neg P$.
+-   `[["not", "P"], "or", "Q"]` represents $(\neg P)\lor Q$.
 
 ::: {.callout-important title="Proposition Representation" appearance="minimal"}
-Give the code representation of the propostion $\neg(\neg P)$.  
+Give the code representation of the propostion $\neg(\neg P)$.
 :::
 
-The output tree structure will be represented by classes.  We will have a class `PropVariable` for propositional variables.  This class will contain only a single piece of information, `self.v`, a string which is the name of the propositional variable.
+The output tree structure will be represented by classes. We will have a class `PropVariable` for propositional variables. This class will contain only a single piece of information, `self.v`, a string which is the name of the propositional variable.
 
-We will have a `Negation` class which represents the negation of some other proposition.  This will contain a single piece of information, `self.neg`, which is the tree structure of the proposition that is negated.  
+We will have a `Negation` class which represents the negation of some other proposition. This will contain a single piece of information, `self.neg`, which is the tree structure of the proposition that is negated.
 
-Then we will have a `Disjunction` class which represents the disjunction of two propositions.  It contains two pieces of information, `self.left` and `self.right`, representing the two disjuncts.  
+Then we will have a `Disjunction` class which represents the disjunction of two propositions. It contains two pieces of information, `self.left` and `self.right`, representing the two disjuncts.
 
 It will also be useful to have an abstract class `Proposition` which gives these three classes a common superclass.[^1]
 
-[^1]: This abstract class is not strictly necessary for the code to work.  However, I like to check the inputs to the functions, to make sure that they have the right types.  The abstract class allows us to regard each kind of proposition as a subclass of this larger abstract class -- and this makes it possible to check an input to ensure that it is some kind of proposition.   
+[^1]: This abstract class is not strictly necessary for the code to work. However, I like to check the inputs to the functions, to make sure that they have the right types. The abstract class allows us to regard each kind of proposition as a subclass of this larger abstract class -- and this makes it possible to check an input to ensure that it is some kind of proposition.
 
 ```{python}
 class Proposition:
@@ -155,11 +155,11 @@ class Disjunction(Proposition):
 ```
 
 ::: {.callout-important title="Other Op Classes" appearance="minimal"}
-Write new classes in addition to the ones above, for conjunction, conditional, and biconditional propositions.  (Hint: These are all almost exactly the same as `Disjunction`.)
+Write new classes in addition to the ones above, for conjunction, conditional, and biconditional propositions. (Hint: These are all almost exactly the same as `Disjunction`.)
 :::
 
 ::: {.callout-important title="Make Proposition Instances" appearance="minimal"}
-The following code makes instances of these classes and prints their string representations.  
+The following code makes instances of these classes and prints their string representations.
 
 ```{python}
 p = PropVariable("P")
@@ -171,12 +171,12 @@ print(str(np))
 print(str(npop))
 ```
 
-Create an instance of these classes, which represents $(\neg Q)\land (\neg P)$.  
+Create an instance of these classes, which represents $(\neg Q)\land (\neg P)$.
 :::
 
 ## Structuring
 
-The above was necessary to make the Python code work.  But it was not the most interesting for the analysis of logic.  The function below is the code that most reflects the idea of the parse tree.  This takes a proposition, represented as we have described, and returns a tree structure, as we have defined with the `Proposition` class.  
+The above was necessary to make the Python code work. But it was not the most interesting for the analysis of logic. The function below is the code that most reflects the idea of the parse tree. This takes a proposition, represented as we have described, and returns a tree structure, as we have defined with the `Proposition` class.
 
 ```{python}
 def parseTree(p):
@@ -195,7 +195,7 @@ def parseTree(p):
 ```
 
 ::: {.callout-important title="Explain parseTree" appearance="minimal"}
-Explain the lines of code 
+Explain the lines of code
 
 ```{python}
 #| eval: false
@@ -204,9 +204,10 @@ if type(p) == type(""):
     
 ```
 
------------------------------------
+------------------------------------------------------------------------
 
-Explain 
+Explain
+
 ```{python}
 #| eval: false
 if len(p) == 2:
@@ -215,9 +216,9 @@ if len(p) == 2:
 
 (Note: I have omitted the "assertion", since this is there mostly for debugging purposes -- it is not especially interesting for the logic.)
 
----------------------------------------
+------------------------------------------------------------------------
 
-Explain 
+Explain
 
 ```{python}
 #| eval: false
@@ -227,16 +228,16 @@ if len(p) == 3:
 :::
 
 ::: {.callout-important title="Other parseTree Operations" appearance="minimal"}
-Extend the code of the `parseTree` function to make it parse conjunction, conditional, and biconditional propositions.  For conjunction, use the "token" to be "and" rather than "or".  For biconditional, use the toke "iff" rather than "or".
+Extend the code of the `parseTree` function to make it parse conjunction, conditional, and biconditional propositions. For conjunction, use the "token" to be "and" rather than "or". For biconditional, use the toke "iff" rather than "or".
 
-For the conditional, we will take its representation to be a little different.  In order to represent $P\to Q$ we will represent this in code as `["if", "P", "then", "Q"]`.  Therefore the way that you will need to edit the code for the conditional is a bit different from the others.  
+For the conditional, we will take its representation to be a little different. In order to represent $P\to Q$ we will represent this in code as `["if", "P", "then", "Q"]`. Therefore the way that you will need to edit the code for the conditional is a bit different from the others.
 :::
 
 ## Parsing
 
-It can be a little unsatisfying to input propositions in such an artificial way.  Can't we find a way to input a string like `"if (not P) then (Q or (R and S))" and the program will structure it and form the corresponding tree?  Indeed it can be done and the code below accomplishes this!  
+It can be a little unsatisfying to input propositions in such an artificial way. Can't we find a way to input a string like \`"if (not P) then (Q or (R and S))" and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!
 
-However, to understand it, you have to get a little familiar with the `pyparsing` library.  Since none of this is very interesting for logic, I'll just leave the code but won't try to explain it.
+However, to understand it, you have to get a little familiar with the `pyparsing` library. Since none of this is very interesting for logic, I'll just leave the code but won't try to explain it.
 
 ```{python}
 
@@ -250,4 +251,3 @@ def shape(s):
     
     return parseTree(p)
 ```
-

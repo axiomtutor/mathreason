@@ -1,65 +1,22 @@
-Math Tutoring Notes
-
-ideas
-
-- git
-- pizza proof?
-- review textbook
-- software demonstration Quarto (animations)
-
-
-root
-	notes
-		projects
-		lessons
-
-	projects
-		
-
-	resources and links
-
-Consider that a pizza might be sliced in 
-5, 6 (captures 2 & 3), 7, 8 (captures 4) or 9 ways
-
-1. Each individual should be full
-2. An individual must eat 1/4 of a pizza to be "full"
-3. If n individuals are not full, another pie must be ordered
-4. Ideally, there should be no remaining slices
-5. An individual may not eat more than 1/2 of a pizza
-6. Each individual should receive the same # of slices
-
-for n individuals, what is the ideal number of slices
-
-
-slices = [5, 6, 7, 8, 9]
-scores = [0, 0, 0, 0, 0]
-
-
-numPeople = 1000
-
-while numPeople > 0
-	foreach person in numPeople
-		foreach slice in slices
-			modScore = person % slices
-			if 
+GIT REPOSITORY
 
 
 
-
-
-
-
-
+PULL STUFF IN
 
 git pull origin main (in maths desktop directory)
 
 
+PUSH STUFF OUT
+
+git add .
+
+git commit -m "message"
+
+git push origin master
 
 
 
-
-
-
-
-
+PS C:\Users\hepke> cd C:\Users\hepke\Desktop\Maths
+PS C:\Users\hepke\Desktop\Maths> quarto preview index.qmd
 
