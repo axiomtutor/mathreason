@@ -60,6 +60,22 @@ Later when we return to study geometry, we will try to identify the "axioms" of 
 * Real numbers
 * Set theory
 
+```{python}
+#| label: tbl-planets
+#| tbl-cap: Astronomical object
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["Sun","696,000",1.989e30],
+         ["Earth","6,371",5.972e24],
+         ["Moon","1,737",7.34e22],
+         ["Mars","3,390",6.39e23]]
+Markdown(tabulate(
+  table, 
+  headers=["Astronomical object","R (km)", "mass (kg)"]
+))
+```
+
 In fact it will turn out that by organizing these subjects axiomatically will create an unexpected value!  We will consider the possibility of removing or adding certain axioms, and see how this can produce new fields of mathematics!
 
 [^1]: Of course other civilizations also had highly developed mathematical knowledge.  Especially the ancient Hindus seem to have developed a large body of knowledge independently, and they studied logic with some depth.  However, for whatever reason, they never developed axiomatic mathematics -- and for that reason, they are not the focus of our story here.
