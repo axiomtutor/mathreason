@@ -9,3 +9,5 @@ In this chapter we extend propositional logic to another logic with more express
 There is a certain sort of logic which cannot be captured by propositional logic.  Take for instance "All cats are mammals.  Tabby is a cat.  Therefore Tabby is a mammal."  In particular, analyzing expressions at the level of whole propositions, cannot capture the idea of objects and properties that the objects have.  
 
 Therefore, if we want to talk about Tabby, we will use a symbol like $t$ to refer to it.  If we would like to say that Tabby is a cat, then we will write the property "is a cat" with the capital letter $C$.  To say that Tabby is a cat, we write $C(t)$.  
+
+Test new content.
