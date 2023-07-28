@@ -1,0 +1,253 @@
+---
+title: "Parse Trees"
+---
+
+The ambiguity between $\neg(P\lor Q)$ and $(\neg P)\lor Q$ makes visible the need for the idea of a "parse tree". To see what a parse tree is, let's start with the example of the simpler proposition $P\lor Q$.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph G {
+    v -- P;
+    v -- Q;
+}
+```
+
+This just expresses that the $\lor$ is "bound" directly to the sub-propositions $P$ and $Q$. More interesting is the parse tree for $\neg(P\lor Q)$. I've produced it below -- in a later version of this text I will try to properly typeset the $\neg$ symbol, but for now I merely use the dash, `-`, instead.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph G {
+    "-" -- v
+    v -- P
+    v -- Q
+}
+```
+
+This illustrates that the symbol $\neg$ is applied to the entire formula $P\lor Q$, which itself is represented as a subtree of the parse tree.
+
+::: {.callout-important title="Parse Tree Basic" appearance="minimal"}
+Exercise:
+
+Draw the parse trees for $(\neg P)\lor Q$ and $P\lor (Q\lor R)$ and $(P\lor Q)\lor R$ and $(\neg (P \lor Q)) \lor (\neg (Q\lor R))$.
+:::
+
+# The Main Operator
+
+We are now in a position to define the concept of the main operator of a proposition. Take for example $\neg P \land (Q\to \neg R)$. Fundamentally, this is the conjunction of $\neg P$ on the left and $Q\to \neg R$ on the right. Therefore the main operator of this proposition is $\land$.
+
+But the question is: Given a formula, how do you identify its main operator? One answer is that it is the "root" of the parse tree. Let's draw the parse tree for this formula. Note that because negation takes precedence, then we may start by regarding $\neg P$ as a sub-proposition here, and it has parse tree
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph G {
+    "-" -- P
+}
+```
+
+Now as we scan the rest of the proposition, the parentheses tell us that we must regard the $\land$ as "reading" $Q\to \neg R$ on its right. Now this is a conditional with $Q$ to its left and $\neg R$ to its right. This whole thing has parse tree
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph G {
+    "->" -- Q;
+    "->" -- "-";
+    "-" -- R;
+}
+```
+
+Now that we see the two sub-parse-trees, we can "glue them together" with $\land$.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph G {
+    onp[label = "-"];
+    onr[label = "-"];
+
+    subgraph arrow {
+        "->" -- Q;
+        "->" -- onr;
+        onr -- R;
+    }
+
+    "/\\" -- onp;
+    onp -- P;
+    "/\\" -- "->";
+
+    {
+        rank = same;
+        edge[style = invis]
+        Q -- onr
+    }
+}
+```
+
+Now that we have the entire parse tree, we can say that the **main operator** of the proposition is its root node in the parse tree. In this particular example, the main operator is $\land$.
+
+::: {.callout-important title="Main Op Ex" appearance="minimal"}
+Exercise:
+
+Make up a complex example proposition and find its main operator.
+:::
+
+# A Python Parser
+
+In this section we will see how you can make Python understand the parse tree of a proposition. We will implement a function which, given an input string, will return an instance of a `Proposition` class representing the hierarchical structure of the proposition.
+
+## Representation
+
+This will first require us to make two decisions: How do we represent the input proposition, and how do we represent the output tree?
+
+The input propositions will be represented by strings and lists. It's easiest just to give some examples.
+
+-   `"P"` represents the propositional variable $P$.
+-   `["not", "P"]` represents $\neg P$.
+-   `[["not", "P"], "or", "Q"]` represents $(\neg P)\lor Q$.
+
+::: {.callout-important title="Proposition Representation" appearance="minimal"}
+Give the code representation of the propostion $\neg(\neg P)$.
+:::
+
+The output tree structure will be represented by classes. We will have a class `PropVariable` for propositional variables. This class will contain only a single piece of information, `self.v`, a string which is the name of the propositional variable.
+
+We will have a `Negation` class which represents the negation of some other proposition. This will contain a single piece of information, `self.neg`, which is the tree structure of the proposition that is negated.
+
+Then we will have a `Disjunction` class which represents the disjunction of two propositions. It contains two pieces of information, `self.left` and `self.right`, representing the two disjuncts.
+
+It will also be useful to have an abstract class `Proposition` which gives these three classes a common superclass.[^1]
+
+[^1]: This abstract class is not strictly necessary for the code to work. However, I like to check the inputs to the functions, to make sure that they have the right types. The abstract class allows us to regard each kind of proposition as a subclass of this larger abstract class -- and this makes it possible to check an input to ensure that it is some kind of proposition.
+
+```{python}
+class Proposition:
+    pass
+
+class PropVariable(Proposition):
+    def __init__(self, v):
+        assert (type(v) == str and len(v) == 1) 
+        self.v = v
+    def __str__(self):
+        return(self.v)
+
+class Negation(Proposition):
+    def __init__(self, beta):
+        assert issubclass(type(beta),Proposition)
+        self.neg = beta
+    def __str__(self):
+        return("(not " + str(self.neg) + ")")
+
+class Disjunction(Proposition):
+    def __init__(self, beta, gamma):
+        assert issubclass(type(beta),Proposition) \
+            and issubclass(type(gamma),Proposition)
+        self.left, self.right = beta, gamma
+    def __str__(self):
+        return("("+str(self.left)+" or " + str(self.right) + ")")
+```
+
+::: {.callout-important title="Other Op Classes" appearance="minimal"}
+Write new classes in addition to the ones above, for conjunction, conditional, and biconditional propositions. (Hint: These are all almost exactly the same as `Disjunction`.)
+:::
+
+::: {.callout-important title="Make Proposition Instances" appearance="minimal"}
+The following code makes instances of these classes and prints their string representations.
+
+```{python}
+p = PropVariable("P")
+np = Negation(p)
+npop = Disjunction(np,p)
+
+print(str(p))
+print(str(np))
+print(str(npop))
+```
+
+Create an instance of these classes, which represents $(\neg Q)\land (\neg P)$.
+:::
+
+## Structuring
+
+The above was necessary to make the Python code work. But it was not the most interesting for the analysis of logic. The function below is the code that most reflects the idea of the parse tree. This takes a proposition, represented as we have described, and returns a tree structure, as we have defined with the `Proposition` class.
+
+```{python}
+def parseTree(p):
+    
+    if type(p) == type(""):
+        return PropVariable(p)
+    
+    if len(p) == 2:
+        assert( p[0] == "not" )
+        return Negation(parseTree(p[1]))
+    
+    if len(p) == 3:
+        if p[1] == "or": return Disjunction(parseTree(p[0]), parseTree(p[2]))
+        raise Exception("length 3 list but unrecognized middle token")
+    raise Exception("length of list unrecognized")
+```
+
+::: {.callout-important title="Explain parseTree" appearance="minimal"}
+Explain the lines of code
+
+```{python}
+#| eval: false
+if type(p) == type(""):
+    return PropVariable(p)
+    
+```
+
+------------------------------------------------------------------------
+
+Explain
+
+```{python}
+#| eval: false
+if len(p) == 2:
+    return Negation(pthelper(p[1]))
+```
+
+(Note: I have omitted the "assertion", since this is there mostly for debugging purposes -- it is not especially interesting for the logic.)
+
+------------------------------------------------------------------------
+
+Explain
+
+```{python}
+#| eval: false
+if len(p) == 3:
+    if p[1] == "or": return Disjunction(pthelper(p[0]), pthelper(p[2]))
+```
+:::
+
+::: {.callout-important title="Other parseTree Operations" appearance="minimal"}
+Extend the code of the `parseTree` function to make it parse conjunction, conditional, and biconditional propositions. For conjunction, use the "token" to be "and" rather than "or". For biconditional, use the toke "iff" rather than "or".
+
+For the conditional, we will take its representation to be a little different. In order to represent $P\to Q$ we will represent this in code as `["if", "P", "then", "Q"]`. Therefore the way that you will need to edit the code for the conditional is a bit different from the others.
+:::
+
+## Parsing
+
+It can be a little unsatisfying to input propositions in such an artificial way. Can't we find a way to input a string like \`"if (not P) then (Q or (R and S))" and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!
+
+However, to understand it, you have to get a little familiar with the `pyparsing` library. Since none of this is very interesting for logic, I'll just leave the code but won't try to explain it.
+
+```{python}
+
+import pyparsing
+
+terms = pyparsing.Word(pyparsing.alphas) | "not" | "and" | "or" | "if" | "then" | "iff" 
+nesting = pyparsing.nestedExpr( '(', ')', content=terms)
+
+def shape(s): 
+    p = nesting.parseString("("+s+")")[0]
+    
+    return parseTree(p)
+```

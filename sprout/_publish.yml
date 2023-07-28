@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 897b977d-bbfd-4701-91e8-ef9ec47dc255
+      url: 'https://axiomtutor.quarto.pub/mathematical-reasoning-2023'
