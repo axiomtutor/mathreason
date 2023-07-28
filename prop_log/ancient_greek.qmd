@@ -78,4 +78,6 @@ Markdown(tabulate(
 
 In fact it will turn out that by organizing these subjects axiomatically will create an unexpected value!  We will consider the possibility of removing or adding certain axioms, and see how this can produce new fields of mathematics!
 
+Test new line####
+
 [^1]: Of course other civilizations also had highly developed mathematical knowledge.  Especially the ancient Hindus seem to have developed a large body of knowledge independently, and they studied logic with some depth.  However, for whatever reason, they never developed axiomatic mathematics -- and for that reason, they are not the focus of our story here.
