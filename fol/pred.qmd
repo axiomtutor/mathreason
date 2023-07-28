@@ -6,8 +6,35 @@ In this chapter we extend propositional logic to another logic with more express
 
 # Predicates
 
-There is a certain sort of logic which cannot be captured by propositional logic.  Take for instance "All cats are mammals.  Tabby is a cat.  Therefore Tabby is a mammal."  In particular, analyzing expressions at the level of whole propositions, cannot capture the idea of objects and properties that the objects have.  
+There is a certain sort of logic which cannot be captured by propositional logic.  Take for instance "Tabby is an orange cat, and Mr. Mewsieur is a cat but is not orange".  Tabby and Mr. Mewsieur share the property of being a cat, and propositional logic cannot capture this.  Therefore we will make symbols for objects and symbols for properties, and have a way of talking about which objects have which properties.  
 
-Therefore, if we want to talk about Tabby, we will use a symbol like $t$ to refer to it.  If we would like to say that Tabby is a cat, then we will write the property "is a cat" with the capital letter $C$.  To say that Tabby is a cat, we write $C(t)$.  
+For instance we could write $t, m$ for the two objects, Tabby and Mr. Mewsieur respectively.  We will write $O, C$ for the properties of being orange or being a cat, respectively.  Then the above sentence becomes the symbolic expression 
 
-Test new content.
+> $O(t)\land C(t) \land C(m)\land\neg O(m)$
+
+Of course we don't abandon the work we did with propositional logic!  We still have the propositional operators.  But rather than applying them to simple propositional variables, the propositional variables are themselves decomposed into predicate and object.  
+
+We will generally use lower-case letters for objects, and these are called **constant symbols**, because what they refer to is some constant object.  We will use upper-case letters for predicates, and these are called **predicate symbols**.
+
+::: {.callout-important title="Predicates Two and Three" appearance="minimal"}
+Use predicates and objects to symbolically represent the sentence "Two is even but three is odd."
+:::
+
+# Relations 
+
+Now predicates are pretty straight-forward.  But often we don't just want to say that some one object either has or doesn't have some property.  Often we want to talk about multiple objects in relation to each other.  For instance, if we wanted to express that 2 is less than 3, we couldn't do this merely with predicates. 
+
+Therefore we may write $L$ as a two-place relation symbol, which we understand to mean "less-than".  If we write symbols $t_w,t_h$ to denote two and three respectively, then the sentence "two is less than three" is represented symbolically as 
+
+> $L(t_w,t_h)$
+
+::: {.callout-important title="Three Place Exercise" appearance="minimal"}
+The extension to three-place prediates is natural.  Come up with a three-place relation and three different constant symbols, in order to express: "Point $P$ is in-between points $Q$ and $R$."
+:::
+
+Relations are theoretically quite similar to predicates, just holding between more than one object.  But like a predicate, they describe objects and they may hold or not.  Therefore we write them with upper-case letters, and call these **relation symbols**.
+
+# Structures
+
+We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table.  We could, in principle, do the same for predicate logic.  However, it is worth seeing a different way to assess the truth of predicate expressions -- especially because, in the next section, truth-tables will become impossible and we will *have* to use this new way of assessing expressions!
+
