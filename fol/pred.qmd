@@ -34,7 +34,10 @@ The extension to three-place prediates is natural.  Come up with a three-place r
 
 Relations are theoretically quite similar to predicates, just holding between more than one object.  But like a predicate, they describe objects and they may hold or not.  Therefore we write them with upper-case letters, and call these **relation symbols**.
 
+We will call all constant, predicate, and relation sybmols **nonlogical symbols**.^[This does not mean that the symbols are in any way illogical.  It just means that they do not have their truth-value determined *merely* by logic.]
+
 # Structures
 
-We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table.  We could, in principle, do the same for predicate logic.  However, it is worth seeing a different way to assess the truth of predicate expressions -- especially because, in the next section, truth-tables will become impossible and we will *have* to use this new way of assessing expressions!
+We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table.  For a more expressive syntax, though, we should have a new way of assessing the expressions.  Let's first make an example language.
 
+Consider a language for natural numbers.  For each natural number $n$, our language will have a constant symbol $c_n$ which we can use to refer to it.  Also it will have a relation $L$ to express that one number is less than another.  
