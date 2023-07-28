@@ -1,0 +1,44 @@
+---
+title: "How to Become a Mathematician"
+---
+test change
+Welcome to *How to Become a Mathematician*! This is a web book which will try to explain how mathematicians reason about their subject. We will see
+
+-   Formal logic
+-   Axiomatic systems
+-   Proof techniques
+-   Attempts to formulate and then answer mathematical questions
+-   Proofs of some famous and essential theorems
+
+Of course this is not *really* about how to become a mathematician, since the usual and most efficient path to actually becoming a mathematician is to study mathematics at university.
+
+# Prerequisites
+
+The only mathematical prerequisite is basic algebra.
+
+Many exercises will ask you to write and run Python code using the SymPy and matplotlib libraries. Therefore you will need Python installed with these libraries. Just about any version of Python 3 should be fine.
+
+I will also have appendices containing information on how to write Python programs. Although I try to keep the information at an introductory level, the reader will need to know about using a computer, enough to set up a standard "Hello World" Python program.
+
+# Who Is This For?
+
+It is for people who are interested in understanding how mathematics gets done. I write this, having in mind some readers who are merely curious, and some readers who hope to become mathematicians.
+
+# Recommended Usage
+
+> Mathematicians read with a pencil in hand!
+
+The above is well-known and often repeated by mathematicians. This is a pretty serious and technical mathematics book, so you won't have much chance of learning from it without doing the exercises! But in this textbook, many of the exercises are programming exercises written in Python.  So besides a pencil, you'll also need a Python IDE.
+
+This is published at [How to Become a Mathematician](https://axiomtutor.quarto.pub/mathematical-reasoning-2023) and the source documents are publicly available at my [Axiom Tutor](https://github.com/axiomtutor/mathreason).
+
+1.  One way to use this online textbook is to put the textbook on one side of your screen and a Python IDE on the other. For this, this website is sufficient.\
+2.  Another way is to download the source files from the GitHub repository. Then open them either in VSCode or RStudio. The source files (the ones with extension `.qmd`) are written in Quarto, which is a slightly beefy version of Markdown. Therefore, once you've opened the source files in an appropriate editor, you can edit them directly and insert code cells to write your solutions for exercises.
+
+I think the second way sounds the nicest to me. You can then make the textbook "your own", with notes and exercise solutions inserted in the middle of the text, where and how you want them. 
+
+However, the first way is somewhat more flexible and might even be possible on mobile devices. So I can understand how some people might prefer either way.
+
+# Status
+
+As of writing this in July 2023, I have not yet finished the first chapter (of several to come). This website may undergo heavy redesign before it is finished.
