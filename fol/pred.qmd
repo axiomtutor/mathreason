@@ -2,42 +2,50 @@
 title: "Predicate Logic"
 ---
 
-In this chapter we extend propositional logic to another logic with more expressive power.  In this section, we introduce predicate logic, and in a future section we will extend it to first-order logic.  
+In this chapter we extend propositional logic to another logic with more expressive power. In this section, we introduce predicate logic, and in a future section we will extend it to first-order logic.
 
 # Predicates
 
-There is a certain sort of logic which cannot be captured by propositional logic.  Take for instance "Tabby is an orange cat, and Mr. Mewsieur is a cat but is not orange".  Tabby and Mr. Mewsieur share the property of being a cat, and propositional logic cannot capture this.  Therefore we will make symbols for objects and symbols for properties, and have a way of talking about which objects have which properties.  
+There is a certain sort of logic which cannot be captured by propositional logic. Take for instance "Tabby is an orange cat, and Mr. Mewsieur is a cat but is not orange". Tabby and Mr. Mewsieur share the property of being a cat, and propositional logic cannot capture this. Therefore we will make symbols for objects and symbols for properties, and have a way of talking about which objects have which properties.
 
-For instance we could write $t, m$ for the two objects, Tabby and Mr. Mewsieur respectively.  We will write $O, C$ for the properties of being orange or being a cat, respectively.  Then the above sentence becomes the symbolic expression 
+For instance we could write $t, m$ for the two objects, Tabby and Mr. Mewsieur respectively. We will write $O, C$ for the properties of being orange or being a cat, respectively. Then the above sentence becomes the symbolic expression
 
 > $O(t)\land C(t) \land C(m)\land\neg O(m)$
 
-Of course we don't abandon the work we did with propositional logic!  We still have the propositional operators.  But rather than applying them to simple propositional variables, the propositional variables are themselves decomposed into predicate and object.  
+Of course we don't abandon the work we did with propositional logic! We still have the propositional operators. But rather than applying them to simple propositional variables, the propositional variables are themselves decomposed into predicate and object.
 
-We will generally use lower-case letters for objects, and these are called **constant symbols**, because what they refer to is some constant object.  We will use upper-case letters for predicates, and these are called **predicate symbols**.
+We will generally use lower-case letters for objects, and these are called **constant symbols**, because what they refer to is some constant object. We will use upper-case letters for predicates, and these are called **predicate symbols**.
 
 ::: {.callout-important title="Predicates Two and Three" appearance="minimal"}
 Use predicates and objects to symbolically represent the sentence "Two is even but three is odd."
 :::
 
-# Relations 
+# Relations
 
-Now predicates are pretty straight-forward.  But often we don't just want to say that some one object either has or doesn't have some property.  Often we want to talk about multiple objects in relation to each other.  For instance, if we wanted to express that 2 is less than 3, we couldn't do this merely with predicates. 
+Now predicates are pretty straight-forward. But often we don't just want to say that some one object either has or doesn't have some property. Often we want to talk about multiple objects in relation to each other. For instance, if we wanted to express that 2 is less than 3, we couldn't do this merely with predicates.
 
-Therefore we may write $L$ as a two-place relation symbol, which we understand to mean "less-than".  If we write symbols $t_w,t_h$ to denote two and three respectively, then the sentence "two is less than three" is represented symbolically as 
+Therefore we may write $L$ as a two-place relation symbol, which we understand to mean "less-than". If we write symbols $t_w,t_h$ to denote two and three respectively, then the sentence "two is less than three" is represented symbolically as
 
 > $L(t_w,t_h)$
 
 ::: {.callout-important title="Three Place Exercise" appearance="minimal"}
-The extension to three-place prediates is natural.  Come up with a three-place relation and three different constant symbols, in order to express: "Point $P$ is in-between points $Q$ and $R$."
+The extension to three-place predicates is natural. Come up with a three-place relation and three different constant symbols, in order to express: "Point $P$ is in-between points $Q$ and $R$."
 :::
 
-Relations are theoretically quite similar to predicates, just holding between more than one object.  But like a predicate, they describe objects and they may hold or not.  Therefore we write them with upper-case letters, and call these **relation symbols**.
+Relations are theoretically quite similar to predicates, just holding between more than one object. But like a predicate, they describe objects and they may hold or not. Therefore we write them with upper-case letters, and call these **relation symbols**.
 
-We will call all constant, predicate, and relation sybmols **nonlogical symbols**.^[This does not mean that the symbols are in any way illogical.  It just means that they do not have their truth-value determined *merely* by logic.]
+We will call all constant, predicate, and relation symbols **nonlogical symbols**.[^1]
+
+[^1]: This does not mean that the symbols are in any way illogical. It just means that they do not have their truth-value determined *merely* by logic.
 
 # Structures
 
-We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table.  For a more expressive syntax, though, we should have a new way of assessing the expressions.  Let's first make an example language.
+We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table. For a more expressive syntax, though, we should have a new way of assessing the expressions. Let's first make an example language.
 
-Consider a language for natural numbers.  For each natural number $n$, our language will have a constant symbol $c_n$ which we can use to refer to it.  Also it will have a relation $L$ to express that one number is less than another.  
+Consider a language for natural numbers. To keep things simple, we will take a very small language with just three constant symbols, $a,b,c$. These will be *intended* to refer to the numbers 1, 2, and 3. However, part of the job of the structure is to make this interpretation "official". We will also have a two-place relation symbol *L*.
+
+Now that we know the language, we can talk about a structure for the language. We will write this structure as $\mathcal S$. To express that this $\mathcal S$ interprets $a$ as the number $1$, we will write $a^{\mathcal S}$ = 1\$. Likewise $b^{\mathcal S}=2,c^{\mathcal S}=3$ express the interpretation of $b$ and $c$ as $2$ and $3$ respectively. $\mathcal S$ also interprets the symbol $L$ as the less-than relation. It is common to express this last fact by the following set equality.
+
+$$
+L^{\mathcal S} = \{(1,2),(1,3),(2,3)\}
+$$
