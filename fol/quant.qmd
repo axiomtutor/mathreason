@@ -1,0 +1,9 @@
+---
+title: "Quantifiers"
+---
+
+We now extend predicate logic to a more expressive logic, by adding quantifiers.  
+
+# Why Quantifiers?
+
+Suppose that we would like to express that there is at most one prime number which is divisible by 2.  
