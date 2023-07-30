@@ -115,7 +115,7 @@ If this is surprising to you, keep in mind that I did in fact say that Adam love
 
 ----
 
-How about $\exists x\forall y L(x,y)$?  This says that someone loves everyone, so naturally we guess that the instance for $x$ is Adam again.  Therefore we need to now confirm the sentence $\forall y L(a,y)$.  To do so, it is not *insufficient* to merely demonstrate $L(a,a)$!  That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for *every* instance in the domain.  In this case, we need to confirm all of $L(a,a), L(a,b), L(a,c), L(a,d)$.  
+How about $\exists x\forall y L(x,y)$?  This says that someone loves everyone, so naturally we guess that the instance for $x$ is Adam again.  Therefore we need to now confirm the sentence $\forall y L(a,y)$.  To do so, it is now *insufficient* to merely demonstrate $L(a,a)$!  That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for *every* instance in the domain.  In this case, we need to confirm all of $L(a,a), L(a,b), L(a,c), L(a,d)$.  
 
 Of course, all of these must hold because we said at the beginning that Adam loves everyone.  Therefore $\forall y L(a,y)$ is confirmed.  And therefore $\exists x \forall y L(x,y)$ is confirmed.  
 
@@ -150,17 +150,107 @@ Not all of the above are true.  Which are false?
 ::: {.callout-important title="Graph Properties" appearance="minimal"}
 Suppose that we have a set of nodes, depicted below.  
 
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A,B,C
+}
 ```
 
+And the nodes are connected up by "edges" as below.  
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A -> B;
+    A -> A;
+    B -> C [dir=both];
+}
 ```
+
+The choice of nodes and edges here is arbitrary and just for illustration.  
+
+We can model the nodes-and-edges relation a relation $R(x,y)$ which expresses that node $x$ relates to (i.e. points to with an edge) node $y$.  Naturally we let $a,b,c$ be constant symbols for nodes A, B, and C respectively.  In the diagram above, this graph is expressed by the symbolic expression
+
+$$
+R(a,a)\land R(a,b) \land R(b,c)\land R(c,b)
+$$
+
+Even more specifically it is described by 
+
+$$
+R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(c,c) )
+$$
+
+---- 
+
+Draw a graph which is described by $R(a,b)\land R(b,a)$.
+
+----
+
+A digraph is called **reflexive** if it satisfies the following proposition:  
+
+$$
+\forall x R(x,x)
+$$
+
+Decide which of the following is reflexive.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A -> A;
+    B -> B;
+    C -> C;
+}
+```
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+digraph H{
+    A -> A;
+    A -> B [dir=both];
+    A -> C [dir=both];
+    B -> B;
+    B -> C [dir=both];
+}
+```
+
+----
+
+A digraph is called **symmetric** if it satisfies 
+
+$$
+\forall x\forall y (R(x,y)\to R(y,x))
+$$
+
+Decide which of the two digraphs above are symmetric, and whether the following is.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+digraph G{
+    A -> B;
+    B -> C;
+}
+```
+
+----
+
+A digraph is called **transitive** if it satisfies 
+
+$$
+\forall x\forall y\forall z ([R(x,y)\land R(y,z)]\to R(x,z))
+$$
+
+Decide if any of the three previous digraphs were transitive.  
+
 :::
 
-## Sufficiency of Examples for Existentials
-
-
-
-# Structures for Quantifiers
-
-Now that we have quantifiers, the idea of the "domain" becomes increasingly important.  Take, for instance, the proposition "Between every two numbers there is another number".  If we have a relation $B(x,y,z)$ expressing that $y$ is between $x$ and $z$, then we could represent this proposition by the symbolic proposition
-
-> $\forall x\forall y\exists

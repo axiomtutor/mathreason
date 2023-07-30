@@ -43,6 +43,7 @@ website:
       collapse-level: 3
       contents: 
         - fol\pred.qmd
+        - fol\quant.qmd
     - id: arithmetic
       title: "Arithmetic"
       style: "docked"

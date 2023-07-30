@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,6 +170,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
  <span class="dropdown-text">Predicate Logic</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../fol/quant.html" rel="" target="">
+ <span class="dropdown-text">Quantifiers</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -179,10 +217,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../fol/quant.html">Quantifiers</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/pred.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Predicate Logic</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/quant.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quantifiers</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
@@ -190,11 +257,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#why-quantifiers" id="toc-why-quantifiers" class="nav-link active" data-scroll-target="#why-quantifiers">Why Quantifiers?</a></li>
-  <li><a href="#picking-many-objects" id="toc-picking-many-objects" class="nav-link" data-scroll-target="#picking-many-objects">Picking Many Objects</a>
-  <ul class="collapse">
-  <li><a href="#sufficiency-of-examples-for-existentials" id="toc-sufficiency-of-examples-for-existentials" class="nav-link" data-scroll-target="#sufficiency-of-examples-for-existentials">Sufficiency of Examples for Existentials</a></li>
-  </ul></li>
-  <li><a href="#structures-for-quantifiers" id="toc-structures-for-quantifiers" class="nav-link" data-scroll-target="#structures-for-quantifiers">Structures for Quantifiers</a></li>
+  <li><a href="#picking-many-objects" id="toc-picking-many-objects" class="nav-link" data-scroll-target="#picking-many-objects">Picking Many Objects</a></li>
   </ul>
 </nav>
     </div>
@@ -328,7 +391,7 @@ For All And Exists Or
 <p>The first sentence is easily seen to be true. We can in fact demonstrate the truth of this proposition by explicitly finding an <span class="math inline">\(x\)</span> for the first existential quantifier. Several candidates would work, but we will choose Adam to be the instance of <span class="math inline">\(x\)</span>. To demonstrate that Adam is in fact such an instance, we only need to then show that <span class="math inline">\(\exists yL(a,y)\)</span> is true. Again it suffices to find some instance for <span class="math inline">\(y\)</span>. We may select Adam again for <span class="math inline">\(y\)</span>!</p>
 <p>If this is surprising to you, keep in mind that I did in fact say that Adam loves everyone! When being very logically precise, if we say everyone then that means everyone! Since Adam “is a someone” and Adam loves everyone, then Adam loves Adam. Therefore an acceptable instance for <span class="math inline">\(y\)</span> is indeed <span class="math inline">\(a\)</span>. Since <span class="math inline">\(L(a,a)\)</span> is true, then we have just confirmed <span class="math inline">\(\exists y L(a,y)\)</span>. Since that proposition is true, we have therefore confirmed <span class="math inline">\(\exists x\exists y L(x,y)\)</span>.</p>
 <hr>
-<p>How about <span class="math inline">\(\exists x\forall y L(x,y)\)</span>? This says that someone loves everyone, so naturally we guess that the instance for <span class="math inline">\(x\)</span> is Adam again. Therefore we need to now confirm the sentence <span class="math inline">\(\forall y L(a,y)\)</span>. To do so, it is not <em>insufficient</em> to merely demonstrate <span class="math inline">\(L(a,a)\)</span>! That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for <em>every</em> instance in the domain. In this case, we need to confirm all of <span class="math inline">\(L(a,a), L(a,b), L(a,c), L(a,d)\)</span>.</p>
+<p>How about <span class="math inline">\(\exists x\forall y L(x,y)\)</span>? This says that someone loves everyone, so naturally we guess that the instance for <span class="math inline">\(x\)</span> is Adam again. Therefore we need to now confirm the sentence <span class="math inline">\(\forall y L(a,y)\)</span>. To do so, it is now <em>insufficient</em> to merely demonstrate <span class="math inline">\(L(a,a)\)</span>! That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for <em>every</em> instance in the domain. In this case, we need to confirm all of <span class="math inline">\(L(a,a), L(a,b), L(a,c), L(a,d)\)</span>.</p>
 <p>Of course, all of these must hold because we said at the beginning that Adam loves everyone. Therefore <span class="math inline">\(\forall y L(a,y)\)</span> is confirmed. And therefore <span class="math inline">\(\exists x \forall y L(x,y)\)</span> is confirmed.</p>
 <hr>
 <p>How about <span class="math inline">\(\forall x\exists y L(x,y)\)</span>? In order for this to be true, we have to check that it is true for <em>every</em> <span class="math inline">\(x\)</span> in the domain. That is to say, we have to check that all of the propositions, <span class="math inline">\(\exists y L(a,y), \exists y L(b,y), \exists yL(c,y), \exists y L(d,y)\)</span>.</p>
@@ -366,19 +429,319 @@ Graph Properties
 </div>
 <div class="callout-body-container callout-body">
 <p>Suppose that we have a set of nodes, depicted below.</p>
-<pre><code></code></pre>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co">,</span><span class="va">B</span><span class="co">,</span><span class="va">C</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 206.00 44.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-40 202,-40 202,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+</g>
+</svg>
 </div>
 </div>
-<section id="sufficiency-of-examples-for-existentials" class="level2">
-<h2 class="anchored" data-anchor-id="sufficiency-of-examples-for-existentials">Sufficiency of Examples for Existentials</h2>
-</section>
-</section>
-<section id="structures-for-quantifiers" class="level1">
-<h1>Structures for Quantifiers</h1>
-<p>Now that we have quantifiers, the idea of the “domain” becomes increasingly important. Take, for instance, the proposition “Between every two numbers there is another number”. If we have a relation <span class="math inline">\(B(x,y,z)\)</span> expressing that <span class="math inline">\(y\)</span> is between <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span>, then we could represent this proposition by the symbolic proposition</p>
-<blockquote class="blockquote">
-<p>$xy</p>
-</blockquote>
+</div>
+</div>
+<p>And the nodes are connected up by “edges” as below.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 80.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 76,-184 76,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge2" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M46.9,-174.43C59.69,-177.68 72,-173.53 72,-162 72,-153.62 65.5,-149.14 57.04,-148.56"></path>
+<polygon fill="black" stroke="black" points="56.5,-145.1 46.9,-149.57 57.19,-152.07 56.5,-145.1"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M27,-61.67C27,-56.69 27,-51.49 27,-46.51"></path>
+<polygon fill="black" stroke="black" points="23.5,-61.7 27,-71.7 30.5,-61.7 23.5,-61.7"></polygon>
+<polygon fill="black" stroke="black" points="30.5,-46.1 27,-36.1 23.5,-46.1 30.5,-46.1"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>The choice of nodes and edges here is arbitrary and just for illustration.</p>
+<p>We can model the nodes-and-edges relation a relation <span class="math inline">\(R(x,y)\)</span> which expresses that node <span class="math inline">\(x\)</span> relates to (i.e.&nbsp;points to with an edge) node <span class="math inline">\(y\)</span>. Naturally we let <span class="math inline">\(a,b,c\)</span> be constant symbols for nodes A, B, and C respectively. In the diagram above, this graph is expressed by the symbolic expression</p>
+<p><span class="math display">\[
+R(a,a)\land R(a,b) \land R(b,c)\land R(c,b)
+\]</span></p>
+<p>Even more specifically it is described by</p>
+<p><span class="math display">\[
+R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(c,c) )
+\]</span></p>
+<hr>
+<p>Draw a graph which is described by <span class="math inline">\(R(a,b)\land R(b,a)\)</span>.</p>
+<hr>
+<p>A digraph is called <strong>reflexive</strong> if it satisfies the following proposition:</p>
+<p><span class="math display">\[
+\forall x R(x,x)
+\]</span></p>
+<p>Decide which of the following is reflexive.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">C</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="ot">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 260.00 44.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-40 256,-40 256,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge1" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M52.44,-24.69C63.03,-25.15 72,-22.92 72,-18 72,-14.77 68.14,-12.7 62.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="62.6,-8.29 52.44,-11.31 62.27,-15.28 62.6,-8.29"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="117" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="117" y="-13.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- B&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>B-&gt;B</title>
+<path fill="none" stroke="black" d="M142.44,-24.69C153.03,-25.15 162,-22.92 162,-18 162,-14.77 158.14,-12.7 152.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="152.6,-8.29 142.44,-11.31 152.27,-15.28 152.6,-8.29"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- C&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>C-&gt;C</title>
+<path fill="none" stroke="black" d="M232.44,-24.69C243.03,-25.15 252,-22.92 252,-18 252,-14.77 248.14,-12.7 242.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="242.6,-8.29 232.44,-11.31 242.27,-15.28 242.6,-8.29"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">H</span><span class="ot">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 116.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>H</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 112,-184 112,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge1" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M82.9,-174.43C95.69,-177.68 108,-173.53 108,-162 108,-153.62 101.5,-149.14 93.04,-148.56"></path>
+<polygon fill="black" stroke="black" points="92.5,-145.1 82.9,-149.57 93.19,-152.07 92.5,-145.1"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M49.99,-135.7C46.7,-129.3 43.17,-122.44 39.88,-116.05"></path>
+<polygon fill="black" stroke="black" points="46.96,-137.47 54.65,-144.76 53.19,-134.27 46.96,-137.47"></polygon>
+<polygon fill="black" stroke="black" points="42.99,-114.44 35.3,-107.15 36.77,-117.64 42.99,-114.44"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="black" d="M73.86,-134.59C76.78,-126.23 79.54,-116.86 81,-108 83.61,-92.21 83.61,-87.79 81,-72 79.54,-63.14 76.78,-53.77 73.86,-45.41"></path>
+<polygon fill="black" stroke="black" points="70.5,-133.59 70.29,-144.18 77.06,-136.03 70.5,-133.59"></polygon>
+<polygon fill="black" stroke="black" points="77.06,-43.97 70.29,-35.82 70.5,-46.41 77.06,-43.97"></polygon>
+</g>
+<!-- B&#45;&gt;B -->
+<g id="edge4" class="edge">
+<title>B-&gt;B</title>
+<path fill="none" stroke="black" d="M46.9,-102.43C59.69,-105.68 72,-101.53 72,-90 72,-81.62 65.5,-77.14 57.04,-76.56"></path>
+<polygon fill="black" stroke="black" points="56.5,-73.1 46.9,-77.57 57.19,-80.07 56.5,-73.1"></polygon>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge5" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M40.01,-63.7C43.3,-57.3 46.83,-50.44 50.12,-44.05"></path>
+<polygon fill="black" stroke="black" points="36.81,-62.27 35.35,-72.76 43.04,-65.47 36.81,-62.27"></polygon>
+<polygon fill="black" stroke="black" points="53.23,-45.64 54.7,-35.15 47.01,-42.44 53.23,-45.64"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>A digraph is called <strong>symmetric</strong> if it satisfies</p>
+<p><span class="math display">\[
+\forall x\forall y (R(x,y)\to R(y,x))
+\]</span></p>
+<p>Decide which of the two digraphs above are symmetric, and whether the following is.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="ot">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 62.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 58,-184 58,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-63.98 27,-54.71 27,-46.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-46.1 27,-36.1 23.5,-46.1 30.5,-46.1"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>A digraph is called <strong>transitive</strong> if it satisfies</p>
+<p><span class="math display">\[
+\forall x\forall y\forall z ([R(x,y)\land R(y,z)]\to R(x,z))
+\]</span></p>
+<p>Decide if any of the three previous digraphs were transitive.</p>
+</div>
+</div>
 
 
 </section>
