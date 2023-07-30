@@ -91,6 +91,14 @@ It seems like the universal quantifier is a shorthand for a conjunction over all
 Are the quantifiers merely "syntactic sugar", which is to say, a more compact notation?  Or are they "more expressive" in the sense that there are some things which you can say with universal quantification (existential quantification) that you cannot say with mere conjuction (disjunction)?
 :::
 
+## Variables
+
+We distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain.  Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from 'a' to 's' may be used for constant symbols.  Letters from 't' to 'z' are used as varaibles.  
+
+Notice therefore that the expression which occurs underneath a quantifier is not a well-formed expression!  If we have, for instance, $\forall x P(x)$, this may be well-formed.  However, $P(x)$ is meaningless, as the meaning of $x$ is not specified.  
+
+Notice also that the choice of variable is unimportant.  We would evaluate, for instance, $\forall x P(x)$ in exactly the same way that we would evaluate $\exists x P(x)$.  
+
 # Picking Many Objects
 
 I would now like to describe the distinct meanings of the following four propositions, and how they are represented symbolically.
@@ -254,3 +262,53 @@ Decide if any of the three previous digraphs were transitive.
 
 :::
 
+# Quantifiers in Python
+
+::: {.callout-important title="For All Python" appearance="minimal"}
+
+Suppose that we have some data, like 
+
+```{python}
+data = [1,2,3,4]
+```
+
+and the "$x$ is less than 5" predicate.
+
+```{python}
+def lessFive(x): return x < 5
+```
+
+Then "for all $x$, $x$ is less than 5" is an assertion which we can make of, say, this data set!  And we can compute it with the following program.  Fill in "TODO" with appropriate code (and remove the comment symbol, `#`).
+
+```{python}
+# for datum in data:
+    # if "TODO"
+    # return True
+```
+
+:::
+
+::: {.callout-important title="Existential Python" appearance="minimal"}
+Implement a parallel demonstration of the existential quantifier in Python code.
+:::
+
+::: {.callout-important title="Many Choices Python" appearance="minimal"}
+Here is a somewhat realistic application to a computer science concept:  A string `s` is a substring of the string `t` if there are indices `i,j` such that `t[i:j] == s`.  Of course the indices only make sense if they're taken from the range from `0` to `len(t)-1`.  
+
+The following function returns `True` if and only if `s` is a substring of `t`.
+
+```{python}
+def isSubstring(s,t):
+    for i in range(len(t)):
+        for j in range(len(t)):
+            if t[i:j] == s: return True
+    return False
+```
+
+Write a quantified proposition which is modeled by this function.^[Take $s$ and $t$ to be some two specific strings, and fill in the "TODO" appropriately.Of course $t[i:j]$ is not a part of our official logical notation.  But we can regard it as a three-place function, with inputs $t$, $i$, and $j$, and which outputs $t[i:j]$.]  Remove the `\text{TODO}` with appropriate code.
+
+$$
+\text{TODO} x \text{TODO} y (t[i:j] = s)
+$$
+
+:::

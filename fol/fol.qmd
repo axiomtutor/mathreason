@@ -1,0 +1,29 @@
+---
+title: First-order Logic Semantics
+---
+
+First-order logic is the logic that we introduced in the previous section: Predicate logic with quantifiers.  Now that there is additional syntax which predicate logic didn't have, it needs to be joined with additional semantics.  In this section, we extend the notion of a structure to first-order logic.
+
+# Domain
+
+When evaluating propositions with quantifiers, it becomes important to specify the "domain".  To illustrate the concept, consider the proposition "Between any two numbers, there is another number", formalized as^[The relation $B(a,b,c)$ expresses that $b$ is between $a$ and $c$, as described earlier.] 
+
+$$
+\forall x\forall z\exists y B(x,y,z)
+$$
+
+*This is true for the real numbers, and it's true for the rational numbers, but it's* not *true for the integers!*  Therefore, with a different domain, this sentence can be either true or false.
+
+Each quantifier "ranges over" the domain, meaning that its variable can take on any value in that domain.  For instance, if the domain is the real numbers, then the $x$ above could refer to any real number.  The "for all" semantics then requires that the remaining expression $\forall x\forall z\exists y B(x,y,z)$ is true in every case.  That is to say, in order for $\forall x\forall z\exists y B(x,y,z)$ is true if, for every real number that we assign to $x$, the expression $\forall x\forall z\exists y B(x,y,z)$ is true.  
+
+# Formulae
+
+The above shows that, in order to talk about the semantics of first-order propositions, we will need to be able to 
+
+1. Remove an outer-most quantifier
+2. Assign a value in the domain to its variable
+3. Assess the truth of the remaining expression.
+
+But as we have noted elsewhere, expressions with variables that are not "bounded" by quantifiers^[In the expression $P(x)$, we say that the $x$ here is "unbounded".  By contrast, in both $\forall x P(x)$ and $\exists x P(x)$, the variable is now bounded.  We will say more about this when we discuss first-order logic's syntax more fully.  For now, you can just understand this intuitively.] are not meaningful -- they are not propositions.  Therefore we should treat them with a different vocabulary.  
+
+A 

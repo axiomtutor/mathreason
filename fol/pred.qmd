@@ -97,3 +97,58 @@ $$
 :::
 
 Of course we have a simple rule for evaluating equality.  If $a,b$ are any two constant symbols then $(a=b)^{\mathcal S}=T$ if and only if $a^{\mathcal S}=b^{\mathcal S}$.  
+
+# Predicates in Python
+
+Predicates play an important role in computer science, and not just because of its intersection with mathematics.  In computer science we say that a **predicate** is any function which returns a boolean value.  Take the following examples of predicates.
+
+```{python}
+def isEven(x): return x % 2 == 0
+
+def isLong(x): return len(x) > 10
+
+def isPrime(x):
+    if x <= 1: return False
+    for divisor in range(2,x):
+        if x % divisor == 0: return False
+    return True
+```
+
+::: {.callout-important title="Build Your Own" appearance="minimal"}
+Write a Python function which computes the predicate "$x$ is a string that begins with the letter 'a'".
+
+Also write the predicate "$x$ is a list and its elements are in increasing order."
+:::
+
+::: {.callout-important title="Filter" appearance="minimal"}
+An important way in which predicates are important, is their role in filtering data.  It often happens that we have a list of data, and only want some subset of it.  That subset is always defined by some predicate.  For instance, if we would like to take a data-set and filter so that it contains only females -- perhaps because we want to study gender disparity, or drugs which only apply to female patients.  
+
+Suppose we have our data in a list of tuples, like so:
+
+```{python}
+data = [("Alice", 300, "F"), ("Adam",110,"M"), ("Brad",150,"M"), ("Becky", 100, "F"), ("Clara", 120,"F"), ("Dana", 180,"F")]
+```
+
+And we define a predicate which returns `True` for a tuple, if and only if it the third coordinate (counting from 1) is "F".  Replace the "TODO" with appropriate code.
+
+```{python}
+def isFemale(tup):
+    return tup["TODO"] == "F"
+```
+
+Now below we define a filter function.  A filter function takes two arguments, one of them a predicate and the other some data.  The function then returns the subset of the data for which the predicate returns `True`.  Replace the `"TODO"` with appropriate code.
+
+```{python}
+def filter(pred, data):
+    bucket = []
+    for datum in data:
+        "TODO"
+    return datum
+```
+
+Finally, use the code that you wrote to filter the content of the `data` variable and print the result.  
+:::
+
+::: {.callout-important title="Python Relations" appearance="minimal"}
+There's no reason, in principle, why we can't also write relations in Python.  Write a function which computes the "between" relation that we've used earlier in this section.  That is to say, it should take three numeric arguments, $x,y,z$, and return true if and only if $y$ is between $x$ and $z$.
+:::

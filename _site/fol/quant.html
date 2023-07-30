@@ -256,8 +256,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-quantifiers" id="toc-why-quantifiers" class="nav-link active" data-scroll-target="#why-quantifiers">Why Quantifiers?</a></li>
+  <li><a href="#why-quantifiers" id="toc-why-quantifiers" class="nav-link active" data-scroll-target="#why-quantifiers">Why Quantifiers?</a>
+  <ul class="collapse">
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  </ul></li>
   <li><a href="#picking-many-objects" id="toc-picking-many-objects" class="nav-link" data-scroll-target="#picking-many-objects">Picking Many Objects</a></li>
+  <li><a href="#quantifiers-in-python" id="toc-quantifiers-in-python" class="nav-link" data-scroll-target="#quantifiers-in-python">Quantifiers in Python</a></li>
   </ul>
 </nav>
     </div>
@@ -370,6 +374,12 @@ For All And Exists Or
 <p>Are the quantifiers merely “syntactic sugar”, which is to say, a more compact notation? Or are they “more expressive” in the sense that there are some things which you can say with universal quantification (existential quantification) that you cannot say with mere conjuction (disjunction)?</p>
 </div>
 </div>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>We distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain. Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from ‘a’ to ‘s’ may be used for constant symbols. Letters from ‘t’ to ‘z’ are used as varaibles.</p>
+<p>Notice therefore that the expression which occurs underneath a quantifier is not a well-formed expression! If we have, for instance, <span class="math inline">\(\forall x P(x)\)</span>, this may be well-formed. However, <span class="math inline">\(P(x)\)</span> is meaningless, as the meaning of <span class="math inline">\(x\)</span> is not specified.</p>
+<p>Notice also that the choice of variable is unimportant. We would evaluate, for instance, <span class="math inline">\(\forall x P(x)\)</span> in exactly the same way that we would evaluate <span class="math inline">\(\exists x P(x)\)</span>.</p>
+</section>
 </section>
 <section id="picking-many-objects" class="level1">
 <h1>Picking Many Objects</h1>
@@ -742,6 +752,85 @@ R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(
 <p>Decide if any of the three previous digraphs were transitive.</p>
 </div>
 </div>
+</section>
+<section id="quantifiers-in-python" class="level1">
+<h1>Quantifiers in Python</h1>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="For All Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For All Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we have some data, like</p>
+<div id="f8f213ee" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>and the “<span class="math inline">\(x\)</span> is less than 5” predicate.</p>
+<div id="24572812" class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lessFive(x): <span class="cf">return</span> x <span class="op">&lt;</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Then “for all <span class="math inline">\(x\)</span>, <span class="math inline">\(x\)</span> is less than 5” is an assertion which we can make of, say, this data set! And we can compute it with the following program. Fill in “TODO” with appropriate code (and remove the comment symbol, <code>#</code>).</p>
+<div id="c7c448c8" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for datum in data:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if "TODO"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Existential Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Existential Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement a parallel demonstration of the existential quantifier in Python code.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Many Choices Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Many Choices Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is a somewhat realistic application to a computer science concept: A string <code>s</code> is a substring of the string <code>t</code> if there are indices <code>i,j</code> such that <code>t[i:j] == s</code>. Of course the indices only make sense if they’re taken from the range from <code>0</code> to <code>len(t)-1</code>.</p>
+<p>The following function returns <code>True</code> if and only if <code>s</code> is a substring of <code>t</code>.</p>
+<div id="9e278574" class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isSubstring(s,t):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(t)):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(t)):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> t[i:j] <span class="op">==</span> s: <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Write a quantified proposition which is modeled by this function.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Remove the <code>\text{TODO}</code> with appropriate code.</p>
+<p><span class="math display">\[
+\text{TODO} x \text{TODO} y (t[i:j] = s)
+\]</span></p>
+</div>
+</div>
 
 
 </section>
@@ -752,6 +841,7 @@ R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(
 <ol>
 <li id="fn1"><p>“Quantifier” is meant loosely. The “quantity” here is “all”.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>We will say more about the “domain of conversation” later, but for now we take this to informally mean “whatever objects our symbols are understood to refer to”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Take <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> to be some two specific strings, and fill in the “TODO” appropriately.Of course <span class="math inline">\(t[i:j]\)</span> is not a part of our official logical notation. But we can regard it as a three-place function, with inputs <span class="math inline">\(t\)</span>, <span class="math inline">\(i\)</span>, and <span class="math inline">\(j\)</span>, and which outputs <span class="math inline">\(t[i:j]\)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

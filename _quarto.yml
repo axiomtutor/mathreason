@@ -44,6 +44,7 @@ website:
       contents: 
         - fol\pred.qmd
         - fol\quant.qmd
+        - fol\fol.qmd
     - id: arithmetic
       title: "Arithmetic"
       style: "docked"
