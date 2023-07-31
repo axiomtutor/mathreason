@@ -420,7 +420,260 @@ Parse Tree Basic
 </div>
 <div class="callout-body-container callout-body">
 <p>Exercise:</p>
-<p>Draw the parse trees for <span class="math inline">\((\neg P)\lor Q\)</span> and <span class="math inline">\(P\lor (Q\lor R)\)</span> and <span class="math inline">\((P\lor Q)\lor R\)</span> and <span class="math inline">\((\neg (P \lor Q)) \lor (\neg (Q\lor R))\)</span>.</p>
+<p>Draw the parse trees for <span class="math inline">\((\neg P)\lor Q\)</span></p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="ot">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">v</span><span class="co"> -- </span><span class="st">"-"</span><span class="co"> -- </span><span class="va">p</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">v</span><span class="co"> -- </span><span class="va">q</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"> <polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- v --> <g id="node1" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- &#45; --> <g id="node2" class="node">
+<title>
+-
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">-</text> </g> <!-- v&#45;&#45;&#45; --> <g id="edge1" class="edge">
+<title>
+v—
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- q --> <g id="node4" class="node">
+<title>
+q
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">q</text> </g> <!-- v&#45;&#45;q --> <g id="edge3" class="edge">
+<title>
+v–q
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- p --> <g id="node3" class="node">
+<title>
+p
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">p</text> </g> <!-- &#45;&#45;&#45;p --> <g id="edge2" class="edge">
+<title>
+—p
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> </g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>and <span class="math inline">\(P\lor (Q\lor R)\)</span></p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="ot">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">V</span><span class="co"> -- </span><span class="va">p</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">V</span><span class="co"> -- </span><span class="va">v</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- </span><span class="va">q</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- </span><span class="va">r</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 170.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"> <polygon fill="white" stroke="transparent" points="-4,4 -4,-184 166,-184 166,4 -4,4"></polygon> <!-- V --> <g id="node1" class="node">
+<title>
+V
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">V</text> </g> <!-- p --> <g id="node2" class="node">
+<title>
+p
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">p</text> </g> <!-- V&#45;&#45;p --> <g id="edge1" class="edge">
+<title>
+V–p
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- v --> <g id="node3" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- V&#45;&#45;v --> <g id="edge2" class="edge">
+<title>
+V–v
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- q --> <g id="node4" class="node">
+<title>
+q
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">q</text> </g> <!-- v&#45;&#45;q --> <g id="edge3" class="edge">
+<title>
+v–q
+</title>
+<path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> <!-- r --> <g id="node5" class="node">
+<title>
+r
+</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="135" y="-13.8" font-family="Times,serif" font-size="14.00">r</text> </g> <!-- v&#45;&#45;r --> <g id="edge4" class="edge">
+<title>
+v–r
+</title>
+<path fill="none" stroke="black" d="M107.35,-72.76C113.17,-61.46 120.89,-46.44 126.7,-35.15"></path> </g> </g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>and <span class="math inline">\((P\lor Q)\lor R\)</span></p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="ot">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- </span><span class="va">p</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- </span><span class="va">q</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">V</span><span class="co"> -- </span><span class="va">v</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">V</span><span class="co"> -- </span><span class="va">r</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 170.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"> <polygon fill="white" stroke="transparent" points="-4,4 -4,-184 166,-184 166,4 -4,4"></polygon> <!-- v --> <g id="node1" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- p --> <g id="node2" class="node">
+<title>
+p
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">p</text> </g> <!-- v&#45;&#45;p --> <g id="edge1" class="edge">
+<title>
+v–p
+</title>
+<path fill="none" stroke="black" d="M54.65,-72.76C48.83,-61.46 41.11,-46.44 35.3,-35.15"></path> </g> <!-- q --> <g id="node3" class="node">
+<title>
+q
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">q</text> </g> <!-- v&#45;&#45;q --> <g id="edge2" class="edge">
+<title>
+v–q
+</title>
+<path fill="none" stroke="black" d="M71.35,-72.76C77.17,-61.46 84.89,-46.44 90.7,-35.15"></path> </g> <!-- V --> <g id="node4" class="node">
+<title>
+V
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">V</text> </g> <!-- V&#45;&#45;v --> <g id="edge3" class="edge">
+<title>
+V–v
+</title>
+<path fill="none" stroke="black" d="M90.65,-144.76C84.83,-133.46 77.11,-118.44 71.3,-107.15"></path> </g> <!-- r --> <g id="node5" class="node">
+<title>
+r
+</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="135" y="-85.8" font-family="Times,serif" font-size="14.00">r</text> </g> <!-- V&#45;&#45;r --> <g id="edge4" class="edge">
+<title>
+V–r
+</title>
+<path fill="none" stroke="black" d="M107.35,-144.76C113.17,-133.46 120.89,-118.44 126.7,-107.15"></path> </g> </g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>and <span class="math inline">\((\neg (P \lor Q)) \lor (\neg (Q\lor R))\)</span>.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="ot">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-0"</span><span class="co"> -- </span><span class="va">v0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-1"</span><span class="co"> -- </span><span class="va">v1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v0</span><span class="co"> -- </span><span class="va">p</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v0</span><span class="co"> -- </span><span class="va">q0</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v1</span><span class="co"> -- </span><span class="va">q1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v1</span><span class="co"> -- </span><span class="va">r</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- -</span><span class="dv">0</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">v</span><span class="co"> -- -</span><span class="dv">1</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 278.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)"> <polygon fill="white" stroke="transparent" points="-4,4 -4,-256 274,-256 274,4 -4,4"></polygon> <!-- &#45;0 --> <g id="node1" class="node">
+<title>
+-0
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">-0</text> </g> <!-- v0 --> <g id="node2" class="node">
+<title>
+v0
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">v0</text> </g> <!-- &#45;0&#45;&#45;v0 --> <g id="edge1" class="edge">
+<title>
+-0–v0
+</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path> </g> <!-- p --> <g id="node5" class="node">
+<title>
+p
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">p</text> </g> <!-- v0&#45;&#45;p --> <g id="edge3" class="edge">
+<title>
+v0–p
+</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C72.02,-62.77 54.27,-45.51 41.8,-33.38"></path> </g> <!-- q0 --> <g id="node6" class="node">
+<title>
+q0
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">q0</text> </g> <!-- v0&#45;&#45;q0 --> <g id="edge4" class="edge">
+<title>
+v0–q0
+</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> <!-- &#45;1 --> <g id="node3" class="node">
+<title>
+-1
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-157.8" font-family="Times,serif" font-size="14.00">-1</text> </g> <!-- v1 --> <g id="node4" class="node">
+<title>
+v1
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">v1</text> </g> <!-- &#45;1&#45;&#45;v1 --> <g id="edge2" class="edge">
+<title>
+-1–v1
+</title>
+<path fill="none" stroke="black" d="M171,-143.7C171,-132.85 171,-118.92 171,-108.1"></path> </g> <!-- q1 --> <g id="node7" class="node">
+<title>
+q1
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">q1</text> </g> <!-- v1&#45;&#45;q1 --> <g id="edge5" class="edge">
+<title>
+v1–q1
+</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-60.85 171,-46.92 171,-36.1"></path> </g> <!-- r --> <g id="node8" class="node">
+<title>
+r
+</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="243" y="-13.8" font-family="Times,serif" font-size="14.00">r</text> </g> <!-- v1&#45;&#45;r --> <g id="edge6" class="edge">
+<title>
+v1–r
+</title>
+<path fill="none" stroke="black" d="M185.57,-74.83C197.98,-62.77 215.73,-45.51 228.2,-33.38"></path> </g> <!-- v --> <g id="node9" class="node">
+<title>
+v
+</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-234" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="135" y="-229.8" font-family="Times,serif" font-size="14.00">v</text> </g> <!-- v&#45;&#45;&#45;0 --> <g id="edge7" class="edge">
+<title>
+v—0
+</title>
+<path fill="none" stroke="black" d="M126.65,-216.76C120.83,-205.46 113.11,-190.44 107.3,-179.15"></path> </g> <!-- v&#45;&#45;&#45;1 --> <g id="edge8" class="edge">
+<title>
+v—1
+</title>
+<path fill="none" stroke="black" d="M143.35,-216.76C149.17,-205.46 156.89,-190.44 162.7,-179.15"></path> </g> </g>
+</svg>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <section id="the-main-operator" class="level1">
@@ -430,9 +683,9 @@ Parse Tree Basic
 <div class="cell" data-fig-height="2" data-fig-width="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-"</span><span class="co"> -- </span><span class="va">P</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-"</span><span class="co"> -- </span><span class="va">P</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -464,11 +717,11 @@ P
 <div class="cell" data-fig-height="2" data-fig-width="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">Q</span><span class="ot">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="st">"-"</span><span class="ot">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-"</span><span class="co"> -- </span><span class="va">R</span><span class="ot">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">Q</span><span class="ot">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="st">"-"</span><span class="ot">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"-"</span><span class="co"> -- </span><span class="va">R</span><span class="ot">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -516,26 +769,26 @@ R
 <div class="cell" data-fig-height="2" data-fig-width="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onp</span><span class="ot">[</span><span class="at">label</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="st">"-"</span><span class="ot">];</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onr</span><span class="ot">[</span><span class="at">label</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="st">"-"</span><span class="ot">];</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="kw">subgraph</span><span class="co"> </span><span class="va">arrow</span><span class="co"> </span><span class="ot">{</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">Q</span><span class="ot">;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">onr</span><span class="ot">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="va">onr</span><span class="co"> -- </span><span class="va">R</span><span class="ot">;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">}</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"/</span><span class="sc">\\</span><span class="st">"</span><span class="co"> -- </span><span class="va">onp</span><span class="ot">;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onp</span><span class="co"> -- </span><span class="va">P</span><span class="ot">;</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"/</span><span class="sc">\\</span><span class="st">"</span><span class="co"> -- </span><span class="st">"-&gt;"</span><span class="ot">;</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">{</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="at">rank</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="va">same</span><span class="ot">;</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="kw">edge</span><span class="ot">[</span><span class="at">style</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="va">invis</span><span class="ot">]</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="va">Q</span><span class="co"> -- </span><span class="va">onr</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">}</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">graph</span> <span class="va">G</span> <span class="ot">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onp</span><span class="ot">[</span><span class="at">label</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="st">"-"</span><span class="ot">];</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onr</span><span class="ot">[</span><span class="at">label</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="st">"-"</span><span class="ot">];</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="kw">subgraph</span><span class="co"> </span><span class="va">arrow</span><span class="co"> </span><span class="ot">{</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">Q</span><span class="ot">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="st">"-&gt;"</span><span class="co"> -- </span><span class="va">onr</span><span class="ot">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="va">onr</span><span class="co"> -- </span><span class="va">R</span><span class="ot">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">}</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"/</span><span class="sc">\\</span><span class="st">"</span><span class="co"> -- </span><span class="va">onp</span><span class="ot">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">onp</span><span class="co"> -- </span><span class="va">P</span><span class="ot">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="st">"/</span><span class="sc">\\</span><span class="st">"</span><span class="co"> -- </span><span class="st">"-&gt;"</span><span class="ot">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">{</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="at">rank</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="va">same</span><span class="ot">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="kw">edge</span><span class="ot">[</span><span class="at">style</span><span class="co"> </span><span class="ot">=</span><span class="co"> </span><span class="va">invis</span><span class="ot">]</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">        </span><span class="va">Q</span><span class="co"> -- </span><span class="va">onr</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="ot">}</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -651,30 +904,30 @@ Proposition Representation
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PropVariable(Proposition):</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, v):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> (<span class="bu">type</span>(v) <span class="op">==</span> <span class="bu">str</span> <span class="kw">and</span> <span class="bu">len</span>(v) <span class="op">==</span> <span class="dv">1</span>) </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.v <span class="op">=</span> v</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.v)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Negation(Proposition):</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta):</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.neg <span class="op">=</span> beta</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"(not "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.neg) <span class="op">+</span> <span class="st">")"</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Disjunction(Proposition):</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta, gamma):</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition) <span class="op">\</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(gamma),Proposition)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left, <span class="va">self</span>.right <span class="op">=</span> beta, gamma</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"("</span><span class="op">+</span><span class="bu">str</span>(<span class="va">self</span>.left)<span class="op">+</span><span class="st">" or "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.right) <span class="op">+</span> <span class="st">")"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Proposition:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PropVariable(Proposition):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, v):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> (<span class="bu">type</span>(v) <span class="op">==</span> <span class="bu">str</span> <span class="kw">and</span> <span class="bu">len</span>(v) <span class="op">==</span> <span class="dv">1</span>) </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.v <span class="op">=</span> v</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="va">self</span>.v)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Negation(Proposition):</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta):</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.neg <span class="op">=</span> beta</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"(not "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.neg) <span class="op">+</span> <span class="st">")"</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Disjunction(Proposition):</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, beta, gamma):</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(beta),Proposition) <span class="op">\</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="bu">issubclass</span>(<span class="bu">type</span>(gamma),Proposition)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left, <span class="va">self</span>.right <span class="op">=</span> beta, gamma</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">"("</span><span class="op">+</span><span class="bu">str</span>(<span class="va">self</span>.left)<span class="op">+</span><span class="st">" or "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.right) <span class="op">+</span> <span class="st">")"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Other Op Classes">
@@ -704,13 +957,13 @@ Make Proposition Instances
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> PropVariable(<span class="st">"P"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>np <span class="op">=</span> Negation(p)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>npop <span class="op">=</span> Disjunction(np,p)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(p))</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(np))</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(npop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> PropVariable(<span class="st">"P"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>np <span class="op">=</span> Negation(p)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>npop <span class="op">=</span> Disjunction(np,p)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(p))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(np))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">str</span>(npop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>P
@@ -728,19 +981,19 @@ Make Proposition Instances
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> PropVariable(p)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span>( p[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"not"</span> )</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Negation(parseTree(p[<span class="dv">1</span>]))</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(parseTree(p[<span class="dv">0</span>]), parseTree(p[<span class="dv">2</span>]))</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length 3 list but unrecognized middle token"</span>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length of list unrecognized"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parseTree(p):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> PropVariable(p)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span>( p[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"not"</span> )</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Negation(parseTree(p[<span class="dv">1</span>]))</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(parseTree(p[<span class="dv">0</span>]), parseTree(p[<span class="dv">2</span>]))</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length 3 list but unrecognized middle token"</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"length of list unrecognized"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-important no-icon callout-titled" title="Explain parseTree">
@@ -757,8 +1010,8 @@ Explain parseTree
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PropVariable(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(p) <span class="op">==</span> <span class="bu">type</span>(<span class="st">""</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PropVariable(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <hr>
@@ -766,8 +1019,8 @@ Explain parseTree
 <div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Negation(pthelper(p[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Negation(pthelper(p[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>(Note: I have omitted the “assertion”, since this is there mostly for debugging purposes – it is not especially interesting for the logic.)</p>
@@ -776,8 +1029,8 @@ Explain parseTree
 <div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(pthelper(p[<span class="dv">0</span>]), pthelper(p[<span class="dv">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(p) <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"or"</span>: <span class="cf">return</span> Disjunction(pthelper(p[<span class="dv">0</span>]), pthelper(p[<span class="dv">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -804,15 +1057,15 @@ Other parseTree Operations
 <div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> pyparsing.Word(pyparsing.alphas) <span class="op">|</span> <span class="st">"not"</span> <span class="op">|</span> <span class="st">"and"</span> <span class="op">|</span> <span class="st">"or"</span> <span class="op">|</span> <span class="st">"if"</span> <span class="op">|</span> <span class="st">"then"</span> <span class="op">|</span> <span class="st">"iff"</span> </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nesting <span class="op">=</span> pyparsing.nestedExpr( <span class="st">'('</span>, <span class="st">')'</span>, content<span class="op">=</span>terms)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shape(s): </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> nesting.parseString(<span class="st">"("</span><span class="op">+</span>s<span class="op">+</span><span class="st">")"</span>)[<span class="dv">0</span>]</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parseTree(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyparsing</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> pyparsing.Word(pyparsing.alphas) <span class="op">|</span> <span class="st">"not"</span> <span class="op">|</span> <span class="st">"and"</span> <span class="op">|</span> <span class="st">"or"</span> <span class="op">|</span> <span class="st">"if"</span> <span class="op">|</span> <span class="st">"then"</span> <span class="op">|</span> <span class="st">"iff"</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>nesting <span class="op">=</span> pyparsing.nestedExpr( <span class="st">'('</span>, <span class="st">')'</span>, content<span class="op">=</span>terms)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shape(s): </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> nesting.parseString(<span class="st">"("</span><span class="op">+</span>s<span class="op">+</span><span class="st">")"</span>)[<span class="dv">0</span>]</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parseTree(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

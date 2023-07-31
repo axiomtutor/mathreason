@@ -28,6 +28,7 @@ $\Box$
 Exercise:
 
 Every argument starts from some assumptions. In the argument above, which sentences are assumptions?
+::: x is a number & if x != 0
 
 Also every argument ends in a conclusion. In the argument above, what is the conclusion of the argument?
 

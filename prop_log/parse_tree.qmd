@@ -32,7 +32,58 @@ This illustrates that the symbol $\neg$ is applied to the entire formula $P\lor 
 ::: {.callout-important title="Parse Tree Basic" appearance="minimal"}
 Exercise:
 
-Draw the parse trees for $(\neg P)\lor Q$ and $P\lor (Q\lor R)$ and $(P\lor Q)\lor R$ and $(\neg (P \lor Q)) \lor (\neg (Q\lor R))$.
+Draw the parse trees for $(\neg P)\lor Q$ 
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph {
+v -- "-" -- p
+v -- q
+}
+```
+and $P\lor (Q\lor R)$ 
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph {
+    V -- p
+    V -- v
+    v -- q
+    v -- r
+}
+```
+
+and $(P\lor Q)\lor R$ 
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph {
+    v -- p
+    v -- q
+    V -- v
+    V -- r
+}
+```
+
+and $(\neg (P \lor Q)) \lor (\neg (Q\lor R))$.
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+graph {
+    "-0" -- v0
+    "-1" -- v1
+    v0 -- p
+    v0 -- q0
+    v1 -- q1
+    v1 -- r
+    v -- -0
+    v -- -1
+}
+```
 :::
 
 # The Main Operator
