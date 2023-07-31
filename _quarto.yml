@@ -5,6 +5,7 @@ execute:
   eval: true
   echo: true
   output: true
+  cache: true
 
 editor_options: 
   chunk_output_type: inline
@@ -42,6 +43,8 @@ website:
       collapse-level: 3
       contents: 
         - fol\pred.qmd
+        - fol\quant.qmd
+        - fol\fol.qmd
     - id: arithmetic
       title: "Arithmetic"
       style: "docked"

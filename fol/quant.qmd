@@ -1,0 +1,314 @@
+---
+title: "Quantifiers"
+---
+
+We now extend predicate logic to a more expressive logic, by adding quantifiers.  
+
+# Why Quantifiers?
+
+Suppose that we would like to express that every number divisible by 4 is also divisible by 2.  If we are saying this for the integers, then this requires talking about an infinity of objects.  Ideally we would like to have a way of talking about "all numbers" so that we could say something like "For all integers, if the integer is divisible by 4, then that integer is divisible by 2."  
+
+In order to speak about the entire universe of integers, we therefore introduce the notation $\forall x$, which is read as "for all $x$".  The symbol $\forall$ is called the **universal quantifier**.^["Quantifier" is meant loosely.  The "quantity" here is "all".]  If $F(x)$ is the "$x$ is dividible by four" predicate, then $\forall x F(x)$ expresses that all integers are divisible by four.
+
+If we let $T(x)$ be the "$x$ is divisible by two" predicate, then $\forall x(F(x)\to T(x))$ expresses
+
+> For all integers, $x$, if $x$ is divisible by four then $x$ is divisible by $2$.
+
+This is just a more wordy way of saying "every integer divisible by four is divisible by 2".
+
+::: {.callout-important title="For All with Or and And" appearance="minimal"}
+Consider the predicate $E(x)$ which expresses, in the domain of integers, that $x$ is even.  Consider the two propositions 
+
+$$\forall x(E(x)\lor \neg E(x)), \quad \forall x E(x) \lor \forall x \neg E(x)$$
+
+The former says "All integers are either even or odd."  The latter says "Either all integers are even, or all integers are odd."
+
+Which of these are true, or are both true, or are both false?
+
+----
+
+Let $P$ and $Q$ be any predicates, and consider the two propositions
+
+$$ 
+\forall x (P(x)\land Q(x)), \quad \forall x P(x)\land \forall xQ(x) 
+$$
+
+Are these equivalent?
+:::
+
+::: {.callout-important title="More Expressiveness" appearance="minimal"}
+Let $D(x,y)$ be the "$x$ divides $y$" relation between integers.  We will write the constant symbol $t_w$ to represent two and $f$ to represent four.  Check that 
+
+$$ 
+\forall x(D(f,x)\to D(t_w,x)) 
+$$ 
+expresses that "every integer divisible by four is divisible by two".
+
+Write a symbolic expression using these same symbols, to express that "four is divisible by two and four".  
+
+----
+
+Try to interpret the expression 
+
+$$
+\forall x(D(x,t_w)\to x=t_w)
+$$
+
+Is this a true proposition?  
+:::
+
+Similarly, we might want to express that "there is at least one even prime number".  Let $E(x)$ be the "$x$ is even" predicate, and $P(x)$ the "$x$ is prime" predicate.  The universal quantifier cannot easily express "at least one", and therefore to write that there is at least one even prime, we write 
+
+$$
+\exists x (E(x)\land P(x))
+$$
+
+which, in a literal and wordy translation, says 
+
+> There is an integer, $x$, such that $x$ is even and $x$ is prime.  
+
+The symbol $\exists$ is called the **existential** quantifier, and $\exists x$ is pronounced "there exists an $x$".  
+
+::: {.callout-important title="For All And Exists Or" appearance="minimal"}
+Suppose that there are four people, Adam, Becky, Clara, and Dale, which we represent by the constant symbols $a,b,c,d$.  Let's say that some of them are fun and some of them are not, with the predicate symbol $F$.  
+
+Is there any difference in meaning between the following two sentences?
+
+$$
+\forall xF(x), \quad F(a)\land F(b)\land F(c)\land F(d)
+$$
+
+How about:
+
+$$ 
+\exists x F(x), \quad F(a)\lor F(b)\lor F(c)\lor (d)
+$$
+
+----
+
+It seems like the universal quantifier is a shorthand for a conjunction over all objects in the domain of conversation.^[We will say more about the "domain of conversation" later, but for now we take this to informally mean "whatever objects our symbols are understood to refer to".]  And it seems like the existential is shorthand for a disjunction.
+
+Are the quantifiers merely "syntactic sugar", which is to say, a more compact notation?  Or are they "more expressive" in the sense that there are some things which you can say with universal quantification (existential quantification) that you cannot say with mere conjuction (disjunction)?
+:::
+
+## Variables
+
+We distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain.  Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from 'a' to 's' may be used for constant symbols.  Letters from 't' to 'z' are used as varaibles.  
+
+Notice therefore that the expression which occurs underneath a quantifier is not a well-formed expression!  If we have, for instance, $\forall x P(x)$, this may be well-formed.  However, $P(x)$ is meaningless, as the meaning of $x$ is not specified.  
+
+Notice also that the choice of variable is unimportant.  We would evaluate, for instance, $\forall x P(x)$ in exactly the same way that we would evaluate $\exists x P(x)$.  
+
+# Picking Many Objects
+
+I would now like to describe the distinct meanings of the following four propositions, and how they are represented symbolically.
+
+* Somebody loves someone.
+* Somebody loves everyone.
+* Everyone loves somebody.
+* Everyone loves everybody.  
+
+Their symbolizations are
+
+* $\exists x\exists y L(x,y)$
+* $\exists x\forall y L(x,y)$ 
+* $\forall x\exists y L(x,y)$
+* $\forall x\forall y L(x,y)$
+
+where $L$ is the "loves" predicate.  Let's imagine a world in which there are four people, Adam, Becky, Clara, Dale, as usual represented by the constants $a,b,c,d$.  Adam loves everyone, Becky only loves Clara, Clara loves nobody, and Dale loves Adam.  Which of the above propositions is then true?
+
+The first sentence is easily seen to be true.  We can in fact demonstrate the truth of this proposition by explicitly finding an $x$ for the first existential quantifier.  Several candidates would work, but we will choose Adam to be the instance of $x$.  To demonstrate that Adam is in fact such an instance, we only need to then show that $\exists yL(a,y)$ is true.  Again it suffices to find some instance for $y$.  We may select Adam again for $y$!  
+
+If this is surprising to you, keep in mind that I did in fact say that Adam loves everyone!  When being very logically precise, if we say everyone then that means everyone!  Since Adam "is a someone" and Adam loves everyone, then Adam loves Adam.  Therefore an acceptable instance for $y$ is indeed $a$.  Since $L(a,a)$ is true, then we have just confirmed $\exists y L(a,y)$.  Since that proposition is true, we have therefore confirmed $\exists x\exists y L(x,y)$.
+
+----
+
+How about $\exists x\forall y L(x,y)$?  This says that someone loves everyone, so naturally we guess that the instance for $x$ is Adam again.  Therefore we need to now confirm the sentence $\forall y L(a,y)$.  To do so, it is now *insufficient* to merely demonstrate $L(a,a)$!  That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for *every* instance in the domain.  In this case, we need to confirm all of $L(a,a), L(a,b), L(a,c), L(a,d)$.  
+
+Of course, all of these must hold because we said at the beginning that Adam loves everyone.  Therefore $\forall y L(a,y)$ is confirmed.  And therefore $\exists x \forall y L(x,y)$ is confirmed.  
+
+----
+
+How about $\forall x\exists y L(x,y)$?  In order for this to be true, we have to check that it is true for *every* $x$ in the domain.  That is to say, we have to check that all of the propositions, $\exists y L(a,y), \exists y L(b,y), \exists yL(c,y), \exists y L(d,y)$.  
+
+Of course the first of these is true, and we can take $a$ to be an instance of $y$.  This produces $L(a,a)$ which we've already confirmed is true.  
+
+Next we need to find some instance for $y$ in $\exists yL(b,y)$.  Since Becky loves Clara then indeed we may take $c$ to be an instance of $y$.  Since $L(b,c)$ is true, then $\exists yL(b,y)$ is true.  
+
+Next we need to find some instance for $y$ in $\exists y L(c,y)$.  However, we stipulated at the start that Clara loves nobody!  Therefore this is false.
+
+We just showed that not every $x$ makes $\forall x\exists y L(x,y)$ true.  Well then, since it is a universal quantifier, making a claim about ALL objects in the domain, it is a false claim!  Not everyone loves someone!  
+
+----
+
+Finally we consider $\forall x\forall y L(x,y)$.  Of course this is false, and we can skip right ahead to the reason why.  Taking $x$ to be Clara and, say, $y$ to be Adam, we have that $L(c,a)$ is not true.  And therefore $\forall y L(c,y)$ is not true, and therefore $\forall x\forall y L(c,y)$ is not true.  
+
+::: {.callout-important title="Between Relation" appearance="minimal"}
+Let $B(x,y,z)$ be a relation on real numbers, which expresses that $y$ is between $x$ and $z$.  Write a symbolic proposition which expresses that for any two real numbers, there is a number between them.  
+
+Then write a proposition which expresses that there is a number which is between all two numbers.
+
+Then write a proposition which expresses that, for any number, it is between some two numbers.
+
+Then write a proposition which expresses that, for any two numbers $y$ and $z$, there ix a third number $x$ such that $B(x,y,z)$.
+
+Not all of the above are true.  Which are false?
+:::
+
+::: {.callout-important title="Graph Properties" appearance="minimal"}
+Suppose that we have a set of nodes, depicted below.  
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A,B,C
+}
+```
+
+And the nodes are connected up by "edges" as below.  
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A -> B;
+    A -> A;
+    B -> C [dir=both];
+}
+```
+
+The choice of nodes and edges here is arbitrary and just for illustration.  
+
+We can model the nodes-and-edges relation a relation $R(x,y)$ which expresses that node $x$ relates to (i.e. points to with an edge) node $y$.  Naturally we let $a,b,c$ be constant symbols for nodes A, B, and C respectively.  In the diagram above, this graph is expressed by the symbolic expression
+
+$$
+R(a,a)\land R(a,b) \land R(b,c)\land R(c,b)
+$$
+
+Even more specifically it is described by 
+
+$$
+R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(c,c) )
+$$
+
+---- 
+
+Draw a graph which is described by $R(a,b)\land R(b,a)$.
+
+----
+
+A digraph is called **reflexive** if it satisfies the following proposition:  
+
+$$
+\forall x R(x,x)
+$$
+
+Decide which of the following is reflexive.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+
+digraph G{ 
+    A -> A;
+    B -> B;
+    C -> C;
+}
+```
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+digraph H{
+    A -> A;
+    A -> B [dir=both];
+    A -> C [dir=both];
+    B -> B;
+    B -> C [dir=both];
+}
+```
+
+----
+
+A digraph is called **symmetric** if it satisfies 
+
+$$
+\forall x\forall y (R(x,y)\to R(y,x))
+$$
+
+Decide which of the two digraphs above are symmetric, and whether the following is.
+
+```{dot}
+//| fig-height: 2
+//| fig-width: 4
+digraph G{
+    A -> B;
+    B -> C;
+}
+```
+
+----
+
+A digraph is called **transitive** if it satisfies 
+
+$$
+\forall x\forall y\forall z ([R(x,y)\land R(y,z)]\to R(x,z))
+$$
+
+Decide if any of the three previous digraphs were transitive.  
+
+:::
+
+# Quantifiers in Python
+
+::: {.callout-important title="For All Python" appearance="minimal"}
+
+Suppose that we have some data, like 
+
+```{python}
+data = [1,2,3,4]
+```
+
+and the "$x$ is less than 5" predicate.
+
+```{python}
+def lessFive(x): return x < 5
+```
+
+Then "for all $x$, $x$ is less than 5" is an assertion which we can make of, say, this data set!  And we can compute it with the following program.  Fill in "TODO" with appropriate code (and remove the comment symbol, `#`).
+
+```{python}
+# for datum in data:
+    # if "TODO"
+    # return True
+```
+
+:::
+
+::: {.callout-important title="Existential Python" appearance="minimal"}
+Implement a parallel demonstration of the existential quantifier in Python code.
+:::
+
+::: {.callout-important title="Many Choices Python" appearance="minimal"}
+Here is a somewhat realistic application to a computer science concept:  A string `s` is a substring of the string `t` if there are indices `i,j` such that `t[i:j] == s`.  Of course the indices only make sense if they're taken from the range from `0` to `len(t)-1`.  
+
+The following function returns `True` if and only if `s` is a substring of `t`.
+
+```{python}
+def isSubstring(s,t):
+    for i in range(len(t)):
+        for j in range(len(t)):
+            if t[i:j] == s: return True
+    return False
+```
+
+Write a quantified proposition which is modeled by this function.^[Take $s$ and $t$ to be some two specific strings, and fill in the "TODO" appropriately.Of course $t[i:j]$ is not a part of our official logical notation.  But we can regard it as a three-place function, with inputs $t$, $i$, and $j$, and which outputs $t[i:j]$.]  Remove the `\text{TODO}` with appropriate code.
+
+$$
+\text{TODO} x \text{TODO} y (t[i:j] = s)
+$$
+
+:::

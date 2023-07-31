@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.268">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -46,6 +80,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -72,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">How to Become a Mathematician</span>
     </a>
@@ -131,6 +170,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
  <span class="dropdown-text">Predicate Logic</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../fol/quant.html" rel="" target="">
+ <span class="dropdown-text">Quantifiers</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -169,9 +212,9 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -179,9 +222,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../fol/pred.html">Predicate Logic</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../fol/pred.html">Predicate Logic</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -197,6 +240,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Predicate Logic</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/quant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantifiers</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -208,6 +257,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#predicates" id="toc-predicates" class="nav-link active" data-scroll-target="#predicates">Predicates</a></li>
+  <li><a href="#relations" id="toc-relations" class="nav-link" data-scroll-target="#relations">Relations</a></li>
+  <li><a href="#structures" id="toc-structures" class="nav-link" data-scroll-target="#structures">Structures</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
+  </ul></li>
+  <li><a href="#predicates-in-python" id="toc-predicates-in-python" class="nav-link" data-scroll-target="#predicates-in-python">Predicates in Python</a></li>
   </ul>
 </nav>
     </div>
@@ -229,18 +285,213 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
 <p>In this chapter we extend propositional logic to another logic with more expressive power. In this section, we introduce predicate logic, and in a future section we will extend it to first-order logic.</p>
 <section id="predicates" class="level1">
 <h1>Predicates</h1>
-<p>There is a certain sort of logic which cannot be captured by propositional logic. Take for instance “All cats are mammals. Tabby is a cat. Therefore Tabby is a mammal.” In particular, analyzing expressions at the level of whole propositions, cannot capture the idea of objects and properties that the objects have.</p>
-<p>Therefore, if we want to talk about Tabby, we will use a symbol like <span class="math inline">\(t\)</span> to refer to it. If we would like to say that Tabby is a cat, then we will write the property “is a cat” with the capital letter <span class="math inline">\(C\)</span>. To say that Tabby is a cat, we write <span class="math inline">\(C(t)\)</span>.</p>
+<p>There is a certain sort of logic which cannot be captured by propositional logic. Take for instance “Tabby is an orange cat, and Mr.&nbsp;Mewsieur is a cat but is not orange”. Tabby and Mr.&nbsp;Mewsieur share the property of being a cat, and propositional logic cannot capture this. Therefore we will make symbols for objects and symbols for properties, and have a way of talking about which objects have which properties.</p>
+<p>For instance we could write <span class="math inline">\(t, m\)</span> for the two objects, Tabby and Mr.&nbsp;Mewsieur respectively. We will write <span class="math inline">\(O, C\)</span> for the properties of being orange or being a cat, respectively. Then the above sentence becomes the symbolic expression</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(O(t)\land C(t) \land C(m)\land\neg O(m)\)</span></p>
+</blockquote>
+<p>Of course we don’t abandon the work we did with propositional logic! We still have the propositional operators. But rather than applying them to simple propositional variables, the propositional variables are themselves decomposed into predicate and object.</p>
+<p>We will generally use lower-case letters for objects, and these are called <strong>constant symbols</strong>, because what they refer to is some constant object. We will use upper-case letters for predicates, and these are called <strong>predicate symbols</strong>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Predicates Two and Three">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Predicates Two and Three
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use predicates and objects to symbolically represent the sentence “Two is even but three is odd.”</p>
+</div>
+</div>
+</section>
+<section id="relations" class="level1">
+<h1>Relations</h1>
+<p>Now predicates are pretty straight-forward. But often we don’t just want to say that some one object either has or doesn’t have some property. Often we want to talk about multiple objects in relation to each other. For instance, if we wanted to express that 2 is less than 3, we couldn’t do this merely with predicates.</p>
+<p>Therefore we may write <span class="math inline">\(L\)</span> as a two-place relation symbol, which we understand to mean “less-than”. If we write symbols <span class="math inline">\(t_w,t_h\)</span> to denote two and three respectively, then the sentence “two is less than three” is represented symbolically as</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(L(t_w,t_h)\)</span></p>
+</blockquote>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Three Place Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Three Place Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The extension to three-place predicates is natural. Come up with a three-place relation and three different constant symbols, in order to express: “Point <span class="math inline">\(P\)</span> is in-between points <span class="math inline">\(Q\)</span> and <span class="math inline">\(R\)</span>.”</p>
+</div>
+</div>
+<p>Relations are theoretically quite similar to predicates, just holding between more than one object. But like a predicate, they describe objects and they may hold or not. Therefore we write them with upper-case letters, and call these <strong>relation symbols</strong>.</p>
+<p>We will call all constant, predicate, and relation symbols <strong>nonlogical symbols</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The expressions <span class="math inline">\(O(t)\)</span> and <span class="math inline">\(L(t_w,t_h)\)</span> are propositions – they do express statements which are either true or false. Moreover, we can form complex propositions with them, like <span class="math inline">\(O(t)\to\neg L(t_w,t_h)\)</span>. We will call propositions with no logical operators (for example, <span class="math inline">\(O(t)\)</span>) <strong>simple propositions</strong>. Propositions with logical operators (<span class="math inline">\(\neg O(t)\)</span>) are called <strong>complex propositions</strong>.</p>
+</section>
+<section id="structures" class="level1">
+<h1>Structures</h1>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>We analyzed the possibilities for propositional variables with variable evaluations, or equivalently, a truth-table. For a more expressive syntax, though, we should have a new way of assessing the expressions. Let’s first make an example language.</p>
+<p>Consider a language for natural numbers. To keep things simple, we will take a very small language with just three constant symbols, <span class="math inline">\(a,b,c,d\)</span>. These will be <em>intended</em> to refer to the numbers 1, 2, and 3.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> However, part of the job of the structure is to make this interpretation “official”. We will also have a two-place relation symbol <em>L</em>.</p>
+<p>Now that we know the language, we can talk about a structure for the language. We will write this structure as <span class="math inline">\(\mathcal S\)</span>. To express that this <span class="math inline">\(\mathcal S\)</span> interprets <span class="math inline">\(a\)</span> as the number <span class="math inline">\(1\)</span>, we will write <span class="math inline">\(a^{\mathcal S}\)</span> = 1. Likewise <span class="math inline">\(b^{\mathcal S}=2,c^{\mathcal S}=3,d^{\mathcal S}=3\)</span> express the interpretation of <span class="math inline">\(b\)</span> as <span class="math inline">\(2\)</span> and <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> as <span class="math inline">\(3\)</span>. <span class="math inline">\(\mathcal S\)</span> also interprets the symbol <span class="math inline">\(L\)</span> as the less-than relation. It is common to express this last fact by the following set equality.</p>
+<p><span class="math display">\[
+L^{\mathcal S} = \{(1,2),(1,3),(2,3)\}
+\]</span></p>
+<p>If you’ve never seen this before it’s likely confusing. What this says is that <span class="math inline">\((1,2)\)</span> is in the relation, that is to say, <span class="math inline">\((1,2)\in L^{\mathcal S}\)</span>. And what <em>this</em> means is that 1 is related to 2.</p>
+<p>Continuing likewise, it says that 1 relates to 3 and 2 relates to 3. In total, this expresses the less-than relation among the numbers 1, 2, and 3!</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Love Triangle Relation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Love Triangle Relation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the same language as above, write down a structure which interprets <span class="math inline">\(a\)</span> as the person named Adam, <span class="math inline">\(b\)</span> is Becky, <span class="math inline">\(c\)</span> is Carla, <span class="math inline">\(d\)</span> is Dale, and <span class="math inline">\(L\)</span> is the “loves” relation. Write down a structure which corresponds to: Adam loves Becky, Becky loves Carla, Carla loves nobody, and Dale loves everybody.</p>
+</div>
+</div>
+<p>If we added to the example above, a predicate <span class="math inline">\(E\)</span> meant to represent the even numbers, then we would have <span class="math inline">\(E^{\mathcal S}=\{2\}\)</span>. This shows that, for a predicate, its interpretation is the set of elements which have the property.</p>
+<p>Now because we are able to talk about objects, it will be useful to introduce a new symbol into our language: The equality symbol. This will allow us to write, for example, the propositions <span class="math inline">\(c=d\)</span> and <span class="math inline">\(a\ne b\)</span>, both of which are true in this particular structure (but not in the structure described in the exercise above, “Love Triangle Relation”).</p>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p>Now a structure should not merely interpret. It should also evaluate, which is to say, tell us whether a given proposition is true or false. If we take the example above, whereby</p>
+<p><span class="math display">\[
+a^{\mathcal S}=1,b^{\mathcal S}=2,c^{\mathcal S}=3,L^{\mathcal S}=\{(1,2),(1,3),(2,3)\}
+\]</span></p>
+<p>then we should have that <span class="math inline">\((L(a,b))^{\mathcal S}=T\)</span> since <span class="math inline">\(a\)</span> denotes 1 and <span class="math inline">\(b\)</span> denotes 2, and <span class="math inline">\(L\)</span> is the less-than relation. Since 1 and 2 stand in the less-than relation, this proposition is true. On the other hand, we should have <span class="math inline">\((L(b,a))^{\mathcal S}=F\)</span>.</p>
+<p>The technical definition of the evaluation of a simple proposition of a two-place relation is: Let <span class="math inline">\(R\)</span> be any two-place relation symbol and <span class="math inline">\(a,b\)</span> any two constant symbols in the language. Then <span class="math inline">\((R(a,b))^{\mathcal S} = T\)</span> if and only if <span class="math inline">\((a^{\mathcal S},b^{\mathcal S})\in R^{\mathcal S}\)</span>.</p>
+<p>It may help to see this definition “in action”. In the example above, <span class="math inline">\((L(a,b))^{\mathcal S}=T\)</span> because <span class="math inline">\((a^{\mathcal S},b^{\mathcal S}) = (1,2)\)</span> and also <span class="math inline">\(L^{\mathcal S}=\{(1,2),(1,3),(2,3)\}\)</span>. Therefore we do have the relation <span class="math inline">\((a^{\mathcal S},b^{\mathcal S})\in L^{\mathcal S}\)</span> which is why we can evaluate</p>
+<p><span class="math display">\[
+(L(a,b))^{\mathcal S}=T
+\]</span></p>
+<p>On the other hand <span class="math inline">\((L(b,a))^{\mathcal S}=F\)</span> because <span class="math inline">\((b^{\mathcal S},a^{\mathcal S})=(2,1)\not\in L^{\mathcal S}\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Love Triangle Evaluation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Love Triangle Evaluation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using again the structure that you used in the previous exercise “Love Triangle Relation”, decide whether the following propositions are true.</p>
+<p><span class="math display">\[
+L(a,b),\quad L(b,a),\quad L(c,d)\to\neg L(d,c)
+\]</span></p>
+</div>
+</div>
+<p>Of course we have a simple rule for evaluating equality. If <span class="math inline">\(a,b\)</span> are any two constant symbols then <span class="math inline">\((a=b)^{\mathcal S}=T\)</span> if and only if <span class="math inline">\(a^{\mathcal S}=b^{\mathcal S}\)</span>.</p>
+</section>
+</section>
+<section id="predicates-in-python" class="level1">
+<h1>Predicates in Python</h1>
+<p>Predicates play an important role in computer science, and not just because of its intersection with mathematics. In computer science we say that a <strong>predicate</strong> is any function which returns a boolean value. Take the following examples of predicates.</p>
+<div id="2ac06eac" class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isEven(x): <span class="cf">return</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isLong(x): <span class="cf">return</span> <span class="bu">len</span>(x) <span class="op">&gt;</span> <span class="dv">10</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isPrime(x):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;=</span> <span class="dv">1</span>: <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> divisor <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,x):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x <span class="op">%</span> divisor <span class="op">==</span> <span class="dv">0</span>: <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Build Your Own">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Build Your Own
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a Python function which computes the predicate “<span class="math inline">\(x\)</span> is a string that begins with the letter ‘a’”.</p>
+<p>Also write the predicate “<span class="math inline">\(x\)</span> is a list and its elements are in increasing order.”</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Filter">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Filter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An important way in which predicates are important, is their role in filtering data. It often happens that we have a list of data, and only want some subset of it. That subset is always defined by some predicate. For instance, if we would like to take a data-set and filter so that it contains only females – perhaps because we want to study gender disparity, or drugs which only apply to female patients.</p>
+<p>Suppose we have our data in a list of tuples, like so:</p>
+<div id="911397f4" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [(<span class="st">"Alice"</span>, <span class="dv">300</span>, <span class="st">"F"</span>), (<span class="st">"Adam"</span>,<span class="dv">110</span>,<span class="st">"M"</span>), (<span class="st">"Brad"</span>,<span class="dv">150</span>,<span class="st">"M"</span>), (<span class="st">"Becky"</span>, <span class="dv">100</span>, <span class="st">"F"</span>), (<span class="st">"Clara"</span>, <span class="dv">120</span>,<span class="st">"F"</span>), (<span class="st">"Dana"</span>, <span class="dv">180</span>,<span class="st">"F"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>And we define a predicate which returns <code>True</code> for a tuple, if and only if it the third coordinate (counting from 1) is “F”. Replace the “TODO” with appropriate code.</p>
+<div id="3b0cfd01" class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isFemale(tup):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tup[<span class="st">"TODO"</span>] <span class="op">==</span> <span class="st">"F"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now below we define a filter function. A filter function takes two arguments, one of them a predicate and the other some data. The function then returns the subset of the data for which the predicate returns <code>True</code>. Replace the <code>"TODO"</code> with appropriate code.</p>
+<div id="6125f6a1" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">filter</span>(pred, data):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    bucket <span class="op">=</span> []</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> datum <span class="kw">in</span> data:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">"TODO"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> datum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Finally, use the code that you wrote to filter the content of the <code>data</code> variable and print the result.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Python Relations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Python Relations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s no reason, in principle, why we can’t also write relations in Python. Write a function which computes the “between” relation that we’ve used earlier in this section. That is to say, it should take three numeric arguments, <span class="math inline">\(x,y,z\)</span>, and return true if and only if <span class="math inline">\(y\)</span> is between <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span>.</p>
+</div>
+</div>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This does not mean that the symbols are in any way illogical. It just means that they do not have their truth-value determined <em>merely</em> by logic.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A keen-eyed observer will note that there are four symbols and three numbers – why the mismatch? As you will see shortly, this is intentional.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -320,10 +571,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -333,8 +583,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -347,6 +606,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -390,6 +724,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -475,6 +810,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

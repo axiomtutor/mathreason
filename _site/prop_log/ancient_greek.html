@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.268">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -82,6 +82,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -108,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">How to Become a Mathematician</span>
     </a>
@@ -167,6 +172,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
  <span class="dropdown-text">Predicate Logic</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../fol/quant.html" rel="" target="">
+ <span class="dropdown-text">Quantifiers</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -205,9 +214,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -215,9 +224,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/ancient_greek.html">Ancient Greece</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../prop_log/ancient_greek.html">Ancient Greece</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -308,6 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
 <p>The study of logic has two origins, philosophy and geometry. In many places throughout the world, people tried to establish rules of logic in order to clarify and resolve philosophical and political arguments.</p>
@@ -370,66 +380,86 @@ Fact B
 <div>
 <svg width="384" height="192" viewbox="0.00 0.00 406.87 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<title>
-G
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 402.87,-184 402.87,4 -4,4"></polygon> <!-- Fact A --> <g id="node1" class="node">
-<title>
-Fact A
-</title>
-<ellipse fill="none" stroke="black" cx="169.35" cy="-162" rx="37.1" ry="18"></ellipse> <text text-anchor="middle" x="169.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact A</text> </g> <!-- Consequence AB --> <g id="node2" class="node">
-<title>
-Consequence AB
-</title>
-<ellipse fill="none" stroke="black" cx="78.35" cy="-90" rx="78.2" ry="18"></ellipse> <text text-anchor="middle" x="78.35" y="-85.8" font-family="Times,serif" font-size="14.00">Consequence AB</text> </g> <!-- Fact A&#45;&#45;Consequence AB --> <g id="edge1" class="edge">
-<title>
-Fact A–Consequence AB
-</title>
-<path fill="none" stroke="black" d="M150.5,-146.5C135.71,-135.12 115.13,-119.29 99.73,-107.45"></path> </g> <!-- Consequence ACD --> <g id="node5" class="node">
-<title>
-Consequence ACD
-</title>
-<ellipse fill="none" stroke="black" cx="260.35" cy="-90" rx="85.15" ry="18"></ellipse> <text text-anchor="middle" x="260.35" y="-85.8" font-family="Times,serif" font-size="14.00">Consequence ACD</text> </g> <!-- Fact A&#45;&#45;Consequence ACD --> <g id="edge5" class="edge">
-<title>
-Fact A–Consequence ACD
-</title>
-<path fill="none" stroke="black" d="M188.21,-146.5C202.99,-135.12 223.57,-119.29 238.97,-107.45"></path> </g> <!-- Consequence (AB)C --> <g id="node7" class="node">
-<title>
-Consequence (AB)C
-</title>
-<ellipse fill="none" stroke="black" cx="225.35" cy="-18" rx="91.45" ry="18"></ellipse> <text text-anchor="middle" x="225.35" y="-13.8" font-family="Times,serif" font-size="14.00">Consequence (AB)C</text> </g> <!-- Consequence AB&#45;&#45;Consequence (AB)C --> <g id="edge7" class="edge">
-<title>
-Consequence AB–Consequence (AB)C
-</title>
-<path fill="none" stroke="black" d="M110.98,-73.46C135.08,-61.99 167.79,-46.41 192.06,-34.86"></path> </g> <!-- Fact B --> <g id="node3" class="node">
-<title>
-Fact B
-</title>
-<ellipse fill="none" stroke="black" cx="77.35" cy="-162" rx="36.54" ry="18"></ellipse> <text text-anchor="middle" x="77.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact B</text> </g> <!-- Fact B&#45;&#45;Consequence AB --> <g id="edge2" class="edge">
-<title>
-Fact B–Consequence AB
-</title>
-<path fill="none" stroke="black" d="M77.6,-143.7C77.75,-132.85 77.95,-118.92 78.11,-108.1"></path> </g> <!-- Fact C --> <g id="node4" class="node">
-<title>
-Fact C
-</title>
-<ellipse fill="none" stroke="black" cx="362.35" cy="-162" rx="36.54" ry="18"></ellipse> <text text-anchor="middle" x="362.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact C</text> </g> <!-- Fact C&#45;&#45;Consequence ACD --> <g id="edge3" class="edge">
-<title>
-Fact C–Consequence ACD
-</title>
-<path fill="none" stroke="black" d="M341.71,-146.83C325.06,-135.41 301.63,-119.33 284.18,-107.35"></path> </g> <!-- Fact C&#45;&#45;Consequence (AB)C --> <g id="edge6" class="edge">
-<title>
-Fact C–Consequence (AB)C
-</title>
-<path fill="none" stroke="black" d="M365.7,-143.77C368.45,-124.37 369.73,-92.85 354.35,-72 338.98,-51.15 313.92,-38.47 289.96,-30.77"></path> </g> <!-- Fact D --> <g id="node6" class="node">
-<title>
-Fact D
-</title>
-<ellipse fill="none" stroke="black" cx="261.35" cy="-162" rx="37.1" ry="18"></ellipse> <text text-anchor="middle" x="261.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact D</text> </g> <!-- Fact D&#45;&#45;Consequence ACD --> <g id="edge4" class="edge">
-<title>
-Fact D–Consequence ACD
-</title>
-<path fill="none" stroke="black" d="M261.11,-143.7C260.95,-132.85 260.75,-118.92 260.6,-108.1"></path> </g> </g>
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 402.87,-184 402.87,4 -4,4"></polygon>
+<!-- Fact A -->
+<g id="node1" class="node">
+<title>Fact A</title>
+<ellipse fill="none" stroke="black" cx="169.35" cy="-162" rx="37.1" ry="18"></ellipse>
+<text text-anchor="middle" x="169.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact A</text>
+</g>
+<!-- Consequence AB -->
+<g id="node2" class="node">
+<title>Consequence AB</title>
+<ellipse fill="none" stroke="black" cx="78.35" cy="-90" rx="78.2" ry="18"></ellipse>
+<text text-anchor="middle" x="78.35" y="-85.8" font-family="Times,serif" font-size="14.00">Consequence AB</text>
+</g>
+<!-- Fact A&#45;&#45;Consequence AB -->
+<g id="edge1" class="edge">
+<title>Fact A--Consequence AB</title>
+<path fill="none" stroke="black" d="M150.5,-146.5C135.71,-135.12 115.13,-119.29 99.73,-107.45"></path>
+</g>
+<!-- Consequence ACD -->
+<g id="node5" class="node">
+<title>Consequence ACD</title>
+<ellipse fill="none" stroke="black" cx="260.35" cy="-90" rx="85.15" ry="18"></ellipse>
+<text text-anchor="middle" x="260.35" y="-85.8" font-family="Times,serif" font-size="14.00">Consequence ACD</text>
+</g>
+<!-- Fact A&#45;&#45;Consequence ACD -->
+<g id="edge5" class="edge">
+<title>Fact A--Consequence ACD</title>
+<path fill="none" stroke="black" d="M188.21,-146.5C202.99,-135.12 223.57,-119.29 238.97,-107.45"></path>
+</g>
+<!-- Consequence (AB)C -->
+<g id="node7" class="node">
+<title>Consequence (AB)C</title>
+<ellipse fill="none" stroke="black" cx="225.35" cy="-18" rx="91.45" ry="18"></ellipse>
+<text text-anchor="middle" x="225.35" y="-13.8" font-family="Times,serif" font-size="14.00">Consequence (AB)C</text>
+</g>
+<!-- Consequence AB&#45;&#45;Consequence (AB)C -->
+<g id="edge7" class="edge">
+<title>Consequence AB--Consequence (AB)C</title>
+<path fill="none" stroke="black" d="M110.98,-73.46C135.08,-61.99 167.79,-46.41 192.06,-34.86"></path>
+</g>
+<!-- Fact B -->
+<g id="node3" class="node">
+<title>Fact B</title>
+<ellipse fill="none" stroke="black" cx="77.35" cy="-162" rx="36.54" ry="18"></ellipse>
+<text text-anchor="middle" x="77.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact B</text>
+</g>
+<!-- Fact B&#45;&#45;Consequence AB -->
+<g id="edge2" class="edge">
+<title>Fact B--Consequence AB</title>
+<path fill="none" stroke="black" d="M77.6,-143.7C77.75,-132.85 77.95,-118.92 78.11,-108.1"></path>
+</g>
+<!-- Fact C -->
+<g id="node4" class="node">
+<title>Fact C</title>
+<ellipse fill="none" stroke="black" cx="362.35" cy="-162" rx="36.54" ry="18"></ellipse>
+<text text-anchor="middle" x="362.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact C</text>
+</g>
+<!-- Fact C&#45;&#45;Consequence ACD -->
+<g id="edge3" class="edge">
+<title>Fact C--Consequence ACD</title>
+<path fill="none" stroke="black" d="M341.71,-146.83C325.06,-135.41 301.63,-119.33 284.18,-107.35"></path>
+</g>
+<!-- Fact C&#45;&#45;Consequence (AB)C -->
+<g id="edge6" class="edge">
+<title>Fact C--Consequence (AB)C</title>
+<path fill="none" stroke="black" d="M365.7,-143.77C368.45,-124.37 369.73,-92.85 354.35,-72 338.98,-51.15 313.92,-38.47 289.96,-30.77"></path>
+</g>
+<!-- Fact D -->
+<g id="node6" class="node">
+<title>Fact D</title>
+<ellipse fill="none" stroke="black" cx="261.35" cy="-162" rx="37.1" ry="18"></ellipse>
+<text text-anchor="middle" x="261.35" y="-157.8" font-family="Times,serif" font-size="14.00">Fact D</text>
+</g>
+<!-- Fact D&#45;&#45;Consequence ACD -->
+<g id="edge4" class="edge">
+<title>Fact D--Consequence ACD</title>
+<path fill="none" stroke="black" d="M261.11,-143.7C260.95,-132.85 260.75,-118.92 260.6,-108.1"></path>
+</g>
+</g>
 </svg>
 </div>
 </div>
@@ -451,13 +481,13 @@ Fact D–Consequence ACD
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Of course other civilizations also had highly developed mathematical knowledge. Especially the ancient Hindus seem to have developed a large body of knowledge independently, and they studied logic with some depth. However, for whatever reason, they never developed axiomatic mathematics – and for that reason, they are not the focus of our story here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Other facts are also needed – the “Euclidean postulates”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main> <!-- /main -->
+</aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -537,10 +567,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -550,8 +579,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -564,6 +602,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -607,6 +720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -693,6 +807,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
+
 
 
 

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.268">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How to Become a Mathematician - Quantifiers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">How to Become a Mathematician</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prop.-logic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Prop. Logic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-prop.-logic">    
+        <li>
+    <a class="dropdown-item" href="../prop_log/ancient_greek.html" rel="" target="">
+ <span class="dropdown-text">Ancient Greece</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/core_examples.html" rel="" target="">
+ <span class="dropdown-text">Two Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/abstract_propositions.html" rel="" target="">
+ <span class="dropdown-text">Abstract Propositions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/parse_tree.html" rel="" target="">
+ <span class="dropdown-text">Parse Trees</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/eval.html" rel="" target="">
+ <span class="dropdown-text">Propositional Evaluation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/op_props.html" rel="" target="">
+ <span class="dropdown-text">Semantic Properties</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/deduction.html" rel="" target="">
+ <span class="dropdown-text">Deduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../prop_log/axiom_systems.html" rel="" target="">
+ <span class="dropdown-text">Axiom Systems</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fol" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">FOL</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fol">    
+        <li>
+    <a class="dropdown-item" href="../fol/pred.html" rel="" target="">
+ <span class="dropdown-text">Predicate Logic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../fol/quant.html" rel="" target="">
+ <span class="dropdown-text">Quantifiers</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arithmetic" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Arithmetic</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arithmetic">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-geometry" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Geometry</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-geometry">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reals" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Reals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-reals">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-combinatorics" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Combinatorics</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-combinatorics">    
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-set-theory" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Set Theory</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-set-theory">    
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../fol/quant.html">Quantifiers</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/pred.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Predicate Logic</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/quant.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quantifiers</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-quantifiers" id="toc-why-quantifiers" class="nav-link active" data-scroll-target="#why-quantifiers">Why Quantifiers?</a>
+  <ul class="collapse">
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  </ul></li>
+  <li><a href="#picking-many-objects" id="toc-picking-many-objects" class="nav-link" data-scroll-target="#picking-many-objects">Picking Many Objects</a></li>
+  <li><a href="#quantifiers-in-python" id="toc-quantifiers-in-python" class="nav-link" data-scroll-target="#quantifiers-in-python">Quantifiers in Python</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quantifiers</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<p>We now extend predicate logic to a more expressive logic, by adding quantifiers.</p>
+<section id="why-quantifiers" class="level1">
+<h1>Why Quantifiers?</h1>
+<p>Suppose that we would like to express that every number divisible by 4 is also divisible by 2. If we are saying this for the integers, then this requires talking about an infinity of objects. Ideally we would like to have a way of talking about “all numbers” so that we could say something like “For all integers, if the integer is divisible by 4, then that integer is divisible by 2.”</p>
+<p>In order to speak about the entire universe of integers, we therefore introduce the notation <span class="math inline">\(\forall x\)</span>, which is read as “for all <span class="math inline">\(x\)</span>”. The symbol <span class="math inline">\(\forall\)</span> is called the <strong>universal quantifier</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If <span class="math inline">\(F(x)\)</span> is the “<span class="math inline">\(x\)</span> is dividible by four” predicate, then <span class="math inline">\(\forall x F(x)\)</span> expresses that all integers are divisible by four.</p>
+<p>If we let <span class="math inline">\(T(x)\)</span> be the “<span class="math inline">\(x\)</span> is divisible by two” predicate, then <span class="math inline">\(\forall x(F(x)\to T(x))\)</span> expresses</p>
+<blockquote class="blockquote">
+<p>For all integers, <span class="math inline">\(x\)</span>, if <span class="math inline">\(x\)</span> is divisible by four then <span class="math inline">\(x\)</span> is divisible by <span class="math inline">\(2\)</span>.</p>
+</blockquote>
+<p>This is just a more wordy way of saying “every integer divisible by four is divisible by 2”.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="For All with Or and And">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For All with Or and And
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the predicate <span class="math inline">\(E(x)\)</span> which expresses, in the domain of integers, that <span class="math inline">\(x\)</span> is even. Consider the two propositions</p>
+<p><span class="math display">\[\forall x(E(x)\lor \neg E(x)), \quad \forall x E(x) \lor \forall x \neg E(x)\]</span></p>
+<p>The former says “All integers are either even or odd.” The latter says “Either all integers are even, or all integers are odd.”</p>
+<p>Which of these are true, or are both true, or are both false?</p>
+<hr>
+<p>Let <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> be any predicates, and consider the two propositions</p>
+<p><span class="math display">\[
+\forall x (P(x)\land Q(x)), \quad \forall x P(x)\land \forall xQ(x)
+\]</span></p>
+<p>Are these equivalent?</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="More Expressiveness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More Expressiveness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(D(x,y)\)</span> be the “<span class="math inline">\(x\)</span> divides <span class="math inline">\(y\)</span>” relation between integers. We will write the constant symbol <span class="math inline">\(t_w\)</span> to represent two and <span class="math inline">\(f\)</span> to represent four. Check that</p>
+<p><span class="math display">\[
+\forall x(D(f,x)\to D(t_w,x))
+\]</span> expresses that “every integer divisible by four is divisible by two”.</p>
+<p>Write a symbolic expression using these same symbols, to express that “four is divisible by two and four”.</p>
+<hr>
+<p>Try to interpret the expression</p>
+<p><span class="math display">\[
+\forall x(D(x,t_w)\to x=t_w)
+\]</span></p>
+<p>Is this a true proposition?</p>
+</div>
+</div>
+<p>Similarly, we might want to express that “there is at least one even prime number”. Let <span class="math inline">\(E(x)\)</span> be the “<span class="math inline">\(x\)</span> is even” predicate, and <span class="math inline">\(P(x)\)</span> the “<span class="math inline">\(x\)</span> is prime” predicate. The universal quantifier cannot easily express “at least one”, and therefore to write that there is at least one even prime, we write</p>
+<p><span class="math display">\[
+\exists x (E(x)\land P(x))
+\]</span></p>
+<p>which, in a literal and wordy translation, says</p>
+<blockquote class="blockquote">
+<p>There is an integer, <span class="math inline">\(x\)</span>, such that <span class="math inline">\(x\)</span> is even and <span class="math inline">\(x\)</span> is prime.</p>
+</blockquote>
+<p>The symbol <span class="math inline">\(\exists\)</span> is called the <strong>existential</strong> quantifier, and <span class="math inline">\(\exists x\)</span> is pronounced “there exists an <span class="math inline">\(x\)</span>”.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="For All And Exists Or">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For All And Exists Or
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that there are four people, Adam, Becky, Clara, and Dale, which we represent by the constant symbols <span class="math inline">\(a,b,c,d\)</span>. Let’s say that some of them are fun and some of them are not, with the predicate symbol <span class="math inline">\(F\)</span>.</p>
+<p>Is there any difference in meaning between the following two sentences?</p>
+<p><span class="math display">\[
+\forall xF(x), \quad F(a)\land F(b)\land F(c)\land F(d)
+\]</span></p>
+<p>How about:</p>
+<p><span class="math display">\[
+\exists x F(x), \quad F(a)\lor F(b)\lor F(c)\lor (d)
+\]</span></p>
+<hr>
+<p>It seems like the universal quantifier is a shorthand for a conjunction over all objects in the domain of conversation.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> And it seems like the existential is shorthand for a disjunction.</p>
+<p>Are the quantifiers merely “syntactic sugar”, which is to say, a more compact notation? Or are they “more expressive” in the sense that there are some things which you can say with universal quantification (existential quantification) that you cannot say with mere conjuction (disjunction)?</p>
+</div>
+</div>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>We distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain. Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from ‘a’ to ‘s’ may be used for constant symbols. Letters from ‘t’ to ‘z’ are used as varaibles.</p>
+<p>Notice therefore that the expression which occurs underneath a quantifier is not a well-formed expression! If we have, for instance, <span class="math inline">\(\forall x P(x)\)</span>, this may be well-formed. However, <span class="math inline">\(P(x)\)</span> is meaningless, as the meaning of <span class="math inline">\(x\)</span> is not specified.</p>
+<p>Notice also that the choice of variable is unimportant. We would evaluate, for instance, <span class="math inline">\(\forall x P(x)\)</span> in exactly the same way that we would evaluate <span class="math inline">\(\exists x P(x)\)</span>.</p>
+</section>
+</section>
+<section id="picking-many-objects" class="level1">
+<h1>Picking Many Objects</h1>
+<p>I would now like to describe the distinct meanings of the following four propositions, and how they are represented symbolically.</p>
+<ul>
+<li>Somebody loves someone.</li>
+<li>Somebody loves everyone.</li>
+<li>Everyone loves somebody.</li>
+<li>Everyone loves everybody.</li>
+</ul>
+<p>Their symbolizations are</p>
+<ul>
+<li><span class="math inline">\(\exists x\exists y L(x,y)\)</span></li>
+<li><span class="math inline">\(\exists x\forall y L(x,y)\)</span></li>
+<li><span class="math inline">\(\forall x\exists y L(x,y)\)</span></li>
+<li><span class="math inline">\(\forall x\forall y L(x,y)\)</span></li>
+</ul>
+<p>where <span class="math inline">\(L\)</span> is the “loves” predicate. Let’s imagine a world in which there are four people, Adam, Becky, Clara, Dale, as usual represented by the constants <span class="math inline">\(a,b,c,d\)</span>. Adam loves everyone, Becky only loves Clara, Clara loves nobody, and Dale loves Adam. Which of the above propositions is then true?</p>
+<p>The first sentence is easily seen to be true. We can in fact demonstrate the truth of this proposition by explicitly finding an <span class="math inline">\(x\)</span> for the first existential quantifier. Several candidates would work, but we will choose Adam to be the instance of <span class="math inline">\(x\)</span>. To demonstrate that Adam is in fact such an instance, we only need to then show that <span class="math inline">\(\exists yL(a,y)\)</span> is true. Again it suffices to find some instance for <span class="math inline">\(y\)</span>. We may select Adam again for <span class="math inline">\(y\)</span>!</p>
+<p>If this is surprising to you, keep in mind that I did in fact say that Adam loves everyone! When being very logically precise, if we say everyone then that means everyone! Since Adam “is a someone” and Adam loves everyone, then Adam loves Adam. Therefore an acceptable instance for <span class="math inline">\(y\)</span> is indeed <span class="math inline">\(a\)</span>. Since <span class="math inline">\(L(a,a)\)</span> is true, then we have just confirmed <span class="math inline">\(\exists y L(a,y)\)</span>. Since that proposition is true, we have therefore confirmed <span class="math inline">\(\exists x\exists y L(x,y)\)</span>.</p>
+<hr>
+<p>How about <span class="math inline">\(\exists x\forall y L(x,y)\)</span>? This says that someone loves everyone, so naturally we guess that the instance for <span class="math inline">\(x\)</span> is Adam again. Therefore we need to now confirm the sentence <span class="math inline">\(\forall y L(a,y)\)</span>. To do so, it is now <em>insufficient</em> to merely demonstrate <span class="math inline">\(L(a,a)\)</span>! That was sufficient for an existential proposition, but in a universal proposition we need to confirm it for <em>every</em> instance in the domain. In this case, we need to confirm all of <span class="math inline">\(L(a,a), L(a,b), L(a,c), L(a,d)\)</span>.</p>
+<p>Of course, all of these must hold because we said at the beginning that Adam loves everyone. Therefore <span class="math inline">\(\forall y L(a,y)\)</span> is confirmed. And therefore <span class="math inline">\(\exists x \forall y L(x,y)\)</span> is confirmed.</p>
+<hr>
+<p>How about <span class="math inline">\(\forall x\exists y L(x,y)\)</span>? In order for this to be true, we have to check that it is true for <em>every</em> <span class="math inline">\(x\)</span> in the domain. That is to say, we have to check that all of the propositions, <span class="math inline">\(\exists y L(a,y), \exists y L(b,y), \exists yL(c,y), \exists y L(d,y)\)</span>.</p>
+<p>Of course the first of these is true, and we can take <span class="math inline">\(a\)</span> to be an instance of <span class="math inline">\(y\)</span>. This produces <span class="math inline">\(L(a,a)\)</span> which we’ve already confirmed is true.</p>
+<p>Next we need to find some instance for <span class="math inline">\(y\)</span> in <span class="math inline">\(\exists yL(b,y)\)</span>. Since Becky loves Clara then indeed we may take <span class="math inline">\(c\)</span> to be an instance of <span class="math inline">\(y\)</span>. Since <span class="math inline">\(L(b,c)\)</span> is true, then <span class="math inline">\(\exists yL(b,y)\)</span> is true.</p>
+<p>Next we need to find some instance for <span class="math inline">\(y\)</span> in <span class="math inline">\(\exists y L(c,y)\)</span>. However, we stipulated at the start that Clara loves nobody! Therefore this is false.</p>
+<p>We just showed that not every <span class="math inline">\(x\)</span> makes <span class="math inline">\(\forall x\exists y L(x,y)\)</span> true. Well then, since it is a universal quantifier, making a claim about ALL objects in the domain, it is a false claim! Not everyone loves someone!</p>
+<hr>
+<p>Finally we consider <span class="math inline">\(\forall x\forall y L(x,y)\)</span>. Of course this is false, and we can skip right ahead to the reason why. Taking <span class="math inline">\(x\)</span> to be Clara and, say, <span class="math inline">\(y\)</span> to be Adam, we have that <span class="math inline">\(L(c,a)\)</span> is not true. And therefore <span class="math inline">\(\forall y L(c,y)\)</span> is not true, and therefore <span class="math inline">\(\forall x\forall y L(c,y)\)</span> is not true.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Between Relation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Between Relation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(B(x,y,z)\)</span> be a relation on real numbers, which expresses that <span class="math inline">\(y\)</span> is between <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span>. Write a symbolic proposition which expresses that for any two real numbers, there is a number between them.</p>
+<p>Then write a proposition which expresses that there is a number which is between all two numbers.</p>
+<p>Then write a proposition which expresses that, for any number, it is between some two numbers.</p>
+<p>Then write a proposition which expresses that, for any two numbers <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>, there ix a third number <span class="math inline">\(x\)</span> such that <span class="math inline">\(B(x,y,z)\)</span>.</p>
+<p>Not all of the above are true. Which are false?</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Graph Properties">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Graph Properties
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we have a set of nodes, depicted below.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co">,</span><span class="va">B</span><span class="co">,</span><span class="va">C</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 206.00 44.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-40 202,-40 202,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>And the nodes are connected up by “edges” as below.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 80.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 76,-184 76,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge2" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M46.9,-174.43C59.69,-177.68 72,-173.53 72,-162 72,-153.62 65.5,-149.14 57.04,-148.56"></path>
+<polygon fill="black" stroke="black" points="56.5,-145.1 46.9,-149.57 57.19,-152.07 56.5,-145.1"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M27,-61.67C27,-56.69 27,-51.49 27,-46.51"></path>
+<polygon fill="black" stroke="black" points="23.5,-61.7 27,-71.7 30.5,-61.7 23.5,-61.7"></polygon>
+<polygon fill="black" stroke="black" points="30.5,-46.1 27,-36.1 23.5,-46.1 30.5,-46.1"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p>The choice of nodes and edges here is arbitrary and just for illustration.</p>
+<p>We can model the nodes-and-edges relation a relation <span class="math inline">\(R(x,y)\)</span> which expresses that node <span class="math inline">\(x\)</span> relates to (i.e.&nbsp;points to with an edge) node <span class="math inline">\(y\)</span>. Naturally we let <span class="math inline">\(a,b,c\)</span> be constant symbols for nodes A, B, and C respectively. In the diagram above, this graph is expressed by the symbolic expression</p>
+<p><span class="math display">\[
+R(a,a)\land R(a,b) \land R(b,c)\land R(c,b)
+\]</span></p>
+<p>Even more specifically it is described by</p>
+<p><span class="math display">\[
+R(a,a)\land R(a,b) \land R(b,c) \land \neg ( R(a,c)\lor R(b,a)\lor R(c,a)\lor R(c,c) )
+\]</span></p>
+<hr>
+<p>Draw a graph which is described by <span class="math inline">\(R(a,b)\land R(b,a)\)</span>.</p>
+<hr>
+<p>A digraph is called <strong>reflexive</strong> if it satisfies the following proposition:</p>
+<p><span class="math display">\[
+\forall x R(x,x)
+\]</span></p>
+<p>Decide which of the following is reflexive.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span><span class="co"> </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">C</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="ot">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 260.00 44.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-40 256,-40 256,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge1" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M52.44,-24.69C63.03,-25.15 72,-22.92 72,-18 72,-14.77 68.14,-12.7 62.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="62.6,-8.29 52.44,-11.31 62.27,-15.28 62.6,-8.29"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="117" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="117" y="-13.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- B&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>B-&gt;B</title>
+<path fill="none" stroke="black" d="M142.44,-24.69C153.03,-25.15 162,-22.92 162,-18 162,-14.77 158.14,-12.7 152.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="152.6,-8.29 142.44,-11.31 152.27,-15.28 152.6,-8.29"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="207" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- C&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>C-&gt;C</title>
+<path fill="none" stroke="black" d="M232.44,-24.69C243.03,-25.15 252,-22.92 252,-18 252,-14.77 248.14,-12.7 242.49,-11.79"></path>
+<polygon fill="black" stroke="black" points="242.6,-8.29 232.44,-11.31 242.27,-15.28 242.6,-8.29"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">H</span><span class="ot">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">A</span><span class="ot">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="co"> </span><span class="ot">[</span><span class="at">dir</span><span class="ot">=</span><span class="va">both</span><span class="ot">];</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 116.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>H</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 112,-184 112,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- A&#45;&gt;A -->
+<g id="edge1" class="edge">
+<title>A-&gt;A</title>
+<path fill="none" stroke="black" d="M82.9,-174.43C95.69,-177.68 108,-173.53 108,-162 108,-153.62 101.5,-149.14 93.04,-148.56"></path>
+<polygon fill="black" stroke="black" points="92.5,-145.1 82.9,-149.57 93.19,-152.07 92.5,-145.1"></polygon>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M49.99,-135.7C46.7,-129.3 43.17,-122.44 39.88,-116.05"></path>
+<polygon fill="black" stroke="black" points="46.96,-137.47 54.65,-144.76 53.19,-134.27 46.96,-137.47"></polygon>
+<polygon fill="black" stroke="black" points="42.99,-114.44 35.3,-107.15 36.77,-117.64 42.99,-114.44"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="black" d="M73.86,-134.59C76.78,-126.23 79.54,-116.86 81,-108 83.61,-92.21 83.61,-87.79 81,-72 79.54,-63.14 76.78,-53.77 73.86,-45.41"></path>
+<polygon fill="black" stroke="black" points="70.5,-133.59 70.29,-144.18 77.06,-136.03 70.5,-133.59"></polygon>
+<polygon fill="black" stroke="black" points="77.06,-43.97 70.29,-35.82 70.5,-46.41 77.06,-43.97"></polygon>
+</g>
+<!-- B&#45;&gt;B -->
+<g id="edge4" class="edge">
+<title>B-&gt;B</title>
+<path fill="none" stroke="black" d="M46.9,-102.43C59.69,-105.68 72,-101.53 72,-90 72,-81.62 65.5,-77.14 57.04,-76.56"></path>
+<polygon fill="black" stroke="black" points="56.5,-73.1 46.9,-77.57 57.19,-80.07 56.5,-73.1"></polygon>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge5" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M40.01,-63.7C43.3,-57.3 46.83,-50.44 50.12,-44.05"></path>
+<polygon fill="black" stroke="black" points="36.81,-62.27 35.35,-72.76 43.04,-65.47 36.81,-62.27"></polygon>
+<polygon fill="black" stroke="black" points="53.23,-45.64 54.7,-35.15 47.01,-42.44 53.23,-45.64"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>A digraph is called <strong>symmetric</strong> if it satisfies</p>
+<p><span class="math display">\[
+\forall x\forall y (R(x,y)\to R(y,x))
+\]</span></p>
+<p>Decide which of the two digraphs above are symmetric, and whether the following is.</p>
+<div class="cell" data-fig-height="2" data-fig-width="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span><span class="ot">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">A</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">B</span><span class="ot">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="va">B</span><span class="co"> </span><span class="ot">-&gt;</span><span class="co"> </span><span class="va">C</span><span class="ot">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 62.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 58,-184 58,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-63.98 27,-54.71 27,-46.11"></path>
+<polygon fill="black" stroke="black" points="30.5,-46.1 27,-36.1 23.5,-46.1 30.5,-46.1"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>A digraph is called <strong>transitive</strong> if it satisfies</p>
+<p><span class="math display">\[
+\forall x\forall y\forall z ([R(x,y)\land R(y,z)]\to R(x,z))
+\]</span></p>
+<p>Decide if any of the three previous digraphs were transitive.</p>
+</div>
+</div>
+</section>
+<section id="quantifiers-in-python" class="level1">
+<h1>Quantifiers in Python</h1>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="For All Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For All Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we have some data, like</p>
+<div id="f8f213ee" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>and the “<span class="math inline">\(x\)</span> is less than 5” predicate.</p>
+<div id="24572812" class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lessFive(x): <span class="cf">return</span> x <span class="op">&lt;</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Then “for all <span class="math inline">\(x\)</span>, <span class="math inline">\(x\)</span> is less than 5” is an assertion which we can make of, say, this data set! And we can compute it with the following program. Fill in “TODO” with appropriate code (and remove the comment symbol, <code>#</code>).</p>
+<div id="c7c448c8" class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for datum in data:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if "TODO"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Existential Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Existential Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement a parallel demonstration of the existential quantifier in Python code.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled" title="Many Choices Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Many Choices Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is a somewhat realistic application to a computer science concept: A string <code>s</code> is a substring of the string <code>t</code> if there are indices <code>i,j</code> such that <code>t[i:j] == s</code>. Of course the indices only make sense if they’re taken from the range from <code>0</code> to <code>len(t)-1</code>.</p>
+<p>The following function returns <code>True</code> if and only if <code>s</code> is a substring of <code>t</code>.</p>
+<div id="9e278574" class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isSubstring(s,t):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(t)):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(t)):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> t[i:j] <span class="op">==</span> s: <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Write a quantified proposition which is modeled by this function.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Remove the <code>\text{TODO}</code> with appropriate code.</p>
+<p><span class="math display">\[
+\text{TODO} x \text{TODO} y (t[i:j] = s)
+\]</span></p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>“Quantifier” is meant loosely. The “quantity” here is “all”.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We will say more about the “domain of conversation” later, but for now we take this to informally mean “whatever objects our symbols are understood to refer to”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Take <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> to be some two specific strings, and fill in the “TODO” appropriately.Of course <span class="math inline">\(t[i:j]\)</span> is not a part of our official logical notation. But we can regard it as a three-place function, with inputs <span class="math inline">\(t\)</span>, <span class="math inline">\(i\)</span>, and <span class="math inline">\(j\)</span>, and which outputs <span class="math inline">\(t[i:j]\)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
