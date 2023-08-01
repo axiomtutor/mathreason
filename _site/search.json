@@ -133,11 +133,18 @@
     "text": "We now extend predicate logic to a more expressive logic, by adding quantifiers."
   },
   {
-    "objectID": "fol/quant.html#sufficiency-of-examples-for-existentials",
-    "href": "fol/quant.html#sufficiency-of-examples-for-existentials",
+    "objectID": "fol/quant.html#variables",
+    "href": "fol/quant.html#variables",
     "title": "Quantifiers",
-    "section": "Sufficiency of Examples for Existentials",
-    "text": "Sufficiency of Examples for Existentials"
+    "section": "Variables",
+    "text": "Variables\nWe distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain. Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from ‘a’ to ‘s’ may be used for constant symbols. Letters from ‘t’ to ‘z’ are used as varaibles.\nNotice therefore that the expression which occurs underneath a quantifier is not a well-formed expression! If we have, for instance, \\(\\forall x P(x)\\), this may be well-formed. However, \\(P(x)\\) is meaningless, as the meaning of \\(x\\) is not specified.\nNotice also that the choice of variable is unimportant. We would evaluate, for instance, \\(\\forall x P(x)\\) in exactly the same way that we would evaluate \\(\\exists x P(x)\\)."
+  },
+  {
+    "objectID": "fol/fol.html",
+    "href": "fol/fol.html",
+    "title": "First-order Logic Semantics",
+    "section": "",
+    "text": "First-order logic is the logic that we introduced in the previous section: Predicate logic with quantifiers. Now that there is additional syntax which predicate logic didn’t have, it needs to be joined with additional semantics. In this section, we extend the notion of a structure to first-order logic.\n\nDomain\nWhen evaluating propositions with quantifiers, it becomes important to specify the “domain”. To illustrate the concept, consider the proposition “Between any two numbers, there is another number”, formalized as1\n\\[\n\\forall x\\forall z\\exists y B(x,y,z)\n\\]\nThis is true for the real numbers, and it’s true for the rational numbers, but it’s not true for the integers! Therefore, with a different domain, this sentence can be either true or false.\nEach quantifier “ranges over” the domain, meaning that its variable can take on any value in that domain. For instance, if the domain is the real numbers, then the \\(x\\) above could refer to any real number. The “for all” semantics then requires that the remaining expression \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true in every case. That is to say, in order for \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true if, for every real number that we assign to \\(x\\), the expression \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true.\n\n\nFormulae\nThe above shows that, in order to talk about the semantics of first-order propositions, we will need to be able to\n\nRemove an outer-most quantifier\nAssign a value in the domain to its variable\nAssess the truth of the remaining expression.\n\nBut as we have noted elsewhere, expressions with variables that are not “bounded” by quantifiers2 are not meaningful – they are not propositions. Therefore we should treat them with a different vocabulary.\nA\n\n\n\n\n\nFootnotes\n\n\nThe relation \\(B(a,b,c)\\) expresses that \\(b\\) is between \\(a\\) and \\(c\\), as described earlier.↩︎\nIn the expression \\(P(x)\\), we say that the \\(x\\) here is “unbounded”. By contrast, in both \\(\\forall x P(x)\\) and \\(\\exists x P(x)\\), the variable is now bounded. We will say more about this when we discuss first-order logic’s syntax more fully. For now, you can just understand this intuitively.↩︎"
   },
   {
     "objectID": "fol/pred.html",
@@ -236,19 +243,5 @@
     "title": "Parse Trees",
     "section": "Parsing",
     "text": "Parsing\nIt can be a little unsatisfying to input propositions in such an artificial way. Can’t we find a way to input a string like `“if (not P) then (Q or (R and S))” and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!\nHowever, to understand it, you have to get a little familiar with the pyparsing library. Since none of this is very interesting for logic, I’ll just leave the code but won’t try to explain it.\n\n\nCode\nimport pyparsing\n\nterms = pyparsing.Word(pyparsing.alphas) | \"not\" | \"and\" | \"or\" | \"if\" | \"then\" | \"iff\" \nnesting = pyparsing.nestedExpr( '(', ')', content=terms)\n\ndef shape(s): \n    p = nesting.parseString(\"(\"+s+\")\")[0]\n    \n    return parseTree(p)"
-  },
-  {
-    "objectID": "fol/quant.html#variables",
-    "href": "fol/quant.html#variables",
-    "title": "Quantifiers",
-    "section": "Variables",
-    "text": "Variables\nWe distinguish between constant symbols, which always refer to the same named object, and variables which may variously refer to any object in the domain. Therefore we will adopt the fairly standard convention that lower-case letters of the alphabet from ‘a’ to ‘s’ may be used for constant symbols. Letters from ‘t’ to ‘z’ are used as varaibles.\nNotice therefore that the expression which occurs underneath a quantifier is not a well-formed expression! If we have, for instance, \\(\\forall x P(x)\\), this may be well-formed. However, \\(P(x)\\) is meaningless, as the meaning of \\(x\\) is not specified.\nNotice also that the choice of variable is unimportant. We would evaluate, for instance, \\(\\forall x P(x)\\) in exactly the same way that we would evaluate \\(\\exists x P(x)\\)."
-  },
-  {
-    "objectID": "fol/fol.html",
-    "href": "fol/fol.html",
-    "title": "First-order Logic Semantics",
-    "section": "",
-    "text": "First-order logic is the logic that we introduced in the previous section: Predicate logic with quantifiers. Now that there is additional syntax which predicate logic didn’t have, it needs to be joined with additional semantics. In this section, we extend the notion of a structure to first-order logic.\n\nDomain\nWhen evaluating propositions with quantifiers, it becomes important to specify the “domain”. To illustrate the concept, consider the proposition “Between any two numbers, there is another number”, formalized as1\n\\[\n\\forall x\\forall z\\exists y B(x,y,z)\n\\]\nThis is true for the real numbers, and it’s true for the rational numbers, but it’s not true for the integers! Therefore, with a different domain, this sentence can be either true or false.\nEach quantifier “ranges over” the domain, meaning that its variable can take on any value in that domain. For instance, if the domain is the real numbers, then the \\(x\\) above could refer to any real number. The “for all” semantics then requires that the remaining expression \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true in every case. That is to say, in order for \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true if, for every real number that we assign to \\(x\\), the expression \\(\\forall x\\forall z\\exists y B(x,y,z)\\) is true.\n\n\nFormulae\nThe above shows that, in order to talk about the semantics of first-order propositions, we will need to be able to\n\nRemove an outer-most quantifier\nAssign a value in the domain to its variable\nAssess the truth of the remaining expression.\n\nBut as we have noted elsewhere, expressions with variables that are not “bounded” by quantifiers2 are not meaningful – they are not propositions. Therefore we should treat them with a different vocabulary.\nA\n\n\n\n\n\nFootnotes\n\n\nThe relation \\(B(a,b,c)\\) expresses that \\(b\\) is between \\(a\\) and \\(c\\), as described earlier.↩︎\nIn the expression \\(P(x)\\), we say that the \\(x\\) here is “unbounded”. By contrast, in both \\(\\forall x P(x)\\) and \\(\\exists x P(x)\\), the variable is now bounded. We will say more about this when we discuss first-order logic’s syntax more fully. For now, you can just understand this intuitively.↩︎"
   }
 ]

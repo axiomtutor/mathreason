@@ -174,6 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../fol/quant.html" rel="" target="">
  <span class="dropdown-text">Quantifiers</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../fol/fol.html" rel="" target="">
+ <span class="dropdown-text">First-order Logic Semantics</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -244,6 +248,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../fol/quant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quantifiers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../fol/fol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First-order Logic Semantics</span></a>
   </div>
 </li>
     </ul>
@@ -399,7 +409,7 @@ L(a,b),\quad L(b,a),\quad L(c,d)\to\neg L(d,c)
 <section id="predicates-in-python" class="level1">
 <h1>Predicates in Python</h1>
 <p>Predicates play an important role in computer science, and not just because of its intersection with mathematics. In computer science we say that a <strong>predicate</strong> is any function which returns a boolean value. Take the following examples of predicates.</p>
-<div id="2ac06eac" class="cell" data-execution_count="1">
+<div id="2ac06eac" class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isEven(x): <span class="cf">return</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
@@ -439,14 +449,14 @@ Filter
 <div class="callout-body-container callout-body">
 <p>An important way in which predicates are important, is their role in filtering data. It often happens that we have a list of data, and only want some subset of it. That subset is always defined by some predicate. For instance, if we would like to take a data-set and filter so that it contains only females – perhaps because we want to study gender disparity, or drugs which only apply to female patients.</p>
 <p>Suppose we have our data in a list of tuples, like so:</p>
-<div id="911397f4" class="cell" data-execution_count="2">
+<div id="911397f4" class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [(<span class="st">"Alice"</span>, <span class="dv">300</span>, <span class="st">"F"</span>), (<span class="st">"Adam"</span>,<span class="dv">110</span>,<span class="st">"M"</span>), (<span class="st">"Brad"</span>,<span class="dv">150</span>,<span class="st">"M"</span>), (<span class="st">"Becky"</span>, <span class="dv">100</span>, <span class="st">"F"</span>), (<span class="st">"Clara"</span>, <span class="dv">120</span>,<span class="st">"F"</span>), (<span class="st">"Dana"</span>, <span class="dv">180</span>,<span class="st">"F"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>And we define a predicate which returns <code>True</code> for a tuple, if and only if it the third coordinate (counting from 1) is “F”. Replace the “TODO” with appropriate code.</p>
-<div id="3b0cfd01" class="cell" data-execution_count="3">
+<div id="3b0cfd01" class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isFemale(tup):</span>
@@ -454,7 +464,7 @@ Filter
 </details>
 </div>
 <p>Now below we define a filter function. A filter function takes two arguments, one of them a predicate and the other some data. The function then returns the subset of the data for which the predicate returns <code>True</code>. Replace the <code>"TODO"</code> with appropriate code.</p>
-<div id="6125f6a1" class="cell" data-execution_count="4">
+<div id="6125f6a1" class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">filter</span>(pred, data):</span>
