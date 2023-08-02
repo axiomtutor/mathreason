@@ -1,3 +1,9 @@
-/.quarto/
+*
 
-/.luarc.json
+!.gitignore
+!*.yml
+!*.qmd
+!*.md
+!*.css
+!*.ipynb
+
