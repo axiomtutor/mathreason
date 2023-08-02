@@ -49,5 +49,47 @@
   },
   "fol/fol.qmd": {
     "fol.html": "d92b1479"
+  },
+  "sprout/fol/fol.qmd": {
+    "fol.html": "40e5e710"
+  },
+  "sprout/fol/pred.qmd": {
+    "pred.html": "f7e49034"
+  },
+  "sprout/fol/quant.qmd": {
+    "quant.html": "23b1f0b6"
+  },
+  "sprout/index.qmd": {
+    "index.html": "95608d94"
+  },
+  "sprout/prop_log/abstract_propositions.qmd": {
+    "abstract_propositions.html": "c4a6cbb4"
+  },
+  "sprout/prop_log/ancient_greek.qmd": {
+    "ancient_greek.html": "6a31ea8c"
+  },
+  "sprout/prop_log/axiom_systems.qmd": {
+    "axiom_systems.html": "5d2976c1"
+  },
+  "sprout/prop_log/core_examples.qmd": {
+    "core_examples.html": "f680cb3c"
+  },
+  "sprout/prop_log/deduction.qmd": {
+    "deduction.html": "d5f3b732"
+  },
+  "sprout/prop_log/eval.qmd": {
+    "eval.html": "38275da7"
+  },
+  "sprout/prop_log/images/animations.ipynb": {
+    "animations.html": "2b7ed8e9"
+  },
+  "sprout/prop_log/op_props.qmd": {
+    "op_props.html": "c28081af"
+  },
+  "sprout/prop_log/parse_tree.qmd": {
+    "parse_tree.html": "6d93d707"
+  },
+  "sprout/prop_log/sandbox.ipynb": {
+    "sandbox.html": "5ef60ccb"
   }
 }
