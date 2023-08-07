@@ -237,7 +237,7 @@ For the conditional, we will take its representation to be a little different. I
 
 ## Parsing
 
-It can be a little unsatisfying to input propositions in such an artificial way. Can't we find a way to input a string like \`"if (not P) then (Q or (R and S))" and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!
+It can be a little unsatisfying to input propositions in such an artificial way. Can't we find a way to input a string like `"if (not P) then (Q or (R and S))"` and the program will structure it and form the corresponding tree? Indeed it can be done and the code below accomplishes this!
 
 However, to understand it, you have to get a little familiar with the `pyparsing` library. Since none of this is very interesting for logic, I'll just leave the code but won't try to explain it.
 
@@ -252,4 +252,11 @@ def shape(s):
     p = nesting.parseString("("+s+")")[0]
     
     return parseTree(p)
+```
+
+To see this in action, you can run the above and then the below.
+
+```{python}
+
+print(shape("if P then Q"))
 ```
