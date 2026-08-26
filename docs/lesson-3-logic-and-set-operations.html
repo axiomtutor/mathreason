@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 3. Logic and Set Operations — Mathematical Reasoning and Discre</title>
+<meta name="description" content="The main tool for mathematicians is the proof of theorems. Therefore logic is fundamental to our studies. It may be helpful to see an example proof right a" />
+<meta property="og:title" content="Lesson 3. Logic and Set Operations — Mathematical Reasoning and Discrete Math" />
+<meta property="og:description" content="The main tool for mathematicians is the proof of theorems. Therefore logic is fundamental to our studies. It may be helpful to see an example proof right a" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="assets/katex.min.css" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="menu-toggle" aria-label="Toggle chapter list" aria-expanded="false">Chapters</button>
+  <a class="brand" href="index.html">Mathematical Reasoning and Discrete Math</a>
+</header>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="side-brand" href="index.html">Mathematical Reasoning and Discrete Math</a>
+    <p class="side-label">Contents</p>
+    <ul class="nav"><li><a class="nav-link" href="chapter-0-the-bare-necessities-of-sets-and-functio.html"><span class="nav-num">01</span>Chapter 0: The Bare Necessities of Sets and Functions</a></li>
+<li><a class="nav-link" href="chapter-1-a-case-study-in-number-theory.html"><span class="nav-num">02</span>Chapter 1: A Case Study in Number Theory</a></li>
+<li><a class="nav-link" href="chapter-2-propositional-syntax-and-semantics.html"><span class="nav-num">03</span>Chapter 2: Propositional Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter-3-propositional-proof-theory.html"><span class="nav-num">04</span>Chapter 3: Propositional Proof Theory</a></li>
+<li><a class="nav-link" href="chapter-4-predicates-objects-and-types.html"><span class="nav-num">05</span>Chapter 4: Predicates, Objects, and Types</a></li>
+<li><a class="nav-link" href="chapter-5-first-order-logic.html"><span class="nav-num">06</span>Chapter 5: First-order Logic</a></li>
+<li><a class="nav-link" href="chapter-6-applications-of-first-order-logic.html"><span class="nav-num">07</span>Chapter 6: Applications of First-order Logic</a></li>
+<li><a class="nav-link" href="chapter-4-predicate-syntax-and-semantics.html"><span class="nav-num">08</span>Chapter 4: Predicate Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter-5-terms-and-equality-syntax-semantics-p.html"><span class="nav-num">09</span>Chapter 5: Terms and Equality, Syntax, Semantics, Proofs</a></li>
+<li><a class="nav-link" href="chapter-6-quantifier-syntax-and-semantics.html"><span class="nav-num">10</span>Chapter 6: Quantifier Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter-quantifier-proof-theory.html"><span class="nav-num">11</span>Chapter : Quantifier Proof Theory</a></li>
+<li><a class="nav-link" href="chapter-types.html"><span class="nav-num">12</span>Chapter : Types</a></li>
+<li><a class="nav-link" href="chapter-induction-and-recursion.html"><span class="nav-num">13</span>Chapter : Induction and Recursion</a></li>
+<li><a class="nav-link" href="chapter-set-theory.html"><span class="nav-num">14</span>Chapter : Set Theory</a></li>
+<li><a class="nav-link" href="chapter-relations.html"><span class="nav-num">15</span>Chapter : Relations</a></li>
+<li><a class="nav-link" href="chapter-functions-and-cardinality.html"><span class="nav-num">16</span>Chapter : Functions and Cardinality</a></li>
+<li><a class="nav-link" href="chapter-the-lambda-calculus.html"><span class="nav-num">17</span>Chapter : The Lambda Calculus</a></li>
+<li><a class="nav-link" href="chapter-the-pigeonhole-principle.html"><span class="nav-num">18</span>Chapter : The Pigeonhole Principle</a></li>
+<li><a class="nav-link" href="chapter-combinatorics.html"><span class="nav-num">19</span>Chapter : Combinatorics</a></li>
+<li><a class="nav-link" href="chapter-axiomatic-geometry.html"><span class="nav-num">20</span>Chapter : Axiomatic Geometry</a></li>
+<li><a class="nav-link" href="chapter-axiomatic-arithmetic.html"><span class="nav-num">21</span>Chapter : Axiomatic Arithmetic</a></li>
+<li><a class="nav-link" href="chapter-axiomatic-algebra.html"><span class="nav-num">22</span>Chapter : Axiomatic Algebra</a></li>
+<li><a class="nav-link" href="lesson-1-set-extensionality.html"><span class="nav-num">23</span>Lesson 1: Set Extensionality</a></li>
+<li><a class="nav-link" href="lesson-2-data-types.html"><span class="nav-num">24</span>Lesson 2: Data Types</a></li>
+<li><a class="nav-link is-active" href="lesson-3-logic-and-set-operations.html"><span class="nav-num">25</span>Lesson 3. Logic and Set Operations</a></li></ul>
+  </aside>
+  <main class="content" id="main">
+    <article class="prose">
+      <h1>Lesson 3. Logic and Set Operations</h1>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#logic-in-mathematics">Logic in Mathematics</a></li><li class="toc-h2"><a href="#propositions">Propositions</a></li><li class="toc-h2"><a href="#conjunction-and-intersection">Conjunction and Intersection</a></li></ul></nav>
+      <details class="section"><summary class="section-summary"><h2 id="logic-in-mathematics">Logic in Mathematics</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>The main tool for mathematicians is the proof of theorems. Therefore logic is fundamental to our studies.</p>
+<p>It may be helpful to see an example proof right away.  Later as we discuss logic, you can observe how thing ideas from logic are used in mathematical proof.</p>
+<section class="callout callout-theorem"><p class="callout-label">Theorem</p><div class="callout-body"><p>Every integer divisible by 6, is divisible by both 2 and 3.</p>
+</div></section><section class="callout callout-proof"><p class="callout-label">Proof</p><div class="callout-body"><p>Suppose that <em>n</em> is an integer divisible by 6, which means that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mn>6</mn></mfrac><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\frac n6 = k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span> is an integer.</p>
+<p>But then we have <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mrow><mn>2</mn><mo>⋅</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\frac{n}{2\cdot 3} = k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mbin mtight">⋅</span><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span> and therefore</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac><mo>=</mo><mn>3</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">\frac n 2 = 3k
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">3</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span></span></p>
+<p>Since <em>k</em> is an integer, then also 3<em>k</em> is an integer.</p>
+<p>Therefore we have shown that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac n 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> is an integer, which proves that <em>n</em> is divisible by 2.</p>
+<p>Also, from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mrow><mn>2</mn><mo>⋅</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\frac n{2\cdot 3} = k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mbin mtight">⋅</span><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span> we could infer</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>n</mi><mn>3</mn></mfrac><mo>=</mo><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">\frac n 3 = 2k
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span></span></p>
+<p>Again because <em>k</em> is an integer therefore 2<em>k</em> is an integer, which shows that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac n 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> is an integer.  This proves that <em>n</em> is divisible by 3.</p>
+<p>Therefore <em>n</em> is divisible by 2 and 3.</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">□</mi></mrow><annotation encoding="application/x-tex">\Box</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.675em;"></span><span class="mord amsrm">□</span></span></span></span></p>
+<ul>
+<li>
+<p>For anyone who wants to complain about the definition of “divisibility”:</p>
+<p>Don’t worry, I will give the usual number theory definition of divisibility later.</p>
+<p>The definition I am using here is “<em>a</em> divides <em>b</em> means that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>b</mi><mi>a</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac b a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2251em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> is an integer”.  This definition is equivalent to the number theory definition, and is more familiar and intuitive for most students.</p>
+<p>In order to not have a long explanation of divisibility, I have decided to use the definition that most people are used to.</p>
+</li>
+</ul>
+</div></section></div></details><details class="section"><summary class="section-summary"><h2 id="propositions">Propositions</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>A proposition is any sentence which is either true or false.</p>
+<p>Here are some propositions:</p>
+<ul>
+<li>The capitol of Slovakia is Lubljana.</li>
+<li>1+1=3.</li>
+<li>There is a tallest person.</li>
+</ul>
+<p>Here are some sentences which are not propositions:</p>
+<ul>
+<li>Hooray!</li>
+<li>Please get me some bread from the store.</li>
+<li>What time is it?</li>
+</ul>
+<p>In logic our most essential object of study is propositions.</p>
+</div></details><details class="section"><summary class="section-summary"><h2 id="conjunction-and-intersection">Conjunction and Intersection</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>Consider the sentence “The capitol of Slovakia is Lubljana, and 1+1=3.”  A strange sentence, I grant you that, but still a proposition which can be evaluated!</p>
+<p>This sentence is false.</p>
+</div></details>
+      <nav class="pager"><a class="pager-link" href="lesson-2-data-types.html"><span>Previous</span>Lesson 2: Data Types</a><span></span></nav>
+    </article>
+  </main>
+</div>
+<script>
+  document.querySelector(".menu-toggle").addEventListener("click", function () {
+    var open = document.body.classList.toggle("nav-open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+
+  // Sections load collapsed; open (and scroll to) the one holding a hash target.
+  function revealHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var p = el.closest("details");
+    while (p) {
+      p.open = true;
+      p = p.parentElement && p.parentElement.closest("details");
+    }
+    el.scrollIntoView();
+  }
+  window.addEventListener("hashchange", revealHash);
+  revealHash();
+</script>
+
+</body>
+</html>
