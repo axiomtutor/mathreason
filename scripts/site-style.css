@@ -232,3 +232,11 @@ a:hover { text-decoration-color: currentColor; }
 .section[open] > .section-summary .section-chevron { transform: rotate(-135deg); }
 .section-body { padding-bottom: 1.5rem; }
 .section-body > *:first-child { margin-top: 0; }
+
+details {
+    margin-bottom: 3em;
+}
+
+details > :not(summary) {
+    margin-left: 3em;
+}
