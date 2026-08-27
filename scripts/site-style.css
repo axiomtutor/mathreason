@@ -266,3 +266,19 @@ details {
   padding-left: 1rem;
   border-left: 2px solid var(--rule); /* Optional: Adds a nice vertical line to show grouping */
 }
+
+.note {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+  margin-bottom: 2rem;
+}
+
+.note > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.note > summary::-webkit-details-marker {
+  display: none;
+}
