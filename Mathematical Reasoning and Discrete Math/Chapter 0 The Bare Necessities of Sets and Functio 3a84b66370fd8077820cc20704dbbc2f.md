@@ -8,7 +8,7 @@ We will return to discussing set theory is a deeper, even axiomatic way, later i
 
 A set is a fundamental mathematical object, and as such, cannot be formally defined.
 
-- Why can’t a set be formally defined?  A philosophical note.
+::: details Why can’t a set be formally defined?  A philosophical note.
     
     To some, the idea of an object which cannot be defined seems odd, perhaps even paradoxical.  
     
@@ -28,6 +28,7 @@ A set is a fundamental mathematical object, and as such, cannot be formally defi
     
     In mathematics, our main undefined concept is that of a set.
     
+:::
 
 But although we cannot define sets formally, we can gesture at some intuitions.  A set is mean to be a “collection” or a “gathering together” of some disparate objects.  
 
@@ -199,9 +200,9 @@ $$
 \{x\in\Bbb N: x^2 - 2x > 0\}
 $$
 
-- Solution
+::: details Solution
     
-    
+:::
 
 ***Exercise***
 
@@ -211,9 +212,9 @@ $$
 \{x\in \Bbb Z: x^2-2x > 0\}
 $$
 
-- Solution
+::: details Solution
     
-    
+:::
 
 There are some variations on set builder notation that you’ll sometimes see when you read other texts.  For one example, you can move the “type” after the colon.
 
@@ -245,9 +246,9 @@ $$
 
 List two more elements of the set *S* described above.  That is to say: Determine two elements of *S* which are larger than 26.
 
-- Solution
+::: details Solution
     
-    
+:::
 
 ***Exercise***
 
@@ -257,7 +258,7 @@ $$
 \{\sin(\pi x):x\in\Bbb N\}
 $$
 
-- Solution
+-v Solution
     
     
 
@@ -269,9 +270,9 @@ $$
 \{\sin(\pi x) : x\in\Bbb Z\}
 $$
 
-- Solution
+::: details Solution
     
-    
+:::
 
 ***Exercise***
 
@@ -292,7 +293,7 @@ $$
 
 Of these sets, which of them are equal?  Which is a subset of some other set?  Write out all of the relationships that apply.  
 
-- Solution
+-v Solution
     
     
 
@@ -308,9 +309,9 @@ Does the set contain 0?  Does it contain positive numbers? Does it contain negat
 
 Is there a number which you can prove is not in the set?  (Hint: Use the fact that an even times any number is even, and the sum of even numbers is even.)
 
-- Solution
+::: details Solution
     
-    
+:::
 
 ***Definition*** 
 

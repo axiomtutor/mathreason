@@ -55,10 +55,14 @@ if (!mdFiles.length) {
   process.exit(1);
 }
 
-// The shortest path depth wins as the home page (Notion's top-level export).
-const rootFile = mdFiles.slice().sort(
-  (a, b) => a.split(path.sep).length - b.split(path.sep).length || a.length - b.length
-)[0];
+const rootFile =
+  mdFiles.find(
+    (f) => path.basename(f).replace(/\.md$/i, "") === "mathematical-reasoning-and-discrete-math"
+  ) ??
+  mdFiles.slice().sort(
+    (a, b) =>
+      a.split(path.sep).length - b.split(path.sep).length || a.length - b.length
+  )[0];
 
 const pages = new Map(); // absolute md path -> page record
 const usedSlugs = new Set();
