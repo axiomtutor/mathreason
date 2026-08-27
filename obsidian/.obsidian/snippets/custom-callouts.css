@@ -1,0 +1,23 @@
+/* Definition */
+.callout[data-callout="definition"] {
+    --callout-color: rgb(59, 130, 246);
+    --callout-icon: lucide-book-open;
+}
+
+/* Exercise */
+.callout[data-callout="exercise"] {
+    --callout-color: rgb(249, 115, 22);
+    --callout-icon: lucide-pencil;
+}
+
+/* Theorem */
+.callout[data-callout="theorem"] {
+    --callout-color: rgb(239, 68, 68);
+    --callout-icon: lucide-award;
+}
+
+/* Proof */
+.callout[data-callout="proof"] {
+    --callout-color: rgb(34, 197, 94);
+    --callout-icon: lucide-check-circle;
+}

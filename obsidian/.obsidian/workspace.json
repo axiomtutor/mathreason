@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning.md",
+                "file": "Chapter 0 Basic Sets.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Mathematical Reasoning"
+              "title": "Chapter 0 Basic Sets"
             }
           }
         ]
@@ -41,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 207.5
   },
   "right": {
     "id": "50239fe53229f8e5",
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematical Reasoning.md",
+                "file": "Chapter 0 Basic Sets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematical Reasoning.md",
+                "file": "Chapter 0 Basic Sets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematical Reasoning.md",
+                "file": "Chapter 0 Basic Sets.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,6 +191,10 @@
   },
   "active": "95d3d5075504da6f",
   "lastOpenFiles": [
-    "Mathematical Reasoning.md"
+    "Mathematical Reasoning and Discrete Math.md",
+    "Chapter 0 Basic Sets.md",
+    "Mathematical Reasoning and Discrete Math/Chapter 1 A Case Study in Number Theory 38d4b66370fd804a8a7cde27d4961b99.md",
+    "Mathematical Reasoning and Discrete Math/Chapter 0 The Bare Necessities of Sets and Functio 3a84b66370fd8077820cc20704dbbc2f.md",
+    "Mathematical Reasoning and Discrete Math"
   ]
 }
