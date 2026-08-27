@@ -200,7 +200,7 @@ a:hover { text-decoration-color: currentColor; }
 .callout .katex-display { margin: 1rem 0; }
 
 .callout-definition { --callout-bg: #eef3fa; --callout-line: #35618e; }
-.callout-theorem    { --callout-bg: #f4eefa; --callout-line: #6b4a9c; }
+.callout-theorem    { --callout-bg: #ffeefa; --callout-line: #ff99aa; }
 .callout-proof      { --callout-bg: #edf5ef; --callout-line: #3d6b4a; }
 .callout-exercise   { --callout-bg: #fdf3e6; --callout-line: #a8621b; }
 .callout-note       { --callout-bg: #f5f2ea; --callout-line: #6b6455; }
@@ -232,3 +232,53 @@ a:hover { text-decoration-color: currentColor; }
 .section[open] > .section-summary .section-chevron { transform: rotate(-135deg); }
 .section-body { padding-bottom: 1.5rem; }
 .section-body > *:first-child { margin-top: 0; }
+
+/* ---------------------------------------------------- details & toggles */
+
+details {
+  margin-bottom: 2rem;
+}
+
+/* Style the summary to act like a clean button */
+.toggle-h1 {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  list-style: none; /* Removes native browser arrows if desired */
+}
+.toggle-h1::-webkit-details-marker {
+  display: none;
+}
+
+/* Strip the massive default margins from the h1 inside the summary */
+.prose .toggle-h1 h1 {
+  margin: 0;
+  font-size: 1.6rem; /* Slightly smaller than a main page H1 */
+}
+
+/* Remove the decorative underline from toggle headings so it doesn't float weirdly */
+.prose .toggle-h1 h1::after {
+  display: none; 
+}
+
+/* Control the spacing of the nested content via the wrapper */
+.indented {
+  margin-left: 1.5rem; /* A gentler indent than 3em */
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule); /* Optional: Adds a nice vertical line to show grouping */
+}
+
+.note {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+  margin-bottom: 2rem;
+}
+
+.note > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.note > summary::-webkit-details-marker {
+  display: none;
+}
