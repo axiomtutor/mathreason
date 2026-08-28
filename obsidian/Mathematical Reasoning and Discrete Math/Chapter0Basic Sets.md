@@ -168,7 +168,7 @@ More precisely, the set equality $X = Y$ is true if and only if we have both
 
   
 
-# Subsets of Integers
+# Number Sets
 
 > [!definition] ***Definition***
 > The set of **natural numbers** is
@@ -186,7 +186,29 @@ More precisely, the set equality $X = Y$ is true if and only if we have both
 > 
 > The **real numbers** will be formally defined later, but for now we intuitively define this as the "set of all decimal expansions".  It is denoted $\Bbb R$.  For example $0.5\in\Bbb R$ and $-12.12121... \in \Bbb R$.  
 
-  
+It is commonly known that $\sqrt 2$ and $\pi$ and $e$ are real numbers, but not rational.  
+
+$$ \sqrt 2,\pi,e \in\Bbb R\smallsetminus \Bbb Q $$
+
+We will prove some of these claims later, but at least for the duration of this chapter I will assume that this is true.  
+
+We will also rely on the fact, without proof, that the rational numbers are the numbers with a decimal expansion which eventually repeats some sequence.  
+
+So for example, 1.23454545... is a rational number because its decimal expansion begins to repeat '45' infinitely often.  
+
+On the other hand, say $x = 1.01001000100001...$ is constructed by using only the digits 0 and 1.  We start with a single 0 ended by 1.  Then two 0's ended by 1.  Then three 0's ended by 1, and so on. 
+
+This number, *x*, will never have a repeating pattern in its decimal expansion.  Therefore *x* cannot be rational.  
+
+
+> [!exercise] ***Exercise***
+> Decide whether the following are rational.  (Note that 1 is equivalent to 1.0, which is also equivalent to 1.000...)
+> 1. $1.111...$
+> 2. 1
+> 3. $0.1491625...$  This number is formed by writing down the squares of each natural number, as part of the decimal expansion.  So first we write 0 dot, so to speak.  Then we write $1^2=1$.  Then we write $2^2 = 4$.  Then $3^2 = 9$.  Then we write $4^2 = 16$, and so on.  
+
+
+---
 
 It is clear that $\Bbb N\subseteq \Bbb Z$ and $\Bbb Z\subseteq \Bbb Q$, and $\Bbb Q\subseteq \Bbb R$.  
 
@@ -731,104 +753,6 @@ $$
 > Which other pairs taken from this list are disjoint?
 
 
-# Intervals
-
-To lead with an example, the interval of all natural numbers from 5 to 9 is 
-$$\{5,6,7,8,9\}$$
-To be more precise, we might call this the "inclusive" interval from 5 to 9, since we include 5 and 9.  We might also talk about the "exclusive" interval from 5 to 9, which would then be 
-$$ \{6,7,8\}$$
-We will denote the inclusive interval from 5 to 9 with the notation 
-$$[5..9] = \{5,6,7,8,9\}$$
-
-> [!definition] ***Definition***
-> Let *a* and *b* be integers such that $a\le b$.  
-> The **(inclusive) integer interval from *a* to *b*** is 
-> $$ \begin{aligned}
-> \ [a..b] &= \{a,a+1,a+2,...,b-1, b\} \\
-> &= \{x\in\Bbb Z: a\le x\le b\}
-> \end{aligned}$$
-> The **exclusive integer interval from *a* to *b*** is 
-> $$\begin{aligned}
-> (a..b) &= \{a+1,a+2,...,b-1,b\} \\
-> &= \{x\in\Bbb Z: a < x < b\}
-> \end{aligned}$$
-> The **out-in integer interval from *a* to *b*** is 
-> $$\begin{aligned}
-> (a,b] &= \{x\in\Bbb Z: a<x\le b\}
-> \end{aligned}$$
-> The **in-out integer interval from *a* to *b*** is 
-> $$ [a,b) = \{x \in \Bbb Z: a\le x < b\}$$
-> We further extend this notation to allow for infinite sets, 
-> $$ \begin{aligned}
-> \ [a..\infty) &= \{a,a+1,...\} \\
-> &=\{x\in\Bbb Z: a < x\}
-> \end{aligned} 
-> $$
-> and 
-> $$
-> (-\infty..b) = \{x\in\Bbb Z: x < b\}
-> $$
-> We call *a* the **left end-point** of the interval, and *b* the **right end-point**.  
-
-
-> [!exercise] ***Exercise***
-> Determine the elements of 
-> 1. $[-2..2]$
-> 2. $(-2..2)$
-> 3. $[-2..\infty)$ 
-> 4. $(-\infty..2)$
-> 5. $[2..2]$
-> 6. $(2..2)$
-
-We will also use intervals of rational and real numbers.  For these, we will use a different notation.  This notation is a bit unfortunate, because it can look exactly the same as the notation for pairs.  But because it is standard, we will use it.
-
-> [!definition] Definition
-> Let *a* and *b* be two real numbers such that $a\le b$.
-> 
-> The **inclusive interval from *a* to *b*** is 
-> $$ [a,b] = \{x\in\Bbb R: a\le x\le b\} $$
-> This interval is commonly called the "closed interval from *a* to *b*".  That vocabulary comes from topology, but because we are very far from discussing topology, we will not adopt that vocabulary.
-> 
-> The **exclusive interval from *a* to *b*** is 
-> $$(a,b) = \{x\in\Bbb R:a < x < b\} $$
-> In the common vocabulary, this is called the "open interval from *a* to *b*".  Again this vocabulary is from topology, so we don't adopt it now.
-> 
-> The **in-out interval from *a* to *b*** is 
-> $$(a,b] = \{x\in\Bbb R:a < x\le b\}$$
-> and the **out-in interval from *a* to *b*** is 
-> $$[a,b) = \{x\in \Bbb R: a\le x < b\}$$
-> 
-> We fu
-> 
-> In every case, we call *a* the **left end-point** of the interval, and *b* the **right end-point**.
-
-For example, the exclusive interval (0, 4) is a set of real numbers — that is to say, each element is a decimal expansion.  It contains the decimal 1 (which can also be written as 1.0 or 1.000...).  It also contains 0.5 (or $\frac 1 2$), and it contains $\pi, \sqrt 2, e$ and a bunch of other real numbers.  
-
-
-> [!exercise] ***Exercise***
-> Which of the following are in the interval (0, 4)?
-> 1. $-1$
-> 2. 2
-> 3. 0
-> 4. 4
-> 5. 5
-> 6. $2\pi$
-> 7. $\frac 1 \pi$
-
-
-> [!exercise] ***Exercise***
-> In every case below, I give you a set formed from intervals and set operations.  
-> 
-> In each case, it is possible to rewrite each set as a single interval.  Find that interval.
-> 
-> 1. $(0,4)\cup\{0,4\}$
-> 2. $[0,4]\smallsetminus (0,4)$
-> 3. $(0,4)\cup [0,4]$
-> 4. 
-
-
-We have discussed interval vocabulary and notation for integers, which automatically also covers notation for natural numbers.  If you want an interval for natural numbers, just make sure the left 
-
 # Bounds, Max, Min
 
   
@@ -908,6 +832,136 @@ Later in the course, after we have discussed enough logic and set theory, we mig
 > Write out several elements of *B*.
 
   
+
+# Integer Intervals
+
+To lead with an example, the interval of all natural numbers from 5 to 9 is 
+$$\{5,6,7,8,9\}$$
+To be more precise, we might call this the "inclusive" interval from 5 to 9, since we include 5 and 9.  We might also talk about the "exclusive" interval from 5 to 9, which would then be 
+$$ \{6,7,8\}$$
+We will denote the inclusive interval from 5 to 9 with the notation 
+$$[5..9] = \{5,6,7,8,9\}$$
+
+> [!definition] ***Definition***
+> Let *a* and *b* be integers such that $a\le b$.  
+> The **(inclusive) integer interval from *a* to *b*** is 
+> $$ \begin{aligned}
+> \ [a..b] &= \{a,a+1,a+2,...,b-1, b\} \\
+> &= \{x\in\Bbb Z: a\le x\le b\}
+> \end{aligned}$$
+> The **exclusive integer interval from *a* to *b*** is 
+> $$\begin{aligned}
+> (a..b) &= \{a+1,a+2,...,b-1,b\} \\
+> &= \{x\in\Bbb Z: a < x < b\}
+> \end{aligned}$$
+> The **out-in integer interval from *a* to *b*** is 
+> $$\begin{aligned}
+> (a,b] &= \{x\in\Bbb Z: a<x\le b\}
+> \end{aligned}$$
+> The **in-out integer interval from *a* to *b*** is 
+> $$ [a,b) = \{x \in \Bbb Z: a\le x < b\}$$
+> We further extend this notation to allow for infinite sets, 
+> $$ \begin{aligned}
+> \ [a..\infty) &= \{a,a+1,...\} \\
+> &=\{x\in\Bbb Z: a < x\}
+> \end{aligned} 
+> $$
+> and 
+> $$
+> (-\infty..b) = \{x\in\Bbb Z: x < b\}
+> $$
+> and 
+> $$(-\infty, \infty) = \Bbb Z$$
+> We call *a* the **left end-point** of the interval, and *b* the **right end-point**.  
+
+
+> [!exercise] ***Exercise***
+> Determine the elements of 
+> 1. $[-2..2]$
+> 2. $(-2..2)$
+> 3. $[-2..\infty)$ 
+> 4. $(-\infty..2)$
+> 5. $[2..2]$
+> 6. $(2..2)$
+
+# Real and Rational Intervals
+
+We will also use intervals of rational and real numbers.  For these, we will use a different notation.  This notation is a bit unfortunate, because it can look exactly the same as the notation for pairs.  But because it is standard, we will use it.
+
+> [!definition] Definition
+> Let *a* and *b* be two real numbers such that $a\le b$.
+> 
+> The **inclusive (real) interval from *a* to *b*** is 
+> $$ [a,b] = \{x\in\Bbb R: a\le x\le b\} $$
+> This interval is commonly called the "closed interval from *a* to *b*".  That vocabulary comes from topology, but because we are very far from discussing topology, we will not adopt that vocabulary.
+> 
+> The **exclusive interval from *a* to *b*** is 
+> $$(a,b) = \{x\in\Bbb R:a < x < b\} $$
+> In the common vocabulary, this is called the "open interval from *a* to *b*".  Again this vocabulary is from topology, so we don't adopt it now.
+> 
+> The **in-out interval from *a* to *b*** is 
+> $$(a,b] = \{x\in\Bbb R:a < x\le b\}$$
+> and the **out-in interval from *a* to *b*** is 
+> $$[a,b) = \{x\in \Bbb R: a\le x < b\}$$
+> 
+> We further extend these to sets with up upper or lower bound, in the same way as with integer intervals.
+> 
+> In every case, we call *a* the **left end-point** of the interval, and *b* the **right end-point**.
+
+For example, the exclusive interval (0, 4) is a set of real numbers — that is to say, each element is a decimal expansion.  It contains the decimal 1 (which can also be written as 1.0 or 1.000...).  It also contains 0.5 (or $\frac 1 2$), and it contains $\pi, \sqrt 2, e$ and a bunch of other real numbers.  
+
+
+> [!exercise] ***Exercise***
+> Which of the following are in the interval (0, 4)?
+> 1. $-1$
+> 2. 2
+> 3. 0
+> 4. 4
+> 5. 5
+> 6. $2\pi$
+> 7. $\frac 1 \pi$
+
+
+> [!exercise] ***Exercise***
+> In every case below, I give you a set formed from intervals and set operations.  For example, in problem number (1.) below, the solution is that this is equal to $[0,4]$.
+> 
+> In each case, it is possible to rewrite each set as a single interval.  Find that interval.
+> 
+> 1. $(0,4)\cup\{0,4\}$
+> 2. $[0,4]\smallsetminus (0,4)$
+> 3. $(0,4)\cup [0,4]$
+> 4. $(0,4)\cap [0,4]$
+> 5. $(0,\infty)^c$
+
+
+We have discussed interval vocabulary and notation for integers, which automatically also covers notation for natural numbers.  If you want an interval for natural numbers, just make sure the left end-point is at least 1.
+
+But that means we still must say something about intervals of rational numbers.  
+
+To simplify matters, we'll just use what we've already done for real numbers, and simply restrict them to rationals.  
+
+So for instance if we want the interval of rational numbers from 1 to 2, we will merely write 
+
+$$ (1,2)\cap \Bbb Q$$
+
+So we think of this as starting from the interval of real numbers and then filtering it so that it contains only the rationals.
+
+
+> [!definition] Definition
+> Let *a* and *b* be any two real numbers, and let *I* be any interval from *a* to *b*.
+> 
+> The **rational interval from *a* to *b*** is the set 
+> $$ I\cap \Bbb Q$$
+
+
+> [!exercise] ***Exercise***
+> Determine whether the following statements are true or false.
+> 1. $1\in [1,2]\cap \Bbb Q$
+> 2. $2\in [1,2]\cap \Bbb Q$
+> 3. $\sqrt 2 \in [1,2]\cap \Bbb Q$
+> 4. $\sqrt 4 \in [1,2]\cap \Bbb Q$
+> 5. $4.5\in [1,2]\cap\Bbb Q$
+> 6. $4.5 \in [1,\infty) \cap \Bbb Q$
 
 # Lists and Set Products
 
@@ -1164,47 +1218,25 @@ Sometimes we like to write a set of real numbers using interval notation. In thi
 
 On the other hand, the function $g(x)=\frac 1 x$ has domain equal to all real numbers *except* for $x=0$. That is to say, this function has one real number not in its domain, because $\frac 1 0$ is undefined.
 
-  
+The best way to represent this domain is $$\Bbb R\smallsetminus \{0\}$$
 
-If we wish to express this domain in interval notation, then we would write $(-\infty,0)\cup (0,\infty)$. Notice that curved parentheses at the end of an interval means that the end-point is excluded from the interval. So $(-\infty,0)$ does not actually include $-\infty$ (obviously, because it’s not a real number, but also because of the curved parenthesis). And it does not include 0. Likewise $(0,\infty)$ does not include 0 or $\infty$.
+If we wish to express this domain in interval notation (which students are often taught to do in high school, so we might as well connect that to what we're doing here), then we would write $(-\infty,0)\cup (0,\infty)$.  But clearly this is much more notation than just $\Bbb R\smallsetminus\{0\}$, and therefore we prefer to use the simpler expression.
 
-  
-
-Therefore their union, $(-\infty,0)\cup(0,\infty)$, does not include 0.
-
-  
-
-Let’s see another example. Assuming that we’re sticking to real numbers, the function $h(x)=\sqrt x$ has domain equal to all nonnegative real numbers. That is to say, its domain is $[0,\infty)$. This is because there is no (real number) square root of negative numbers.
-
-  
+Let’s see another example. Assuming that we’re sticking to real numbers, the function $h(x)=\sqrt x$ has domain equal to all nonnegative real numbers. That is to say, its domain is $\Bbb R^{\ge 0}$. This is because there is no real square root of negative numbers.
 
 You can identify the domain of a function by looking at its graph. For example, in the graph above for $f(x)=x^2+1$ has no “gaps” in it—you can set *x* to anything and find a corresponding *y* value on the graph.
 
-  
-
 Here is the graph for $g(x)=\frac 1 x$.
-
-  
 
 ![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%205.png)
 
-  
-
 You can see that when $x=0$ there is no corresponding value on the graph.
-
-  
 
 And here is the graph of $h(x)=\sqrt x$.
 
-  
-
 ![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%206.png)
 
-  
-
 Again you can see where the domain is missing: negative numbers.
-
-  
 
 > [!exercise] ***Exercise***
 > Find the domain of each function below.
@@ -1221,30 +1253,22 @@ Again you can see where the domain is missing: negative numbers.
 
 ## Range
 
-  
-
-We will make a change when we talk about the “range”.
-
-  
-
-Typically, the word “range” is used in an ambiguous way. At least I have observed US schools teaching the word “range” to mean two very different things.
-
-  
+In many US high schools, the word "range" is often used in an ambiguous way.  Therefore we need to clarify the meaning of this word.
 
 - At times, students are taught that the range of a function is “the set of all outputs”. If you refer back to this graph of $f(x)=x^2+1$, you would identify every *y*-value with a point in the range.
 
-The least *y* value you can identify in this graph is at (0,1), where the *y*-value is 1.
+	The least *y* value you can identify in this graph is at (0,1), where the *y*-value is 1.
 
-For every number above 1, you can find a this *y* value on the graph.
+	For every number above 1, you can find a this *y* value on the graph.
 
-So by this definition, the range is $[1,\infty)$.
+	So by this definition, the range is $[1,\infty)$.
 
 - At other times, students are taught that the range of a function is “any set that *contains* the outputs”.
 
-You will often see it stated that a function like $f(x)=x^2+1$ has a range equal to all real numbers, $(-\infty,\infty)$. Because this set *contains* all of the outputs of *f*, then according to this definition, $(-\infty,\infty)$ is an acceptable choice for “the range of *f*”.
-
-  
-
+	You will often see it stated that a function like $f(x)=x^2+1$ has a range equal to all real numbers, $(-\infty,\infty)$. Because this set *contains* all of the outputs of *f*, then according to this definition, $(-\infty,\infty)$ is an acceptable choice for “the range of *f*”.
+	
+	  
+	
 Of course this ambiguity is unpleasant, and therefore we will do what many university mathematics courses do: We distinguish between the “range” and the “codomain”.
 
   
@@ -1294,7 +1318,7 @@ There are two reasons not to answer this right now. First, we will discuss it la
 
   
 
-If *f* is a function with domain *A* and range *B*, we will write $f:A\to B$.
+If *f* is a function with domain *A* and codomain *B*, we will write $f:A\to B$.
 
   
 
