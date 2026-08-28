@@ -145,8 +145,6 @@ How do we know what the domain of discourse is, at any moment? It is usually und
 >
 > Any proposition that is formed as a predicate formula, or a predicate formulas with universal or existential quantification over all of its variables, is called a **first-order formula** (or just **formula** for short). #TODO
 
-Let $\varphi$ be a formula. Let *x* $\varphi$$\phi$ …
-
 - Note, this only defines a narrowly restricted case.
     
     The above definition does not define quantification over general predicates. It only defines quantification over properties.
@@ -294,12 +292,12 @@ So it’s true for the red cube!
 >
 > Hint: What if the model has domain elements *a* and *b*, such that
 >
-> $$
+> $$\begin{aligned}
 > P(a)^{\mathfrak{M}}=\mathfrak{T}\\
 > P(b)^{\mathfrak{M}}=\mathfrak{F}\\
 > Q(a)^{\mathfrak{M}}=\mathfrak{F}\\
 > Q(b)^{\mathfrak{M}}=\mathfrak{T}
-> $$
+> \end{aligned}$$
 
 # Set Properties, Operations, and Relations
 
@@ -824,7 +822,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > Finally we can define **truth in the model $\mathfrak{M}$**.
 >
-> Let $\phi$ be a closed formula. Then we say that $\phi$ is **true in the model $\mathfrak{M}$**, and write $\mathfrak{M}\vDash \phi$, if for every variable assignment *v* we have $\mathfrak{M},v\vDash \phi.
+> Let $\phi$ be a closed formula. Then we say that $\phi$ is **true in the model $\mathfrak{M}$**, and write $\mathfrak{M}\vDash \phi$, if for every variable assignment *v* we have $\mathfrak{M},v\vDash \phi$.
 
 Another reason why we will avoid actually using this rigorous definition: In my opinion, these ideas don’t significantly help your understanding of other mathematical topics like algebra and topology. Remember, we’re studying logic because it’s inherently interesting, yes—but also, so that we may apply it to understanding other mathematical subjects.
 
