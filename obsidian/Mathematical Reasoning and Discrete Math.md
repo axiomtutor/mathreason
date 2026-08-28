@@ -77,9 +77,9 @@ But besides learning substantive topics in mathematics, this course aims to teac
 
 [[Chapter4PredSynSem | Chapter 4: Predicate Syntax and Semantics]]
 
-[Chapter 5: First-order Logic](Chapter5FOL.md)
+[[Chapter5FOLSynSem | Chapter 5: First-order Logic, Syntax and Semantics]]
 
-[Chapter 6: Applications of First-order Logic](Chapter6FOLApp.md)
+[[Chapter6_AppFOL | Chapter 6: Applications of First-order Logic]]
 
 
 ---
