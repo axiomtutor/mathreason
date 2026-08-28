@@ -1,4 +1,7 @@
-# Chapter 1: A Case Study in Number Theory
+---
+title: "Chapter 1: A Case Study in Number Theory"
+---
+
 
 This chapter is dedicated to explaining the very basics of number theory.  
 

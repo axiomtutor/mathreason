@@ -1,12 +1,16 @@
-# Chapter 0: The Bare Necessities of Sets and Functions
-
-  
+---
+title: "Chapter 0: The Bare Necessities of Sets and Functions"
+---
+> [!note]- TODOs
+> I still need to 
+> * Add extra exercises.
+> * Migrate images
 
 It is hard to discuss any amount of mathematics in a serious and rigorous way, without having a certain minimum understanding of sets and set notation.
 
   
 
-We will return to discussing set theory is a deeper, even axiomatic way, later in this course. I will try to keep this chapter very brief so that we can get to the fun stuff!
+We will return to discussing set theory is a deeper, even axiomatic way, later in this course. For now we will introduce just enough set theory to be able to use it while studying logic.
 
   
 
@@ -19,29 +23,27 @@ A set is a fundamental mathematical object, and as such, cannot be formally defi
   
 
 >[!note]- Why can’t a set be formally defined? A philosophical note.
-> To some, the idea of an object which cannot be defined seems odd, perhaps even paradoxical.
+> The idea that certain concepts cannot be defined may seem paradoxical.
 > 
 > Here’s an argument for why we *must* deal in concepts which are not defined.
-Any time that one concept is defined, it is defined in terms of other concepts — defining something in terms of itself is nonsense.
+Any time that one concept is defined, it is defined in terms of *other concepts*.
 >
 (Amusingly, in Moliere’s play *Le Malade Imaginaire*, a medical student is asked why opium causes sleep — to which he responds (translated) “because it possesses a *virtus dormitiva*!” But then *virtus dormitiva* just means “causes sleep”. So the joke goes: Opium causes sleep because opium causes sleep. A useless circular explanation.)
 >
-So a concept, when defined, is necessarily defined in terms of some other concepts. But these other concepts must, themselves, be understood either because they are defined, or because they are simply fundamental and undefined. Well if they are fundamental and not defined in terms of other concepts, then we have accepted the existence of concepts which we understand without definition.
+So a concept, when defined, is necessarily defined in terms of some other concepts. But these other concepts must, themselves, be understood either because they are defined, or because they are simply fundamental and undefined. So we have a dilemma.  
 >
-But if *they* are defined in terms of other concepts, then *those* other concepts must again be understood, either as fundamental or in terms of yet more concepts. Of course the idea repeats any number of times, with concepts in terms of concepts, in terms of concepts, in terms of concepts, and so on.
+You can think of this like a network of concepts.  Say that concept *A* is defined in terms of *B*, *C*, and *D*.  Then concept *B* is defined in terms of, say, *E*.  And so on — each concept defined in terms of others.  
 >
-If this chain of definitions goes on infinitely, then we could never thinks of the concepts in the first place. In order to make sense of anything, the chain must terminate somewhere — and wherever it does terminate is at an undefined concept.
->
-So this idea of a fundamental and undefined concept is necessary in mathematics, and the rest of life.
->
-In mathematics, our main undefined concept is that of a set.
+> If the chain goes on infinitely, then we never actually define the concept *A*.  This would imply the impossibility of definition, and so we must reject this "horn of the dilemma".
+> 
+> If the chain does not go on infinitely, then we arrive at a concept which is not defined. We must accept this horn of the dilemma.
 
   
-But although we cannot define sets formally, we can gesture at some intuitions. A set is mean to be a “collection” or a “gathering together” of some disparate objects.
+Although we cannot define "sets" formally, we can gesture at some intuitions. A set is mean to be a “collection” or a “gathering together” of some disparate objects.
 
   
 
-For example, the set $\{-1,\pi, 3, 2\}$ contains four objects, brought together into a single set.
+For example, the set $\{-1,\pi, 3, 2\}$ contains four objects (numbers), brought together into a single set.
 
   
 
@@ -53,7 +55,7 @@ A set is defined “extensionally”, which is a fancy way of saying:
 
   
 
-> A set’s only true defining feature is “what is inside and what is not”.
+> A set’s only true defining feature is “what is in it, and what is not”.
 
   
 
@@ -61,7 +63,7 @@ In the example above, -1 is in the set but 0 is not.
 
   
 
-To express membership, we write $\in$. We use this notation in an “infix” way, so for example
+To express membership, we write and infix $\in$, like below.
 
   
 
@@ -73,15 +75,7 @@ $$
 
   
 
-expresses that “-1 is in the set $\{-1,\pi,3,2\}$”. Of course we can also say that $\pi$ is in the set, by writing
-
-  
-
-$$
-
-\pi \in \{-1,\pi,3,2\}
-
-$$
+This expresses that “-1 is in the set $\{-1,\pi,3,2\}$”.
 
   
 
@@ -97,19 +91,15 @@ $$
 
   
 
-Because a set is defined extensionally, then it means that set $\{-1,2,3,\pi\}$ is equal to $\{-1,\pi,3,2\}$. After all, they have the same members! And since membership is the only thing that defines what a given set is, therefore these must be the same sets.
+Extensionality implies that $\{-1,2,3,\pi\}$ is equal to $\{-1,\pi,3,2\}$. After all, they have the same members!
 
-  
-
-We could express this by saying,
-
-  
+  This demonstrates that
 
 > *Sets do not respect ordering.*
 
   
 
-Also
+Extensionality also implies that
 
   
 
@@ -117,7 +107,7 @@ Also
 
   
 
-Note that the set {1, 2} is equal to the set {1,1,2,2,2,2}, because again, these have the same elements.
+Note that the set {1, 2} is equal to the set {1, 1, 2, 2, 2, 2}, because again, these have the same elements.
 
 > [!exercise] ***Exercise***
 > Decide on the truth of the following expressions.
@@ -129,18 +119,40 @@ Note that the set {1, 2} is equal to the set {1,1,2,2,2,2}, because again, these
 > 6. $\{1\}\in\{1,2\}$
 > 7. $\{1,2,3\}=\{1,2\}$
 > 8. $\{1,2,1,2,1\} = \{1,2\}$
+> > [!note]- ***Solution***
+> > 1. False
+> > 2. True
+> > 3. True
+> > 4. False
+> > 5. False
+> > 6. False
+> > 7. False
+> > 8. True
 
 > [!definition] ***Definition***
 > Let *X* and *Y* be sets.
 >
 > We say that *X* is a **subset** of *Y* if, for every $a\in X$ we have $a\in Y$.
 > 
-> When *X* is a subset of *Y* we write $X\subseteq Y$.
+> When *X* is a subset of *Y* we write $X\subseteq Y$. 
+> 
+> If *X* is *not* a subset of *Y* we write $X\not\subseteq Y$.
 
+For example, $\{1,2,3\}$ is a subset of $\{0,1,2,3,4\}$, so 
+$$
+\{1,2,3\} \subseteq \{0,1,2,3,4\}
+$$
+Of course the reverse subset inclusion is not true.
+$$
+\{0,1,2,3,4\}\not\subseteq \{1,2,3\}
+$$
   
-It is immediate from definitions that, for sets *X* and *Y*, we have that $X=Y$ if and only if $X\subseteq Y$ and $Y\subseteq X$.
+It is important to recognize that "set equality" and the "subset relation" have a close relationship.  
+> Set equality is just two subset relations.
 
-  
+More precisely, the set equality $X = Y$ is true if and only if we have both 
+* $X\subseteq Y$ and 
+* $Y\subseteq X$
 
 > [!exercise] ***Exercise***
 > For each of the following sets, decide which of the other sets are subsets.
@@ -148,6 +160,11 @@ It is immediate from definitions that, for sets *X* and *Y*, we have that $X=Y$ 
 > 2. $\{1,2\}$
 > 3. $\{1,2,3,4\}$
 > 4. $\{5,6\}$
+> 
+> > [!note]- ***Solution***
+> > (2.) is a subset of (1.) and (3.).
+> > (1.) is a subset of (3.).
+> > No other subset relation holds among the sets.
 
   
 
@@ -162,18 +179,37 @@ It is immediate from definitions that, for sets *X* and *Y*, we have that $X=Y$ 
 > $$
 > \Bbb Z = \{\dots,-2,-1,0,1,2,\dots\}
 > $$
+> The set of **rational numbers** is the set of all fractions, and is denoted $\Bbb Q$.  We cannot easily give a pattern for this set, but we can say that $\frac 1 2 \in \Bbb Q$ and $\frac{-7}{3}\in\Bbb Q$.  
+> 
+> In a section below we will introduce set-builder notation.  Once you understand set-builder notation, we can then define 
+> $$\Bbb Q = \left\{ \frac p q : p,q\in\Bbb Z, \text{ and } q\ne 0 \right\}$$
+> 
+> The **real numbers** will be formally defined later, but for now we intuitively define this as the "set of all decimal expansions".  It is denoted $\Bbb R$.  For example $0.5\in\Bbb R$ and $-12.12121... \in \Bbb R$.  
 
   
 
-Of course we see that $\Bbb N\subseteq \Bbb Z$.
+It is clear that $\Bbb N\subseteq \Bbb Z$ and $\Bbb Z\subseteq \Bbb Q$, and $\Bbb Q\subseteq \Bbb R$.  
 
-  
+Of course it immediately follows that $\Bbb N\subseteq \Bbb Q$, and $\Bbb N\subseteq \Bbb R$.  Likewise $\Bbb Z\subseteq \Bbb R$.
+
+To summarize all of these subset relationships we simply write 
+
+$$ \Bbb N\subseteq\Bbb Z\subseteq\Bbb Q\subseteq\Bbb R $$
+
+
+> [!exercise] ***Exercise***
+> Let *X*, *Y*, and *Z* be sets such that $X\subseteq Y$ and $Y\subseteq Z$.
+> 
+> Show that $X\subseteq Z$.
+> 
+> The property of subsets that you are demonstrating in this exercise, is called "transitivity".  Recall that we said $\in$ is *not* transitive.  We are now seeing that $\subseteq$ *is* transitive.
+
 
 # Sets of Non-numbers
 
   
 
-We will find a lot of use for sets of numbers—this may be their most common use, early on.
+Sets of numbers will be our most common use of sets.
 
   
 
@@ -201,15 +237,18 @@ $$
 
   
 
-This can be confusing at first: How many elements does the example set above have?
+This can be confusing at first: How many elements does *X* have?
 
   
 
-It has three elements. You might have thought “but I see seven elements”. Well yeah, but 1 is not in the set. Rather, $1\in\{1,2\}$ and $\{1,2\} \in \{\{1,2\}, \{0,1\}, \{\pi,e,-\sqrt 2\}\}$.
+It has three elements. 
 
-  
+You might have thought “but I see seven elements”. 
 
-But the “membership” relation is not “transitive”. Just because $1\in\{1,2\}$ and also $\{1,2\}\in X$, we do *not* have that $1\in X$.
+Well yeah, but 1 is not in *X*. Rather, $1\in\{1,2\}$ and $\{1,2\} \in X$.  And yet $1\notin X$.
+
+
+In jargon, this means "set membership is not transitive".  We will discuss the idea of "transitivity" more later.
 
   
 
@@ -229,29 +268,29 @@ But the “membership” relation is not “transitive”. Just because $1\in\{1
 
   
 
-Most of the sets that we’ll be interested are defined by a property, like “all even natural numbers”. We could express it like this
+Most of the sets that we’ll be interested in, are defined by a property, like “all even natural numbers”. We could write this set as
 
   
 
 $$
 
-\{2,4,6,\dots\}
+X = \{2,4,6,\dots\}
 
 $$
 
   
 
-But the set is defined by a property! So we would prefer to write it in a way that expresses that property explicitly, rather than making you infer it from a pattern.
+But *X* is defined by a property! So we would prefer to write it in a way that expresses its property, rather than making you infer it from a pattern.
 
   
 
-To do so we use “set builder notation”. The following demonstrates set builder notation for the set of even numbers.
+To do so we use “set builder notation”, demonstrated below.
 
   
 
 $$
 
-\{x \in\Bbb N: x \text{ is even}\}
+X = \{x \in\Bbb N: x \text{ is even}\}
 
 $$
 
@@ -263,9 +302,9 @@ The way to read this is:
 
 - The curly brace means “set”.
 
-- The *x* is a “variable” — this will represent any one of the elements in the set.
+- The lower-case *x* is a “variable” — this will represent any one of the elements in the set.
 
-- The $\in \Bbb N$ tells us that *x* will be a natural number. This essentially establishes the *type* of object that *x* is.
+- The $\in \Bbb N$ tells us that *x* will be a natural number. This essentially establishes the "*type*" of object that *x* is.
 
 - Everything after the colon, “:”, states the property that *x* must have.
 
@@ -279,15 +318,15 @@ You can imagine it working like this:
 
   
 
-Consider the number 1. Since 1 is in $\Bbb N$, it is a possible value of *x*. We then check whether this has the property, “*x* is even”. It does not have the property, so 1 is not in the set.
+Consider the number 1. Since $1\in \Bbb N$, then 1 is a possible value of *x*. So we temporarily set $x=1$.  We then check whether *x* satisfies the property, “*x* is even”.  It does not have the property, so $1\notin X$.
 
   
 
-Moving on, consider the number 2. Since this is in $\Bbb N$, it is a possible value of *x*. We then check whether this has the property, “*x* is even”. It does have the property, so 2 is in the set.
+Moving on, consider the number 2. Since $2\in \Bbb N$, then 2 is a possible value of *x*. So we temporarily set $x=2$.  We then check whether *x* has the property, “*x* is even”. It does have the property, so $2\in X$.
 
   
 
-And so on.
+And so on.  In this way we can confirm that $X = \{2,4,6,...\}$,
 
   
 
@@ -297,7 +336,17 @@ And so on.
 > \{x\in\Bbb N: x^2 - 2x > 0\}
 > $$
 > > [!note]- ***Solution***
-> > TODO
+> > Since the possible candidates of *X* are natural numbers, we can start by considering 1.  Temporarily set $x=1$ and then $x^2-2x$ evaluates to -1.  Therefore the inequality is not satisfied, therefore 1 is not in this set.
+> > 
+> > Next temporarily set $x=2$ and then $x^2-2x$ evaluates to 0.  Because the inequality is strict, therefore the inequality is not satisfied and 2 is not in the set.
+> >
+> > Next set $x=3$ and then $x^2-2x$ evaluates to 3.  Since this is greater than 0, then 3 is the smallest element of the set.
+> > 
+> > Next set $x=4$, the expression evaluates to 8, so 4 is in the set.
+> > 
+> > Do it again with $x=5$ and we see that 5 is in the set.
+> > 
+> > So the three smallest elements are 3,4,5.
 
   
 
@@ -306,6 +355,8 @@ And so on.
 > $$
 > \{x\in \Bbb Z: x^2-2x > 0\}
 > $$
+> > [!note]- ***Solution***
+> > -1 and 1/2.  Of course others are possible as well.
 
   
 
@@ -341,7 +392,7 @@ $$
 
   
 
-To list out some of the elements of this set, we may let *x* first take the value 1 (we start with 1 because $x\in\Bbb N$). Then the expression $x^2+1$ has the value $1^2+1=2$. Therefore $2\in S$.
+To list out some of the elements of *S*, we may let *x* first take the value 1. Then the expression $x^2+1$ has the value $1^2+1=2$. Therefore $2\in S$.
 
   
 
@@ -359,10 +410,18 @@ S = \{2,5,10,17,26,...\}
 
 $$
 
+The important point here is that: 
+> Whatever is in the curly braces, before the colon, is the object that is *actually in* the set.
+
   
 
 > [!exercise] ***Exercise***
-> List two more elements of the set *S* described above. That is to say: Determine two elements of *S* which are larger than 26.
+> List two more elements of the set *S* described above. 
+> 
+> That is to say: Determine two elements of *S* which are larger than 26.
+> 
+> > [!note]- ***Solution***
+> > TODO
 
   
 
@@ -412,7 +471,7 @@ $$
   
 
 > [!definition] ***Definition***
-> If $X\subseteq \Bbb Z$ then we denote subset of positive elements by $X^+$. That is to say,
+> If $X\subseteq \Bbb Z$ then we denote subset of **positive elements of *X*** by $X^+$. That is to say,
 > $$
 > X^+ = \{a\in X: a > 0\}
 > $$
@@ -424,33 +483,34 @@ $$
 > X^{\le 0} &= \{a\in X:a\le 0\}
 > \end{aligned}
 > $$
+> which are, respectively, the **negative, nonnegative**, and **nonpositive elements of *X***.
 
-  
+  For example, if $X = \{-2,0,1\}$ then 
+  $$
+\begin{aligned}
+X^+ &= \{1\}\\
+X^- &= \{-2\}\\
+X^{\ge 0} &= \{0,1\}\\
+X^{\le 0} &= \{-2,0\}
+\end{aligned}
+$$
+
+For another, let $Y = \{1,2,3\}$.  Then 
+$$
+\begin{aligned}
+Y^+ = Y = Y^{\ge 0}
+\end{aligned}
+$$
+
+If you think about what $Y^-$ or $Y^{\le 0}$, you'll realize that it has *no elements*.  That means that these are equal to the "empty set", which we describe in the next section.
 
 Note that $\Bbb N = \Bbb Z^+$.
 
   
 
-Also,
 
-  
-
-$$
-
-\begin{aligned}
-
-\Bbb Z^- &= \{-1,-2,-3,\dots\}\\
-
-  
-
-\Bbb Z^{\ge 0} &= \{0,1,2,\dots\} \\
-
-\Bbb Z^{\le 0} &= \{\dots,-2,-1,0\}
-
-\end{aligned}
-
-$$
-
+> [!exercise] ***Exercise***
+> Determine the elements of $\Bbb Z^-,\Bbb Z^{\ge 0},\Bbb Z^{\le 0}$.
   
 
 # The Empty Set
@@ -476,17 +536,15 @@ For example, $\emptyset \subseteq \{1,2,3\}$.
 
   
 
-Why? This can be hard to think of, because you have to assess the sentence
+Why? This is equivalent to saying
 
   
 
 > For every element $a\in \emptyset$ we have $a\in \{1,2,3\}$.
 
->
-
   
 
-But of course the part $a\in\emptyset$ is simply never true! There is no choice of *a* for which this part is true — so how could we then go on to evaluate the $a\in \{1,2,3\}$ part? — and how do we then assess the truth of the entire sentence?
+But of course the part $a\in\emptyset$ is simply never true! So how could we then go on to evaluate the $a\in \{1,2,3\}$ part? — and how do we then assess the truth of the entire sentence?
 
   
 
@@ -499,21 +557,25 @@ If that confuses you, here are a few explanations which try to make this fact se
   
 
 - As you remove elements, you should still have a subset.
+	  
+	So for example, $\{1,2,3\}\subseteq \{1,2,3\}$, of course.  But if we remove 3, then we still have a subset, $\{1,2\}\subseteq \{1,2,3\}$.  And if we then remove 2 we still have a subset, $\{1\}\subseteq \{1,2,3\}$.
+	
+	A subset is supposed to be “the same elements or fewer”.  So if we continue this progression one more time, and remove 1, we should have $\emptyset \subseteq \{1,2,3\}$.
 
-  So for example, $\{1,2,3\}\subseteq \{1,2,3\}$ and $\{1,2\}\subseteq \{1,2,3\}$ and $\{1\}\subseteq \{1,2,3\}$.
-
-  A subset is supposed to be “the same elements or fewer”, and so if we continue this progression one more time, we should have $\emptyset \subseteq \{1,2,3\}$.
-
-- Consider a computer program that checks whether the set *X* is a subset of *Y*. It considers each element of *X.* If that element is not in *Y*, the program returns `False`. If no such “counterexample” is ever found, then the program returns `True` (i.e. the program determines that *X* is a subset of *Y*).
-
-  If that program now runs with $X=\emptyset$, then there is no element to consider. The program never finds a counterexample, and so returns `True` -- that is to say, such a program determines that the empty set is a subset of any set.
+- Consider a computer program that checks whether the set *X* is a subset of *Y*. 
+	- It considers each element of *X.* 
+		- If that element is not in *Y*, the program returns `False`. 
+		- If no such “counterexample” is ever found, then the program returns `True` (i.e. the program determines that *X* is a subset of *Y*).
+	- If that program now runs with $X=\emptyset$, then there is no element to consider. The program never finds a counterexample, and so returns `True` -- that is to say, such a program determines that the empty set is a subset of any set.
 
   
 
 > [!definition] ***Definition***
 > Consider the following principle.
 > 
-> > Any sentence of the form “Every *P* is *Q*.” is true, whenever there is no object that is *P*.
+> > Any sentence of the form 
+> > “Every *P* is *Q*.” 
+> > is true, whenever there is no object that is *P*.
 > 
 > This principle is called **vacuous quantification**.
 
@@ -668,7 +730,104 @@ $$
 > 
 > Which other pairs taken from this list are disjoint?
 
-  
+
+# Intervals
+
+To lead with an example, the interval of all natural numbers from 5 to 9 is 
+$$\{5,6,7,8,9\}$$
+To be more precise, we might call this the "inclusive" interval from 5 to 9, since we include 5 and 9.  We might also talk about the "exclusive" interval from 5 to 9, which would then be 
+$$ \{6,7,8\}$$
+We will denote the inclusive interval from 5 to 9 with the notation 
+$$[5..9] = \{5,6,7,8,9\}$$
+
+> [!definition] ***Definition***
+> Let *a* and *b* be integers such that $a\le b$.  
+> The **(inclusive) integer interval from *a* to *b*** is 
+> $$ \begin{aligned}
+> \ [a..b] &= \{a,a+1,a+2,...,b-1, b\} \\
+> &= \{x\in\Bbb Z: a\le x\le b\}
+> \end{aligned}$$
+> The **exclusive integer interval from *a* to *b*** is 
+> $$\begin{aligned}
+> (a..b) &= \{a+1,a+2,...,b-1,b\} \\
+> &= \{x\in\Bbb Z: a < x < b\}
+> \end{aligned}$$
+> The **out-in integer interval from *a* to *b*** is 
+> $$\begin{aligned}
+> (a,b] &= \{x\in\Bbb Z: a<x\le b\}
+> \end{aligned}$$
+> The **in-out integer interval from *a* to *b*** is 
+> $$ [a,b) = \{x \in \Bbb Z: a\le x < b\}$$
+> We further extend this notation to allow for infinite sets, 
+> $$ \begin{aligned}
+> \ [a..\infty) &= \{a,a+1,...\} \\
+> &=\{x\in\Bbb Z: a < x\}
+> \end{aligned} 
+> $$
+> and 
+> $$
+> (-\infty..b) = \{x\in\Bbb Z: x < b\}
+> $$
+> We call *a* the **left end-point** of the interval, and *b* the **right end-point**.  
+
+
+> [!exercise] ***Exercise***
+> Determine the elements of 
+> 1. $[-2..2]$
+> 2. $(-2..2)$
+> 3. $[-2..\infty)$ 
+> 4. $(-\infty..2)$
+> 5. $[2..2]$
+> 6. $(2..2)$
+
+We will also use intervals of rational and real numbers.  For these, we will use a different notation.  This notation is a bit unfortunate, because it can look exactly the same as the notation for pairs.  But because it is standard, we will use it.
+
+> [!definition] Definition
+> Let *a* and *b* be two real numbers such that $a\le b$.
+> 
+> The **inclusive interval from *a* to *b*** is 
+> $$ [a,b] = \{x\in\Bbb R: a\le x\le b\} $$
+> This interval is commonly called the "closed interval from *a* to *b*".  That vocabulary comes from topology, but because we are very far from discussing topology, we will not adopt that vocabulary.
+> 
+> The **exclusive interval from *a* to *b*** is 
+> $$(a,b) = \{x\in\Bbb R:a < x < b\} $$
+> In the common vocabulary, this is called the "open interval from *a* to *b*".  Again this vocabulary is from topology, so we don't adopt it now.
+> 
+> The **in-out interval from *a* to *b*** is 
+> $$(a,b] = \{x\in\Bbb R:a < x\le b\}$$
+> and the **out-in interval from *a* to *b*** is 
+> $$[a,b) = \{x\in \Bbb R: a\le x < b\}$$
+> 
+> We fu
+> 
+> In every case, we call *a* the **left end-point** of the interval, and *b* the **right end-point**.
+
+For example, the exclusive interval (0, 4) is a set of real numbers — that is to say, each element is a decimal expansion.  It contains the decimal 1 (which can also be written as 1.0 or 1.000...).  It also contains 0.5 (or $\frac 1 2$), and it contains $\pi, \sqrt 2, e$ and a bunch of other real numbers.  
+
+
+> [!exercise] ***Exercise***
+> Which of the following are in the interval (0, 4)?
+> 1. $-1$
+> 2. 2
+> 3. 0
+> 4. 4
+> 5. 5
+> 6. $2\pi$
+> 7. $\frac 1 \pi$
+
+
+> [!exercise] ***Exercise***
+> In every case below, I give you a set formed from intervals and set operations.  
+> 
+> In each case, it is possible to rewrite each set as a single interval.  Find that interval.
+> 
+> 1. $(0,4)\cup\{0,4\}$
+> 2. $[0,4]\smallsetminus (0,4)$
+> 3. $(0,4)\cup [0,4]$
+> 4. 
+
+
+We have discussed interval vocabulary and notation for integers, which automatically also covers notation for natural numbers.  If you want an interval for natural numbers, just make sure the left 
 
 # Bounds, Max, Min
 
@@ -711,7 +870,7 @@ $$
 
   
 
-Note that we sometimes drop the parentheses in the expression $\min(X)$ if it causes no confusion. So when I write $\min\{1,2,3\}$ this is really shorthand for $\min(\{1,2,3\})$.
+Note that we sometimes drop the parentheses in the expression $\min(X)$ if it causes no confusion. So when I write $\min\{1,2,3\}$, this is really shorthand for $\min(\{1,2,3\})$.
 
   
 
@@ -744,9 +903,9 @@ Later in the course, after we have discussed enough logic and set theory, we mig
 > [!exercise] ***Exercise***
 > Consider the set
 > $$
-> \{a \in \Bbb Z : a \text{ is an upper bound of } \{1,2,3\}\}
+> B = \{a \in \Bbb Z : a \text{ is an upper bound of } \{1,2,3\}\}
 > $$
-> Write this set in a simpler description.
+> Write out several elements of *B*.
 
   
 
@@ -756,7 +915,11 @@ Later in the course, after we have discussed enough logic and set theory, we mig
 
 A list of objects is a finite sequence of them. So for instance, the list of the integers from 1 to 5 is (1, 2, 3, 4, 5) and the list of the numbers from 4 down to 0 is (4, 3, 2, 1, 0).
 
-  
+A list is similar to a set, in the sense that both are formed by a collection of elements.  They are, in that sense, both examples of "data structures".  They are containers for data.
+
+However, unlike a set, a list respects both order and repetition.  
+* The list (1, 2) is not the same as (2, 1).
+* The list (1, 2) is not the same as (1, 1, 2).
 
 We can also form lists of elements which are not of the same type. For example, we might have a list containing a set and a number, like
 
@@ -780,10 +943,29 @@ Consider the list (‘a’, 10, {1,2,3}), which has length 3. We will often want
 
 The objects at these indices are called the “coordinates”. So the first coordinate in the example above is ‘a’, the second coordinate is 10, and the third coordinate is $\{1,2,3\}$.
 
+We will use bracket notation to reference the indices of a list.  So for example, if the list is $\ell = ('a', 10, \{1,2,3\})$ then $\ell[1] = 'a'$ and $\ell[2] = 10$.
+
+> [!exercise] ***Exercise***
+> Let $\ell = (1,(2,3),(4,5,6))$.  Determine 
+> * $\ell[1]$
+> * $\ell[2]$
+> * $\ell[3]$
+> * $\ell[2][1]$
+> * $\ell[3][3]$
+
+> [!Definition] 
+> Let $\ell$ be any list of *n* elements, for $n\in\Bbb Z^{\ge 0}$.  Let $1\le i\le n$.   Then $i$ is called an **index of $\ell$**.
+> 
+> The expression $\ell[i]$ refers to the *i*th element of $\ell$, which we call **the element of $\ell$ at index *i***.
+
+> [!exercise] ***Exercise***
+> Explain why it would make no sense to try to define a notion of "index" for sets.
   
 
 > [!definition] ***Definition***
-> For any objects *a* and *b*, the **pair** of them is the list of length two: $(a,b)$.
+> For any objects *a* and *b*, the **pair** of them is the list of length two: $(a,b)$.  
+> 
+> For any three objects, *a*, *b*, *c*, the **triple** of them is the list of length three: $(a,b,c)$.
 > 
 > Let *A* and *B* be sets. Then their **set product** is $A\times B$, which is the set of all pairs with a left coordinate in *A*, and a right coordinate in *B*. That is to say,
 > $$
@@ -798,6 +980,7 @@ The objects at these indices are called the “coordinates”. So the first coor
 > $$
 > A^n = \overbrace{A\times \cdots \times A}^n
 > $$
+> So the set $A^n$ is the set of all lists of length *n* which have elements from the set *A*.
 
   
 
@@ -822,8 +1005,9 @@ $$
   
 
 Then
+$$ A\times B = \{(1,3), (1,4), (2,3), (2,4)\}$$
 
-  
+  Also 
 
 $$
 
@@ -833,7 +1017,9 @@ $$
 
   
 
-Note that it is not accident that this has four elements, and that $2\cdot 2\cdot 1 = 4$. This fact generalizes: If the number of elements in $A_1$ is $n_1$, and the number of elements in $A_2$ is $n_2$, and so on, then the number of elements in $A_1\times A_2\times \cdots A_{n_m}$ is
+Note that it is not accident that $A\times B\times C$ has four elements, and that $2\cdot 2\cdot 1 = 4$. That is to say, the number of elements in the set product, is the same as taking the number of elements in each set and multiplying them together.
+
+This fact generalizes: If the number of elements in $A_1$ is $n_1$, and the number of elements in $A_2$ is $n_2$, and so on, then the number of elements in $A_1\times A_2\times \cdots A_{n_m}$ is
 
   
 
@@ -845,37 +1031,38 @@ $$
 
   
 
-Also note that, technically,
-
-  
-
-$$
-
-\begin{aligned}
-
-A\times (B\times C) &= \{1,2\}\times \{(3,5),(4,5)\} \\
-
-&=\{(1,(3,5)), (1,(4,5)), (2,(3,5)),(2,(4,5))\}
-
-\end{aligned}
-
-$$
-
-  
-
-So by being very technical, $A\times (B\times C)$ is not the same as $A\times B\times C$.
-
-  
-
-However, we will not care about this difference. That is to say, we will regard $A\times (B\times C)$ as being equal to $A\times B\times C$, and in fact we regard these as also equal to $(A\times B)\times C$.
-
-  
-
-It just makes things easier to treat these things as equal, and nothing harmful happens because of this slight “abuse of notation”. If we are being very technical, we would say that all three of these are “isomorphic”. However, we have to develop some more mathematical theory before I can explain what that means exactly.
-
-  
-
-So for now, just rest assured that this technicality is unimportant—and later on, we can even *prove* that it is unimportant!
+> [!note]- We will regard $A\times (B\times C)$ as the same as $A\times B\times C$.
+> Also note that, technically,
+> 
+>   
+> 
+> $$
+> 
+> \begin{aligned}
+> 
+> A\times (B\times C) &= \{1,2\}\times \{(3,5),(4,5)\} \\
+> 
+> &=\{(1,(3,5)), (1,(4,5)), (2,(3,5)),(2,(4,5))\}
+> 
+> \end{aligned}
+> 
+> $$
+> 
+>   
+> 
+> So by being very technical, $A\times (B\times C)$ is not the same as $A\times B\times C$.
+> 
+>   
+> 
+> However, we will not care about this difference. That is to say, we will regard $A\times (B\times C)$ as being equal to $A\times B\times C$, and in fact we regard these as also equal to $(A\times B)\times C$.
+> 
+>   
+> 
+> It just makes things easier to treat these things as equal, and nothing harmful happens because of this slight “abuse of notation”. If we are being very technical, we would say that all three of these are “isomorphic”. However, we have to develop some more mathematical theory before I can explain what that means exactly.
+> 
+>   
+> 
+> So for now, just rest assured that this technicality is unimportant—and later on, we can even *prove* that it is unimportant!
 
   
 
@@ -899,7 +1086,7 @@ So for now, just rest assured that this technicality is unimportant—and later 
 
   
 
-We are mostly familiar with functions, like $f(x)=x^2+1$. You can give it an input, like 0, and it gives back an output, in this case $f(0)=1$.
+We are mostly familiar with functions, like $f(x)=x^2+1$. You can give it an input, like 0.  It gives back an output, in this case $f(0)=1$.
 
   
 
@@ -915,15 +1102,13 @@ We can graph this input-output relationship like so:
 
   
 
-Recall the idea of the graph: There is the entire space of $(x,y)$ coordinates, where *x* measures how far you go along the horizontal direction, and *y* how far you go vertically. A point like $(0,1)$ is on the graph of *f* because $f(0)=1$.
+Recall the idea of the graph: There is the entire space of $(x,y)$ coordinates, where *x* measures how far you go along the horizontal direction, and *y* how far you go vertically. That's the *entire* coordinate plane.
 
-  
+A point like $(0,1)$ is on the graph of *f* because $f(0)=1$.  The input, 0, is identified on the horizontal axis.  The output, 1, is identified on the vertical axis.  The point (0, 1) is then on the graph of *f*.  
 
-Basically the graph tells you, for every possible input, the value that *f* outputs.
+More generally, the points on the graph are the input-output pairs for the function.  
 
-  
-
-Now recall the essential idea of a function: If you input something, you get *one* output. So for example, the following graph is not the graph of any function.
+Not every possible curve in the coordinate plane is the graph of a function.  Recall the essential idea of a function: If you input something, you get *one* output. So for example, the following graph is not the graph of any function.
 
   
 
@@ -939,7 +1124,7 @@ That is because, for a particular choice of *x*, like say $x=1$, we can trace th
 
   
 
-This is an interesting mathematical object, surely. But it is *not* a function.
+This is an interesting mathematical object, surely. But it is not a *function*.
 
   
 
@@ -952,7 +1137,7 @@ Conversely, if *every* vertical line that you can draw intersects the graph at o
   
 
 > [!exercise] ***Exercise***
-> Determine which of the following equations has a graph that is a function.
+> Determine which of the following equations has a graph that is a function.  This means that you'll need to determine the graph of each equation.
 > 
 > 1. $y=2x-1$
 > 2. $y^3 = x$
@@ -965,11 +1150,11 @@ Conversely, if *every* vertical line that you can draw intersects the graph at o
 
   
 
-A function typically has a domain and a “range”. The idea of the domain is likely to be familiar to anyone who has taken high school algebra: It is the set of values which one is able to give as input to the function.
+A function typically has a domain and a “range”. 
 
-  
+The idea of the domain is likely to be familiar to anyone who has taken high school algebra: It is the set of values which one is able to give as input to the function.
 
-For example, the domain of *f* above is just “all real numbers”. We haven’t talked about the real numbers yet, and we will talk about them more formally later—but for now we will simply use these concepts at the same intuitive level that is familiar from algebra.
+For example, the domain of *f* above is just “all real numbers”. If you have any doubt about the meaning of "real numbers", for now, don't worry about it.  Just regard this as "all numbers".
 
   
 

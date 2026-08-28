@@ -1,4 +1,7 @@
-# Chapter 2: Propositional Syntax and Semantics
+---
+title: "Chapter 2: Propositional Syntax and Semantics"
+---
+
 
 Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can appeal to as we describe the abstract study of sets and logic.  Sets and logic form not just the tools of number theory, but in fact they are the fundamental tools of nearly every subject in mathematics.  
 

@@ -1,4 +1,12 @@
-# Mathematical Reasoning and Discrete Math
+---
+title: Mathematical Reasoning and Discrete Math
+author: Adam Frank
+---
+> [!note]- TODOs
+> I still need to 
+> * Find a way to incorporate feedback.
+> * Finish remaining chapters until completing the discussion of number theory.
+> * Add videos.
 # Introduction  
 
 This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.
@@ -59,15 +67,15 @@ But besides learning substantive topics in mathematics, this course aims to teac
 
 # Content
 
-[Chapter 0: The Bare Necessities of Sets and Functions](Chapter%200%20Basic%20Sets.md)
+[Chapter 0: The Bare Necessities of Sets and Functions](Chapter0Basic%20Sets.md)
 
 [Chapter 1: A Case Study in Number Theory](Chapter1BasicNumberTheory.md)
 
 [Chapter 2: Propositional Syntax and Semantics](Chapter2PropSyntaxSemantics.md)
 
-[Chapter 3: Propositional Proof Theory](Chapter3PropProof.md)
+[[Chapter3_PropositionalProofTheory | Chapter 3: Propositional Proof Theory]]
 
-[Chapter 4: Predicates, Objects, and Types](Chapter4PredAndTypes.md)
+[[Chapter4PredSynSem | Chapter 4: Predicate Syntax and Semantics]]
 
 [Chapter 5: First-order Logic](Chapter5FOL.md)
 
