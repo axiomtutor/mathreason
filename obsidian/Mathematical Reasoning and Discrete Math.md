@@ -61,17 +61,17 @@ But besides learning substantive topics in mathematics, this course aims to teac
 
 [Chapter 0: The Bare Necessities of Sets and Functions](Chapter%200%20Basic%20Sets.md)
 
-[Chapter 1: A Case Study in Number Theory](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%201%20A%20Case%20Study%20in%20Number%20Theory%2038d4b66370fd804a8a7cde27d4961b99.md)
+[Chapter 1: A Case Study in Number Theory](Chapter1BasicNumberTheory.md)
 
-[Chapter 2: Propositional Syntax and Semantics](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%202%20Propositional%20Syntax%20and%20Semantics%203914b66370fd80b4b584d0a332a4f18f.md)
+[Chapter 2: Propositional Syntax and Semantics](Chapter2PropSyntaxSemantics.md)
 
-[Chapter 3: Propositional Proof Theory](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%203%20Propositional%20Proof%20Theory%203914b66370fd80f6a01ecc6d88d1e124.md)
+[Chapter 3: Propositional Proof Theory](Chapter3PropProof.md)
 
-[Chapter 4: Predicates, Objects, and Types](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%204%20Predicates,%20Objects,%20and%20Types%203aa4b66370fd80659e7cfeb2df33a527.md)
+[Chapter 4: Predicates, Objects, and Types](Chapter4PredAndTypes.md)
 
-[Chapter 5: First-order Logic](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%205%20First-order%20Logic%203ad4b66370fd805d9d62e8ab4b2843e6.md)
+[Chapter 5: First-order Logic](Chapter5FOL.md)
 
-[Chapter 6: Applications of First-order Logic](Mathematical%20Reasoning%20and%20Discrete%20Math/Chapter%206%20Applications%20of%20First-order%20Logic%203c64b66370fd80f7b02cf1d71e18da20.md)
+[Chapter 6: Applications of First-order Logic](Chapter6FOLApp.md)
 
 
 ---

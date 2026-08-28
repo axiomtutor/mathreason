@@ -120,7 +120,7 @@ Also
 Note that the set {1, 2} is equal to the set {1,1,2,2,2,2}, because again, these have the same elements.
 
 > [!exercise] ***Exercise***
-Decide on the truth of the following expressions.
+> Decide on the truth of the following expressions.
 > 1. $\pi\in\{1,2\}$
 > 2. $2\in\{1,2\}$
 > 3. $\pi\notin \{1,2\}$
@@ -143,7 +143,6 @@ It is immediate from definitions that, for sets *X* and *Y*, we have that $X=Y$ 
   
 
 > [!exercise] ***Exercise***
->
 > For each of the following sets, decide which of the other sets are subsets.
 > 1. $\{1,2,3\}$
 > 2. $\{1,2\}$
@@ -214,27 +213,15 @@ But the “membership” relation is not “transitive”. Just because $1\in\{1
 
   
 
-***Exercise***
-
-  
-
-Let $Y = \{\{\{1,2\},\{3,4\}\}, \{5,6\},7\}$.
-
-  
-
-Decide which of the following is true.
-
-  
-
-1. $1\in Y$
-
-2. $\{1,2\}\in Y$
-
-3. $\{\{1,2\},\{3,4\}\}\in Y$
-
-  
-
-Find the number of elements in *Y*.
+> [!exercise] ***Exercise***
+> Let $Y = \{\{\{1,2\},\{3,4\}\}, \{5,6\},7\}$.
+> 
+> Decide which of the following is true.
+> 1. $1\in Y$
+> 2. $\{1,2\}\in Y$
+> 3. $\{\{1,2\},\{3,4\}\}\in Y$
+> 
+> Find the number of elements in *Y*.
 
   
 
@@ -304,47 +291,21 @@ And so on.
 
   
 
-***Exercise***
+> [!exercise] ***Exercise***
+> Write out the three smallest elements of the set
+> $$
+> \{x\in\Bbb N: x^2 - 2x > 0\}
+> $$
+> > [!note]- ***Solution***
+> > TODO
 
   
 
-Write out the three smallest elements of the set
-
-  
-
-$$
-
-\{x\in\Bbb N: x^2 - 2x > 0\}
-
-$$
-
-  
-
-::: details Solution
-
-:::
-
-  
-
-***Exercise***
-
-  
-
-Give two negative numbers in the set
-
-  
-
-$$
-
-\{x\in \Bbb Z: x^2-2x > 0\}
-
-$$
-
-  
-
-::: details Solution
-
-:::
+> [!exercise] ***Exercise***
+> Give two negative numbers in the set
+> $$
+> \{x\in \Bbb Z: x^2-2x > 0\}
+> $$
 
   
 
@@ -400,167 +361,69 @@ $$
 
   
 
-***Exercise***
+> [!exercise] ***Exercise***
+> List two more elements of the set *S* described above. That is to say: Determine two elements of *S* which are larger than 26.
 
   
 
-List two more elements of the set *S* described above. That is to say: Determine two elements of *S* which are larger than 26.
+> [!exercise] ***Exercise***
+> List all of the elements of the set
+> $$
+> \{\sin(\pi x):x\in\Bbb N\}
+> $$
 
   
 
-::: details Solution
-
-:::
-
-  
-
-***Exercise***
+> [!exercise] ***Exercise***
+> List all elements of
+> $$
+> \{\sin(\pi x) : x\in\Bbb Z\}
+> $$
 
   
 
-List all of the elements of the set
+> [!exercise] ***Exercise***
+> Consider the sets
+> $$
+> \begin{aligned}
+> A &= \{x\in\Bbb N: x \text{ is even, and } x < 10\}\\
+> B &= \{2,4,6\} \\
+> C &= \{2,4,6,8\} \\
+> D &= \{x: x \in\Bbb N, \text{ and $x$ is even}\} \\
+> E &= \{1\} \\
+> \Bbb N &= \{1,2,\dots\}\\
+> F&= \emptyset \\
+> G&= \{x\in \Bbb N: x < 0\}
+> \end{aligned}
+> $$
+> Of these sets, which of them are equal? Which is a subset of some other set? Write out all of the relationships that apply.
 
   
 
-$$
-
-\{\sin(\pi x):x\in\Bbb N\}
-
-$$
-
-  
-
--v Solution
-
-  
-
-***Exercise***
+> [!exercise] ***Exercise***
+> Consider the set
+> $$
+> \{2x-4y: x,y\in\Bbb N\}
+> $$
+> Does the set contain 0? Does it contain positive numbers? Does it contain negative numbers?
+> 
+> Is there a number which you can prove is not in the set? (Hint: Use the fact that an even times any number is even, and the sum of even numbers is even.)
 
   
 
-List all elements of
-
-  
-
-$$
-
-\{\sin(\pi x) : x\in\Bbb Z\}
-
-$$
-
-  
-
-::: details Solution
-
-:::
-
-  
-
-***Exercise***
-
-  
-
-Consider the sets
-
-  
-
-$$
-
-\begin{aligned}
-
-A &= \{x\in\Bbb N: x \text{ is even, and } x < 10\}\\
-
-B &= \{2,4,6\} \\
-
-C &= \{2,4,6,8\} \\
-
-D &= \{x: x \in\Bbb N, \text{ and $x$ is even}\} \\
-
-E &= \{1\} \\
-
-\Bbb N &= \{1,2,\dots\}\\
-
-F&= \emptyset \\
-
-G&= \{x\in \Bbb N: x < 0\}
-
-\end{aligned}
-
-$$
-
-  
-
-Of these sets, which of them are equal? Which is a subset of some other set? Write out all of the relationships that apply.
-
-  
-
--v Solution
-
-  
-
-***Exercise***
-
-  
-
-Consider the set
-
-  
-
-$$
-
-\{2x-4y: x,y\in\Bbb N\}
-
-$$
-
-  
-
-Does the set contain 0? Does it contain positive numbers? Does it contain negative numbers?
-
-  
-
-Is there a number which you can prove is not in the set? (Hint: Use the fact that an even times any number is even, and the sum of even numbers is even.)
-
-  
-
-::: details Solution
-
-:::
-
-  
-
-***Definition***
-
-  
-
-If $X\subseteq \Bbb Z$ then we denote subset of positive elements by $X^+$. That is to say,
-
-  
-
-$$
-
-X^+ = \{a\in X: a > 0\}
-
-$$
-
-  
-
-Likewise
-
-  
-
-$$
-
-\begin{aligned}
-
-X^- &= \{a\in X: a < 0\} \\
-
-X^{\ge 0} &= \{a\in X: a\ge 0\} \\
-
-X^{\le 0} &= \{a\in X:a\le 0\}
-
-\end{aligned}
-
-$$
+> [!definition] ***Definition***
+> If $X\subseteq \Bbb Z$ then we denote subset of positive elements by $X^+$. That is to say,
+> $$
+> X^+ = \{a\in X: a > 0\}
+> $$
+> Likewise
+> $$
+> \begin{aligned}
+> X^- &= \{a\in X: a < 0\} \\
+> X^{\ge 0} &= \{a\in X: a\ge 0\} \\
+> X^{\le 0} &= \{a\in X:a\le 0\}
+> \end{aligned}
+> $$
 
   
 
@@ -594,15 +457,10 @@ $$
 
   
 
-***Definition***
-
-  
-
-The set which has no elements is called **the empty set**.
-
-  
-
-It is written as $\emptyset$ or $\{\}$.
+> [!definition] ***Definition***
+> The set which has no elements is called **the empty set**.
+> 
+> It is written as $\emptyset$ or $\{\}$.
 
   
 
@@ -642,31 +500,22 @@ If that confuses you, here are a few explanations which try to make this fact se
 
 - As you remove elements, you should still have a subset.
 
-So for example, $\{1,2,3\}\subseteq \{1,2,3\}$ and $\{1,2\}\subseteq \{1,2,3\}$ and $\{1\}\subseteq \{1,2,3\}$.
+  So for example, $\{1,2,3\}\subseteq \{1,2,3\}$ and $\{1,2\}\subseteq \{1,2,3\}$ and $\{1\}\subseteq \{1,2,3\}$.
 
-A subset is supposed to be “the same elements or fewer”, and so if we continue this progression one more time, we should have $\emptyset \subseteq \{1,2,3\}$.
+  A subset is supposed to be “the same elements or fewer”, and so if we continue this progression one more time, we should have $\emptyset \subseteq \{1,2,3\}$.
 
 - Consider a computer program that checks whether the set *X* is a subset of *Y*. It considers each element of *X.* If that element is not in *Y*, the program returns `False`. If no such “counterexample” is ever found, then the program returns `True` (i.e. the program determines that *X* is a subset of *Y*).
 
-If the program now runs with $X=\emptyset$, then there is no element to consider. The program never finds a counterexample, and so returns `True`.
+  If that program now runs with $X=\emptyset$, then there is no element to consider. The program never finds a counterexample, and so returns `True` -- that is to say, such a program determines that the empty set is a subset of any set.
 
   
 
-***Definition***
-
-  
-
-Consider the following principle.
-
-  
-
-> Any sentence of the form “Every *P* is *Q*.” is true, whenever there is no object that is *P*.
-
->
-
-  
-
-This principle is called **vacuous quantification**.
+> [!definition] ***Definition***
+> Consider the following principle.
+> 
+> > Any sentence of the form “Every *P* is *Q*.” is true, whenever there is no object that is *P*.
+> 
+> This principle is called **vacuous quantification**.
 
   
 
@@ -754,129 +603,70 @@ $$
 
   
 
-***Definition***
+> [!definition] ***Definition***
+> Let *U* be any set which we call the **universe**.
+> 
+> Let $A,B\subseteq U$.
+> 
+> Then their **union** is the set of all elements in *A* or *B*, and is denoted $A\cup B$.
+> 
+> Their **intersection** is the set of elements in both *A* and *B*, and is denoted $A\cap B$.
+> 
+> The **complement of *A*** is the set of elements in *U* which are not in *A,* and is denoted $A^c$.
+> 
+> The set of *A* **set-minus** *B* is the set of elements in *A* but not *B*, and is denoted $A\smallsetminus B$.
 
   
 
-Let *U* be any set which we call the **universe**.
+> [!exercise] ***Exercise***
+> Let the universe be $\{0,1,2,3,4\}$, and $X = \{0,1,2\}$, and $Y = \{2,3,4\}$.
+> 
+> Find
+> 1. $X\cup Y$
+> 2. $X\cap Y$
+> 3. $X^c$
+> 4. $Y^c$
+> 5. $X\smallsetminus Y$
+> 6. $Y\smallsetminus X$
 
   
 
-Let $A,B\subseteq U$.
+> [!exercise] ***Exercise***
+> Let *U* be the universe and $X \subseteq U$.
+> 
+> 1. Show that $(X^c)^c= X$.
+> 2. Show that $X^c = U\smallsetminus X$.
+> 3. Show that $U\cup X = U$ and $\emptyset \cap X = \emptyset$.
+> 4. Show that $U\cap X = X = \emptyset \cup X$.
 
   
 
-Then their **union** is the set of all elements in *A* or *B*, and is denoted $A\cup B$.
+> [!definition] ***Definition***
+> Let *X* and *Y* be two sets. We say that *X* and *Y* are **disjoint** if
+> $$
+> X\cap Y=\emptyset
+> $$
 
   
 
-Their **intersection** is the set of elements in both *A* and *B*, and is denoted $A\cap B$.
+> [!exercise] ***Exercise***
+> Show that $\emptyset$ is disjoint from every other set.
 
   
 
-The **complement of *A*** is the set of elements in *U* which are not in *A,* and is denoted $A^c$.
-
-  
-
-The set of *A* **set-minus** *B* is the set of elements in *A* but not *B*, and is denoted $A\smallsetminus B$.
-
-  
-
-***Exercise***
-
-  
-
-Let the universe be $\{0,1,2,3,4\}$, and $X = \{0,1,2\}$, and $Y = \{2,3,4\}$.
-
-  
-
-Find
-
-  
-
-1. $X\cup Y$
-
-2. $X\cap Y$
-
-3. $X^c$
-
-4. $Y^c$
-
-5. $X\smallsetminus Y$
-
-6. $Y\smallsetminus X$
-
-  
-
-***Exercise***
-
-  
-
-Let *U* be the universe and $X \subseteq U$.
-
-  
-
-1. Show that $(X^c)^c= X$.
-
-2. Show that $X^c = U\smallsetminus X$.
-
-3. Show that $U\cup X = U$ and $\emptyset \cap X = \emptyset$.
-
-4. Show that $U\cap X = X = \emptyset \cup X$.
-
-  
-
-***Definition***
-
-  
-
-Let *X* and *Y* be two sets. We say that *X* and *Y* are **disjoint** if
-
-  
-
-$$
-
-X\cap Y=\emptyset
-
-$$
-
-  
-
-***Exercise***
-
-  
-
-Show that $\emptyset$ is disjoint from every other set.
-
-  
-
-***Exercise***
-
-  
-
-Of the following sets, decide which pairs are disjoint.
-
-  
-
-- The set of positive integers.
-
-- The set of negative integers.
-
-- The set of even integers.
-
-- The set of odd integers.
-
-- The set of prime integers.
-
-- $\{0\}$
-
-  
-
-For example, the set of positive integers and the set of negative integers are disjoint.
-
-  
-
-Which other pairs taken from this list are disjoint?
+> [!exercise] ***Exercise***
+> Of the following sets, decide which pairs are disjoint.
+> 
+> - The set of positive integers.
+> - The set of negative integers.
+> - The set of even integers.
+> - The set of odd integers.
+> - The set of prime integers.
+> - $\{0\}$
+> 
+> For example, the set of positive integers and the set of negative integers are disjoint.
+> 
+> Which other pairs taken from this list are disjoint?
 
   
 
@@ -884,47 +674,22 @@ Which other pairs taken from this list are disjoint?
 
   
 
-***Definition***
-
-  
-
-Let $X\subseteq \Bbb Z$ be a nonempty set. Let $a\in \Bbb Z$.
-
-  
-
-We say that *a* is a **lower bound** of *X* if, for every element $b\in X$, we have
-
-  
-
-$$
-
-a\le b
-
-$$
-
-  
-
-We say that *a* is an **upper bound** of *X* if, for every element $b\in X$, we have
-
-  
-
-$$
-
-b\le a
-
-$$
-
-  
-
-We say that *a* is **the minimum** of *X* if *a* is a lower bound and also $a\in X$.
-
-  
-
-We say that *a* is **the maximum** of *X* if *a* is an upper bound and also $a\in X$.
-
-  
-
-When the minimum exists, we denote it by $\min(X)$. When the maximum exists, we denote it by $\max(X)$.
+> [!definition] ***Definition***
+> Let $X\subseteq \Bbb Z$ be a nonempty set. Let $a\in \Bbb Z$.
+> 
+> We say that *a* is a **lower bound** of *X* if, for every element $b\in X$, we have
+> $$
+> a\le b
+> $$
+> We say that *a* is an **upper bound** of *X* if, for every element $b\in X$, we have
+> $$
+> b\le a
+> $$
+> We say that *a* is **the minimum** of *X* if *a* is a lower bound and also $a\in X$.
+> 
+> We say that *a* is **the maximum** of *X* if *a* is an upper bound and also $a\in X$.
+> 
+> When the minimum exists, we denote it by $\min(X)$. When the maximum exists, we denote it by $\max(X)$.
 
   
 
@@ -958,27 +723,17 @@ However, there is a fact which we will accept as fundamental throughout this cou
 
   
 
-***Theorem***
+> [!theorem] ***Theorem***
+> Let $X\subseteq \Bbb Z$.
+> 
+> If *X* is bounded below, then *X* has a minimum.
+> 
+> If *X* is bounded above, then *X* has a maximum.
 
   
 
-Let $X\subseteq \Bbb Z$.
-
-  
-
-If *X* is bounded below, then *X* has a minimum.
-
-  
-
-If *X* is bounded above, then *X* has a maximum.
-
-  
-
-***No proof***
-
-  
-
-The proof of this theorem is beyond the scope of this course. We will instead accept this result without proof.
+> [!note] ***No proof***
+> The proof of this theorem is beyond the scope of this course. We will instead accept this result without proof.
 
   
 
@@ -986,23 +741,12 @@ Later in the course, after we have discussed enough logic and set theory, we mig
 
   
 
-***Exercise***
-
-  
-
-Consider the set
-
-  
-
-$$
-
-\{a \in \Bbb Z : a \text{ is an upper bound of } \{1,2,3\}\}
-
-$$
-
-  
-
-Write this set in a simpler description.
+> [!exercise] ***Exercise***
+> Consider the set
+> $$
+> \{a \in \Bbb Z : a \text{ is an upper bound of } \{1,2,3\}\}
+> $$
+> Write this set in a simpler description.
 
   
 
@@ -1038,49 +782,22 @@ The objects at these indices are called the “coordinates”. So the first coor
 
   
 
-***Definition***
-
-  
-
-For any objects *a* and *b*, the **pair** of them is the list of length two: $(a,b)$.
-
-  
-
-Let *A* and *B* be sets. Then their **set product** is $A\times B$, which is the set of all pairs with a left coordinate in *A*, and a right coordinate in *B*. That is to say,
-
-  
-
-$$
-
-A\times B = \{(a,b):a\in A, b\in B\}
-
-$$
-
-  
-
-More generally if we have an *n* sets, $A_1,A_2,…,A_n$, then their **set product** is
-
-  
-
-$$
-
-A_1\times A_2\times \cdots\times A_n = \\
-
-\{(a_1,a_2,...,a_n): a_1\in A_1, ...,a_n\in A_n\}
-
-$$
-
-  
-
-We also define, for each positive integer $n\ge 1$,
-
-  
-
-$$
-
-A^n = \overbrace{A\times \cdots \times A}^n
-
-$$
+> [!definition] ***Definition***
+> For any objects *a* and *b*, the **pair** of them is the list of length two: $(a,b)$.
+> 
+> Let *A* and *B* be sets. Then their **set product** is $A\times B$, which is the set of all pairs with a left coordinate in *A*, and a right coordinate in *B*. That is to say,
+> $$
+> A\times B = \{(a,b):a\in A, b\in B\}
+> $$
+> More generally if we have an *n* sets, $A_1,A_2,…,A_n$, then their **set product** is
+> $$
+> A_1\times A_2\times \cdots\times A_n = \\
+> \{(a_1,a_2,...,a_n): a_1\in A_1, ...,a_n\in A_n\}
+> $$
+> We also define, for each positive integer $n\ge 1$,
+> $$
+> A^n = \overbrace{A\times \cdots \times A}^n
+> $$
 
   
 
@@ -1162,31 +879,19 @@ So for now, just rest assured that this technicality is unimportant—and later 
 
   
 
-***Exercise***
+> [!exercise] ***Exercise***
+> Let $A = \{1,2,3\}, B=\{4,5\}$.
+> 
+> Find $A\times A$ and $A\times B$ and $B\times A$.
+> 
+> Also find $B^3$.
+> 
+> Also find $\{1\}^5$.
 
   
 
-Let $A = \{1,2,3\}, B=\{4,5\}$.
-
-  
-
-Find $A\times A$ and $A\times B$ and $B\times A$.
-
-  
-
-Also find $B^3$.
-
-  
-
-Also find $\{1\}^5$.
-
-  
-
-***Exercise***
-
-  
-
-Show that if *A* is any set, then $A\times \emptyset=\emptyset$.
+> [!exercise] ***Exercise***
+> Show that if *A* is any set, then $A\times \emptyset=\emptyset$.
 
   
 
@@ -1246,21 +951,13 @@ Conversely, if *every* vertical line that you can draw intersects the graph at o
 
   
 
-***Exercise***
-
-  
-
-Determine which of the following equations has a graph that is a function.
-
-  
-
-1. $y=2x-1$
-
-2. $y^3 = x$
-
-3. $y=\ln x$
-
-4. $y^2=x$
+> [!exercise] ***Exercise***
+> Determine which of the following equations has a graph that is a function.
+> 
+> 1. $y=2x-1$
+> 2. $y^3 = x$
+> 3. $y=\ln x$
+> 4. $y^2=x$
 
   
 
@@ -1324,27 +1021,16 @@ Again you can see where the domain is missing: negative numbers.
 
   
 
-***Exercise***
-
-  
-
-Find the domain of each function below.
-
-  
-
-1. $a(x) = \sqrt[3]x$
-
-2. $b(x) = \frac 1 {x^2}$
-
-3. $c(x) = \sin x$
-
-4. $d(x)=2^x$
-
-5. $e(x)=\tan x$
-
-  
-
-If you find it helpful then you should put this function into some kind of graphing software and use the graph to help identify the domain.
+> [!exercise] ***Exercise***
+> Find the domain of each function below.
+> 
+> 1. $a(x) = \sqrt[3]x$
+> 2. $b(x) = \frac 1 {x^2}$
+> 3. $c(x) = \sin x$
+> 4. $d(x)=2^x$
+> 5. $e(x)=\tan x$
+> 
+> If you find it helpful then you should put this function into some kind of graphing software and use the graph to help identify the domain.
 
   
 
@@ -1394,11 +1080,8 @@ Let’s see the range for the other functions that we’ve been describing. If y
 
   
 
-***Exercise***
-
-  
-
-Go back to the previous exercise, which asked you to find the domains of several functions. Now find their ranges.
+> [!exercise] ***Exercise***
+> Go back to the previous exercise, which asked you to find the domains of several functions. Now find their ranges.
 
   
 
@@ -1430,8 +1113,5 @@ If *f* is a function with domain *A* and range *B*, we will write $f:A\to B$.
 
   
 
-***Exercise***
-
-  
-
-Look back at the previous exercise, which asking you to find the domains of several functions. Write the domain and range in the notation introduce here, for each function.
+> [!exercise] ***Exercise***
+> Look back at the previous exercise, which asking you to find the domains of several functions. Write the domain and range in the notation introduce here, for each function.

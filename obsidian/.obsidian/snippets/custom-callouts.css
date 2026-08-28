@@ -1,23 +1,28 @@
 /* Definition */
 .callout[data-callout="definition"] {
-    --callout-color: rgb(59, 130, 246);
+    --callout-color: rgba(59, 130, 246, 1);
     --callout-icon: lucide-book-open;
+    background-color: rgb(222, 235, 255);
 }
 
 /* Exercise */
 .callout[data-callout="exercise"] {
-    --callout-color: rgb(249, 115, 22);
+    --callout-color: rgba(249, 115, 22, 1);
     --callout-icon: lucide-pencil;
+    background-color: rgb(255, 237, 213);
 }
 
 /* Theorem */
 .callout[data-callout="theorem"] {
-    --callout-color: rgb(239, 68, 68);
+    --callout-color: rgba(239, 68, 68, 1);
     --callout-icon: lucide-award;
+    background-color: rgb(254, 226, 226);
 }
 
 /* Proof */
 .callout[data-callout="proof"] {
-    --callout-color: rgb(34, 197, 94);
+    --callout-color: rgba(34, 197, 94, 1);
     --callout-icon: lucide-check-circle;
+    background-color: rgb(220, 252, 231);
 }
+
