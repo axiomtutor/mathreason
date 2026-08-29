@@ -82,7 +82,7 @@ $$
 \end{aligned}
 $$
 
-We choose the predicate names *M, P, C*.  Each predicate name will denote the set of people in each major.  For example, if the math majors are Adam, Brook, Cecil, and Dale, then 
+We choose the predicate names *M, P, C*.  Each predicate name will denote the set of people in each major.  For example, if the math majors are Adam, Brooke, Cecil, Dale, and Eudoxus, then 
 
 $$
 M^{\mathcal I} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
@@ -221,7 +221,7 @@ For example, we could have $\mathcal U$ be the set of integers, so $\mathcal U =
 
 The model could also determine that the predicate *P* refers to the set of all even numbers.  
 
-From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is suppose to represent the (false) proposition “one is an even number”.  How we define our semantics should agree with this.  
+From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should agree with this.  
 
 > [!definition] ***Definition***
 >
@@ -273,11 +273,11 @@ On the right is the basic semantic object, the universe, $\mathcal U$—the set 
 
 The model, $\mathcal M=(\mathcal U,\mathcal I)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $\mathcal I$.  That means choosing which element, $u\in \mathcal U$, should be associated with *c*.  This is $c^{\mathcal I}=u$.  It also means choosing which subset, $X\subseteq \mathcal U$, is associated with *P*.  This is $P^{\mathcal I}=X$.
 
-Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $\mathcal U = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{\mathcal M}=1$$o^{\mathcal I} = 1$$P(x)$$P^{\mathcal I}$ is the set of even numbers.  The model is then $\mathcal M=(\mathcal U,\mathcal I)$.  
+Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $\mathcal U = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{\mathcal I} = 1$.  We also said that $P^{\mathcal I}$ is the set of even numbers.  The model is then $\mathcal M=(\mathcal U,\mathcal I)$.  
 
-To evaluate the proposition means that we find the value of $(P(o))^{\mathcal M}$.  The definition of this tells us to check whether $o^{\mathcal M}\in P^{\mathcal M}$.  But this is the same as checking whether 1 is in the set of even numbers.  
+To evaluate the proposition means that we find the value of $(P(o))^{\mathcal M}$.  The definition of this tells us to check whether $o^{\mathcal I}\in P^{\mathcal I}$.  But this is the same as checking whether 1 is in the set of even numbers.  
 
-Since 1 is not in the set of even numbers, $o^{\mathcal M}\notin P^{\mathcal M}$, and therefore $(P(o))^{\mathcal M}=\mathfrak{F}$.  This is exactly the result that we intuitively know that we should obtain.  
+Since 1 is not in the set of even numbers, $o^{\mathcal I}\notin P^{\mathcal I}$, and therefore $(P(o))^{\mathcal M}=\mathfrak{F}$.  This is exactly the result that we intuitively know that we should obtain.  
 
 ---
 
@@ -299,7 +299,7 @@ A reasonable choice of $R^{\mathcal I}$ is the set of all red objects in the roo
 
 With all of that specified, we now know $\mathcal I$, and $\mathcal U$, and therefore we know what the model, $\mathcal M$, is.
 
-This is everything that we need to now evaluate $(R(b))^{\mathcal M}$.  Because $b^{\mathcal M}$ is a red ball in the room, it therefore is a red object in the room, and therefore $b^{\mathcal M}\in R^{\mathcal M}$.  So it follows, by definition, that $(R(b))^{\mathcal M}=\mathfrak{T}$.
+This is everything that we need to now evaluate $(R(b))^{\mathcal M}$.  Because $b^{\mathcal I}$ is a red ball in the room, it therefore is a red object in the room, and therefore $b^{\mathcal I}\in R^{\mathcal I}$.  So it follows, by definition, that $(R(b))^{\mathcal M}=\mathfrak{T}$.
 
 > [!exercise] ***Exercise***
 >
@@ -382,9 +382,9 @@ Here we discussed an example of conjunction at length.  The discussion of disjun
 > \end{aligned}
 > $$
 
-Notice that the rules government the propositional connectives are exactly the same rules that we used when studying propositional logic.  A propositional atom is made up of predicate and object—but once those components are assembled, the atom is essentially the same as a propositional variable. 
+Notice that the rules governing the propositional connectives are exactly the same rules that we used when studying propositional logic.  A propositional atom is made up of predicate and object—but once those components are assembled, the atom is essentially the same as a propositional variable. 
 
-The way that formulas are then combined with propositional connectives, is exactly the same as we saw previously for propositional formulas. And the way that these are evaluated in a model is exactly the same.
+The way that formulas are then combined with propositional connectives is exactly the same as we saw previously for propositional formulas. And the way that these are evaluated in a model is exactly the same.
 
 ---
 
