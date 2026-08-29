@@ -7,6 +7,7 @@ author: Adam Frank
 > * Find a way to incorporate feedback.
 > * Finish remaining chapters until completing the discussion of number theory.
 > * Add videos.
+
 # Introduction  
 
 This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.

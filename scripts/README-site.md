@@ -1,6 +1,6 @@
 # mathreason static site
 
-This turns the Notion-exported markdown in the repository into a static website
+This turns the markdown in the repository into a static website
 that GitHub Pages can serve. Nothing but HTML, CSS, images and locally hosted
 KaTeX fonts — no JavaScript framework, no build server.
 
@@ -34,6 +34,26 @@ node scripts/build-site.mjs . docs
 ```
 
 Then commit the refreshed `docs/`.
+
+## Sources
+
+The **Obsidian vault in `obsidian/`** is the primary source: its home note
+becomes `index.html` and its chapters become the sidebar. The older Notion
+export at the repository root is still built (so the home page's "Old content"
+links keep working) but is left out of the sidebar.
+
+## How it handles the Obsidian markdown
+
+- YAML frontmatter is stripped; `title:` becomes the page title (falling back to
+  the first `#` heading).
+- Wikilinks (`[[Note|Label]]`, `![[image.png]]`) are converted to real links.
+- Obsidian callouts become colored boxes: `> [!definition]`, `> [!theorem]`,
+  `> [!proof]`, `> [!exercise]`, `> [!note]`. A `-` after the type
+  (`> [!note]- Solution`) makes the box a collapsible dropdown, `+` makes it
+  start open. Callout lines that lost their `>` prefix on export are re-attached
+  automatically.
+- Image paths that point at the old Notion attachment folders are matched by
+  folder + filename, so images keep working.
 
 ## How it handles the Notion export
 
