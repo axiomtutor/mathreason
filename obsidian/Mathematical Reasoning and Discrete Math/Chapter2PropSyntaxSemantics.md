@@ -16,7 +16,7 @@ This argument is not *pure* logic, because it relies on first accepting the prin
 
 These may be true, but they are not *logical* principles.  Rather, they are accepted on the basis of empiricism or science.  
 
-Logic is not concerned, fundamentally, with which propositions are true: Rather it is concerned with the question “Once we accept certain sentences as true, how can we work out their consequences, in order to determine other sentences which must also be true?”
+Logic is not fundamentally concerned with which propositions are true: Rather it is concerned with the question “Once we accept certain sentences as true, how can we work out their consequences, in order to determine other sentences which must also be true?”
 
 To abstract the earlier argument into a purely logical expression, a logician would instead write 
 
@@ -56,7 +56,7 @@ It includes capitalization, spaces, punctuation, parentheses, and numerals.
 
 Just for contrast: the Hindi syntax includes a different set of letters, called [Devanagri](https://en.wikipedia.org/wiki/Devanagari).  But otherwise, we tend to share a lot of the same non-alphabetic symbols, like punctuation, spaces, and so on.  Our numerals are similar but not exactly the same.  
 
-The point being is that languages can differ in the choice of fundamental symbols.  So when you describe a language, a natural starting place is to describe the alphabet.  And when we do so, we should take a very expansive view of what we mean by its “alphabet”—this should include every symbol that is commonly understood when a native speaker sees it on a page.
+The point is that languages can differ in the choice of fundamental symbols.  So when you describe a language, a natural starting place is to describe the alphabet.  And when we do so, we should take a very expansive view of what we mean by its “alphabet”—this should include every symbol that is commonly understood when a native speaker sees it on a page.
 
 # Strings and Languages
 
@@ -133,7 +133,7 @@ We know that $1\in L$ from the base-case.
 
 Because $1\in L$ we may take $x=1$ in the recursive case.  Therefore, from the first part of the recursive case, $10\in L$.
 
-Because $10\in L$ we may this time take $x=1$ in the recursive case.  Therefore, from the second part of the recursive case, $101\in L$.
+Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore, from the second part of the recursive case, $101\in L$.
 
 > [!exercise] ***Exercise***
 >
@@ -549,12 +549,12 @@ $$
 >
 > We define the boolean operator, **semantic disjunction**, by
 > 
-> $$
-> \frak T\curlyvee\frak T =\frak T\\\frak
-> T\curlyvee\frak F =\frak T\\\frak
-> F\curlyvee\frak T =\frak T\\\frak
-> F\curlyvee\frak F =\frak F
-> $$
+> $$ \begin{aligned}
+> \frak{T\curlyvee T = T}\\\\
+> \frak{T\curlyvee F = T}\\\\
+> \frak{F\curlyvee T = T}\\\\
+> \frak{F\curlyvee F = F}
+> \end{aligned}$$
 > 
 > Let $\phi$ and $\psi$ be formulas.
 > 
@@ -621,7 +621,7 @@ $$
 \begin{array}{|c||c|c|}\hline
   P & \neg & P \\\hline
  \color{red}\frak T & \color{red}\frak F & \\
-\frak F &\frak T \\\hline
+\frak F &\frak T & \\\hline
 \end{array}
 $$
 
@@ -693,8 +693,7 @@ Therefore if we plug in $x=5$, the result must be a true proposition.  When we d
 Therefore when the antecedent and consequent are false, the conditional must be true.  One can find a similar argument for the case when the antecedent is false and the consequent true.  We have now explained why the conditional truth-table is 
 
 $$
-\begin
-{array}{|c|c||c|c|c|}\hline
+\begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
  \color{red}\frak T & \color{red}\frak T & & \color{red}\frak  T & \\
  \frak T & \frak F & & \frak F & \\
