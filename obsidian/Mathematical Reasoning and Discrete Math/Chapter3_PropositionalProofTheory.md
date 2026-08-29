@@ -5,11 +5,11 @@ title: "Chapter 3: Propositional Proof Theory"
 
 # Simple Inference Rules
 
-An important use of logic, is to help us to write good proofs.  
+An important use of logic is to help us write good proofs.  
 
 Here we’ll establish the basic formal system that we will use to expose the logic of a proof.  We begin with proofs in the propositional language, and in later chapters we will develop a more complex language with an augmented proof system.  
 
-The fundamental component of a proof, is an “inference”.  Here is an example:  
+The fundamental component of a proof is an “inference”.  Here is an example:  
 
 If we have already accepted the truth of propositions denoted by *P* and *Q*, then we must accept the truth of the formula $P\land Q$.  In this case, we say that we *infer* $P\land Q$ from the formulas *P* and *Q*.  
 
@@ -130,7 +130,7 @@ This concludes the proof.
 
 ---
 
-Notice the way that a proof works: We start by assuming the truth of some formulas.  Using these assumptions, we apply the inference rules to infer new formulas.  When a new formula is infer, it may then be used in further steps.
+Notice the way that a proof works: We start by assuming the truth of some formulas.  Using these assumptions, we apply the inference rules to infer new formulas.  When a new formula is inferred, it may then be used in further steps.
 
 We continue this process until we eventually infer the conclusion of the proof.  
 
@@ -182,9 +182,9 @@ This was just an exercise in performing substitution, with no real interesting c
 >
 > Show that $[P\land (Q\to P)]_{P:= \neg P}$ is equal to $(\neg P)\land (Q\to\neg P)$.
 >
-> Show that $P\land Q_{R:= S}$ is equal to $P\land Q$.
+> Show that $[P\land Q]_{R:= S}$ is equal to $P\land Q$.
 >
-> Suppose that if $\phi$ is a propositional formula such that $\chi$ does not occur as a subformula of $\phi$.  Let $\psi$ be any formula.
+> Suppose that $\phi$ is a propositional formula such that $\chi$ does not occur as a subformula of $\phi$.  Let $\psi$ be any formula.
 >
 > Explain why $\phi_{\chi:= \psi}=\phi$.
 
@@ -313,7 +313,7 @@ From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
 | 8. | $(Q\lor \neg P)\land (Q\lor \neg R)$ | Conjunction Introduction from 6, 7 |
 | 9. | $Q\lor ((\neg P)\land (\neg R))$ | Factorization from 8 |
 | 10. | $Q\lor\neg(P\lor R)$ | De Morgan’s from 9 |
-| 11. | $\neg(\neg(P\lor Q))$ | Double Negation from 3 |
+| 11. | $\neg(\neg(P\lor R))$ | Double Negation from 3 |
 | 12. | *Q* | Disjunction Elimination from 10, 11 |
 
 > [!exercise] ***Exercise***
@@ -589,7 +589,7 @@ Subproof
 
 Here is another technique which requires a sub-proof, although structured differently.
 
-Here is a kind of every-day example of proof by contradiction: A brilliant detective is investigating a crime, and questions the butler, “Did you kill Mr. Hitchens?”  The butler says “No, I was garden when Mr. Hitchens was killed in the kitchen.”
+Here is a kind of every-day example of proof by contradiction: A brilliant detective is investigating a crime, and questions the butler, “Did you kill Mr. Hitchens?”  The butler says “No, I was in the garden when Mr. Hitchens was killed in the kitchen, but I heard him scream.”
 
 The detective’s eyes widen, “Oh?  If you were in the garden, then you couldn’t hear Mr. Hitchens scream.  But you said that you did hear Mr. Hitchens scream!  You are contradicting yourself!”
 
