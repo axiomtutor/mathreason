@@ -9,9 +9,7 @@ In a course in mathematical reasoning, this might be strange: Shouldn’t we fir
 
 I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having an intuitive example *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
 
-Therefore this lesson in number theory is a case study.  It depends on learning logic and sets at an intuitive and natural level, so that we may see some basic results in number theory—one of the most important, being the GCD integer combination theorem.  
-
-These mathematical results are important in their own right. But I have placed them here at the beginning as a case study in rigorous mathematical reasoning. The chapter assumes the basic set-theoretic notation and concepts developed in the preceding chapter.
+Therefore this lesson in number theory is a case study. It depends on learning logic and sets at an intuitive and natural level, so that we may see some basic results in number theory—one of the most important, being the GCD integer combination theorem.
 
 # Natural Numbers and Integers
 
@@ -49,69 +47,6 @@ I particularly want to open the study of discrete math with a conversation about
 - The objects (the natural numbers) are familiar and obviously important.
 - The theorems and proofs start simple, offering a relatively inviting entry to the subject.
 - The theorems and proofs quickly become advanced, offering a case study in the need for a rigorous methods of logic.  This provides motivation and examples for the later chapters on logic.
-
-## Bounds, Max, Min
-
-> [!definition] ***Definition***
->
->Let $X\subseteq \Bbb Z$ be a nonempty set.  Let $a\in \Bbb Z$.
->
->We say that *a* is a **lower bound** of *X* if, for every element $b\in X$, we have
->
->$$
-> a\le b
->$$
->
->We say that *a* is an **upper bound** of *X* if, for every element $b\in X$, we have 
->
->$$
-> b\le a
->$$
->
->We say that *a* is **the minimum** of *X* if *a* is a lower bound and also $a\in X$.
->
->We say that *a* is **the maximum** of *X* if *a* is an upper bound and also $a\in X$.
->
->When the minimum exists, we denote it by $\min(X)$. When the maximum exists, we denote it by $\max(X)$.
-
-For example, an upper bound of the set $\{1,2,3\}$ is 5, but the maximum is 3.  A lower bound of this set is -100 but the minimum is 1.
-
-$$
-\begin{aligned}
- \min\{1,2,3\} &= 1 \\
- \max\{1,2,3\} &= 3
-\end{aligned}
-$$
-
-Note that we sometimes drop the parentheses in the expression $\min(X)$ if it causes no confusion.  So when I write $\min\{1,2,3\}$ this is really shorthand for $\min(\{1,2,3\})$.
-
-Note that the maximum and minimum need not always exist.  For example, there is no maximum of the set $\Bbb N$. And of course, the set $\Bbb Z$ has neither a maximum nor a minimum.  
-
-However, there is a fact which we will accept as fundamental throughout this course: 
-
-> [!theorem] ***Theorem***
->
->Let $X\subseteq \Bbb Z$.  
->
->If *X* is bounded below, then *X* has a minimum.  
->
->If *X* is bounded above, then *X* has a maximum.
-
-> [!proof] ***No proof***
->
->The proof of this theorem is beyond the scope of this course.  We will instead accept this result without proof.
->
->Later in the course, after we have discussed enough logic and set theory, we might revisit the proof of this theorem.
-
-> [!exercise] ***Exercise***
->
->Consider the set 
->
->$$
->\{a \in \Bbb Z : a \text{ is an upper bound of } \{1,2,3\}\}
->$$
->
->Write this set in a simpler description.  
 
 # Divisibility
 
