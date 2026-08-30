@@ -790,3 +790,33 @@ The following is a fundamental fact about prime numbers, which deeply characteri
 The following proof uses a particular way of proving an “or” statement:  In order to prove $p|a$ or $p|b$, we prove that if $p \not| \ \ a$ then $p|b$.
 
 We will study logical patterns like this one in the next chapter.
+
+> [!proof] ***Proof***
+> 
+> Suppose that *p* is prime and $a,b\in\Bbb Z$ such that $p|ab$.  
+> 
+> Suppose that $p\not| \ \ a$.  
+> 
+> Since *p* is prime, then its only divisors are 1 or *p*.  Therefore $(p,a)$ is 1 or *p*.
+> 
+> But since $p\not| \ \ a$ then $(p,a) = 1$.
+> 
+> By the integer combination theorem, there are $x,y\in\Bbb Z$ such that 
+> 
+> $$
+> xp+ya = 1
+> $$
+> 
+> Multiplying throughout by *b*, 
+> 
+> $$
+> xpb + yab = b
+> $$
+> 
+> Now $p|xpb$ because $p|p$.
+> 
+> Also $p|yab$ because $p|ab$.  
+> 
+> Therefore *p* divides the left-hand side, $xpb+yab$.  But since this equals the right-hand side, *b*, we must have that that $p|b$.
+> 
+> $\Box$
