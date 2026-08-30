@@ -7,6 +7,15 @@ author: Adam Frank
 > * Find a way to incorporate feedback.
 > * Finish remaining chapters until completing the discussion of number theory.
 > * Add videos.
+
+Welcome to this course in mathematical reasoning!  This website delivers a one-quarter semester course which, briefly, covers naive set theory, logic, and number theory.  There will be a part 2, assuming I eventually finish part 1.  
+
+If you see mistakes in this website, please let me know!  You can open an issue at the GitHub repo: [https://www.github.com/axiomtutor/mathreason | GitHub MathReason].  
+
+Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  
+
+Feedback from people with a greater background in mathematics, who already know discrete math, is also welcome.  But if this describes you, then please keep in mind that I am intentionally re-structuring the presentation of this subject.  The entire point is for it to be different from what you're used to.  I cover much of the same material as a common course in discrete mathematics, but in an order and presentation that I hope makes more sense to a student than the usual presentation.  
+
 # Introduction  
 
 This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.
