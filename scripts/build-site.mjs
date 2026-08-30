@@ -518,10 +518,8 @@ const siteTitle = rootPage.title;
 const layout = ({ page, body, headings }) => {
   const navHtml = nav
     .map(
-      (c, i) =>
-        `<li><a class="nav-link${c.slug === page.slug ? " is-active" : ""}" href="${c.href}"><span class="nav-num">${String(
-          i + 1
-        ).padStart(2, "0")}</span>${esc(c.title)}</a></li>`
+      (c) =>
+        `<li><a class="nav-link${c.slug === page.slug ? " is-active" : ""}" href="${c.href}">${esc(c.title)}</a></li>`
     )
     .join("\n");
 

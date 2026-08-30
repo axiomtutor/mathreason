@@ -75,7 +75,7 @@ a:hover { text-decoration-color: currentColor; }
 }
 .nav-link:hover { background: var(--accent-soft); color: var(--ink); }
 .nav-link.is-active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.nav-num { font-family: var(--sans); font-size: .7rem; color: var(--accent); opacity: .75; }
+
 
 .content { flex: 1 1 auto; min-width: 0; padding: 3.5rem 3rem 6rem; }
 .prose { max-width: var(--measure); margin: 0 auto; }
