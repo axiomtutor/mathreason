@@ -10,7 +10,7 @@ author: Adam Frank
 
 Welcome to this course in mathematical reasoning!  This website delivers a one-quarter semester course which, briefly, covers naive set theory, logic, and number theory.  There will be a part 2, assuming I eventually finish part 1.  
 
-If you see mistakes in this website, please let me know!  You can open an issue at the GitHub repo: [https://www.github.com/axiomtutor/mathreason | GitHub MathReason].  
+If you see mistakes in this website, please let me know!  You can open an issue at the GitHub repo: [GitHub Math Reason](https://www.github.com/axiomtutor/mathreason).  
 
 Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  
 
