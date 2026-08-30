@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * Build a static, GitHub Pages ready website from the Notion-exported
- * markdown files in this repository.
+ * Build a static, GitHub Pages ready website from the markdown in this
+ * repository.
  *
  *   node scripts/build-site.mjs [sourceDir] [outDir]
  *
  * Defaults: sourceDir = ".", outDir = "docs"
- * Put the generated `docs/` folder in your repo and set
- * GitHub Pages -> Deploy from branch -> main -> /docs
+ *
+ * Primary source is the Obsidian vault in `obsidian/` (YAML frontmatter,
+ * `> [!callout]` blocks, wikilinks). The older Notion export at the repository
+ * root is still built so that the "Old content" links keep working.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -20,13 +22,13 @@ const OUT = path.resolve(process.argv[3] ?? "docs");
 
 const IMG_EXT = new Set([".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp"]);
 const HEX32 = /\s+[0-9a-f]{32}$/i;
+const SKIP_DIRS = new Set(["node_modules", "docs", "scripts", ".obsidian"]);
 
 /* ------------------------------------------------------------------ helpers */
 
 const walk = (dir, acc = []) => {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (e.name.startsWith(".") || e.name === "node_modules" || e.name === "docs" || e.name === "scripts")
-      continue;
+    if (e.name.startsWith(".") || SKIP_DIRS.has(e.name)) continue;
     const p = path.join(dir, e.name);
     e.isDirectory() ? walk(p, acc) : acc.push(p);
   }
@@ -38,13 +40,75 @@ const slugify = (name) =>
     .replace(/\.md$/i, "")
     .replace(HEX32, "")
     .normalize("NFKD")
+    .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
+    .replace(/[_]+/g, "-")
     .replace(/[^\w\s-]/g, "")
     .trim()
-    .replace(/\s+/g, "-")
+    .replace(/[\s-]+/g, "-")
     .toLowerCase() || "page";
 
 const esc = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/* --------------------------------------------------- obsidian preprocessing */
+
+// `---\ntitle: ...\n---` at the top of a file.
+const stripFrontmatter = (raw) => {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+  if (!m) return { body: raw, meta: {} };
+  const meta = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = line.match(/^([A-Za-z_-]+):\s*(.*)$/);
+    if (kv) meta[kv[1].toLowerCase()] = kv[2].trim().replace(/^["']|["']$/g, "");
+  }
+  return { body: raw.slice(m[0].length), meta };
+};
+
+// `[[Target|Label]]` / `[[Target]]` / `![[Image]]` -> standard markdown.
+const expandWikilinks = (raw) =>
+  raw.replace(/(!?)\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g, (_m, bang, target, label) => {
+    const t = target.trim();
+    const text = (label ?? t).trim();
+    if (bang) return `![${text}](${encodeURI(t)})`;
+    const href = /\.[a-z0-9]+$/i.test(t) ? t : `${t}.md`;
+    return `[${text}](${encodeURI(href)})`;
+  });
+
+const CALLOUT_START = /^\s*>\s*\[!([A-Za-z-]+)\]([+-]?)/;
+
+// Obsidian callouts are written as blockquotes, but the export often drops the
+// `>` on continuation lines. Re-add it until a genuinely blank line so the
+// whole callout stays inside one blockquote.
+const normaliseCallouts = (raw) => {
+  const lines = raw.split(/\r?\n/);
+  const out = [];
+  let inside = false;
+  for (const line of lines) {
+    if (CALLOUT_START.test(line)) {
+      inside = true;
+      out.push(line.replace(/^\s+/, ""));
+      continue;
+    }
+    if (inside) {
+      if (!line.trim()) {
+        inside = false;
+        out.push("");
+        continue;
+      }
+      // Headings and dividers are never part of a callout — end it.
+      if (/^\s*(#{1,6}\s|(?:---|\*\*\*|___)\s*$)/.test(line)) {
+        inside = false;
+        out.push("");
+        out.push(line);
+        continue;
+      }
+      out.push(/^\s*>/.test(line) ? line.replace(/^\s+/, "") : `> ${line}`);
+      continue;
+    }
+    out.push(line);
+  }
+  return out.join("\n");
+};
 
 /* -------------------------------------------------------------- collect docs */
 
@@ -55,31 +119,48 @@ if (!mdFiles.length) {
   process.exit(1);
 }
 
-const rootFile =
-  mdFiles.find(
-    (f) => path.basename(f).replace(/\.md$/i, "") === "mathematical-reasoning-and-discrete-math"
-  ) ??
-  mdFiles.slice().sort(
-    (a, b) =>
-      a.split(path.sep).length - b.split(path.sep).length || a.length - b.length
-  )[0];
+const obsidianDir = path.join(SRC, "obsidian");
+const isObsidian = (f) => f.startsWith(obsidianDir + path.sep);
+const hasObsidian = mdFiles.some(isObsidian);
+
+// Home page: the shallowest file in the Obsidian vault (or overall, if absent).
+const depth = (f) => f.split(path.sep).length;
+const rootFile = mdFiles
+  .filter((f) => (hasObsidian ? isObsidian(f) : true))
+  .slice()
+  .sort((a, b) => depth(a) - depth(b) || a.length - b.length)[0];
+
+// The Notion export's own index page is superseded by the Obsidian home page.
+const buildFiles = mdFiles.filter(
+  (f) => f === rootFile || !hasObsidian || path.dirname(f) !== SRC
+);
 
 const pages = new Map(); // absolute md path -> page record
 const usedSlugs = new Set();
-for (const f of mdFiles) {
+for (const f of buildFiles) {
   const isRoot = f === rootFile;
-  let slug = isRoot ? "index" : slugify(path.basename(f));
+  const base = path.basename(f);
+  let slug = isRoot ? "index" : slugify(base);
   let n = 2;
-  while (usedSlugs.has(slug)) slug = `${slugify(path.basename(f))}-${n++}`;
+  while (usedSlugs.has(slug)) slug = `${slugify(base)}-${n++}`;
   usedSlugs.add(slug);
-  const raw = fs.readFileSync(f, "utf8");
+
+  const { body, meta } = stripFrontmatter(fs.readFileSync(f, "utf8"));
+  const raw = normaliseCallouts(expandWikilinks(body));
   const h1 = raw.match(/^#\s+(.+)$/m);
+  const title = (
+    meta.title ||
+    h1?.[1] ||
+    base.replace(/\.md$/i, "").replace(HEX32, "")
+  ).trim();
+
   pages.set(f, {
     file: f,
     slug,
     isRoot,
     raw,
-    title: (h1?.[1] ?? path.basename(f).replace(/\.md$/i, "").replace(HEX32, "")).trim(),
+    legacy: hasObsidian && !isObsidian(f),
+    title,
     href: `${slug}.html`,
   });
 }
@@ -103,12 +184,21 @@ for (const f of files) {
 }
 
 // KaTeX stylesheet + fonts, copied locally so the site works offline.
-const katexDist = path.dirname(new URL(import.meta.resolve("katex")).pathname);
-const katexRoot = path.resolve(katexDist, "..");
+// IMPORTANT: use the exact katex version the plugin renders with —
+// a CSS/renderer version mismatch breaks glyph positioning (e.g. \notin).
+const katexRoot = (() => {
+  // Resolve katex the same way the plugin does, so CSS matches the renderer.
+  const pluginPkg = new URL(import.meta.resolve("@vscode/markdown-it-katex/package.json")).pathname;
+  const nested = path.resolve(path.dirname(pluginPkg), "node_modules", "katex");
+  if (fs.existsSync(path.join(nested, "dist", "katex.min.css"))) return nested;
+  return path.resolve(path.dirname(new URL(import.meta.resolve("katex/package.json")).pathname), "..");
+})();
 fs.cpSync(path.join(katexRoot, "dist", "katex.min.css"), path.join(OUT, "assets", "katex.min.css"));
 fs.cpSync(path.join(katexRoot, "dist", "fonts"), path.join(OUT, "assets", "fonts"), { recursive: true });
 
 /* ------------------------------------------------------------- link rewrites */
+
+const tail2 = (p) => path.join(path.basename(path.dirname(p)), path.basename(p)).toLowerCase();
 
 const resolveTarget = (from, rawHref) => {
   const decoded = decodeURI(rawHref.split("#")[0].split("?")[0]);
@@ -117,20 +207,24 @@ const resolveTarget = (from, rawHref) => {
   const page = pages.get(abs);
   if (page) return page.href + hash;
   if (imageHref.has(abs)) return imageHref.get(abs);
-  // tolerate case / whitespace mismatches
-  const hit =
-    [...pages.values()].find((p) => path.basename(p.file) === path.basename(decoded)) ??
-    null;
+
+  // Obsidian paths do not always line up with where the assets actually live,
+  // so fall back to matching "<folder>/<file>" and then bare file names.
+  const imgKeys = [...imageHref.keys()];
+  const img2 = imgKeys.find((k) => tail2(k) === tail2(abs));
+  if (img2) return imageHref.get(img2);
+
+  const hit = [...pages.values()].find(
+    (p) => path.basename(p.file).toLowerCase() === path.basename(decoded).toLowerCase()
+  );
   if (hit) return hit.href + hash;
-  const img = [...imageHref.keys()].find((k) => path.basename(k) === path.basename(decoded));
+
+  const img = imgKeys.find((k) => path.basename(k).toLowerCase() === path.basename(decoded).toLowerCase());
   return img ? imageHref.get(img) : null;
 };
 
 /* --------------------------------------------------------------- md renderer */
 
-// Notion's math needs a little normalising before KaTeX sees it:
-// unicode operators become TeX commands, non-breaking spaces become spaces,
-// and multi-line display math is wrapped in `aligned` so `\\` keeps working.
 const MATH_UNICODE = [
   [/\u2209/g, "\\notin "],
   [/\u25a1/g, "\\square "],
@@ -157,7 +251,6 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use
   strict: false,
   errorColor: "#b3261e",
 });
-
 
 const renderPage = (page) => {
   const env = {};
@@ -210,20 +303,19 @@ const renderPage = (page) => {
   // Drop the leading H1 (the layout prints the page title itself).
   if (tokens[0]?.type === "heading_open" && tokens[0].tag === "h1") tokens.splice(0, 3);
 
-  // Notion uses `#`/`##` for in-page sections; demote one level so the page
-  // title stays the only H1, then build the table of contents.
+  // `#`/`##` mark in-page sections; demote one level so the page title stays
+  // the only H1, then build the table of contents.
   const demote = { h1: "h2", h2: "h3", h3: "h4", h4: "h5", h5: "h6", h6: "h6" };
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i];
     if (t.type !== "heading_open" && t.type !== "heading_close") continue;
-    const next = t.type === "heading_open" ? t : tokens[i];
-    next.tag = demote[next.tag] ?? next.tag;
+    t.tag = demote[t.tag] ?? t.tag;
     if (t.type === "heading_open" && (t.meta?.origTag === "h1" || t.meta?.origTag === "h2")) {
       headings.push({ id: t.meta.id, text: t.meta.text, level: t.tag });
     }
   }
 
-  const withCallouts = wrapCallouts(tokens);
+  const withCallouts = page.legacy ? wrapLegacyCallouts(tokens) : wrapObsidianCallouts(tokens, md, env);
   const withSections = wrapSections(withCallouts, md, env);
 
   return { html: md.renderer.render(withSections, md.options, env), headings };
@@ -233,20 +325,107 @@ const renderPage = (page) => {
 
 const htmlTok = (content) => ({ type: "html_block", tag: "", content, block: true, attrs: null, children: null });
 
-// Notion marks blocks with a standalone `***Definition***` style paragraph.
-const CALLOUT_RE = /^\*\*\*\s*(Definition|Definition continued|Theorem|Lemma|Corollary|Proposition|Proof|No proof|Exercise|Example|Remark|Notation)\s*\*\*\*:?\s*$/i;
-
-const calloutKind = (label) => {
-  const l = label.toLowerCase();
-  if (l.startsWith("definition") || l === "notation") return "definition";
-  if (l === "proof" || l === "no proof") return "proof";
-  if (l === "exercise") return "exercise";
-  if (l === "example" || l === "remark") return "note";
-  return "theorem";
+const kindOf = (label) => {
+  const l = label.trim().toLowerCase();
+  if (l.startsWith("definition") || l.startsWith("notation")) return "definition";
+  if (l.startsWith("proof") || l.startsWith("no proof")) return "proof";
+  if (l.startsWith("exercise")) return "exercise";
+  if (l.startsWith("solution")) return "solution";
+  if (l.startsWith("theorem") || l.startsWith("lemma") || l.startsWith("corollary") || l.startsWith("proposition"))
+    return "theorem";
+  if (l.startsWith("example") || l.startsWith("remark") || l.startsWith("note")) return "note";
+  return null;
 };
 
-// A callout runs from its marker to the next marker, heading, or divider.
-const wrapCallouts = (tokens) => {
+// Prefer the label ("***Theorem***") when it names a block kind, otherwise the
+// callout type ("[!note]"), otherwise treat it as a plain note.
+const calloutKind = (label, type = "") => kindOf(label) ?? kindOf(type) ?? "note";
+
+const stripEmphasis = (s) =>
+  s
+    .replace(/^\**\s*|\s*\**$/g, "")
+    .replace(/[*_]{1,3}/g, "")
+    .trim();
+
+const titleCase = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+// Obsidian: `> [!definition] ***Definition***` (a `-`/`+` suffix on the type
+// makes it collapsible: `-` closed, `+` open).
+const wrapObsidianCallouts = (tokens, mdInst, env) => {
+  const out = [];
+  const closers = []; // stack of html strings for matching blockquote_close
+  const OPEN_RE = /^\[!([A-Za-z-]+)\]([+-]?)\s*(.*)$/;
+
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+
+    if (t.type === "blockquote_open") {
+      const pOpen = tokens[i + 1];
+      const inline = tokens[i + 2];
+      const m =
+        pOpen?.type === "paragraph_open" && inline?.type === "inline"
+          ? inline.content.split("\n")[0].match(OPEN_RE)
+          : null;
+
+      if (m) {
+        const [, type, fold, rest] = m;
+        const rawLabel = stripEmphasis(rest) || titleCase(type);
+        const kind = calloutKind(stripEmphasis(rest), type);
+        const labelHtml = mdInst.renderInline(fixMath(rawLabel), env);
+
+        // Remove the marker line from the first paragraph.
+        const remainder = inline.content.split("\n").slice(1).join("\n");
+        if (remainder.trim()) {
+          inline.content = remainder;
+          inline.children = null;
+          mdInst.inline.parse(inline.content, mdInst, env, (inline.children = []));
+        } else {
+          tokens.splice(i + 1, 3); // drop the now-empty paragraph
+        }
+
+        if (fold) {
+          out.push(
+            htmlTok(
+              `<details class="callout callout-${kind} callout-fold"${fold === "+" ? " open" : ""}>` +
+                `<summary class="callout-label">${labelHtml}<span class="callout-chevron" aria-hidden="true"></span></summary>` +
+                `<div class="callout-body">`
+            )
+          );
+          closers.push("</div></details>");
+        } else {
+          out.push(
+            htmlTok(
+              `<section class="callout callout-${kind}"><p class="callout-label">${labelHtml}</p><div class="callout-body">`
+            )
+          );
+          closers.push("</section:callout>");
+        }
+        continue;
+      }
+
+      closers.push(null);
+      out.push(t);
+      continue;
+    }
+
+    if (t.type === "blockquote_close") {
+      const c = closers.pop();
+      if (c === "</section:callout>") out.push(htmlTok("</div></section>"));
+      else if (c) out.push(htmlTok(c));
+      else out.push(t);
+      continue;
+    }
+
+    out.push(t);
+  }
+  return out;
+};
+
+// Notion export: a standalone `***Definition***` paragraph opens a block that
+// runs to the next marker, heading, or divider.
+const LEGACY_RE = /^\*\*\*\s*(Definition|Definition continued|Theorem|Lemma|Corollary|Proposition|Proof|No proof|Exercise|Example|Remark|Notation)\s*\*\*\*:?\s*$/i;
+
+const wrapLegacyCallouts = (tokens) => {
   const out = [];
   let open = false;
   const close = () => {
@@ -260,7 +439,7 @@ const wrapCallouts = (tokens) => {
     const t = tokens[i];
     const inline = tokens[i + 1];
     const marker =
-      t.type === "paragraph_open" && inline?.type === "inline" ? inline.content.match(CALLOUT_RE) : null;
+      t.type === "paragraph_open" && inline?.type === "inline" ? inline.content.match(LEGACY_RE) : null;
 
     if (marker) {
       close();
@@ -273,7 +452,7 @@ const wrapCallouts = (tokens) => {
           )}</p><div class="callout-body">`
         )
       );
-      i += 2; // skip paragraph_open / inline / paragraph_close
+      i += 2;
       continue;
     }
 
@@ -284,7 +463,7 @@ const wrapCallouts = (tokens) => {
   return out;
 };
 
-// Top-level chapter sections (Notion's `#`, demoted to h2) become <details>.
+// Top-level chapter sections (source `#`, demoted to h2) become <details>.
 const wrapSections = (tokens, mdInst, env) => {
   const out = [];
   let open = false;
@@ -315,21 +494,24 @@ const wrapSections = (tokens, mdInst, env) => {
   return out;
 };
 
-
-
 /* ------------------------------------------------------------------- layout */
 
 const rootPage = pages.get(rootFile);
 const chapters = [...pages.values()].filter((p) => !p.isRoot);
 
 // Order the sidebar the way the home page links to the chapters, then the rest.
-const linkOrder = [...rootPage.raw.matchAll(/\]\(([^)]+\.md)\)/g)]
+const linkOrder = [...expandWikilinks(rootPage.raw).matchAll(/\]\(([^)]+\.md)\)/g)]
   .map((m) => resolveTarget(rootFile, m[1]))
-  .filter(Boolean);
+  .filter(Boolean)
+  .map((h) => h.split("#")[0]);
+// The sidebar lists the current (Obsidian) chapters only; the superseded
+// Notion pages stay reachable from the home page's "Old content" list.
 const nav = [
   ...linkOrder.map((href) => chapters.find((c) => c.href === href)).filter(Boolean),
   ...chapters.filter((c) => !linkOrder.includes(c.href)),
-].filter((c, i, a) => a.indexOf(c) === i);
+]
+  .filter((c) => !c.legacy)
+  .filter((c, i, a) => a.indexOf(c) === i);
 
 const siteTitle = rootPage.title;
 
@@ -350,7 +532,7 @@ const layout = ({ page, body, headings }) => {
     : "";
 
   const idx = nav.findIndex((c) => c.slug === page.slug);
-  const prev = idx > 0 ? nav[idx - 1] : page.isRoot ? null : null;
+  const prev = idx > 0 ? nav[idx - 1] : null;
   const next = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
   const pager =
     idx >= 0
@@ -363,6 +545,7 @@ const layout = ({ page, body, headings }) => {
 
   const description = (page.raw
     .replace(/^#.*$/gm, "")
+    .replace(/^>.*$/gm, "")
     .replace(/\$\$[\s\S]*?\$\$/g, "")
     .replace(/[#*_>`$\[\]()]/g, " ")
     .replace(/\s+/g, " ")
