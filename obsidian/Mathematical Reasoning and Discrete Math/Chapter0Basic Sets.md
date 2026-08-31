@@ -802,7 +802,7 @@ However, there is a fact which we will accept as fundamental throughout this cou
   
 
 > [!theorem] ***Theorem***
- > Let $X\subseteq \Bbb Z$ be nonempty.
+> Let $X\subseteq \Bbb Z$ be nonempty.
 > 
 > If *X* is bounded below, then *X* has a minimum.
 > 
