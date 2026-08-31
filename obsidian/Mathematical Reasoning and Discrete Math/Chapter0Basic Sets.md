@@ -3,16 +3,11 @@ title: "Chapter 0: The Bare Necessities of Sets and Functions"
 ---
 > [!note]- TODOs
 > I still need to 
-> * Add extra exercises.
-> * Migrate images
+> * Add extra exercises and solutions to existing exercises.
 
-It is hard to discuss any amount of mathematics in a serious and rigorous way, without having a certain minimum understanding of sets and set notation.
+Almost any serious mathematical subject requires a minimum understand of sets.  Here we will discuss that minimum.  
 
-  
-
-We will return to discussing set theory is a deeper, even axiomatic way, later in this course. For now we will introduce just enough set theory to be able to use it while studying logic.
-
-  
+We will return to discussing set theory in a deeper, axiomatic way, later in this course. 
 
 # Set Extensionality
 
