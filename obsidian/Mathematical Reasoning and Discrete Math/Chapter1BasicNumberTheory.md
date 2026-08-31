@@ -159,21 +159,29 @@ Here’s another example.
 
 > [!exercise] ***Exercise***
 > 
-> Suppose that *a* and *b* are natural numbers such that $a|b$ and $b|a$.  
+> Suppose that *a* and *b* are natural numbers such that $a\mid b$ and $b\mid a$.  
 > 
 > Prove that $a=b$.
 > 
-> > [!note]-  Solution
-> > TODO
+> > [!note]- Solution
+> > Since $a\mid b$, there is a natural number $m$ such that $b=am$. Since $b\mid a$, there is a natural number $n$ such that $a=bn$.
+> > 
+> > Substituting $b=am$ into $a=bn$ gives $a=amn$. Since $a$ is a natural number, $a>0$, so $mn=1$. The only natural numbers whose product is 1 are 1 and 1. Thus $m=n=1$, and therefore $a=b$.
+> > 
+> > $\Box$
 
 > [!exercise] ***Exercise***
 > 
-> Suppose that $a,b,c$ are natural numbers such that $a|b$ and $a|c$.  
+> Suppose that $a,b,c$ are natural numbers such that $a\mid b$ and $a\mid c$.  
 > 
-> Prove that $a|b+c$.
+> Prove that $a\mid b+c$.
 > 
 > > [!note]- Solution
-> > TODO
+> > Since $a\mid b$, there is a natural number $m$ such that $b=am$. Since $a\mid c$, there is a natural number $n$ such that $c=an$.
+> > 
+> > Therefore $b+c=am+an=a(m+n)$. Since $m+n$ is a natural number, it follows from the definition of divisibility that $a\mid b+c$.
+> > 
+> > $\Box$
 
 # Quotient and Remainder
 
