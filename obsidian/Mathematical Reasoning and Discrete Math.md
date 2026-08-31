@@ -4,21 +4,21 @@ author: Adam Frank
 ---
 > [!note]- TODOs
 > I still need to 
-> * Find a way to incorporate feedback.
 > * Finish remaining chapters until completing the discussion of number theory.
 > * Add videos.
+> * Clean the bottom of the main page.
 
-Welcome to this course in mathematical reasoning!  This website delivers a one-quarter semester course which, briefly, covers naive set theory, logic, and number theory.  There will be a part 2, assuming I eventually finish part 1.  
+# Welcome and Feedback
+
+Welcome to this course in mathematical reasoning!  This website delivers a one-quarter semester course.  Put briefly, this semester covers naive set theory, logic, and number theory.  There will be a part 2, assuming I eventually finish part 1.  
 
 If you see mistakes in this website, please let me know!  You can open an issue at the GitHub repo: [GitHub Math Reason](https://www.github.com/axiomtutor/mathreason).  
 
-Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  
-
-Feedback from people with a greater background in mathematics, who already know discrete math, is also welcome.  But if this describes you, then please keep in mind that I am intentionally re-structuring the presentation of this subject.  The entire point is for it to be different from what you're used to.  I cover much of the same material as a common course in discrete mathematics, but in an order and presentation that I hope makes more sense to a student than the usual presentation.  
+Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  Just remember that the more specific and constructive your feedback is, the more I am able to act on it.  
 
 # Introduction  
 
-This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.
+This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.  I especially have in mind math majors, or people who intend to study advanced and proof-based mathematics.
 
 The subject of this course is really two-fold: It has both domain knowledge, as well as mathematical technique.
 
@@ -46,11 +46,7 @@ The domain knowledge that this course covers includes
 
 - Algorithms
 
-  
-
-But besides learning substantive topics in mathematics, this course aims to teach how to reason about mathematics. That includes parallel lessons in
-
-  
+But besides learning substantive topics in mathematics, this course also aims to teach how to reason about mathematics. Therefore this course includes parallel lessons in
 
 - Direct and indirect proof
 
@@ -68,11 +64,15 @@ But besides learning substantive topics in mathematics, this course aims to teac
 
 - Proof of correctness
 
-  
+This is similar to many courses in discrete mathematics at many universities.  
 
-(I may need to update this list as I develop the course.)
+Here is how this text differs from others with similar topics.
 
-  
+* This text has a significantly larger emphasis on formal and informal logic.
+* Where possible I try to explain not just the proofs of theorems, but *how to write* the proofs of theorems.  
+* The target audience is assumed to have a future studying proof-based mathematics.
+* We use several ideas that are more common in computer science than in mathematics.  For a few examples: types, data structres, the lambda calculus.
+* This resource provides an "theorem assistant".  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.
 
 # Content
 
@@ -93,7 +93,7 @@ But besides learning substantive topics in mathematics, this course aims to teac
 
 ---
 
-Old content:
+Old content (do not look, they will eventually be deleted):
 
   
 

@@ -143,7 +143,7 @@ How do we know what the domain of discourse is, at any moment? It is usually und
 >
 > The expression $\exists xP(x)$ is called the **existential quantification of *P* over *x***.
 >
-> Any proposition that is formed as a predicate formula, or a predicate formulas with universal or existential quantification over all of its variables, is called a **first-order formula** (or just **formula** for short). #TODO
+> Any proposition that is formed as a predicate formula, or a predicate formula with universal or existential quantification over all of its variables, is called a **first-order formula** (or just **formula** for short). #TODO
 
 - Note, this only defines a narrowly restricted case.
     
@@ -198,11 +198,11 @@ To give an example, suppose the domain is the set of these objects:
 
 ![image.png](Chapter%205%20First-order%20Logic/image%203.png)
 
-Let the predicate *R* denote a red object, *B* blue, *W* white, *K* black, *C* cone, *S* sphere, *C* cube, *Y* cylinder, *T* tetrahedron, and *P* a rectangular prism.
+Let the predicate *R* denote a red object, *B* blue, *W* white, *K* black, *C* cone, *S* sphere, *U* cube, *Y* cylinder, *T* tetrahedron, and *P* a rectangular prism.
 
-Then $\forall x R(x)^{\mathfrak{M}}=\mathfrak{F}$ because not all of the objects in the domain are red.
+Then $(\forall x R(x))^{\mathfrak{M}}=\mathfrak{F}$ because not all of the objects in the domain are red.
 
-However $\exists xR(x)^{\mathfrak{M}}=\mathfrak{T}$ because some object in the domain is red.
+However $(\exists xR(x))^{\mathfrak{M}}=\mathfrak{T}$ because some object in the domain is red.
 
 > [!exercise] ***Exercise***
 >
@@ -270,7 +270,7 @@ So it’s true for the red cube!
 >
 > Now let *u* be the white cylinder. Evaluate $(K(u)\to W(u))^{\mathfrak{M}}$.
 >
-> Next, explain why $(\forall x (K(x)\to W(x))^{\mathfrak{M}} = \mathfrak{T}$.
+> Next, explain why $(\forall x (K(x)\to W(x)))^{\mathfrak{M}} = \mathfrak{T}$.
 
 > [!exercise] ***Exercise***
 >
@@ -483,7 +483,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
     $$
     \begin{aligned}
      (N(a,b)\to L(a,b))^{\mathfrak{M}} &= N(a,b)^{\mathfrak{M}} \leadsto L(a,b)^{\mathfrak{M}} \\
-     &= \mathfrak{T}\leadsto \mathfrak{T} \\
+     &= \mathfrak{F}\leadsto \mathfrak{T} \\
      &= \mathfrak{T}
     \end{aligned}
     $$
@@ -552,7 +552,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(d,b)\to L(a,b))^{\mathfrak{M}} &= N(d,b)^{\mathfrak{M}} \leadsto L(d,b)^{\mathfrak{M}} \\
+      (N(d,b)\to L(d,b))^{\mathfrak{M}} &= N(d,b)^{\mathfrak{M}} \leadsto L(d,b)^{\mathfrak{M}} \\
      &= \mathfrak{F}\leadsto \mathfrak{T} \\
      &= \mathfrak{T}
     \end{aligned}
@@ -563,7 +563,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
     $$
     \begin{aligned}
      (N(d,c)\to L(d,c))^{\mathfrak{M}} &= N(d,c)^{\mathfrak{M}} \leadsto L(d,c)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
+     &= \mathfrak{T}\leadsto \mathfrak{T} \\
      &= \mathfrak{T}
     \end{aligned}
     $$
@@ -583,14 +583,14 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
     $$
     \begin{aligned}
      (N(d,e)\to L(d,e))^{\mathfrak{M}} &= N(d,e)^{\mathfrak{M}} \leadsto L(d,e)^{\mathfrak{M}} \\
-     &= \mathfrak{T}\leadsto \mathfrak{T} \\
+     &= \mathfrak{F}\leadsto \mathfrak{T} \\
      &= \mathfrak{T}
     \end{aligned}
     $$
 
     As we see, when $x\mapsto d$, then for every possible mapping of *y*, we get a true proposition.
 
-    Therefore $(\forall y(N(a,y)\to L(a,y)))^{\mathfrak{M}} = \mathfrak{T}$.
+    Therefore $(\forall y(N(d,y)\to L(d,y)))^{\mathfrak{M}} = \mathfrak{T}$.
 
 - $x\mapsto e$
 
@@ -724,7 +724,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >     \text{Free}(f(t_1,...,t_n)) = \text{Free}(t_1)\cup \dots \cup \text{Free}(t_n)
 >     $$
 >
-> - If $P\in \text{Preds}$ and $n=\text{Arity}$, and if $t_1,…,t_n\in\text{Terms}$, then
+> - If $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and if $t_1,…,t_n\in\text{Terms}$, then
 >
 >     $$
 >     \text{Free}(P(t_1,...,t_n)) = \text{Free}(t_1)\cup\cdots \cup \text{Free}(t_n)
@@ -764,7 +764,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > f^{\mathfrak{I}}:\mathfrak{U}^n\to\mathfrak{U}
 > $$
 >
-> Moreover, let $P\in \text{Preds}$ and $n=\text{Arity}$. The expression $P^{\mathfrak{I}}$ is the **interpretation of *P***, which denotes the subset of $\mathfrak{U}^n$ to which *P* is mapped.
+> Moreover, let $P\in \text{Preds}$ and $n=\text{Arity}(P)$. The expression $P^{\mathfrak{I}}$ is the **interpretation of *P***, which denotes the subset of $\mathfrak{U}^n$ to which *P* is mapped.
 >
 > $$
 > P^{\mathfrak{I}} \subseteq \mathfrak{U}^n
@@ -803,7 +803,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > We use $\mathfrak{M},v\not\vDash\phi$ to express that $\mathfrak{M}, v\vDash \phi$ does not hold.
 >
-> - If $P\in\text{Preds}$ and $n=\text{Arity}$ and $t_1,…,t_n\in\text{Terms}$, and if we have
+> - If $P\in\text{Preds}$ and $n=\text{Arity}(P)$ and $t_1,…,t_n\in\text{Terms}$, and if we have
 >
 >     $$
 >     (\overline v(t_1),...,\overline v(t_n))\in P^{\mathfrak{I}}
