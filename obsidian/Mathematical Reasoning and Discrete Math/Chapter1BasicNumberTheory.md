@@ -3,13 +3,13 @@ title: "Chapter 1: A Case Study in Number Theory"
 ---
 
 
-This chapter is dedicated to explaining the very basics of number theory.  
+This chapter is a case study in elementary number theory.  
 
 In a course in mathematical reasoning, this might be strange: Shouldn’t we first study logic, so that we may know how to reason? And then study sets, so that we have a foundation in an elementary subject which is used by all other subjects?  And then we may choose to study number theory, or analysis, or other subjects which typically require no other prerequisites?
 
 I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having an intuitive example *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
 
-Therefore this lesson in number theory is a case study. It depends on learning logic and sets at an intuitive and natural level, so that we may see some basic results in number theory—one of the most important, being the GCD integer combination theorem.
+Therefore this lesson in number theory is a case study. It assumes only the intuitive understanding of logic and sets developed in the preceding chapter, so that we can study some basic results in number theory, including the GCD integer combination theorem.
 
 # Divisibility
 
@@ -26,13 +26,13 @@ For example, 4 can be written as the product $2\cdot 2$.  In fact, technically, 
 
 > [!definition] ***Definition***
 > 
-> If *n* is a natural number, and $a,b$ some two natural numbers such that $n=ab$, then we say any of the following equivalent statements:
+> If *n* is a natural number, and $a,b$ are natural numbers such that $n=ab$, then the following statements are equivalent:
 > 
 > - *a* and *b* are **factors** of *n*.
 > - *a* and *b* **divide** *n*.
 > - *n* is a **multiple** of *a*, and is a multiple of *b*.
 > 
-> When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
+> When *a* divides *n*, we write $a\mid n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
 > 
 > For each natural number *n*, we will say that *n* and 1 are **trivial divisors** or **trivial factors** of *n*.
 > 
@@ -70,9 +70,9 @@ But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 
 Let us see a first proof of a theorem.
 
-> [!definition] ***Theorem***
+ > [!theorem] ***Theorem***
 >
->Let *a* and *n* be any two natural numbers.
+> Let *a* and *n* be any two natural numbers.
 >
 >$a|n$ if and only if $\frac n a$ is a natural number.
 
@@ -179,7 +179,7 @@ Here’s another example.
 
 > [!definition] ***Definition***
 > 
-> Let *x* be an integer and $d > 0$ an integer.  Let *q* and *r* be the unique integers satisfying 
+ > Let *x* be an integer and *d* a positive integer. Let *q* and *r* be the unique integers satisfying 
 > 
 > $$
 > x = qd+r, \quad 0\le r<d
@@ -339,7 +339,7 @@ In the proof below we will proceed in the following order.
 
 > [!exercise] ***Exercise***
 > 
-> Let $x=10$ and $d=3$.  
+> Let $x=10$ and $d=3$. 
 > 
 > (Part 1.)
 > 
@@ -363,9 +363,9 @@ In the proof below we will proceed in the following order.
 
 > [!exercise] ***Exercise***
 > 
-> Let $x,d\in\Bbb Z$.
+> Let $x\in\Bbb Z$ and $d\in\Bbb Z_{>0}$.
 > 
-> Show that $d|x$ if and only if $x\mod d = 0$.
+> Show that $d\mid x$ if and only if $x\mathbin{\operatorname{mod}}d = 0.
 
 > [!definition] ***Definition***
 > 
@@ -373,7 +373,7 @@ In the proof below we will proceed in the following order.
 
 > [!theorem] ***Theorem***
 > 
-> For any integer, *n*, we have that *n* is either even or odd, but not both.
+> For any integer *n*, *n* is either even or odd, but not both.
 
 > [!proof] ***Proof***
 > 
@@ -405,7 +405,7 @@ In the proof below we will proceed in the following order.
 
 > [!theorem] ***Theorem***
 > 
-> The product of an even and odd integer is even.
+> The product of an even integer and an odd integer is even.
 
 > [!proof] ***Proof***
 > 
@@ -464,7 +464,7 @@ The above demonstrates just one use of the idea of the following definition.
 
 > [!definition] ***Definition***
 > 
-> Let $a,b\in\Bbb Z$.  For any integer $d\in\Bbb Z$ we say that *d* is a **common divisor** of *a* and *b*, if both $d|a$ and $d|b$.
+> Let $a,b\in\Bbb Z$. For any integer $d\in\Bbb Z$, we say that *d* is a **common divisor** of *a* and *b* if both $d\mid a$ and $d\mid b$.
 > 
 > If *a* and *b* are not both zero, then we say that an integer $d\in\Bbb N$ is **the greatest common divisor** of *a* and *b*, if 
 > 
@@ -472,7 +472,7 @@ The above demonstrates just one use of the idea of the following definition.
 > d = \max\{e\in\Bbb N:e\text{ is a common divisor of $a$ and $b$}\}
 > $$
 > 
-> When *d* is the greatest common divisor of *a* and *b* we write $d = (a,b)$ or $d = \text{GCD}(a,b)$.
+> When *d* is the greatest common divisor of *a* and *b*, we write $d=\gcd(a,b)$.
 > 
 > If $(a,b) = 1$ then we say that *a* and *b* are **coprime**.
 
@@ -509,7 +509,7 @@ The above demonstrates just one use of the idea of the following definition.
 
 > [!definition] ***Definition***
 > 
-> For any $x,y\in\Bbb Z$ we say that $ax+by$ is an **integer combination of *x* and *y***, for every $a,b\in \Bbb Z$.  
+> For any $x,y\in\Bbb Z$, an expression $ax+by$, where $a,b\in\Bbb Z$, is called an **integer combination of *x* and *y***.  
 > 
 > The **set of all integer combinations of *x* and *y*** is 
 > 
@@ -541,10 +541,10 @@ $$
 > 
 > Let $x,y\in\Bbb Z$, not both equal to zero.
 > 
-> Define the set 
-> 
-> $$
-> L=\{ax+by:a,b\in\Bbb Z, ax+by>0\}
+> Define the set
+>
+> $
+> L=\{ax+by:a,b\in\Bbb Z,\ ax+by>0\}
 > $$
 > 
 > > [!note]- $L$ is nonempty bounded below integers
@@ -653,11 +653,11 @@ $$
 
 The prime numbers are perhaps *the* object of study in number theory.  
 
-> [!definition] ***Definition***
+ > [!definition] ***Definition***
+>
+> For each $n\ge2$, we say that a positive integer $m$ is a **trivial divisor of *n*** if $m=1$ or $m=n$.
 > 
-> For each $n\in\Bbb Z$ we say that $m\in\Bbb Z$ is a **trivial divisor of *n*** if $m=1$ or $m=n$.
-> 
-> If $n\ge 2$ and every divisor of *n* is trivial, then we say that *n* is **prime**.  If *n* is not prime then we say that it’s **composite**.
+> If $n\ge2$ and every positive divisor of *n* is trivial, then we say that *n* is **prime**. If $n\ge2$ is not prime, then we say that it is **composite**.
 
 For example, 2 is prime since its only divisors are 1 and 2, which are trivial.  3 is also prime.  4 is not because $4=2\cdot 2$ and 2 is not a trivial divisor of 4.
 
@@ -683,7 +683,7 @@ The following is a fundamental fact about prime numbers, which deeply characteri
 > 
 > Let *p* be a prime and $a,b\in\Bbb Z$ such that $p | ab$.  
 > 
-> Then either $p | a$ or $p|b$.  
+> Then either $p\mid a$ or $p\mid b$.  
 
 The following proof uses a particular way of proving an “or” statement:  In order to prove $p|a$ or $p|b$, we prove that if $p \not| \ \ a$ then $p|b$.
 
@@ -691,11 +691,11 @@ We will study logical patterns like this one in the next chapter.
 
 > [!proof] ***Proof***
 > 
-> Suppose that *p* is prime and $a,b\in\Bbb Z$ such that $p|ab$.  
+> Suppose that *p* is prime and $a,b\in\Bbb Z$ such that $p\mid ab$.  
 > 
 > Suppose that $p\not| \ \ a$.  
 > 
-> Since *p* is prime, then its only divisors are 1 or *p*.  Therefore $(p,a)$ is 1 or *p*.
+> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $(p,a)$ is 1 or *p*.
 > 
 > But since $p\not| \ \ a$ then $(p,a) = 1$.
 > 
