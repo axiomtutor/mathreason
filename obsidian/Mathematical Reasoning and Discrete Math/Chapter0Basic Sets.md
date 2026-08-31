@@ -34,7 +34,7 @@ You can think of this like a network of concepts.  Say that concept *A* is defin
 > If the chain does not go on infinitely, then we arrive at a concept which is not defined. We must accept this horn of the dilemma.
 
   
-Although we cannot define "sets" formally, we can gesture at some intuitions. A set is mean to be a “collection” or a “gathering together” of some disparate objects.
+Although we cannot define "sets" formally, we can gesture at some intuitions. A set is meant to be a “collection” or a “gathering together” of some disparate objects.
 
   
 
@@ -58,7 +58,7 @@ In the example above, -1 is in the set but 0 is not.
 
   
 
-To express membership, we write and infix $\in$, like below.
+To express membership, we write the infix symbol $\in$, like below.
 
   
 
@@ -265,7 +265,7 @@ You might have thought “but I see seven elements”.
 Well yeah, but 1 is not in *X*. Rather, $1\in\{1,2\}$ and $\{1,2\} \in X$.  And yet $1\notin X$.
 
 
-In jargon, this means "set membership is not transitive".  We will discuss the idea of "transitivity" more later.
+In jargon, this means that "set membership is not transitive".  We will discuss the idea of "transitivity" more later.
 
   
 
@@ -373,7 +373,7 @@ And so on.  In this way we can confirm that $X = \{2,4,6,...\}$,
 > \{x\in \Bbb Z: x^2-2x > 0\}
 > $$
 > > [!note]- ***Solution***
-> > -1 and 1/2.  Of course others are possible as well.
+> > -1 and -2.  Of course others are possible as well.
 
   
 
@@ -438,7 +438,7 @@ The important point here is that:
 > That is to say: Determine two elements of *S* which are larger than 26.
 > 
 > > [!note]- ***Solution***
-> > TODO
+> > The next two values of $x$ are 6 and 7, giving $6^2+1=37$ and $7^2+1=50$. Thus two more elements are 37 and 50.
 
   
 
@@ -763,7 +763,7 @@ $$
 > $$
 > b\le a
 > $$
-> We say that *a* is **the minimum** of *X* if *a* is a lower bound and also $a\in X$.
+> We say that *a* is **the minimum** of *X* if *a* is a lower bound of *X* and also $a\in X$.
 > 
 > We say that *a* is **the maximum** of *X* if *a* is an upper bound and also $a\in X$.
 > 
@@ -802,7 +802,7 @@ However, there is a fact which we will accept as fundamental throughout this cou
   
 
 > [!theorem] ***Theorem***
-> Let $X\subseteq \Bbb Z$.
+ > Let $X\subseteq \Bbb Z$ be nonempty.
 > 
 > If *X* is bounded below, then *X* has a minimum.
 > 
@@ -858,7 +858,7 @@ $$[5..9] = \{5,6,7,8,9\}$$
 > We further extend this notation to allow for infinite sets, 
 > $$ \begin{aligned}
 > \ [a..\infty) &= \{a,a+1,...\} \\
-> &=\{x\in\Bbb Z: a < x\}
+> &=\{x\in\Bbb Z: a\le x\}
 > \end{aligned} 
 > $$
 > and 
@@ -899,7 +899,7 @@ We will also use intervals of rational and real numbers.  For these, we will use
 > and the **out-in interval from *a* to *b*** is 
 > $$[a,b) = \{x\in \Bbb R: a\le x < b\}$$
 > 
-> We further extend these to sets with up upper or lower bound, in the same way as with integer intervals.
+> We further extend these to sets with an upper or lower bound, in the same way as with integer intervals.
 > 
 > In every case, we call *a* the **left end-point** of the interval, and *b* the **right end-point**.
 
@@ -1020,7 +1020,7 @@ We will use bracket notation to reference the indices of a list.  So for example
 > $$
 > A\times B = \{(a,b):a\in A, b\in B\}
 > $$
-> More generally if we have an *n* sets, $A_1,A_2,…,A_n$, then their **set product** is
+> More generally, if we have *n* sets, $A_1,A_2,\dots,A_n$, then their **set product** is
 > $$
 > A_1\times A_2\times \cdots\times A_n = \\
 > \{(a_1,a_2,...,a_n): a_1\in A_1, ...,a_n\in A_n\}
@@ -1066,9 +1066,9 @@ $$
 
   
 
-Note that it is not accident that $A\times B\times C$ has four elements, and that $2\cdot 2\cdot 1 = 4$. That is to say, the number of elements in the set product, is the same as taking the number of elements in each set and multiplying them together.
+Note that it is not an accident that $A\times B\times C$ has four elements, and that $2\cdot 2\cdot 1 = 4$. That is to say, the number of elements in the set product, is the same as taking the number of elements in each set and multiplying them together.
 
-This fact generalizes: If the number of elements in $A_1$ is $n_1$, and the number of elements in $A_2$ is $n_2$, and so on, then the number of elements in $A_1\times A_2\times \cdots A_{n_m}$ is
+This fact generalizes: If the number of elements in $A_1$ is $n_1$, and the number of elements in $A_2$ is $n_2$, and so on, then the number of elements in $A_1\times A_2\times \cdots\times A_m$ is
 
   
 
@@ -1213,13 +1213,13 @@ Sometimes we like to write a set of real numbers using interval notation. In thi
 
 On the other hand, the function $g(x)=\frac 1 x$ has domain equal to all real numbers *except* for $x=0$. That is to say, this function has one real number not in its domain, because $\frac 1 0$ is undefined.
 
-The best way to represent this domain is $$\Bbb R\smallsetminus \{0\}$$
+The best way to represent this domain is $\Bbb R\smallsetminus\{0\}$.
 
 If we wish to express this domain in interval notation (which students are often taught to do in high school, so we might as well connect that to what we're doing here), then we would write $(-\infty,0)\cup (0,\infty)$.  But clearly this is much more notation than just $\Bbb R\smallsetminus\{0\}$, and therefore we prefer to use the simpler expression.
 
 Let’s see another example. Assuming that we’re sticking to real numbers, the function $h(x)=\sqrt x$ has domain equal to all nonnegative real numbers. That is to say, its domain is $\Bbb R^{\ge 0}$. This is because there is no real square root of negative numbers.
 
-You can identify the domain of a function by looking at its graph. For example, in the graph above for $f(x)=x^2+1$ has no “gaps” in it—you can set *x* to anything and find a corresponding *y* value on the graph.
+You can identify the domain of a function by looking at its graph. For example, the graph above for $f(x)=x^2+1$ has no “gaps” in it—you can set *x* to anything and find a corresponding *y* value on the graph.
 
 Here is the graph for $g(x)=\frac 1 x$.
 
@@ -1254,7 +1254,7 @@ In many US high schools, the word "range" is often used in an ambiguous way.  Th
 
 	The least *y* value you can identify in this graph is at (0,1), where the *y*-value is 1.
 
-	For every number above 1, you can find a this *y* value on the graph.
+	For every number above 1, you can find this *y*-value on the graph.
 
 	So by this definition, the range is $[1,\infty)$.
 
@@ -1280,7 +1280,7 @@ According to these definitions, therefore the range of *f* is $[1,\infty)$ and t
 
   
 
-Let’s see the range for the other functions that we’ve been describing. If you look back at the graph of $g(x)=\frac 1 x$, it should be clear that the range is $(-\infty,\infty)$. If you look at the graph of $h(x)=\sqrt x$ it should be clear that the range is $[0,\infty)$.
+Let’s see the range for the other functions that we’ve been describing. If you look back at the graph of $g(x)=\frac 1 x$, it should be clear that the range is $\Bbb R\smallsetminus\{0\}$. If you look at the graph of $h(x)=\sqrt x$ it should be clear that the range is $[0,\infty)$.
 
   
 
@@ -1301,7 +1301,7 @@ I mean, the range seems natural, precisely defined, and descriptive of what the 
 
   
 
-The codomain can be just *any* set bigger than the range. That seems less natural, less precise, and less descriptive. Why even bother with this concept?
+The codomain is a specified set that contains every output of the function; it need not be strictly bigger than the range. That seems less natural, less precise, and less descriptive. Why even bother with this concept?
 
   
 
@@ -1318,4 +1318,4 @@ If *f* is a function with domain *A* and codomain *B*, we will write $f:A\to B$.
   
 
 > [!exercise] ***Exercise***
-> Look back at the previous exercise, which asking you to find the domains of several functions. Write the domain and range in the notation introduce here, for each function.
+> Look back at the previous exercise, which asked you to find the domains of several functions. Write each function using the notation introduced here, specifying its domain and a possible codomain.
