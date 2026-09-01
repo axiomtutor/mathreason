@@ -4,7 +4,11 @@ title: "Chapter 1: A Case Study in Number Theory"
 
 This chapter is a case study in elementary number theory.  
 
-In a course in "mathematical reasoning", this might be strange: Shouldn’t we first study logic, so that we may know how to reason? And then study sets, so that we have the foundation which is used by all other subjects?  And then we may choose to study number theory, or analysis, or other subjects?
+In a course in "mathematical reasoning", it might seem strange to begin with number theory.  Shouldn’t we first study logic, so that we may know how to reason? 
+
+Once we can reason, we can apply these skills to reason about sets.  
+
+Once we understand sets, we can apply these skills to reason about all the other mathematical subjects?
 
 I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having intuitive examples *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
 
@@ -263,7 +267,7 @@ In the proof below we will proceed in the following order.
 > > Let 
 > > 
 > > $$
-> > S = \{x-qd: q\in\Bbb Z, x-qd \ge 0\}
+> > S = \{x-qd: q\in\Bbb Z, x-qd > 0\}
 > > $$
 > > 
 > > > [!note]- *S* explained.
@@ -272,7 +276,9 @@ In the proof below we will proceed in the following order.
 > > >     
 > > >    Suppose for instance that $x=17$ and $d=4$.  
 > > >     
-> > >    Then consider every positive $x-qd$ for positive $x-qd$.  That means we consider every positive $17-4q$.  Below I show the results for using $q=1,2,3,4$.
+> > >    Then we find the choices of *q* such that $x-qd$ is positive.  That means we consider every positive $17-4q$.  
+> > >    
+> > >    Let's start by trying out $q=1,2,3,4$.
 > > >     
 > > >    $$
 > > >   \begin{aligned}
@@ -285,7 +291,7 @@ In the proof below we will proceed in the following order.
 > > >     
 > > >   Of course with $q=0,-1,-2,\dots$ we would see even more positive values of $x-qd$.
 > > >     
-> > >   Note that, regardless of the value of *x* and *d*, we will always have some positive value of $x-qd$.  This is because $d>0$ and therefore, as *q* is taken smaller (“more negative”) then *qd* becomes very small (“very negative”).  Hence, eventually for some sufficiently small *q*, we will have $x > qd$ and therefore $x-qd > 0$.
+> > >   Note that, regardless of the value of *x* and *d*, it is always possible to choose *q* such that $x-qd$ is positive.  We will use this fact below, but we will also prove it after we are done with the current proof.  
 > >     
 > > 
 > > *S* has at least one element (as explained in the note above).  
@@ -362,6 +368,37 @@ In the proof below we will proceed in the following order.
 > > $\Box$
 
 Notice that the proof above required the use of sets.  This helps to show why set theory is needed to study every other subject in math.
+
+The proof relied on the following principle, which we should prove before moving on to the next topic.
+
+> [!theorem] ***Theorem***
+> Let *x* be any integer, and *d* a positive integer. 
+> 
+> Then $x+|x| \ge 0$ and therefore $x+|x|d \ge 0$.
+> 
+> Moreover, therefore a choice of integer *q* always exists such that $x-qd$ is positive.
+
+Notice that this proof employs a technique called "proof by cases".  It breaks the proof up into two possibilties: If $x\ge 0$ then we will show the claim holds, and if $x < 0$ then we will again show that the claim holds.  
+
+> [!proof] ***Proof***
+> Let *x* be an integer.  
+> 
+> If $x\ge 0$ then $|x|=x$ and therefore $x+|x| = 2x \ge 0$.
+> 
+> If $x < 0$ then $|x|=-x$ and therefore $x+|x| = 0 \ge 0$.  
+> 
+> Hence, in every possible case, we alway shave $x+|x| \ge 0$.
+> 
+> If *d* is a positive integer, then therefore $|x|d \ge |x|$ which implies $x+|x|d \ge x+|x|$.
+> 
+> Now we can prove that there is always a choice of integer *q* such that $x-qd$ is positive.  Set $q = -|x|-1$.  Then 
+> $$ \begin{aligned}
+> x-qd &= x-(-|x|-1)d \\
+> &= x+|x|d + d
+> \end{aligned} $$
+> Since we have already show $x+|x|d \ge 0$ it follows that $x+|x|d + d > 0$, using the fact that $d > 0$.  
+> 
+> $\Box$
 
 > [!exercise] ***Exercise***
 > 

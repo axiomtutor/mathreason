@@ -5,9 +5,9 @@ title: "Chapter 0: The Bare Necessities of Sets and Functions"
 > I still need to 
 > * Add extra exercises and solutions to existing exercises.
 
-Almost any serious mathematical subject requires a minimum understand of sets.  Here we will discuss that minimum.  
+Almost any serious mathematical subject requires a minimum understanding of sets.  Here we will discuss that minimum.  
 
-We will return to discussing set theory in a deeper, axiomatic way, later in this course. 
+Later in the course we will revisit set theory, to discuss it in a deeper and axiomatic way.
 
 # Set Extensionality
 
