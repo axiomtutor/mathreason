@@ -2,31 +2,23 @@
 title: "Chapter 1: A Case Study in Number Theory"
 ---
 
+This chapter is a case study in elementary number theory.  
 
-This chapter is dedicated to explaining the very basics of number theory.  
+In a course in "mathematical reasoning", this might be strange: Shouldn’t we first study logic, so that we may know how to reason? And then study sets, so that we have the foundation which is used by all other subjects?  And then we may choose to study number theory, or analysis, or other subjects?
 
-In a course in mathematical reasoning, this might be strange: Shouldn’t we first study logic, so that we may know how to reason? And then study sets, so that we have a foundation in an elementary subject which is used by all other subjects?  And then we may choose to study number theory, or analysis, or other subjects which typically require no other prerequisites?
-
-I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having an intuitive example *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
-
-Therefore this lesson in number theory is a case study. It depends on learning logic and sets at an intuitive and natural level, so that we may see some basic results in number theory—one of the most important, being the GCD integer combination theorem.
+I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having intuitive examples *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
 
 # Divisibility
 
-A fundamental interest in number theory is to understand how a given number can be written as a product.  
-
-- This has applications in cryptography, computer science, abstract algebra, and apparently (although I personally know nothing about this) physics.
-    
-    Number theorists would further argue that number theory doesn’t need any applications to make it interesting.  
-    
-    It is common for number theorists to say that number theory is just interesting, for it’s own sake, without any reference to the outside world.  
-    
+A fundamental interest in number theory is to understand how a natural number can be written as a product of smaller numbers.  This is the same as the question of "which numbers divide a given number".
 
 For example, 4 can be written as the product $2\cdot 2$.  In fact, technically, it can also be written as $1\cdot 4$ or $4\cdot 1$.  
 
+Equivalently this means that the divisors of 4 are 1, 2, and 4.
+
 > [!definition] ***Definition***
 > 
-> If *n* is a natural number, and $a,b$ some two natural numbers such that $n=ab$, then we say any of the following equivalent statements:
+> If *n* is an integer, and $a,b$ some two integers such that $n=ab$, then we say any of the following equivalent statements:
 > 
 > - *a* and *b* are **factors** of *n*.
 > - *a* and *b* **divide** *n*.
@@ -34,43 +26,53 @@ For example, 4 can be written as the product $2\cdot 2$.  In fact, technically, 
 > 
 > When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
 > 
-> For each natural number *n*, we will say that *n* and 1 are **trivial divisors** or **trivial factors** of *n*.
-> 
-> For each natural number $n \ge 2$ we say that *n* is **prime** if all of its divisors are trivial.  If *n* is not prime, we call it **composite**.
-
-The prime numbers are the “atoms” in the universe of number theory.  They are the fundamental and indivisible objects, which assemble to make all the other objects.  We could call composite numbers “molecules” in this analogy to chemistry.
+> For each integer *n*, we will say that *n* and 1 are **trivial divisors** or **trivial factors** of *n*.
 
 For example, 2 is at least 2 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
 
 But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 
 > [!exercise] ***Exercise***
+> Find all of the divisors of -6.
+> 
+> Also find all ways of writing -6 as a product of two integers.  For example, one way to write -6 as a product of two integers is $1\cdot -6$, and another is $-1\cdot 6$.  
+> 
+> > [!note]- ***Solution***
+> > Its divisors are 1, 2, 3, 6, -1, -2, -3, -6.
+> > 
+> > The following lists all ways of writing -6 as a product of two integers.  
+> > 
+> > $1\cdot -6, 2\cdot -3, -1\cdot 6, -2\cdot 3$
+> > 
+> > $-6\cdot 1, -3\cdot 2, 6\cdot -1, 3\cdot -2$.  
+
+Of course, if you pick any integer, it is always divisible by 1.  Therefore 1, as a divisor, is not interesting.  We say that 1 is a "trivial divisor" of any number.
+
+Also any number divides itself, so we say that for any number *n*, it is a "trivial divisor" of itself.  
+
+We cannot talk about a number with no divisors, since there are always the trivial divisors.  Instead we define the notion of a number without any "nontrivial divisors", which we call a prime number.
+
+The prime numbers are the “atoms” in the universe of number theory.  They are the fundamental and indivisible objects, which assemble to make all the other objects. 
+
+For simplicity we will restrict our definition of prime numbers to those larger than 1.  Doing otherwise would cause difficulties later on.
+
+> [!definition]- ***Definition***
+> For each integer $n > 1$ we say that *n* is **prime** if all of its divisors are trivial.  If *n* is not prime, we call it **composite**.
+
+
+
+> [!exercise] ***Exercise***
 >
 >Find the first 10 primes.
 >
->Also take the number 100 and write all ways of expressing 100 as a product of two natural numbers.  (For instance, one way of expressing 100 as a product of two natural numbers is $100=1\cdot 100$.)
->
->Use this to list all of the divisors of 100.
 > > [!note]- Solution
     >>
-    >>The first ten prime numbers are 2,3,5,7,11,13,17,19,23,29.
-    >>
-    >>The factors of 100 are
-    >>
-    >>- $1\cdot 100$
-    >>- $2\cdot 50$
-    >>- $4 \cdot 25$
-    >>- $5\cdot 20$
-    >>- $10\cdot 10$
-    >>
-    >>And 100 factors by taking any of the above factorizations and reversing the order of the product.  
-    >>
-    >>Therefore the divisors of 100 are any of the numbers which occur in a factorization.  So the divisors of 100 are: 1, 2, 4, 5, 10, 20, 25, 50, 100.
-    
+    >> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.
+
 
 Let us see a first proof of a theorem.
 
-> [!definition] ***Theorem***
+> [!theorem] ***Theorem***
 >
 >Let *a* and *n* be any two natural numbers.
 >
@@ -81,8 +83,8 @@ Let us see a first proof of a theorem.
     >Although the theorem is obvious, we will later see very advanced theorems which are not obvious.  
     >
     >In order to prove advanced theorems, we will need to use sophisticated techniques of logic.  It is better to see those techniques of logic employed now, while things are easy.  That way, when we get to the hard ones, you will already have some facility with the logic.
-    
 
+Note that the claim is an "if and only if" statement.  This means two things: "If $a|n$ then $\frac n a$ is a natural number" and "If $\frac n a$ is a natural number then $a|n$".
 > [!proof] ***Proof***
 >
 >Let *a* and *n* be natural numbers.
@@ -102,21 +104,28 @@ Let us see a first proof of a theorem.
 >
 >$\Box$
 
-Here’s another example.
 
 > [!definition] ***Theorem***
 > 
-> Every natural number divides itself.
+> Every integer is divisible by 1 and itself.
 
 > [!proof] ***Proof***
 > 
-> Let *n* be any natural number.
+> Let *n* be any integer.
 > 
 > Then $n = 1\cdot n$. 
 > 
 > So $n|n$.
 > 
+> It also follows from $n=1\cdot n$ that $1|n$.
+> 
 > $\Box$
+
+The proof above is extremely simple, yet demonstrates an important point: If a proof is to be rigorous, it must refer to the exact and literal definitions of the terms involved.
+
+To prove that *n* divides itself, it's not enough to just say that it's "obvious".  You must use the definition that *a* divides *b* if there exists an integer *k* such that $ak = b$.  
+
+We applied this principle in the proof above, by showing that $1\cdot n = n$.  When aligning *a* with 1 and *b* with *n*, the definition implies that $1|n$.  When aligning *a* with *n* and aligning *b* with *n*, the definition implies that $n|n$.
 
 > [!exercise] ***Exercise***
 > 
@@ -164,7 +173,11 @@ Here’s another example.
 > Prove that $a=b$.
 > 
 > > [!note]-  Solution
-> > TODO
+> > Since $a\mid b$, there is a natural number $m$ such that $b=am$. Since $b\mid a$, there is a natural number $n$ such that $a=bn$.
+> > 
+> > Substituting $b=am$ into $a=bn$ gives $a=amn$. Since $a$ is a natural number, $a>0$, so $mn=1$. The only natural numbers whose product is 1 are 1 and 1. Thus $m=n=1$, and therefore $a=b$.
+> > 
+> > $\Box$
 
 > [!exercise] ***Exercise***
 > 
@@ -173,13 +186,17 @@ Here’s another example.
 > Prove that $a|b+c$.
 > 
 > > [!note]- Solution
-> > TODO
+> > Since $a\mid b$, there is a natural number $m$ such that $b=am$. Since $a\mid c$, there is a natural number $n$ such that $c=an$.
+> > 
+> > Therefore $b+c=am+an=a(m+n)$. Since $m+n$ is a natural number, it follows from the definition of divisibility that $a\mid b+c$.
+> > 
+> > $\Box$
 
 # Quotient and Remainder
 
 > [!definition] ***Definition***
 > 
-> Let *x* be an integer and $d > 0$ an integer.  Let *q* and *r* be the unique integers satisfying 
+> Let *x* be an integer and *d* a positive integer. Let *q* and *r* be the unique integers satisfying 
 > 
 > $$
 > x = qd+r, \quad 0\le r<d
@@ -196,14 +213,21 @@ Here’s another example.
 > \end{aligned}
 > $$
 
-The above definition assumes that, for any given integers *x* and $d > 0$, that the quotient and remainder
+The above definition assumes, for any given integers *x* and $d > 0$, that the quotient and remainder
 
 - exist, and
 - are unique.
 
+For example, if $x=16$ and $d=6$ then there is a quotient-remainder pair.  Namely, $q=2$ and $r=4$.  
+
+Moreover, there is no other quotient-remainder pair.  That is to say, 2 and 4 are the only numbers which satisfy 
+
+$$ 16 = 6q+r, \quad 0\le r<6 $$
+
+But so far we just assume that existence and uniqueness are true.
+
 We shouldn’t let such assumptions go unproven.
 
-The following proof demonstrates why we needed to understand sets in order to be able to do number theory.
 
 > [!theorem] ***Theorem***
 > 
@@ -244,24 +268,24 @@ In the proof below we will proceed in the following order.
 > > 
 > > > [!note]- *S* explained.
 > > >     
-> > >     If the definition of *S* is confusing, let’s see a specific example.  
+> > >    If the definition of *S* is confusing, let’s see a specific example.  
 > > >     
-> > >     Suppose for instance that $x=17$ and $d=4$.  
+> > >    Suppose for instance that $x=17$ and $d=4$.  
 > > >     
-> > >     Then consider every positive $x-qd$ for positive $x-qd$.  That means we consider every positive $17-4q$.  Below I show the results for using $q=1,2,3,4$.
+> > >    Then consider every positive $x-qd$ for positive $x-qd$.  That means we consider every positive $17-4q$.  Below I show the results for using $q=1,2,3,4$.
 > > >     
-> > >     $$
-> > >     \begin{aligned}
-> > >       17-4(1) &= 13\\
-> > >       17-4(2) &= 9\\
-> > >       17-4(3) &= 5\\
-> > >       17-4(4) &= 1
-> > >     \end{aligned}
-> > >     $$
+> > >    $$
+> > >   \begin{aligned}
+> > >     17-4(1) &= 13\\
+> > >     17-4(2) &= 9\\
+> > >     17-4(3) &= 5\\
+> > >     17-4(4) &= 1
+> > >   \end{aligned}
+> > > $$
 > > >     
-> > >     Of course with $q=0,-1,-2,\dots$ we would see even more positive values of $x-qd$.
+> > >   Of course with $q=0,-1,-2,\dots$ we would see even more positive values of $x-qd$.
 > > >     
-> > >     Note that, regardless of the value of *x* and *d*, we will always have some positive value of $x-qd$.  This is because $d>0$ and therefore, as *q* is taken smaller (“more negative”) then *qd* becomes very small (“very negative”).  Hence, eventually for some sufficiently small *q*, we will have $x > qd$ and therefore $x-qd > 0$.
+> > >   Note that, regardless of the value of *x* and *d*, we will always have some positive value of $x-qd$.  This is because $d>0$ and therefore, as *q* is taken smaller (“more negative”) then *qd* becomes very small (“very negative”).  Hence, eventually for some sufficiently small *q*, we will have $x > qd$ and therefore $x-qd > 0$.
 > >     
 > > 
 > > *S* has at least one element (as explained in the note above).  
@@ -287,30 +311,30 @@ In the proof below we will proceed in the following order.
 > >
 > > > [!note]- If $r \ge d$ then *r* is not a lower bound of *S*.
 > > >    
-> > >    Suppose that $r\ge d$.  
+> > >  Suppose that $r\ge d$.  
 > > >    
-> > >    Then $r-d\ge 0$
+> > >  Then $r-d\ge 0$
 > > >    
-> > >    From $r=x-qd$ we have 
+> > >  From $r=x-qd$ we have 
 > > >    
-> > >    $$
-> > >    \begin{aligned}
-> > >     r-d &= x-qd-d \\
-> > >     &= x-(q+1)d
-> > >    \end{aligned}
-> > >    $$
+> > >  $$
+> > >  \begin{aligned}
+> > >   r-d &= x-qd-d \\
+> > >   &= x-(q+1)d
+> > >  \end{aligned}
+> > > $$
 > > >    
 > > >    Since $x-(q+1)d\ge 0$ then therefore $x-(q+1)d \in S$.
 > > >    
 > > >    But also 
 > > >    
 > > >    $$
-> > >    x-qd > x-(q+1)d
-> > >    $$
+> > >  x-qd > x-(q+1)d
+> > >  $$
 > > >    
-> > >    This is because $q<q+1$ so $qd < (q+1)d$, and so $-qd > -(q+1)d$, and so $x-qd > x-(q+1)d$.
+> > >  This is because $q<q+1$ so $qd < (q+1)d$, and so $-qd > -(q+1)d$, and so $x-qd > x-(q+1)d$.
 > > >    
-> > >    But this now show that there is an element in *S* which is smaller than $r=x-qd$.  Therefore *r* is not a lower bound of *S*.
+> > >  But this now show that there is an element in *S* which is smaller than $r=x-qd$.  Therefore *r* is not a lower bound of *S*.
 > >    
 > >
 > >Since $r=\min(S)$ then we must have that *r* is a lower bound of *S*, and therefore $r < d$.  
@@ -336,6 +360,8 @@ In the proof below we will proceed in the following order.
 > > Because of this, together with $qd+r=q_2d+r_2$ we can now infer that $qd=q_2d$.  And since $d>0$ we have $q=q_2$.
 > > 
 > > $\Box$
+
+Notice that the proof above required the use of sets.  This helps to show why set theory is needed to study every other subject in math.
 
 > [!exercise] ***Exercise***
 > 
@@ -363,7 +389,7 @@ In the proof below we will proceed in the following order.
 
 > [!exercise] ***Exercise***
 > 
-> Let $x,d\in\Bbb Z$.
+> Let $x\in\Bbb Z$ and $d\in\Bbb Z^{>0}$.
 > 
 > Show that $d|x$ if and only if $x\mod d = 0$.
 
@@ -472,7 +498,7 @@ The above demonstrates just one use of the idea of the following definition.
 > d = \max\{e\in\Bbb N:e\text{ is a common divisor of $a$ and $b$}\}
 > $$
 > 
-> When *d* is the greatest common divisor of *a* and *b* we write $d = (a,b)$ or $d = \text{GCD}(a,b)$.
+> When *d* is the greatest common divisor of *a* and *b*, we write $d=\gcd(a,b)$.
 > 
 > If $(a,b) = 1$ then we say that *a* and *b* are **coprime**.
 
@@ -509,7 +535,7 @@ The above demonstrates just one use of the idea of the following definition.
 
 > [!definition] ***Definition***
 > 
-> For any $x,y\in\Bbb Z$ we say that $ax+by$ is an **integer combination of *x* and *y***, for every $a,b\in \Bbb Z$.  
+> For any $x,y\in\Bbb Z$, an expression $ax+by$, where $a,b\in\Bbb Z$, is called an **integer combination of *x* and *y***.  
 > 
 > The **set of all integer combinations of *x* and *y*** is 
 > 
@@ -695,7 +721,7 @@ We will study logical patterns like this one in the next chapter.
 > 
 > Suppose that $p\not| \ \ a$.  
 > 
-> Since *p* is prime, then its only divisors are 1 or *p*.  Therefore $(p,a)$ is 1 or *p*.
+> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $(p,a)$ is 1 or *p*.
 > 
 > But since $p\not| \ \ a$ then $(p,a) = 1$.
 > 
