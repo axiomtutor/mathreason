@@ -20,13 +20,13 @@ Equivalently this means that the divisors of 4 are 1, 2, and 4.
 
 > [!definition] ***Definition***
 > 
-> If *n* is an integer, and $a,b$ some two integers such that $n=ab$, then we say any of the following equivalent statements:
+> If *n* is an integer, and $a,b$ are integers such that $n=ab$, then the following statements are equivalent:
 > 
 > - *a* and *b* are **factors** of *n*.
 > - *a* and *b* **divide** *n*.
 > - *n* is a **multiple** of *a*, and is a multiple of *b*.
 > 
-> When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
+> When *a* divides *n*, we write $a|n$.  Note that, if $a\mid n$, then by definition there exists an integer *b* such that $n=ab$.
 > 
 > For each integer *n*, we will say that the **trivial divisors** or **trivial factors** of *n* are: 1, -1, $n,$ and $-n$.  
 
@@ -56,7 +56,7 @@ The trivial divisors are called "trivial" because any number is divisible by its
 
 We cannot talk about a number with no divisors, since there are always the trivial divisors.  Instead we define the notion of a number without any "nontrivial divisors", which we call a prime number.
 
-For example, 2 is at least 2 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
+For example, 2 is greater than 1 and has only the factorizations $2\cdot1$ and $1\cdot2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
 
 But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 
@@ -112,7 +112,7 @@ Note that the claim is an "if and only if" statement.  This means two things: "I
 
 > [!definition] ***Theorem***
 > 
-> Every integer is divisible by 1 and itself.
+> Every integer is divisible by 1 and by itself.
 
 > [!proof] ***Proof***
 > 
@@ -207,7 +207,7 @@ We applied this principle in the proof above, by showing that $1\cdot n = n$.  W
 > x = qd+r, \quad 0\le r<d
 > $$
 > 
-> We call *q* the **quotient of $\frac x d$** and *r* the **remainder of $\frac x d$**.  We also call *r* the **modulus** of $\frac x d$.
+> We call *q* the **quotient** and *r* the **remainder** when *x* is divided by *d*.
 > 
 > We write 
 > 
@@ -236,7 +236,7 @@ We shouldn’t let such assumptions go unproven.
 
 > [!theorem] ***Theorem***
 > 
-> Let *x* be an integer and $d >0$ an integer.  
+> Let *x* be an integer and *d* a positive integer.  
 > 
 > Then there exist unique integers *q* and *r* satisfying 
 > 
@@ -379,9 +379,9 @@ The proof relied on the following principle, which we should prove before moving
 > [!theorem] ***Theorem***
 > Let *x* be any integer, and *d* a positive integer. 
 > 
-> Then $x+|x| \ge 0$ and therefore $x+|x|d \ge 0$.
+> Then $x+|x|\ge0$ and, because $d\ge1$, $x+|x|d\ge0$.
 > 
-> Moreover, therefore a choice of integer *q* always exists such that $x-qd$ is positive.
+> Moreover, there always exists an integer *q* such that $x-qd>0$.
 
 Notice that the following proof employs a technique called "proof by cases".  It breaks the proof up into two possibilties: If $x\ge 0$ then we will show the claim holds, and if $x < 0$ then we will again show that the claim holds.  
 
@@ -401,7 +401,7 @@ Notice that the following proof employs a technique called "proof by cases".  It
 > x-qd &= x-(-|x|-1)d \\
 > &= x+|x|d + d
 > \end{aligned} $$
-> Since we have already show $x+|x|d \ge 0$ it follows that $x+|x|d + d > 0$, using the fact that $d > 0$.  
+> Since we have already shown $x+|x|d\ge0$ it follows that $x+|x|d + d > 0$, using the fact that $d > 0$.  
 > 
 > $\Box$
 
@@ -682,7 +682,7 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > 
 > > Suppose that $e\in\Bbb Z$ is a common divisor of *x* and *y*.  
 > > 
-> > Then $e | ax+by = d$ and therefore $e\le d$.
+> > Then $e\mid ax+by=d$, and therefore $e\le d$.
 > > 
 > > Hence *d* is a common divisor, and an upper bound on the set of common divisors. Hence it is the maximum element, in the set of common divisors.
 > > 
@@ -731,9 +731,9 @@ The prime numbers are perhaps *the* object of study in number theory.
 
 > [!definition] ***Definition***
 > 
-> For each $n\in\Bbb Z$ we say that $m\in\Bbb Z$ is a **trivial divisor of *n*** if $m=1$ or $m=n$.
+> For each integer $n$, we say that the **trivial divisors of *n*** are $1,-1,n,$ and $-n$.
 > 
-> If $n\ge 2$ and every divisor of *n* is trivial, then we say that *n* is **prime**.  If *n* is not prime then we say that it’s **composite**.
+> If $n\ge2$ and every divisor of *n* is trivial, then we say that *n* is **prime**. If $n\ge2$ is not prime, then we say that it is **composite**.
 
 For example, 2 is prime since its only divisors are 1 and 2, which are trivial.  3 is also prime.  4 is not because $4=2\cdot 2$ and 2 is not a trivial divisor of 4.
 
@@ -767,11 +767,11 @@ We will study logical patterns like this one in the next chapter.
 
 > [!proof] ***Proof***
 > 
-> Suppose that *p* is prime and $a,b\in\Bbb Z$ such that $p|ab$.  
+> Suppose that *p* is prime and $a,b\in\Bbb Z$ such that $p\mid ab$.  
 > 
 > Suppose that $p\not| \ \ a$.  
 > 
-> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $(p,a)$ is 1 or *p*.
+> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $\gcd(p,a)$ is 1 or *p*.
 > 
 > But since $p\not| \ \ a$ then $(p,a) = 1$.
 > 
