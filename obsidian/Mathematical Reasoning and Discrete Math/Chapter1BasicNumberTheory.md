@@ -633,7 +633,7 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > 
 > > $$
 > > \begin{aligned}
-> >  d&=\min L\\
+> > d&=\min L\\
 > > &= ax+by\\
 > > \end{aligned}
 > > $$
@@ -657,7 +657,7 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > which implies 
 > > 
 > > $$
-> > r = (1-aq)x + (-b)y
+> > r = (1-aq)x + (-bq)y
 > > $$
 > > 
 > > Now *r* is a nonnegative linear combination of *x* and *y*.  
@@ -672,13 +672,10 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > > 
 > > > Show that $d|y$.  The proof is a rehearsal of the proof that $d|x$, but *mutatis mutandis*.
 > > > 
-> > > > [!note]- Note: I am fond of using the phrase “*mutatis mutandis*” in proofs.
-> > > >     
-> > > >     It means “With the necessary changes having been made”. I use this to indicate that a part of the proof is very similar to the previous part, if you make minor rearrangements or substitutions.  
-> > > >     
-> > > >     Some people, who know quite a bit about proofs, might think that this means the same thing as “W.L.O.G.” which is an abbreviation of “without loss of generality”.  In fact that phrase means something a bit more restrictive than “*mutatis mutandis*”.  
-> > > >     
-> > > >     But I don’t want to bore the intended reader with those details.
+> > > > [!note]- Note: I am fond of using the phrase “*mutatis mutandis*” in proofs. 
+> > > >    It means “With the necessary changes having been made”. 
+> > > >    
+> > > >    I use this phrase to indicate that a part of the proof is very similar to the previous part, but with minor rearrangements or substitutions.  
 >     
 > 
 > > [!note]- Show that *d* is the greatest common divisor.
@@ -687,15 +684,17 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > 
 > > Then $e | ax+by = d$ and therefore $e\le d$.
 > > 
-> > Hence *d* is a common divisor, and an upper bound on the set of common divisors. 
+> > Hence *d* is a common divisor, and an upper bound on the set of common divisors. Hence it is the maximum element, in the set of common divisors.
 > > 
-> Therefore $d = (x,y)$.
+> Therefore $d = \gcd(x,y)$.
 > 
 > $\Box$
 
 > [!exercise] ***Exercise***
 > 
-> Find *a* and *b* such that $a(2)+b(3)=1$. 
+> Find $\gcd(2,3)$.
+> 
+> Then find *a* and *b* such that $a(2)+b(3)=1$. 
 > 
 > Now find *another* pair of *a* and *b* such that $a(2)+b(3)=1$.
 > 
@@ -710,11 +709,14 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 >     > $$
 >     > 
 >     > But just because you have a theorem doesn’t mean you have an algorithm to efficiently find *a* and *b*.  We will see an algorithm later.
->     
+
+> [!exercise] ***Exercise***
+> Explain why it is impossible to find integers *a* and *b* such that 
+> $$ 6a + 9b = 1 $$
 
 > [!exercise] ***Exercise***
 > 
-> Let $x,y\in\Bbb Z$ and not both zero.  Let $d=(x,y)$.
+> Let $x,y\in\Bbb Z$ and not both zero.  Let $d=\gcd(x,y)$.
 > 
 > Show that $2d = (2x,2y)$.  *Hint*: Apply the integer combination theorem to $d=(x,y)$, and multiply by 2.  Then argue that any common divisor of $2x$ and $2y$ must divide $2d$.
 > 
