@@ -268,7 +268,7 @@ In the proof below we will proceed in the following order.
 > > Let 
 > > 
 > > $$
-> > S = \{x-qd: q\in\Bbb Z, x-qd > 0\}
+> > S = \{x-qd: q\in\Bbb Z, x-qd \ge 0\}
 > > $$
 > > 
 > > > [!note]- *S* explained.
@@ -277,7 +277,7 @@ In the proof below we will proceed in the following order.
 > > >     
 > > >    Suppose for instance that $x=17$ and $d=4$.  
 > > >     
-> > >    Then we find the choices of *q* such that $x-qd$ is positive.  That means we consider every positive $17-4q$.  
+> > >    Then we find the choices of *q* such that $x-qd$ is nonnegative.  That means we consider every nonnegative $17-4q$.  
 > > >    
 > > >    Let's start by trying out $q=1,2,3,4$.
 > > >     
@@ -290,14 +290,16 @@ In the proof below we will proceed in the following order.
 > > >   \end{aligned}
 > > > $$
 > > >     
-> > >   Of course with $q=0,-1,-2,\dots$ we would see even more positive values of $x-qd$.
+> > >   Of course with $q=0,-1,-2,\dots$ we would see even more nonnegative values of $x-qd$.
 > > >     
-> > >   Note that, regardless of the value of *x* and *d*, it is always possible to choose *q* such that $x-qd$ is positive.  We will use this fact below, but we will also prove it after we are done with the current proof.  
+> > >   Note that, regardless of the value of *x* and *d*, it is always possible to choose *q* such that $x-qd$ is nonnegative.  We will use this fact below, but we will also prove it after we are done with the current proof.  
 > >     
 > > 
 > > *S* has at least one element (as explained in the note above).  
 > > 
-> > Because *S* is a nonempty set of nonnegative numbers, then $\min(S)$ exists.  We will then define
+> > Because *S* is a nonempty set of nonnegative numbers, then $\min(S)$ exists.  
+> > 
+> > Define 
 > > 
 > > $$
 > > r = \min(S)
@@ -344,7 +346,11 @@ In the proof below we will proceed in the following order.
 > > >  But this now show that there is an element in *S* which is smaller than $r=x-qd$.  Therefore *r* is not a lower bound of *S*.
 > >    
 > >
-> >Since $r=\min(S)$ then we must have that *r* is a lower bound of *S*, and therefore $r < d$.  
+> >Notice that the principle above equivalently shows that, if *r* is a lower bound of *S* then $r < d$.
+> >
+> >But because $r=\min S$ by definition, then *r* is a lower bound of *S*.
+> >
+> >Therefore $r < d$.
 > 
 > > [!note]- Showing $x=qd+r$.
 > > 
@@ -368,8 +374,6 @@ In the proof below we will proceed in the following order.
 > > 
 > > $\Box$
 
-Notice that the proof above required the use of sets.  This helps to show why set theory is needed to study every other subject in math.
-
 The proof relied on the following principle, which we should prove before moving on to the next topic.
 
 > [!theorem] ***Theorem***
@@ -379,7 +383,7 @@ The proof relied on the following principle, which we should prove before moving
 > 
 > Moreover, therefore a choice of integer *q* always exists such that $x-qd$ is positive.
 
-Notice that this proof employs a technique called "proof by cases".  It breaks the proof up into two possibilties: If $x\ge 0$ then we will show the claim holds, and if $x < 0$ then we will again show that the claim holds.  
+Notice that the following proof employs a technique called "proof by cases".  It breaks the proof up into two possibilties: If $x\ge 0$ then we will show the claim holds, and if $x < 0$ then we will again show that the claim holds.  
 
 > [!proof] ***Proof***
 > Let *x* be an integer.  
@@ -388,7 +392,7 @@ Notice that this proof employs a technique called "proof by cases".  It breaks t
 > 
 > If $x < 0$ then $|x|=-x$ and therefore $x+|x| = 0 \ge 0$.  
 > 
-> Hence, in every possible case, we alway shave $x+|x| \ge 0$.
+> Hence, in every possible case, we always have $x+|x| \ge 0$.
 > 
 > If *d* is a positive integer, then therefore $|x|d \ge |x|$ which implies $x+|x|d \ge x+|x|$.
 > 
@@ -407,7 +411,7 @@ Notice that this proof employs a technique called "proof by cases".  It breaks t
 > 
 > (Part 1.)
 > 
-> Find the quotient and remainder.
+> Find the quotient and remainder of $\frac x d$.
 > 
 > (Part 2.)
 > 
@@ -421,9 +425,7 @@ Notice that this proof employs a technique called "proof by cases".  It breaks t
 
 > [!exercise] ***Exercise***
 > 
-> Sometimes $q < 0$ and sometimes $q\ge 0$.  
-> 
-> Give a simple explanation which predicts when *q* will be negative or nonnegative.
+> Find the quotient and remainder for $x=-10$ and $d=3$.
 
 > [!exercise] ***Exercise***
 > 
@@ -441,7 +443,11 @@ Notice that this proof employs a technique called "proof by cases".  It breaks t
 
 > [!proof] ***Proof***
 > 
-> Let $n=2q+r$ be the quotient-remainder decomposition of $n/2$.  We know, from the quotient-remainder theorem above, that *q* and *r* are integers, and $0\le r<2$.  
+> Let $n=2q+r$ be the quotient-remainder decomposition of $n/2$.  
+> 
+> By definition, $q=n\text{ div } 2$ and $r = n\mod 2$.
+> 
+> We know, from the quotient-remainder theorem above, that *q* and *r* are integers, and $0\le r<2$.  
 > 
 > Therefore the only integers that *r* could be are 0 or 1.
 > 
@@ -538,7 +544,7 @@ The above demonstrates just one use of the idea of the following definition.
 > 
 > When *d* is the greatest common divisor of *a* and *b*, we write $d=\gcd(a,b)$.
 > 
-> If $(a,b) = 1$ then we say that *a* and *b* are **coprime**.
+> If $\text{gcd}(a,b) = 1$ then we say that *a* and *b* are **coprime**.
 
 > [!exercise] ***Exercise***
 > 
@@ -546,28 +552,30 @@ The above demonstrates just one use of the idea of the following definition.
 
 > [!exercise] ***Exercise***
 > 
-> Find (6,6) and (6,7) and (6,8) and (6,9) and (6,12).
+> Find gcd(6,6) and gcd(6,7) and gcd(6,8) and gcd(6,9) and gcd(6,12).
 
 > [!exercise] ***Exercise***
 > 
-> Let $a,b\in\Bbb Z$ and assume that not both are zero.  Let $d=(a,b)$.
+> Let $a,b\in\Bbb Z$ and assume that not both are zero.  Let $d=\gcd(a,b)$.
 > 
 > Prove that $2d$ is a common divisor of $2a$ and $2b$.
 > 
 > Try to prove that $2d$ is the greatest common divisor of $2a$ and $2b$, but do not break your back trying to do this.  You will probably get stuck, since this proof is surprisingly hard.  
 > 
-> In order to prove that $2d=(2a,2b)$, you would have to show that, if *e* is any common divisor of $2a$ and $2b$, then $2d\ge e$.  This about proving it, and realize how hard it is to come up with a rigorous proof, using only the theorems that we’ve developed so far in the course.
+> In order to prove that $2d=\gcd(2a,2b)$, you would have to show that, if *e* is any common divisor of $2a$ and $2b$, then $2d\ge e$.  
 > 
-> We will revisit this exercise after we’ve developed the concept of integer combinations.  Then providing a proof of this statement will be easy.
+> Think about proving this, and realize how hard it is to come up with a rigorous proof, using only the theorems that we’ve developed so far in the course.  (You can't use other common-knowledge facts about divisors.)
+> 
+> But after some of the other theorems in this chapter, we will actually be able to prove that $2d = \gcd(2a,2b)$ quite easily.
 
 > [!exercise] ***Exercise***
 > 
 > Identify which of the following pairs are coprime.
 > 
-> - $a=2,b=3$
+> - $a=2, b=3$
 > - $a=-1, b=1$
 > - $a=36, b=15$
-> - $a=36,b=0$
+> - $a=36, b=0$
 
 # Integer Combinations
 
@@ -595,11 +603,13 @@ $$
 (-2)2 + (-1)4 = -8
 $$
 
+Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
+
 > [!theorem] ***Theorem***
 > 
 > Let $x,y\in\Bbb Z$ and not both of them equal to zero.  
 > 
-> Then there exists an integer combination of *x* and *y*, which is equal to $(x,y)$.
+> Then there exists an integer combination of *x* and *y*, which is equal to $\gcd(x,y)$.
 
 > [!proof] ***Proof***
 > 
@@ -611,7 +621,7 @@ $$
 > L=\{ax+by:a,b\in\Bbb Z, ax+by>0\}
 > $$
 > 
-> > [!note]- $L$ is nonempty bounded below integers
+> > [!note]- $L$ is a nonempty set of integers bounded below.
 > > 
 > > > [!exercise] ***Exercise***
 > > > 

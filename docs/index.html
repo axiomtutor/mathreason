@@ -33,7 +33,7 @@
   <main class="content" id="main">
     <article class="prose">
       <h1>Mathematical Reasoning and Discrete Math</h1>
-      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#welcome-and-feedback">Welcome and Feedback</a></li><li class="toc-h2"><a href="#introduction">Introduction</a></li><li class="toc-h2"><a href="#content">Content</a></li></ul></nav>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#welcome-and-feedback">Welcome and Feedback</a></li><li class="toc-h2"><a href="#content">Content</a></li><li class="toc-h2"><a href="#structure">Structure</a></li><li class="toc-h2"><a href="#content-2">Content</a></li></ul></nav>
       <details class="callout callout-note callout-fold"><summary class="callout-label">TODOs<span class="callout-chevron" aria-hidden="true"></span></summary><div class="callout-body"><p>I still need to</p>
 <ul>
 <li>Finish remaining chapters until completing the discussion of number theory.</li>
@@ -44,8 +44,8 @@
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>Welcome to this course in mathematical reasoning!  This website delivers a one-quarter semester course.  Put briefly, this semester covers naive set theory, logic, and number theory.  There will be a part 2, assuming I eventually finish part 1.</p>
 <p>If you see mistakes in this website, please let me know!  You can open an issue at the GitHub repo: <a href="https://www.github.com/axiomtutor/mathreason" target="_blank" rel="noopener noreferrer">GitHub Math Reason</a>.</p>
 <p>Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  Just remember that the more specific and constructive your feedback is, the more I am able to act on it.</p>
-</div></details><details class="section"><summary class="section-summary"><h2 id="introduction">Introduction</h2>
-<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.  I especially have in mind math majors, or people who intend to study advanced and proof-based mathematics.</p>
+</div></details><details class="section"><summary class="section-summary"><h2 id="content">Content</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.</p>
 <p>The subject of this course is really two-fold: It has both domain knowledge, as well as mathematical technique.</p>
 <p>The domain knowledge that this course covers includes</p>
 <ul>
@@ -110,16 +110,17 @@
 <p>Proof of correctness</p>
 </li>
 </ul>
-<p>This is similar to many courses in discrete mathematics at many universities.</p>
-<p>Here is how this text differs from others with similar topics.</p>
+<p>The content of this text is very similar to other texts on discrete mathematics, with a few exceptions.  Most discrete math texts have less content than I have included on formal logic.  They also do not discuss type theory and the lambda calculus, which are usually in the domain of computer science.</p>
+<p>Because I have in mind an audience of mathematics majors, I have included these topics because I think it will help them throughout their mathematical careers.</p>
+</div></details><details class="section"><summary class="section-summary"><h2 id="structure">Structure</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>The structure of this text is intended to be unlike the usual mathematics textbook, in a number of ways.</p>
 <ul>
-<li>This text has a significantly larger emphasis on formal and informal logic.</li>
-<li>Where possible I try to explain not just the proofs of theorems, but <em>how to write</em> the proofs of theorems.</li>
-<li>The target audience is assumed to have a future studying proof-based mathematics.</li>
-<li>We use several ideas that are more common in computer science than in mathematics.  For a few examples: types, data structres, the lambda calculus.</li>
-<li>This resource provides an &quot;theorem assistant&quot;.  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.</li>
+<li>I want to have a thorough coverage of formal and informal logic, since the intent is to train future mathematicians. The main tool of mathematics is logic.</li>
+<li>Chapter 1 gives a case study in how logic is used in the study of mathematics.  In particular I show the use of logic to study elementary number theory.  As we later discuss logic, the reader can apply all of the broad and abstract lessons of logic, to the concrete example of number theory.</li>
+<li>Where possible I try to explain not just the proofs of theorems, but <em>how to write</em> the proofs of theorems.  That means explaining writing style, structure, and discovery of proofs.</li>
+<li>This resource provides an &quot;theorem assistant&quot;.  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.  This is helpful for understanding the logic and level of detail in which proofs should be written.</li>
 </ul>
-</div></details><details class="section"><summary class="section-summary"><h2 id="content">Content</h2>
+</div></details><details class="section"><summary class="section-summary"><h2 id="content-2">Content</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p><a href="chapter0-basic-sets.html">Chapter 0: The Bare Necessities of Sets and Functions</a></p>
 <p><a href="chapter1-basic-number-theory.html">Chapter 1: A Case Study in Number Theory</a></p>
 <p><a href="chapter2-prop-syntax-semantics.html">Chapter 2: Propositional Syntax and Semantics</a></p>
