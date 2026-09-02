@@ -1,1 +1,0 @@
-# Chapter : Functions and Cardinality

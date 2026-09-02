@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter5FOLSynSem.md",
-                "mode": "source",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter1BasicNumberTheory.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Chapter5FOLSynSem"
+              "title": "Chapter1BasicNumberTheory"
             }
           }
         ]
@@ -191,10 +191,10 @@
   },
   "active": "95d3d5075504da6f",
   "lastOpenFiles": [
-    "Mathematical Reasoning and Discrete Math/Chapter0Basic Sets.md",
+    "Mathematical Reasoning and Discrete Math.md",
     "Mathematical Reasoning and Discrete Math/Chapter1BasicNumberTheory.md",
     "Mathematical Reasoning and Discrete Math/Chapter5FOLSynSem.md",
-    "Mathematical Reasoning and Discrete Math.md",
+    "Mathematical Reasoning and Discrete Math/Chapter0Basic Sets.md",
     "Mathematical Reasoning and Discrete Math/Chapter4PredSynSem.md",
     "Mathematical Reasoning and Discrete Math/Chapter3_PropositionalProofTheory.md",
     "Mathematical Reasoning and Discrete Math/Chapter2PropSyntaxSemantics.md",

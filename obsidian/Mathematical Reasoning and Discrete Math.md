@@ -16,9 +16,9 @@ If you see mistakes in this website, please let me know!  You can open an issue 
 
 Not only that, but if you find anything confusing or just have editorial feedback, you can always let me know!  I especially want to hear feedback from people who are trying to learn the subject for the first time, so that I can make the material easier to learn.  Just remember that the more specific and constructive your feedback is, the more I am able to act on it.  
 
-# Introduction  
+# Content   
 
-This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.  I especially have in mind math majors, or people who intend to study advanced and proof-based mathematics.
+This is a course on university-level mathematics, designed to prepare first-year students for the techniques that are used throughout the rest of their mathematical careers.  
 
 The subject of this course is really two-fold: It has both domain knowledge, as well as mathematical technique.
 
@@ -64,15 +64,18 @@ But besides learning substantive topics in mathematics, this course also aims to
 
 - Proof of correctness
 
-This is similar to many courses in discrete mathematics at many universities.  
+The content of this text is very similar to other texts on discrete mathematics, with a few exceptions.  Most discrete math texts have less content than I have included on formal logic.  They also do not discuss type theory and the lambda calculus, which are usually in the domain of computer science. 
 
-Here is how this text differs from others with similar topics.
+Because I have in mind an audience of mathematics majors, I have included these topics because I think it will help them throughout their mathematical careers.
 
-* This text has a significantly larger emphasis on formal and informal logic.
-* Where possible I try to explain not just the proofs of theorems, but *how to write* the proofs of theorems.  
-* The target audience is assumed to have a future studying proof-based mathematics.
-* We use several ideas that are more common in computer science than in mathematics.  For a few examples: types, data structres, the lambda calculus.
-* This resource provides an "theorem assistant".  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.
+# Structure
+
+The structure of this text is intended to be unlike the usual mathematics textbook, in a number of ways.
+
+* I want to have a thorough coverage of formal and informal logic, since the intent is to train future mathematicians. The main tool of mathematics is logic.
+* Chapter 1 gives a case study in how logic is used in the study of mathematics.  In particular I show the use of logic to study elementary number theory.  As we later discuss logic, the reader can apply all of the broad and abstract lessons of logic, to the concrete example of number theory.
+* Where possible I try to explain not just the proofs of theorems, but *how to write* the proofs of theorems.  That means explaining writing style, structure, and discovery of proofs.
+* This resource provides an "theorem assistant".  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.  This is helpful for understanding the logic and level of detail in which proofs should be written.  
 
 # Content
 

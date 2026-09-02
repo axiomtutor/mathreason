@@ -4,13 +4,11 @@ title: "Chapter 1: A Case Study in Number Theory"
 
 This chapter is a case study in elementary number theory.  
 
-In a course in "mathematical reasoning", it might seem strange to begin with number theory.  Shouldn’t we first study logic, so that we may know how to reason? 
+As you read this case study, of course, one intent is for you to learn number theory.  But it is just one of the intended goals of this chapter.
 
-Once we can reason, we can apply these skills to reason about sets.  
+You should also pay attention to the use of logic in proofs.  If a theorem claims that something is true "if and only if" something else, then you should notice how this corresponds to the structure of the proof.  You should also pay attention to proof by cases, proof by contradiction, and any other styles of proof.  These will all serve as examples later on when we discuss set theory.
 
-Once we understand sets, we can apply these skills to reason about all the other mathematical subjects?
-
-I wanted to approach mathematical reasoning in precisely the reverse way. I think a student often benefits from having intuitive examples *first*, and then to see how the example is abstracted into a theory.  After all, this is precisely how actual mathematics gets done in practice.  
+Also you should pay attention to the use of any sets.  This will help to motivate why we need the study of sets in order to study other mathematical subjects, like this one.
 
 # Divisibility
 
@@ -30,19 +28,25 @@ Equivalently this means that the divisors of 4 are 1, 2, and 4.
 > 
 > When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
 > 
-> For each integer *n*, we will say that *n* and 1 are **trivial divisors** or **trivial factors** of *n*.
+> For each integer *n*, we will say that the **trivial divisors** or **trivial factors** of *n* are: 1, -1, $n,$ and $-n$.  
 
-For example, 2 is at least 2 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
+For example, 5 and 7 are factors of 700.  The former is true because $700 = 5\cdot 140$ (in the definition we use $a=5$ and $b=140$).  The latter is true because $700 = 7\cdot 100$.  
 
-But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
+Equivalently, 5 and 7 divide 700.  Equivalently, 700 is a multiple of 5 and 7.  
+
+Therefore $5|700$ and $7|700$. 
+
+The trivial divisors of 700 are 1, -1, 700, and -700.  
+
+The trivial divisors are called "trivial" because any number is divisible by its trivial divisors.  In that sense, they are not "interesting".
 
 > [!exercise] ***Exercise***
-> Find all of the divisors of -6.
+> Find all of the divisors of -6, and identify which of them are the trivial divisors.
 > 
 > Also find all ways of writing -6 as a product of two integers.  For example, one way to write -6 as a product of two integers is $1\cdot -6$, and another is $-1\cdot 6$.  
 > 
 > > [!note]- ***Solution***
-> > Its divisors are 1, 2, 3, 6, -1, -2, -3, -6.
+> > Its divisors are 1, 2, 3, 6, -1, -2, -3, -6.  The trivial divisors are 1, -1, 6, and -6.
 > > 
 > > The following lists all ways of writing -6 as a product of two integers.  
 > > 
@@ -50,20 +54,18 @@ But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 > > 
 > > $-6\cdot 1, -3\cdot 2, 6\cdot -1, 3\cdot -2$.  
 
-Of course, if you pick any integer, it is always divisible by 1.  Therefore 1, as a divisor, is not interesting.  We say that 1 is a "trivial divisor" of any number.
-
-Also any number divides itself, so we say that for any number *n*, it is a "trivial divisor" of itself.  
-
 We cannot talk about a number with no divisors, since there are always the trivial divisors.  Instead we define the notion of a number without any "nontrivial divisors", which we call a prime number.
 
-The prime numbers are the “atoms” in the universe of number theory.  They are the fundamental and indivisible objects, which assemble to make all the other objects. 
+For example, 2 is at least 2 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
 
-For simplicity we will restrict our definition of prime numbers to those larger than 1.  Doing otherwise would cause difficulties later on.
+But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
+
+For simplicity we will restrict our definition of prime numbers to those larger than 1.  Doing otherwise would cause difficulties later on.  
 
 > [!definition]- ***Definition***
 > For each integer $n > 1$ we say that *n* is **prime** if all of its divisors are trivial.  If *n* is not prime, we call it **composite**.
 
-
+The prime numbers are the “atoms” in the universe of number theory.  They are the fundamental and indivisible objects, which assemble to make all the other objects. This helps to suggest why they are interesting to mathematicians.
 
 > [!exercise] ***Exercise***
 >
@@ -81,12 +83,6 @@ Let us see a first proof of a theorem.
 >Let *a* and *n* be any two natural numbers.
 >
 >$a|n$ if and only if $\frac n a$ is a natural number.
-
-> [!note]- Why do we have to prove such obviously true statements?
-    >
-    >Although the theorem is obvious, we will later see very advanced theorems which are not obvious.  
-    >
-    >In order to prove advanced theorems, we will need to use sophisticated techniques of logic.  It is better to see those techniques of logic employed now, while things are easy.  That way, when we get to the hard ones, you will already have some facility with the logic.
 
 Note that the claim is an "if and only if" statement.  This means two things: "If $a|n$ then $\frac n a$ is a natural number" and "If $\frac n a$ is a natural number then $a|n$".
 > [!proof] ***Proof***
@@ -108,6 +104,11 @@ Note that the claim is an "if and only if" statement.  This means two things: "I
 >
 >$\Box$
 
+> [!note]- Why do we have to prove such obviously true statements?
+    >
+    >Although the theorem is obvious, we will later see very advanced theorems which are not obvious.  
+    >
+    >In order to prove advanced theorems, we will need to use sophisticated techniques of logic.  It is better to see those techniques of logic employed now, while things are easy.  That way, when we get to the hard ones, you will already have some facility with the logic.
 
 > [!definition] ***Theorem***
 > 
