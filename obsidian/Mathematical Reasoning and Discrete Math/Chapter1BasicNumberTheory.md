@@ -34,7 +34,7 @@ For example, 5 and 7 are factors of 700.  The former is true because $700 = 5\cd
 
 Equivalently, 5 and 7 divide 700.  Equivalently, 700 is a multiple of 5 and 7.  
 
-Therefore $5|700$ and $7|700$. 
+Therefore $5\mid700$ and $7\mid700$. 
 
 The trivial divisors of 700 are 1, -1, 700, and -700.  
 
@@ -120,9 +120,9 @@ Note that the claim is an "if and only if" statement.  This means two things: "I
 > 
 > Then $n = 1\cdot n$. 
 > 
-> So $n|n$.
+> So $n\mid n$.
 > 
-> It also follows from $n=1\cdot n$ that $1|n$.
+> It also follows from $n=1\cdot n$ that $1\mid n$.
 > 
 > $\Box$
 
@@ -136,7 +136,7 @@ We applied this principle in the proof above, by showing that $1\cdot n = n$.  W
 > 
 > Suppose that $a,b,c$ are natural numbers such that $a|b$ and $b|c$.
 > 
-> Prove that therefore $a|c$.
+> Prove that therefore $a\mid c$.
 > > [!note]- Solution
     >> 
     >> Suppose that $a,b,c$ are natural numbers such that $a|b$ and $b|c$.  Since $a|b$ then by definition there is an integer, *x*, such that $b= ax$.  Since $b|c$ there is some integer, *y*, such that $c=by$.
@@ -159,9 +159,9 @@ We applied this principle in the proof above, by showing that $1\cdot n = n$.  W
 
 > [!exercise] ***Exercise***
 > 
-> Suppose that $a,b,c$ are natural numbers such that $ab | c$.  
+> Suppose that $a,b,c$ are natural numbers such that $ab\mid c$.  
 > 
-> Prove that $a | c$.
+> Prove that $a\mid c$.
 > > [!note]- Solution
 >     > 
 >     > Suppose that $a,b,c$ are natural numbers such that $ab|c$. Then by definition there is a natural number *x* such that $c=(ab)x$.
@@ -431,7 +431,7 @@ Notice that the following proof employs a technique called "proof by cases".  It
 > 
 > Let $x\in\Bbb Z$ and $d\in\Bbb Z^{>0}$.
 > 
-> Show that $d|x$ if and only if $x\mod d = 0$.
+> Show that $d\mid x$ if and only if $x\mod d = 0$.
 
 > [!definition] ***Definition***
 > 
@@ -670,7 +670,7 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 > > 
 > > > [!exercise] ***Exercise***
 > > > 
-> > > Show that $d|y$.  The proof is a rehearsal of the proof that $d|x$, but *mutatis mutandis*.
+> > > Show that $d\mid y$.  The proof is a rehearsal of the proof that $d|x$, but *mutatis mutandis*.
 > > > 
 > > > > [!note]- Note: I am fond of using the phrase “*mutatis mutandis*” in proofs. 
 > > > >    It means “With the necessary changes having been made”. 
@@ -749,7 +749,7 @@ For example, 2 is prime since its only divisors are 1 and 2, which are trivial. 
 
 > [!exercise] ***Exercise***
 > 
-> Find integers $a,b,c\ge 2$ such that $a | bc$ but also $a\not | \ \ b$ and $a\not| \ \ c$.
+> Find integers $a,b,c\ge 2$ such that $a\mid bc$ but also $a\nmid b$ and $a\nmid c$.
 > 
 > *Hint*: If you read the statement of the next theorem, it suggests that you should not choose *a* to be a prime number.  
 
@@ -759,7 +759,7 @@ The following is a fundamental fact about prime numbers, which deeply characteri
 > 
 > Let *p* be a prime and $a,b\in\Bbb Z$ such that $p | ab$.  
 > 
-> Then either $p | a$ or $p|b$.  
+> Then either $p\mid a$ or $p\mid b$.  
 
 The following proof uses a particular way of proving an “or” statement:  In order to prove $p|a$ or $p|b$, we prove that if $p \not| \ \ a$ then $p|b$.
 
@@ -787,10 +787,10 @@ We will study logical patterns like this one in the next chapter.
 > xpb + yab = b
 > $$
 > 
-> Now $p|xpb$ because $p|p$.
+> Now $p\mid xpb$ because $p|p$.
 > 
-> Also $p|yab$ because $p|ab$.  
+> Also $p\mid yab$ because $p|ab$.  
 > 
-> Therefore *p* divides the left-hand side, $xpb+yab$.  But since this equals the right-hand side, *b*, we must have that that $p|b$.
+> Therefore *p* divides the left-hand side, $xpb+yab$.  But since this equals the right-hand side, *b*, we must have that that $p\mid b$.
 > 
 > $\Box$
