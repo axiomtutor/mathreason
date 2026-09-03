@@ -62,7 +62,7 @@ But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 
 For simplicity we will restrict our definition of prime numbers to those larger than 1.  Doing otherwise would cause difficulties later on.  
 
-> [!definition]- ***Definition***
+> [!definition] ***Definition***
 > For each integer $n > 1$ we say that *n* is **prime** if all of its divisors are trivial.  If *n* is not prime, we call it **composite**.
 
 The prime numbers are the “atoms” in the universe of number theory.  They are the fundamental and indivisible objects, which assemble to make all the other objects. This helps to suggest why they are interesting to mathematicians.
@@ -705,7 +705,7 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
 >     > Given *x* and *y* you have a theorem guaranteeing the existence of *a* and *b* such that 
 >     > 
 >     > $$
->     > ax+by=(x,y)
+>     > ax+by=\gcd(x,y)
 >     > $$
 >     > 
 >     > But just because you have a theorem doesn’t mean you have an algorithm to efficiently find *a* and *b*.  We will see an algorithm later.
@@ -726,26 +726,6 @@ Therefore $-2$ and $-8$ are in the set of all integer combinations of 2 and 4.
     
 
 # Prime Numbers
-
-The prime numbers are perhaps *the* object of study in number theory.  
-
-> [!definition] ***Definition***
-> 
-> For each $n\in\Bbb Z$ we say that $m\in\Bbb Z$ is a **trivial divisor of *n*** if $m=1$ or $m=n$.
-> 
-> If $n\ge 2$ and every divisor of *n* is trivial, then we say that *n* is **prime**.  If *n* is not prime then we say that it’s **composite**.
-
-For example, 2 is prime since its only divisors are 1 and 2, which are trivial.  3 is also prime.  4 is not because $4=2\cdot 2$ and 2 is not a trivial divisor of 4.
-
-> [!exercise] ***Exercise***
-> 
-> List the first ten primes.
-> 
-> Check whether 123 is prime, and whether 127 is prime.  
-
-> [!exercise] ***Exercise***
-> 
-> Prove that an integer $n\ge 2$ is prime if and only if it is coprime with every $m\in\Bbb Z$ such that $2\le m < n$.
 
 > [!exercise] ***Exercise***
 > 
@@ -771,9 +751,9 @@ We will study logical patterns like this one in the next chapter.
 > 
 > Suppose that $p\not| \ \ a$.  
 > 
-> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $(p,a)$ is 1 or *p*.
+> Since *p* is prime, its only positive divisors are 1 and *p*.  Therefore $\gcd(p,a)$ is 1 or *p*.
 > 
-> But since $p\not| \ \ a$ then $(p,a) = 1$.
+> But since $p\not| \ \ a$ then $\gcd(p,a) = 1$.
 > 
 > By the integer combination theorem, there are $x,y\in\Bbb Z$ such that 
 > 
