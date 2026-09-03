@@ -11,13 +11,20 @@ What does “logic” study?  Take the following ([historically famous](https://
 > Socrates is a man.
 > Therefore Socrates is mortal.
 
+> [!note] By "argument" we do not mean "a conflict".
+> In logic, we use the word "argument" a bit unlike how it is commonly used.  Often we colloquially think of an argument as a kind of conflict.
+> 
+> For logicians an argument is really any explanation of how a set of assumed facts imply some conclusion.  
+> 
+> See [the Wikipedia article on arguments](https://en.wikipedia.org/wiki/Argument) for more details.  
+
 This is an example of logic because it is an *inference*.  It concludes the proposition "Socrates is mortal" from other, already-accepted propositions.  
 
 Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)  
 
 While these propositions are true, we don't accept them due to an inference.  Rather we accept them due to experience, or science, or other reasons. But because we do not accept them from inference, then we regard them as "non-logical".  
 
-> [!note] Distinction between "illogical" and "non-logical".
+> [!note]- Distinction between "illogical" and "non-logical".
 > You might find it strange, that a true statment like "all men are mortal" would be regarded as "non-logical".  Does that mean we regard it as false?
 > 
 > Not at all!
@@ -36,9 +43,30 @@ To abstract the earlier argument into a purely logical expression, a logician wo
 > *x* is an *A*.
 > Therefore *x* is *B*.
 
-The above is an abstraction, which is accomplished by replacing non-logical ideas like “men” and “mortal”, with a mere symbol like *A* and *B*.  This gets close to what I mean by a “language of logic”.  This abstraction has its own symbols and its own acceptable ways of composing them into meaningful expressions.  
+The above is a logical abstraction because we remove the non-logical ideas like “men” and “mortal”, and so on.  Instead we replace them with symbols like *A* and *B*, which act as place-holders for any non-logical content that you might like to use.
 
-After abstracting the non-logical parts, what is left over are terms and ideas that are relevant to the study of logic.  These are words like “all”, and “are”, and “is”, and “therefore”.
+For example, consider the argument 
+
+> All cats are mammals.
+> Tabby is a cat.
+> Therefore Tabby is a mammal.
+
+This argument has exactly the same structure as the argument regarding Socrates' mortality.  They only differ by the non-logical content.
+
+From the abstract form, 
+
+> All *A* are *B*.
+> *x* is an *A*.
+> Therefore *x* is *B*.
+
+we can obtain either the argument about Socrates or the argument about Tabby, by an appropriate substitution of the symbols *A*, *B*, and *x*.  
+
+Because logicians want to focus only on the principles of logic, we therefore abstract propositions and forms as much as possible.  
+
+> [!exercise] ***Exercise***
+> Consider the argument "James Brown was a funk singer, and a dancer.  Every funk singer is a musician.  Therefore James Brown was a musician and a dancer."
+> 1. Identify the premises and conclusion of the argument.
+> 2. Form the logical abstraction of this argument.  
 
 # Syntax and Semantics
 
