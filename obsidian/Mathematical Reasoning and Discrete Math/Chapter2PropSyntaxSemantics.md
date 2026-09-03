@@ -31,7 +31,7 @@ After abstracting the non-logical parts, what is left over are terms and ideas t
 
 # Syntax and Semantics
 
-A significant theme in the study of logic, is the dual nature of “syntax” and “semantics”.  
+A significant theme in the study of logic is the dual nature of “syntax” and “semantics”.  
 
 To briefly acquaint yourself with these ideas, at a less technical level, you may want to read the introductory paragraphs here:
 
@@ -48,11 +48,11 @@ By an analogy to natural languages, English and Hindi syntax may use different s
 
 In the study of logic, we will create a few different kinds of “languages of logic”.  These languages will increase in complexity, and their power to express kinds of logical inference.  
 
-The starting place to describe the syntax of a language, is its alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  But in fact, it includes much more than this, to fully describe all written expressions.  
+The starting point for describing the syntax of a language, is its alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  But in fact, it includes much more than this, to fully describe all written expressions.  
 
 It includes capitalization, spaces, punctuation, parentheses, and numerals.  
 
-Just for contrast: the Hindi syntax includes a different set of letters, called [Devanagri](https://en.wikipedia.org/wiki/Devanagari).  But otherwise, we tend to share a lot of the same non-alphabetic symbols, like punctuation, spaces, and so on.  Our numerals are similar but not exactly the same.  
+Just for contrast: the Hindi uses a different set of letters, called [Devanagari](https://en.wikipedia.org/wiki/Devanagari).  But otherwise, we tend to share a lot of the same non-alphabetic symbols, like punctuation, spaces, and so on.  Our numerals are similar but not exactly the same.  
 
 The point is that languages can differ in the choice of fundamental symbols.  So when you describe a language, a natural starting place is to describe the alphabet.  And when we do so, we should take a very expansive view of what we mean by its “alphabet”—this should include every symbol that is commonly understood when a native speaker sees it on a page.
 
@@ -78,7 +78,7 @@ Then a string would just be any finite sequence of these symbols (or characters)
 
 The sentence “Hello friend.” is another example of a string, but it is also a signifier in English because it is meaningful.  Also just the word “hello” is a signifier in English, because “hello” means something.  
 
-Another language, like say Hindi, might have strings like “झैठृ ङौप्ष ञीक्थ लॄझ्फ टैंषो धृङ्चै भौट्ण”.  This is a string over Devanagri, although it is not a signifier in Hindi.  
+Another language, like say Hindi, might have strings like “झैठृ ङौप्ष ञीक्थ लॄझ्फ टैंषो धृङ्चै भौट्ण”.  This is a string over Devanagari, although it is not a signifier in Hindi.  
 
 > [!exercise] ***Exercise***
 >
@@ -162,7 +162,7 @@ Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore
 > 
 > *Hint*: $1x$.
 
-Here is another language, which will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, $\Sigma$ contains two elements, the left- and right-parentheses.
+Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, $\Sigma$ contains two elements, the left- and right-parentheses.
 
 $$
 \begin{aligned}
@@ -440,7 +440,7 @@ Although the definition of conjunction above is correct, notice that it doesn’
 > 
 > Then $(\phi\land \psi)^{\frak M}$ is defined to be equal to $\phi^{\frak M}\curlywedge \psi^{\frak M}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $\frak M$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $\frak M$**.
 
-The value of a formula is the bridge between the syntactic and semantic.  It works by first giving values to the propositional variables, because that is the definition of what $\frak M$ is.  But from there, we can then determine the value of a conjunction, by determining the values of its component formulas.  
+The value of a formula is the bridge between syntax and semantics.  It works by first giving values to the propositional variables, because that is the definition of what $\frak M$ is.  But from there, we can then determine the value of a conjunction, by determining the values of its component formulas.  
 
 ---
 
@@ -473,8 +473,8 @@ Here is an explanation of each equation above.
 1. Definition of evaluation, applied $P\land Q$ and *R*.
 2. Definition of evaluation, applied to *P* and *Q*.  Also, the assumption that *R* is true.
 3. The assumption that *P* is false and *Q* true.
-4. Definition of $\curlywedge$ applied to *F* and *T*.
-5. Definition of $\curlywedge$ applied to *F* and *T*.
+4. The resulting value is $\mathfrak F$.
+5. The resulting value is $\mathfrak F$.
 
 > [!exercise] ***Exercise***
 >
