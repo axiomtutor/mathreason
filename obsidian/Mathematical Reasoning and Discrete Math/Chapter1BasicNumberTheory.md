@@ -201,7 +201,7 @@ We applied this principle in the proof above, by showing that $1\cdot n = n$.  W
 
 > [!definition] ***Definition***
 > 
-> Let *x* be an integer and $d >0$ an integer. Let *q* and *r* be the unique integers satisfying 
+> Let *x* be an integer and *d* a positive integer. Let *q* and *r* be the unique integers satisfying 
 > 
 > $$
 > x = qd+r, \quad 0\le r<d
