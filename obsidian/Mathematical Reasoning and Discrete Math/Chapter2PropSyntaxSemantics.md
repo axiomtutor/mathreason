@@ -3,27 +3,23 @@ title: "Chapter 2: Propositional Syntax and Semantics"
 ---
 
 
-Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can appeal to as we describe the abstract study of sets and logic.  Sets and logic form not just the tools of number theory, but in fact they are the fundamental tools of nearly every subject in mathematics.  
+Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can appeal to as we describe the abstract study of logic.  
 
 What does “logic” study?  Take the following ([historically famous](https://en.wikipedia.org/wiki/Syllogism)) simple example of a logical argument.
 
 > All men are mortal.
-Socrates is a man.
-Therefore Socrates is mortal.
-> 
+> Socrates is a man.
+> Therefore Socrates is mortal.
 
-This argument is not *pure* logic, because it relies on first accepting the principle that “all men are mortal”.  It also requires accepting “Socrates is a man”.  
+This is an example of logic because it is an *inference*.  It concludes the proposition "Socrates is mortal" from other, already-accepted propositions.  
 
-These may be true, but they are not *logical* principles.  Rather, they are accepted on the basis of empiricism or science.  
-
-Logic is not fundamentally concerned with which propositions are true: Rather it is concerned with the question “Once we accept certain sentences as true, how can we work out their consequences, in order to determine other sentences which must also be true?”
+Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)
 
 To abstract the earlier argument into a purely logical expression, a logician would instead write 
 
 > All *A* are *B*.
-*x* is an *A*.
-Therefore *x* is *B*.
-> 
+> *x* is an *A*.
+> Therefore *x* is *B*.
 
 The above is an abstraction, which is accomplished by replacing non-logical ideas like “men” and “mortal”, with a mere symbol like *A* and *B*.  This gets close to what I mean by a “language of logic”.  This abstraction has its own symbols and its own acceptable ways of composing them into meaningful expressions.  
 
