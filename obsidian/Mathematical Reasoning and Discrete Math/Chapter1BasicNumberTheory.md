@@ -26,7 +26,7 @@ Equivalently this means that the divisors of 4 are 1, 2, and 4.
 > - *a* and *b* **divide** *n*.
 > - *n* is a **multiple** of *a*, and is a multiple of *b*.
 > 
-> When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists a natural number *b* such that $n=ab$.
+> When *a* divides *n*, we write $a|n$.  Note that, if $a|n$ then it follows immediately by definition that there exists an integer *b* such that $n=ab$.
 > 
 > For each integer *n*, we will say that the **trivial divisors** or **trivial factors** of *n* are: 1, -1, $n,$ and $-n$.  
 
@@ -56,7 +56,7 @@ The trivial divisors are called "trivial" because any number is divisible by its
 
 We cannot talk about a number with no divisors, since there are always the trivial divisors.  Instead we define the notion of a number without any "nontrivial divisors", which we call a prime number.
 
-For example, 2 is at least 2 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
+For example, 2 is greater than 1 and has only the factorizations $2\cdot 1$ and $1\cdot 2$.  Since 1 and 2 are trivial divisors of 2, the fact that 2 has no other factorization means that 2 is prime.  Likewise 3 is prime.
 
 But 4 is composite because $4=2\cdot 2$, and 2 is not a trivial divisor of 4.
 
@@ -201,7 +201,7 @@ We applied this principle in the proof above, by showing that $1\cdot n = n$.  W
 
 > [!definition] ***Definition***
 > 
-> Let *x* be an integer and *d* a positive integer. Let *q* and *r* be the unique integers satisfying 
+> Let *x* be an integer and $d >0$ an integer. Let *q* and *r* be the unique integers satisfying 
 > 
 > $$
 > x = qd+r, \quad 0\le r<d
