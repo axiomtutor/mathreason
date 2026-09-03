@@ -13,7 +13,22 @@ What does “logic” study?  Take the following ([historically famous](https://
 
 This is an example of logic because it is an *inference*.  It concludes the proposition "Socrates is mortal" from other, already-accepted propositions.  
 
-Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)
+Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)  
+
+While these propositions are true, we don't accept them due to an inference.  Rather we accept them due to experience, or science, or other reasons. But because we do not accept them from inference, then we regard them as "non-logical".  
+
+> [!note] Distinction between "illogical" and "non-logical".
+> You might find it strange, that a true statment like "all men are mortal" would be regarded as "non-logical".  Does that mean we regard it as false?
+> 
+> Not at all!
+> 
+> Because "logic" is just focused on the question of inference, then anything which does not have to do with inference is regarded as non-logical.  
+> 
+> But there must be truths which we just accept rather than infer!  Otherwise we would have an "[infinite regress](https://en.wikipedia.org/wiki/Infinite_regress)" and no proposition would ever be accepted.
+> 
+> On the other hand, we regard a statement as "illogical" if it is *contrary to* the inferences that one should make.  Illogical statements are false and we reject them.
+> 
+> Non-logical statements are simply ones that we evaluate on some basis other than logic, like science or experience.
 
 To abstract the earlier argument into a purely logical expression, a logician would instead write 
 
