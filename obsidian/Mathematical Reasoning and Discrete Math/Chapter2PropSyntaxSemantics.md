@@ -83,19 +83,23 @@ Semantics is “the meaning that we assign to the syntax”.
 
 By an analogy to natural languages, English and Hindi syntax may use different symbols to write the word “puppy”.  However, we share the same semantic concept of “an adorable young dog”.
 
-# Alphabet, Language, and Abstraction
+# Languages and Alphabets
 
-In the study of logic, we will create a few different kinds of “languages of logic”.  These languages will increase in complexity, and their power to express kinds of logical inference.  
+In the study of logic, we will create a few different kinds of “languages of logic”.  The first language will be the language of "propositional logic", to be defined soon.  Later we will define an expansion of this to "predicate logic" and then "first-order logic".  
 
-The starting point for describing the syntax of a language, is its alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  But in fact, it includes much more than this, to fully describe all written expressions.  
+Each next language increases the expressive power of the language.  That is to say, predicate logic is able to represent more precise meaning than propositional logic, and likewise for first-order logic.
 
-It includes capitalization, spaces, punctuation, parentheses, and numerals.  
+Therefore we should discuss some ideas that are relevant to languages generally.  
 
-Just for contrast: the Hindi syntax includes a different set of letters, called [Devanagari](https://en.wikipedia.org/wiki/Devanagari).  But otherwise, we tend to share a lot of the same non-alphabetic symbols, like punctuation, spaces, and so on.  Our numerals are similar but not exactly the same.  
+First, every language has an alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English language syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  
+
+But in fact, it includes much more than this.  It includes capitalization, spaces, punctuation, parentheses, and numerals.  
+
+Just for contrast: the Hindi syntax includes a different set of letters, called [Devanagari](https://en.wikipedia.org/wiki/Devanagari).  Hindi also has punctuation and numerals, which are mostly similar to English punctuation and numerals.  
 
 The point is that languages can differ in the choice of fundamental symbols.  So when you describe a language, a natural starting place is to describe the alphabet.  And when we do so, we should take a very expansive view of what we mean by its “alphabet”—this should include every symbol that is commonly understood when a native speaker sees it on a page.
 
-# Strings and Languages
+# Strings in a Language
 
 We may take any nonempty set to serve as our alphabet.  
 
@@ -109,7 +113,7 @@ We may take any nonempty set to serve as our alphabet.
 > 
 > If *L* is a language, and $m\in L$, we will call *m* a **signifier in *L***.
 
-For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $\Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  When shortening our vocabulary like this, it’s because context usually makes it clear what these things are “over” or “in”.  
+For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $\Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
 
 For example, if we use these definitions to describe English, then $\Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
 
@@ -135,23 +139,18 @@ Another language, like say Hindi, might have strings like “झैठृ ङौ
 
 # Recursive Definition
 
-This chapter will build up the notion of “propositional logic”, which is a simple logical language.  It will also develop the idea of a “formula” which is a signifier in propositional logic.  
+In order to define many of the languages that we will study, we'll need to define them "recursively".
 
-To do so, we will have to build up this idea “recursively”.  What that means is: 
+To define a set recursively means to:
 
-- Tell you a few basic formulas.
-- Tell you how to construct more complex formulas from other formulas.
-
-Before we do that, it will be helpful to exercise the idea of recursion generally.
+1. Define a few elements of the set. 
+2. Show how to construct new elements, using elements which already exist in the set.
 
 Here is an example: Let’s consider the very simple alphabet $\Sigma = \{0,1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\Sigma$ are ‘010’ and ‘11011011’.  
 
 - In fact, this character set is used very often in computer science.
-    
-    The word “bit” means either ‘0’ or ‘1’, so that the alphabet here is the set of bits.  We call a string over $\{0,1\}$ a “bit string”.
-    
-    This is a useful language for talking about computer hardware.
-    
+  
+  Any language with alphabet $\{0,1\}$ is called a "binary language".  This is often a good model for the low-level language of computer code.  
 
 Consider the language of all strings which begin with a 1.  
 
@@ -201,7 +200,7 @@ Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore
 > 
 > *Hint*: $1x$.
 
-Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, $\Sigma$ contains two elements, the left- and right-parentheses.
+Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
 
 $$
 \begin{aligned}
@@ -221,7 +220,7 @@ Also ‘()()’ is a signifier.  Why?  Well we can explain it like before.
 
 We know from the base case that $()\in L$.
 
-Because $()\in L$ we can then take $x=()$ in the recursive case, and consider the first part of the recursive case.  That tells us $()()\in L$.
+Because $()\in L$ we can then take $x=()$ in the recursive case, and consider the first part of the recursive case.  That tells us $()x=()()\in L$.
 
 > [!exercise] ***Exercise*** 
 >
@@ -235,9 +234,9 @@ Because $()\in L$ we can then take $x=()$ in the recursive case, and consider th
 
 We will often write *T* as a symbol for “true” and *F* as a symbol for “false”.
 
-It is easy to think of propositions.  For example, “Japan is east of China” is a true proposition, while “3 is less than 2” is a false proposition.  You can have a proposition like “The ball is red” which is true when pointing to a red ball, and false when pointing to a white ball.  
+It is easy to think of propositions.  For example, “Japan is east of China” is a true proposition, while “3 is less than 2” is a false proposition.  
 
-There are immediate and interesting linguistic concepts here, like “[indexicals](https://en.wikipedia.org/wiki/Indexicality)” and “[counterfactuals](https://en.wikipedia.org/wiki/Counterfactual_thinking)” and lots of other kinds of propositions.  But our interest is mathematics, so let’s not get distracted.
+You can have a proposition like “The ball is red” which is true when pointing to a red ball.  That same proposition is false when pointing to a white ball.  
 
 It might even seem hard to think of sentences that are *not* propositions, until you see a few examples!
 
@@ -249,9 +248,7 @@ None of the above sentences are either true or false, so these are sentences whi
 
 # Propositional Variables, Syntax and Semantics
 
-In logic, as in mathematics, we strive for abstraction.  If we think of a proposition like “3 is less than 2”, this has a lot of mathematical (not logical) content.  So we would like to abstract away the non-logical content, so that we may focus only on the logical content.  
-
-Therefore we will instead represent a proposition by a single letter, like *P*.  This is called a “propositional variable”.  Just like how a mathematical variable is allowed to take a bunch of different numeric values, a propositional variable is allowed to be or “take on” a bunch of different propositions.
+Out of a desire for abstraction,  we will instead represent a proposition by a single letter, like *P*.  This is called a “propositional variable”.  Just like how a mathematical variable is allowed to take a bunch of different numeric values, a propositional variable is allowed to be or “take on” a bunch of different propositions.
 
 Therefore when we write *P*, we don’t necessarily know which proposition it refers to.  For the purposes of logic, there are really just two interesting possibilities: *P* may be true or false.  
 
