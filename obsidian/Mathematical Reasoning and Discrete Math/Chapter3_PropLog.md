@@ -4,8 +4,6 @@
 >
 > A **proposition** is any sentence that is either true or false.
 
-We will often write *T* as a symbol for “true” and *F* as a symbol for “false”.
-
 It is easy to think of example propositions.  For example, “Japan is east of China” is a true proposition, while “3 is less than 2” is a false proposition.  
 
 You can have a proposition like “The ball is red” which is true when pointing to a red ball.  That same proposition is false when pointing to a white ball.  
