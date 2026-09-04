@@ -99,11 +99,11 @@ By an analogy to natural languages, English and Hindi syntax may use different s
 
 In the study of logic, we will create a few different kinds of “languages of logic”.  The first language will be the language of "propositional logic", to be defined soon.  Later we will define an expansion of this to "predicate logic" and then "first-order logic".  
 
-Each next language increases the expressive power of the language.  That is to say, predicate logic is able to represent more precise meaning than propositional logic, and likewise for first-order logic.
+Each next language has greater expressive power than the one before it.  That is to say, predicate logic is able to represent more precise meaning than propositional logic, and first-order logic can express even more than that.
 
-Therefore we should discuss some ideas that are relevant to languages generally.  
+Because we will study languages, we should first discuss some ideas that are relevant to languages generally.  
 
-First, every language has an alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English language syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  
+First: every language has an alphabet.  A language’s alphabet is the collection of symbols which are used to express anything.  The English language syntax includes the standard alphabet, 26 letters from ‘a’ to ‘z’.  
 
 But in fact, it includes much more than this.  It includes capitalization, spaces, punctuation, parentheses, and numerals.  
 
@@ -111,7 +111,7 @@ Just for contrast: the Hindi syntax includes a different set of letters, called 
 
 The point is that languages can differ in the choice of fundamental symbols.  So when you describe a language, a natural starting place is to describe the alphabet.  And when we do so, we should take a very expansive view of what we mean by its “alphabet”—this should include every symbol that is commonly understood when a native speaker sees it on a page.
 
-# Strings in a Language
+# Strings and Signifiers
 
 We may take any nonempty set to serve as our alphabet.  
 
@@ -124,16 +124,16 @@ We may take any nonempty set to serve as our alphabet.
 > A **language over** $\Sigma$ is any subset of $\Sigma^*$.  That is to say, if $L\subseteq \Sigma^*$ then we call *L* a language over $\Sigma$.  
 > 
 > If *L* is a language, and $m\in L$, we will call *m* a **signifier in *L***.
-
-For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $\Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
+> 
+> For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $\Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
 
 For example, if we use these definitions to describe English, then $\Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
 
-Then a string would just be any finite sequence of these symbols (or characters).  For example “jhb88qtio weqirj]—…, ?” is a string.  It’s a nonsense string, but it still counts as a string.  
+Then a string would just be any finite sequence of these symbols (or characters).  For example “jhb88qtio weqir?j]—…, ” is a string.  It’s a nonsense string, but it still counts as a string.  
 
 The sentence “Hello friend.” is another example of a string, but it is also a signifier in English because it is meaningful.  Also just the word “hello” is a signifier in English, because “hello” means something.  
 
-Another language, like say Hindi, might have strings like “झैठृ ङौप्ष ञीक्थ लॄझ्फ टैंषो धृङ्चै भौट्ण”.  This is a string over Devanagari, although it is not a signifier in Hindi.  
+Another language, like say Hindi, might have strings like “झैठृ ङौप्ष ञीक्थ लॄझ्फ टैंषो धृङ्चै भौट्ण”.  This is a string over Devanagari, although it is not a signifier in Hindi because it is a meaningless sequence of characters.  
 
 > [!exercise] ***Exercise***
 >
@@ -155,10 +155,18 @@ In order to define many of the languages that we will study, we'll need to defin
 
 To define a set recursively means to:
 
-1. Define a few elements of the set. 
-2. Show how to construct new elements, using elements which already exist in the set.
+1. Define a few elements of the set. This is the "base case".
+2. Show how to construct new elements, using elements which already exist in the set. This is the "recursive case".
 
-Here is an example: Let’s consider the very simple alphabet $\Sigma = \{0,1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\Sigma$ are ‘010’ and ‘11011011’.  
+Here is a simple example: we can define the set of even positive integers, *S*, recursively.  To define it, we begin by defining $2\in S$.  This is the base case.
+
+Next, if $x\in S$ is any element of the set, then also $x+2\in S$.  That is to say, we may construct a new element of *S* by taking any existing element and adding 2.  This is the "recursive case".
+
+Therefore $2\in S$ because of the base case.  But also $2+2\in S$ if we apply the recursive case, where $x=2$.  This shows that $4\in S$.
+
+But now that we have $4\in S$ it follows that $4+2 = 6\in S$, by another application of the recursive case.  And then because $6\in S$ it follows that $6+2=8\in S$, and so on.  
+
+Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\Sigma = \{0,1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\Sigma$ are ‘010’ and ‘11011011’.  
 
 - In fact, this character set is used very often in computer science.
   
