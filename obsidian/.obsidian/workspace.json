@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter2PropSyntaxSemantics.md",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter3_PropLog.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Chapter2PropSyntaxSemantics"
+              "title": "Chapter3_PropLog"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter5FOLSynSem.md",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter3_PropLog.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,13 +191,14 @@
   },
   "active": "95d3d5075504da6f",
   "lastOpenFiles": [
-    "Mathematical Reasoning and Discrete Math/Chapter1BasicNumberTheory.md",
     "Mathematical Reasoning and Discrete Math/Chapter2PropSyntaxSemantics.md",
+    "Mathematical Reasoning and Discrete Math/Chapter3_PropLog.md",
+    "Mathematical Reasoning and Discrete Math/Chapter5PredSynSem.md",
+    "Mathematical Reasoning and Discrete Math/Chapter1BasicNumberTheory.md",
     "Mathematical Reasoning and Discrete Math.md",
-    "Mathematical Reasoning and Discrete Math/Chapter5FOLSynSem.md",
+    "Mathematical Reasoning and Discrete Math/Chapter6FOLSynSem.md",
     "Mathematical Reasoning and Discrete Math/Chapter0Basic Sets.md",
-    "Mathematical Reasoning and Discrete Math/Chapter4PredSynSem.md",
-    "Mathematical Reasoning and Discrete Math/Chapter3_PropositionalProofTheory.md",
+    "Mathematical Reasoning and Discrete Math/Chapter4_PropositionalProofTheory.md",
     "Chapter3PropProof.md",
     "Mathematical Reasoning and Discrete Math/Chapter 1 A Case Study in Number Theory 38d4b66370fd804a8a7cde27d4961b99.md",
     "Mathematical Reasoning and Discrete Math/Chapter 0 The Bare Necessities of Sets and Functio 3a84b66370fd8077820cc20704dbbc2f.md",
