@@ -77,7 +77,7 @@ The structure of this text is intended to be unlike the usual mathematics textbo
 * Where possible I try to explain not just the proofs of theorems, but *how to write* the proofs of theorems.  That means explaining writing style, structure, and discovery of proofs.
 * This resource provides an "theorem assistant".  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.  This is helpful for understanding the logic and level of detail in which proofs should be written.  
 
-# Content
+# Chapters
 
 [Chapter 0: The Bare Necessities of Sets and Functions](Chapter0Basic%20Sets.md)
 

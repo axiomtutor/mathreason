@@ -3,15 +3,17 @@ title: "Chapter 2: Propositional Syntax and Semantics"
 ---
 
 
-Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can appeal to as we describe the abstract study of logic.  
+What we have learned about number theory can now serve as a collection of examples while we study logic.
 
 What does “logic” study?  Take the following ([historically famous](https://en.wikipedia.org/wiki/Syllogism)) simple example of a logical argument.
 
 > All men are mortal.
+> 
 > Socrates is a man.
+> 
 > Therefore Socrates is mortal.
 
-> [!note] By "argument" we do not mean "a conflict".
+> [!note]- By "argument" we do not mean "a conflict".
 > In logic, we use the word "argument" a bit unlike how it is commonly used.  Often we colloquially think of an argument as a kind of conflict.
 > 
 > For logicians an argument is really any explanation of how a set of assumed facts imply some conclusion.  
@@ -20,35 +22,45 @@ What does “logic” study?  Take the following ([historically famous](https://
 
 This is an example of logic because it is an *inference*.  It concludes the proposition "Socrates is mortal" from other, already-accepted propositions.  
 
-Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)  
+Notice that it is not pure logic, because the argument also depends on accepting "all men are mortal" and "Socrates is a man".  (Let's ignore any issues from the fact that Socrates no longer exists.)  
 
 While these propositions are true, we don't accept them due to an inference.  Rather we accept them due to experience, or science, or other reasons. But because we do not accept them from inference, then we regard them as "non-logical".  
 
 > [!note]- Distinction between "illogical" and "non-logical".
 > You might find it strange, that a true statment like "all men are mortal" would be regarded as "non-logical".  Does that mean we regard it as false?
 > 
-> Not at all!
+> Not at all!  Certainly "all men are mortal" is a true proposition. It is simply "non-logical" because we accept it on the basis of something other than logical inference.
 > 
-> Because "logic" is just focused on the question of inference, then anything which does not have to do with inference is regarded as non-logical.  
-> 
-> But there must be truths which we just accept rather than infer!  Otherwise we would have an "[infinite regress](https://en.wikipedia.org/wiki/Infinite_regress)" and no proposition would ever be accepted.
-> 
-> On the other hand, we regard a statement as "illogical" if it is *contrary to* the inferences that one should make.  Illogical statements are false and we reject them.
-> 
-> Non-logical statements are simply ones that we evaluate on some basis other than logic, like science or experience.
+> So a proposition like "all men are mortal" is an instance of a "non-logical truth".  Non-logical truths are necessary, because if everything that we accept had to be justified by an inference, we would obtain an [infinite regress](https://en.wikipedia.org/wiki/Infinite_regress)! 
 
-To abstract the earlier argument into a purely logical expression, a logician would instead write 
+# Logical Abstraction
+
+The argument 
+
+> All men are mortal.
+> 
+> Socrates is a man.
+> 
+> Therefore Socrates is mortal.
+
+has several non-logical concepts, like "men" and "Socrates".  These are specific concepts, while logic is interested in general principles of reasoning.  Therefore, in logic we would like to "abstract away" any of the non-logical concepts.
+
+The following is the abstraction of the argument.
 
 > All *A* are *B*.
+> 
 > *x* is an *A*.
+> 
 > Therefore *x* is *B*.
 
-The above is a logical abstraction because we remove the non-logical ideas like “men” and “mortal”, and so on.  Instead we replace them with symbols like *A* and *B*, which act as place-holders for any non-logical content that you might like to use.
+This replaces the non-logical components with symbols like *A* and *B*.  These symbols act as place-holders for any non-logical content that you might like to use.
 
 For example, consider the argument 
 
 > All cats are mammals.
+> 
 > Tabby is a cat.
+> 
 > Therefore Tabby is a mammal.
 
 This argument has exactly the same structure as the argument regarding Socrates' mortality.  They only differ by the non-logical content.
@@ -56,12 +68,12 @@ This argument has exactly the same structure as the argument regarding Socrates'
 From the abstract form, 
 
 > All *A* are *B*.
+> 
 > *x* is an *A*.
+> 
 > Therefore *x* is *B*.
 
 we can obtain either the argument about Socrates or the argument about Tabby, by an appropriate substitution of the symbols *A*, *B*, and *x*.  
-
-Because logicians want to focus only on the principles of logic, we therefore abstract propositions and forms as much as possible.  
 
 > [!exercise] ***Exercise***
 > Consider the argument "James Brown was a funk singer, and a dancer.  Every funk singer is a musician.  Therefore James Brown was a musician and a dancer."

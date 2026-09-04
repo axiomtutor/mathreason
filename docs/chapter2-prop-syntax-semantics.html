@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chapter 2: Propositional Syntax and Semantics — Mathematical Reasoning</title>
-<meta name="description" content="Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can ap" />
+<meta name="description" content="What we have learned about number theory can now serve as a collection of examples while we study logic. What does “logic” study? Take the following histor" />
 <meta property="og:title" content="Chapter 2: Propositional Syntax and Semantics — Mathematical Reasoning and Discrete Math" />
-<meta property="og:description" content="Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can ap" />
+<meta property="og:description" content="What we have learned about number theory can now serve as a collection of examples while we study logic. What does “logic” study? Take the following histor" />
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary" />
 <link rel="stylesheet" href="assets/katex.min.css" />
@@ -33,54 +33,58 @@
   <main class="content" id="main">
     <article class="prose">
       <h1>Chapter 2: Propositional Syntax and Semantics</h1>
-      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#syntax-and-semantics">Syntax and Semantics</a></li><li class="toc-h2"><a href="#languages-and-alphabets">Languages and Alphabets</a></li><li class="toc-h2"><a href="#strings-in-a-language">Strings in a Language</a></li><li class="toc-h2"><a href="#recursive-definition">Recursive Definition</a></li><li class="toc-h2"><a href="#propositions">Propositions</a></li><li class="toc-h2"><a href="#propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</a></li><li class="toc-h2"><a href="#syntactic-conjunction">Syntactic Conjunction</a></li><li class="toc-h2"><a href="#semantic-conjunction">Semantic Conjunction</a></li><li class="toc-h2"><a href="#truth-table-for-conjunction">Truth-table for Conjunction</a></li><li class="toc-h2"><a href="#disjunction">Disjunction</a></li><li class="toc-h2"><a href="#negation">Negation</a></li><li class="toc-h2"><a href="#conditional">Conditional</a></li></ul></nav>
-      <p>Now that we’ve seen an extended example of the use of logic and sets in order to reason about number theory, this gives us a lot of examples that we can appeal to as we describe the abstract study of logic.</p>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#logical-abstraction">Logical Abstraction</a></li><li class="toc-h2"><a href="#syntax-and-semantics">Syntax and Semantics</a></li><li class="toc-h2"><a href="#languages-and-alphabets">Languages and Alphabets</a></li><li class="toc-h2"><a href="#strings-in-a-language">Strings in a Language</a></li><li class="toc-h2"><a href="#recursive-definition">Recursive Definition</a></li><li class="toc-h2"><a href="#propositions">Propositions</a></li><li class="toc-h2"><a href="#propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</a></li><li class="toc-h2"><a href="#syntactic-conjunction">Syntactic Conjunction</a></li><li class="toc-h2"><a href="#semantic-conjunction">Semantic Conjunction</a></li><li class="toc-h2"><a href="#truth-table-for-conjunction">Truth-table for Conjunction</a></li><li class="toc-h2"><a href="#disjunction">Disjunction</a></li><li class="toc-h2"><a href="#negation">Negation</a></li><li class="toc-h2"><a href="#conditional">Conditional</a></li></ul></nav>
+      <p>What we have learned about number theory can now serve as a collection of examples while we study logic.</p>
 <p>What does “logic” study?  Take the following (<a href="https://en.wikipedia.org/wiki/Syllogism" target="_blank" rel="noopener noreferrer">historically famous</a>) simple example of a logical argument.</p>
 <blockquote>
-<p>All men are mortal.
-Socrates is a man.
-Therefore Socrates is mortal.</p>
+<p>All men are mortal.</p>
+<p>Socrates is a man.</p>
+<p>Therefore Socrates is mortal.</p>
 </blockquote>
-<section class="callout callout-note"><p class="callout-label">By &quot;argument&quot; we do not mean &quot;a conflict&quot;.</p><div class="callout-body"><p>In logic, we use the word &quot;argument&quot; a bit unlike how it is commonly used.  Often we colloquially think of an argument as a kind of conflict.</p>
+<details class="callout callout-note callout-fold"><summary class="callout-label">By &quot;argument&quot; we do not mean &quot;a conflict&quot;.<span class="callout-chevron" aria-hidden="true"></span></summary><div class="callout-body"><p>In logic, we use the word &quot;argument&quot; a bit unlike how it is commonly used.  Often we colloquially think of an argument as a kind of conflict.</p>
 <p>For logicians an argument is really any explanation of how a set of assumed facts imply some conclusion.</p>
 <p>See <a href="https://en.wikipedia.org/wiki/Argument" target="_blank" rel="noopener noreferrer">the Wikipedia article on arguments</a> for more details.</p>
-</div></section><p>This is an example of logic because it is an <em>inference</em>.  It concludes the proposition &quot;Socrates is mortal&quot; from other, already-accepted propositions.</p>
-<p>Notice that it is not pure logic, because the argument also depends on accepting the earlier propositions, &quot;all men are mortal&quot; and &quot;Socrates is a man&quot;.  (Let's ignore any issues from the fact that Socrates no longer exists.)</p>
+</div></details><p>This is an example of logic because it is an <em>inference</em>.  It concludes the proposition &quot;Socrates is mortal&quot; from other, already-accepted propositions.</p>
+<p>Notice that it is not pure logic, because the argument also depends on accepting &quot;all men are mortal&quot; and &quot;Socrates is a man&quot;.  (Let's ignore any issues from the fact that Socrates no longer exists.)</p>
 <p>While these propositions are true, we don't accept them due to an inference.  Rather we accept them due to experience, or science, or other reasons. But because we do not accept them from inference, then we regard them as &quot;non-logical&quot;.</p>
 <details class="callout callout-note callout-fold"><summary class="callout-label">Distinction between &quot;illogical&quot; and &quot;non-logical&quot;.<span class="callout-chevron" aria-hidden="true"></span></summary><div class="callout-body"><p>You might find it strange, that a true statment like &quot;all men are mortal&quot; would be regarded as &quot;non-logical&quot;.  Does that mean we regard it as false?</p>
-<p>Not at all!</p>
-<p>Because &quot;logic&quot; is just focused on the question of inference, then anything which does not have to do with inference is regarded as non-logical.</p>
-<p>But there must be truths which we just accept rather than infer!  Otherwise we would have an &quot;<a href="https://en.wikipedia.org/wiki/Infinite_regress" target="_blank" rel="noopener noreferrer">infinite regress</a>&quot; and no proposition would ever be accepted.</p>
-<p>On the other hand, we regard a statement as &quot;illogical&quot; if it is <em>contrary to</em> the inferences that one should make.  Illogical statements are false and we reject them.</p>
-<p>Non-logical statements are simply ones that we evaluate on some basis other than logic, like science or experience.</p>
-</div></details><p>To abstract the earlier argument into a purely logical expression, a logician would instead write</p>
+<p>Not at all!  Certainly &quot;all men are mortal&quot; is a true proposition. It is simply &quot;non-logical&quot; because we accept it on the basis of something other than logical inference.</p>
+<p>So a proposition like &quot;all men are mortal&quot; is an instance of a &quot;non-logical truth&quot;.  Non-logical truths are necessary, because if everything that we accept had to be justified by an inference, we would obtain an <a href="https://en.wikipedia.org/wiki/Infinite_regress" target="_blank" rel="noopener noreferrer">infinite regress</a>!</p>
+</div></details><details class="section"><summary class="section-summary"><h2 id="logical-abstraction">Logical Abstraction</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>The argument</p>
 <blockquote>
-<p>All <em>A</em> are <em>B</em>.
-<em>x</em> is an <em>A</em>.
-Therefore <em>x</em> is <em>B</em>.</p>
+<p>All men are mortal.</p>
+<p>Socrates is a man.</p>
+<p>Therefore Socrates is mortal.</p>
 </blockquote>
-<p>The above is a logical abstraction because we remove the non-logical ideas like “men” and “mortal”, and so on.  Instead we replace them with symbols like <em>A</em> and <em>B</em>, which act as place-holders for any non-logical content that you might like to use.</p>
+<p>has several non-logical concepts, like &quot;men&quot; and &quot;Socrates&quot;.  These are specific concepts, while logic is interested in general principles of reasoning.  Therefore, in logic we would like to &quot;abstract away&quot; any of the non-logical concepts.</p>
+<p>The following is the abstraction of the argument.</p>
+<blockquote>
+<p>All <em>A</em> are <em>B</em>.</p>
+<p><em>x</em> is an <em>A</em>.</p>
+<p>Therefore <em>x</em> is <em>B</em>.</p>
+</blockquote>
+<p>This replaces the non-logical components with symbols like <em>A</em> and <em>B</em>.  These symbols act as place-holders for any non-logical content that you might like to use.</p>
 <p>For example, consider the argument</p>
 <blockquote>
-<p>All cats are mammals.
-Tabby is a cat.
-Therefore Tabby is a mammal.</p>
+<p>All cats are mammals.</p>
+<p>Tabby is a cat.</p>
+<p>Therefore Tabby is a mammal.</p>
 </blockquote>
 <p>This argument has exactly the same structure as the argument regarding Socrates' mortality.  They only differ by the non-logical content.</p>
 <p>From the abstract form,</p>
 <blockquote>
-<p>All <em>A</em> are <em>B</em>.
-<em>x</em> is an <em>A</em>.
-Therefore <em>x</em> is <em>B</em>.</p>
+<p>All <em>A</em> are <em>B</em>.</p>
+<p><em>x</em> is an <em>A</em>.</p>
+<p>Therefore <em>x</em> is <em>B</em>.</p>
 </blockquote>
 <p>we can obtain either the argument about Socrates or the argument about Tabby, by an appropriate substitution of the symbols <em>A</em>, <em>B</em>, and <em>x</em>.</p>
-<p>Because logicians want to focus only on the principles of logic, we therefore abstract propositions and forms as much as possible.</p>
 <section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><p>Consider the argument &quot;James Brown was a funk singer, and a dancer.  Every funk singer is a musician.  Therefore James Brown was a musician and a dancer.&quot;</p>
 <ol>
 <li>Identify the premises and conclusion of the argument.</li>
 <li>Form the logical abstraction of this argument.</li>
 </ol>
-</div></section><details class="section"><summary class="section-summary"><h2 id="syntax-and-semantics">Syntax and Semantics</h2>
+</div></section></div></details><details class="section"><summary class="section-summary"><h2 id="syntax-and-semantics">Syntax and Semantics</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>A significant theme in the study of logic is the dual nature of “syntax” and “semantics”.</p>
 <p>To briefly acquaint yourself with these ideas, at a less technical level, you may want to read the introductory paragraphs here:</p>
 <ul>

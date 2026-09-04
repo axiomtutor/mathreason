@@ -2,13 +2,27 @@
 title: "Chapter 1: A Case Study in Number Theory"
 ---
 
-This chapter is a case study in elementary number theory.  
+# The Importance of Proof
 
-As you read this case study, of course, one intent is for you to learn number theory.  But it is just one of the intended goals of this chapter.
+This chapter is a case study in elementary number theory.  As you read this case study, of course, one intent is for you to learn number theory.  
 
-You should also pay attention to the use of logic in proofs.  If a theorem claims that something is true "if and only if" something else, then you should notice how this corresponds to the structure of the proof.  You should also pay attention to proof by cases, proof by contradiction, and any other styles of proof.  These will all serve as examples later on when we discuss set theory.
+But it is just one of the intended goals of this chapter.  In fact it is not even the primary goal.  You should pay *more* attention to the use of logic in proofs.  
 
-Also you should pay attention to the use of any sets.  This will help to motivate why we need the study of sets in order to study other mathematical subjects, like this one.
+Do not underestimate the importance of proofs!  Proof is fundamental to how all of mathematics gets done.  Many students are deceived by their earlier education, and think that mathematics is about numbers, calculation, following steps.  But those are the basic technical skills which get you up to the point where you could *start* doing math.  Think of that like exercising so that you have enough strength to play football, or like playing scales so that you have enough knolwedge of the instrument to play real music.  
+
+The real math is in the proofs.
+
+Proofs are the primary way that mathematicians talk about their subject.  This street of communication goes in two ways: If you want your work in math to be read, understood, and valued by any other person in the mathematical community, then you're going to need to write it in proofs.  
+
+But also if you even want to *read* what mathematicians have discovered, you're going to need to be able to read proofs as well.  Because again, the real math is in the proofs.  
+
+There's an interesting analogy to cooking and eating.  As you learn to cook good food, you actually get better at noticing the food that you eat.  You wouldn't have thought that tasting food is a skill you can build, but it is!  And the two skills keep reinforcing each other: The more you develop the skill of cooking, the greater your skill at tasting; and the more you develop the skill of tassting, the greater your skill at cooking.
+
+The same is true of consuming and producing proofs.  You cannot adequately consume proofs, and fully, deeply understand them—without also developing the skill of producing them.  For this reason I strongly urge you not to read this text passively.  As the saying goes, 
+
+> A mathematician reads with a pencil in her hand.
+
+You should be reading and exercising by writing proofs. And then reading, and then exercising, and so on.
 
 # Divisibility
 
