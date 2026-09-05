@@ -121,48 +121,19 @@ Q^{\frak M_2} = \frak T
 > 
 > How many models are possible?
 
-Note that, as we proceed, we are hoping to develop both a syntax and semantics for propositional logic.  
-
-We have said that syntax starts from an alphabet, $\Sigma$, for this language.
-
-The definition above indicates that the alphabet will include the symbols  
-
-$$
-A, B, C, ..., Z\in \Sigma
-$$
-
-and also, in case we need more, the indexed symbols
-
-$$
-A_1, A_2, \dots, B_1, B_2,\dots Z_1,Z_2,... \in \Sigma
-$$
-
-We will prefer *P*, *Q*, and so on, out of tradition.  But technically, we will recognize any capital italics Latin letter, with or without numeric indices, as a symbol in the language.  
-
-Moreover, these symbols will be meaningful.  They represent a proposition, which we regard as a meaningful component in propositional logic.  It is because they are meaningful, that we are able to give them a semantics (in this case, that means giving them a truth-value by way of a model).  
-
-The meaningful expressions in this language are the propositional formulas.  That is to say, the language *L* is the set of propositional formulas.  The set of formulas contains all the variables.
-
-$$
-A,B,C,..., Z, A_1, A_2, \dots,B_1,B_2, ... Z_1,Z_2,...\in L
-$$
-
-*L* will eventually contain more than just these variables—but this is our “base case”.
-
 # Syntactic Conjunction
+Consider the sentence 
 
-Consider the set $A=\{1,2,3,4\}$ and the minimum $\min A = 1$.
+> 2 is prime and even.
 
-The minimum is 1 because 
+This is a "conjunction" of two propositions, 
 
-- 1 is a lower bound of *A*, and
-- $1\in A$.
+- 2 is prime, and
+- 2 is even.
 
-This is a *conjunction* of the two propositions, because both are required for 1 to be the minimum of *A*.  (Conjunction is formally defined below. For now I am describing this at a relatively intuitive level.)
+We could represent the proposition “2 is prime” as the variable *P*.
 
-We could represent the proposition “1 is a lower bound of *A*” as the variable *P*.
-
-We could represent “$1\in A$” as the variable *Q*.
+We could represent “2 is even” as the variable *Q*.
 
 Then we would represent the conjunction of *P* and *Q* as 
 
@@ -170,21 +141,23 @@ $$
 P\land Q
 $$
 
-That is to say, we will use the “up wedge” to represent conjunction.  
+That is to say, we will use the “up wedge” symbol to represent conjunction.  
 
 ---
 
+Every propositional variable is a signifier in propositional logic: It is an expression which has meaning.  
+
+In propositional logic we will call the signifiers "formulas".  So each propositional variable is a formula. 
+
+But moreover, every conjunction is also a formula, like $P\land Q$.  
+
+But moreover still, we can also form conjunctions of conjunctions, like 
+
 We are also able to form more complex conjunctions, like 
 
-$$
-(P\land Q)\land (R\land S)
-$$
-
-Even though $(P\land Q)$ is not a propositional *variable*, it still represents a proposition.  Likewise for $(R\land S)$.  Therefore it makes sense if we form the conjunction of these two.
-
-So we don’t just form the conjunction of variables, we can also form the conjunction of “formulas”.  Formulas are any combination of variables and propositional symbols, which represent propositions.  
-
-Propositional formulas (more general than propositional variables) will traditionally be denoted by lowercase italics Greek letters.
+$$P\land (Q\land R)$$
+or
+$$(P\land Q)\land (R\land S)$$
 
 > [!definition] ***Definition***
 >
@@ -216,52 +189,15 @@ Because *Q* and *R* are formulas, therefore $Q\land R$ is a formula.
 > 
 > Is $P\land P$ a formula?
 
----
-
-Let $\Sigma$ be the alphabet for propositional logic.  Let *L* be the language (again, this is the same as the set of formulas)
-
-We now have 
-
-$$
-A, B,...,Z,A_1,A_2,...,B_1,B_2,...,Z_1,Z_2,... \in \Sigma
-$$
-
-and now also there are parentheses and the $\land$ symbol,
-
-$$
-(,),\land \in \Sigma
-$$
-
-The definitions above give us the recursive rules:
-
-- Base case: $A,B,…,Z,A_1,A_2,…,B_1,B_2,…,Z_1,Z_2,…\in L$.
-- Recursive case: If $\phi,\psi\in L$ then $(\phi\land\psi)\in L$.
-
-For example, these rules imply $(P\land (Q\land R))\in L$, which we can prove in the following way.  
-
-$Q,R\in L$ by the base case.  
-
-Because $Q,R\in L$ then we take $\phi=Q$ and $\psi=R$ in the recursive case.  Therefore this rule tells us that $(Q\land R)\in L$.  
-
-$P\in L$ by the base case.
-
-Because $P\in L$ and $(Q\land R)\in L$, then we may take $\phi=P$ and $\psi=(Q\land R)$ in the recursive case.  Therefore this rule tells us that $(P\land (Q\land R))\in L$.  
-
-> [!exercise] ***Exercise***
->
-> With $\Sigma, L$ the alphabet and language of propositional logic, show that 
-> 
-> $$
-> ((P\land Q)\land (R\land S))\in L
-> $$
-
 # Semantic Conjunction
 
-Although the definition of conjunction above is correct, notice that it doesn’t actually tell you what conjunction is supposed to *represent* or what it’s supposed to *do*.  It tells us the syntax, but not the semantics, which is about truth-value.
+Although the definition of conjunction above is correct, notice that it doesn’t actually tell you what conjunction is supposed to *represent* or what it’s supposed to *do*.  It tells us the syntax, but not the semantics.
+
+Recall that the semantics of propositional logic is concerned with truth-value.
 
 > [!definition] ***Definition***
 >
-> We define the boolean algebra operation, **semantic conjunction**.  It is denoted by $\curlywedge$, and defined as an operation on truth-values, as follows.  
+> **Semantic conjunction** is the following operation, denoted by $\curlywedge$.
 > 
 > $$ \begin{aligned}
 > \frak{T\curlywedge T = T}\\\\
@@ -273,6 +209,13 @@ Although the definition of conjunction above is correct, notice that it doesn’
 > Let $\phi$ and $\psi$ be formulas, and let $\frak M$ be a model defined for $\phi$ and $\psi$.  
 > 
 > Then $(\phi\land \psi)^{\frak M}$ is defined to be equal to $\phi^{\frak M}\curlywedge \psi^{\frak M}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $\frak M$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $\frak M$**.
+
+> [!note]- Semantic conjunction is an example of a "boolean algebra operation".
+> The values $\frak T$ and $\frak F$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
+> 
+> A function is then called a "boolean algebra operation" if its inputs and outputs are boolean values.  
+> 
+> Hence semantic conjunction, as well as several of the other operations below, are all boolean algebra operations.
 
 The value of a formula is the bridge between syntax and semantics.  It works by first giving values to the propositional variables, because that is the definition of what $\frak M$ is.  But from there, we can then determine the value of a conjunction, by determining the values of its component formulas.  
 

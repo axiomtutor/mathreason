@@ -7,6 +7,7 @@ author: Adam Frank
 > * Finish remaining chapters until completing the discussion of number theory.
 > * Add videos.
 > * Clean the bottom of the main page.
+> * Give every chapter a consolidated set of definitions and theorems at the top.
 
 # Welcome and Feedback
 
