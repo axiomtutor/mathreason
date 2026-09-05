@@ -44,7 +44,7 @@ We will use $\frak T$ (this is a Fraktur ‘T’) for “true”, and $\frak F$ 
 >
 > *Syntax*
 > 
-> A **propositional variable** is a variable (a symbol) which could denote any proposition. It is standard to use symbols like *P, Q,* or indexed symbols like $P_1,P_2,\dots$ for propositional variables.
+> A **propositional variable** is a variable (a symbol) which could denote any proposition. 
 > 
 > *Semantics*
 > 
@@ -70,26 +70,41 @@ We will use $\frak T$ (this is a Fraktur ‘T’) for “true”, and $\frak F$ 
     >
     >If we intend for the variable *P* to express “1 + 1 = 2” then we would pick a model, $\frak M$, in which $P^{\frak M}=\frak T$.  If we use *P* to stand for “1 + 1 = 0” then we would pick our model such that $P^{\frak M}=\frak F$.
     >
-    >But one might reasonably wonder “Ok, I think I get that.  But like … what *is* a model?  Like, if I write $\mathfrak M = …$ what is the the “…”?  It’s obviously not a sentence, it’s not a number, it’s not a this and not a that.  What *is* it?
+    >But one might reasonably wonder “Ok, I think I get that.  But like … what *is* a model?"
     >
     >Technically, a model is a function.  The inputs are the propositional variables and the outputs are truth-values.  
-    >
-    >We could — and I think some authors do — use standard function notation for models.  In their notation, instead of writing $P^{\frak M}=\frak T$ they write $\frak M(P) = \frak T$.  However, as we will see later, our propositions are going to involve a LOT of parentheses.  If we use standard function notation like that, we introduce *yet more* parentheses.  
-    >
-    >That is just one aesthetic, readability reason to not use standard function notation.  There are others: Putting $\frak M$ inline with the rest of the proposition is also visually confusing because you’re slightly tempted to read the model as part of the propositional expression.  
-    >
-    >Therefore I, along with many other authors of logic texts, prefer to write the model as a superscript.
-    >
-    >But really, the model is a function.
-    
 
-Let’s see an example.  Let *P* and *Q* be propositional variables.  
+Let’s see an example.  Suppose that we begin from the propositions "This triangle is obtuse and isosceles".  We might use *P* to reprensent "this triangle is obtuse" and *Q* to represent "this triangle is isosceles".  
+
+If the triangle that we are discussing is this one:
+
+![[Pasted image 20260904203417.png]]
+
+then this triangle is obtuse, therefore we should choose a model, $\mathfrak M_1$, such that $P^{\mathfrak M_1}=\mathfrak T$.
+
+Since the triangle is also isosceles then we should also decide that our model assigns $Q^{\mathfrak M_1}=\mathfrak T$.
+
+On the other hand, if the triangle were 
+
+![[Pasted image 20260904203631.png]]
+
+then this is not obtuse but it is isosceles. Therefore we should use the model 
+
+$$\begin{aligned}
+P^{\frak M_2} =\frak F\\
+Q^{\frak M_2} = \frak T
+\end{aligned}$$
+
+Let *P* and *Q* be propositional variables.  
 
 If $\frak M$ gives the value $\frak T$ to the variable *P*, then we will write $P^{\frak M}=\frak T$.  Likewise if $\frak M$ gives the value $\frak F$ to the variable *Q*, we will write $Q^{\frak M} = \frak F$.  
 
-Of course, one could also choose a model which made any other assignment of values to the variables—say, assigning $P^{\frak M}= \frak F$ and $Q^{\frak M}= \frak T$.  
+Of course, one could also choose a model which made any other assignment of values to the variables—for example, $P^{\frak M}= \frak F$ and $Q^{\frak M}= \frak T$.  
 
-If there is just one variable, then two models are possible: Either your model is $\frak M_1$ such that $P^{\frak M_1}=\frak T$ or it is $\frak M_2$ such that $P^{\frak M_2}=\frak F$.
+If there is just one variable, *P*, then two models are possible: Either your model is 
+
+- $\frak M_1$ such that $P^{\frak M_1}=\frak T$, or 
+- $\frak M_2$ such that $P^{\frak M_2}=\frak F$.
 
 If there are two variables, then four models are possible.  One of them is $\frak M_1$ such that $P^{\frak M_1}= \frak T$ and $Q^{\frak M_1}= \frak T$.  
 
