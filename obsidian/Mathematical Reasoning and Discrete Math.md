@@ -87,13 +87,13 @@ The structure of this text is intended to be unlike the usual mathematics textbo
 
 [[Chapter3_PropLog|Chapter 3: Propositional Logic, Syntax and Semantics]]
 
-[[Chapter4_PropositionalProofTheory| Chapter 3: Propositional Proof Theory]]
+[[Chapter4_PropositionalProofTheory| Chapter 4: Propositional Proof Theory]]
 
-[[Chapter5PredSynSem| Chapter 4: Predicate Syntax and Semantics]]
+[[Chapter5PredSynSem| Chapter 5: Predicate Syntax and Semantics]]
 
-[[Chapter6FOLSynSem| Chapter 5: First-order Logic, Syntax and Semantics]]
+[[Chapter6FOLSynSem| Chapter 6: First-order Logic, Syntax and Semantics]]
 
-[[Chapter7_AppFOL| Chapter 6: Applications of First-order Logic]]
+[[Chapter7_AppFOL| Chapter 7: Applications of First-order Logic]]
 
 
 ---

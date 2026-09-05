@@ -95,18 +95,12 @@ P^{\frak M_2} =\frak F\\
 Q^{\frak M_2} = \frak T
 \end{aligned}$$
 
-Let *P* and *Q* be propositional variables.  
-
-If $\frak M$ gives the value $\frak T$ to the variable *P*, then we will write $P^{\frak M}=\frak T$.  Likewise if $\frak M$ gives the value $\frak F$ to the variable *Q*, we will write $Q^{\frak M} = \frak F$.  
-
-Of course, one could also choose a model which made any other assignment of values to the variables—for example, $P^{\frak M}= \frak F$ and $Q^{\frak M}= \frak T$.  
-
-If there is just one variable, *P*, then two models are possible: Either your model is 
-
-- $\frak M_1$ such that $P^{\frak M_1}=\frak T$, or 
-- $\frak M_2$ such that $P^{\frak M_2}=\frak F$.
-
-If there are two variables, then four models are possible.  One of them is $\frak M_1$ such that $P^{\frak M_1}= \frak T$ and $Q^{\frak M_1}= \frak T$.  
+> [!exercise] ***Exercise***
+> Use the same *P* and *Q* above.  
+> 
+> What is the appropriate model for the following triangle?
+> 
+> ![[Pasted image 20260904204737.png]]
 
 > [!exercise] ***Exercise***
 >
