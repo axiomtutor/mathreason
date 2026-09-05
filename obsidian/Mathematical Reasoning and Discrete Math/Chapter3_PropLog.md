@@ -109,7 +109,11 @@ Q^{\frak M_2} = \frak T
 
 > [!exercise] ***Exercise***
 >
-> Find the other models for two variables, *P* and *Q*.  
+> Consider two variables, *P* and *Q*, not necessarily as above.
+> 
+> List every possible model for these two variables.  
+> 
+> (Here is one: $\mathfrak M_1$ given by $P^{\mathfrak M_1} = \frak T$ and $Q^{\frak M_2}=\frak T$.)
 
 > [!exercise] ***Exercise***
 >

@@ -671,6 +671,21 @@ y &amp; \text{ if } z = x
     this.setAttribute("aria-expanded", String(open));
   });
 
+  // ---- Remember which dropdowns were left open, per page ----------------
+  // Each <details> gets a stable key (page + position) and its open state
+  // is saved to localStorage whenever it is toggled.
+  var STORE_KEY = "mr-details:" + location.pathname;
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
+  document.querySelectorAll("details").forEach(function (d, i) {
+    d.dataset.dkey = String(i);
+    if (Object.prototype.hasOwnProperty.call(saved, i)) d.open = !!saved[i];
+    d.addEventListener("toggle", function () {
+      saved[i] = d.open;
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+
   // Sections load collapsed; open (and scroll to) the one holding a hash target.
   function revealHash() {
     var id = decodeURIComponent(location.hash.slice(1));

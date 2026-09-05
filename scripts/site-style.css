@@ -227,6 +227,33 @@ a:hover { text-decoration-color: currentColor; }
 .callout-fold > .callout-body { padding-left: 1rem; }
 .callout-fold > .callout-body > *:first-child { margin-top: .4rem; }
 
+/* ------------------------------------------------------------ margin notes */
+/* note callouts sit in the right-hand margin on wide screens */
+
+@media (min-width: 76rem) {
+  .prose {
+    max-width: calc(var(--measure) + var(--note-w) + var(--note-gap));
+    padding-right: calc(var(--note-w) + var(--note-gap));
+    --note-w: 15rem;
+    --note-gap: 2.25rem;
+  }
+  .callout-note {
+    float: right;
+    clear: right;
+    width: var(--note-w);
+    margin-right: calc(-1 * (var(--note-w) + var(--note-gap)));
+    margin-top: .35rem;
+    margin-bottom: 1.4rem;
+    font-size: .92rem;
+    line-height: 1.55;
+  }
+  .callout-note .katex { font-size: .98em; }
+  .callout-note .katex-display { margin: .7rem 0; }
+  .prose > .section:last-of-type,
+  .section-body { overflow: visible; }
+}
+
+
 
 /* ---------------------------------------------------- collapsible sections */
 
