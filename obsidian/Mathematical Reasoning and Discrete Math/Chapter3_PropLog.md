@@ -1,3 +1,8 @@
+---
+title: "Chapter 3: Propositional Logic"
+---
+
+
 # Propositions
 
 > [!definition] ***Definition***
