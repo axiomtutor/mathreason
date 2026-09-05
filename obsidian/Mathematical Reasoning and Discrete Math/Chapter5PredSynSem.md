@@ -1,5 +1,5 @@
 ---
-title: "Chapter 4: Predicate Syntax and Semantics"
+title: "Chapter 5: Predicate Syntax and Semantics"
 ---
 
 

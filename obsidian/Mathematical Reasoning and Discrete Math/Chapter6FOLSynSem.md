@@ -1,4 +1,7 @@
-# Chapter 5: First-order Logic
+---
+title: "Chapter 6: First-order Syntax and Semantics"
+---
+
 
 We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”.
 

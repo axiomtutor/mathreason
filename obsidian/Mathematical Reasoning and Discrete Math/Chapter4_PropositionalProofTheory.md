@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3: Propositional Proof Theory"
+title: "Chapter 4: Propositional Proof Theory"
 ---
 
 

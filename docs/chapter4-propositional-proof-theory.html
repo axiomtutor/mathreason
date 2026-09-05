@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chapter 3: Propositional Proof Theory — Mathematical Reasoning and Dis</title>
+<title>Chapter 4: Propositional Proof Theory — Mathematical Reasoning and Dis</title>
 <meta name="description" content="An important use of logic is to help us write good proofs. Here we’ll establish the basic formal system that we will use to expose the logic of a proof. We" />
-<meta property="og:title" content="Chapter 3: Propositional Proof Theory — Mathematical Reasoning and Discrete Math" />
+<meta property="og:title" content="Chapter 4: Propositional Proof Theory — Mathematical Reasoning and Discrete Math" />
 <meta property="og:description" content="An important use of logic is to help us write good proofs. Here we’ll establish the basic formal system that we will use to expose the logic of a proof. We" />
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary" />
@@ -24,16 +24,16 @@
     <p class="side-label">Contents</p>
     <ul class="nav"><li><a class="nav-link" href="chapter0-basic-sets.html">Chapter 0: The Bare Necessities of Sets and Functions</a></li>
 <li><a class="nav-link" href="chapter1-basic-number-theory.html">Chapter 1: A Case Study in Number Theory</a></li>
-<li><a class="nav-link" href="chapter2-prop-syntax-semantics.html">Chapter 2: Syntax and Semantics of Languages</a></li>
-<li><a class="nav-link is-active" href="chapter4-propositional-proof-theory.html">Chapter 3: Propositional Proof Theory</a></li>
-<li><a class="nav-link" href="chapter5-pred-syn-sem.html">Chapter 4: Predicate Syntax and Semantics</a></li>
-<li><a class="nav-link" href="chapter6-folsyn-sem.html">Chapter 5: First-order Logic</a></li>
-<li><a class="nav-link" href="chapter7-app-fol.html">Chapter 6: Applications of First-order Logic</a></li>
+<li><a class="nav-link" href="chapter2-langs.html">Chapter 2: Syntax and Semantics of Languages</a></li>
+<li><a class="nav-link is-active" href="chapter4-propositional-proof-theory.html">Chapter 4: Propositional Proof Theory</a></li>
+<li><a class="nav-link" href="chapter5-pred-syn-sem.html">Chapter 5: Predicate Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter6-folsyn-sem.html">Chapter 6: First-order Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter7-app-fol.html">Chapter 7: Applications of First-order Logic</a></li>
 <li><a class="nav-link" href="chapter3-prop-log.html">Propositions</a></li></ul>
   </aside>
   <main class="content" id="main">
     <article class="prose">
-      <h1>Chapter 3: Propositional Proof Theory</h1>
+      <h1>Chapter 4: Propositional Proof Theory</h1>
       <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#substitution">Substitution</a></li><li class="toc-h2"><a href="#fitch-style-proofs">Fitch-style Proofs</a></li><li class="toc-h2"><a href="#conditional-introduction">Conditional Introduction</a></li><li class="toc-h2"><a href="#biconditional-introduction">Biconditional Introduction</a></li><li class="toc-h2"><a href="#proof-by-cases">Proof by Cases</a></li><li class="toc-h2"><a href="#proof-by-contradiction">Proof by Contradiction</a></li></ul></nav>
       <p>An important use of logic is to help us write good proofs.</p>
 <p>Here we’ll establish the basic formal system that we will use to expose the logic of a proof.  We begin with proofs in the propositional language, and in later chapters we will develop a more complex language with an augmented proof system.</p>
@@ -1030,7 +1030,7 @@ Stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="http:/
 <p>Also prove, from no premises, that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo stretchy="false">)</mo><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">(P\land \neg P)\to Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>.</p>
 <p>Also prove, from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">P\land \neg P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>, that <em>Q</em>.</p>
 </div></section></div></details>
-      <nav class="pager"><a class="pager-link" href="chapter2-prop-syntax-semantics.html"><span>Previous</span>Chapter 2: Syntax and Semantics of Languages</a><a class="pager-link pager-next" href="chapter5-pred-syn-sem.html"><span>Next</span>Chapter 4: Predicate Syntax and Semantics</a></nav>
+      <nav class="pager"><a class="pager-link" href="chapter2-langs.html"><span>Previous</span>Chapter 2: Syntax and Semantics of Languages</a><a class="pager-link pager-next" href="chapter5-pred-syn-sem.html"><span>Next</span>Chapter 5: Predicate Syntax and Semantics</a></nav>
     </article>
   </main>
 </div>

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chapter 5: First-order Logic — Mathematical Reasoning and Discrete Mat</title>
+<title>Chapter 6: First-order Syntax and Semantics — Mathematical Reasoning a</title>
 <meta name="description" content="We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”. Throughout this chapter it will" />
-<meta property="og:title" content="Chapter 5: First-order Logic — Mathematical Reasoning and Discrete Math" />
+<meta property="og:title" content="Chapter 6: First-order Syntax and Semantics — Mathematical Reasoning and Discrete Math" />
 <meta property="og:description" content="We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”. Throughout this chapter it will" />
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary" />
@@ -24,16 +24,16 @@
     <p class="side-label">Contents</p>
     <ul class="nav"><li><a class="nav-link" href="chapter0-basic-sets.html">Chapter 0: The Bare Necessities of Sets and Functions</a></li>
 <li><a class="nav-link" href="chapter1-basic-number-theory.html">Chapter 1: A Case Study in Number Theory</a></li>
-<li><a class="nav-link" href="chapter2-prop-syntax-semantics.html">Chapter 2: Syntax and Semantics of Languages</a></li>
-<li><a class="nav-link" href="chapter4-propositional-proof-theory.html">Chapter 3: Propositional Proof Theory</a></li>
-<li><a class="nav-link" href="chapter5-pred-syn-sem.html">Chapter 4: Predicate Syntax and Semantics</a></li>
-<li><a class="nav-link is-active" href="chapter6-folsyn-sem.html">Chapter 5: First-order Logic</a></li>
-<li><a class="nav-link" href="chapter7-app-fol.html">Chapter 6: Applications of First-order Logic</a></li>
+<li><a class="nav-link" href="chapter2-langs.html">Chapter 2: Syntax and Semantics of Languages</a></li>
+<li><a class="nav-link" href="chapter4-propositional-proof-theory.html">Chapter 4: Propositional Proof Theory</a></li>
+<li><a class="nav-link" href="chapter5-pred-syn-sem.html">Chapter 5: Predicate Syntax and Semantics</a></li>
+<li><a class="nav-link is-active" href="chapter6-folsyn-sem.html">Chapter 6: First-order Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter7-app-fol.html">Chapter 7: Applications of First-order Logic</a></li>
 <li><a class="nav-link" href="chapter3-prop-log.html">Propositions</a></li></ul>
   </aside>
   <main class="content" id="main">
     <article class="prose">
-      <h1>Chapter 5: First-order Logic</h1>
+      <h1>Chapter 6: First-order Syntax and Semantics</h1>
       <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#all-and-some">“All” and “Some”</a></li><li class="toc-h2"><a href="#quantifiers-over-properties">Quantifiers over Properties</a></li><li class="toc-h2"><a href="#set-properties-operations-and-relations">Set Properties, Operations, and Relations</a></li><li class="toc-h2"><a href="#nested-quantifiers">Nested Quantifiers</a></li><li class="toc-h2"><a href="#first-order-logic">First-order Logic</a></li></ul></nav>
       <p>We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”.</p>
 <p>Throughout this chapter it will help to keep in mind how you would develop a language to talk about the real numbers. Recall that the real numbers can be thought of as “every possible decimal expansion”. The decimal expansion, for example, of 3/2 is 1.5. And the decimal expansion of 1/3 is the infinite expansion 0.333…</p>
@@ -661,7 +661,7 @@ y &amp; \text{ if } z = x
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo stretchy="false">(</mo><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>→</mo><mi mathvariant="normal">∃</mi><mi>y</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>R</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>∧</mo><mi>Q</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\forall x(P(x)\to \exists y((\neg R(x,y)\land Q(f(y,z))))
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∃</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mopen">((</span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mclose">))))</span></span></span></span></span></p>
 </div></details>
-      <nav class="pager"><a class="pager-link" href="chapter5-pred-syn-sem.html"><span>Previous</span>Chapter 4: Predicate Syntax and Semantics</a><a class="pager-link pager-next" href="chapter7-app-fol.html"><span>Next</span>Chapter 6: Applications of First-order Logic</a></nav>
+      <nav class="pager"><a class="pager-link" href="chapter5-pred-syn-sem.html"><span>Previous</span>Chapter 5: Predicate Syntax and Semantics</a><a class="pager-link pager-next" href="chapter7-app-fol.html"><span>Next</span>Chapter 7: Applications of First-order Logic</a></nav>
     </article>
   </main>
 </div>

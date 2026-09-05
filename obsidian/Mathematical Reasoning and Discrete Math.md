@@ -83,7 +83,7 @@ The structure of this text is intended to be unlike the usual mathematics textbo
 
 [Chapter 1: A Case Study in Number Theory](Chapter1BasicNumberTheory.md)
 
-[Chapter 2: Propositional Syntax and Semantics](Chapter2PropSyntaxSemantics.md)
+[Chapter 2: Propositional Syntax and Semantics](Chapter2Langs.md)
 
 [[Chapter4_PropositionalProofTheory| Chapter 3: Propositional Proof Theory]]
 
