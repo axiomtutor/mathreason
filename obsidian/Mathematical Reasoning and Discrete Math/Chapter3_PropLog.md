@@ -217,11 +217,7 @@ Recall that the semantics of propositional logic is concerned with truth-value.
 > 
 > Hence semantic conjunction, as well as several of the other operations below, are all boolean algebra operations.
 
-The value of a formula is the bridge between syntax and semantics.  It works by first giving values to the propositional variables, because that is the definition of what $\frak M$ is.  But from there, we can then determine the value of a conjunction, by determining the values of its component formulas.  
-
----
-
-Let’s see an example.  Assume that we have a model, $\mathcal M$, such that $P^{\frak M} = \frak T$ and $Q^{\frak M}= \frak T$.  Let’s see how the definition above assigns a value to $P\land Q$.
+Let’s see an example.  Assume that we have a model, $\frak M$, such that $P^{\frak M} = \frak T$ and $Q^{\frak M}= \frak T$.  Let’s see how the definition above assigns a value to $P\land Q$.
 
 $$
 \begin{aligned}
@@ -232,6 +228,8 @@ $$
 $$
 
 where the last equation comes from the definition of the semantic conjunction, $\curlywedge$.
+
+---
 
 Let’s do another.  Let’s show that if *P* is false, *Q* is true, and *R* is true, then $((P\land Q)\land R)^{\frak M}= \frak F$.  
 
@@ -259,11 +257,9 @@ Here is an explanation of each equation above.
 > 
 > Find $((P\land Q)\land (Q\land R))^{\frak M}$.
 
-Note that the semantics here is *also defined recursively*.  Recursion isn’t just for languages, it’s also used in a wide range of other areas.
+Note that the semantics here is defined recursively.
 
-Here is the rule for evaluation, stated in our familiar recursive way.  For any formula $\phi\in L$, and model $\frak M$, we have the following definition of $\phi^{\frak M}$.
-
-- Base case: If $\phi$ is a propositional variable, then $\phi^{\frak M}$ is defined by $\frak M$.  That is to say, the very definition of $\frak M$ will tell us what this value is.
+- Base case: If $\phi$ is a propositional variable, then $\phi^{\frak M}$ is defined by $\frak M$.  That is to say, the very definition of $\frak M$ will tell us what $\phi^{\frak M}$ is.
 - Recursive case: If $\phi$ is a conjunction of two other formulas, $\phi=(\chi\land\psi)$, then
 
 $$
@@ -272,7 +268,7 @@ $$
 \end{aligned}
 $$
 
-The recursive case, is “recursive” because it computes the value from simpler cases—namely, $\chi^{\frak M}$ and $\psi^{\frak M}$.
+The recursive case, is “recursive” because it computes the value from simpler cases.  Those simpler values are the values $\chi^{\frak M}$ and $\psi^{\frak M}$.
 
 # Truth-table for Conjunction
 
@@ -291,7 +287,7 @@ $$
 
 The rows are in alternating colors just for readability—the colors don’t mean anything.
 
-Each row corresponds to a model.  For example, if $\frak M$ is the model which assigns $P^{\frak M}=\frak F$ and $Q^{\frak M}=\frak F$, then this is represented on the last row of the table.  
+Each row corresponds to a model.  For example, if $\frak M$ is the model which assigns $P^{\frak M}=\frak F$ and $Q^{\frak M}=\frak F$, then this is represented in the last row of the table.  
 
 In this last row, under $\land$, it holds the value of the proposition $P\land Q$.  This is the black $\frak F$.  This comes from computing 
 
@@ -305,22 +301,23 @@ $$
 
 # Disjunction
 
-Recall the definition of a trivial divisor: A divisor of 15 is trivial if it is either 1 or 15.
-
-Say that we consider 3, a divisor of 15.  We may form the sentence “3 is either 1 or 15”.  Since 3 is not 1 and 3 is not 15, therefore this sentence is false.  Hence 3 is not a trivial divisor of 15.
-
-The proposition “3 is either 1 or 15” is the *disjunction* of the two propositions 
-
-- 3 is 1, or
-- 3 is 15.
-
-If we denote “3 is 1” by the symbol *P*, and denote “3 is 15” by the symbol *Q*, then their disjunction is 
+Consider the proposition "3 is even or prime".  This is called a "disjunction" of the propositions 
+- 3 is even.
+- 3 is prime.
+If we represent "3 is even" by the variable *P*, and "3 is prime" by the variable *Q*, then we will represent their disjunction "3 is even or prime" by 
 
 $$
 P\lor Q
 $$
+All of this is very similar to the conversation for conjunction.
 
 > [!definition] ***Definition***
+> 
+> Let $\phi$ and $\psi$ be propositional formulas. 
+> 
+> We define their **syntactic disjunction to be the expression 
+> 
+> $$ (\phi\lor\psi) $$
 >
 > We define the boolean operator, **semantic disjunction**, by
 > 
@@ -330,10 +327,6 @@ $$
 > \frak{F\curlyvee T = T}\\\\
 > \frak{F\curlyvee F = F}
 > \end{aligned}$$
-> 
-> Let $\phi$ and $\psi$ be formulas.
-> 
-> Their **syntactic disjunction** is the formulas $\phi\lor\psi$.  Any disjunction of formulas is a formula.   
 > 
 > If $\frak M$ is a model defined for $\phi$ and $\psi$, then we define 
 > 
@@ -373,6 +366,10 @@ $$
 $$
 
 > [!definition] ***Definition***
+> 
+> Let $\phi$ be a propositional formula.  
+> 
+> Its **syntactic negation** is the formula $\neg \phi$.  Any negation of a formula is a formula.
 >
 > We define the boolean operation of **semantic negation** by
 > 
@@ -380,17 +377,13 @@ $$
 > \sim \frak T =\frak F\\\sim\frak F =\frak T
 > \end{aligned}$$
 > 
-> Let $\phi$ be a formula.
-> 
-> Its **syntactic negation** is the formula $\neg \phi$.  Any negation of a formula is a formula.
-> 
-> For a model $\frak M$ defined for $\phi$, then we define 
+> For a model $\frak M$ defined for $\phi$, we define 
 > 
 > $$
 > (\neg \phi)^{\mathcal M} = \ \ \sim \phi^{\mathcal M}
 > $$
 
-The truth-table is 
+The truth-table for negation is 
 
 $$
 \begin{array}{|c||c|c|}\hline
@@ -400,36 +393,29 @@ $$
 \end{array}
 $$
 
-Notice that since there is only one formula, which may only be true or false, it requires fewer rows.  
+Notice that since the table has only two rows.  This is due to the fact that negation only operations on a single proposition.  That proposition has only two possible values, true or false, and therefore requires only two rows of a table.
 
 > [!exercise] ***Exercise***
 >
 > Let $\frak M$ be a model defined for *P*.  
 > 
-> Find $(\neg(\neg P))^{\frak M}$.
+> Explain why $(\neg(\neg P))^{\frak M} = P^{\frak M}$.
 
 # Conditional
 
-Arguably, the conditional is perhaps the most interesting or important operator, because it plays a role in nearly every important mathematical theorem.  
+Arguably, the conditional the most important operator, because it plays a role in nearly every mathematical theorem.  
 
-We could really point to any theorem already discussed.  But let’s take for example 
+Let’s take for example the conditional sentence,
 
 > If $X\subseteq \Bbb Z$ is a set of integers which is bounded below, then *X* has a minimum.
-> 
 
-“If” usually indicates the “antecedent”. This is the part of the conditional proposition, which you are meant to imagine or assume is true.  
+“If” usually indicates which part of the sentence which we call the “antecedent”. This is the part which you are meant to imagine or assume is true.  So for this theorem you are supposed to assume that *X* is a set of integers bounded below.
 
-Given that the antecedent is true, the conditional proposition “then” claims that the next part must be true. This is the “consequent”.
+"Then" indicates the "consequent".  This is the part of the sentence which is claimed to be true, as long as we assume the antecedent.  The consequent of this example sentence is "*X* has a minimum".
 
-In this example, the antecedent is “$X\subseteq \Bbb Z$ is a set of integers which is bounded below”.
+If *P* and *Q* are propositional variables, then $P\to Q$ represents "if *P* then *Q*".
 
-The consequent is “*X* has a minimum”.
-
-The truth conditions of the other operations were relatively sensible: “*P* and *Q*” is true if both are true.  “*P* or *Q*” is true if one or the other (or both) is true.  “Not *P*” is true if *P* is false.
-
-Some of the truth conditions of the conditional are sensible. Most people would guess that “If *P* then *Q*” is true when both *P* and *Q* are true.  Since I think you’ll probably accept this idea, I won’t argue for it.
-
-Hence we have the first row of the truth-table. 
+Most people would guess that $P\to Q$ is true when both *P* and *Q* are true.  Hence we have the first row of the truth-table. 
 
 $$
 \begin{array}{|c|c||c|c|c|}\hline
@@ -438,9 +424,9 @@ $$
 \end{array}
 $$
 
-Now what if *P* is true and *Q* false?  For example what if we state “If 2 is prime then 2 is odd”?  Here *P* is “2 is prime” and *Q* is “2 is odd”.  I think we easily understand that this statement is false.  
+Now what if *P* is true and *Q* false?  For example what if we state “If 2 is prime then 2 is odd”?  Here *P* is “2 is prime” and *Q* is “2 is odd”.  I think we easily understand that this statement is false because 2 is prime, but 2 is not odd.  
 
-Hence the next row of the truth-table.
+Therefore the next row of the table is:
 
 $$
 \begin{array}{|c|c||c|c|c|}\hline
@@ -450,22 +436,26 @@ $$
 \end{array}
 $$
 
-But although I think those arguments make natural sense, here comes the trouble:
+The part that many people struggle to understand comes next.  
 
 What are we supposed to say, when *P* is false?  Consider some example “if-then” propositions, in which the antecedent is false.  
 
-- If 2 is bigger than 3, then 3 is bigger than 2.
+- If 2 is bigger than 3, then triangles have three sides.
 - If 2 is bigger than 3, then triangles are round.
 
-In the first example, *P* is false, and *Q* is true.  
+In the first example, *P* is false, and *Q* is true.  In the second example, *P* is false and *Q* is false.  What should the truth-table contain for these rows?
 
-It is traditional for mathematicians to regard both of these as true statements.  Here is an argument for why that’s a good idea:  
+> [!note]- It is traditional for mathematicians to regard both of these as true statements.  
+> 
+> Here is an argument for why that’s a good idea:  
+> 
+> It is clearly a true principle that “if *x* is a natural number divisible by 4, then *x* is even”.  As such, if we “plug in” any natural number *x*, we should get a true proposition.  
+> 
+> Therefore if we plug in $x=5$, the result must be a true proposition.  When we do, we have the proposition “if 5 is a natural number divisible by 4, then 5 is even”.  The antecedent is false, and the consequent is false. 
+> 
+> Therefore when the antecedent and consequent are false, the conditional must be true.  One can find a similar argument for the case when the antecedent is false and the consequent true.  
 
-It is clearly a true principle that “if *x* is a natural number divisible by 4, then *x* is even”.  As such, if we “plug in” any natural number *x*, we should get a true proposition.  
-
-Therefore if we plug in $x=5$, the result must be a true proposition.  When we do, we have the proposition “if 5 is a natural number divisible by 4, then 5 is even”.  The antecedent is false, and the consequent is false. 
-
-Therefore when the antecedent and consequent are false, the conditional must be true.  One can find a similar argument for the case when the antecedent is false and the consequent true.  We have now explained why the conditional truth-table is 
+We have now explained why the conditional truth-table is 
 
 $$
 \begin{array}{|c|c||c|c|c|}\hline
@@ -479,9 +469,11 @@ $$
 
 > [!note]- Note: This is called the “material conditional”.
     >
-    >The understanding of “if-then” presented above, is the one that is used throughout mathematics.  However, it is not a good model for how most English language uses the “if-then” construction.
+    >The understanding of “if-then” presented above, is the one that is used throughout mathematics.  
     >
-    >Often “if-then” sentences communicate something about correlation, causation, relevance, or some other ideas which simply cannot be captured with the idea of a truth-table. 
+    >However, it is not a good model for how most English language uses the “if-then” construction.  
+    >
+    > Consider "if you had "
     >
     >The interested reader is welcome to research the topic of [the material conditional](https://en.wikipedia.org/wiki/Material_conditional), and related ideas.
 

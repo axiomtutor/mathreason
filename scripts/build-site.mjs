@@ -369,12 +369,21 @@ const wrapObsidianCallouts = (tokens, mdInst, env) => {
 
       if (m) {
         const [, type, fold, rest] = m;
-        const rawLabel = stripEmphasis(rest) || titleCase(type);
+        let rawLabel = stripEmphasis(rest) || titleCase(type);
         const kind = calloutKind(stripEmphasis(rest), type);
-        const labelHtml = mdInst.renderInline(fixMath(rawLabel), env);
 
         // Remove the marker line from the first paragraph.
-        const remainder = inline.content.split("\n").slice(1).join("\n");
+        let remainder = inline.content.split("\n").slice(1).join("\n");
+
+        // Folded callouts need a short, title-like summary. A long first line
+        // (a whole sentence, often with math) renders badly in the narrow
+        // margin, so demote it back into the body and use the kind name.
+        if (fold && rawLabel.length > 35 && rawLabel !== titleCase(type)) {
+          remainder = rest + (remainder ? "\n" + remainder : "");
+          rawLabel = titleCase(type);
+        }
+
+        const labelHtml = mdInst.renderInline(fixMath(rawLabel), env);
         if (remainder.trim()) {
           inline.content = remainder;
           inline.children = null;
