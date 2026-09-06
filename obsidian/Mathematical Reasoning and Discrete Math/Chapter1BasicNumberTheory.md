@@ -103,13 +103,13 @@ Note that the claim is an "if and only if" statement.  This means two things: "I
 >
 >Let *a* and *n* be natural numbers.
 >
-> > [!note]- If $a|n$ then $\frac n a$ is a natural number.
+> > [!proof]- If $a|n$ then $\frac n a$ is a natural number.
 > >   
 > >   Suppose that *a* divides *n*.  Then by definition, there is a natural number *b* such that $n=ab$.  
 > >   
 > >   Then $\frac n a = b$, and since we already noted that *b* is a natural number, then therefore $\frac n a$ is a natural number.
 >    
-> > [!note]- If $\frac n a$ is a natural number, then $a|n$.
+> > [!proof]- If $\frac n a$ is a natural number, then $a|n$.
 > >   
 > >   Suppose that $\frac n a$ is a natural number, and let’s call that number *b*.  So $\frac n a = b$.
 > >   
