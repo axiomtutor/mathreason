@@ -34,8 +34,9 @@
   <main class="content" id="main">
     <article class="prose">
       <h1>Chapter 2: Syntax and Semantics of Languages</h1>
-      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#logical-abstraction">Logical Abstraction</a></li><li class="toc-h2"><a href="#syntax-and-semantics">Syntax and Semantics</a></li><li class="toc-h2"><a href="#languages-and-alphabets">Languages and Alphabets</a></li><li class="toc-h2"><a href="#strings-and-signifiers">Strings and Signifiers</a></li><li class="toc-h2"><a href="#recursive-definition">Recursive Definition</a></li></ul></nav>
-      <p>What we have learned about number theory can now serve as a collection of examples while we study logic.</p>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#a-precise-on-logic-and-abstraction">A Precise on Logic and Abstraction</a></li><li class="toc-h2"><a href="#logical-abstraction">Logical Abstraction</a></li><li class="toc-h2"><a href="#syntax-and-semantics">Syntax and Semantics</a></li><li class="toc-h2"><a href="#languages-and-alphabets">Languages and Alphabets</a></li><li class="toc-h2"><a href="#strings-and-signifiers">Strings and Signifiers</a></li><li class="toc-h2"><a href="#recursive-definition">Recursive Definition</a></li></ul></nav>
+      <details class="section"><summary class="section-summary"><h2 id="a-precise-on-logic-and-abstraction">A Precise on Logic and Abstraction</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>What we have learned about number theory can now serve as a collection of examples while we study logic.</p>
 <p>What does “logic” study?  Take the following (<a href="https://en.wikipedia.org/wiki/Syllogism" target="_blank" rel="noopener noreferrer">historically famous</a>) simple example of a logical argument.</p>
 <blockquote>
 <p>All men are mortal.</p>
@@ -53,7 +54,7 @@ In logic, we use the word &quot;argument&quot; a bit unlike how it is commonly u
 You might find it strange, that a true statment like &quot;all men are mortal&quot; would be regarded as &quot;non-logical&quot;.  Does that mean we regard it as false?</p>
 <p>Not at all!  Certainly &quot;all men are mortal&quot; is a true proposition. It is simply &quot;non-logical&quot; because we accept it on the basis of something other than logical inference.</p>
 <p>So a proposition like &quot;all men are mortal&quot; is an instance of a &quot;non-logical truth&quot;.  Non-logical truths are necessary, because if everything that we accept had to be justified by an inference, we would obtain an <a href="https://en.wikipedia.org/wiki/Infinite_regress" target="_blank" rel="noopener noreferrer">infinite regress</a>!</p>
-</div></details><details class="section"><summary class="section-summary"><h2 id="logical-abstraction">Logical Abstraction</h2>
+</div></details></div></details><details class="section"><summary class="section-summary"><h2 id="logical-abstraction">Logical Abstraction</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>The argument</p>
 <blockquote>
 <p>All men are mortal.</p>
@@ -193,19 +194,26 @@ You might find it strange, that a true statment like &quot;all men are mortal&qu
   });
 
   // ---- Remember which dropdowns were left open, per page ----------------
-  // Each <details> gets a stable key (page + position) and its open state
-  // is saved to localStorage whenever it is toggled.
+  // Keys are derived from each dropdown's own heading/label text (not its
+  // position), so editing a chapter cannot make stale state apply to the
+  // wrong dropdown.
   var STORE_KEY = "mr-details:" + location.pathname;
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
-  document.querySelectorAll("details").forEach(function (d, i) {
-    d.dataset.dkey = String(i);
-    if (Object.prototype.hasOwnProperty.call(saved, i)) d.open = !!saved[i];
+  var seenKeys = {};
+  document.querySelectorAll("details").forEach(function (d) {
+    var s = d.querySelector(":scope > summary");
+    var label = (s ? s.textContent : "").replace(/s+/g, " ").trim().slice(0, 80) || "d";
+    seenKeys[label] = (seenKeys[label] || 0) + 1;
+    var key = label + "#" + seenKeys[label];
+    d.dataset.dkey = key;
+    if (Object.prototype.hasOwnProperty.call(saved, key)) d.open = !!saved[key];
     d.addEventListener("toggle", function () {
-      saved[i] = d.open;
+      saved[key] = d.open;
       try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
     });
   });
+
 
   // Sections load collapsed; open (and scroll to) the one holding a hash target.
   function revealHash() {

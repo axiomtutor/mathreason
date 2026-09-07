@@ -34,8 +34,9 @@
   <main class="content" id="main">
     <article class="prose">
       <h1>Chapter 3: Propositional Logic</h1>
-      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</a></li><li class="toc-h2"><a href="#syntactic-conjunction">Syntactic Conjunction</a></li><li class="toc-h2"><a href="#semantic-conjunction">Semantic Conjunction</a></li><li class="toc-h2"><a href="#truth-table-for-conjunction">Truth-table for Conjunction</a></li><li class="toc-h2"><a href="#disjunction">Disjunction</a></li><li class="toc-h2"><a href="#negation">Negation</a></li><li class="toc-h2"><a href="#conditional">Conditional</a></li></ul></nav>
-      <section class="callout callout-definition"><p class="callout-label">Definition</p><div class="callout-body"><p>A <strong>proposition</strong> is any sentence that is either true or false.</p>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#propositions">Propositions</a></li><li class="toc-h2"><a href="#propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</a></li><li class="toc-h2"><a href="#syntactic-conjunction">Syntactic Conjunction</a></li><li class="toc-h2"><a href="#semantic-conjunction">Semantic Conjunction</a></li><li class="toc-h2"><a href="#truth-table-for-conjunction">Truth-table for Conjunction</a></li><li class="toc-h2"><a href="#disjunction">Disjunction</a></li><li class="toc-h2"><a href="#negation">Negation</a></li><li class="toc-h2"><a href="#conditional">Conditional</a></li></ul></nav>
+      <details class="section"><summary class="section-summary"><h2 id="propositions">Propositions</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><section class="callout callout-definition"><p class="callout-label">Definition</p><div class="callout-body"><p>A <strong>proposition</strong> is any sentence that is either true or false.</p>
 </div></section><p>It is easy to think of example propositions.  For example, “Japan is east of China” is a true proposition, while “3 is less than 2” is a false proposition.</p>
 <p>You can have a proposition like “The ball is red” which is true when pointing to a red ball.  That same proposition is false when pointing to a white ball.</p>
 <p>It might even seem hard to think of sentences that are <em>not</em> propositions, until you see a few examples!</p>
@@ -45,7 +46,7 @@
 <li>Hooray!</li>
 </ul>
 <p>None of the above sentences are either true or false, so these are sentences which are not propositions.</p>
-<details class="section"><summary class="section-summary"><h2 id="propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</h2>
+</div></details><details class="section"><summary class="section-summary"><h2 id="propositional-variables-syntax-and-semantics">Propositional Variables, Syntax and Semantics</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>Out of a desire for abstraction,  we will represent propositions by a single letter, like <em>P</em>.  This is called a “propositional variable”.</p>
 <p>This is just like how a mathematical variable is allowed to take a bunch of different numeric values.  A propositional variable is allowed to be or “take on” a bunch of different propositions.</p>
 <p>Therefore when we write <em>P</em>, we don’t necessarily know which proposition it refers to.  For the purposes of logic, there are really just two interesting possibilities: <em>P</em> may be true or false.</p>
@@ -327,19 +328,26 @@ If we represent &quot;3 is even&quot; by the variable <em>P</em>, and &quot;3 is
   });
 
   // ---- Remember which dropdowns were left open, per page ----------------
-  // Each <details> gets a stable key (page + position) and its open state
-  // is saved to localStorage whenever it is toggled.
+  // Keys are derived from each dropdown's own heading/label text (not its
+  // position), so editing a chapter cannot make stale state apply to the
+  // wrong dropdown.
   var STORE_KEY = "mr-details:" + location.pathname;
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
-  document.querySelectorAll("details").forEach(function (d, i) {
-    d.dataset.dkey = String(i);
-    if (Object.prototype.hasOwnProperty.call(saved, i)) d.open = !!saved[i];
+  var seenKeys = {};
+  document.querySelectorAll("details").forEach(function (d) {
+    var s = d.querySelector(":scope > summary");
+    var label = (s ? s.textContent : "").replace(/s+/g, " ").trim().slice(0, 80) || "d";
+    seenKeys[label] = (seenKeys[label] || 0) + 1;
+    var key = label + "#" + seenKeys[label];
+    d.dataset.dkey = key;
+    if (Object.prototype.hasOwnProperty.call(saved, key)) d.open = !!saved[key];
     d.addEventListener("toggle", function () {
-      saved[i] = d.open;
+      saved[key] = d.open;
       try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
     });
   });
+
 
   // Sections load collapsed; open (and scroll to) the one holding a hash target.
   function revealHash() {

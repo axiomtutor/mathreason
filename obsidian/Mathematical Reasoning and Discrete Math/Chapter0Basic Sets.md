@@ -36,14 +36,9 @@ You can think of this like a network of concepts.  Say that concept *A* is defin
   
 Although we cannot define "sets" formally, we can gesture at some intuitions. A set is meant to be a “collection” or a “gathering together” of some disparate objects.
   
-
 For example, the set $\{-1,\pi, 3, 2\}$ contains four objects (numbers), brought together into a single set.
 
-  
-
 The set is indicated by curly braces, and then we list the elements of the set.
-
-  
 
 A set is defined “extensionally”, which is a fancy way of saying:
 
@@ -78,9 +73,7 @@ When something is *not* in the set we write $\notin$. So for example
   
 
 $$
-
 0\notin \{-1,\pi,3,2\}
-
 $$
 
   
@@ -105,14 +98,14 @@ Note that the set {1, 2} is equal to the set {1, 1, 2, 2, 2, 2}, because again, 
 
 > [!exercise] ***Exercise***
 > Decide on the truth of the following expressions.
-> 1. $\pi\in\{1,2\}$
-> 2. $2\in\{1,2\}$
-> 3. $\pi\notin \{1,2\}$
-> 4. $2\notin\{1,2\}$
-> 5. $\{1,2\}\in \{1,2\}$
-> 6. $\{1\}\in\{1,2\}$
-> 7. $\{1,2,3\}=\{1,2\}$
-> 8. $\{1,2,1,2,1\} = \{1,2\}$
+> 2. $\pi\in\{1,2\}$
+> 3. $2\in\{1,2\}$
+> 4. $\pi\notin \{1,2\}$
+> 5. $2\notin\{1,2\}$
+> 6. $\{1,2\}\in \{1,2\}$
+> 7. $\{1\}\in\{1,2\}$
+> 8. $\{1,2,3\}=\{1,2\}$
+> 9. $\{1,2,1,2,1\} = \{1,2\}$
 > > [!note]- ***Solution***
 > > 1. False
 > > 2. True

@@ -5,21 +5,19 @@ title: "Chapter 4: Propositional Proof Theory"
 
 # Simple Inference Rules
 
-An important use of logic is to help us write good proofs.  
-
-Here we’ll establish the basic formal system that we will use to expose the logic of a proof.  We begin with proofs in the propositional language, and in later chapters we will develop a more complex language with an augmented proof system.  
+An important use of logic is to help us write good proofs.  Here we’ll establish the basic formal system that we will use to expose the logic of a proof.  
 
 The fundamental component of a proof, is an “inference”.  Here is an example:  
 
 If we have already accepted the truth of propositions denoted by *P* and *Q*, then we must accept the truth of the formula $P\land Q$.  In this case, we say that we *infer* $P\land Q$ from the formulas *P* and *Q*.  
 
-The above was stated for propositional variables, but really, the same principle should be true even for complex formulas.  For example, if we have already accepted the formulas $P\to Q$ and $Q\to S$ then we must accept the formula $(P\to Q)\land (Q\to S)$. 
+The same principle should be true even for complex formulas, not just basic variables.  For example, if we have already accepted the formulas $P\to Q$ and $Q\to S$ then we must accept the formula $(P\to Q)\land (Q\to S)$. 
 
 Then our inference rule is expressed by: “From formulas $\phi$ and $\psi$ we may infer $\phi\land\psi$.”
 
-This tells us that, from two separate formulas, we may join them together into a conjunction.  We should also be able to pull them out of a conjunction.  
+Here is another example.  Suppose that we already accept $\phi\land\psi$.  Then we must also accept just $\phi$.  
 
-Therefore we should also use the inference rule “From $\phi\land\psi$ we may infer $\phi$.”  We should also be able to infer $\psi$.  
+Therefore we should have the inference rule “From $\phi\land\psi$ we may infer $\phi$.”  
 
 In a similar fashion one may be able to understand all of the following inference rules.
 
@@ -37,9 +35,10 @@ In a similar fashion one may be able to understand all of the following inferenc
 >
 > **Biconditional Elimination** is “From $\phi\leftrightarrow \psi$ and $\phi$ we may infer $\psi$.  From $\phi\leftrightarrow \psi$ and $\psi$ we may infer $\phi$.”
 
-It is noteworthy that we tend to have, for each logical connective, an introduction and an elimination rule.  But there are conspicuous exceptions: There is no rule at all for negation.  The conditional and biconditional are both missing an introduction rule. We will eventually fill each of these gaps.  
 
-Each of the above inference rules are justified by the fact that, when its assumptions are true, then its conclusion is guaranteed to also be true.  Here is a demonstration for Conjunction Elimination:
+Each of the above inference rules are justified by the fact that, when its assumptions are true, then its conclusion is guaranteed to also be true.  
+
+Here is a demonstration for Conjunction Elimination:
 
 $$
 \begin{array}{|c|c||c|c|c||c|}\hline
@@ -61,7 +60,9 @@ $$
 \end{array}
 $$
 
-Here we have the truth-table for $P\land Q$ and for *P*.  There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
+Here we have the truth-table for $P\land Q$, and we've included the table for *P* next to it.  
+
+There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
 
 So this shows that “Whenever $P\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
 
@@ -114,6 +115,8 @@ In this row, the value of *Q* is true.  So yet again, the inference rule is vali
 >
 > Prove that this inference rule is invalid.
 
+# Proofs
+
 Now let’s look at proofs, which are just a sequence of inferences.  Suppose that we accept the formulas 
 
 - $\neg P$
@@ -122,11 +125,11 @@ Now let’s look at proofs, which are just a sequence of inferences.  Suppose th
 
 Let’s write a proof, from these assumptions, to the conclusion *R*.
 
-Disjunction Elimination: by combining $P\lor Q$ with $\neg P$ we may infer *Q*.
+Because we accept $\neg P$ and $P\lor Q$, therefore we may use the Disjunction Elimination rule to infer *Q*.  Therefore we now accept *Q*.
 
-Conditional Elimination: by combining $Q\to R$ together with *Q*, we may infer *R*. 
+Now because we accept *Q* and $Q\to R$, then we may use the Conditional Elimination rule to infer *R*.  
 
-This concludes the proof.
+Because we now accept *R*, which is the intended conclusion of the proof, then this proof is complete.
 
 ---
 

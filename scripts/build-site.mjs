@@ -300,8 +300,15 @@ const renderPage = (page) => {
     }
   }
 
-  // Drop the leading H1 (the layout prints the page title itself).
-  if (tokens[0]?.type === "heading_open" && tokens[0].tag === "h1") tokens.splice(0, 3);
+  // Drop the leading H1 only when it merely repeats the page title (the layout
+  // prints the title itself). A first `#` that names a real section — common in
+  // Obsidian notes where the title lives in the frontmatter — must be kept, or
+  // that whole section loses its collapsible heading.
+  if (tokens[0]?.type === "heading_open" && tokens[0].tag === "h1") {
+    const firstText = tokens[1]?.content ?? "";
+    if (slugify(firstText) === slugify(page.title)) tokens.splice(0, 3);
+  }
+
 
   // `#`/`##` mark in-page sections; demote one level so the page title stays
   // the only H1, then build the table of contents.
@@ -603,19 +610,26 @@ const layout = ({ page, body, headings }) => {
   });
 
   // ---- Remember which dropdowns were left open, per page ----------------
-  // Each <details> gets a stable key (page + position) and its open state
-  // is saved to localStorage whenever it is toggled.
+  // Keys are derived from each dropdown's own heading/label text (not its
+  // position), so editing a chapter cannot make stale state apply to the
+  // wrong dropdown.
   var STORE_KEY = "mr-details:" + location.pathname;
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
-  document.querySelectorAll("details").forEach(function (d, i) {
-    d.dataset.dkey = String(i);
-    if (Object.prototype.hasOwnProperty.call(saved, i)) d.open = !!saved[i];
+  var seenKeys = {};
+  document.querySelectorAll("details").forEach(function (d) {
+    var s = d.querySelector(":scope > summary");
+    var label = (s ? s.textContent : "").replace(/\s+/g, " ").trim().slice(0, 80) || "d";
+    seenKeys[label] = (seenKeys[label] || 0) + 1;
+    var key = label + "#" + seenKeys[label];
+    d.dataset.dkey = key;
+    if (Object.prototype.hasOwnProperty.call(saved, key)) d.open = !!saved[key];
     d.addEventListener("toggle", function () {
-      saved[i] = d.open;
+      saved[key] = d.open;
       try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
     });
   });
+
 
   // Sections load collapsed; open (and scroll to) the one holding a hash target.
   function revealHash() {

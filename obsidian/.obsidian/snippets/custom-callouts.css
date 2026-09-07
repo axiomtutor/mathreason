@@ -12,6 +12,13 @@
     background-color: rgb(255, 237, 213);
 }
 
+/* Example */
+.callout[data-callout="example"] {
+	--callout-color: rgba(200, 200, 200, 1);
+	--calllout-icon: lucide-show;
+	background-color: rgb(240,240,240);
+}
+
 /* Theorem */
 .callout[data-callout="theorem"] {
     --callout-color: rgba(239, 68, 68, 1);

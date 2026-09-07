@@ -34,8 +34,9 @@
   <main class="content" id="main">
     <article class="prose">
       <h1>Chapter 1: A Case Study in Number Theory</h1>
-      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#divisibility">Divisibility</a></li><li class="toc-h2"><a href="#quotient-and-remainder">Quotient and Remainder</a></li><li class="toc-h2"><a href="#greatest-common-divisor">Greatest Common Divisor</a></li><li class="toc-h2"><a href="#integer-combinations">Integer Combinations</a></li><li class="toc-h2"><a href="#prime-numbers">Prime Numbers</a></li></ul></nav>
-      <p>This chapter is a case study in elementary number theory.  As you read this case study, of course, one intent is for you to learn number theory.</p>
+      <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#the-importance-of-proof">The Importance of Proof</a></li><li class="toc-h2"><a href="#divisibility">Divisibility</a></li><li class="toc-h2"><a href="#quotient-and-remainder">Quotient and Remainder</a></li><li class="toc-h2"><a href="#greatest-common-divisor">Greatest Common Divisor</a></li><li class="toc-h2"><a href="#integer-combinations">Integer Combinations</a></li><li class="toc-h2"><a href="#prime-numbers">Prime Numbers</a></li></ul></nav>
+      <details class="section"><summary class="section-summary"><h2 id="the-importance-of-proof">The Importance of Proof</h2>
+<span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>This chapter is a case study in elementary number theory.  As you read this case study, of course, one intent is for you to learn number theory.</p>
 <p>But it is just one of the intended goals of this chapter.  In fact it is not even the primary goal.  You should pay <em>more</em> attention to the use of logic in proofs.</p>
 <p>Do not underestimate the importance of proofs!  Proof is fundamental to how all of mathematics gets done.  Many students are deceived by their earlier education, and think that mathematics is about numbers, calculation, following steps.  But those are the basic technical skills which get you up to the point where you could <em>start</em> doing math.  Think of that like exercising so that you have enough strength to play football, or like playing scales so that you have enough knolwedge of the instrument to play real music.</p>
 <p>The real math is in the proofs.</p>
@@ -47,7 +48,7 @@
 <p>A mathematician reads with a pencil in her hand.</p>
 </blockquote>
 <p>You should be reading and exercising by writing proofs. And then reading, and then exercising, and so on.</p>
-<details class="section"><summary class="section-summary"><h2 id="divisibility">Divisibility</h2>
+</div></details><details class="section"><summary class="section-summary"><h2 id="divisibility">Divisibility</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>A fundamental interest in number theory is to understand how a natural number can be written as a product of smaller numbers.  This is the same as the question of &quot;which numbers divide a given number&quot;.</p>
 <p>For example, 4 can be written as the product <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>⋅</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\cdot 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>.  In fact, technically, it can also be written as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⋅</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1\cdot 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span> or <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>⋅</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">4\cdot 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>.</p>
 <p>Equivalently this means that the divisors of 4 are 1, 2, and 4.</p>
@@ -421,19 +422,26 @@ It means “With the necessary changes having been made”.</p>
   });
 
   // ---- Remember which dropdowns were left open, per page ----------------
-  // Each <details> gets a stable key (page + position) and its open state
-  // is saved to localStorage whenever it is toggled.
+  // Keys are derived from each dropdown's own heading/label text (not its
+  // position), so editing a chapter cannot make stale state apply to the
+  // wrong dropdown.
   var STORE_KEY = "mr-details:" + location.pathname;
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
-  document.querySelectorAll("details").forEach(function (d, i) {
-    d.dataset.dkey = String(i);
-    if (Object.prototype.hasOwnProperty.call(saved, i)) d.open = !!saved[i];
+  var seenKeys = {};
+  document.querySelectorAll("details").forEach(function (d) {
+    var s = d.querySelector(":scope > summary");
+    var label = (s ? s.textContent : "").replace(/s+/g, " ").trim().slice(0, 80) || "d";
+    seenKeys[label] = (seenKeys[label] || 0) + 1;
+    var key = label + "#" + seenKeys[label];
+    d.dataset.dkey = key;
+    if (Object.prototype.hasOwnProperty.call(saved, key)) d.open = !!saved[key];
     d.addEventListener("toggle", function () {
-      saved[i] = d.open;
+      saved[key] = d.open;
       try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
     });
   });
+
 
   // Sections load collapsed; open (and scroll to) the one holding a hash target.
   function revealHash() {
