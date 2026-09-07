@@ -147,7 +147,9 @@ We continue this process until we eventually infer the conclusion of the proof.
 
 In this section, we are going to discuss substitution, because it will help us to define an inference rule in the next section.  
 
-Consider the assumption $(P\lor Q)\land R$.  Notice that the formula $P\lor Q$ is a subformula.
+Let's start with an example.
+
+Suppose that we already accept $(P\lor Q)\land R$.  Notice that the formula $P\lor Q$ is a subformula.
 
 Moreover notice that $Q\lor P$ is equivalent to $P\lor Q$.  
 
@@ -157,13 +159,15 @@ Therefore if we substitute $P\lor Q$ with $Q\lor P$, it shouldn’t change the v
 >
 > Draw a truth-table to prove that $(P\lor Q)\land R$ is equivalent to $(Q\lor P)\land R$.
 
-In order to talk about a formal rule for substitution, we first have to define substitution.
+More generally suppose that $\phi$ is a formula, $\chi$ is a subformula, and $\psi$ is equivalent to $\phi$.  Then it should be true that, if you substitute $\chi$ for $\psi$ in $\phi$, the result should be equivalent to $\phi$.  
+
+In order to define an inference rule for substitution, we first have to define substitution.
 
 > [!definition] ***Definition***
 >
 > Suppose that $\phi,\chi,\psi$ are all propositional formulas.  We define $[\phi]_{\chi := \psi}$ to mean “everywhere that $\chi$ is a subformula of $\phi$, replace it with $\psi$.”
 
-We will mostly be interested in substituting equivalent subformulas, but we can still make sense of substituting non-equivalent subformulas.  
+We will mostly be interested in substituting equivalent subformulas, but in principle it is possible to substitute non-equivalent subformulas.  
 
 For example, let’s calculate $[(P\land ((\neg Q)\lor R))]_{\neg Q := P\land S}$.
 
@@ -179,23 +183,28 @@ $$
 P\land ((P\land S)\lor R)
 $$
 
-This was just an exercise in performing substitution, with no real interesting consequence.  But now that we understand substitution, we can state the following inference rules.
-
 > [!exercise] ***Exercise***
 >
 > Show that $[P\land (Q\to P)]_{P:= \neg P}$ is equal to $(\neg P)\land (Q\to\neg P)$.
 >
 > Show that $[P\land Q]_{R:= S}$ is equal to $P\land Q$.
->
+
+> [!exercise]
 > Suppose that $\phi$ is a propositional formula such that $\chi$ does not occur as a subformula of $\phi$.  Let $\psi$ be any formula.
 >
 > Explain why $\phi_{\chi:= \psi}=\phi$.
+
+This was just an exercise in performing substitution, with no real interesting consequence.  But now that we understand substitution, we can state the following inference rules.
 
 > [!definition] ***Definition***
 >
 > Let $\phi,\chi,\psi,\omega$ be propositional formulas.  
 >
-> **Double negation** is the inference rule that, from $\phi$, one can infer either $\phi_{\chi:= \neg(\neg\chi)}$ or $\phi_{\neg(\neg\chi):= \chi}$.
+> **Double negation** is the inference rule that, from $\phi$, one can infer either $[\phi]_{\chi:= \neg(\neg\chi)}$ or $[\phi]_{\neg(\neg\chi):= \chi}$. 
+> > [!note]- What double negation says.
+> > What does "$[\phi]_{\chi := \neg(\neg \chi)}$" mean?  
+> > 
+> > It means "In any formula ($\phi$), you can always replace any part ($\chi$) with its double-negation ($\neg(\neg \chi)$)."
 >
 > **Conjunction commutativity** is the inference rule that, from $\phi$ one can infer $\phi_{\chi\land\psi := \psi\land\chi}$.
 >
