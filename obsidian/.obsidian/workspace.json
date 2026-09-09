@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter4_PropositionalProofTheory.md",
+                "file": "Mathematical Reasoning and Discrete Math.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter4_PropositionalProofTheory"
+              "title": "Mathematical Reasoning and Discrete Math"
             }
           }
         ]
@@ -191,10 +191,10 @@
   },
   "active": "95d3d5075504da6f",
   "lastOpenFiles": [
-    "Mathematical Reasoning and Discrete Math/Chapter0Basic Sets.md",
-    "Mathematical Reasoning and Discrete Math/Chapter4_PropositionalProofTheory.md",
-    "Mathematical Reasoning and Discrete Math/Chapter3_PropLog.md",
     "Mathematical Reasoning and Discrete Math/Chapter2Langs.md",
+    "Mathematical Reasoning and Discrete Math/Chapter4_PropositionalProofTheory.md",
+    "Mathematical Reasoning and Discrete Math/Chapter0Basic Sets.md",
+    "Mathematical Reasoning and Discrete Math/Chapter3_PropLog.md",
     "Mathematical Reasoning and Discrete Math/Chapter1BasicNumberTheory.md",
     "Mathematical Reasoning and Discrete Math.md",
     "Pasted image 20260904204737.png",

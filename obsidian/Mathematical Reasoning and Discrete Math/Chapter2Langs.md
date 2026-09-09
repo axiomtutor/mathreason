@@ -2,7 +2,7 @@
 title: "Chapter 2: Syntax and Semantics of Languages"
 ---
 
-# A Precise on Logic and Abstraction
+# A Précis on Logic and Abstraction
 
 What we have learned about number theory can now serve as a collection of examples while we study logic.
 
