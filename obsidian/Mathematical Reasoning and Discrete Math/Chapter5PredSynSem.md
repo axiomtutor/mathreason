@@ -11,19 +11,17 @@ In this chapter we will discuss a new and more expressive system of logic, predi
 
 As you consider many examples of propositions, you notice a pattern.  They are always made up of an “object” and a “predicate”.  
 
-For example, in the sentence “The ball is red” the object is “the ball”.  The predicate is “is red”.  
+For example, in the sentence “The ball is red”, the object is “the ball”.  The predicate is “is red”.  
 
-The object is the *thing* that the sentence is about.  The predicate is the claim that we make about it.
+The object is the *thing* that the sentence is about.  
+
+The predicate is the claim that we make about it.
 
 > [!exercise] ***Exercise***
 >
-> In the proposition “Anya is tall” there is only one good choice for which is the object and which is the predicate.
->
-> Which is which?
->
-> Also, choose a symbol for Anya, a symbol for the predicate “*x* is tall”, and then write the propositional atom which represents “Anya is tall”.
+> In the proposition “Anya is tall” identify the predicate and object.
 
-Now as you consider more propositions you may quickly recognize that many of them involve multiple objects at the same time.  For example “1 is less than 2” uses the objects 1 and 2.  
+Now as you consider more propositions you may quickly recognize that many of them involve multiple objects at the same time.  For example “1 is less than 2” uses the objects (the numbers) 1 and 2.  
 
 We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, and Venice.”  In this sentence there are four objects, the four referenced cities, and one relationship, the “is in the middle of” relation.  
 
@@ -42,18 +40,19 @@ We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, an
 > If the arity of a predicate is 3, then we call it a **ternary relation**.
 
 > [!exercise] ***Exercise***
-
 > Consider the proposition “The average of 5, 6, and 7, is 6.”
 >
 > Identify the objects, the predicate, and the arity of the predicate.
 
-There is a helpful way to visualize a property.  Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  “Being a philosophy major” is a property—likewise for all the other majors.  
+There is a helpful way to visualize a property (recall that a property is a predicate which applies to just one object at a time).  
+
+Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  “Being a philosophy major” is a property—likewise for all the other majors.  
 
 Moreover, some people may have more than one of these majors, and some have none of these majors.  
 
-![image.png](Chapter%204%20Predicates,%20Objects,%20and%20Types/image.png)
+// TODO: make image
 
-We can identify the property of “being a math major” with the set of people who are math majors:  It is a set of five people, according to the diagram above.  Likewise for the other majors.
+There is an obvious connection between properties and sets.  Here we can consider the property "being a math major". We can identify it with the set of all individuals who are math majors.  (Every property determines a set, and every set determines a property.  In this way, sets and properties are hardly different.)
 
 This Venn diagram also represents that two people are triple-majors: Math, philosophy, and computer science.  
 
