@@ -3,13 +3,9 @@ title: "Chapter 5: Predicate Syntax and Semantics"
 ---
 
 
-We previously developed a syntax and semantics for propositional logic, and then used it to develop a system of writing proofs. 
+In the previous chapters we developed propositional logic, both its syntax and semantics.  
 
-In this chapter we will expand this system to “predicate logic”.  Again we will develop a syntax and semantics.
-
-The syntax requires yet again declaring an alphabet, $\Sigma$, and a language, $L\subseteq \Sigma^*$.  Just as before, *L* will be defined recursively.  However, this time we will not just have a single subset of meaningful expressions.  More on this later.
-
-The semantics will determine the meanings of meaningful components.  Like the semantics of propositional logic, this is determined recursively as well: We establish the meanings of small signifiers, and then recursively describe how meaning is attached to more complex compositions.
+In this chapter we will discuss a new and more expressive system of logic, predicate logic.  Predicate logic uses the same propositional logic structure, but adds detail to the nature of propositions.  Rather than propositions being the fundamental components of a formula, propositions are themselves constructed from predicates and objects.
 
 # Predicates and Objects
 
@@ -46,7 +42,7 @@ We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, an
 > If the arity of a predicate is 3, then we call it a **ternary relation**.
 
 > [!exercise] ***Exercise***
->
+
 > Consider the proposition “The average of 5, 6, and 7, is 6.”
 >
 > Identify the objects, the predicate, and the arity of the predicate.
