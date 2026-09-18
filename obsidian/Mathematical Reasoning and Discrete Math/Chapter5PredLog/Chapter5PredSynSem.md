@@ -1,8 +1,6 @@
 ---
 title: "Chapter 5: Predicate Syntax and Semantics"
 ---
-![[venn3way.png]]
-
 In the previous chapters we developed propositional logic, both its syntax and semantics.  
 
 In this chapter we will discuss a new and more expressive system of logic, predicate logic.  Predicate logic uses the same propositional logic structure, but adds detail to the nature of propositions.  Rather than propositions being the fundamental components of a formula, propositions are themselves constructed from predicates and objects.
