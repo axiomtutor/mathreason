@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chapter 5: Predicate Syntax and Semantics — Mathematical Reasoning and</title>
-<meta name="description" content="We previously developed a syntax and semantics for propositional logic, and then used it to develop a system of writing proofs. In this chapter we will exp" />
+<meta name="description" content="! venn3way.png venn3way.png In the previous chapters we developed propositional logic, both its syntax and semantics. In this chapter we will discuss a new" />
 <meta property="og:title" content="Chapter 5: Predicate Syntax and Semantics — Mathematical Reasoning and Discrete Math" />
-<meta property="og:description" content="We previously developed a syntax and semantics for propositional logic, and then used it to develop a system of writing proofs. In this chapter we will exp" />
+<meta property="og:description" content="! venn3way.png venn3way.png In the previous chapters we developed propositional logic, both its syntax and semantics. In this chapter we will discuss a new" />
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary" />
 <link rel="stylesheet" href="assets/katex.min.css" />
@@ -35,18 +35,16 @@
     <article class="prose">
       <h1>Chapter 5: Predicate Syntax and Semantics</h1>
       <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-h2"><a href="#predicates-and-objects">Predicates and Objects</a></li><li class="toc-h2"><a href="#relation-diagrams">Relation Diagrams</a></li><li class="toc-h2"><a href="#predicate-and-object-syntax">Predicate and Object Syntax</a></li><li class="toc-h2"><a href="#predicate-and-object-semantics">Predicate and Object Semantics</a></li><li class="toc-h2"><a href="#conjunction-disjunction-negation">Conjunction, Disjunction, Negation</a></li><li class="toc-h2"><a href="#predicate-syntax-and-semantics">Predicate Syntax and Semantics</a></li></ul></nav>
-      <p>We previously developed a syntax and semantics for propositional logic, and then used it to develop a system of writing proofs.</p>
-<p>In this chapter we will expand this system to “predicate logic”.  Again we will develop a syntax and semantics.</p>
-<p>The syntax requires yet again declaring an alphabet, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span></span></span></span>, and a language, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi mathvariant="normal">Σ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">L\subseteq \Sigma^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6887em;"></span><span class="mord"><span class="mord">Σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>.  Just as before, <em>L</em> will be defined recursively.  However, this time we will not just have a single subset of meaningful expressions.  More on this later.</p>
-<p>The semantics will determine the meanings of meaningful components.  Like the semantics of propositional logic, this is determined recursively as well: We establish the meanings of small signifiers, and then recursively describe how meaning is attached to more complex compositions.</p>
+      <p><img src="assets/chapter5-pred-log-venn3way.png" alt="venn3way.png" loading="lazy"></p>
+<p>In the previous chapters we developed propositional logic, both its syntax and semantics.</p>
+<p>In this chapter we will discuss a new and more expressive system of logic, predicate logic.  Predicate logic uses the same propositional logic structure, but adds detail to the nature of propositions.  Rather than propositions being the fundamental components of a formula, propositions are themselves constructed from predicates and objects.</p>
 <details class="section"><summary class="section-summary"><h2 id="predicates-and-objects">Predicates and Objects</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>As you consider many examples of propositions, you notice a pattern.  They are always made up of an “object” and a “predicate”.</p>
-<p>For example, in the sentence “The ball is red” the object is “the ball”.  The predicate is “is red”.</p>
-<p>The object is the <em>thing</em> that the sentence is about.  The predicate is the claim that we make about it.</p>
-<section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><p>In the proposition “Anya is tall” there is only one good choice for which is the object and which is the predicate.</p>
-<p>Which is which?</p>
-<p>Also, choose a symbol for Anya, a symbol for the predicate “<em>x</em> is tall”, and then write the propositional atom which represents “Anya is tall”.</p>
-</div></section><p>Now as you consider more propositions you may quickly recognize that many of them involve multiple objects at the same time.  For example “1 is less than 2” uses the objects 1 and 2.</p>
+<p>For example, in the sentence “The ball is red”, the object is “the ball”.  The predicate is “is red”.</p>
+<p>The object is the <em>thing</em> that the sentence is about.</p>
+<p>The predicate is the claim that we make about it.</p>
+<section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><p>In the proposition “Anya is tall” identify the predicate and object.</p>
+</div></section><p>Now as you consider more propositions you may quickly recognize that many of them involve multiple objects at the same time.  For example “1 is less than 2” uses the objects (the numbers) 1 and 2.</p>
 <p>We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, and Venice.”  In this sentence there are four objects, the four referenced cities, and one relationship, the “is in the middle of” relation.</p>
 <section class="callout callout-definition"><p class="callout-label">Definition</p><div class="callout-body"><p>An <strong>object</strong> or <strong>constant</strong> is a particle of a proposition, which refers to something.</p>
 <p>A <strong>predicate</strong> is a particle of a proposition, which asserts a claim about objects.</p>
@@ -56,10 +54,11 @@
 <p>If the arity of a predicate is 3, then we call it a <strong>ternary relation</strong>.</p>
 </div></section><section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><p>Consider the proposition “The average of 5, 6, and 7, is 6.”</p>
 <p>Identify the objects, the predicate, and the arity of the predicate.</p>
-</div></section><p>There is a helpful way to visualize a property.  Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  “Being a philosophy major” is a property—likewise for all the other majors.</p>
+</div></section><p>There is a helpful way to visualize a property (recall that a property is a predicate which applies to just one object at a time).</p>
+<p>Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  “Being a philosophy major” is a property—likewise for all the other majors.</p>
 <p>Moreover, some people may have more than one of these majors, and some have none of these majors.</p>
-<p><img src="Chapter%204%20Predicates,%20Objects,%20and%20Types/image.png" alt="image.png" loading="lazy"></p>
-<p>We can identify the property of “being a math major” with the set of people who are math majors:  It is a set of five people, according to the diagram above.  Likewise for the other majors.</p>
+<p>// TODO: make image</p>
+<p>There is an obvious connection between properties and sets.  Here we can consider the property &quot;being a math major&quot;. We can identify it with the set of all individuals who are math majors.  (Every property determines a set, and every set determines a property.  In this way, sets and properties are hardly different.)</p>
 <p>This Venn diagram also represents that two people are triple-majors: Math, philosophy, and computer science.</p>
 <p>And there is just one person who is a double-major in math and philosophy (who is not also majoring in computer science).</p>
 <p>And there are two people who have none of these majors.</p>

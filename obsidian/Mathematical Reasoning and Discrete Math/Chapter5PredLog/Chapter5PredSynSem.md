@@ -1,7 +1,7 @@
 ---
 title: "Chapter 5: Predicate Syntax and Semantics"
 ---
-
+![[venn3way.png]]
 
 In the previous chapters we developed propositional logic, both its syntax and semantics.  
 
