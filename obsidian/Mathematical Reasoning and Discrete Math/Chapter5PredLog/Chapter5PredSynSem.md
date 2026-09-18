@@ -46,47 +46,45 @@ We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, an
 
 There is a helpful way to visualize a property (recall that a property is a predicate which applies to just one object at a time).  
 
-Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  “Being a philosophy major” is a property—likewise for all the other majors.  
+Take for example, a party in which some people are math majors, some are philosophy majors, some are computer scientists.  We can represent this by a Venn diagram.
+![[venn3way.png]]
 
-Moreover, some people may have more than one of these majors, and some have none of these majors.  
 
-// TODO: make image
+There is an obvious connection between properties and sets.  Consider the property "being a math major". We can identify it with the set of all individuals who are math majors.  Therefore the upper-left circle in the Venn diagram represents the set of math majors, but we can think of it corresponding to the property of being a math major.
 
-There is an obvious connection between properties and sets.  Here we can consider the property "being a math major". We can identify it with the set of all individuals who are math majors.  (Every property determines a set, and every set determines a property.  In this way, sets and properties are hardly different.)
+Let's get even more specific.  Let's suppose that the people at the party are named Adam, Brooke, Cecil, ..., Jelani.  
 
-This Venn diagram also represents that two people are triple-majors: Math, philosophy, and computer science.  
+In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{ \text{a,b,c,d,e,f,g,h,i,j} \}$.  
 
-And there is just one person who is a double-major in math and philosophy (who is not also majoring in computer science).
+Keep in mind that the symbols are *a* through *j*, but we are giving them meaning by identifying each symbol with a person.  
 
-And there are two people who have none of these majors.  
-
-If we make up some names and symbols, we might use the following language to describe this party:  We choose the object names $\text{Objs} = \{ \text{a,b,c,d,e,f,g,h,i,j} \}$.  Let’s suppose that the people at the party are Adam, Brooke, Cecil, Dale, Eudoxus, …, Jelani.  We’ll interpret the names like so 
+The correspondence between symbol and its meaning is tracked by an "interpretation".  We will use the symbol $\frak I$ for an interpretation.
 
 $$
 \begin{aligned}
- a^{\mathcal I} &= \text{Adam} \\
- b^{\mathcal I} &= \text{Brooke} \\
- c^{\mathcal I} &= \text{Cecil} \\
- d^{\mathcal I} &= \text{Dale} \\
- e^{\mathcal I} &= \text{Eudoxus} \\
- f^{\mathcal I} &= \text{Francis} \\
- g^{\mathcal I} &= \text{Gyanesh} \\
- h^{\mathcal I} &= \text{Hilary} \\
- i^{\mathcal I} &= \text{Irene} \\
- j^{\mathcal I} &= \text{Jelani} \\
+ a^{\frak I} &= \text{Adam} \\
+ b^{\frak I} &= \text{Brooke} \\
+ c^{\frak I} &= \text{Cecil} \\
+ d^{\frak I} &= \text{Dale} \\
+ e^{\frak I} &= \text{Eudoxus} \\
+ f^{\frak I} &= \text{Francis} \\
+ g^{\frak I} &= \text{Gyanesh} \\
+ h^{\frak I} &= \text{Hilary} \\
+ i^{\frak I} &= \text{Irene} \\
+ j^{\frak I} &= \text{Jelani} \\
 \end{aligned}
 $$
 
 We choose the predicate names *M, P, C*.  Each predicate name will denote the set of people in each major.  For example, if the math majors are Adam, Brooke, Cecil, Dale, and Eudoxus, then 
 
 $$
-M^{\mathcal I} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
+M^{\frak I} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
 $$
 
 If the philosophy majors are Adam, Brooke, Cecil, Gyanesh, and Irene, then these are the denotation of *P*.
 
 $$
-P^{\mathcal I} = \{\text{Adam, Brooke, Cecil, Gyanesh, Irene}\}
+P^{\frak I} = \{\text{Adam, Brooke, Cecil, Gyanesh, Irene}\}
 $$
 
 > [!exercise] ***Exercise***
@@ -95,10 +93,10 @@ $$
 >
 > But note that not every denotation of *C* is correct.  
 >
-> - $C^{\mathcal I}$ must contain five people, and
-> - it must overlap $M^{\mathcal I}$ in exactly three people, and
-> - it must overlap $P^{\mathcal I}$ in exactly three people, and
-> - $C^{\mathcal I}, M^{\mathcal I}, P^{\mathcal I}$ must overlap in exactly two people.
+> - $C^{\frak I}$ must contain five people, and
+> - it must overlap $M^{\frak I}$ in exactly three people, and
+> - it must overlap $P^{\frak I}$ in exactly three people, and
+> - $C^{\frak I}, M^{\frak I}, P^{\frak I}$ must overlap in exactly two people.
 
 # Relation Diagrams
 
@@ -106,13 +104,13 @@ There is a nice graphical representation of binary relations.
 
 Just to take a fresh example, consider the relation “less than” on the set of numbers {1, 2, 3, 4, 5}.  
 
-If we use the symbol *L* to represent the relation, then $(1,2)\in L^{\mathcal I}$ because 1 < 2.  Also $(2, 5)\in L^{\mathcal I}$ because 2 < 5.  On the other hand $(2, 2)\notin L^{\mathcal I}$ and $(2,3)\notin L^{\mathcal I}$.
+If we use the symbol *L* to represent the relation, then $(1,2)\in L^{\mathcal I}$ because 1 < 2.  Also $(2, 5)\in L^{\frak I}$ because 2 < 5.  On the other hand $(2, 2)\notin L^{\frak I}$ and $(2,3)\notin L^{\frak I}$.
 
 ![image.png](Chapter%204%20Predicate%20Syntax%20and%20Semantics/image.png)
 
 When drawing a node-and-arrow diagram for a relation, we put an arrow from *x* to *y* if the ordered pair $(x,y)$ is in the relation.  
 
-In this example, since $(1,2)\in L^{\mathcal I}$ then there is an arrow pointing from 1 to 2.
+In this example, since $(1,2)\in L^{\frak I}$ then there is an arrow pointing from 1 to 2.
 
 > [!exercise] ***Exercise***
 >
@@ -198,7 +196,7 @@ That is essentially what an interpretation does: For a object symbol, it tells y
 
 In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  In any given setting, you choose your so-called “domain of discourse”.  
 
-- The domain of discourse is usually determined by context, in natural languages.
+- [!note]- The domain of discourse is usually determined by context, in natural languages.
     
     We will sometimes be explicit about just what our domain of discourse is.  When it’s obvious or unimportant, we won’t declare the universe explicitly.  
     
