@@ -19,7 +19,7 @@ Here is another example.  Suppose that we already accept $\phi\land\psi$.  Then 
 
 Therefore we should have the inference rule “From $\phi\land\psi$ we may infer $\phi$.”  
 
-In a similar fashion one may be able to understand all of the following inference rules.
+In a similar fashion one can understand all of the following inference rules.
 
 > [!definition] ***Definition***
 >
@@ -98,6 +98,12 @@ $$
 Let’s look only at the rows in which the assumptions of the inference rule are true.  These would be the rows where both $P\lor Q$ and $\neg P$ are true.  This happens only at one row, which is row number 3.
 
 In this row, the value of *Q* is true.  So yet again, the inference rule is valid.
+
+---
+
+It can be helpful to see an example of an inference rule that is *not* valid.  This would require a rule in which the premises can be true but the inferred proposition false.
+
+An example would be "From $\phi$ we can infer $\phi\land\psi$".  Let's see a truth-table which demonstrates why this is invalid.  
 
 > [!exercise] ***Exercise***
 >
