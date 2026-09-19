@@ -206,7 +206,7 @@ In any given setting, we will always need a universe of things that our statemen
 
 We regard the universe as a set, which we’ll call $उ$.  
 
-If we have any constant symbol, say *a*, then the semantics tells us which element in $\frak U$ the symbol *a* refers to.  
+If we have any constant symbol, say *a*, then the semantics tells us which element in $उ$ the symbol *a* refers to.  
 
 For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in उ$.  
 
