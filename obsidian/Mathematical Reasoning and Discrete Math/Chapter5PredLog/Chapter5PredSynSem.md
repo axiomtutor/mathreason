@@ -243,7 +243,7 @@ From all of these components, we know that syntactically, we can form the propos
 > and 
 >
 > $$
-> (P(a_1,...,a_n))^{म} = फ़ \ \ \text{ if } (a_1^{इ},...,a_n^{इ})\notin P^{इ}
+> (P(a_1,...,a_n))^{म} = फ \ \ \text{ if } (a_1^{इ},...,a_n^{इ})\notin P^{इ}
 > $$
 
 > [!note]- What is the difference between a superscript $म$ and a superscript $इ$?
@@ -266,7 +266,7 @@ Let’s practice by applying these ideas to the earlier example.  In that exampl
 
 To evaluate the proposition means that we find the value of $(P(o))^{म}$.  The definition of this tells us to check whether $o^{इ}\in P^{इ}$.  But this is the same as checking whether 1 is in the set of even numbers.  
 
-Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefore $(P(o))^{म}=फ़$.  This is exactly the result that we intuitively know that we should obtain.  
+Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefore $(P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain.  
 
 ---
 
@@ -390,16 +390,16 @@ $$
 \end{aligned}
 $$
 
-Let’s then determine $((P(a)\land \neg Q(a))\to P(b))^{म}$.  It should be clear that $(P(a))^{म} = ट$ and $(Q(a))^{म} = ट$, and $(P(b))^{म} = फ़$.
+Let’s then determine $((P(a)\land \neg Q(a))\to P(b))^{म}$.  It should be clear that $(P(a))^{म} = ट$ and $(Q(a))^{म} = ट$, and $(P(b))^{म} = फ$.
 
 $$
 \begin{aligned}
  ((P(a)\land \neg Q(a))\to P(b))^{म} &= (P(a)\land \neg Q(a))^{म} \leadsto (P(b))^{म} \\
- &= ((P(a))^{म}\curlywedge (\neg Q(a))^{म}) \leadsto फ़ \\
- &= (ट\curlywedge \sim (Q(a))^{म})\leadsto फ़ \\
- &= (ट\curlywedge \sim ट)\leadsto फ़ \\
- &= (ट\curlywedge फ़)\leadsto फ़\\
- &= फ़\leadsto फ़\\
+ &= ((P(a))^{म}\curlywedge (\neg Q(a))^{म}) \leadsto फ \\
+ &= (ट\curlywedge \sim (Q(a))^{म})\leadsto फ \\
+ &= (ट\curlywedge \sim ट)\leadsto फ \\
+ &= (ट\curlywedge फ)\leadsto फ\\
+ &= फ\leadsto फ\\
  &= ट
 \end{aligned}
 $$
@@ -481,7 +481,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >     and
 >     
 >     $$
->     \phi^{म} = फ़ \text{ \ \ if } (a_1^{इ},...,a_n^{इ})\notin P^{इ}
+>     \phi^{म} = फ \text{ \ \ if } (a_1^{इ},...,a_n^{इ})\notin P^{इ}
 >     $$
 >     
 > - If there is a $\chi\in L$ such that $\phi=\neg\chi$ then
