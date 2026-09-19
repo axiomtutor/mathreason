@@ -194,7 +194,7 @@ That is essentially what an interpretation does: For a object symbol, it tells y
 
 In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  In any given setting, you choose your so-called “domain of discourse”.  
 
-- [!note]- The domain of discourse is usually determined by context, in natural languages.
+[!note]- The domain of discourse is usually determined by context, in natural languages.
     
     We will sometimes be explicit about just what our domain of discourse is.  When it’s obvious or unimportant, we won’t declare the universe explicitly.  
     
@@ -204,11 +204,11 @@ In any given setting, we will always need a universe of things that our statemen
     
     [https://en.wikipedia.org/wiki/Domain_of_discourse](https://en.wikipedia.org/wiki/Domain_of_discourse)
 
-We regard the universe as a set, which we’ll call $\mathcal U$.  
+We regard the universe as a set, which we’ll call $\frak U$.  
 
-If we have any constant symbol, say *a*, then the semantics tells us which element in *U* the symbol *a* refers to.  
+If we have any constant symbol, say *a*, then the semantics tells us which element in $\frak U$ the symbol *a* refers to.  
 
-For example, we could have $\mathcal U$ be the set of integers, so $\mathcal U = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in \mathcal U$.  
+For example, we could have $\frak U$ be the set of integers, so $\frak U = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in \frak U$.  
 
 The model could also determine that the predicate *P* refers to the set of all even numbers.  
 
@@ -218,57 +218,57 @@ From all of these components, we know that syntactically, we can form the propos
 >
 > Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively.
 >
-> Let $\mathcal U$ be any nonempty set, which we will refer to as the **universe**.  
+> Let $\frak U$ be any nonempty set, which we will refer to as the **universe**.  
 >
-> An **interpretation**, $\mathcal I$, assigns to each object symbol, an element of the universe.  If $a\in\text{Objs}$, then the assigned element is written $a^{\mathcal I}$.  Therefore 
+> An **interpretation**, $\frak I$, assigns to each object symbol, an element of the universe.  If $a\in\text{Objs}$, then the assigned element is written $a^{\frak I}$.  Therefore 
 >
 > $$
-> a^{\mathcal I} \in \mathcal U
+> a^{\frak I} \in \frak U
 > $$
 >
 > Let $P\in\text{Preds}$ and let $n = \text{Arity}(P)$.  Then
 >
 > $$
-> P^{\mathcal I} \subseteq \mathcal U^n
+> P^{\frak I} \subseteq \frak U^n
 > $$
 >
-> Now the pair $\mathcal M = (\mathcal U,\mathcal I)$ is called a **predicate model** (or just **model** for short).
+> Now the pair $\frak M = (\frak U,\frak I)$ is called a **predicate model** (or just **model** for short).
 >
-> Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in \mathcal U$.  
+> Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in \frak U$.  
 >
 > Then 
 >
 > $$
-> (P(a_1,...,a_n))^{\mathcal M} = \mathfrak{T} \ \ \text{ if } (a_1^{\mathcal I},...,a_n^{\mathcal I})\in P^{\mathcal I}
+> (P(a_1,...,a_n))^{\frak M} = \mathfrak{T} \ \ \text{ if } (a_1^{\frak I},...,a_n^{\frak I})\in P^{\frak I}
 > $$
 >
 > and 
 >
 > $$
-> (P(a_1,...,a_n))^{\mathcal M} = \mathfrak{F} \ \ \text{ if } (a_1^{\mathcal I},...,a_n^{\mathcal I})\notin P^{\mathcal I}
+> (P(a_1,...,a_n))^{\frak M} = \mathfrak{F} \ \ \text{ if } (a_1^{\frak I},...,a_n^{\frak I})\notin P^{\frak I}
 > $$
 
-> [!note]- What is the difference between a superscript $\mathcal M$ and a superscript $\mathcal I$?
+> [!note]- What is the difference between a superscript $\frak M$ and a superscript $\frak I$?
 >
-> Note that the job of the interpretation, $\mathcal I$, is *only* to track the association between symbols in the syntax and elements in the universe.  A superscript $\mathcal I$ only makes sense when it is written over a symbol that refers to the domain (objects and predicates).
+> Note that the job of the interpretation, $\frak I$, is *only* to track the association between symbols in the syntax and elements in the universe.  A superscript $\frak I$ only makes sense when it is written over a symbol that refers to the domain (objects and predicates).
 >
-> A superscript $\mathcal M$ is used to determine truth-values of formulas.  Therefore a superscript $\mathcal M$ only makes sense when it is written over a formula.
+> A superscript $\frak M$ is used to determine truth-values of formulas.  Therefore a superscript $\frak M$ only makes sense when it is written over a formula.
 
-The picture below represents these ideas, focusing initially on a predicate with arity 1.  As a predicate with arity 1, this means that its interpretation $P^{\mathcal I}$ will just be a subset of the universe.  
+The picture below represents these ideas, focusing initially on a predicate with arity 1.  As a predicate with arity 1, this means that its interpretation $P^{\frak I}$ will just be a subset of the universe.  
 
 The left side contains our basic syntax: constant symbols like *c*, and predicate symbols like *P*.  These are the symbols we use to express propositions.  
 
 ![image.png](Chapter%204%20Predicate%20Syntax%20and%20Semantics/image%201.png)
 
-On the right is the basic semantic object, the universe, $\mathcal U$—the set of things our symbols “talk about”
+On the right is the basic semantic object, the universe, $\frak U$—the set of things our symbols “talk about”
 
-The model, $\mathcal M=(\mathcal U,\mathcal I)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $\mathcal I$.  That means choosing which element, $u\in \mathcal U$, should be associated with *c*.  This is $c^{\mathcal I}=u$.  It also means choosing which subset, $X\subseteq \mathcal U$, is associated with *P*.  This is $P^{\mathcal I}=X$.
+The model, $\frak M=(\frak U,\frak I)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $\frak I$.  That means choosing which element, $u\in \mathcal U$, should be associated with *c*.  This is $c^{\frak I}=u$.  It also means choosing which subset, $X\subseteq \frak U$, is associated with *P*.  This is $P^{\frak I}=X$.
 
-Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $\mathcal U = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{\mathcal I} = 1$.  We also said that $P^{\mathcal I}$ is the set of even numbers.  The model is then $\mathcal M=(\mathcal U,\mathcal I)$.  
+Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $\frak U = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{\frak I} = 1$.  We also said that $P^{\frak I}$ is the set of even numbers.  The model is then $\frak M=(\frak U,\frak I)$.  
 
-To evaluate the proposition means that we find the value of $(P(o))^{\mathcal M}$.  The definition of this tells us to check whether $o^{\mathcal I}\in P^{\mathcal I}$.  But this is the same as checking whether 1 is in the set of even numbers.  
+To evaluate the proposition means that we find the value of $(P(o))^{\frak M}$.  The definition of this tells us to check whether $o^{\frak I}\in P^{\frak I}$.  But this is the same as checking whether 1 is in the set of even numbers.  
 
-Since 1 is not in the set of even numbers, $o^{\mathcal I}\notin P^{\mathcal I}$, and therefore $(P(o))^{\mathcal M}=\mathfrak{F}$.  This is exactly the result that we intuitively know that we should obtain.  
+Since 1 is not in the set of even numbers, $o^{\frak I}\notin P^{\frak I}$, and therefore $(P(o))^{\frak M}=\mathfrak{F}$.  This is exactly the result that we intuitively know that we should obtain.  
 
 ---
 
@@ -282,15 +282,15 @@ Let’s see a non-mathematical example.  Consider the proposition “The ball is
 
 Let’s choose *b* to be the object symbol, and *R* to be the predicate symbol.  Therefore we represent “The ball is red,” by the formula $R(b)$.
 
-At this point we have only established the syntax.  Let’s now “wire it up to” the semantics.  In this context, a reasonable choice of universe, $\mathcal U$, is the set of objects in the room where the proposition was uttered.  
+At this point we have only established the syntax.  Let’s now “wire it up to” the semantics.  In this context, a reasonable choice of universe, $\frak U$, is the set of objects in the room where the proposition was uttered.  
 
-A reasonable choice of $b^{\mathcal I}$ is the red ball that’s in the room.  
+A reasonable choice of $b^{\frak I}$ is the red ball that’s in the room.  
 
-A reasonable choice of $R^{\mathcal I}$ is the set of all red objects in the room.  
+A reasonable choice of $R^{\frak I}$ is the set of all red objects in the room.  
 
-With all of that specified, we now know $\mathcal I$, and $\mathcal U$, and therefore we know what the model, $\mathcal M$, is.
+With all of that specified, we now know $\frak I$, and $\frak U$, and therefore we know what the model, $\frak M$, is.
 
-This is everything that we need to now evaluate $(R(b))^{\mathcal M}$.  Because $b^{\mathcal I}$ is a red ball in the room, it therefore is a red object in the room, and therefore $b^{\mathcal I}\in R^{\mathcal I}$.  So it follows, by definition, that $(R(b))^{\mathcal M}=\mathfrak{T}$.
+This is everything that we need to now evaluate $(R(b))^{\frak M}$.  Because $b^{\frak I}$ is a red ball in the room, it therefore is a red object in the room, and therefore $b^{\frak I}\in R^{\frak I}$.  So it follows, by definition, that $(R(b))^{\frak M}=\mathfrak{T}$.
 
 > [!exercise] ***Exercise***
 >
@@ -298,7 +298,7 @@ This is everything that we need to now evaluate $(R(b))^{\mathcal M}$.  Because 
 >
 > Using the same syntax as above, now choose a reasonable model for this context.  
 >
-> Use this model to evaluate $(R(b))^{\mathcal M}$.
+> Use this model to evaluate $(R(b))^{\frak M}$.
 
 > [!exercise] ***Exercise***
 >
@@ -310,13 +310,13 @@ This is everything that we need to now evaluate $(R(b))^{\mathcal M}$.  Because 
 >
 > Suppose that we have a syntax with one object symbol, *a*, and one predicate symbol, *P*.  
 >
-> Suppose that we consider only models with universe $\mathcal U=\{1\}$.
+> Suppose that we consider only models with universe $\frak U=\{1\}$.
 >
-> There are two interpretations, $\mathcal I$, which are possible under these conditions.  Find both.  
+> There are two interpretations, $\frak I$, which are possible under these conditions.  Find both.  
 
 > [!exercise] ***Exercise***
 >
-> Suppose that we have a syntax with two objects, one predicate, and the universe is $\mathcal U = \{1,2\}$.
+> Suppose that we have a syntax with two objects, one predicate, and the universe is $\frak U = \{1,2\}$.
 >
 > How many models are possible?
 
@@ -333,9 +333,9 @@ This is a *conjunction* of the two propositions, because both are required for 1
 
 In order to symbolically represent the first proposition, “1 is a lower bound of *A,*” we will make up a symbol to stand for this.  Say that we use $L(a)$.  Here *a* is a constant symbol, which is intended to represent the number $1\in \Bbb Z$. And *L* is a predicate symbol which I have chosen to represent the predicate “*x* is a lower bound of *A*”.
 
-This means that, in the model I intend for this example, $\mathcal M=(\Bbb Z, \mathcal I)$.  That is to say, the universe is $\Bbb Z$.  And $\mathcal I$ is an association between the symbols *a* and *L*, with the elements of $\Bbb Z$.  More specifically, it is the association $a^{\mathcal I}=1$ and $P^{\mathcal I} = \{x\in \Bbb Z: x \text{ is a lower bound of } A\}$.
+This means that, in the model I intend for this example, $\frak M=(\Bbb Z, \frak I)$.  That is to say, the universe is $\Bbb Z$.  And $\frak I$ is an association between the symbols *a* and *L*, with the elements of $\Bbb Z$.  More specifically, it is the association $a^{\frak I}=1$ and $P^{\frak I} = \{x\in \Bbb Z: x \text{ is a lower bound of } A\}$.
 
-Next, we can represent the second proposition, “$1\in A$”, by the symbolic expression $M(a)$.  Here *M* is a symbol that I’m using for the predicate “$x\in A$”.  In the intended model, $M^{\mathcal I} = \{x\in \Bbb Z: x \in A\}$.  Of course, in this case, $M^{\mathcal I}=A$. 
+Next, we can represent the second proposition, “$1\in A$”, by the symbolic expression $M(a)$.  Here *M* is a symbol that I’m using for the predicate “$x\in A$”.  In the intended model, $M^{\frak I} = \{x\in \Bbb Z: x \in A\}$.  Of course, in this case, $M^{\frak I}=A$. 
 
 Now, finally, we can symbolically express the conjunction of these two propositions by 
 
@@ -351,13 +351,13 @@ Here we discussed an example of conjunction at length.  The discussion of disjun
 >
 > Let $\phi$ and $\psi$ be predicate formulas.  Then
 >
-> $$
+> $$\begin{aligned}
 > \phi\land\psi\\
 > \phi\lor \psi\\
 > \neg\phi\\
 > \phi\to\psi\\
 > \phi\leftrightarrow \psi
-> $$
+> \end{aligned}$$
 >
 > are each a **predicate formula**.  
 >
@@ -365,11 +365,11 @@ Here we discussed an example of conjunction at length.  The discussion of disjun
 >
 > $$
 > \begin{aligned}
-> (\phi\land\psi)^{\mathcal M}&=\phi^{\mathcal M}\curlywedge \psi^{\mathcal M}\\
-> (\phi\lor\psi)^{\mathcal M}&=\phi^{\mathcal M}\curlyvee \psi^{\mathcal M} \\
-> (\neg\phi)^{\mathcal M}&=\sim\phi^{\mathcal M} \\
-> (\phi\to\psi)^{\mathcal M}&= \phi^{\mathcal M}\leadsto\psi^{\mathcal M}\\
-> (\phi\leftrightarrow\psi)^{\mathcal M}&=\phi^{\mathcal M}\leftrightsquigarrow \psi^{\mathcal M}
+> (\phi\land\psi)^{\frak M}&=\phi^{\frak M}\curlywedge \psi^{\frak M}\\
+> (\phi\lor\psi)^{\frak M}&=\phi^{\frak M}\curlyvee \psi^{\frak M} \\
+> (\neg\phi)^{\frak M}&=\sim\phi^{\frak M} \\
+> (\phi\to\psi)^{\frak M}&= \phi^{\frak M}\leadsto\psi^{\frak M}\\
+> (\phi\leftrightarrow\psi)^{\frak M}&=\phi^{\frak M}\leftrightsquigarrow \psi^{\frak M}
 > \end{aligned}
 > $$
 
@@ -381,18 +381,18 @@ The way that formulas are then combined with propositional connectives, is exact
 
 Let’s see an example.
 
-Suppose that we have a syntax with object symbols *a* and *b*, and predicates *P* and *Q*.  Suppose we have a model, $\mathcal M = (\mathcal U,\mathcal I)$, with universe $\mathcal U = \Bbb Z$ and the interpretation is defined by 
+Suppose that we have a syntax with object symbols *a* and *b*, and predicates *P* and *Q*.  Suppose we have a model, $\frak M = (\frak U,\frak I)$, with universe $\mathcal U = \Bbb Z$ and the interpretation is defined by 
 
 $$
 \begin{aligned}
- a^{\mathcal I} &= 0 \\
- b^{\mathcal I} &= 1 \\
- P^{\mathcal I} &= \{x\in\Bbb Z:x \text{ is even}\} \\
- Q^{\mathcal I} &= \{x\in\Bbb Z: x < 10\}
+ a^{\frak I} &= 0 \\
+ b^{\frak I} &= 1 \\
+ P^{\frak I} &= \{x\in\Bbb Z:x \text{ is even}\} \\
+ Q^{\frak I} &= \{x\in\Bbb Z: x < 10\}
 \end{aligned}
 $$
 
-Let’s then determine $((P(a)\land \neg Q(a))\to P(b))^{\mathcal M}$.  It should be clear that $(P(a))^{\mathcal M} = \mathfrak{T}$ and $(Q(a))^{\mathcal M} = \mathfrak{T}$, and $(P(b))^{\mathcal M} = \mathfrak{F}$.
+Let’s then determine $((P(a)\land \neg Q(a))\to P(b))^{\frak M}$.  It should be clear that $(P(a))^{\frak M} = \mathfrak{T}$ and $(Q(a))^{\frak M} = \mathfrak{T}$, and $(P(b))^{\frak M} = \mathfrak{F}$.
 
 $$
 \begin{aligned}
@@ -411,7 +411,7 @@ $$
 > Using the same syntax and semantics as above, find 
 >
 > $$
-> ((Q(b)\leftrightarrow P(a))^{\mathcal M}
+> ((Q(b)\leftrightarrow P(a))^{\frak M}
 > $$
 
 > [!exercise] ***Exercise***
@@ -463,9 +463,9 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > *Semantics*
 >
-> Let $\mathcal U$ be any nonempty set.
+> Let $\frak U$ be any nonempty set.
 >
-> Let $\mathcal I$ be an assignment of elements in $\mathcal U$ to the elements in $\text{Objs}$.  If $a\in\text{Objs}$ then the element assigned to it is denoted $a^{\mathcal I}$.  
+> Let $\frak I$ be an assignment of elements in $\frak U$ to the elements in $\text{Objs}$.  If $a\in\text{Objs}$ then the element assigned to it is denoted $a^{\frak I}$.  
 >
 > For each $P\in\text{Preds}$, if $n=\text{Arity}$ then $\mathcal I$ assigns a *P* to a subset of $\mathcal U^n$.  That is to say, $P^{\mathcal I}\subseteq \mathcal U^n$.
 >
