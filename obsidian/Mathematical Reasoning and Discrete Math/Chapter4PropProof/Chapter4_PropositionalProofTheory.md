@@ -109,11 +109,11 @@ In this row, the value of *Q* is true.  So yet again, the inference rule is vali
 >
 > Prove that this inference rule is valid.
 
-> [!exercise] ***Exercise***
->
-> Here is an invalid inference rule: “From $\phi\lor\psi$ we may infer $\phi$.”  
->
-> Prove that this inference rule is invalid.
+Here is an invalid inference rule: “From $\phi\lor\psi$ we may infer $\phi$.”  
+
+To see why this inference rule is invalid, suppose that $\phi$ is false and $\psi$ is true.  Then $\phi\lor\psi$ is true, so the inference rule would allow us to infer $\phi$.  But $\phi$ is false.  
+
+Thus this inference rule can take us from a true assumption to a false conclusion, so it is invalid.
 
 # Proofs
 
