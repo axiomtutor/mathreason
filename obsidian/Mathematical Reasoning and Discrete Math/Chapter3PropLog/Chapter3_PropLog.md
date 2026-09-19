@@ -44,7 +44,7 @@ We will use फ for "false", which is a Devanagari letter, pronounced like an En
 
 > [!note]- Notes on the use of Devanagari.
 > 
-> 1. Placing a dot below the letter फ, to make फ़, produces a sound in Devanagari which is closer to the English 'F' sound.  But I figure, why bother? For our purposes I just want a distinct symbol, which somehow gestures at the idea of "false".  The simpler letter फ is good enough!
+> 1. Placing a dot below the letter फ, to make फ, produces a sound in Devanagari which is closer to the English 'F' sound.  But I figure, why bother? For our purposes I just want a distinct symbol, which somehow gestures at the idea of "false".  The simpler letter फ is good enough!
 > 2. I know that many English-speaking readers may be intimidated by letters from a language as different as Hindi.  However, I promise that the number of Devanagari letters will be kept small.  You will, in fact, learn many more new symbols which are standard logical symbols, than you will learn Devanagari letters.
 > 3. In the definition below, we will write a sentence like $P^म=ट$.  I recommend pronouncing this as "*P* in *M* is true."
 
@@ -217,7 +217,7 @@ $$ट \land ट = ट $$
 > Then $(\phi\land \psi)^{म}$ is defined to be equal to $\phi^{म}\curlywedge \psi^{म}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $म$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $म$**.
 
 > [!note]- Semantic conjunction is an example of a "boolean algebra operation".
-> The values $ट$ and $फ़$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
+> The values $ट$ and $फ$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
 > 
 > A function is then called a "boolean algebra operation" if its inputs and outputs are boolean values.  
 > 
@@ -285,23 +285,23 @@ $$
  \hline
  P & Q & P & \land & Q \\\hline
  \color{red} ट & \color{red}ट & & \color{red}ट &  \\
-ट &फ़ & &फ़ & \\
- \color{red}फ़ & \color{red}ट &  & \color{red}फ़ & \\
-फ़ &फ़ &  &फ़ &  \\\hline
+ट &फ & &फ & \\
+ \color{red}फ & \color{red}ट &  & \color{red}फ & \\
+फ &फ &  &फ &  \\\hline
 \end{array}
 $$
 
 The rows are in alternating colors just for readability—the colors don’t mean anything.
 
-Each row corresponds to a model.  For example, if $म$ is the model which assigns $P^{म}=फ़$ and $Q^{म}=फ़$, then this is represented in the last row of the table.  
+Each row corresponds to a model.  For example, if $म$ is the model which assigns $P^{म}=फ$ and $Q^{म}=फ$, then this is represented in the last row of the table.  
 
-In this last row, under $\land$, it holds the value of the proposition $P\land Q$.  This is the black $फ़$.  This comes from computing 
+In this last row, under $\land$, it holds the value of the proposition $P\land Q$.  This is the black $फ$.  This comes from computing 
 
 $$
 \begin{aligned}
  (P\land Q)^{म} &= P^{म}\curlywedge Q^{म}\\
-&=फ़\curlywedgeफ़\\
-&=फ़
+&=फ\curlywedgeफ\\
+&=फ
 \end{aligned}
 $$
 
@@ -329,9 +329,9 @@ All of this is very similar to the conversation for conjunction.
 > 
 > $$ \begin{aligned}
 > ट\curlyvee ट = ट\\\\
-> ट\curlyvee फ़ = ट\\\\
-> फ़\curlyvee ट = ट\\\\
-> फ़\curlyvee फ़ = फ़
+> ट\curlyvee फ = ट\\\\
+> फ\curlyvee ट = ट\\\\
+> फ\curlyvee फ = फ
 > \end{aligned}$$
 > 
 > If $म$ is a model defined for $\phi$ and $\psi$, then we define 
@@ -347,9 +347,9 @@ $$
  \hline
  P & Q & P & \lor & Q \\\hline
  \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ़ & & ट & \\
- \color{red}फ़ & \color{red}ट & & \color{red}ट & \\
- फ़ & फ़ &  & फ़ &  \\\hline
+ ट & फ & & ट & \\
+ \color{red}फ & \color{red}ट & & \color{red}ट & \\
+ फ & फ &  & फ &  \\\hline
 \end{array}
 $$
 
@@ -380,7 +380,7 @@ $$
 > We define the boolean operation of **semantic negation** by
 > 
 > $$\begin{aligned}
-> \sim ट =फ़\\\simफ़ =ट
+> \sim ट =फ\\\simफ =ट
 > \end{aligned}$$
 > 
 > For a model $म$ defined for $\phi$, we define 
@@ -394,8 +394,8 @@ The truth-table for negation is
 $$
 \begin{array}{|c||c|c|}\hline
   P & \neg & P \\\hline
- \color{red}ट & \color{red}फ़ & \\
-फ़ &ट & \\\hline
+ \color{red}ट & \color{red}फ & \\
+फ &ट & \\\hline
 \end{array}
 $$
 
@@ -438,7 +438,7 @@ $$
 \begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
  \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ़ & & फ़ & \\
+ ट & फ & & फ & \\
 \end{array}
 $$
 
@@ -467,9 +467,9 @@ $$
 \begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
  \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ़ & & फ़ & \\
- \color{red} फ़ & \color{red} ट & & \color{red} ट & \\
-फ़ & फ़ & & ट & \\\hline
+ ट & फ & & फ & \\
+ \color{red} फ & \color{red} ट & & \color{red} ट & \\
+फ & फ & & ट & \\\hline
 \end{array}
 $$
 
