@@ -37,7 +37,7 @@ The semantics are the truth-values assigned to variables.  When choosing to give
 
 Because it is valuable to keep straight, which things are syntax and which are semantics, it is helpful to write each in a distinctive script.  It is traditional to write syntax in standard italic letters, and it is sometimes common to write semantics in Fraktur font.  
 
-We will use $\frak T$ (this is a Fraktur ‘T’) for “true”, and $\frak F$ (Fraktur ‘F’) for “false”. 
+We will use $ट$ (this is a Fraktur ‘T’) for “true”, and $फ़$ (Fraktur ‘F’) for “false”. 
 
 > [!note]- The "signifiers" of propositional logic are called "propositional formulas", but we are not yet ready to define these.
 > 
@@ -53,27 +53,27 @@ We will use $\frak T$ (this is a Fraktur ‘T’) for “true”, and $\frak F$ 
 > 
 > *Semantics*
 > 
-> If $P_1,P_2,\dots$ are propositional variables, then a **truth model** (or just **model** for short, also sometimes called a **truth-assignment** or a **truth-function**) is an assignment of truth-values to the variables.  The truth-values are **true** and **false**, represented by $\frak T$ and $\frak F$.
+> If $P_1,P_2,\dots$ are propositional variables, then a **truth model** (or just **model** for short, also sometimes called a **truth-assignment** or a **truth-function**) is an assignment of truth-values to the variables.  The truth-values are **true** and **false**, represented by $ट$ and $फ़$.
 > 
-> We will denote a truth model by the symbol $\frak M$ (Fraktur ‘M’).
+> We will denote a truth model by the symbol $म$ (Fraktur ‘M’).
 > 
-> If $\frak M$ assigns $\frak T$ to *P*, we write 
-> 
-> $$
-> P^{\frak M}= \frak T
-> $$
-> 
-> and if $\frak M$ assigns $\frak F$ to *P* we write 
+> If $म$ assigns $ट$ to *P*, we write 
 > 
 > $$
-> P^{\frak M}= \frak F
+> P^{म}= ट
+> $$
+> 
+> and if $म$ assigns $फ़$ to *P* we write 
+> 
+> $$
+> P^{म}= फ़
 > $$
 
 > [!note]- A model is a function.
     >
     >The above establishes that a model assigns truth-value to propositional variables.  We can pick any model that we want, depending on our intended interpretation of the propositional variables.  
     >
-    >If we intend for the variable *P* to express “1 + 1 = 2” then we would pick a model, $\frak M$, in which $P^{\frak M}=\frak T$.  If we use *P* to stand for “1 + 1 = 0” then we would pick our model such that $P^{\frak M}=\frak F$.
+    >If we intend for the variable *P* to express “1 + 1 = 2” then we would pick a model, $म$, in which $P^{म}=ट$.  If we use *P* to stand for “1 + 1 = 0” then we would pick our model such that $P^{म}=फ़$.
     >
     >But one might reasonably wonder “Ok, I think I get that.  But like … what *is* a model?"
     >
@@ -85,9 +85,9 @@ If the triangle that we are discussing is this one:
 
 ![[Pasted image 20260904203417.png]]
 
-then this triangle is obtuse, therefore we should choose a model, $\mathfrak M_1$, such that $P^{\mathfrak M_1}=\mathfrak T$.
+then this triangle is obtuse, therefore we should choose a model, $\mathfrak M_1$, such that $P^{\mathfrak M_1}=ट$.
 
-Since the triangle is also isosceles then we should also decide that our model assigns $Q^{\mathfrak M_1}=\mathfrak T$.
+Since the triangle is also isosceles then we should also decide that our model assigns $Q^{\mathfrak M_1}=ट$.
 
 On the other hand, if the triangle were 
 
@@ -96,8 +96,8 @@ On the other hand, if the triangle were
 then this is not obtuse but it is isosceles. Therefore we should use the model 
 
 $$\begin{aligned}
-P^{\frak M_2} =\frak F\\
-Q^{\frak M_2} = \frak T
+P^{\frak M_2} =फ़\\
+Q^{\frak M_2} = ट
 \end{aligned}$$
 
 > [!exercise] ***Exercise***
@@ -113,7 +113,7 @@ Q^{\frak M_2} = \frak T
 > 
 > List every possible model for these two variables.  
 > 
-> (Here is one: $\mathfrak M_1$ given by $P^{\mathfrak M_1} = \frak T$ and $Q^{\frak M_2}=\frak T$.)
+> (Here is one: $\mathfrak M_1$ given by $P^{\mathfrak M_1} = ट$ and $Q^{\frak M_2}=ट$.)
 
 > [!exercise] ***Exercise***
 >
@@ -200,30 +200,30 @@ Recall that the semantics of propositional logic is concerned with truth-value.
 > **Semantic conjunction** is the following operation, denoted by $\curlywedge$.
 > 
 > $$ \begin{aligned}
-> \frak{T\curlywedge T = T}\\\\
-> \frak{T\curlywedge F = F}\\\\
-> \frak{F\curlywedge T = F}\\\\
-> \frak{F\curlywedge F = F}
+> ट\curlywedge ट = ट\\\\
+> ट\curlywedge फ़ = फ़\\\\
+> फ़\curlywedge ट = फ़\\\\
+> फ़\curlywedge फ़ = फ़
 > \end{aligned}$$
 > 
-> Let $\phi$ and $\psi$ be formulas, and let $\frak M$ be a model defined for $\phi$ and $\psi$.  
+> Let $\phi$ and $\psi$ be formulas, and let $म$ be a model defined for $\phi$ and $\psi$.  
 > 
-> Then $(\phi\land \psi)^{\frak M}$ is defined to be equal to $\phi^{\frak M}\curlywedge \psi^{\frak M}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $\frak M$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $\frak M$**.
+> Then $(\phi\land \psi)^{म}$ is defined to be equal to $\phi^{म}\curlywedge \psi^{म}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $म$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $म$**.
 
 > [!note]- Semantic conjunction is an example of a "boolean algebra operation".
-> The values $\frak T$ and $\frak F$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
+> The values $ट$ and $फ़$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
 > 
 > A function is then called a "boolean algebra operation" if its inputs and outputs are boolean values.  
 > 
 > Hence semantic conjunction, as well as several of the other operations below, are all boolean algebra operations.
 
-Let’s see an example.  Assume that we have a model, $\frak M$, such that $P^{\frak M} = \frak T$ and $Q^{\frak M}= \frak T$.  Let’s see how the definition above assigns a value to $P\land Q$.
+Let’s see an example.  Assume that we have a model, $म$, such that $P^{म} = ट$ and $Q^{म}= ट$.  Let’s see how the definition above assigns a value to $P\land Q$.
 
 $$
 \begin{aligned}
- (P\land Q)^{\frak M} &= P^{\frak M}\curlywedge Q^{\frak M} \\
-&= \frak T\curlywedge \frak T\\
-&= \frak T
+ (P\land Q)^{म} &= P^{म}\curlywedge Q^{म} \\
+&= ट\curlywedge ट\\
+&= ट
 \end{aligned}
 $$
 
@@ -231,15 +231,15 @@ where the last equation comes from the definition of the semantic conjunction, $
 
 ---
 
-Let’s do another.  Let’s show that if *P* is false, *Q* is true, and *R* is true, then $((P\land Q)\land R)^{\frak M}= \frak F$.  
+Let’s do another.  Let’s show that if *P* is false, *Q* is true, and *R* is true, then $((P\land Q)\land R)^{म}= फ़$.  
 
 $$
 \begin{aligned}
- ((P\land Q)\land R)^{\frak M} &\stackrel{1}{=} (P\land Q)^{\frak M} \curlywedge R^{\frak M} \\
- &\stackrel2= (P^{\frak M}\curlywedge Q^{\frak M})\curlywedge \frak T \\
- &\stackrel3= (\frak F \curlywedge \frak T)\curlywedge \frak T \\
- &\stackrel4= \frak F \curlywedge \frak T\\
- &\stackrel5= \frak F
+ ((P\land Q)\land R)^{म} &\stackrel{1}{=} (P\land Q)^{म} \curlywedge R^{म} \\
+ &\stackrel2= (P^{म}\curlywedge Q^{म})\curlywedge ट \\
+ &\stackrel3= (फ़ \curlywedge ट)\curlywedge ट \\
+ &\stackrel4= फ़ \curlywedge ट\\
+ &\stackrel5= फ़
 \end{aligned}
 $$
 
@@ -248,27 +248,27 @@ Here is an explanation of each equation above.
 1. Definition of evaluation, applied $P\land Q$ and *R*.
 2. Definition of evaluation, applied to *P* and *Q*.  Also, the assumption that *R* is true.
 3. The assumption that *P* is false and *Q* true.
-4. The resulting value is $\mathfrak F$.
-5. The resulting value is $\mathfrak F$.
+4. The resulting value is $फ़$.
+5. The resulting value is $फ़$.
 
 > [!exercise] ***Exercise***
 >
 > Let *P* represent a false proposition, *Q* and *R* represent true propositions.  
 > 
-> Find $((P\land Q)\land (Q\land R))^{\frak M}$.
+> Find $((P\land Q)\land (Q\land R))^{म}$.
 
 Note that the semantics here is defined recursively.
 
-- Base case: If $\phi$ is a propositional variable, then $\phi^{\frak M}$ is defined by $\frak M$.  That is to say, the very definition of $\frak M$ will tell us what $\phi^{\frak M}$ is.
+- Base case: If $\phi$ is a propositional variable, then $\phi^{म}$ is defined by $म$.  That is to say, the very definition of $म$ will tell us what $\phi^{म}$ is.
 - Recursive case: If $\phi$ is a conjunction of two other formulas, $\phi=(\chi\land\psi)$, then
 
 $$
 \begin{aligned}
- \phi^{\frak M} &= \chi^{\frak M}\curlywedge \psi^{\frak M}
+ \phi^{म} &= \chi^{म}\curlywedge \psi^{म}
 \end{aligned}
 $$
 
-The recursive case, is “recursive” because it computes the value from simpler cases.  Those simpler values are the values $\chi^{\frak M}$ and $\psi^{\frak M}$.
+The recursive case, is “recursive” because it computes the value from simpler cases.  Those simpler values are the values $\chi^{म}$ and $\psi^{म}$.
 
 # Truth-table for Conjunction
 
@@ -278,24 +278,24 @@ $$
 \begin{array}{|c|c||c|c|c|}
  \hline
  P & Q & P & \land & Q \\\hline
- \color{red} \frak T & \color{red}\frak T & & \color{red}\frak T &  \\
-\frak T &\frak F & &\frak F & \\
- \color{red}\frak F & \color{red}\frak T &  & \color{red}\frak F & \\
-\frak F &\frak F &  &\frak F &  \\\hline
+ \color{red} ट & \color{red}ट & & \color{red}ट &  \\
+ट &फ़ & &फ़ & \\
+ \color{red}फ़ & \color{red}ट &  & \color{red}फ़ & \\
+फ़ &फ़ &  &फ़ &  \\\hline
 \end{array}
 $$
 
 The rows are in alternating colors just for readability—the colors don’t mean anything.
 
-Each row corresponds to a model.  For example, if $\frak M$ is the model which assigns $P^{\frak M}=\frak F$ and $Q^{\frak M}=\frak F$, then this is represented in the last row of the table.  
+Each row corresponds to a model.  For example, if $म$ is the model which assigns $P^{म}=फ़$ and $Q^{म}=फ़$, then this is represented in the last row of the table.  
 
-In this last row, under $\land$, it holds the value of the proposition $P\land Q$.  This is the black $\frak F$.  This comes from computing 
+In this last row, under $\land$, it holds the value of the proposition $P\land Q$.  This is the black $फ़$.  This comes from computing 
 
 $$
 \begin{aligned}
- (P\land Q)^{\frak M} &= P^{\frak M}\curlywedge Q^{\frak M}\\
-&=\frak F\curlywedge\frak F\\
-&=\frak F
+ (P\land Q)^{म} &= P^{म}\curlywedge Q^{म}\\
+&=फ़\curlywedgeफ़\\
+&=फ़
 \end{aligned}
 $$
 
@@ -322,16 +322,16 @@ All of this is very similar to the conversation for conjunction.
 > We define the boolean operator, **semantic disjunction**, by
 > 
 > $$ \begin{aligned}
-> \frak{T\curlyvee T = T}\\\\
-> \frak{T\curlyvee F = T}\\\\
-> \frak{F\curlyvee T = T}\\\\
-> \frak{F\curlyvee F = F}
+> ट\curlyvee ट = ट\\\\
+> ट\curlyvee फ़ = ट\\\\
+> फ़\curlyvee ट = ट\\\\
+> फ़\curlyvee फ़ = फ़
 > \end{aligned}$$
 > 
-> If $\frak M$ is a model defined for $\phi$ and $\psi$, then we define 
+> If $म$ is a model defined for $\phi$ and $\psi$, then we define 
 > 
 > $$
-> (\phi\lor\psi)^{\frak M}= \phi^{\frak M}\curlyvee \psi^{\frak M}
+> (\phi\lor\psi)^{म}= \phi^{म}\curlyvee \psi^{म}
 > $$
 
 Here is the truth-table for disjunction: 
@@ -340,10 +340,10 @@ $$
 \begin{array}{|c|c||c|c|c|}
  \hline
  P & Q & P & \lor & Q \\\hline
- \color{red}\mathfrak{T} & \color{red}\mathfrak{T} & & \color{red}\mathfrak{T} & \\
- \mathfrak{T} & \mathfrak{F} & & \mathfrak{T} & \\
- \color{red}\mathfrak{F} & \color{red}\mathfrak{T} & & \color{red}\mathfrak{T} & \\
- \mathfrak{F} & \mathfrak{F} &  & \mathfrak{F} &  \\\hline
+ \color{red}ट & \color{red}ट & & \color{red}ट & \\
+ ट & फ़ & & ट & \\
+ \color{red}फ़ & \color{red}ट & & \color{red}ट & \\
+ फ़ & फ़ &  & फ़ &  \\\hline
 \end{array}
 $$
 
@@ -351,7 +351,7 @@ $$
 >
 > Suppose that *P* and *Q* are true while *R* is false.
 > 
-> Find $(P\lor (Q\land R))^{\frak M}$.
+> Find $(P\lor (Q\land R))^{म}$.
 
 # Negation
 
@@ -374,13 +374,13 @@ $$
 > We define the boolean operation of **semantic negation** by
 > 
 > $$\begin{aligned}
-> \sim \frak T =\frak F\\\sim\frak F =\frak T
+> \sim ट =फ़\\\simफ़ =ट
 > \end{aligned}$$
 > 
-> For a model $\frak M$ defined for $\phi$, we define 
+> For a model $म$ defined for $\phi$, we define 
 > 
 > $$
-> (\neg \phi)^{\mathcal M} = \ \ \sim \phi^{\mathcal M}
+> (\neg \phi)^{म} = \ \ \sim \phi^{म}
 > $$
 
 The truth-table for negation is 
@@ -388,8 +388,8 @@ The truth-table for negation is
 $$
 \begin{array}{|c||c|c|}\hline
   P & \neg & P \\\hline
- \color{red}\frak T & \color{red}\frak F & \\
-\frak F &\frak T & \\\hline
+ \color{red}ट & \color{red}फ़ & \\
+फ़ &ट & \\\hline
 \end{array}
 $$
 
@@ -397,9 +397,9 @@ Notice that since the table has only two rows.  This is due to the fact that neg
 
 > [!exercise] ***Exercise***
 >
-> Let $\frak M$ be a model defined for *P*.  
+> Let $म$ be a model defined for *P*.  
 > 
-> Explain why $(\neg(\neg P))^{\frak M} = P^{\frak M}$.
+> Explain why $(\neg(\neg P))^{म} = P^{म}$.
 
 # Conditional
 
@@ -420,7 +420,7 @@ Most people would guess that $P\to Q$ is true when both *P* and *Q* are true.  H
 $$
 \begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
- \color{red}\frak T & \color{red}\frak T & & \color{red}\frak  T & \\
+ \color{red}ट & \color{red}ट & & \color{red}ट & \\
 \end{array}
 $$
 
@@ -431,8 +431,8 @@ Therefore the next row of the table is:
 $$
 \begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
- \color{red}\frak T & \color{red}\frak T & & \color{red}\frak  T & \\
- \frak T & \frak F & & \frak F & \\
+ \color{red}ट & \color{red}ट & & \color{red}ट & \\
+ ट & फ़ & & फ़ & \\
 \end{array}
 $$
 
@@ -460,10 +460,10 @@ We have now explained why the conditional truth-table is
 $$
 \begin{array}{|c|c||c|c|c|}\hline
  P&Q&P&\to &Q\\\hline
- \color{red}\frak T & \color{red}\frak T & & \color{red}\frak  T & \\
- \frak T & \frak F & & \frak F & \\
- \color{red} \frak F & \color{red} \frak T & & \color{red} \frak T & \\
-\frak F & \frak F & & \frak T & \\\hline
+ \color{red}ट & \color{red}ट & & \color{red}ट & \\
+ ट & फ़ & & फ़ & \\
+ \color{red} फ़ & \color{red} ट & & \color{red} ट & \\
+फ़ & फ़ & & ट & \\\hline
 \end{array}
 $$
 
