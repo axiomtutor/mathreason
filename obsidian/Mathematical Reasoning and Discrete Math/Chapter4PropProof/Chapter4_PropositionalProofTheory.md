@@ -45,17 +45,17 @@ $$
  P & Q &
  P & \land & Q &
  P \\\hline
- \color{red}{\mathfrak{T}} & \color{red}{\mathfrak{T}} &
-  & \color{red}{\mathfrak{T}} &  & \color{red}{\mathfrak{T}}
+ \color{red}{ट} & \color{red}{ट} &
+  & \color{red}{ट} &  & \color{red}{ट}
  \\\hline
- \mathfrak{T} & \mathfrak{F} &
-  & \mathfrak{F} &  & \mathfrak{T}
+ ट & फ़ &
+  & फ़ &  & ट
  \\\hline
- \color{red}{\mathfrak{F}} & \color{red}{\mathfrak{T}} &
-  & \color{red}{\mathfrak{F}} &  & \color{red}{\mathfrak{F}}
+ \color{red}{फ़} & \color{red}{ट} &
+  & \color{red}{फ़} &  & \color{red}{फ़}
  \\\hline
- \mathfrak{F} & \mathfrak{F} &
-  & \mathfrak{F} &  & \mathfrak{F}
+ फ़ & फ़ &
+  & फ़ &  & फ़
  \\\hline
 \end{array}
 $$
@@ -74,23 +74,23 @@ $$
  P & \lor & Q &
  \neg & P &
  Q \\\hline
- \color{red}{\mathfrak{T}} & \color{red}{\mathfrak{T}} &
-  & \color{red}{\mathfrak{T}} & &
- \color{red}{\mathfrak{F}} & &
- \color{red}{\mathfrak{T}}
+ \color{red}{ट} & \color{red}{ट} &
+  & \color{red}{ट} & &
+ \color{red}{फ़} & &
+ \color{red}{ट}
  \\\hline
- \mathfrak{T} & \mathfrak{F} &
-  & \mathfrak{T} & &
- \mathfrak{F} & & \mathfrak{F}
+ ट & फ़ &
+  & ट & &
+ फ़ & & फ़
  \\\hline
- \color{red}{\mathfrak{F}} & \color{red}{\mathfrak{T}} &
-  & \color{red}{\mathfrak{T}} & &
- \color{red}{\mathfrak{T}} & &
- \color{red}{\mathfrak{T}}
+ \color{red}{फ़} & \color{red}{ट} &
+  & \color{red}{ट} & &
+ \color{red}{ट} & &
+ \color{red}{ट}
  \\\hline
- \mathfrak{F} & \mathfrak{F} &
-  & \mathfrak{F} & &
- \mathfrak{T} & & \mathfrak{F}
+ फ़ & फ़ &
+  & फ़ & &
+ ट & & फ़
  \\\hline
 \end{array}
 $$
