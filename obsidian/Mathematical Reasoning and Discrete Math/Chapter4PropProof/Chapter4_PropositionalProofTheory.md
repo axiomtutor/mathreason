@@ -103,30 +103,30 @@ In this row, the value of *Q* is true.  So yet again, the inference rule is vali
 
 It can be helpful to see an example of an inference rule that is *not* valid.  This would require a rule in which the premises can be true but the inferred proposition false.
 
-An example would be "From $\phi$ we can infer $\phi\land\psi$".  Let's see a truth-table which demonstrates why this is invalid.
+An example would be "From $P$ we can infer $P\land Q$".  Let's see a truth-table which demonstrates why this is invalid.
 
 $$
-\begin{array}{|c||c|c|c|}\hline
-\phi &
-\phi & \land & \psi \\\hline
-\color{red}{ट} &
- & \color{red}{ट} & \color{red}{ट}
+\begin{array}{|c|c||c|c|c|}\hline
+P & Q &
+P & \land & Q \\\hline
+\color{red}{ट} & \color{red}{ट} &
+& \color{red}{ट} & \color{red}{ट}
 \\\hline
-ट &
- & फ & फ
+ट & फ &
+& फ & फ
 \\\hline
-\color{red}{फ} &
- & \color{red}{फ} & \color{red}{ट}
+\color{red}{फ} & \color{red}{ट} &
+& \color{red}{फ} & \color{red}{ट}
 \\\hline
-फ &
- & फ & फ
+फ & फ &
+& फ & ф
 \\\hline
 \end{array}
 $$
 
-Here we have the truth-table for $\phi\land\psi$, and we have included the table for $\phi$ before it.
+Here we have the truth-table for $P\land Q$, and we have included the tables for $P$ and $Q$ to the left.
 
-We are interested only in the rows where the premise, $\phi$, is true.  These are rows 1 and 2.  In row 1, the conclusion $\phi\land\psi$ is also true.  But in row 2, the premise $\phi$ is true while the conclusion $\phi\land\psi$ is false.
+We are interested only in the rows where the premise, $P$, is true.  These are rows 1 and 2.  In row 1, the conclusion $P\land Q$ is also true.  But in row 2, the premise $P$ is true while the conclusion $P\land Q$ is false.
 
 This row gives us an example where the premise is true but the conclusion is false.  Therefore the inference rule is invalid.
 
