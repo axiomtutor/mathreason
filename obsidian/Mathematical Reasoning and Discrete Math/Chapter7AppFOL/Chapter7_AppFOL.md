@@ -9,7 +9,7 @@ Notice that it is hard to demonstrate the truth of a “for all” proposition: 
 
 For example, if $म$ is a model with universe $\{a,b,c\}$, then to directly confirm the truth of $\forall x P(x)$, you have to confirm $P(x)$ for three different assignments of *x*.  
 
-However, that *disconfirming* $\forall x P(x)$ can (in principle) take much less labor.  To show that $\forall x P(x)^{म}=फ़$ we only need to find *one* domain element $u\in\{a,b,c\}$, for which $P(u)^{म}=फ़$.
+However, that *disconfirming* $\forall x P(x)$ can (in principle) take much less labor.  To show that $\forall x P(x)^{म}=फ$ we only need to find *one* domain element $u\in\{a,b,c\}$, for which $P(u)^{म}=फ$.
 
 Consider this in the context of a concrete example.  Take the sentence “all swans are white”.  [(This example comes from a historical example which is often used in discussions about the philosophy of science.)](https://en.wikipedia.org/wiki/Falsifiability)  
 
@@ -32,7 +32,7 @@ For our current purposes, the take-away lesson of this story is more limited: Pr
 > Q^{म} = \{b,c,d,e\}
 > $$
 >
-> Show that $\forall x P(x)^{म} = फ़$ by exhibiting a single element of the domain, $u\inउ$, for which $u\notin P^{म}$.
+> Show that $\forall x P(x)^{म} = फ$ by exhibiting a single element of the domain, $u\inउ$, for which $u\notin P^{म}$.
 >
 > Do likewise for $\forall xQ(x)$.
 
@@ -44,7 +44,7 @@ For our current purposes, the take-away lesson of this story is more limited: Pr
 
 Suppose that *P* and *Q* are properties.  
 
-Suppose that we have a model in which $P(x)$ is false for every element of the domain.  That is to say, if *U* is the domain and $u\in U$, then $P(u)^{म}=फ़$.
+Suppose that we have a model in which $P(x)$ is false for every element of the domain.  That is to say, if *U* is the domain and $u\in U$, then $P(u)^{म}=फ$.
 
 Let’s now evaluate 
 
@@ -57,14 +57,14 @@ Let $u\in U$ be any element of the domain.  Then
 $$
 \begin{aligned}
  (P(u)\to Q(u))^{म} &= P(u)^{म}\leadsto Q(u)^{म} \\
- &= फ़ \leadsto Q(u)^{म} \\
+ &= फ \leadsto Q(u)^{म} \\
  &= ट
 \end{aligned}
 $$
 
-Notice this last equality!  Even without knowing the value of $Q(u)^{म}$, we can still judge that $फ़\leadsto Q(u)^{म} = ट$.  
+Notice this last equality!  Even without knowing the value of $Q(u)^{म}$, we can still judge that $फ\leadsto Q(u)^{म} = ट$.  
 
-That is because of how the boolean conditional $\leadsto$ is defined.  Whenever the antecedent is false, $\leadsto$ returns true.  So whether $Q(u)^{म}=ट$ or $Q(u)^{म}=फ़$, either way the result will be $फ़\leadsto Q(u)^{म}=ट$.
+That is because of how the boolean conditional $\leadsto$ is defined.  Whenever the antecedent is false, $\leadsto$ returns true.  So whether $Q(u)^{म}=ट$ or $Q(u)^{म}=फ$, either way the result will be $फ\leadsto Q(u)^{म}=ट$.
 
 We have just shown that $(P(u)\to Q(u))^{म}=ट$ for every $u\in U$, which shows that 
 
@@ -111,7 +111,7 @@ Although we have a new syntax and a new semantics, the definition of tautology, 
 > The proposition $\phi$ is a **contradiction** if 
 >
 > $$
-> \phi^{म}=फ़
+> \phi^{म}=फ
 > $$
 >
 > for every choice of $म$.
@@ -134,16 +134,16 @@ If $P(u)^{म}=ट$ then we compute
 
 $$
 \begin{aligned}
-ट\ \curlyvee \sim ट &= ट\curlyvee फ़ \\
+ट\ \curlyvee \sim ट &= ट\curlyvee फ \\
 &= ट
 \end{aligned}
 $$
 
-On the other hand if $P(u)^{म}=फ़$ then 
+On the other hand if $P(u)^{म}=फ$ then 
 
 $$
 \begin{aligned}
- फ़\curlyvee\sim फ़ &= फ़\curlyvee ट \\
+ फ\curlyvee\sim फ &= फ\curlyvee ट \\
 &= ट
 \end{aligned}
 $$
@@ -187,7 +187,7 @@ Reflexive, not symmetric, not transitive.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%201.png)
 
-Not reflexive because $R(b,b)^{म}=फ़$, although other counter-examples could be given too.
+Not reflexive because $R(b,b)^{म}=फ$, although other counter-examples could be given too.
 
 The relation $\le$ on real numbers is reflexive.  For example, $1\le 1$.
 
@@ -211,7 +211,7 @@ Symmetric, not reflexive, not transitive.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%203.png)
 
-Not symmetric because $(R(a,b)\to R(b,a))^{म}=फ़$.
+Not symmetric because $(R(a,b)\to R(b,a))^{म}=फ$.
 
 For example, “*x* and *y* have the same absolute value” is symmetric.  That is to say, the relation *R* is defined by $R(x,y)^{म}=ट$ if and only if 
 
@@ -237,7 +237,7 @@ Transitive, not reflexive, not symmetric.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%205.png)
 
-Not transitive because $((R(a,d)\land R(d,c))\to R(a,c))^{म}=फ़$. One other counter-example is possible.
+Not transitive because $((R(a,d)\land R(d,c))\to R(a,c))^{म}=फ$. One other counter-example is possible.
 
 The relations $\le, \subseteq, <,\subset$ are all transitive.  
 
@@ -449,8 +449,8 @@ That’s 9 assignments in total.
     \begin{aligned}
      ((E(1)\land E(1))\to 1=1)^{म} &= (E(1)\land E(1))^{म} \leadsto (1=1)^{म}\\
      &= (E(1)^{म} \curlywedge E(1)^{म})\leadsto ट \\
-     &= (फ़\curlywedge फ़) \leadsto ट \\
-     &= फ़\leadsto ट \\
+     &= (फ\curlywedge फ) \leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -460,9 +460,9 @@ That’s 9 assignments in total.
     $$
     \begin{aligned}
      ((E(1)\land E(2))\to 1=2)^{म} &= (E(1)\land E(2))^{म} \leadsto (1=2)^{म}\\
-     &= (E(1)^{म} \curlywedge E(2)^{म})\leadsto फ़ \\
-     &= (फ़\curlywedge ट) \leadsto फ़ \\
-     &= फ़\leadsto ट \\
+     &= (E(1)^{म} \curlywedge E(2)^{म})\leadsto फ \\
+     &= (फ\curlywedge ट) \leadsto फ \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -507,10 +507,10 @@ To show that it is false, we need to find a single assignment to *x* and *y* for
 $$
 \begin{aligned}
  ((O(1)\land O(3))\to 1=3)^{म} &= (O(1)\land O(3))^{म} \leadsto (1=3)^{म}\\
- &= (O(1)^{म} \curlywedge O(3)^{म})\leadsto फ़ \\
- &= (ट\curlywedge ट) \leadsto फ़ \\
- &= ट\leadsto फ़ \\
- &= फ़
+ &= (O(1)^{म} \curlywedge O(3)^{म})\leadsto फ \\
+ &= (ट\curlywedge ट) \leadsto फ \\
+ &= ट\leadsto फ \\
+ &= फ
 \end{aligned}
 $$
 
