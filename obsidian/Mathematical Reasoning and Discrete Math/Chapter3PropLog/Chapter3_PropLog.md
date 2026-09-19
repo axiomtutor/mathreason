@@ -2,7 +2,8 @@
 title: "Chapter 3: Propositional Logic"
 ---
 
-
+> [!note]- TODO
+> * Make a summary page which the reader can use as reference, so that they don't only have this pedagogical page.
 # Propositions
 
 > [!definition] ***Definition***
@@ -35,51 +36,53 @@ This is our first introduction to syntax and semantics: The symbol *P* is the sy
 
 The semantics are the truth-values assigned to variables.  When choosing to give *P* the value "true", we imagine that *P* is some true sentence.  If we choose to give *P* the value "false", then we imagine that *P* is some false sentence.
 
-Because it is valuable to keep straight, which things are syntax and which are semantics, it is helpful to write each in a distinctive script.  It is traditional to write syntax in standard italic letters, and it is sometimes common to write semantics in Fraktur font.  
+Because it is valuable to keep straight, which things are syntax and which are semantics, it is helpful to write each in a distinctive script.  It is traditional to write syntax in standard italic letters.  There is less standardization for the symbols used for semantics.  To make them very visibly different from syntax, I'm going to write them in Devanagari.
 
-We will use $ट$ (this is a Fraktur ‘T’) for “true”, and $फ़$ (Fraktur ‘F’) for “false”. 
+We will use $ट$ for “true”, which is a Devanagari letter, pronounced similar to an English 'T'.  So when you think of this, imagine the letter 'T' for "true".  
 
-> [!note]- The "signifiers" of propositional logic are called "propositional formulas", but we are not yet ready to define these.
+We will use फ for "false", which is a Devanagari letter, pronounced like an English 'F'.  So when you think of फ, imagine the letter 'F' for "false".  
+
+> [!note]- Notes on the use of Devanagari.
 > 
-> In the definition below we establish *some but not all* of the syntax and semantics of propositional logic.  We have to introduce this slowly and piecemeal because the total structure of propositional logic is a bit complicated.
-> 
-> Therefore we are not yet ready to say exactly what the alphabet and signifiers are.  Still we want to present the basic idea of a propositional variable, and its relationship to truth-value.
+> 1. Placing a dot below the letter फ, to make फ़, produces a sound in Devanagari which is closer to the English 'F' sound.  But I figure, why bother? For our purposes I just want a distinct symbol, which somehow gestures at the idea of "false".  The simpler letter फ is good enough!
+> 2. I know that many English-speaking readers may be intimidated by letters from a language as different as Hindi.  However, I promise that the number of Devanagari letters will be kept small.  You will, in fact, learn many more new symbols which are standard logical symbols, than you will learn Devanagari letters.
+> 3. In the definition below, we will write a sentence like $P^म=ट$.  I recommend pronouncing this as "*P* in *M* is true."
 
 > [!definition] ***Definition***
 >
-> *Syntax*
+> *Syntatic*
 > 
 > A **propositional variable** is a variable (a symbol) which could denote any proposition. 
 > 
-> *Semantics*
+> *Semantic*
 > 
-> If $P_1,P_2,\dots$ are propositional variables, then a **truth model** (or just **model** for short, also sometimes called a **truth-assignment** or a **truth-function**) is an assignment of truth-values to the variables.  The truth-values are **true** and **false**, represented by $ट$ and $फ़$.
+> If $P_1,P_2,\dots$ are propositional variables, then a **truth model** (or just **model** for short, also sometimes called a **truth-assignment** or a **truth-function**) is an assignment of truth-values to the variables.  The truth-values are **true** and **false**, represented by ट and फ.
 > 
-> We will denote a truth model by the symbol $म$ (Fraktur ‘M’).
+> We will denote a truth model by the symbol म (A Devanagari letter similar to 'M'.).
 > 
-> If $म$ assigns $ट$ to *P*, we write 
+> If म assigns ट to *P*, we write 
 > 
 > $$
 > P^{म}= ट
 > $$
 > 
-> and if $म$ assigns $फ़$ to *P* we write 
+> and if म assigns फ to *P* we write 
 > 
 > $$
-> P^{म}= फ़
+> P^{म} = फ
 > $$
 
 > [!note]- A model is a function.
     >
-    >The above establishes that a model assigns truth-value to propositional variables.  We can pick any model that we want, depending on our intended interpretation of the propositional variables.  
+    >The above establishes that a model assigns truth-value to propositional variables.  Picking a model is basically just deciding which propositions get interpreted as true or false.
     >
-    >If we intend for the variable *P* to express “1 + 1 = 2” then we would pick a model, $म$, in which $P^{म}=ट$.  If we use *P* to stand for “1 + 1 = 0” then we would pick our model such that $P^{म}=फ़$.
+    >If we intend for the variable *P* to express “1 + 1 = 2” then we would pick a model, $म$, in which $P^{म}=ट$.  If we use *P* to stand for “1 + 1 = 0” then we would pick our model such that $P^{म}=फ$.
     >
     >But one might reasonably wonder “Ok, I think I get that.  But like … what *is* a model?"
     >
     >Technically, a model is a function.  The inputs are the propositional variables and the outputs are truth-values.  
 
-Let’s see an example.  Suppose that we begin from the propositions "This triangle is obtuse and isosceles".  We might use *P* to reprensent "this triangle is obtuse" and *Q* to represent "this triangle is isosceles".  
+Let’s see an example.  Suppose that we begin from the proposition "This triangle is obtuse and isosceles".  We might use *P* to reprensent "this triangle is obtuse" and *Q* to represent "this triangle is isosceles".  
 
 If the triangle that we are discussing is this one:
 
@@ -87,7 +90,7 @@ If the triangle that we are discussing is this one:
 
 then this triangle is obtuse, therefore we should choose a model, $म_1$, such that $P^{म_1}=ट$.
 
-Since the triangle is also isosceles then we should also decide that our model assigns $Q^{म_1}=ट$.
+Since the triangle is also isosceles, then we should also decide that our model assigns $Q^{म_1}=ट$.
 
 On the other hand, if the triangle were 
 
@@ -96,12 +99,12 @@ On the other hand, if the triangle were
 then this is not obtuse but it is isosceles. Therefore we should use the model 
 
 $$\begin{aligned}
-P^{म_2} =फ़\\
+P^{म_2} =फ\\
 Q^{म_2} = ट
 \end{aligned}$$
 
 > [!exercise] ***Exercise***
-> Use the same *P* and *Q* above.  
+> Use the same *P* and *Q* above.  That is to say, *P* is our symbol for "This triangle is obtuse," and *Q* is our symbol for "This triangle is isosceles."
 > 
 > What is the appropriate model for the following triangle?
 > 
@@ -113,7 +116,7 @@ Q^{म_2} = ट
 > 
 > List every possible model for these two variables.  
 > 
-> (Here is one: $म_1$ given by $P^{म_1} = ट$ and $Q^{म_2}=ट$.)
+> (Here is one: $म_1$ is the model given by $P^{म_1} = ट$ and $Q^{म_2}=ट$.)
 
 > [!exercise] ***Exercise***
 >
@@ -145,7 +148,7 @@ That is to say, we will use the “up wedge” symbol to represent conjunction.
 
 ---
 
-Every propositional variable is a signifier in propositional logic: It is an expression which has meaning.  
+Recall that we are trying to develop the language of propositional logic, which is a set of "signifiers".  The signifiers are the meaningful sequences of symbols.  We've already see that an individual propositional variable is a signifier, because we gave it a semantic interpretation (in this context, that means that we assign it truth-value).
 
 In propositional logic we will call the signifiers "formulas".  So each propositional variable is a formula. 
 
@@ -153,10 +156,9 @@ But moreover, every conjunction is also a formula, like $P\land Q$.
 
 But moreover still, we can also form conjunctions of conjunctions, like 
 
-We are also able to form more complex conjunctions, like 
+$$ (P\land Q)\land R$$
 
-$$P\land (Q\land R)$$
-or
+We are also able to form more complex conjunctions, like 
 $$(P\land Q)\land (R\land S)$$
 
 > [!definition] ***Definition***

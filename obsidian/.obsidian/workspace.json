@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter3PropLog/Chapter3_PropLog.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter5PredSynSem"
+              "title": "Chapter3_PropLog"
             }
           }
         ]
@@ -189,8 +189,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "a1db5068c2cad471",
+  "active": "95d3d5075504da6f",
   "lastOpenFiles": [
+    "Mathematical Reasoning and Discrete Math/Chapter3PropLog/Chapter3_PropLog.md",
+    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
     "Mathematical Reasoning and Discrete Math/Chapter7AppFOL",
     "Mathematical Reasoning and Discrete Math/Chapter6FOL",
     "Mathematical Reasoning and Discrete Math/Chapter5PredLog",
@@ -204,11 +206,9 @@
     "Pasted image 20260904203631.png",
     "Pasted image 20260904203417.png",
     "Pasted image 20260904201548.png",
-    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
     "Mathematical Reasoning and Discrete Math.md",
     "Mathematical Reasoning and Discrete Math/Chapter2Langs/Chapter2Langs.md",
     "Mathematical Reasoning and Discrete Math/Chapter0BasicSets/Chapter0Basic Sets.md",
-    "Mathematical Reasoning and Discrete Math/Chapter3PropLog/Chapter3_PropLog.md",
     "Mathematical Reasoning and Discrete Math/Chapter1BasicNumThry/Chapter1BasicNumberTheory.md",
     "Mathematical Reasoning and Discrete Math/Chapter7AppFOL/Chapter7_AppFOL.md",
     "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
