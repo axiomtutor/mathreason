@@ -191,11 +191,11 @@ The fourth is not because it uses a constant symbol *a* in quantification. Quant
 >
 > *Semantics*
 >
-> Let $\mathfrak{U}$ be the domain of discourse and $\mathfrak{M}$ a model.
+> Let $उ$ be the domain of discourse and $म$ a model.
 >
-> We assign $(\forall x P(x))^{\mathfrak{M}}=\mathfrak{T}$ if for every choice of $u\in \mathfrak{U}$ we have $u\in P^{\mathfrak{M}}$. Otherwise $(\forall xP(x))^{\mathfrak{M}}=\mathfrak{F}$.
+> We assign $(\forall x P(x))^{म}=ट$ if for every choice of $u\in उ$ we have $u\in P^{म}$. Otherwise $(\forall xP(x))^{म}=फ़$.
 >
-> We assign $(\exists xP(x))^{\mathfrak{M}} = \mathfrak{T}$ if there is some choice of $u\in \mathfrak{U}$ such that $u\in P^{\mathfrak{M}}$. Otherwise $(\exists xP(x))^{\mathfrak{M}} = \mathfrak{F}$.
+> We assign $(\exists xP(x))^{म} = ट$ if there is some choice of $u\in उ$ such that $u\in P^{म}$. Otherwise $(\exists xP(x))^{म} = फ़$.
 
 To give an example, suppose the domain is the set of these objects:
 
@@ -203,13 +203,13 @@ To give an example, suppose the domain is the set of these objects:
 
 Let the predicate *R* denote a red object, *B* blue, *W* white, *K* black, *C* cone, *S* sphere, *U* cube, *Y* cylinder, *T* tetrahedron, and *P* a rectangular prism.
 
-Then $(\forall x R(x))^{\mathfrak{M}}=\mathfrak{F}$ because not all of the objects in the domain are red.
+Then $(\forall x R(x))^{म}=फ़$ because not all of the objects in the domain are red.
 
-However $(\exists xR(x))^{\mathfrak{M}}=\mathfrak{T}$ because some object in the domain is red.
+However $(\exists xR(x))^{म}=ट$ because some object in the domain is red.
 
 > [!exercise] ***Exercise***
 >
-> Let $\mathfrak{U} = \Bbb N$. Let $P(x)$ be the predicate “*x* is positive”, and $Q(x)$ is the predicate “*x* is negative”, and $R(x)$ the predicate “*x* is equal to 1”.
+> Let $उ = \Bbb N$. Let $P(x)$ be the predicate “*x* is positive”, and $Q(x)$ is the predicate “*x* is negative”, and $R(x)$ the predicate “*x* is equal to 1”.
 >
 > Decide which of the following is true.
 >
@@ -226,10 +226,10 @@ However $(\exists xR(x))^{\mathfrak{M}}=\mathfrak{T}$ because some object in the
 >
 > For each choice of universe, decide whether $\forall xP(x)$ and $\exists x P(x)$ are true.
 >
-> 1. $\mathfrak{U} = \Bbb Z$.
-> 2. $\mathfrak{U} = \Bbb N$.
-> 3. $\mathfrak{U} = \{x\in\Bbb N: x \text{ is prime}\}$.
-> 4. $\mathfrak{U} = \{2\}$.
+> 1. $उ = \Bbb Z$.
+> 2. $उ = \Bbb N$.
+> 3. $उ = \{x\in\Bbb N: x \text{ is prime}\}$.
+> 4. $उ = \{2\}$.
 
 Of course we don’t have to live with only simple predicates—we can join them into more complex expressions, using the propositional logic from before.
 
@@ -257,13 +257,13 @@ Notice that (3) above is kind of funny—but technically true!
 
 Don’t believe me? Test it out using the official semantics!
 
-Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(K(u)\to W(u))^{\mathfrak{M}}$. By the semantics of the conditional, this is $(K(u))^{\mathfrak{M}} \leadsto (W(u))^{\mathfrak{M}}$. Because *u* is not black, $K(u)^{\mathfrak{M}}=\mathfrak{F}$. Because *u* is not white, $W(u)^{\mathfrak{M}}=\mathfrak{F}$. Therefore
+Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(K(u)\to W(u))^{म}$. By the semantics of the conditional, this is $(K(u))^{म} \leadsto (W(u))^{म}$. Because *u* is not black, $K(u)^{म}=फ़$. Because *u* is not white, $W(u)^{म}=फ़$. Therefore
 
 $$
 \begin{aligned}
- (K(u)\to W(u))^{\mathfrak{M}} &= K(u)^{\mathfrak{M}}\leadsto W(u)^{\mathfrak{M}} \\
- &= \mathfrak{F}\leadsto \mathfrak{F} \\
- &= \mathfrak{T}
+ (K(u)\to W(u))^{म} &= K(u)^{म}\leadsto W(u)^{म} \\
+ &= फ़\leadsto फ़ \\
+ &= ट
 \end{aligned}
 $$
 
@@ -271,35 +271,35 @@ So it’s true for the red cube!
 
 > [!exercise] ***Exercise***
 >
-> Now let *u* be the white cylinder. Evaluate $(K(u)\to W(u))^{\mathfrak{M}}$.
+> Now let *u* be the white cylinder. Evaluate $(K(u)\to W(u))^{म}$.
 >
-> Next, explain why $(\forall x (K(x)\to W(x)))^{\mathfrak{M}} = \mathfrak{T}$.
+> Next, explain why $(\forall x (K(x)\to W(x)))^{म} = ट$.
 
 > [!exercise] ***Exercise***
 >
-> Let’s consider a property, *P,* and a model, $\mathfrak{M}$, such that $P(u)^{\mathfrak{M}} = \mathfrak{T}$ for every choice of *u* in the domain.
+> Let’s consider a property, *P,* and a model, $म$, such that $P(u)^{म} = ट$ for every choice of *u* in the domain.
 >
-> Certain it follows that $\forall x P(x)^{\mathfrak{M}}=\mathfrak{T}$.
+> Certain it follows that $\forall x P(x)^{म}=ट$.
 >
-> Now prove that $\forall x(P(x)\lor Q(x))^{\mathfrak{M}}=\mathfrak{T}$.
+> Now prove that $\forall x(P(x)\lor Q(x))^{म}=ट$.
 >
-> Also prove that $(\forall x P(x)\lor \forall x Q(x))^{\mathfrak{M}}=\mathfrak{T}$.
+> Also prove that $(\forall x P(x)\lor \forall x Q(x))^{म}=ट$.
 
 > [!exercise] ***Exercise***
 >
-> Consider a property, *P*, and model, $\mathfrak{M}$, such that $(P(u)\lor Q(u))^{\mathfrak{M}} = \mathfrak{T}$ for every *u* in the domain.
+> Consider a property, *P*, and model, $म$, such that $(P(u)\lor Q(u))^{म} = ट$ for every *u* in the domain.
 >
-> It follows immediately by definition that $\forall x(P(x)\lor Q(x))^{\mathfrak{M}}=\mathfrak{T}$.
+> It follows immediately by definition that $\forall x(P(x)\lor Q(x))^{म}=ट$.
 >
 > Is it necessarily true that $\forall xP(x)\lor\forall x Q(x)$?
 >
 > Hint: What if the model has domain elements *a* and *b*, such that
 >
 > $$\begin{aligned}
-> P(a)^{\mathfrak{M}}=\mathfrak{T}\\
-> P(b)^{\mathfrak{M}}=\mathfrak{F}\\
-> Q(a)^{\mathfrak{M}}=\mathfrak{F}\\
-> Q(b)^{\mathfrak{M}}=\mathfrak{T}
+> P(a)^{म}=ट\\
+> P(b)^{म}=फ़\\
+> Q(a)^{म}=फ़\\
+> Q(b)^{म}=ट
 > \end{aligned}$$
 
 # Set Properties, Operations, and Relations
@@ -453,7 +453,7 @@ $$
 
 Intuitively this is true because we see four pairs where one city is lexically next: A and B, B and C, C and D, and D and E. In every case, the pair of cities are linked, as you can see in the graph.
 
-To evaluate $(\forall x\forall y(N(x,y)\to L(x,y)))^{\mathfrak{M}}$ formally, we need to consider five total possible assignments to *x*.
+To evaluate $(\forall x\forall y(N(x,y)\to L(x,y)))^{म}$ formally, we need to consider five total possible assignments to *x*.
 
 - $x\mapsto a$
 - $x\mapsto b$
@@ -465,17 +465,17 @@ Let’s consider these each in turn.
 
 - $x\mapsto a$
 
-With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\mathfrak{M}}$. To do this we again need to consider five possible assignments to *y*.
+With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{म}$. To do this we again need to consider five possible assignments to *y*.
 
   - $y\mapsto a$
 
-    With this assignment we now have to evaluate $(N(a,a)\to L(a,a))^{\mathfrak{M}}$. Noting that $N(a,a)^{\mathfrak{M}}=\mathfrak{F}$ and $L(a,a)^{\mathfrak{M}}=\mathfrak{T}$, then
+    With this assignment we now have to evaluate $(N(a,a)\to L(a,a))^{म}$. Noting that $N(a,a)^{म}=फ़$ and $L(a,a)^{म}=ट$, then
 
     $$
     \begin{aligned}
-     (N(a,a)\to L(a,a))^{\mathfrak{M}} &= N(a,a)^{\mathfrak{M}} \leadsto L(a,a)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     (N(a,a)\to L(a,a))^{म} &= N(a,a)^{म} \leadsto L(a,a)^{म} \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
@@ -485,9 +485,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(a,b)\to L(a,b))^{\mathfrak{M}} &= N(a,b)^{\mathfrak{M}} \leadsto L(a,b)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     (N(a,b)\to L(a,b))^{म} &= N(a,b)^{म} \leadsto L(a,b)^{म} \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
@@ -495,9 +495,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(a,c)\to L(a,c))^{\mathfrak{M}} &= N(a,c)^{\mathfrak{M}} \leadsto L(a,c)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     (N(a,c)\to L(a,c))^{म} &= N(a,c)^{म} \leadsto L(a,c)^{म} \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
@@ -505,9 +505,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(a,d)\to L(a,d))^{\mathfrak{M}} &= N(a,d)^{\mathfrak{M}} \leadsto L(a,d)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{F} \\
-     &= \mathfrak{T}
+     (N(a,d)\to L(a,d))^{म} &= N(a,d)^{म} \leadsto L(a,d)^{म} \\
+     &= फ़\leadsto फ़ \\
+     &= ट
     \end{aligned}
     $$
 
@@ -515,21 +515,21 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(a,e)\to L(a,e))^{\mathfrak{M}} &= N(a,e)^{\mathfrak{M}} \leadsto L(a,e)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{F} \\
-     &= \mathfrak{T}
+     (N(a,e)\to L(a,e))^{म} &= N(a,e)^{म} \leadsto L(a,e)^{म} \\
+     &= फ़\leadsto फ़ \\
+     &= ट
     \end{aligned}
     $$
 
     As we see, when $x\mapsto a$, then for every possible mapping of *y*, we get a true proposition.
 
-    Therefore $(\forall y(N(a,y)\to L(a,y)))^{\mathfrak{M}} = \mathfrak{T}$.
+    Therefore $(\forall y(N(a,y)\to L(a,y)))^{म} = ट$.
 
 - $x\mapsto b$
 
   > [!exercise] ***Exercise***
   >
-  > Perform this assignment and evaluate $(\forall y(N(b,y)\to L(b,y)))^{\mathfrak{M}}$.
+  > Perform this assignment and evaluate $(\forall y(N(b,y)\to L(b,y)))^{म}$.
 
 - $x\mapsto c$
 
@@ -543,9 +543,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(d,a)\to L(d,a))^{\mathfrak{M}} &= N(d,a)^{\mathfrak{M}} \leadsto L(d,a)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{F} \\
-     &= \mathfrak{T}
+     (N(d,a)\to L(d,a))^{म} &= N(d,a)^{म} \leadsto L(d,a)^{म} \\
+     &= फ़\leadsto फ़ \\
+     &= ट
     \end{aligned}
     $$
 
@@ -555,9 +555,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-      (N(d,b)\to L(d,b))^{\mathfrak{M}} &= N(d,b)^{\mathfrak{M}} \leadsto L(d,b)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+      (N(d,b)\to L(d,b))^{म} &= N(d,b)^{म} \leadsto L(d,b)^{म} \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
@@ -565,9 +565,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(d,c)\to L(d,c))^{\mathfrak{M}} &= N(d,c)^{\mathfrak{M}} \leadsto L(d,c)^{\mathfrak{M}} \\
-     &= \mathfrak{T}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     (N(d,c)\to L(d,c))^{म} &= N(d,c)^{म} \leadsto L(d,c)^{म} \\
+     &= ट\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
@@ -575,9 +575,9 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(d,d)\to L(d,d))^{\mathfrak{M}} &= N(d,d)^{\mathfrak{M}} \leadsto L(d,d)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{F} \\
-     &= \mathfrak{T}
+     (N(d,d)\to L(d,d))^{म} &= N(d,d)^{म} \leadsto L(d,d)^{म} \\
+     &= फ़\leadsto फ़ \\
+     &= ट
     \end{aligned}
     $$
 
@@ -585,23 +585,23 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{\m
 
     $$
     \begin{aligned}
-     (N(d,e)\to L(d,e))^{\mathfrak{M}} &= N(d,e)^{\mathfrak{M}} \leadsto L(d,e)^{\mathfrak{M}} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     (N(d,e)\to L(d,e))^{म} &= N(d,e)^{म} \leadsto L(d,e)^{म} \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
 
     As we see, when $x\mapsto d$, then for every possible mapping of *y*, we get a true proposition.
 
-    Therefore $(\forall y(N(d,y)\to L(d,y)))^{\mathfrak{M}} = \mathfrak{T}$.
+    Therefore $(\forall y(N(d,y)\to L(d,y)))^{म} = ट$.
 
 - $x\mapsto e$
 
-We should check this case too, but I promise $(\forall y(N(e,y)\to L(e,y)))^{\mathfrak{M}}=\mathfrak{T}$. However, you are invited to check for yourself if you would like more exercise.
+We should check this case too, but I promise $(\forall y(N(e,y)\to L(e,y)))^{म}=ट$. However, you are invited to check for yourself if you would like more exercise.
 
 The above now confirms that, for every possible assignment to *x*, the resulting proposition is true.
 
-Therefore it demonstrates $(\forall x\forall y (N(x,y)\to L(x,y)))^{\mathfrak{M}}$.
+Therefore it demonstrates $(\forall x\forall y (N(x,y)\to L(x,y)))^{म}$.
 
 > [!exercise] ***Exercise***
 >
@@ -611,7 +611,7 @@ Therefore it demonstrates $(\forall x\forall y (N(x,y)\to L(x,y)))^{\mathfrak{M}
 >
 > Now if you were very flat-footed, you would then check five assignments to *y*. If at least one of those assignments is true, then the existential proposition is true.
 >
-> But this is more effort than you really need to do. When it comes to an existential quantifier, you really just need to exhibit *one* instance of $\mathfrak{T}$, not *every* instance of $\mathfrak{T}$. So, for each assignment of *x*, if you find one satisfying assignment of $\mathfrak{T}$, you can stop early!
+> But this is more effort than you really need to do. When it comes to an existential quantifier, you really just need to exhibit *one* instance of $ट$, not *every* instance of $ट$. So, for each assignment of *x*, if you find one satisfying assignment of $ट$, you can stop early!
 >
 > 1. Show that
 >
@@ -753,29 +753,29 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > We use the same sets as above for the syntax.
 >
-> Let $\mathfrak{U}$ be any nonempty set, called the **universe**.
+> Let $उ$ be any nonempty set, called the **universe**.
 >
-> Let $\mathfrak{I}$ be a function such that, for each $a\in \text{Obj}$, the expression $a^{\mathfrak{I}}$ is the **interpretation of *a***, which denotes the element of $\mathfrak{U}$ to which *a* is mapped.
->
-> $$
-> a^{\mathfrak{I}} \in \mathfrak{U}
-> $$
->
-> Moreover let $f\in \text{Funcs}$ and $n=\text{Arity}(f)$. The expression $f^{\mathfrak{I}}$ is the **interpretation of *f***, which denotes the function to which *f* is mapped.
+> Let $इ$ be a function such that, for each $a\in \text{Obj}$, the expression $a^{इ}$ is the **interpretation of *a***, which denotes the element of $उ$ to which *a* is mapped.
 >
 > $$
-> f^{\mathfrak{I}}:\mathfrak{U}^n\to\mathfrak{U}
+> a^{इ} \in उ
 > $$
 >
-> Moreover, let $P\in \text{Preds}$ and $n=\text{Arity}(P)$. The expression $P^{\mathfrak{I}}$ is the **interpretation of *P***, which denotes the subset of $\mathfrak{U}^n$ to which *P* is mapped.
+> Moreover let $f\in \text{Funcs}$ and $n=\text{Arity}(f)$. The expression $f^{इ}$ is the **interpretation of *f***, which denotes the function to which *f* is mapped.
 >
 > $$
-> P^{\mathfrak{I}} \subseteq \mathfrak{U}^n
+> f^{इ}:उ^n\toउ
 > $$
 >
-> Let $\mathfrak{M} = (\mathfrak{U},\mathfrak{I})$.
+> Moreover, let $P\in \text{Preds}$ and $n=\text{Arity}(P)$. The expression $P^{इ}$ is the **interpretation of *P***, which denotes the subset of $उ^n$ to which *P* is mapped.
 >
-> Let $v: \text{Vars}\to \mathfrak{U}$ be a function, which we call a **variable assignment**.
+> $$
+> P^{इ} \subseteq उ^n
+> $$
+>
+> Let $म = (उ,इ)$.
+>
+> Let $v: \text{Vars}\to उ$ be a function, which we call a **variable assignment**.
 >
 > We define the notation $v[x\mapsto y]$ to be the function
 >
@@ -795,37 +795,37 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > - If $f\in\text{Funcs}$ and $n=\text{Arity}(f)$, and $t_1,…,t_n\in\text{Terms}$, then
 >
 > $$
-> \overline v(f(t_1,...,t_n)) = f^{\mathfrak{I}}(\overline v(t_1),...,\overline v(t_n))
+> \overline v(f(t_1,...,t_n)) = f^{इ}(\overline v(t_1),...,\overline v(t_n))
 > $$
 >
-> For a formula $\phi\in\text{Forms}$, model $\mathfrak{M}$, and variable assignment *v*, we will define what it means for **the model and assignment to satisfy the formula**, denoted
+> For a formula $\phi\in\text{Forms}$, model $म$, and variable assignment *v*, we will define what it means for **the model and assignment to satisfy the formula**, denoted
 >
 > $$
-> \mathfrak{M},v\vDash \phi
+> म,v\vDash \phi
 > $$
 >
-> We use $\mathfrak{M},v\not\vDash\phi$ to express that $\mathfrak{M}, v\vDash \phi$ does not hold.
+> We use $म,v\not\vDash\phi$ to express that $म, v\vDash \phi$ does not hold.
 >
 > - If $P\in\text{Preds}$ and $n=\text{Arity}(P)$ and $t_1,…,t_n\in\text{Terms}$, and if we have
 >
 >     $$
->     (\overline v(t_1),...,\overline v(t_n))\in P^{\mathfrak{I}}
+>     (\overline v(t_1),...,\overline v(t_n))\in P^{इ}
 >     $$
 >
->     then $\mathfrak{M},v\vDash P(t_1,…,t_n)$.
+>     then $म,v\vDash P(t_1,…,t_n)$.
 >
 > - If $\phi,\psi\in\text{Form}$ then
->     - If $\mathfrak{M},v\not\vDash \phi$ then $\mathfrak{M},v\vDash (\neg \phi)$.
->     - If $\mathfrak{M},v\vDash \phi$ and $\mathfrak{M},v\vDash \psi$ then $\mathfrak{M},v\vDash (\phi\land\psi)$.
->     - If $\mathfrak{M},v\vDash \phi$ or $\mathfrak{M},v\vDash \psi$ then $\mathfrak{M},v\vDash (\phi\lor\psi)$.
->     - If $\mathfrak{M},v\not\vDash \phi$ or $\mathfrak{M},v\vDash \psi$ then $\mathfrak{M},v\vDash (\phi\to\psi)$.
->     - If $\mathfrak{M},v\vDash \phi \to \psi$ and $\mathfrak{M},v\vDash \psi\to\phi$ then $\mathfrak{M},v\vDash (\phi\leftrightarrow\psi)$.
->     - Suppose that $x\in \text{Vars}$, and for every $u\in\mathfrak{U}$ we have $\mathfrak{M},v[x\mapsto u]\vDash \phi$. Then $\mathfrak{M},v\vDash (\forall x\phi)$.
->     - Suppose that $x\in \text{Vars}$ and for some $u\in\mathfrak{U}$ we have $\mathfrak{M},v[x\mapsto u]\vDash \phi$. Then $\mathfrak{M},v\vDash (\exists x\phi)$.
+>     - If $म,v\not\vDash \phi$ then $म,v\vDash (\neg \phi)$.
+>     - If $म,v\vDash \phi$ and $म,v\vDash \psi$ then $म,v\vDash (\phi\land\psi)$.
+>     - If $म,v\vDash \phi$ or $म,v\vDash \psi$ then $म,v\vDash (\phi\lor\psi)$.
+>     - If $म,v\not\vDash \phi$ or $म,v\vDash \psi$ then $म,v\vDash (\phi\to\psi)$.
+>     - If $म,v\vDash \phi \to \psi$ and $म,v\vDash \psi\to\phi$ then $म,v\vDash (\phi\leftrightarrow\psi)$.
+>     - Suppose that $x\in \text{Vars}$, and for every $u\inउ$ we have $म,v[x\mapsto u]\vDash \phi$. Then $म,v\vDash (\forall x\phi)$.
+>     - Suppose that $x\in \text{Vars}$ and for some $u\inउ$ we have $म,v[x\mapsto u]\vDash \phi$. Then $म,v\vDash (\exists x\phi)$.
 >
-> Finally we can define **truth in the model $\mathfrak{M}$**.
+> Finally we can define **truth in the model $म$**.
 >
-> Let $\phi$ be a closed formula. Then we say that $\phi$ is **true in the model $\mathfrak{M}$**, and write $\mathfrak{M}\vDash \phi$, if for every variable assignment *v* we have $\mathfrak{M},v\vDash \phi$.
+> Let $\phi$ be a closed formula. Then we say that $\phi$ is **true in the model $म$**, and write $म\vDash \phi$, if for every variable assignment *v* we have $म,v\vDash \phi$.
 
 Another reason why we will avoid actually using this rigorous definition: In my opinion, these ideas don’t significantly help your understanding of other mathematical topics like algebra and topology. Remember, we’re studying logic because it’s inherently interesting, yes—but also, so that we may apply it to understanding other mathematical subjects.
 
