@@ -48,14 +48,14 @@ $$
  \color{red}{ट} & \color{red}{ट} &
   & \color{red}{ट} &  & \color{red}{ट}
  \\\hline
- ट & फ़ &
-  & फ़ &  & ट
+ ट & फ &
+  & फ &  & ट
  \\\hline
- \color{red}{फ़} & \color{red}{ट} &
-  & \color{red}{फ़} &  & \color{red}{फ़}
+ \color{red}{फ} & \color{red}{ट} &
+  & \color{red}{फ} &  & \color{red}{फ}
  \\\hline
- फ़ & फ़ &
-  & फ़ &  & फ़
+ फ & फ &
+  & फ &  & फ
  \\\hline
 \end{array}
 $$
@@ -76,21 +76,21 @@ $$
  Q \\\hline
  \color{red}{ट} & \color{red}{ट} &
   & \color{red}{ट} & &
- \color{red}{फ़} & &
+ \color{red}{फ} & &
  \color{red}{ट}
  \\\hline
- ट & फ़ &
+ ट & फ &
   & ट & &
- फ़ & & फ़
+ फ & & फ
  \\\hline
- \color{red}{फ़} & \color{red}{ट} &
+ \color{red}{फ} & \color{red}{ट} &
   & \color{red}{ट} & &
  \color{red}{ट} & &
  \color{red}{ट}
  \\\hline
- फ़ & फ़ &
-  & फ़ & &
- ट & & फ़
+ फ & फ &
+  & फ & &
+ ट & & फ
  \\\hline
 \end{array}
 $$
