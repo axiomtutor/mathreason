@@ -86,7 +86,7 @@ Let’s see an example.  Suppose that we begin from the proposition "This triang
 
 If the triangle that we are discussing is this one:
 
-![[Pasted image 20260904203417.png]]
+![[obtuseiso.png]]
 
 then this triangle is obtuse, therefore we should choose a model, $म_1$, such that $P^{म_1}=ट$.
 
@@ -94,7 +94,7 @@ Since the triangle is also isosceles, then we should also decide that our model 
 
 On the other hand, if the triangle were 
 
-![[Pasted image 20260904203631.png]]
+![[notobtuseiso.png]]
 
 then this is not obtuse but it is isosceles. Therefore we should use the model 
 
@@ -108,7 +108,7 @@ Q^{म_2} = ट
 > 
 > What is the appropriate model for the following triangle?
 > 
-> ![[Pasted image 20260904204737.png]]
+> ![[obtusenotiso.png]]
 
 > [!exercise] ***Exercise***
 >
@@ -215,6 +215,13 @@ $$ट \land ट = ट $$
 > Let $\phi$ and $\psi$ be formulas, and let $म$ be a model defined for $\phi$ and $\psi$.  
 > 
 > Then $(\phi\land \psi)^{म}$ is defined to be equal to $\phi^{म}\curlywedge \psi^{म}$.  Whatever this value is, we call it **the (truth-)value of $\phi\land \psi$ in $म$**.  We may also refer to this as the **evaluation of $\phi\land\psi$ in $म$**.
+
+> [!exercise] ***Exercise***
+> In the same way that one can read "$ट\curlywedge ट = ट$" as saying 
+> 
+> > True and true is true.
+> 
+> likewise interpret the other equations that define $\curlywedge$.
 
 > [!note]- Semantic conjunction is an example of a "boolean algebra operation".
 > The values $ट$ and $फ$ are often called "[boolean values](https://en.wikipedia.org/wiki/Boolean_data_type)".  
@@ -354,6 +361,12 @@ $$
 $$
 
 > [!exercise] ***Exercise***
+> In the same way that $ट\curlyvee ट = ट$ means 
+> > True or true is true.
+> 
+> likewise explain the other equations which define $\curlyvee$.
+
+> [!exercise] ***Exercise***
 >
 > Suppose that *P* and *Q* are true while *R* is false.
 > 
@@ -363,7 +376,7 @@ $$
 
 Recall the definition of a composite number: An integer $n\ge 2$ is composite if it is not prime.  
 
-For example, “8 is not prime” is the *negation* of the proposition “8 is prime”.  
+We say that the definition of "composite" is the *negation* of the definition of *prime*.  
 
 If we represent the proposition “8 is prime” by *P*, then its negation is represented by 
 
@@ -399,13 +412,17 @@ $$
 \end{array}
 $$
 
-Notice that since the table has only two rows.  This is due to the fact that negation only operations on a single proposition.  That proposition has only two possible values, true or false, and therefore requires only two rows of a table.
+Notice that since the table has only two rows.  This is due to the fact that negation only operates on a single proposition.  That proposition has only two possible values, true or false, and therefore requires only two rows of a table.
 
 > [!exercise] ***Exercise***
+> 
+> Show that $\sim(\sim ट) = ट$ and $\sim(\sim फ) = फ$.
+> 
+> After you have done this, we now know that $\sim(\sim x) = x$ for each $x\in \{ट,फ\}$.  
 >
 > Let $म$ be a model defined for *P*.  
 > 
-> Explain why $(\neg(\neg P))^{म} = P^{म}$.
+> Explain why $(\neg(\neg P))^{म} = P^{म}$, no matter which model is used.
 
 # Conditional
 
@@ -415,9 +432,9 @@ Let’s take for example the conditional sentence,
 
 > If $X\subseteq \Bbb Z$ is a set of integers which is bounded below, then *X* has a minimum.
 
-“If” usually indicates which part of the sentence which we call the “antecedent”. This is the part which you are meant to imagine or assume is true.  So for this theorem you are supposed to assume that *X* is a set of integers bounded below.
+“If” usually indicates which part of the conditional we call the “antecedent”. This is the part which you are meant to "imagine" or "assume" is true.  So for this theorem you are supposed to assume that *X* is a set of integers bounded below.
 
-"Then" indicates the "consequent".  This is the part of the sentence which is claimed to be true, as long as we assume the antecedent.  The consequent of this example sentence is "*X* has a minimum".
+"Then" indicates the "consequent" of the conditional.  This is the part of the sentence which is claimed to be true, as long as we assume the antecedent.  The consequent of the example sentence is "*X* has a minimum".
 
 If *P* and *Q* are propositional variables, then $P\to Q$ represents "if *P* then *Q*".
 
@@ -461,7 +478,7 @@ In the first example, *P* is false, and *Q* is true.  In the second example, *P*
 > 
 > Therefore when the antecedent and consequent are false, the conditional must be true.  One can find a similar argument for the case when the antecedent is false and the consequent true.  
 
-We have now explained why the conditional truth-table is 
+The conditional truth-table is 
 
 $$
 \begin{array}{|c|c||c|c|c|}\hline
@@ -479,7 +496,15 @@ $$
     >
     >However, it is not a good model for how most English language uses the “if-then” construction.  
     >
-    > Consider "if you had "
+    > Consider "if you had stood two inches to the left then you would have been crushed". 
+    > 
+    > ![[busterkeaton.png]]
+    > 
+    > We cannot analyze this with propositional logic, because the antecedent "you had stood two inches to the left" does not have truth-value!  If we say this about [Buster Keaton](https://en.wikipedia.org/wiki/Buster_Keaton) (pictured above) then he was not two inches to the left. So what does "you had stood two inches to the left" even mean here?  Said outside the context of the if-then structure, this is just grammatically ill-formed.
+    > 
+    > But the entire idea of propositional logic, is to determine the meaning of the whole sentence (here, the conditional) by understanding each component in isolation, and then composing those components.  This simply does not work with [counter-factual conditionals](https://en.wikipedia.org/wiki/Counterfactual_conditional) like the one above.
+    > 
+    > Just as the material conditional is inadequate for analyzing counterfactuals, it is also unable to adequately express [causal conditionals](https://plato.stanford.edu/entries/causal-models/).  
     >
     >The interested reader is welcome to research the topic of [the material conditional](https://en.wikipedia.org/wiki/Material_conditional), and related ideas.
 
