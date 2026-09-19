@@ -85,9 +85,9 @@ If the triangle that we are discussing is this one:
 
 ![[Pasted image 20260904203417.png]]
 
-then this triangle is obtuse, therefore we should choose a model, $\mathfrak M_1$, such that $P^{\mathfrak M_1}=ट$.
+then this triangle is obtuse, therefore we should choose a model, $म_1$, such that $P^{म_1}=ट$.
 
-Since the triangle is also isosceles then we should also decide that our model assigns $Q^{\mathfrak M_1}=ट$.
+Since the triangle is also isosceles then we should also decide that our model assigns $Q^{म_1}=ट$.
 
 On the other hand, if the triangle were 
 
@@ -96,8 +96,8 @@ On the other hand, if the triangle were
 then this is not obtuse but it is isosceles. Therefore we should use the model 
 
 $$\begin{aligned}
-P^{\frak M_2} =फ़\\
-Q^{\frak M_2} = ट
+P^{म_2} =फ़\\
+Q^{म_2} = ट
 \end{aligned}$$
 
 > [!exercise] ***Exercise***
@@ -113,7 +113,7 @@ Q^{\frak M_2} = ट
 > 
 > List every possible model for these two variables.  
 > 
-> (Here is one: $\mathfrak M_1$ given by $P^{\mathfrak M_1} = ट$ and $Q^{\frak M_2}=ट$.)
+> (Here is one: $म_1$ given by $P^{म_1} = ट$ and $Q^{म_2}=ट$.)
 
 > [!exercise] ***Exercise***
 >
