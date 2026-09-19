@@ -103,33 +103,7 @@ In this row, the value of *Q* is true.  So yet again, the inference rule is vali
 
 It can be helpful to see an example of an inference rule that is *not* valid.  This would require a rule in which the premises can be true but the inferred proposition false.
 
-An example would be "From $\phi$ we can infer $\phi\land\psi$".  Let's see a truth-table which demonstrates why this is invalid.
-
-$
-\begin{array}{|c|c||c|c|c|}\hline
-\phi & \psi &
-\phi & \land & \psi \\\hline
-\color{red}{ट} & \color{red}{ट} &
- & \color{red}{ट} &  & \color{red}{ट}
-\\\hline
-\color{red}{ट} & \color{red}{फ} &
- & \color{red}{फ} &  & \color{red}{फ}
-\\\hline
-फ & ट &
- & फ &  & ट
-\\\hline
-फ & फ &
- & फ &  & फ
-\\\hline
-\end{array}
-$
-
-Here we have the truth-table for $\phi\land\psi$, and we have included the table for $\phi$ next to it.
-
-We are interested only in the rows where the premise, $\phi$, is true.  These are rows 1 and 2.  In row 1, the conclusion $\phi\land\psi$ is also true.  But in row 2, the premise $\phi$ is true while the conclusion $\phi\land\psi$ is false.
-
-Therefore this inference rule is invalid.  An inference rule is valid only if it is impossible for all of its premises to be true while its conclusion is false.  Here we have found exactly such a case.
-
+An example would be "From $\phi$ we can infer $\phi\land\psi$".  Let's see a truth-table which demonstrates why this is invalid.  
 
 > [!exercise] ***Exercise***
 >
