@@ -193,9 +193,9 @@ The fourth is not because it uses a constant symbol *a* in quantification. Quant
 >
 > Let $उ$ be the domain of discourse and $म$ a model.
 >
-> We assign $(\forall x P(x))^{म}=ट$ if for every choice of $u\in उ$ we have $u\in P^{म}$. Otherwise $(\forall xP(x))^{म}=फ़$.
+> We assign $(\forall x P(x))^{म}=ट$ if for every choice of $u\in उ$ we have $u\in P^{म}$. Otherwise $(\forall xP(x))^{म}=फ$.
 >
-> We assign $(\exists xP(x))^{म} = ट$ if there is some choice of $u\in उ$ such that $u\in P^{म}$. Otherwise $(\exists xP(x))^{म} = फ़$.
+> We assign $(\exists xP(x))^{म} = ट$ if there is some choice of $u\in उ$ such that $u\in P^{म}$. Otherwise $(\exists xP(x))^{म} = फ$.
 
 To give an example, suppose the domain is the set of these objects:
 
@@ -203,7 +203,7 @@ To give an example, suppose the domain is the set of these objects:
 
 Let the predicate *R* denote a red object, *B* blue, *W* white, *K* black, *C* cone, *S* sphere, *U* cube, *Y* cylinder, *T* tetrahedron, and *P* a rectangular prism.
 
-Then $(\forall x R(x))^{म}=फ़$ because not all of the objects in the domain are red.
+Then $(\forall x R(x))^{म}=फ$ because not all of the objects in the domain are red.
 
 However $(\exists xR(x))^{म}=ट$ because some object in the domain is red.
 
@@ -257,12 +257,12 @@ Notice that (3) above is kind of funny—but technically true!
 
 Don’t believe me? Test it out using the official semantics!
 
-Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(K(u)\to W(u))^{म}$. By the semantics of the conditional, this is $(K(u))^{म} \leadsto (W(u))^{म}$. Because *u* is not black, $K(u)^{म}=फ़$. Because *u* is not white, $W(u)^{म}=फ़$. Therefore
+Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(K(u)\to W(u))^{म}$. By the semantics of the conditional, this is $(K(u))^{म} \leadsto (W(u))^{म}$. Because *u* is not black, $K(u)^{म}=फ$. Because *u* is not white, $W(u)^{म}=फ$. Therefore
 
 $$
 \begin{aligned}
  (K(u)\to W(u))^{म} &= K(u)^{म}\leadsto W(u)^{म} \\
- &= फ़\leadsto फ़ \\
+ &= फ\leadsto फ \\
  &= ट
 \end{aligned}
 $$
@@ -297,8 +297,8 @@ So it’s true for the red cube!
 >
 > $$\begin{aligned}
 > P(a)^{म}=ट\\
-> P(b)^{म}=फ़\\
-> Q(a)^{म}=फ़\\
+> P(b)^{म}=फ\\
+> Q(a)^{म}=फ\\
 > Q(b)^{म}=ट
 > \end{aligned}$$
 
@@ -469,12 +469,12 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
 
   - $y\mapsto a$
 
-    With this assignment we now have to evaluate $(N(a,a)\to L(a,a))^{म}$. Noting that $N(a,a)^{म}=फ़$ and $L(a,a)^{म}=ट$, then
+    With this assignment we now have to evaluate $(N(a,a)\to L(a,a))^{म}$. Noting that $N(a,a)^{म}=फ$ and $L(a,a)^{म}=ट$, then
 
     $$
     \begin{aligned}
      (N(a,a)\to L(a,a))^{म} &= N(a,a)^{म} \leadsto L(a,a)^{म} \\
-     &= फ़\leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -486,7 +486,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(a,b)\to L(a,b))^{म} &= N(a,b)^{म} \leadsto L(a,b)^{म} \\
-     &= फ़\leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -496,7 +496,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(a,c)\to L(a,c))^{म} &= N(a,c)^{म} \leadsto L(a,c)^{म} \\
-     &= फ़\leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -506,7 +506,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(a,d)\to L(a,d))^{म} &= N(a,d)^{म} \leadsto L(a,d)^{म} \\
-     &= फ़\leadsto फ़ \\
+     &= फ\leadsto फ \\
      &= ट
     \end{aligned}
     $$
@@ -516,7 +516,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(a,e)\to L(a,e))^{म} &= N(a,e)^{म} \leadsto L(a,e)^{म} \\
-     &= फ़\leadsto फ़ \\
+     &= फ\leadsto फ \\
      &= ट
     \end{aligned}
     $$
@@ -544,7 +544,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(d,a)\to L(d,a))^{म} &= N(d,a)^{म} \leadsto L(d,a)^{म} \\
-     &= फ़\leadsto फ़ \\
+     &= फ\leadsto फ \\
      &= ट
     \end{aligned}
     $$
@@ -556,7 +556,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
       (N(d,b)\to L(d,b))^{म} &= N(d,b)^{म} \leadsto L(d,b)^{म} \\
-     &= फ़\leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
@@ -576,7 +576,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(d,d)\to L(d,d))^{म} &= N(d,d)^{म} \leadsto L(d,d)^{म} \\
-     &= फ़\leadsto फ़ \\
+     &= फ\leadsto फ \\
      &= ट
     \end{aligned}
     $$
@@ -586,7 +586,7 @@ With this assignment we now have to evaluate $(\forall y (N(a,y)\to L(a,y)))^{�
     $$
     \begin{aligned}
      (N(d,e)\to L(d,e))^{म} &= N(d,e)^{म} \leadsto L(d,e)^{म} \\
-     &= फ़\leadsto ट \\
+     &= फ\leadsto ट \\
      &= ट
     \end{aligned}
     $$
