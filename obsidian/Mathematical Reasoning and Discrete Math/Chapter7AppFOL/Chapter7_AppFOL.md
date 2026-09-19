@@ -7,9 +7,9 @@ title: "Chapter 7: Applications of First-order Logic"
 
 Notice that it is hard to demonstrate the truth of a “for all” proposition: You have to consider every possible choice from the domain, which can mean evaluating many propositions.
 
-For example, if $\mathfrak{M}$ is a model with universe $\{a,b,c\}$, then to directly confirm the truth of $\forall x P(x)$, you have to confirm $P(x)$ for three different assignments of *x*.  
+For example, if $म$ is a model with universe $\{a,b,c\}$, then to directly confirm the truth of $\forall x P(x)$, you have to confirm $P(x)$ for three different assignments of *x*.  
 
-However, that *disconfirming* $\forall x P(x)$ can (in principle) take much less labor.  To show that $\forall x P(x)^{\mathfrak{M}}=\mathfrak{F}$ we only need to find *one* domain element $u\in\{a,b,c\}$, for which $P(u)^{\mathfrak{M}}=\mathfrak{F}$.
+However, that *disconfirming* $\forall x P(x)$ can (in principle) take much less labor.  To show that $\forall x P(x)^{म}=फ़$ we only need to find *one* domain element $u\in\{a,b,c\}$, for which $P(u)^{म}=फ़$.
 
 Consider this in the context of a concrete example.  Take the sentence “all swans are white”.  [(This example comes from a historical example which is often used in discussions about the philosophy of science.)](https://en.wikipedia.org/wiki/Falsifiability)  
 
@@ -23,16 +23,16 @@ For our current purposes, the take-away lesson of this story is more limited: Pr
 
 > [!exercise] ***Exercise***
 >
-> Consider a model $\mathfrak{M}$ with domain $\mathfrak{U} = \{a,b,c,d,e\}$.
+> Consider a model $म$ with domain $उ = \{a,b,c,d,e\}$.
 >
 > Suppose that 
 >
 > $$
-> P^{\mathfrak{M}} = \{a,b,c,d\} \\
-> Q^{\mathfrak{M}} = \{b,c,d,e\}
+> P^{म} = \{a,b,c,d\} \\
+> Q^{म} = \{b,c,d,e\}
 > $$
 >
-> Show that $\forall x P(x)^{\mathfrak{M}} = \mathfrak{F}$ by exhibiting a single element of the domain, $u\in\mathfrak{U}$, for which $u\notin P^{\mathfrak{M}}$.
+> Show that $\forall x P(x)^{म} = फ़$ by exhibiting a single element of the domain, $u\inउ$, for which $u\notin P^{म}$.
 >
 > Do likewise for $\forall xQ(x)$.
 
@@ -44,32 +44,32 @@ For our current purposes, the take-away lesson of this story is more limited: Pr
 
 Suppose that *P* and *Q* are properties.  
 
-Suppose that we have a model in which $P(x)$ is false for every element of the domain.  That is to say, if *U* is the domain and $u\in U$, then $P(u)^{\mathfrak{M}}=\mathfrak{F}$.
+Suppose that we have a model in which $P(x)$ is false for every element of the domain.  That is to say, if *U* is the domain and $u\in U$, then $P(u)^{म}=फ़$.
 
 Let’s now evaluate 
 
 $$
-\forall x (P(x)\to Q(x))^{\mathfrak{M}}
+\forall x (P(x)\to Q(x))^{म}
 $$
 
 Let $u\in U$ be any element of the domain.  Then 
 
 $$
 \begin{aligned}
- (P(u)\to Q(u))^{\mathfrak{M}} &= P(u)^{\mathfrak{M}}\leadsto Q(u)^{\mathfrak{M}} \\
- &= \mathfrak{F} \leadsto Q(u)^{\mathfrak{M}} \\
- &= \mathfrak{T}
+ (P(u)\to Q(u))^{म} &= P(u)^{म}\leadsto Q(u)^{म} \\
+ &= फ़ \leadsto Q(u)^{म} \\
+ &= ट
 \end{aligned}
 $$
 
-Notice this last equality!  Even without knowing the value of $Q(u)^{\mathfrak{M}}$, we can still judge that $\mathfrak{F}\leadsto Q(u)^{\mathfrak{M}} = \mathfrak{T}$.  
+Notice this last equality!  Even without knowing the value of $Q(u)^{म}$, we can still judge that $फ़\leadsto Q(u)^{म} = ट$.  
 
-That is because of how the boolean conditional $\leadsto$ is defined.  Whenever the antecedent is false, $\leadsto$ returns true.  So whether $Q(u)^{\mathfrak{M}}=\mathfrak{T}$ or $Q(u)^{\mathfrak{M}}=\mathfrak{F}$, either way the result will be $\mathfrak{F}\leadsto Q(u)^{\mathfrak{M}}=\mathfrak{T}$.
+That is because of how the boolean conditional $\leadsto$ is defined.  Whenever the antecedent is false, $\leadsto$ returns true.  So whether $Q(u)^{म}=ट$ or $Q(u)^{म}=फ़$, either way the result will be $फ़\leadsto Q(u)^{म}=ट$.
 
-We have just shown that $(P(u)\to Q(u))^{\mathfrak{M}}=\mathfrak{T}$ for every $u\in U$, which shows that 
+We have just shown that $(P(u)\to Q(u))^{म}=ट$ for every $u\in U$, which shows that 
 
 $$
-\forall x(P(x)\to Q(x))^{\mathfrak{M}}=\mathfrak{T}
+\forall x(P(x)\to Q(x))^{म}=ट
 $$
 
 This result explains the following definition.  
@@ -81,7 +81,7 @@ This result explains the following definition.
 > It follows that, for any predicate *Q*, 
 >
 > $$
-> \forall x(P(x)\to Q(x))^{\mathfrak{M}}=\mathfrak{T}
+> \forall x(P(x)\to Q(x))^{म}=ट
 > $$
 >
 > This phenomenon is called **vacuous quantification**.
@@ -103,18 +103,18 @@ Although we have a new syntax and a new semantics, the definition of tautology, 
 > Let $\phi$ be a first-order proposition.  We say that $\phi$ is a **tautology** if 
 >
 > $$
-> \phi^{\mathfrak{M}} = \mathfrak{T}
+> \phi^{म} = ट
 > $$
 >
-> for every choice of model $\mathfrak{M}$.
+> for every choice of model $म$.
 >
 > The proposition $\phi$ is a **contradiction** if 
 >
 > $$
-> \phi^{\mathfrak{M}}=\mathfrak{F}
+> \phi^{म}=फ़
 > $$
 >
-> for every choice of $\mathfrak{M}$.
+> for every choice of $म$.
 >
 > If $\phi$ is neither a tautology nor a contradiction, then it is a **contingency**.
 
@@ -124,31 +124,31 @@ $$
 \forall x(P(x)\lor \neg P(x))
 $$
 
-How can we demonstrate that it is a tautology?  Let $\mathfrak{M}$ be a model and *u* any element of the domain.  We need to evaluate 
+How can we demonstrate that it is a tautology?  Let $म$ be a model and *u* any element of the domain.  We need to evaluate 
 
 $$
-(P(u)\lor\neg P(u))^{\mathfrak{M}} = P(u)\curlyvee \sim P(u)^{\mathfrak{M}}
+(P(u)\lor\neg P(u))^{म} = P(u)\curlyvee \sim P(u)^{म}
 $$
 
-If $P(u)^{\mathfrak{M}}=\mathfrak{T}$ then we compute 
-
-$$
-\begin{aligned}
-\mathfrak{T}\ \curlyvee \sim \mathfrak{T} &= \mathfrak{T}\curlyvee \mathfrak{F} \\
-&= \mathfrak{T}
-\end{aligned}
-$$
-
-On the other hand if $P(u)^{\mathfrak{M}}=\mathfrak{F}$ then 
+If $P(u)^{म}=ट$ then we compute 
 
 $$
 \begin{aligned}
- \mathfrak{F}\curlyvee\sim \mathfrak{F} &= \mathfrak{F}\curlyvee \mathfrak{T} \\
-&= \mathfrak{T}
+ट\ \curlyvee \sim ट &= ट\curlyvee फ़ \\
+&= ट
 \end{aligned}
 $$
 
-This demonstrates that $\forall x(P(x)\lor\neg P(x))^{\mathfrak{M}}=\mathfrak{T}$ no matter what we choose for $\mathfrak{M}$.  
+On the other hand if $P(u)^{म}=फ़$ then 
+
+$$
+\begin{aligned}
+ फ़\curlyvee\sim फ़ &= फ़\curlyvee ट \\
+&= ट
+\end{aligned}
+$$
+
+This demonstrates that $\forall x(P(x)\lor\neg P(x))^{म}=ट$ no matter what we choose for $म$.  
 
 > [!exercise] ***Exercise***
 >
@@ -173,7 +173,7 @@ There are several properties that a binary relation can have, which play large r
 
 > [!definition] ***Definition***
 >
-> Let *R* be a relation, and $\mathfrak{M}$ a model.  
+> Let *R* be a relation, and $म$ a model.  
 >
 > *R* is called **reflexive** if 
 >
@@ -187,7 +187,7 @@ Reflexive, not symmetric, not transitive.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%201.png)
 
-Not reflexive because $R(b,b)^{\mathfrak{M}}=\mathfrak{F}$, although other counter-examples could be given too.
+Not reflexive because $R(b,b)^{म}=फ़$, although other counter-examples could be given too.
 
 The relation $\le$ on real numbers is reflexive.  For example, $1\le 1$.
 
@@ -211,9 +211,9 @@ Symmetric, not reflexive, not transitive.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%203.png)
 
-Not symmetric because $(R(a,b)\to R(b,a))^{\mathfrak{M}}=\mathfrak{F}$.
+Not symmetric because $(R(a,b)\to R(b,a))^{म}=फ़$.
 
-For example, “*x* and *y* have the same absolute value” is symmetric.  That is to say, the relation *R* is defined by $R(x,y)^{\mathfrak{M}}=\mathfrak{T}$ if and only if 
+For example, “*x* and *y* have the same absolute value” is symmetric.  That is to say, the relation *R* is defined by $R(x,y)^{म}=ट$ if and only if 
 
 $$
 |x|=|y|
@@ -237,7 +237,7 @@ Transitive, not reflexive, not symmetric.
 
 ![image.png](Chapter%206%20Applications%20of%20First-order%20Logic/image%205.png)
 
-Not transitive because $((R(a,d)\land R(d,c))\to R(a,c))^{\mathfrak{M}}=\mathfrak{F}$. One other counter-example is possible.
+Not transitive because $((R(a,d)\land R(d,c))\to R(a,c))^{म}=फ़$. One other counter-example is possible.
 
 The relations $\le, \subseteq, <,\subset$ are all transitive.  
 
@@ -305,14 +305,14 @@ Not connected because
 >
 > Find examples and counter-examples of partial orders, strict partial orders, and total orders.  
 
-Consider the random example of a relation *R* and model $\mathfrak{M}$ with domain $\mathfrak{U} = \{a,b,c\}$.  If we have 
+Consider the random example of a relation *R* and model $म$ with domain $उ = \{a,b,c\}$.  If we have 
 
 $$
 \begin{aligned}
- R(a,a)^{\mathfrak{M}} &= \mathfrak{T} \\
- R(a,b)^{\mathfrak{M}} &= \mathfrak{T} \\
- R(b,b)^{\mathfrak{M}} &= \mathfrak{T} \\
- R(c,c)^{\mathfrak{M}} &= \mathfrak{T}  
+ R(a,a)^{म} &= ट \\
+ R(a,b)^{म} &= ट \\
+ R(b,b)^{म} &= ट \\
+ R(c,c)^{म} &= ट  
 \end{aligned}
 $$
 
@@ -428,7 +428,7 @@ $$
 
 which should evaluate to *F*.  
 
-Below, we will look at every possible assignment of domain elements to the variables, and judge whether $\forall x\forall y((E(x)\land E(y))\to x=y)^{\mathfrak{M}}=\mathfrak{T}$.
+Below, we will look at every possible assignment of domain elements to the variables, and judge whether $\forall x\forall y((E(x)\land E(y))\to x=y)^{म}=ट$.
 
 To do so, we need to evaluate the proposition under the assignments 
 
@@ -447,11 +447,11 @@ That’s 9 assignments in total.
     
     $$
     \begin{aligned}
-     ((E(1)\land E(1))\to 1=1)^{\mathfrak{M}} &= (E(1)\land E(1))^{\mathfrak{M}} \leadsto (1=1)^{\mathfrak{M}}\\
-     &= (E(1)^{\mathfrak{M}} \curlywedge E(1)^{\mathfrak{M}})\leadsto \mathfrak{T} \\
-     &= (\mathfrak{F}\curlywedge \mathfrak{F}) \leadsto \mathfrak{T} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     ((E(1)\land E(1))\to 1=1)^{म} &= (E(1)\land E(1))^{म} \leadsto (1=1)^{म}\\
+     &= (E(1)^{म} \curlywedge E(1)^{म})\leadsto ट \\
+     &= (फ़\curlywedge फ़) \leadsto ट \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
     
@@ -459,11 +459,11 @@ That’s 9 assignments in total.
     
     $$
     \begin{aligned}
-     ((E(1)\land E(2))\to 1=2)^{\mathfrak{M}} &= (E(1)\land E(2))^{\mathfrak{M}} \leadsto (1=2)^{\mathfrak{M}}\\
-     &= (E(1)^{\mathfrak{M}} \curlywedge E(2)^{\mathfrak{M}})\leadsto \mathfrak{F} \\
-     &= (\mathfrak{F}\curlywedge \mathfrak{T}) \leadsto \mathfrak{F} \\
-     &= \mathfrak{F}\leadsto \mathfrak{T} \\
-     &= \mathfrak{T}
+     ((E(1)\land E(2))\to 1=2)^{म} &= (E(1)\land E(2))^{म} \leadsto (1=2)^{म}\\
+     &= (E(1)^{म} \curlywedge E(2)^{म})\leadsto फ़ \\
+     &= (फ़\curlywedge ट) \leadsto फ़ \\
+     &= फ़\leadsto ट \\
+     &= ट
     \end{aligned}
     $$
     
@@ -474,11 +474,11 @@ Let’s skip ahead and try the one assignment where the antecedent will be true,
 
 $$
 \begin{aligned}
- ((E(2)\land E(2))\to 2=2)^{\mathfrak{M}} &= (E(2)\land E(2))^{\mathfrak{M}} \leadsto (2=2)^{\mathfrak{M}}\\
- &= (E(2)^{\mathfrak{M}} \curlywedge E(2)^{\mathfrak{M}})\leadsto \mathfrak{T} \\
- &= (\mathfrak{T}\curlywedge \mathfrak{T}) \leadsto \mathfrak{T} \\
- &= \mathfrak{T}\leadsto \mathfrak{T} \\
- &= \mathfrak{T}
+ ((E(2)\land E(2))\to 2=2)^{म} &= (E(2)\land E(2))^{म} \leadsto (2=2)^{म}\\
+ &= (E(2)^{म} \curlywedge E(2)^{म})\leadsto ट \\
+ &= (ट\curlywedge ट) \leadsto ट \\
+ &= ट\leadsto ट \\
+ &= ट
 \end{aligned}
 $$
 
@@ -496,9 +496,9 @@ Yet again the proposition is true under this assignment!
 > \end{aligned}
 > $$
 >
-> Pick one more possible assignment and evaluate $((E(x)\land E(y))\to x=y)^{\mathfrak{M}}$ using that assignment.  
+> Pick one more possible assignment and evaluate $((E(x)\land E(y))\to x=y)^{म}$ using that assignment.  
 >
-> Explain why $(\forall x\forall y ((E(x)\land E(y))\to x=y))^{\mathfrak{M}}=\mathfrak{T}$.
+> Explain why $(\forall x\forall y ((E(x)\land E(y))\to x=y))^{म}=ट$.
 
 The proposition $\forall x\forall y ((O(x)\land O(y))\to x=y)$ should be false.
 
@@ -506,11 +506,11 @@ To show that it is false, we need to find a single assignment to *x* and *y* for
 
 $$
 \begin{aligned}
- ((O(1)\land O(3))\to 1=3)^{\mathfrak{M}} &= (O(1)\land O(3))^{\mathfrak{M}} \leadsto (1=3)^{\mathfrak{M}}\\
- &= (O(1)^{\mathfrak{M}} \curlywedge O(3)^{\mathfrak{M}})\leadsto \mathfrak{F} \\
- &= (\mathfrak{T}\curlywedge \mathfrak{T}) \leadsto \mathfrak{F} \\
- &= \mathfrak{T}\leadsto \mathfrak{F} \\
- &= \mathfrak{F}
+ ((O(1)\land O(3))\to 1=3)^{म} &= (O(1)\land O(3))^{म} \leadsto (1=3)^{म}\\
+ &= (O(1)^{म} \curlywedge O(3)^{म})\leadsto फ़ \\
+ &= (ट\curlywedge ट) \leadsto फ़ \\
+ &= ट\leadsto फ़ \\
+ &= फ़
 \end{aligned}
 $$
 
@@ -536,7 +536,7 @@ To express that there are at least two elements, you might guess that it’s $\e
 
 This proposition is true, *even when there is just one element with property P!*  
 
-This is because, technically speaking, for both existential quantifiers we can select the same element.  If we select *u* for both of them, where $P(u)^{\mathfrak{M}}=\mathfrak{T}$, then the proposition is true.
+This is because, technically speaking, for both existential quantifiers we can select the same element.  If we select *u* for both of them, where $P(u)^{म}=ट$, then the proposition is true.
 
 So apparently it is not enough to merely state that “there are two things with property *P*”, so to speak.  You must specify “there are two *distinct* things with property *P*”.  
 
