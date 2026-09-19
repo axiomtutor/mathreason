@@ -171,7 +171,7 @@ Note that when the parentheses are not needed, we may omit them.  So for example
 
 On the other hand, in $P\land (Q\land R)$, the parentheses around $(Q\land R)$ tells us which order the formulas are conjoined.  If we dropped all parentheses and wrote $P\land Q\land R$, we would not know whether this means $(P\land Q)\land R$ or $P\land (Q\land R)$. 
 
-So to write the formula $(P\land (Q\land R))$, we may drop the outer parentheses and just write $P\land (Q\land R)$.  This causes no ambiguity.  But we may not drop the inner parentheses since they are needed to specify the formula.   
+Therefore we are free to drop the outer-most parentheses for convenience, but only the outer-most.
 
 ---
 
@@ -183,7 +183,7 @@ Because *Q* and *R* are formulas, therefore $Q\land R$ is a formula.
 
 > [!exercise] ***Exercise***
 >
-> Show that $(P\land Q)\land (Q\land R)$ is a formula.
+> The section above demonstrated how to show that $P\land (Q\land R)$ is a formula.  In a similar style, show that $(P\land Q)\land (Q\land R)$ is a formula.
 > 
 > Explain why you cannot prove that $P\land$ is a formula.
 > 
@@ -197,15 +197,19 @@ Although the definition of conjunction above is correct, notice that it doesn’
 
 Recall that the semantics of propositional logic is concerned with truth-value.
 
+In the following definition, we will state the rule that "true and true is true".  For example, the sentence "3 is more than 2 and 3 is odd" is true, because it conjoins two true propositions.  This rule is formally expressed by the equation 
+
+$$ट \land ट = ट $$
+
 > [!definition] ***Definition***
 >
 > **Semantic conjunction** is the following operation, denoted by $\curlywedge$.
 > 
 > $$ \begin{aligned}
 > ट\curlywedge ट = ट\\\\
-> ट\curlywedge फ़ = फ़\\\\
-> फ़\curlywedge ट = फ़\\\\
-> फ़\curlywedge फ़ = फ़
+> ट\curlywedge फ = फ\\\\
+> फ\curlywedge ट = फ\\\\
+> फ\curlywedge फ = फ
 > \end{aligned}$$
 > 
 > Let $\phi$ and $\psi$ be formulas, and let $म$ be a model defined for $\phi$ and $\psi$.  
@@ -229,19 +233,19 @@ $$
 \end{aligned}
 $$
 
-where the last equation comes from the definition of the semantic conjunction, $\curlywedge$.
+The above calculation demonstrates that, in this model, we have $(P\land Q)^म = ट$.
 
 ---
 
-Let’s do another.  Let’s show that if *P* is false, *Q* is true, and *R* is true, then $((P\land Q)\land R)^{म}= फ़$.  
+Let’s do another.  Let’s show that if *P* is false, *Q* is true, and *R* is true, then $((P\land Q)\land R)^{म}= फ$.  The equations are numbered so that I can refer to and explain each of them later.
 
 $$
 \begin{aligned}
  ((P\land Q)\land R)^{म} &\stackrel{1}{=} (P\land Q)^{म} \curlywedge R^{म} \\
  &\stackrel2= (P^{म}\curlywedge Q^{म})\curlywedge ट \\
- &\stackrel3= (फ़ \curlywedge ट)\curlywedge ट \\
- &\stackrel4= फ़ \curlywedge ट\\
- &\stackrel5= फ़
+ &\stackrel3= (फ \curlywedge ट)\curlywedge ट \\
+ &\stackrel4= फ \curlywedge ट\\
+ &\stackrel5= फ
 \end{aligned}
 $$
 
@@ -250,8 +254,8 @@ Here is an explanation of each equation above.
 1. Definition of evaluation, applied $P\land Q$ and *R*.
 2. Definition of evaluation, applied to *P* and *Q*.  Also, the assumption that *R* is true.
 3. The assumption that *P* is false and *Q* true.
-4. The resulting value is $फ़$.
-5. The resulting value is $फ़$.
+4. The resulting value is $फ$.
+5. The resulting value is $फ$.
 
 > [!exercise] ***Exercise***
 >
@@ -259,7 +263,7 @@ Here is an explanation of each equation above.
 > 
 > Find $((P\land Q)\land (Q\land R))^{म}$.
 
-Note that the semantics here is defined recursively.
+Note that the semantics here are defined recursively.
 
 - Base case: If $\phi$ is a propositional variable, then $\phi^{म}$ is defined by $म$.  That is to say, the very definition of $म$ will tell us what $\phi^{म}$ is.
 - Recursive case: If $\phi$ is a conjunction of two other formulas, $\phi=(\chi\land\psi)$, then
