@@ -105,7 +105,7 @@ It can be helpful to see an example of an inference rule that is *not* valid.  T
 
 An example would be "From $\phi$ we can infer $\phi\land\psi$".  Let's see a truth-table which demonstrates why this is invalid.
 
-$
+$$
 \begin{array}{|c||c|c|c|}\hline
 \phi &
 \phi & \land & \psi \\\hline
@@ -122,7 +122,7 @@ $
  & फ & फ
 \\\hline
 \end{array}
-$
+$$
 
 Here we have the truth-table for $\phi\land\psi$, and we have included the table for $\phi$ before it.
 
