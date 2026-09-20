@@ -40,36 +40,21 @@ Each of the above inference rules are justified by the fact that, when its assum
 
 Here is a demonstration for Conjunction Elimination:
 
-$$
-\begin{array}{|c|c||c|c|c|c|}\hline
- P & Q &
- P &
- P & \land & Q \\\hline
- \color{red}{ट} & \color{red}{ट} &
- \color{red}{ट} &
- \color{red}{ट} & &
- \color{red}{ट}
- \\\hline
- ट & फ &
- ट &
- & फ & फ
- \\\hline
- \color{red}{फ} & \color{red}{ट} &
- \color{red}{फ} &
- & \color{red}{फ} & \color{red}{ट}
- \\\hline
- फ & फ &
- फ &
- & ф & ф
- \\\hline
-\end{array}
-$$
+$
+\\begin{array}{|c|c||c||c|c|c|}\\hline
+P & Q & P & P & \\land & Q \\\\hline
+\\color{red}{ट} & \\color{red}{ट} & \\color{red}{ट} & & \\color{red}{ट} & \\\\hline
+ट & फ & ट & & फ & \\\\hline
+\\color{red}{फ} & \\color{red}{ट} & \\color{red}{फ} & & \\color{red}{फ} & \\\\hline
+फ & फ & फ & & फ & \\\\hline
+\\end{array}
+$
 
-Here we have the truth-table for *P*, and then also $P\land Q$. 
+Here we have the truth-table for *P*, and then also $P\\land Q$.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next column shows the truth-value of the premise, *P*.  The final three columns show the truth-value of the conclusion, $P\\land Q$, with the truth-values placed under the main connective, $\\land$.
 
-There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
+There is just one row where $P\\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
 
-So this shows that “Whenever $P\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
+So this shows that “Whenever $P\\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
 
 Let’s check the Disjunction Elimination rule.  Here is the truth-table for $P\lor Q$ and $\neg P$ and *Q*.
 
