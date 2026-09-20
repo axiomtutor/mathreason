@@ -106,25 +106,30 @@ It can be helpful to see an example of an inference rule that is *not* valid.  T
 An example would be "From $P$ we can infer $P\land Q$".  Let's see a truth-table which demonstrates why this is invalid.
 
 $$
-\begin{array}{|c|c||c|c|c|}\hline
+\begin{array}{|c|c||c|c|c||c|}\hline
 P & Q &
+P &
 P & \land & Q \\\hline
 \color{red}{ट} & \color{red}{ट} &
+\color{red}{ट} &
 & \color{red}{ट} & \color{red}{ट}
 \\\hline
 ट & फ &
+ट &
 & फ & फ
 \\\hline
 \color{red}{फ} & \color{red}{ट} &
+\color{red}{फ} &
 & \color{red}{फ} & \color{red}{ट}
 \\\hline
 फ & फ &
-& फ & ф
+फ &
+& फ & फ
 \\\hline
 \end{array}
 $$
 
-Here we have the truth-table for $P\land Q$, and we have included the tables for $P$ and $Q$ to the left.
+Here we have the truth-table for $P\land Q$.  The first two columns show all possible combinations of truth-values for $P$ and $Q$.  The next column shows the truth-value of the premise, $P$.  The final three columns show the truth-value of the conclusion, $P\land Q$.
 
 We are interested only in the rows where the premise, $P$, is true.  These are rows 1 and 2.  In row 1, the conclusion $P\land Q$ is also true.  But in row 2, the premise $P$ is true while the conclusion $P\land Q$ is false.
 
@@ -297,11 +302,11 @@ this explains how the rule allows us to infer $P\lor Q$.
 
 > [!exercise] ***Exercise***
 >
-> From $(P\to Q)\to R$ and *Q*, infer *R.*
+> From $(P\to Q)\to R$ and *Q*, infer *R*.
 
 # Fitch-style Proofs
 
-We will now develop a formal system of writing proofs. 
+We will now develop a formal system of writing proofs.  
 
 For an example, from the assumption $P\land (Q\land R)$ we will prove *R*.
 
@@ -371,7 +376,7 @@ Consider the argument that, from $P\to Q$ and $Q\to R$ we can prove $P\to R$.
 
 In principle that is true.  We could demonstrate, via a truth-table, that the inference is valid.  However, using only the inference rules that we have established so far, it would not be possible.  
 
-Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct, in that it requires the idea of a “subproof”.
+Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct, in that it requires the idea of a “subproof”.  
 
 Before describing this rule, I want to point out that—although this rule might, at first, seem complicated—it is a very natural style of reasoning.  It is so natural, that we have been using it all along in the case study of number theory.
 
@@ -405,7 +410,7 @@ Sub-proof
 | 3.2. | *Q* | Conditional Elimination from 1, 3.1 |
 | 3.3. | R | Conditional Elimination from 2, 3.2 |
 
-The sub-proof is the justification for line 3, which holds $P\to R$.  In order to justify this conditional, the sub-proof mirrors what we said generally:
+The sub-proof is the justification for line 3, which holds $P\to R$.  The sub-proof mirrors what we said generally:
 
 - It assumes the antecedent, *P*.
 - It goes through some reasoning steps (3.2 and 3.3).
