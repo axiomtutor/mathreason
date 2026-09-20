@@ -40,15 +40,7 @@ Each of the above inference rules are justified by the fact that, when its assum
 
 Here is a demonstration for Conjunction Elimination:
 
-$
-\\begin{array}{|c|c||c||c|c|c|}\\hline
-P & Q & P & P & \\land & Q \\\\hline
-\\color{red}{ट} & \\color{red}{ट} & \\color{red}{ट} & & \\color{red}{ट} & \\\\hline
-ट & फ & ट & & फ & \\\\hline
-\\color{red}{फ} & \\color{red}{ट} & \\color{red}{फ} & & \\color{red}{फ} & \\\\hline
-फ & फ & फ & & फ & \\\\hline
-\\end{array}
-$
+
 
 Here we have the truth-table for *P*, and then also $P\\land Q$.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next column shows the truth-value of the premise, *P*.  The final three columns show the truth-value of the conclusion, $P\\land Q$, with the truth-values placed under the main connective, $\\land$.
 
@@ -110,18 +102,18 @@ P & \land & Q \\\hline
 \\\hline
 \color{red}{फ} & \color{red}{ट} &
 \color{red}{फ} &
-& \color{red}{ф} &
+& \color{red}{फ} &
 \\\hline
 फ & फ &
 फ &
-& ф &
+& फ &
 \\\hline
 \end{array}
 $$
 
 Here we have the truth-table for *P* and then $P\land Q$.  
 
-For this to be valid, every model for which the premise *P* is true, we require that the inferred proposition $P\land Q$ should also be true.  
+For the inference "If *P* then $P\land Q$" to be valid, we should look at each model (row of the truth-table).  
 
 > [!exercise] ***Exercise***
 >
