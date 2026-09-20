@@ -41,21 +41,26 @@ Each of the above inference rules are justified by the fact that, when its assum
 Here is a demonstration for Conjunction Elimination:
 
 $$
-\begin{array}{|c|c||c|c|c||c|}\hline
+\begin{array}{|c|c||c|c|c|c|}\hline
  P & Q &
- P & \land & Q &
- P \\\hline
+ P &
+ P & \land & Q \\\hline
  \color{red}{ट} & \color{red}{ट} &
-  & \color{red}{ट} &  & \color{red}{ट}
+ \color{red}{ट} &
+ \color{red}{ट} & &
+ \color{red}{ट}
  \\\hline
  ट & फ &
-  & फ &  & ट
+ ट &
+ & फ & फ
  \\\hline
  \color{red}{फ} & \color{red}{ट} &
-  & \color{red}{फ} &  & \color{red}{फ}
+ \color{red}{फ} &
+ & \color{red}{फ} & \color{red}{ट}
  \\\hline
  फ & फ &
-  & फ &  & फ
+ फ &
+ & ф & ф
  \\\hline
 \end{array}
 $$
@@ -106,30 +111,30 @@ It can be helpful to see an example of an inference rule that is *not* valid.  T
 An example would be "From $P$ we can infer $P\land Q$".  Let's see a truth-table which demonstrates why this is invalid.
 
 $$
-\begin{array}{|c|c||c|c|c||c|}\hline
+\begin{array}{|c|c||c||c|c|c|}\hline
 P & Q &
 P &
 P & \land & Q \\\hline
 \color{red}{ट} & \color{red}{ट} &
 \color{red}{ट} &
-& \color{red}{ट} & \color{red}{ट}
+& \color{red}{ट} &
 \\\hline
 ट & फ &
 ट &
-& फ & फ
+& फ &
 \\\hline
 \color{red}{फ} & \color{red}{ट} &
 \color{red}{फ} &
-& \color{red}{फ} & \color{red}{ट}
+& \color{red}{ф} &
 \\\hline
 फ & फ &
 फ &
-& फ & फ
+& ф &
 \\\hline
 \end{array}
 $$
 
-Here we have the truth-table for $P\land Q$.  The first two columns show all possible combinations of truth-values for $P$ and $Q$.  The next column shows the truth-value of the premise, $P$.  The final three columns show the truth-value of the conclusion, $P\land Q$.
+Here we have the truth-table for $P\land Q$.  The first two columns show all possible combinations of truth-values for $P$ and $Q$.  The next column shows the truth-value of the premise, $P$.  The final three columns show the truth-value of the conclusion, $P\land Q$, with the truth-values placed under the main connective, $\land$.
 
 We are interested only in the rows where the premise, $P$, is true.  These are rows 1 and 2.  In row 1, the conclusion $P\land Q$ is also true.  But in row 2, the premise $P$ is true while the conclusion $P\land Q$ is false.
 
@@ -594,7 +599,7 @@ Recall the proof that every number is even or odd, but not both.  This was a “
 
 By a very brief summary, let the number be *n.*  Then if $n \mod 2 = 0$, we proved that *n* is even or odd, but not both.  Then if $n\mod 2 = 1$, we proved that *n* is even or odd, but not both.  
 
-This generally is called a “proof by cases”.  The two “cases” are $n\mod 2=0$ or $n \mod 2 = 1$.
+This generally is called a “proof by cases”.  The two “cases” are $n\mod 2=0$ or $n\mod 2 = 1$.
 
 In propositional logic it is structured like so:  Let $\phi,\chi,\psi$ be formulas.  If we have already accepted $\phi\lor\psi$, and we’ve accepted $\phi\to \chi$, and we’ve accepted $\psi\to\chi$.  Then we can infer $\chi$.
 
