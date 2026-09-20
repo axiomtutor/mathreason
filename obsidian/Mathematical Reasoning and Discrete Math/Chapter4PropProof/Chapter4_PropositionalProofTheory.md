@@ -65,7 +65,7 @@ $$
 \end{array}
 $$
 
-Here we have the truth-table for $P\land Q$, and we've included the table for *P* next to it.  
+Here we have the truth-table for *P*, and then also $P\land Q$. 
 
 There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
 
@@ -134,11 +134,9 @@ P & \land & Q \\\hline
 \end{array}
 $$
 
-Here we have the truth-table for $P\land Q$.  The first two columns show all possible combinations of truth-values for $P$ and $Q$.  The next column shows the truth-value of the premise, $P$.  The final three columns show the truth-value of the conclusion, $P\land Q$, with the truth-values placed under the main connective, $\land$.
+Here we have the truth-table for *P* and then $P\land Q$.  
 
-We are interested only in the rows where the premise, $P$, is true.  These are rows 1 and 2.  In row 1, the conclusion $P\land Q$ is also true.  But in row 2, the premise $P$ is true while the conclusion $P\land Q$ is false.
-
-This row gives us an example where the premise is true but the conclusion is false.  Therefore the inference rule is invalid.
+For this to be valid, every model for which the premise *P* is true, we require that the inferred proposition $P\land Q$ should also be true.  
 
 > [!exercise] ***Exercise***
 >
