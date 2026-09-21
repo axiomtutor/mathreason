@@ -277,7 +277,7 @@ const decorateProofTables = (tokens) => {
       } else if (inHeaderRow && t.type === "th_open") {
         cell++;
       } else if (inHeaderRow && t.type === "inline" && cell >= 0) {
-        header[cell] = normalize(t.content);
+        header[cell] = inlineText(t);
       } else if (inHeaderRow && t.type === "tr_close") {
         break;
       }
@@ -311,7 +311,7 @@ const decorateProofTables = (tokens) => {
         if (t.type === "td_open") {
           cellIndex++;
         } else if (t.type === "inline" && cellIndex === 2) {
-          reason = normalize(t.content);
+          reason = inlineText(t);
         } else if (t.type === "tr_close") {
           break;
         }
