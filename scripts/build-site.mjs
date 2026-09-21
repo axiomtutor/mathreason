@@ -246,6 +246,84 @@ const fixMath = (src) =>
     .replace(/\$\$([\s\S]*?)\$\$/g, (_m, body) => `$$${normaliseMath(body, true)}$$`)
     .replace(/\$([^$\n]+)\$/g, (_m, body) => `$${normaliseMath(body, false)}$`);
 
+
+// Add semantic classes to Fitch-style proof tables without changing their
+// Markdown source, so KaTeX continues to render normally.
+const decorateProofTables = (tokens) => {
+  const normalize = (s) => s.replace(/\s+/g, " ").trim();
+
+  for (let i = 0; i < tokens.length; i++) {
+    if (tokens[i].type !== "table_open") continue;
+
+    const tableEnd = tokens.slice(i + 1).findIndex((t) => t.type === "table_close");
+    if (tableEnd < 0) continue;
+    const end = i + 1 + tableEnd;
+
+    const header = [];
+    let inHeaderRow = false;
+    let cell = -1;
+    for (let j = i + 1; j < end; j++) {
+      const t = tokens[j];
+      if (t.type === "thead_open") inHeaderRow = true;
+      else if (t.type === "thead_close") inHeaderRow = false;
+      else if (inHeaderRow && t.type === "tr_open") {
+        cell = -1;
+      } else if (inHeaderRow && t.type === "th_open") {
+        cell++;
+      } else if (inHeaderRow && t.type === "inline" && cell >= 0) {
+        header[cell] = normalize(t.content);
+      } else if (inHeaderRow && t.type === "tr_close") {
+        break;
+      }
+    }
+
+    if (
+      header.length !== 3 ||
+      header[0].toLowerCase() !== "index" ||
+      header[1].toLowerCase() !== "formula" ||
+      header[2].toLowerCase() !== "reason"
+    ) {
+      continue;
+    }
+
+    const tbodyStart = tokens.slice(i + 1, end).findIndex((t) => t.type === "tbody_open");
+    if (tbodyStart < 0) continue;
+    const bodyStart = i + 1 + tbodyStart;
+    const tbodyEndOffset = tokens.slice(bodyStart + 1, end).findIndex((t) => t.type === "tbody_close");
+    const bodyEnd = tbodyEndOffset < 0 ? end : bodyStart + 1 + tbodyEndOffset;
+
+    const rows = [];
+    for (let j = bodyStart + 1; j < bodyEnd; j++) {
+      if (tokens[j].type !== "tr_open") continue;
+
+      const rowToken = tokens[j];
+      let reason = "";
+      let cellIndex = -1;
+
+      for (let k = j + 1; k < bodyEnd; k++) {
+        const t = tokens[k];
+        if (t.type === "td_open") {
+          cellIndex++;
+        } else if (t.type === "inline" && cellIndex === 2) {
+          reason = normalize(t.content);
+        } else if (t.type === "tr_close") {
+          break;
+        }
+      }
+
+      if (/^assumption\b/i.test(reason)) rowToken.attrJoin("class", "proof-assumption");
+      rows.push(rowToken);
+
+      while (j < bodyEnd && tokens[j].type !== "tr_close") j++;
+    }
+
+    if (rows.length) {
+      rows[rows.length - 1].attrJoin("class", "proof-conclusion");
+      tokens[i].attrJoin("class", "proof-table");
+    }
+  }
+};
+
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use(katexPlugin, {
   throwOnError: false,
   strict: false,
@@ -255,6 +333,7 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use
 const renderPage = (page) => {
   const env = {};
   const tokens = md.parse(fixMath(page.raw), env);
+  decorateProofTables(tokens);
   const headings = [];
   const seenIds = new Set();
 
