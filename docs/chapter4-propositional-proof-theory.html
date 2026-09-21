@@ -396,7 +396,7 @@ P &amp; \land &amp; Q \\\hline
 <li>Show <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\psi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">ψ</span></span></span></span>.</li>
 </ul>
 <p>It may be easier to see an example first, and then describe how it works.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -422,8 +422,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -449,7 +448,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<p>The sub-proof is the justification for line 3, which holds <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">P\to R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span>.  The sub-proof mirrors what we said generally:</p>
+</div></div><p>The sub-proof is the justification for line 3, which holds <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">P\to R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span>.  The sub-proof mirrors what we said generally:</p>
 <ul>
 <li>It assumes the antecedent, <em>P</em>.</li>
 <li>It goes through some reasoning steps (3.2 and 3.3).</li>
@@ -464,7 +463,7 @@ P &amp; \land &amp; Q \\\hline
 <hr>
 <p>Here is another example.  From <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">P\to R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span>, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">P\to S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span></span></span></span>, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>R</mi><mo>∧</mo><mi>S</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">(P\to (R\land S))\to Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span> we can prove that <em>Q</em>.</p>
 <p>The following shows that you can have a proof that continues after the subproof has ended.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -495,8 +494,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -527,7 +525,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<table class="proof-table">
+</div></div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -546,7 +544,7 @@ P &amp; \land &amp; Q \\\hline
 <hr>
 <p>Let’s now see how a sub-proof can go wrong.</p>
 <p>Consider the following invalid proof that, from <em>P</em>, we can infer <em>Q</em>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -567,8 +565,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -589,7 +586,7 @@ P &amp; \land &amp; Q \\\hline
 </tr>
 </tbody>
 </table>
-<table class="proof-table">
+</div></div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -619,7 +616,7 @@ Using <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 Once this is done, you must stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span> and any of the formulas proved after assuming <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span>.</p>
 </blockquote>
 </div></section><p>We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">(P\land Q)\to R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span> that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\to (Q\to R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mclose">)</span></span></span></span>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -640,8 +637,7 @@ Once this is done, you must stop assuming <span class="katex"><span class="katex
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -662,8 +658,7 @@ Once this is done, you must stop assuming <span class="katex"><span class="katex
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -689,10 +684,10 @@ Once this is done, you must stop assuming <span class="katex"><span class="katex
 </tr>
 </tbody>
 </table>
-<hr>
+</div></div></div></div><hr>
 <p>In fact, we can now have proofs which use <em>no premises at all</em>!</p>
 <p>In the example below, I give a proof, from no premises, to the conclusion that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">P\to P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>.  It makes sense that we should be able to prove tautologies like this: they are always true, regardless of your assumptions.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -708,8 +703,7 @@ Once this is done, you must stop assuming <span class="katex"><span class="katex
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -730,7 +724,7 @@ Once this is done, you must stop assuming <span class="katex"><span class="katex
 </tr>
 </tbody>
 </table>
-<section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><ol>
+</div></div><section class="callout callout-exercise"><p class="callout-label">Exercise</p><div class="callout-body"><ol>
 <li>Prove, from no premises, that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\to (Q\to P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span>.</li>
 <li>Prove, from <em>P</em> and <em>Q</em> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>↔</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>→</mo><mo stretchy="false">(</mo><mi>R</mi><mo>∧</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P\leftrightarrow Q) \to (R\land S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mclose">)</span></span></span></span>, that <em>R</em>.</li>
 </ol>
@@ -753,7 +747,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 <p>Notice that we must effectively do two separate conditional introduction proofs, one going in each of the directions.</p>
 <p>The sub-indexing is designed to reflect each direction.  We use the notation 1.only1 to indicate the sub-proof in the “only if” direction.  In this case, that means the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\to (P\land P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span> direction.</p>
 <p>We use the notation 1.if1 to indicate the “if” direction.  In this case, that means <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>P</mi><mo stretchy="false">)</mo><mo>→</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">(P\land P)\to P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -769,8 +763,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -791,7 +784,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<table class="proof-table">
+</div></div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -903,7 +896,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 <p>Why?  Well it shows that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\neg \phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">ϕ</span></span></span></span> leads to a contradiction.  Since a contradiction is impossible, therefore <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\neg \phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">ϕ</span></span></span></span> is false.</p>
 <p>Since <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\neg\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">ϕ</span></span></span></span> is false, then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span> is true—which means that we can infer <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span>.</p>
 <p>Let’s now see an example in practice.  From <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P\to Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">Q</span></span></span></span>, we prove <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\neg P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -929,8 +922,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -961,7 +953,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<p>Look over this proof and see how it aligns with what we described earlier.  The sub-proof:</p>
+</div></div><p>Look over this proof and see how it aligns with what we described earlier.  The sub-proof:</p>
 <ul>
 <li>We are trying to prove <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\neg P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span></span></span></span>.</li>
 <li>Therefore we assume <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\neg(\neg P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span>.</li>
@@ -972,7 +964,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 <hr>
 <p>However, once the sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inference using Proof by Contradiction.</p>
 <p>Here we give an invalid proof that from <em>P</em> we can infer <em>Q</em>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -993,8 +985,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -1020,7 +1011,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<table class="proof-table">
+</div></div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -1041,7 +1032,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 <hr>
 <p>Yet again, as with Conditional Introduction, Proof by Contradiction allows us to prove things from no premises at all.</p>
 <p>Here we prove from no premises, that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\neg(P\land \neg P)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mclose">)</span></span></span></span>.</p>
-<table class="proof-table">
+<div class="proof-block"><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -1057,8 +1048,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<p>Sub-proof</p>
-<table class="proof-table">
+<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div><table class="proof-table">
 <thead>
 <tr>
 <th><strong>Index</strong></th>
@@ -1079,7 +1069,7 @@ Then stop assuming <span class="katex"><span class="katex-mathml"><math xmlns="h
 </tr>
 </tbody>
 </table>
-<section class="callout callout-definition"><p class="callout-label">Definition</p><div class="callout-body"><p><strong>Proof by Contradiction</strong> is the following inference rule.</p>
+</div></div><section class="callout callout-definition"><p class="callout-label">Definition</p><div class="callout-body"><p><strong>Proof by Contradiction</strong> is the following inference rule.</p>
 <blockquote>
 <p>The following allows you to infer <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span>.
 Assume <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\neg \phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">ϕ</span></span></span></span>.
