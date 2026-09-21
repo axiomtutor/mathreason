@@ -126,6 +126,9 @@ a:hover { text-decoration-color: currentColor; }
 .prose th, .prose td { border: 1px solid var(--rule); padding: .5rem .7rem; text-align: left; }
 .prose th { background: var(--accent-soft); font-family: var(--sans); font-size: .82rem; letter-spacing: .03em; }
 
+.prose table.proof-table tbody tr.proof-assumption { background-color: #fce4e4; }
+.prose table.proof-table tbody tr.proof-conclusion { background-color: #e4f4e4; }
+
 /* ---------------------------------------------------------------- math, toc */
 
 .katex { font-size: 1.04em; }

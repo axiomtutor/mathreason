@@ -153,7 +153,7 @@ For this reason, the inference "If *P* then $P\land Q$" is invalid.
 
 # Proofs
 
-Now let’s look at proofs, which are just a sequence of inferences.  Suppose that we accept the formulas 
+Now let’s look at proofs.  A proof is just a sequence of inferences.  Suppose that we accept the formulas 
 
 - $\neg P$
 - $P\lor Q$
@@ -163,15 +163,16 @@ Let’s write a proof, from these assumptions, to the conclusion *R*.
 
 Because we accept $\neg P$ and $P\lor Q$, therefore we may use the Disjunction Elimination rule to infer *Q*.  Therefore we now accept *Q*.
 
-Now because we accept *Q* and $Q\to R$, then we may use the Conditional Elimination rule to infer *R*.  
+Because we now accept *Q* and $Q\to R$, then we may use the Conditional Elimination rule to infer *R*.  
 
 Because we now accept *R*, which is the intended conclusion of the proof, then this proof is complete.
 
 ---
 
-Notice the way that a proof works: We start by assuming the truth of some formulas.  Using these assumptions, we apply the inference rules to infer new formulas.  When a new formula is inferred, it may then be used in further steps.
-
-We continue this process until we eventually infer the conclusion of the proof.  
+Notice the way that the proof above works: 
+1. We start by assuming the truth of some formulas.  
+2. Using these assumptions, we apply the inference rules to infer new formulas.  When a new formula is inferred, it may then be used in further steps.
+3. We continue this process until we eventually infer the conclusion of the proof.  
 
 > [!exercise] ***Exercise***
 >
@@ -195,7 +196,14 @@ Therefore if we substitute $P\lor Q$ with $Q\lor P$, it shouldn’t change the v
 >
 > Draw a truth-table to prove that $(P\lor Q)\land R$ is equivalent to $(Q\lor P)\land R$.
 
-More generally suppose that $\phi$ is a formula, $\chi$ is a subformula, and $\psi$ is equivalent to $\phi$.  Then it should be true that, if you substitute $\chi$ for $\psi$ in $\phi$, the result should be equivalent to $\phi$.  
+More generally suppose that 
+* $\phi$ is a formula, 
+* $\chi$ is a subformula of $\phi$, 
+* and $\psi$ is equivalent to $\chi$.  
+
+Then it should be true that, if you substitute $\psi$ for $\chi$ then the result should be equivalent to $\phi$.  
+
+> Substitution of a subformula with an equivalent subformula results in an equivalent formula.
 
 In order to define an inference rule for substitution, we first have to define substitution.
 
@@ -219,6 +227,8 @@ $$
 P\land ((P\land S)\lor R)
 $$
 
+There ya go, that's how do you do substitution in general!
+
 > [!exercise] ***Exercise***
 >
 > Show that $[P\land (Q\to P)]_{P:= \neg P}$ is equal to $(\neg P)\land (Q\to\neg P)$.
@@ -230,7 +240,7 @@ $$
 >
 > Explain why $\phi_{\chi:= \psi}=\phi$.
 
-This was just an exercise in performing substitution, with no real interesting consequence.  But now that we understand substitution, we can state the following inference rules.
+Now that we understand substitution, we can state the following inference rules.
 
 > [!definition] ***Definition***
 >
@@ -262,19 +272,27 @@ This was just an exercise in performing substitution, with no real interesting c
 >
 > **Reiteration** is the inference rule that, if $\phi$ has been proved before, then it can be used later in a proof, at any time.
 
-A very simple demonstration of one of these inference rules: From *P* we can infer $\neg(\neg P)$ by double negation.  In this example, $\phi=P$ and $\chi = P$.
+Let's see how we can use these rules to show that from *P* we can infer $\neg(\neg P)$.  To do so we'll use the double negation rule.  
 
-We are using the version of double negation, in which we infer $\phi_{\chi:=\neg(\neg\chi)}$.  In this case, that means we are inferring $P_{P:=\neg(\neg P)}$.  Since 
+In this example, $\phi=P$ and $\chi = P$.
+
+We are using the version of double negation, in which we infer $\phi_{\chi:=\neg(\neg\chi)}$.  In this case, that means we are inferring $P_{P:=\neg(\neg P)}$.  
+
+Let's calculate that
 
 $$
 P_{P:=\neg(\neg P)} = \neg(\neg P)
 $$
 
-then this explains how the rule allows us to infer $\neg(\neg P)$.
+The double negation rule therefore says that from *P* we may infer $\neg(\neg P)$.  
 
 ---
 
-Another example is that, from $P\lor \neg(\neg Q)$ we can infer $P\lor Q$.  In this example, we use $\phi=P\lor \neg(\neg Q)$ and $\chi = \neg(\neg Q)$.  We use the version of double negation which lets us infer $\phi_{\neg(\neg \chi):=\chi}$.
+Here is another worked example, again using double negation but this time in the other direction.  
+
+From $P\lor \neg(\neg Q)$ we can infer $P\lor Q$.  
+
+In this example, we use $\phi=P\lor \neg(\neg Q)$ and $\chi = \neg(\neg Q)$.  We use the version of double negation which lets us infer $\phi_{\neg(\neg \chi):=\chi}$.
 
 Since 
 
@@ -304,15 +322,13 @@ this explains how the rule allows us to infer $P\lor Q$.
 >
 > Note: This inference requires several steps.  One way to do it is to first use distribution, and then use commutativity three times.
 
-> [!exercise] ***Exercise***
->
-> From $(P\to Q)\to R$ and *Q*, infer *R*.
-
 # Fitch-style Proofs
 
 We will now develop a formal system of writing proofs.  
 
 For an example, from the assumption $P\land (Q\land R)$ we will prove *R*.
+
+Here is a presentation of the proof in a "Fitch-style" sequence of numbered lines.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -320,15 +336,33 @@ For an example, from the assumption $P\land (Q\land R)$ we will prove *R*.
 | 2. | $Q\land R$ | Conjunction Elimination from 1 |
 | 3. | *R* | Conjunction Elimination from 2 |
 
-> [!note]- This is called a “Fitch-style proof”.
+
+
+> [!note]- Alternate styles of proof systems.
 >
-> There are other ways of displaying a proof.  We did so in a more paragraph style in the previous section.  There are also “Gentzen-style proofs” and “the sequent calculus”.  They all prove the same things, they just do so with different styles of notation.
+> There are other ways of displaying a proof.  
+> 1. Before this section on Fitch-style proofs, we presented proofs in a paragraph style.  
+> 2. There are also “Gentzen-style proofs” and “the sequent calculus”.  They all prove the same things, they just do so with different styles of notation.
+>    
+>    See this article from the SEP for more information on proof styles. https://plato.stanford.edu/archives/fall2025/entries/natural-deduction/
 
-A proof is a sequence of formulas, each with a justification.  A formula may be justified by being an assumption.  If there are any assumptions, these come at the beginning of the proof.  
+> [!definition] ***Definition***
+> 
+> Let $\Gamma = \{\phi_1, \phi_2,...,\phi_m\}$ be a finite set of formulas, which we will call the **set of assumptions**.  
+> 
+> Let $\Psi = (\psi_1,\psi_2,...,\psi_n)$ be a finite sequence of formulas.  We say that $\Psi$ is a **proof of $\psi_n$ from $\Gamma$** if the following conditions hold.  
+> 
+> For every $1\le i\le n$, 
+> * Either $\psi_i \in\Gamma$, or 
+> * there is an inference rule such that the formulas $\psi_1,\psi_2,...,\psi_{i-1}$ allow one to infer $\psi_i$.
 
-If a formula is not an assumption, then it must be justified by an inference rule, with a reference to previous formulas to which the rule is applied.  
-
-And a proof must always end on with the concluding formula.  
+ > [!note]- The definition put simply.  
+ > 
+ > The simple version of what this definition says, is that a proof is a sequence of formulas, each with a justification.  A formula may be justified by being an assumption.  (If there are any assumptions, we traditionally place these at the beginning of the proof, but it's not technically required.) 
+ > 
+ > If a formula is not an assumption, then it must be justified by an inference rule.  An inference rule must refer only to propositions which have already been accepted earlier in the proof.  
+ > 
+ > And a proof must always end on with the concluding formula.  
 
 For emphasis, I will color the assumptions with red and the conclusion with green.
 
@@ -336,12 +370,12 @@ For emphasis, I will color the assumptions with red and the conclusion with gree
 
 Let’s see another example.  From the assumptions $\neg Q$ and $P\to Q$, we prove $\neg P$.  
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 1. | $\neg Q$ | Assumption |
-| 2. | $P\to Q$ | Assumption |
-| 3. | $(\neg P)\lor Q$ | Material Implication from 2 |
-| 4. | $\neg P$ | Disjunction Elimination from 1, 3 |
+| **Index** | **Formula**      | **Reason**                        |
+| --------- | ---------------- | --------------------------------- |
+| 1.        | $\neg Q$         | Assumption                        |
+| 2.        | $P\to Q$         | Assumption                        |
+| 3.        | $(\neg P)\lor Q$ | Material Implication from 2       |
+| 4.        | $\neg P$         | Disjunction Elimination from 1, 3 |
 
 ---
 
@@ -373,6 +407,7 @@ From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
 > From the assumptions $(\neg P)\lor Q$ and *P*, prove *Q*.
 >
 > (The first proof requires six lines, and the others require significantly fewer.)
+
 
 # Conditional Introduction
 
