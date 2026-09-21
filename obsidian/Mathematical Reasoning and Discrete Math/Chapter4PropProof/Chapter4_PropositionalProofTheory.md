@@ -125,7 +125,19 @@ $$
 
 Here we have the truth-table for *P* and then $P\land Q$.  
 
-For the inference "If *P* then $P\land Q$" to be valid, we should look at each model (row of the truth-table).  
+For the inference "If *P* then $P\land Q$" to be valid, we should look at each model (row of the truth-table).  If there is a model where *P* is true, we check that in that model also $P\land Q$ is true.  
+
+However, this time, that's not true!  There is an offending row!  
+
+It is row 2, the model in which $P^म=ट$ and $Q^म=फ$.  In this model, *P* is true while $P\land Q$ is false.  
+
+For this reason, the inference "If *P* then $P\land Q$" is invalid.
+
+> [!note]- It just takes one model.
+> 
+> Note that just one "offending" model is all it takes to demonstrate that an inference is invalid.  (By "offending" model I mean a model in which the premise(s) is(are) true while the conclusion is false.)
+> 
+> If there are many such offending models, then the argument is invalid.  But even if there is just one, then that still means the inference is invalid.
 
 > [!exercise] ***Exercise***
 >
