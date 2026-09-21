@@ -340,6 +340,7 @@ const renderPage = (page) => {
   const env = {};
   const tokens = md.parse(fixMath(page.raw), env);
   decorateProofTables(tokens);
+  const withProofSubproofs = wrapProofSubproofs(tokens);
   const headings = [];
   const seenIds = new Set();
 
@@ -407,7 +408,9 @@ const renderPage = (page) => {
     }
   }
 
-  const withCallouts = page.legacy ? wrapLegacyCallouts(tokens) : wrapObsidianCallouts(tokens, md, env);
+  const withCallouts = page.legacy
+    ? wrapLegacyCallouts(withProofSubproofs)
+    : wrapObsidianCallouts(withProofSubproofs, md, env);
   const withSections = wrapSections(withCallouts, md, env);
 
   return { html: md.renderer.render(withSections, md.options, env), headings };
@@ -416,6 +419,70 @@ const renderPage = (page) => {
 /* ------------------------------------------------- callouts & collapsibles */
 
 const htmlTok = (content) => ({ type: "html_block", tag: "", content, block: true, attrs: null, children: null });
+
+const isProofTable = (token) =>
+  token?.type === "table_open" && /(^|\s)proof-table(?:\s|$)/.test(token.attrGet("class") ?? "");
+
+const isSubproofMarker = (tokens, index) => {
+  const inline = tokens[index + 1];
+  return (
+    tokens[index]?.type === "paragraph_open" &&
+    inline?.type === "inline" &&
+    inline.content.trim().toLowerCase() === "sub-proof" &&
+    tokens[index + 2]?.type === "paragraph_close"
+  );
+};
+
+const findTableClose = (tokens, start) => {
+  const offset = tokens.slice(start + 1).findIndex((token) => token.type === "table_close");
+  return offset < 0 ? -1 : start + 1 + offset;
+};
+
+// Proof tables are written sequentially in Markdown. Turn the proof-table,
+// Sub-proof, proof-table pattern into a nested visual structure while leaving
+// the actual Markdown tables intact for KaTeX.
+const consumeProofBlock = (tokens, start) => {
+  const end = findTableClose(tokens, start);
+  if (end < 0) return { tokens: [tokens[start]], end: start + 1 };
+
+  const marker = end + 1;
+  const childStart = marker + 3;
+  if (isSubproofMarker(tokens, marker) && isProofTable(tokens[childStart])) {
+    const child = consumeProofBlock(tokens, childStart);
+    return {
+      tokens: [
+        htmlTok('<div class="proof-block">'),
+        ...tokens.slice(start, end + 1),
+        htmlTok('<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div>'),
+        ...child.tokens,
+        htmlTok('</div></div>')
+      ],
+      end: child.end
+    };
+  }
+
+  return {
+    tokens: tokens.slice(start, end + 1),
+    end: end + 1
+  };
+};
+
+const wrapProofSubproofs = (tokens) => {
+  const out = [];
+  for (let i = 0; i < tokens.length;) {
+    if (!isProofTable(tokens[i])) {
+      out.push(tokens[i]);
+      i++;
+      continue;
+    }
+
+    const block = consumeProofBlock(tokens, i);
+    out.push(...block.tokens);
+    i = block.end;
+  }
+  return out;
+};
+
 
 const kindOf = (label) => {
   const l = label.trim().toLowerCase();

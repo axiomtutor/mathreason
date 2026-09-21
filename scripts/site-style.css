@@ -129,6 +129,36 @@ a:hover { text-decoration-color: currentColor; }
 .prose table.proof-table tbody tr.proof-assumption { background-color: #fce4e4; }
 .prose table.proof-table tbody tr.proof-conclusion { background-color: #e4f4e4; }
 
+.proof-block {
+  margin: 1.5rem 0;
+}
+
+.proof-block > table.proof-table {
+  margin: 0;
+}
+
+.proof-subproof {
+  margin: 0 1rem 0;
+  padding: 0 .7rem .7rem;
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 .35rem .35rem;
+  background: var(--paper-raised);
+}
+
+.proof-subproof-label {
+  padding: .45rem .2rem .35rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.proof-subproof > table.proof-table {
+  margin: 0;
+}
+
 /* ---------------------------------------------------------------- math, toc */
 
 .katex { font-size: 1.04em; }
