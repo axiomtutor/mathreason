@@ -250,7 +250,13 @@ const fixMath = (src) =>
 // Add semantic classes to Fitch-style proof tables without changing their
 // Markdown source, so KaTeX continues to render normally.
 const decorateProofTables = (tokens) => {
-  const normalize = (s) => s.replace(/\s+/g, " ").trim();
+  const inlineText = (token) =>
+    (token.children ?? [])
+      .filter((child) => child.type === "text")
+      .map((child) => child.content)
+      .join("")
+      .replace(/\s+/g, " ")
+      .trim();
 
   for (let i = 0; i < tokens.length; i++) {
     if (tokens[i].type !== "table_open") continue;
