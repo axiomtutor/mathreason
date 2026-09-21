@@ -42,7 +42,7 @@ Here is a demonstration for Conjunction Elimination:
 
 
 
-Here we have the truth-table for *P*, and then also $P\\land Q$.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next column shows the truth-value of the premise, *P*.  The final three columns show the truth-value of the conclusion, $P\\land Q$, with the truth-values placed under the main connective, $\\land$.
+Here we have the truth-table for the premise $P\land Q$ and the conclusion *P*.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next three columns show the truth-value of the premise, $P\land Q$, with the truth-value placed under its main connective, $\land$.  The final column shows the truth-value of the conclusion, *P*.
 
 There is just one row where $P\\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
 
@@ -55,20 +55,20 @@ $$
 P & Q &
 P & \land & Q &
 P \\\hline
-\color{red}{ट} & \color{red}{ट} &
-\color{red}{ट} & & \color{red}{ट} &
-\color{red}{ट}
+\color{red}ट & \color{red}ट &
+& \color{red}ट & &
+\color{red}ट
 \\\hline
 ट & फ &
-ट & & फ &
+& फ &
 ट
 \\\hline
-फ & ट &
-फ & & ट &
-फ
+\color{red}फ & \color{red}ट &
+& \color{red}फ & &
+\color{red}फ
 \\\hline
 फ & फ &
-फ & & फ &
+& फ &
 फ
 \\\hline
 \end{array}
