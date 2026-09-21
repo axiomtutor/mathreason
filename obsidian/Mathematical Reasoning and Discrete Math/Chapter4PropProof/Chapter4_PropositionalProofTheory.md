@@ -56,9 +56,9 @@ $$
 
 Here we have the truth-table for the premise $P\land Q$ and the conclusion *P*.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next three columns show the truth-value of the premise, $P\land Q$, with the truth-value placed under its main connective, $\land$.  The final column shows the truth-value of the conclusion, *P*.
 
-There is just one row where $P\\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
+There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
 
-So this shows that “Whenever $P\\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
+So this shows that “Whenever $P\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
 
 Let’s check the Disjunction Elimination rule.  Here is the truth-table for $P\lor Q$ and $\neg P$ and *Q*.
 
