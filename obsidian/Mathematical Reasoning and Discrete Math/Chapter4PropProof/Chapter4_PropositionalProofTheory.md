@@ -42,26 +42,13 @@ Here is a demonstration for Conjunction Elimination:
 
 
 $$
-\begin{array}{|c|c||c|c|c||c|}\hline
-P & Q &
-P & \land & Q &
-P \\ \hline
-\color{red}ट & \color{red}ट &
-& \color{red}ट & &
-\color{red}ट
-\\\hline
-ट & फ &
-& फ &
-ट
-\\\hline
-\color{red}फ & \color{red}ट &
-& \color{red}फ & &
-\color{red}फ
-\\\hline
-फ & फ &
-& फ &
-फ
-\\\hline
+\begin{array}{|c|c||c|c|c||c|}
+\hline
+P & Q & P & \land & Q & P \\ \hline
+\color{red} ट & \color{red}ट & & \color{red}ट & & \color{red}ट \\
+ट & फ & & फ & & ट \\
+\color{red}फ & \color{red}ट & & \color{red}फ & & \color{red}फ \\
+फ & फ & & फ & & फ \\ \hline
 \end{array}
 $$
 
