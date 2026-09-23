@@ -334,7 +334,7 @@ Here is a presentation of the proof in a "Fitch-style" sequence of numbered line
 | --- | --- | --- |
 | 1. | $P\land (Q\land R)$ | Assumption |
 | 2. | $Q\land R$ | Conjunction Elimination from 1 |
-| 3. | *R* | Conjunction Elimination from 2 |
+| 3. | *R* | Conjunction Elimination from 2. |
 
 ---
 
@@ -346,7 +346,7 @@ Let’s see another example.  From the assumptions $\neg Q$ and $P\to Q$, we pro
 | 1.        | $\neg Q$         | Assumption                        |
 | 2.        | $P\to Q$         | Assumption                        |
 | 3.        | $(\neg P)\lor Q$ | Material Implication from 2       |
-| 4.        | $\neg P$         | Disjunction Elimination from 1, 3 |
+| 4.        | $\neg P$         | Disjunction Elimination from 1, 3. |
 
 ---
 
@@ -429,7 +429,7 @@ From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
 | 9. | $Q\lor ((\neg P)\land (\neg R))$ | Factorization from 8 |
 | 10. | $Q\lor\neg(P\lor R)$ | De Morgan’s from 9 |
 | 11. | $\neg(\neg(P\lor R))$ | Double Negation from 3 |
-| 12. | *Q* | Disjunction Elimination from 10, 11 |
+| 12. | *Q* | Disjunction Elimination from 10, 11. |
 
 > [!exercise] ***Exercise***
 >
@@ -472,7 +472,7 @@ Let's demonstrate with an example.  We will now prove, from $P\to Q$ and $Q\to R
 | --- | --- | --- |
 | 1. | $P\to Q$ | Assumption |
 | 2. | $Q\to R$ | Assumption |
-| 3. | $P\to R$ | Conditional Introduction from sub-proof below |
+| 3. | $P\to R$ | Conditional Introduction from sub-proof below. |
 
 Sub-proof
 
@@ -511,11 +511,11 @@ Sub-proof
 | 4.1. | *P* | Assumption for Conditional Introduction |
 | 4.2. | *R* | Conditional Elimination from 1, 4.1 |
 | 4.3. | *S* | Conditional Elimination from 2, 4.1 |
-| 4.4. | $R\land S$ | Conjunction Introduction from 4.2, 4.3 |
+| 4.4. | $R\land S$ | Conjunction Introduction from 4.2, 4.3. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 5. | *Q* | Conditional Elimination from 3, 4 |
+| 5. | *Q* | Conditional Elimination from 3, 4. |
 
 ---
 
@@ -533,11 +533,11 @@ Sub-proof
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 2.1. | *Q* | Assumption for Conditional Introduction |
-| 2.2. | *P* | Reiteration from 1 |
+| 2.2. | *P* | Reiteration from 1. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3. | *Q* | Reiteration from 2.1 |
+| 3. | *Q* | Reiteration from 2.1. |
 
 This should not be possible—*P* does not imply *Q*.  
 
@@ -565,14 +565,14 @@ We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 1. | $(P\land Q)\to R$ | Assumption |
-| 2. | $P\to(Q\to R)$ | Conditional Introduction from subproof below |
+| 2. | $P\to(Q\to R)$ | Conditional Introduction from subproof below. |
 
 Sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 2.1. | *P* | Assumption |
-| 2.2.  | $Q\to R$ | Conditional Introduction from subproof below |
+| 2.2.  | $Q\to R$ | Conditional Introduction from subproof below. |
 
 Sub-proof
 
@@ -580,7 +580,7 @@ Sub-proof
 | --- | --- | --- |
 | 2.2.1. | *Q* | Assumption |
 | 2.2.2. | $P\land Q$ | Conjunction Introduction from 2.1, 2.2.1 |
-| 2.2.3. | *R* | Conditional Elimination from 1, 2.2.2 |
+| 2.2.3. | *R* | Conditional Elimination from 1, 2.2.2. |
 
 ---
 
@@ -590,14 +590,14 @@ In the example below, I give a proof, from no premises, to the conclusion that $
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\to P$ | Conditional Introduction from subproof below |
+| 1. | $P\to P$ | Conditional Introduction from subproof below. |
 
 Sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 1.1. | *P* | Assumption for Conditional Introduction |
-| 1.2. | *P* | Reiteration from 1.1 |
+| 1.2. | *P* | Reiteration from 1.1. |
 
 > [!exercise] ***Exercise***
 >
@@ -638,19 +638,19 @@ We use the notation 1.if1 to indicate the “if” direction.  In this case, tha
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\leftrightarrow (P\land P)$ | Biconditional Introduction from subproof below |
+| 1. | $P\leftrightarrow (P\land P)$ | Biconditional Introduction from subproof below. |
 
 Sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 1.only1 | *P* | Assumption for Biconditional Introduction |
-| 1.2.only1 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1 |
+| 1.2.only1 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 1.if1 | $P\land P$ | Assumption for Biconditional Introduction |
-| 1.if2 | *P* | Conjunction Elimination from 1.if1 |
+| 1.if2 | *P* | Conjunction Elimination from 1.if1. |
 
 > [!exercise] ***Exercise***
 >
@@ -687,11 +687,11 @@ Subproof
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 3.1. | $\neg(P\lor\neg P)$ | Assumption for Proof by Contradiction |
-| 3.2. | $(\neg P)\land \neg(\neg P)$ | De Morgan’s from 3.1 |
+| 3.2. | $(\neg P)\land \neg(\neg P)$ | De Morgan’s from 3.1. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 4. | Q | Proof by Cases from 1, 2, 3 |
+| 4. | Q | Proof by Cases from 1, 2, 3. |
 
 > [!exercise] ***Exercise***
 >
@@ -723,7 +723,7 @@ Let’s now see an example in practice.  From $P\to Q$ and $\neg Q$, we prove $\
 | --- | --- | --- |
 | 1. | $P\to Q$ | Assumption |
 | 2. | $\neg Q$ | Assumption |
-| 3. | $\neg P$ | Proof by Contradiction from subproof below |
+| 3. | $\neg P$ | Proof by Contradiction from subproof below. |
 
 Sub-proof
 
@@ -732,7 +732,7 @@ Sub-proof
 | 3.1. | $\neg(\neg P)$ | Assumption for Proof by Contradiction |
 | 3.2. | *P* | Double Negation from 3.1 |
 | 3.3. | *Q* | Conditional Elimination from 1, 3.2 |
-| 3.4. | $Q\land \neg Q$ | Conjunction Introduction from 2, 3.3 |
+| 3.4. | $Q\land \neg Q$ | Conjunction Introduction from 2, 3.3. |
 
 Look over this proof and see how it aligns with what we described earlier.  The sub-proof:
 
