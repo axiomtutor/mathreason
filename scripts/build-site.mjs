@@ -324,7 +324,43 @@ const decorateProofTables = (tokens) => {
     }
 
     if (rows.length) {
-      rows[rows.length - 1].attrJoin("class", "proof-conclusion");
+      // A proof may be split across multiple tables when a sub-proof is
+      // followed by a continuation table.  In that case, the last row of
+      // this table is not necessarily the conclusion of the proof.
+      //
+      // Find the final table belonging to this proof by following any
+      // sub-proof and then any continuation proof table.  If there is no
+      // continuation after the sub-proof, this table itself is the
+      // conclusion table.
+      const proofConclusionTable = (start) => {
+        const tableEnd = findTableClose(tokens, start);
+        if (tableEnd < 0) return start;
+
+        let end = tableEnd + 1;
+        const childStart = end + 3;
+
+        if (isSubproofMarker(tokens, end) && isProofTable(tokens[childStart])) {
+          const childConclusion = proofConclusionTable(childStart);
+
+          // Find the end of the sub-proof's proof block.  A proof table
+          // immediately following it is a continuation of the current
+          // proof, not a new independent proof.
+          const childEnd = findProofBlockEnd(tokens, childStart);
+
+          if (isProofTable(tokens[childEnd])) {
+            return proofConclusionTable(childEnd);
+          }
+
+          return start;
+        }
+
+        return start;
+      };
+
+      const conclusionTableStart = proofConclusionTable(i);
+      if (conclusionTableStart === i) {
+        rows[rows.length - 1].attrJoin("class", "proof-conclusion");
+      }
       tokens[i].attrJoin("class", "proof-table");
     }
   }
@@ -436,6 +472,27 @@ const isSubproofMarker = (tokens, index) => {
 const findTableClose = (tokens, start) => {
   const offset = tokens.slice(start + 1).findIndex((token) => token.type === "table_close");
   return offset < 0 ? -1 : start + 1 + offset;
+};
+
+const findProofBlockEnd = (tokens, start) => {
+  const end = findTableClose(tokens, start);
+  if (end < 0) return start + 1;
+
+  const marker = end + 1;
+  const childStart = marker + 3;
+  if (isSubproofMarker(tokens, marker) && isProofTable(tokens[childStart])) {
+    let blockEnd = findProofBlockEnd(tokens, childStart);
+
+    // A proof table immediately after the sub-proof is the continuation
+    // of the enclosing proof.
+    if (isProofTable(tokens[blockEnd])) {
+      blockEnd = findProofBlockEnd(tokens, blockEnd);
+    }
+
+    return blockEnd;
+  }
+
+  return end + 1;
 };
 
 // Proof tables are written sequentially in Markdown. Turn the proof-table,
