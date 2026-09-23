@@ -318,27 +318,20 @@ const decorateProofTables = (tokens) => {
       }
 
       if (/^assumption\b/i.test(reason)) rowToken.attrJoin("class", "proof-assumption");
+      rowToken.reason = reason.trim();
       rows.push(rowToken);
 
       while (j < bodyEnd && tokens[j].type !== "tr_close") j++;
     }
 
     if (rows.length) {
-      // A proof table normally ends with a conclusion, so its last row is
-      // green.  The exception is when this table is followed by a sub-proof
-      // and that sub-proof is itself followed by a continuation table.  In
-      // that case, this table ends at the point where the sub-proof begins,
-      // and the continuation table contains the actual end of the proof.
-      let hasContinuationAfterSubproof = false;
-      const marker = end + 1;
-      const childStart = marker + 3;
-
-      if (isSubproofMarker(tokens, marker) && isProofTable(tokens[childStart])) {
-        const childEnd = findProofBlockEnd(tokens, childStart);
-        hasContinuationAfterSubproof = isProofTable(tokens[childEnd]);
-      }
-
-      if (!hasContinuationAfterSubproof) {
+      // A final justification ending with a period marks the row as a
+      // non-conclusion; otherwise the final row is styled as the conclusion.
+      if (/[.]$/.test(
+        rows[rows.length - 1].reason ?? ""
+      )) {
+        rows[rows.length - 1].attrJoin("class", "proof-assumption");
+      } else {
         rows[rows.length - 1].attrJoin("class", "proof-conclusion");
       }
       tokens[i].attrJoin("class", "proof-table");
@@ -454,26 +447,6 @@ const findTableClose = (tokens, start) => {
   return offset < 0 ? -1 : start + 1 + offset;
 };
 
-const findProofBlockEnd = (tokens, start) => {
-  const end = findTableClose(tokens, start);
-  if (end < 0) return start + 1;
-
-  const marker = end + 1;
-  const childStart = marker + 3;
-  if (isSubproofMarker(tokens, marker) && isProofTable(tokens[childStart])) {
-    let blockEnd = findProofBlockEnd(tokens, childStart);
-
-    // A proof table immediately after the sub-proof is the continuation
-    // of the enclosing proof.
-    if (isProofTable(tokens[blockEnd])) {
-      blockEnd = findProofBlockEnd(tokens, blockEnd);
-    }
-
-    return blockEnd;
-  }
-
-  return end + 1;
-};
 
 // Proof tables are written sequentially in Markdown. Turn the proof-table,
 // Sub-proof, proof-table pattern into a nested visual structure while leaving
