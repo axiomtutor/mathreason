@@ -340,8 +340,6 @@ const decorateProofTables = (tokens) => {
         const childStart = end + 3;
 
         if (isSubproofMarker(tokens, end) && isProofTable(tokens[childStart])) {
-          const childConclusion = proofConclusionTable(childStart);
-
           // Find the end of the sub-proof's proof block.  A proof table
           // immediately following it is a continuation of the current
           // proof, not a new independent proof.
