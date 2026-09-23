@@ -343,7 +343,8 @@ const decorateProofTables = (tokens) => {
       }
       tokens[i].attrJoin("class", "proof-table");
     }
-
+  }
+};
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use(katexPlugin, {
   throwOnError: false,
