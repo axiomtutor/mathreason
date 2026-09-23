@@ -326,7 +326,7 @@ this explains how the rule allows us to infer $P\lor Q$.
 
 We will now develop a formal system of writing proofs.  
 
-For an example, from the assumption $P\land (Q\land R)$ we will prove *R*.
+Let's begin from an example.  From the assumption $P\land (Q\land R)$ we will prove *R*.
 
 Here is a presentation of the proof in a "Fitch-style" sequence of numbered lines.
 
@@ -336,37 +336,8 @@ Here is a presentation of the proof in a "Fitch-style" sequence of numbered line
 | 2. | $Q\land R$ | Conjunction Elimination from 1 |
 | 3. | *R* | Conjunction Elimination from 2 |
 
-
-
-> [!note]- Alternate styles of proof systems.
->
-> There are other ways of displaying a proof.  
-> 1. Before this section on Fitch-style proofs, we presented proofs in a paragraph style.  
-> 2. There are also “Gentzen-style proofs” and “the sequent calculus”.  They all prove the same things, they just do so with different styles of notation.
->    
->    See this article from the SEP for more information on proof styles. https://plato.stanford.edu/archives/fall2025/entries/natural-deduction/
-
-> [!definition] ***Definition***
-> 
-> Let $\Gamma = \{\phi_1, \phi_2,...,\phi_m\}$ be a finite set of formulas, which we will call the **set of assumptions**.  
-> 
-> Let $\Psi = (\psi_1,\psi_2,...,\psi_n)$ be a finite sequence of formulas.  We say that $\Psi$ is a **proof of $\psi_n$ from $\Gamma$** if the following conditions hold.  
-> 
-> For every $1\le i\le n$, 
-> * Either $\psi_i \in\Gamma$, or 
-> * there is an inference rule such that the formulas $\psi_1,\psi_2,...,\psi_{i-1}$ allow one to infer $\psi_i$.
-
- > [!note]- The definition put simply.  
- > 
- > The simple version of what this definition says, is that a proof is a sequence of formulas, each with a justification.  A formula may be justified by being an assumption.  (If there are any assumptions, we traditionally place these at the beginning of the proof, but it's not technically required.) 
- > 
- > If a formula is not an assumption, then it must be justified by an inference rule.  An inference rule must refer only to propositions which have already been accepted earlier in the proof.  
- > 
- > And a proof must always end on with the concluding formula.  
-
-For emphasis, I will color the assumptions with red and the conclusion with green.
-
 ---
+
 
 Let’s see another example.  From the assumptions $\neg Q$ and $P\to Q$, we prove $\neg P$.  
 
@@ -378,6 +349,68 @@ Let’s see another example.  From the assumptions $\neg Q$ and $P\to Q$, we pro
 | 4.        | $\neg P$         | Disjunction Elimination from 1, 3 |
 
 ---
+
+The table is a nice way to display the proof, but it is just a visual aid.  
+
+The proof *itself* is just the sequence of propositions.  Consider the first table proof that I presented above.  It is a sequence of assumptions, $P\land (Q\land R)$, and then a sequence of inferences, $Q\land R, R$.  
+
+If we did not care about readability at all, we could write the proof as just these two sequences.  This is, in fact, how we will formally define what a proof is.
+
+But note that a proof is not just any two sequences of propositions.  There must be a sequence of assumptions, and a sequence of inferences.  Each formula in the sequence of inferences must be justified by an inference rule that uses earlier formulas.  
+
+> [!note]- Alternate styles of proof systems.
+>
+> There are other ways of displaying a proof.  All of them are valid.
+> 1. Before this section on Fitch-style proofs, we presented proofs in a "paragraph style". This writes proofs like they are just in natural language prose. 
+> 2. There are also “Gentzen-style proofs” and “the sequent calculus”.  They all prove the same things, they just do so with different styles of notation.
+>    
+>    See this article from the SEP for more information on proof styles. https://plato.stanford.edu/archives/fall2025/entries/natural-deduction/
+
+
+> [!definition] ***Definition***
+> 
+> Let $\Gamma = (\phi_1, \phi_2,...,\phi_m)$ be a finite sequence of formulas, which we will call the **(sequence of) assumptions**.  
+> 
+> Let $\Psi = (\psi_1,\psi_2,...,\psi_n)$ be a finite sequence of formulas.  We say that $\Psi$ is a **proof of $\psi_n$ from $\Gamma$** if the following conditions hold.  
+> 
+> For every $1\le i\le n$, 
+> * Either $\psi_i \in\Gamma$, or 
+> * there is an inference rule such that the formulas $\phi_1,\phi_2,...,\phi_m, \psi_1,\psi_2,...,\psi_{i-1}$ allow one to infer $\psi_i$.
+
+ > [!note]- The definition put simply.  
+ > 
+ > The simple version of what this definition says, is that a proof is a sequence (the sequence is made up of both $\Gamma$ and $\Psi$) of formulas, each with a justification.  A formula may be justified by being an assumption.  (If there are any assumptions, we traditionally place these at the beginning of the proof, but it's not technically required.) 
+ > 
+ > If a formula is not an assumption, then it must be justified by an inference rule.  An inference rule must refer only to propositions which have already been accepted earlier in the proof.  
+ > 
+ > And a proof must always end on with the concluding formula.  
+
+Based on the formal definition of a proof above, the following is a proof: 
+
+$$ \Gamma = (P, Q), \Psi = (P\land Q, (P\land Q)\land P) $$
+
+Notice that $\Gamma$ is always allowed to be any finite sequence of propositions.  The propositions of $\Psi$ are required to be inferrable from earlier propositions.
+
+In this example, $\psi_1 = P\land Q$ is justified by Conjunction Introduction with reference to $\phi_1 = P \in \Gamma$ and $\phi_2=Q\in\Gamma$. 
+
+Next $\psi_2 = (P\land Q)\land P$ is justified by Conjunction Introduction with reference to $\phi_1=P\in\Gamma$ and $\psi_1 = P\land Q$.  
+
+Therefore every proposition in $\Psi$ is justified by an inference rule which references earlier propositions, which makes the pair $\Gamma,\Psi$ a proof.  Its conclusion is always the last proposition, so the conclusion is $(P\land Q)\land P$.  
+
+> [!exercise] ***Exercise***
+> 
+> Decide whether the following pairs of sequences of propositions is a proof or not.  If it is a proof, identify the conclusion of the proof.
+> 
+> 1. $\Gamma = (P,Q)$ and $\Psi = (R, S)$.
+> 2. $\Gamma = (P,Q)$ and $\Psi = (P)$.
+> 3. $\Gamma = (P,Q)$ and $\Psi = (Q,P,P\land Q,P)$.
+
+Having now made it clear what a proof is formally, we mostly ignore the formalism from now on—we will only use tabular proofs.
+
+For emphasis, I will color the assumptions with red and the conclusion with green.
+
+---
+
 
 Here is a long and hard one.  Don’t worry if it seems like something you couldn’t do yourself—working out these proofs is a skill that grows with exercise and time.
 
@@ -413,19 +446,19 @@ From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
 
 Consider the argument that, from $P\to Q$ and $Q\to R$ we can prove $P\to R$.
 
-In principle that is true.  We could demonstrate, via a truth-table, that the inference is valid.  However, using only the inference rules that we have established so far, it would not be possible.  
+This is a valid argument, because whenever the assumptions are true, you will find that the conclusion is true.  We could demonstrate this fact using a truth-table.  
 
-Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct, in that it requires the idea of a “subproof”.  
+However, it is not possible to prove this using the inference rules that we have defined up to this point.  Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct from the others, in that it requires the idea of a “subproof”.  
 
-Before describing this rule, I want to point out that—although this rule might, at first, seem complicated—it is a very natural style of reasoning.  It is so natural, that we have been using it all along in the case study of number theory.
+Before describing this rule, I want to point out that—although this rule might, at first, seem complicated—it is a very natural style of reasoning.  It is so natural, that we have been used it repeatedly in the earlier case study on number theory.
 
-Recall the proof that, for natural numbers $a,n$, if we have $a|n$ then $\frac n a$ is a natural number.  
+Recall the proof that, for natural numbers $a,n$, if we have $a|n$ then $\frac n a$ is a natural number.  This is an "if-then" proposition, and we used a "conditional introduction" proof.
 
 Without rehearsing the entire proof, the broad structure of the proof was: 
 
-- Assume $a|n$.
-- Go through a few reasoning steps.
-- We were able to show that $\frac n a$ was a natural number.
+- Assume $a|n$.  (I.e. assume the antecedent.)
+- Go through a few reasoning steps. 
+- We were able to show that $\frac n a$ was a natural number. (I.e. prove the consequent.)
 
 That is exactly the structure of a Conditional Introduction proof.  If you want to prove the conditional $\phi\to\psi$ then 
 
@@ -433,7 +466,7 @@ That is exactly the structure of a Conditional Introduction proof.  If you want 
 - Go through a few reasoning steps.
 - Show $\psi$.
 
-It may be easier to see an example first, and then describe how it works.
+Let's demonstrate with an example.  We will now prove, from $P\to Q$ and $Q\to R$ the conclusion that $P\to R$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -455,9 +488,7 @@ The sub-proof is the justification for line 3, which holds $P\to R$.  The sub-pr
 - It goes through some reasoning steps (3.2 and 3.3).
 - It shows the consequent, *R*.
 
-So there is a demonstration of the logic of conditional sub-proof.  
-
-As a comment about how we *write* sub-proofs: 
+As a comment about how we *write* sub-proofs in tabular form: 
 
 - They are written with extra indentation.
 - They use a sub-indexing system.  Since the conditional $P\to R$ was on line 3, then the indices of the sub-proof are 3.1, 3.2, and so on.
@@ -465,8 +496,6 @@ As a comment about how we *write* sub-proofs:
 ---
 
 Here is another example.  From $P\to R$, and $P\to S$, and $(P\to (R\land S))\to Q$ we can prove that *Q*.
-
-The following shows that you can have a proof that continues after the subproof has ended.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
