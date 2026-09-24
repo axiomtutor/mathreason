@@ -428,64 +428,178 @@ const htmlTok = (content) => ({ type: "html_block", tag: "", content, block: tru
 const isProofTable = (token) =>
   token?.type === "table_open" && /(^|\s)proof-table(?:\s|$)/.test(token.attrGet("class") ?? "");
 
-const isSubproofMarker = (tokens, index) => {
-  const inline = tokens[index + 1];
-  return (
-    tokens[index]?.type === "paragraph_open" &&
-    inline?.type === "inline" &&
-    inline.content.trim().toLowerCase() === "sub-proof" &&
-    tokens[index + 2]?.type === "paragraph_close"
-  );
-};
-
 const findTableClose = (tokens, start) => {
   const offset = tokens.slice(start + 1).findIndex((token) => token.type === "table_close");
   return offset < 0 ? -1 : start + 1 + offset;
 };
 
+const normalizeProofIndex = (value) =>
+  value.trim().replace(/\s+/g, " ").replace(/\.$/, "");
 
-// Proof tables are written sequentially in Markdown. Turn the proof-table,
-// Sub-proof, proof-table pattern into a nested visual structure while leaving
-// the actual Markdown tables intact for KaTeX.
-const consumeProofBlock = (tokens, start) => {
-  const end = findTableClose(tokens, start);
-  if (end < 0) return { tokens: [tokens[start]], end: start + 1 };
-
-  const marker = end + 1;
-  const childStart = marker + 3;
-  if (isSubproofMarker(tokens, marker) && isProofTable(tokens[childStart])) {
-    const child = consumeProofBlock(tokens, childStart);
-    return {
-      tokens: [
-        htmlTok('<div class="proof-block">'),
-        ...tokens.slice(start, end + 1),
-        htmlTok('<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div>'),
-        ...child.tokens,
-        htmlTok('</div></div>')
-      ],
-      end: child.end
-    };
+const parseSubproofMarker = (tokens, index) => {
+  const inline = tokens[index + 1];
+  if (
+    tokens[index]?.type !== "paragraph_open" ||
+    inline?.type !== "inline" ||
+    tokens[index + 2]?.type !== "paragraph_close"
+  ) {
+    return null;
   }
 
+  const text = inline.content.trim();
+  const labelMatch = text.match(/^(.*?)\s+sub-proof\s*$/i);
+  if (!labelMatch) return null;
+
+  const label = labelMatch[1].trim();
+  const parentMatch = label.match(/^(\d+(?:\.\d+)*)(?:\.|$)/);
+  if (!parentMatch) return null;
+
   return {
-    tokens: tokens.slice(start, end + 1),
-    end: end + 1
+    parentRef: normalizeProofIndex(parentMatch[1]),
+    label: text
   };
 };
 
+// Read the first-column indices from a proof table. These indices are used by
+// explicit sub-proof markers such as "3.2.case1 sub-proof": the numeric prefix
+// ("3.2") identifies the table that contains the line being proved, while the
+// non-numeric suffix ("case1") distinguishes this sub-proof from parallel ones.
+const getProofTableRowIndexes = (tokens, start, end) => {
+  const indexes = [];
+
+  for (let j = start + 1; j < end; j++) {
+    if (tokens[j].type !== "tr_open") continue;
+
+    let cellIndex = -1;
+    let indexText = "";
+
+    for (let k = j + 1; k < end; k++) {
+      const t = tokens[k];
+      if (t.type === "td_open") {
+        cellIndex++;
+      } else if (t.type === "inline" && cellIndex === 0) {
+        indexText = t.content;
+      } else if (t.type === "tr_close") {
+        break;
+      }
+    }
+
+    const index = normalizeProofIndex(indexText);
+    if (index) indexes.push(index);
+
+    while (j < end && tokens[j].type !== "tr_close") j++;
+  }
+
+  return indexes;
+};
+
+// Proof tables are written sequentially in Markdown. The explicit marker before
+// each sub-proof identifies the row in the containing proof table which owns
+// that sub-proof. This lets multiple sub-proofs with the same parent remain
+// parallel rather than incorrectly nesting inside one another.
 const wrapProofSubproofs = (tokens) => {
-  const out = [];
+  const nodes = [];
+
   for (let i = 0; i < tokens.length;) {
     if (!isProofTable(tokens[i])) {
-      out.push(tokens[i]);
       i++;
       continue;
     }
 
-    const block = consumeProofBlock(tokens, i);
-    out.push(...block.tokens);
-    i = block.end;
+    const end = findTableClose(tokens, i);
+    if (end < 0) {
+      i++;
+      continue;
+    }
+
+    nodes.push({
+      start: i,
+      end,
+      rowIndexes: getProofTableRowIndexes(tokens, i, end),
+      markerStart: -1,
+      marker: null,
+      parent: null,
+      children: []
+    });
+
+    i = end + 1;
   }
+
+  const nodeForStart = new Map(nodes.map((node) => [node.start, node]));
+
+  for (const node of nodes) {
+    const markerStart = node.start - 3;
+    const marker = parseSubproofMarker(tokens, markerStart);
+    if (!marker) continue;
+
+    node.markerStart = markerStart;
+    node.marker = marker;
+
+    const parent = nodes
+      .filter((candidate) =>
+        candidate.start < node.start &&
+        candidate.rowIndexes.includes(marker.parentRef)
+      )
+      .at(-1);
+
+    if (parent) {
+      node.parent = parent;
+      parent.children.push(node);
+    }
+  }
+
+  const renderNode = (node) => {
+    if (!node.children.length) {
+      return tokens.slice(node.start, node.end + 1);
+    }
+
+    const out = [
+      htmlTok('<div class="proof-block">'),
+      ...tokens.slice(node.start, node.end + 1)
+    ];
+
+    for (const child of node.children.sort((a, b) => a.markerStart - b.markerStart)) {
+      out.push(
+        htmlTok('<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div>'),
+        ...renderNode(child),
+        htmlTok("</div>")
+      );
+    }
+
+    out.push(htmlTok("</div>"));
+    return out;
+  };
+
+  const skip = nodes
+    .filter((node) => node.parent)
+    .map((node) => ({
+      start: node.markerStart,
+      end: node.end
+    }));
+
+  const inSkippedRange = (index) => {
+    return skip.find((item) => index >= item.start && index <= item.end);
+  };
+
+  const out = [];
+  for (let i = 0; i < tokens.length;) {
+    const skipped = inSkippedRange(i);
+    if (skipped) {
+      i = skipped.end + 1;
+      continue;
+    }
+
+    const node = nodeForStart.get(i);
+    if (node && !node.parent) {
+      out.push(...renderNode(node));
+      i = node.end + 1;
+      continue;
+    }
+
+    out.push(tokens[i]);
+    i++;
+  }
+
   return out;
 };
 
