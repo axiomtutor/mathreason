@@ -434,7 +434,7 @@ const findTableClose = (tokens, start) => {
 };
 
 const normalizeProofIndex = (value) =>
-  value.trim().replace(/\s+/g, " ").replace(/\.$/, "");
+  String(value ?? "").trim().replace(/\s+/g, " ").replace(/\.$/, "");
 
 const parseSubproofMarker = (tokens, index) => {
   // A marker such as "3. conditional sub-proof" is parsed by MarkdownIt as
