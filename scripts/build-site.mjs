@@ -587,7 +587,9 @@ const wrapProofSubproofs = (tokens) => {
 
     for (const child of node.children.sort((a, b) => a.markerStart - b.markerStart)) {
       out.push(
-        htmlTok('<div class="proof-subproof"><div class="proof-subproof-label">Sub-proof</div>'),
+        htmlTok(
+          `<div class="proof-subproof"><div class="proof-subproof-label">${child.marker?.label ?? "Sub-proof"}</div>`
+        ),
         ...renderNode(child),
         htmlTok("</div>")
       );
