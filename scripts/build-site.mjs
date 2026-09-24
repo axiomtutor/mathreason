@@ -540,8 +540,13 @@ const wrapProofSubproofs = (tokens) => {
   const nodeForStart = new Map(nodes.map((node) => [node.start, node]));
 
   for (const node of nodes) {
-    const markerStart = node.start - 3;
-    const marker = parseSubproofMarker(tokens, markerStart);
+    // MarkdownIt emits seven tokens for the ordered-list form of a marker
+    // and three tokens for the paragraph form. Try the ordered-list form first.
+    const orderedMarkerStart = node.start - 7;
+    const paragraphMarkerStart = node.start - 3;
+    const orderedMarker = parseSubproofMarker(tokens, orderedMarkerStart);
+    const markerStart = orderedMarker ? orderedMarkerStart : paragraphMarkerStart;
+    const marker = orderedMarker ?? parseSubproofMarker(tokens, paragraphMarkerStart);
     if (!marker) continue;
 
     node.markerStart = markerStart;
