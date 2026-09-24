@@ -437,15 +437,27 @@ const normalizeProofIndex = (value) =>
   value.trim().replace(/\s+/g, " ").replace(/\.$/, "");
 
 const parseSubproofMarker = (tokens, index) => {
-  const inline = tokens[index + 1];
-  if (
-    tokens[index]?.type !== "paragraph_open" ||
-    inline?.type !== "inline" ||
-    tokens[index + 2]?.type !== "paragraph_close"
-  ) {
-    return null;
-  }
+  // A marker such as "3. conditional sub-proof" is parsed by MarkdownIt as
+  // an ordered list containing one list item, rather than as a paragraph.
+  const orderedListMarker =
+    tokens[index]?.type === "ordered_list_open" &&
+    tokens[index + 1]?.type === "list_item_open" &&
+    tokens[index + 2]?.type === "paragraph_open" &&
+    tokens[index + 3]?.type === "inline" &&
+    tokens[index + 4]?.type === "paragraph_close" &&
+    tokens[index + 5]?.type === "list_item_close" &&
+    tokens[index + 6]?.type === "ordered_list_close";
 
+  // Keep support for a plain paragraph as well, since that is a useful
+  // fallback if the marker syntax is changed later.
+  const paragraphMarker =
+    tokens[index]?.type === "paragraph_open" &&
+    tokens[index + 1]?.type === "inline" &&
+    tokens[index + 2]?.type === "paragraph_close";
+
+  if (!orderedListMarker && !paragraphMarker) return null;
+
+  const inline = orderedListMarker ? tokens[index + 3] : tokens[index + 1];
   const text = inline.content.trim();
   const labelMatch = text.match(/^(.*?)\s+sub-proof\s*$/i);
   if (!labelMatch) return null;
