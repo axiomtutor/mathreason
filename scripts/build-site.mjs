@@ -438,7 +438,8 @@ const normalizeProofIndex = (value) =>
 
 const parseSubproofMarker = (tokens, index) => {
   // A marker such as "3. conditional sub-proof" is parsed by MarkdownIt as
-  // an ordered list containing one list item, rather than as a paragraph.
+  // an ordered list containing one list item. The numeric prefix is stored on
+  // the ordered-list token rather than in the inline token's content.
   const orderedListMarker =
     tokens[index]?.type === "ordered_list_open" &&
     tokens[index + 1]?.type === "list_item_open" &&
@@ -448,8 +449,9 @@ const parseSubproofMarker = (tokens, index) => {
     tokens[index + 5]?.type === "list_item_close" &&
     tokens[index + 6]?.type === "ordered_list_close";
 
-  // Keep support for a plain paragraph as well, since that is a useful
-  // fallback if the marker syntax is changed later.
+  // Markers containing additional components, such as
+  // "3.2.case1 sub-proof", are not valid Markdown ordered-list markers and
+  // therefore remain ordinary paragraphs.
   const paragraphMarker =
     tokens[index]?.type === "paragraph_open" &&
     tokens[index + 1]?.type === "inline" &&
@@ -461,6 +463,14 @@ const parseSubproofMarker = (tokens, index) => {
   const text = inline.content.trim();
   const labelMatch = text.match(/^(.*?)\s+sub-proof\s*$/i);
   if (!labelMatch) return null;
+
+  if (orderedListMarker) {
+    const parentRef = normalizeProofIndex(tokens[index].attrGet("start") ?? "1");
+    return {
+      parentRef,
+      label: `${parentRef}. ${labelMatch[1].trim()} sub-proof`
+    };
+  }
 
   const label = labelMatch[1].trim();
   const parentMatch = label.match(/^(\d+(?:\.\d+)*)(?:\.|$)/);
