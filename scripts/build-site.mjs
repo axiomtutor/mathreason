@@ -325,13 +325,9 @@ const decorateProofTables = (tokens) => {
     }
 
     if (rows.length) {
-      // A final justification ending with a period marks the row as a
-      // non-conclusion; otherwise the final row is styled as the conclusion.
-      if (/[.]$/.test(
-        rows[rows.length - 1].reason ?? ""
-      )) {
-        rows[rows.length - 1].attrJoin("class", "proof-assumption");
-      } else {
+      // A final justification ending with a period marks the conclusion.
+      // No other condition assigns the conclusion (light-green) styling.
+      if (/[.]$/.test(rows[rows.length - 1].reason ?? "")) {
         rows[rows.length - 1].attrJoin("class", "proof-conclusion");
       }
       tokens[i].attrJoin("class", "proof-table");
