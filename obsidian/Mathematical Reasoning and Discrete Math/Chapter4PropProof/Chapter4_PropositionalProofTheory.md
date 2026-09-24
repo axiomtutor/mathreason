@@ -474,8 +474,8 @@ Let's demonstrate with an example.  We will now prove, from $P\to Q$ and $Q\to R
 | 2. | $Q\to R$ | Assumption |
 | 3. | $P\to R$ | Conditional Introduction from sub-proof below. |
 
-Sub-proof
-
+ 3. conditional sub-proof
+ 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 3.1. | *P* | Assumption for Conditional Introduction |
@@ -504,7 +504,7 @@ Here is another example.  From $P\to R$, and $P\to S$, and $(P\to (R\land S))\to
 | 3. | $(P\to (R\land S))\to Q$ | Assumption |
 | 4. | $P\to (R\land S)$ | Conditional Introduction from subproof below |
 
-Sub-proof
+4. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -528,7 +528,7 @@ Consider the following invalid proof that, from *P*, we can infer *Q*.
 | 1. | *P* | Assumption |
 | 2. | $Q\to P$ | Conditional Introduction from subproof below |
 
-Sub-proof
+2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -569,14 +569,14 @@ We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof 
 | 1. | $(P\land Q)\to R$ | Assumption |
 | 2. | $P\to(Q\to R)$ | Conditional Introduction from subproof below. |
 
-Sub-proof
+2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 2.1. | *P* | Assumption |
 | 2.2.  | $Q\to R$ | Conditional Introduction from subproof below. |
 
-Sub-proof
+2.2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -594,7 +594,7 @@ In the example below, I give a proof, from no premises, to the conclusion that $
 | --- | --- | --- |
 | 1. | $P\to P$ | Conditional Introduction from subproof below. |
 
-Sub-proof
+1. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -642,20 +642,20 @@ We use the notation 1.if1 to indicate the “if” direction.  In this case, tha
 | --- | --- | --- |
 | 1. | $P\leftrightarrow (P\land P)$ | Biconditional Introduction from subproof below. |
 
-"Only" sub-proof
+1. "Only" sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1.only1 | *P* | Assumption for Biconditional Introduction |
-| 1.only2 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
+| 1.only.1 | *P* | Assumption for Biconditional Introduction |
+| 1.only.2 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
 
 
-"If" sub-proof
+1. "If" sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1.if1 | $P\land P$ | Assumption for Biconditional Introduction |
-| 1.if2 | *P* | Conjunction Elimination from 1.if1. |
+| 1.if.1 | $P\land P$ | Assumption for Biconditional Introduction |
+| 1.if.2 | *P* | Conjunction Elimination from 1.if1. |
 
 > [!exercise] ***Exercise***
 >
@@ -679,8 +679,36 @@ Of course, we can generalize this to many cases.
 >
 > > From $\phi_1\lor\cdots\lor\phi_n$, and $\phi_1\to\psi$ and $\phi_2\to\psi$ and … and $\phi_n\to\psi$, you may infer $\psi$.
 
-In the example below I show you how we'll draw a proof by cases in tabular form.
+In the example below I show you how we'll draw a proof by cases in tabular form.  Let's prove that from $P\to Q$ and $R\to S$ we have $(P\lor R)\to (Q\lor S)$.
 
+| **Index** | **Formula**              | **Reason**                                    |
+| --------- | ------------------------ | --------------------------------------------- |
+| 1.        | $P\to Q$                 | Assumption                                    |
+| 2.        | $R\to S$                 | Assumption                                    |
+| 3.        | $(P\lor R)\to (Q\lor S)$ | Conditional Introduction from subproof below. |
+
+3. conditional sub-proof
+
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.1. | $P\lor R$ | Assumption for conditional introduction |
+| 3.2. | $Q\lor S$ | Proof by Cases from 3.1 and subproofs below. |
+
+3.2.case1 sub-proof
+
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.2.case1.1. | $P$ | Assumption for case 1 |
+| 3.2.case1.2. | $Q$ | Conditional Elimination from 1 and 3.2.case1.1 |
+| 3.2.case1.3. | $Q \lor S$ | Disjunction Introduction from 3.2.case1.2. |
+
+3.2.case2 sub-proof
+
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.2.case2.1. | $R$ | Assumption for case 2 |
+| 3.2.case2.2. | $S$ | Conditional Elimination from 2 and 3.2.case2.1 |
+| 3.2.case2.3. | $Q\lor S$ | Disjunction Introduction from 3.2.case2.2. |
 
 
 > [!exercise] ***Exercise***
@@ -715,7 +743,7 @@ Let’s now see an example in practice.  From $P\to Q$ and $\neg Q$, we prove $\
 | 2. | $\neg Q$ | Assumption |
 | 3. | $\neg P$ | Proof by Contradiction from subproof below. |
 
-Sub-proof
+3. contradiction sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -744,7 +772,7 @@ Here we give an invalid proof that from *P* we can infer *Q*.
 | 1. | *P* | Assumption |
 | 2. | $\neg(Q\land \neg Q)$ | Proof by Contradiction from subproof below |
 
-Sub-proof
+2. contradiction sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -770,7 +798,7 @@ Here we prove from no premises, that $\neg(P\land \neg P)$.
 | --- | --- | --- |
 | 1. | $\neg(P\land \neg P)$ | Proof by Contradiction from subproof below |
 
-Sub-proof
+1. contradiction sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
