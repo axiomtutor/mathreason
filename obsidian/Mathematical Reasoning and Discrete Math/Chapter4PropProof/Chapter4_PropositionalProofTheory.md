@@ -448,7 +448,7 @@ Consider the argument that, from $P\to Q$ and $Q\to R$ we can prove $P\to R$.
 
 This is a valid argument, because whenever the assumptions are true, you will find that the conclusion is true.  We could demonstrate this fact using a truth-table.  
 
-However, it is not possible to prove this using the inference rules that we have defined up to this point.  Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct from the others, in that it requires the idea of a “subproof”.  
+However, it is not possible (or at least, not easy) to prove this using the inference rules that we have defined up to this point.  Therefore we need more inference rules, and here we introduce the Conditional Introduction rule.  This rule is distinct from the others, in that it requires the idea of a “subproof”.  
 
 Before describing this rule, I want to point out that—although this rule might, at first, seem complicated—it is a very natural style of reasoning.  It is so natural, that we have been used it repeatedly in the earlier case study on number theory.
 
@@ -480,13 +480,13 @@ Sub-proof
 | --- | --- | --- |
 | 3.1. | *P* | Assumption for Conditional Introduction |
 | 3.2. | *Q* | Conditional Elimination from 1, 3.1 |
-| 3.3. | R | Conditional Elimination from 2, 3.2 |
+| 3.3. | R | Conditional Elimination from 2, 3.2. |
 
 The sub-proof is the justification for line 3, which holds $P\to R$.  The sub-proof mirrors what we said generally:
 
-- It assumes the antecedent, *P*.
+- It assumes the antecedent, *P* (3.1).
 - It goes through some reasoning steps (3.2 and 3.3).
-- It shows the consequent, *R*.
+- It shows the consequent, *R* (3.3).
 
 As a comment about how we *write* sub-proofs in tabular form: 
 
@@ -539,7 +539,9 @@ Sub-proof
 | --- | --- | --- |
 | 3. | *Q* | Reiteration from 2.1. |
 
-This should not be possible—*P* does not imply *Q*.  
+This proof must be invalid—*P* does not imply *Q*.  It is intuitively true that, from a given proposition (*P*) one should not be able to infer some other random and unrelated proposition (*Q*).  
+
+We can also 
 
 Therefore something must have gone wrong.  The error is on line 3.  
 
@@ -640,12 +642,15 @@ We use the notation 1.if1 to indicate the “if” direction.  In this case, tha
 | --- | --- | --- |
 | 1. | $P\leftrightarrow (P\land P)$ | Biconditional Introduction from subproof below. |
 
-Sub-proof
+"Only" sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 1.only1 | *P* | Assumption for Biconditional Introduction |
-| 1.2.only1 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
+| 1.only2 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
+
+
+"If" sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -674,24 +679,9 @@ Of course, we can generalize this to many cases.
 >
 > > From $\phi_1\lor\cdots\lor\phi_n$, and $\phi_1\to\psi$ and $\phi_2\to\psi$ and … and $\phi_n\to\psi$, you may infer $\psi$.
 
-Here is a demonstration, proving from $P\to Q$ and $(\neg P)\to Q$, that *Q*.
+In the example below I show you how we'll draw a proof by cases in tabular form.
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 1. | $P\to Q$ | Assumption |
-| 2. | $(\neg P)\to Q$ | Assumption |
-| 3.  | $P\lor \neg P$ | Proof by Contradiction from subproof below |
 
-Subproof
-
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 3.1. | $\neg(P\lor\neg P)$ | Assumption for Proof by Contradiction |
-| 3.2. | $(\neg P)\land \neg(\neg P)$ | De Morgan’s from 3.1. |
-
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 4. | Q | Proof by Cases from 1, 2, 3. |
 
 > [!exercise] ***Exercise***
 >
