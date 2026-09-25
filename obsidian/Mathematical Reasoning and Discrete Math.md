@@ -7,7 +7,7 @@ author: Adam Frank
 > * Finish remaining chapters until completing the discussion of number theory.
 > * Add videos.
 > * Clean the bottom of the main page.
-> * Give every chapter a consolidated set of definitions and theorems at the top.
+> * Give every chapter a consolidated set of definitions and theorems at the top.  Also give every page a set of extra exercises.  
 > * Include a section on philosophy.
 > 	* Meaning in mathematics does not exist without our defining it.  For example there is no such thing as an "infinitely large number" unless we define it in some precise way. The number 0.999... does not exist until we define it first.
 

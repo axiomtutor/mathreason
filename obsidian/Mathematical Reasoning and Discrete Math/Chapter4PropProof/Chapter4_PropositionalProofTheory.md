@@ -2,6 +2,44 @@
 title: "Chapter 4: Propositional Proof Theory"
 ---
 
+# Arguments, Inferences, and Proofs
+
+A core reason why we study logic in mathematics, is to be able to prove mathematical theorems.  Of course logic is also used in other domains, to prove arguments.
+
+Consider the intuitive example argument "If you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.  If you were in the room when it happened, then you could not be in Guadalajara that day.  You were in Guadalajara that day.  Therefore you could not have committed the murder."
+
+Several of the statements here are not logical, they are merely "premises".  A premise is any proposition which we accept without further argument.  
+
+In this example the premises of the argument are 
+
+* If you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.  
+* If you were in the room with Mr. Higginswaddle when it happened, then you could not be in Guadalajara that day.
+* You were in Guadalajara that day.  
+
+For each of these, we could argue their truth.  That is relevant to the question of who committed the murder, but that is the job of "establishing the basic facts".  This is not what logic is interested in.
+
+Rather, logic comes in *after* we have established the basic facts.  Logic is interested in how we make *inferences* from the premises which we already accept.  
+
+So what logic is interested in, for the purposes of the argument above, is the inference from all of the premises, to the conclusion 
+
+| You could not have committed the murder.  
+
+So logic is interested in *inferences*: the act of using established facts to infer other propositions which must be true because of the premises.  
+
+> [!definition] ***Definition***
+> Any sequence of propositions, $\Gamma = (\phi_1,\phi_2,...,\phi_m)$, may be called **premises**, where each of the propositions $\phi_i$ is called a **premise** ($1\le i\le m$).  
+> 
+> Any proposition, $\psi$, may be called a **conclusion**.  
+> 
+> In that case, the pair $(\Gamma,\psi)$ is called an **argument**.  
+> 
+> We say that the argument is **valid** if 
+> 
+>$$ (\phi_1 \land \phi_2 \land \cdots \land \phi_m) \to \psi $$ 
+> 
+> is a tautology.  
+> 
+> Otherwise the argument is called **invalid**.
 
 # Simple Inference Rules
 
@@ -452,7 +490,11 @@ However, it is not possible (or at least, not easy) to prove this using the infe
 
 Before describing this rule, I want to point out that—although this rule might, at first, seem complicated—it is a very natural style of reasoning.  It is so natural, that we have been used it repeatedly in the earlier case study on number theory.
 
-Recall the proof that, for natural numbers $a,n$, if we have $a|n$ then $\frac n a$ is a natural number.  This is an "if-then" proposition, and we used a "conditional introduction" proof.
+Recall the proof that, for natural numbers $a,n$, 
+
+| If we have $a|n$ then $\frac n a$ is a natural number.  
+
+This is an "if-then" proposition, and we used a "conditional introduction" proof.
 
 Without rehearsing the entire proof, the broad structure of the proof was: 
 
@@ -482,11 +524,13 @@ Let's demonstrate with an example.  We will now prove, from $P\to Q$ and $Q\to R
 | 3.2. | *Q* | Conditional Elimination from 1, 3.1 |
 | 3.3. | R | Conditional Elimination from 2, 3.2. |
 
-The sub-proof is the justification for line 3, which holds $P\to R$.  The sub-proof mirrors what we said generally:
+To explain how this works, notice line 3, which holds the proposition $P\to R$.  This line is justified by the subproof below it.   
 
-- It assumes the antecedent, *P* (3.1).
-- It goes through some reasoning steps (3.2 and 3.3).
-- It shows the consequent, *R* (3.3).
+The sub-proof mirrors what we said generally:
+
+- It assumes the antecedent, *P* (line 3.1).
+- It goes through some reasoning steps (lines 3.2 and 3.3).
+- It shows the consequent, *R* (line 3.3).
 
 As a comment about how we *write* sub-proofs in tabular form: 
 
@@ -541,15 +585,19 @@ Consider the following invalid proof that, from *P*, we can infer *Q*.
 
 This proof must be invalid—*P* does not imply *Q*.  It is intuitively true that, from a given proposition (*P*) one should not be able to infer some other random and unrelated proposition (*Q*).  
 
-We can also 
+We can also demonstrate that the argument is invalid using a truth-table.  I will leave that to you to work out in detail, but I promise: In the truth-table, there is a row at which *P* is true while *Q* is false.  
 
-Therefore something must have gone wrong.  The error is on line 3.  
+Therefore something must have gone wrong.  But specifically, where?  It seems like we have only used inference rules at each step, which we previously accepted as valid.  
 
-Why is this a mistake?  Well, consider the idea which motivates Conditional Introduction sub-proof: It starts from “imagining” that the antecedent is true.
+The error is on line (3).  
 
-But this is just an assumption, something which we imagine to be true in order to work out what *would* follow from it, *if* it were true.  The statements that occur inside a sub-proof should not be regarded as true in the way that statements outside the sub-proof are.
+Why is this a mistake?  It seems like it is merely reiteration of a previous line, which is an inference rule that we've accepted and used before.  
 
-On line 3, we made exactly that mistake: We took a line that was inside a sub-proof, and exported it to a line outside the sub-proof.  This is not valid.
+The answer comes from thinking carefully about the logic of Conditional Introduction. When we prove a proposition by Conditional Introduction, we assume its antecedent, and the work from this assumption.  Anything that we prove, under this assumption, must always come with the caveat "this is true only provided that the antecedent is true".
+
+In line 3, we exported a statement from a subproof, to a line which is outside of the subproof.  This removes the context.  It removes the assumption of the antecedent.  
+
+Therefore when we formally define the Conditional Introduction inference rule, below, we should specify once a Conditional Introduction subproof is concluded, we may no longer use the propositions which occur inside of the Conditional Introduction.
 
 > [!definition] ***Definition***
 >
@@ -558,8 +606,11 @@ On line 3, we made exactly that mistake: We took a line that was inside a sub-pr
 > **Conditional Introduction** is the following inference rule.
 >
 > > The following allows you to infer $\phi\to\psi$.
+> > 
 > > First, assume $\phi$.
+> > 
 > > Using $\phi$ and any other formulas already accepted, then prove $\psi$.
+> > 
 > > Once this is done, you must stop assuming $\phi$ and any of the formulas proved after assuming $\phi$.
 
 We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof from $(P\land Q)\to R$ that $P\to (Q\to R)$.
@@ -601,6 +652,9 @@ In the example below, I give a proof, from no premises, to the conclusion that $
 | 1.1. | *P* | Assumption for Conditional Introduction |
 | 1.2. | *P* | Reiteration from 1.1. |
 
+> [!note]- Why proofs?
+> Any proof which is 
+
 > [!exercise] ***Exercise***
 >
 > 1. Prove, from no premises, that $P\to (Q\to P)$.
@@ -623,10 +677,13 @@ In the example below, I give a proof, from no premises, to the conclusion that $
 > **Biconditional Introduction** is the following inference rule.
 >
 > > The following allows you to infer $\phi\leftrightarrow \psi$.
+> > 
 > > Assume $\phi$.
-> > Using $\phi$ and any formulas already proved, then prove $\psi$.
-> > Then stop assuming $\phi$ and any of the formulas proved after it.
+> > 
+> > Using $\phi$ and any formulas already proved, then prove $\psi$.  Then stop assuming $\phi$ and any of the formulas proved after it.
+> > 
 > > Now assume $\psi$.
+> > 
 > > Using $\psi$ and any formulas already proved, then prove $\phi$.
 > > Then stop assuming $\psi$ and any of the formulas proved after it.
 
