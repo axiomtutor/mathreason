@@ -35,7 +35,9 @@ So logic is interested in *inferences*: the act of using established facts to in
 > 
 > We say that the argument is **valid** if 
 > 
->$$ (\phi_1 \land \phi_2 \land \cdots \land \phi_m) \to \psi $$ 
+> $$ 
+> (\phi_1 \land \phi_2 \land \cdots \land \phi_m) \to \psi 
+> $$ 
 > 
 > is a tautology.  
 > 
