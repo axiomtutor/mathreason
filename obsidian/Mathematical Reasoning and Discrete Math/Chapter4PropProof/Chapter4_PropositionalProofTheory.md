@@ -39,27 +39,83 @@ So logic is interested in *inferences*: the act of using established facts to in
 > (\phi_1 \land \phi_2 \land \cdots \land \phi_m) \to \psi 
 > $$ 
 > 
-> is a tautology.  
+> is a tautology.  Otherwise the argument is called **invalid**.
 > 
-> Otherwise the argument is called **invalid**.
+> If the argument $(\Gamma,\psi)$ is valid, then we write 
+> 
+> $$\Gamma \vDash \psi$$
+> 
+> which is pronounced $\Gamma$ **semantically entails** $\psi$.
+> 
+> If $(\Gamma,\psi)$ is not valid then we write 
+> 
+> $$\Gamma\not\vDash \psi$$
+> 
+> and we say that $\Gamma$ does not semantically entail $\psi$.
+
+> [!exercise] ***Exercise***
+> 
+> Consider the argument at the beginning of this section, 
+> 
+> > If you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.  If you were in the room when it happened, then you could not be in Guadalajara that day.  You were in Guadalajara that day.  Therefore you could not have committed the murder.
+> 
+> Let us symbolize the premises as 
+> * $P\to Q$
+> * $Q\to \neg R$
+> * $R$
+> 
+> The conclusion of the argument is then $\neg P$.
+> 
+> Show that $((P\to Q)\land (Q\to \neg R) \land R)\to \neg P$ is a tautology.  
+> 
+> Infer that the given argument is valid.  
+
+> [!exercise] ***Exercise***
+> Intuitvely, if you assume $P$ then it is valid to infer $P\lor Q$.  I mean, if *P* is true then $P\lor Q$ will have to be true, no matter what *Q* is.  (Put formally, I am claiming that if $P^म = ट$ then $(P\lor Q)^म = ट$.  This is true whether $Q^म=ट$ or $Q^म=फ$.)
+> 
+> Also intuitively, if you assume *P* then it is invalid to infer $P\land Q$.  Since we don't assume the truth of *Q* then it is possible for *Q* to be false, and in that case $P\land Q$ will be false.  (Put formally, there is a model in which $P^म=ट$ and $(P\land Q)^म=फ$.)
+> 
+> Make a truth-table which demonstrates 
+> 
+> $$ (P) \vDash P\lor Q $$
+> 
+> and another which demonstrates 
+> 
+> $$ (P) \not\vDash P\land Q $$
 
 # Simple Inference Rules
 
-An important use of logic is to help us write good proofs.  Here we’ll establish the basic formal system that we will use to expose the logic of a proof.  
+Usually a proof is not given all at once, but in small and intelligible steps.  We call each step an "inference".  A sequence of inferences then builds up to a proof.  
 
-The fundamental component of a proof, is an “inference”.  Here is an example:  
+Let's reuse the example from above, 
 
-If we have already accepted the truth of propositions denoted by *P* and *Q*, then we must accept the truth of the formula $P\land Q$.  In this case, we say that we *infer* $P\land Q$ from the formulas *P* and *Q*.  
+> If you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.  If you were in the room when it happened, then you could not be in Guadalajara that day.  You were in Guadalajara that day.  Therefore you could not have committed the murder.
 
-The same principle should be true even for complex formulas, not just basic variables.  For example, if we have already accepted the formulas $P\to Q$ and $Q\to S$ then we must accept the formula $(P\to Q)\land (Q\to S)$. 
+We might provide a proof by first making the following inference: 
 
-Then our inference rule is expressed by: “From formulas $\phi$ and $\psi$ we may infer $\phi\land\psi$.”
+> If you were in the room when it happened, then you could not be in Guadalajara that day.  And you were in Guadalajara that day.
 
-Here is another example.  Suppose that we already accept $\phi\land\psi$.  Then we must also accept just $\phi$.  
+Therefore it is a relatively small and direct step, to infer that you were therefore not in the room when it happened.
 
-Therefore we should have the inference rule “From $\phi\land\psi$ we may infer $\phi$.”  
+We now accept 
 
-In a similar fashion one can understand all of the following inference rules.
+> You were not in the room when it happened.  And if you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.
+
+Therefore another small and direct step is to infer that you did not commit the murder.  
+
+If we abstract the above proof into symbols, we would say:
+
+* We accept $P\to Q$ and $Q\to \neg R$, and *R*.
+* Because $Q\to \neg R$ and *R*, we therefore infer $\neg Q$.
+* Because $\neg Q$ and $P\to Q$, we therefore infer $\neg P$.
+
+The last two bullet points represent the use of an inference rule.  The collection of all three bullet points is the entire proof.  The first bullet point represents the premises of the proof, while the last line ends at the conclusion of the proof.
+
+This proof demonstrates the validity claim,
+
+$$ (P\to Q, Q\to \neg R, R)\vDash \neg P$$
+
+Below we list several inference rules.  
 
 > [!definition] ***Definition***
 >
@@ -76,7 +132,7 @@ In a similar fashion one can understand all of the following inference rules.
 > **Biconditional Elimination** is “From $\phi\leftrightarrow \psi$ and $\phi$ we may infer $\psi$.  From $\phi\leftrightarrow \psi$ and $\psi$ we may infer $\phi$.”
 
 
-Each of the above inference rules are justified by the fact that, when its assumptions are true, then its conclusion is guaranteed to also be true.  
+Each of the above inference rules are justified by the fact that, when its assumptions are true, then its conclusion is guaranteed to also be true.  This can always be confirmed by a truth-table.  
 
 Here is a demonstration for Conjunction Elimination:
 
@@ -193,13 +249,15 @@ For this reason, the inference "If *P* then $P\land Q$" is invalid.
 
 # Proofs
 
-Now let’s look at proofs.  A proof is just a sequence of inferences.  Suppose that we accept the formulas 
+In the section above we mostly focused on inference rules, but of course, inference rules exist so that we may combine them into a proof.  Again, a proof is just a sequence of inferences.  
+
+For example, suppose that we accept the formulas 
 
 - $\neg P$
 - $P\lor Q$
 - $Q\to R$.
 
-Let’s write a proof, from these assumptions, to the conclusion *R*.
+Let’s write a "paragraph-style" proof, from these assumptions, to the conclusion *R*.
 
 Because we accept $\neg P$ and $P\lor Q$, therefore we may use the Disjunction Elimination rule to infer *Q*.  Therefore we now accept *Q*.
 
@@ -222,7 +280,7 @@ Notice the way that the proof above works:
 
 # Substitution
 
-In this section, we are going to discuss substitution, because it will help us to define an inference rule in the next section.  
+In this section, we are going to discuss substitution, because it will help us to define more inference rules.
 
 Let's start with an example.
 
@@ -332,7 +390,7 @@ Here is another worked example, again using double negation but this time in the
 
 From $P\lor \neg(\neg Q)$ we can infer $P\lor Q$.  
 
-In this example, we use $\phi=P\lor \neg(\neg Q)$ and $\chi = \neg(\neg Q)$.  We use the version of double negation which lets us infer $\phi_{\neg(\neg \chi):=\chi}$.
+In this example, we use $\phi=P\lor \neg(\neg Q)$ and $\chi = Q$.  We use the version of double negation which lets us infer $\phi_{\neg(\neg \chi):=\chi}$.
 
 Since 
 
@@ -368,7 +426,9 @@ We will now develop a formal system of writing proofs.
 
 Let's begin from an example.  From the assumption $P\land (Q\land R)$ we will prove *R*.
 
-Here is a presentation of the proof in a "Fitch-style" sequence of numbered lines.
+Here is a presentation of the proof in a "Fitch-style" sequence of lines.  Each line carries an index (numbering), the formula, and the inference rule which allows us to infer it together with the previously accepted formula indices which are used in the inference rule.
+
+I've colored assumptions in red and the conclusion in green.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -394,9 +454,9 @@ The table is a nice way to display the proof, but it is just a visual aid.
 
 The proof *itself* is just the sequence of propositions.  Consider the first table proof that I presented above.  It is a sequence of assumptions, $P\land (Q\land R)$, and then a sequence of inferences, $Q\land R, R$.  
 
-If we did not care about readability at all, we could write the proof as just these two sequences.  This is, in fact, how we will formally define what a proof is.
+If we did not care about readability at all, we would write proofs as mere sequences.  This is, in fact, how we will formally define what a proof is.
 
-But note that a proof is not just any two sequences of propositions.  There must be a sequence of assumptions, and a sequence of inferences.  Each formula in the sequence of inferences must be justified by an inference rule that uses earlier formulas.  
+But note that a proof is not just *any* two sequences of propositions.  There must be a sequence of assumptions, and a sequence of inferences.  Each formula in the sequence of inferences must be justified by an inference rule that uses earlier formulas.  
 
 > [!note]- Alternate styles of proof systems.
 >
@@ -416,6 +476,14 @@ But note that a proof is not just any two sequences of propositions.  There must
 > For every $1\le i\le n$, 
 > * Either $\psi_i \in\Gamma$, or 
 > * there is an inference rule such that the formulas $\phi_1,\phi_2,...,\phi_m, \psi_1,\psi_2,...,\psi_{i-1}$ allow one to infer $\psi_i$.
+> 
+> We call $\psi_n$ the **conclusion** of the proof. 
+> 
+> Let $\Gamma$ be a sequence or formulas, and $\psi$ a formula. If there exists a proof of $\psi$ from $\Gamma$, then we write
+> $$\Gamma \vdash \psi$$
+> which is pronounced, $\Gamma$ **syntactically entails** (or **proves**) $\psi$.
+> 
+
 
  > [!note]- The definition put simply.  
  > 
@@ -425,17 +493,36 @@ But note that a proof is not just any two sequences of propositions.  There must
  > 
  > And a proof must always end on with the concluding formula.  
 
+Notice the difference between semantic and syntactic entailment. Let $\Gamma$ be a finite sequence of formulas, and $\psi$ a formula. 
+
+The expression
+
+$$\Gamma \vDash \psi$$
+is a semantic notion. It is stated in terms of truth values. 
+
+The expression
+
+$$\Gamma \vdash \psi$$
+
+is a syntactic notion. It is stated entirely in terms of the existence of certain formulas.
+
+The point of a proof, is to demonstrate that an argument is valid. That is to say, we hope that $\Gamma\vdash\psi$ will ensure that $\Gamma\vDash\psi$. We will have more to say about this later. 
+
+---
+
 Based on the formal definition of a proof above, the following is a proof: 
 
 $$ \Gamma = (P, Q), \Psi = (P\land Q, (P\land Q)\land P) $$
 
-Notice that $\Gamma$ is always allowed to be any finite sequence of propositions.  The propositions of $\Psi$ are required to be inferrable from earlier propositions.
+Notice that $\Gamma$ is allowed to be any finite sequence of propositions.  
 
-In this example, $\psi_1 = P\land Q$ is justified by Conjunction Introduction with reference to $\phi_1 = P \in \Gamma$ and $\phi_2=Q\in\Gamma$. 
+The propositions of $\Psi$, however, must be inferrable. That is to say, for each proposition in $\Psi$, there must be an inference rule which can infer that proposition from $\Gamma$ or the earlier propositions. 
+
+For example, $\psi_1 = P\land Q$ is justified by Conjunction Introduction with reference to $\phi_1 = P \in \Gamma$ and $\phi_2=Q\in\Gamma$. 
 
 Next $\psi_2 = (P\land Q)\land P$ is justified by Conjunction Introduction with reference to $\phi_1=P\in\Gamma$ and $\psi_1 = P\land Q$.  
 
-Therefore every proposition in $\Psi$ is justified by an inference rule which references earlier propositions, which makes the pair $\Gamma,\Psi$ a proof.  Its conclusion is always the last proposition, so the conclusion is $(P\land Q)\land P$.  
+The conclusion of a proof is always the last proposition, so the conclusion is $(P\land Q)\land P$.  
 
 > [!exercise] ***Exercise***
 > 
@@ -445,16 +532,18 @@ Therefore every proposition in $\Psi$ is justified by an inference rule which re
 > 2. $\Gamma = (P,Q)$ and $\Psi = (P)$.
 > 3. $\Gamma = (P,Q)$ and $\Psi = (Q,P,P\land Q,P)$.
 
-Having now made it clear what a proof is formally, we mostly ignore the formalism from now on—we will only use tabular proofs.
+We now know the formal definition of a proof. From now on, we mostly ignore the formalism—we will only use tabular proofs.
 
 For emphasis, I will color the assumptions with red and the conclusion with green.
 
 ---
 
 
-Here is a long and hard one.  Don’t worry if it seems like something you couldn’t do yourself—working out these proofs is a skill that grows with exercise and time.
+Below is a long and challenging proof.  Don’t worry if it seems like something you couldn’t do yourself—working out these proofs is a skill that grows with exercise and time.
 
-From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
+From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*. That is to say, the proof below demonstrates
+
+$$ (P\to Q, R\to Q, P\lor R) \vdash Q $$
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -473,18 +562,21 @@ From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*.
 
 > [!exercise] ***Exercise***
 >
-> From the assumptions *P* and $P\to Q$ and $Q\to R$, prove *R*.
+> From the assumptions *P* and $P\to Q$ and $Q\to R$, prove *R*. That is to say, show that
+> $$(P, P\to Q, Q\to R)\vdash R$$
 >
-> From the assumption $(P\land Q)\lor (P\land R)$ prove *P*.
+> From the assumption $(P\land Q)\lor (P\land R)$ prove *P*. That is to say, show
+> $$((P\land Q)\lor (P\land R)) \vdash P$$
 >
-> From the assumptions $(\neg P)\lor Q$ and *P*, prove *Q*.
+> From the assumptions $(\neg P)\lor Q$ and *P*, prove *Q*. That is to say, 
+> $$((\neg P)\lor Q, P) \vdash Q$$
 >
 > (The first proof requires six lines, and the others require significantly fewer.)
 
 
 # Conditional Introduction
 
-Consider the argument that, from $P\to Q$ and $Q\to R$ we can prove $P\to R$.
+Consider the argument that, from $P\to Q$ and $Q\to R$ it should follow that $P\to R$.
 
 This is a valid argument, because whenever the assumptions are true, you will find that the conclusion is true.  We could demonstrate this fact using a truth-table.  
 
@@ -693,9 +785,9 @@ Here is a demonstration.  We prove, from no premises, that $P\leftrightarrow (P\
 
 Notice that we must effectively do two separate conditional introduction proofs, one going in each of the directions.  
 
-The sub-indexing is designed to reflect each direction.  We use the notation 1.only1 to indicate the sub-proof in the “only if” direction.  In this case, that means the $P\to (P\land P)$ direction.  
+The sub-indexing is designed to reflect each direction.  We use the notation 1.only.1 to indicate the sub-proof in the “only if” direction.  In this case, that means the $P\to (P\land P)$ direction.  
 
-We use the notation 1.if1 to indicate the “if” direction.  In this case, that means $(P\land P)\to P$.
+We use the notation 1.if.1 to indicate the “if” direction.  In this case, that means $(P\land P)\to P$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -703,18 +795,18 @@ We use the notation 1.if1 to indicate the “if” direction.  In this case, tha
 
 1. "Only" sub-proof
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 1.only.1 | *P* | Assumption for Biconditional Introduction |
-| 1.only.2 | $P\land P$ | Conjunction Introduction from 1.only1, 1.only1. |
+| **Index** | **Formula** | **Reason**                                        |
+| --------- | ----------- | ------------------------------------------------- |
+| 1.only.1  | *P*         | Assumption for Biconditional Introduction         |
+| 1.only.2  | $P\land P$  | Conjunction Introduction from 1.only.1, 1.only.1. |
 
 
 1. "If" sub-proof
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 1.if.1 | $P\land P$ | Assumption for Biconditional Introduction |
-| 1.if.2 | *P* | Conjunction Elimination from 1.if1. |
+| **Index** | **Formula** | **Reason**                                |
+| --------- | ----------- | ----------------------------------------- |
+| 1.if.1    | $P\land P$  | Assumption for Biconditional Introduction |
+| 1.if.2    | *P*         | Conjunction Elimination from 1.if.1.      |
 
 > [!exercise] ***Exercise***
 >
@@ -724,13 +816,13 @@ We use the notation 1.if1 to indicate the “if” direction.  In this case, tha
 
 Recall the proof that every number is even or odd, but not both.  This was a “proof by cases”.  
 
-By a very brief summary, let the number be *n.*  Then if $n \mod 2 = 0$, we proved that *n* is even or odd, but not both.  Then if $n\mod 2 = 1$, we proved that *n* is even or odd, but not both.  
+By a very brief summary, let the number be *n.*  Then if $n \mod 2 = 0$, we proved that *n* is even or odd, but not both.  However, if $n\mod 2 = 1$, we proved that *n* is even or odd, but not both.  
 
 This generally is called a “proof by cases”.  The two “cases” are $n\mod 2=0$ or $n\mod 2 = 1$.
 
-In propositional logic it is structured like so:  Let $\phi,\chi,\psi$ be formulas.  If we have already accepted $\phi\lor\psi$, and we’ve accepted $\phi\to \chi$, and we’ve accepted $\psi\to\chi$.  Then we can infer $\chi$.
+In propositional logic it is structured like so:  Let $\phi,\chi,\psi$ be formulas.  Suppose we have already accepted $\phi\lor\psi$, and we’ve accepted $\phi\to \chi$, and we’ve accepted $\psi\to\chi$.  Then we can infer $\chi$.
 
-Of course, we can generalize this to many cases. 
+This is stated for two cases, when we have $\phi\lor\psi$. However, we can generalize this to a rule for longer disjunction. 
 
 > [!definition] ***Definition***
 >
@@ -744,31 +836,38 @@ In the example below I show you how we'll draw a proof by cases in tabular form.
 | --------- | ------------------------ | --------------------------------------------- |
 | 1.        | $P\to Q$                 | Assumption                                    |
 | 2.        | $R\to S$                 | Assumption                                    |
-| 3.        | $(P\lor R)\to (Q\lor S)$ | Conditional Introduction from subproof below. |
+| 3.        | $(P\lor R)\to (Q\lor S)$ | Conditional Introduction from subproof below |
 
 3. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 3.1. | $P\lor R$ | Assumption for conditional introduction |
-| 3.2. | $Q\lor S$ | Proof by Cases from 3.1 and subproofs below. |
+| 3.2. | $P\to (Q\lor S)$ | Conditional Introduction from subproof below. | 
 
-3.2.case1 sub-proof
-
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 3.2.case1.1. | $P$ | Assumption for case 1 |
-| 3.2.case1.2. | $Q$ | Conditional Elimination from 1 and 3.2.case1.1 |
-| 3.2.case1.3. | $Q \lor S$ | Disjunction Introduction from 3.2.case1.2. |
-
-3.2.case2 sub-proof
+3.2. conditional subproof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.2.case2.1. | $R$ | Assumption for case 2 |
-| 3.2.case2.2. | $S$ | Conditional Elimination from 2 and 3.2.case2.1 |
-| 3.2.case2.3. | $Q\lor S$ | Disjunction Introduction from 3.2.case2.2. |
+| 3.2.1. | *P* | Assumption for Conditional Introduction |
+| 3.2.2. | *Q* | Conditional Elimination from 1 and 3.2.1 |
+| 3.2.3. | $Q\lor S$ | Disjunction Introduction from 3.2.2. |
 
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.3. | $R\to (Q\lor S)$ | Conditional Introduction from subproof below |
+
+3.3. conditional subproof
+
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.3.1. | *R* | Assumption for Conditional Introduction |
+| 3.3.2. | *S* | Conditional Elimination from 2 and 3.3.1 |
+| 3.3.3. | $Q\lor S$ | Disjunction Introduction from 3.3.2. |
+
+| **Index** | **Formula** | **Reason** |
+| --- | --- | --- |
+| 3.4. | $Q\lor S$ | Proof by Cases from 3.1, 3.2, and 3.3. |
 
 > [!exercise] ***Exercise***
 >
@@ -776,13 +875,15 @@ In the example below I show you how we'll draw a proof by cases in tabular form.
 
 # Proof by Contradiction
 
-Here is another technique which requires a sub-proof, although structured differently.
+Here is a kind of every-day example of proof by contradiction: 
 
-Here is a kind of every-day example of proof by contradiction: A brilliant detective is investigating a crime, and questions the butler, “Did you kill Mr. Hitchens?”  The butler says “No, I was in the garden when Mr. Hitchens was killed in the kitchen, but I heard him scream.”
+A brilliant detective is investigating a crime, and questions the butler, “Did you kill Mr. Hitchens?”  
 
-The detective’s eyes widen, “Oh?  If you were in the garden, then you couldn’t hear Mr. Hitchens scream.  But you said that you did hear Mr. Hitchens scream!  You are contradicting yourself!”
+The butler says “No, I was in the garden when Mr. Hitchens was killed in the kitchen, but I heard him scream.”
 
-Let’s describe the general structure of a proof by contradiction.  Suppose that you want to infer $\phi$.
+The detective’s eyes widen, “Oh?  If you were in the garden, then you couldn’t hear Mr. Hitchens scream. The gardnen is walled, and the kitchen too far away.  But you said that you did hear Mr. Hitchens scream!  This is a contradiction!”
+
+Let’s describe the general structure of a proof by contradiction.  Suppose that you want to infer $\phi$.  Then to give a proof of $\phi$ by contradiction, 
 
 - Assume $\neg\phi$ (only for the sake of argument).
 - Take some reasoning steps.
@@ -790,17 +891,15 @@ Let’s describe the general structure of a proof by contradiction.  Suppose tha
 
 This justifies $\phi$.  
 
-Why?  Well it shows that $\neg \phi$ leads to a contradiction.  Since a contradiction is impossible, therefore $\neg \phi$ is false.  
-
-Since $\neg\phi$ is false, then $\phi$ is true—which means that we can infer $\phi$.
+Why?  Well it shows that $\neg \phi$ leads to a contradiction.  Therefore $\neg\phi$ must be *false* and so $\phi$ must be *true*.
 
 Let’s now see an example in practice.  From $P\to Q$ and $\neg Q$, we prove $\neg P$.
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 1. | $P\to Q$ | Assumption |
-| 2. | $\neg Q$ | Assumption |
-| 3. | $\neg P$ | Proof by Contradiction from subproof below. |
+| **Index** | **Formula** | **Reason**                                  |
+| --------- | ----------- | ------------------------------------------- |
+| 1.        | $P\to Q$    | Assumption                                  |
+| 2.        | $\neg Q$    | Assumption                                  |
+| 3.        | $\neg P$    | Proof by Contradiction from subproof below. |
 
 3. contradiction sub-proof
 
@@ -824,7 +923,7 @@ Just as before, a subproof is allowed to reference lines above it.  It can refer
 
 However, once the sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inference using Proof by Contradiction.
 
-Here we give an invalid proof that from *P* we can infer *Q*.
+Here we give an invalid proof that from *P* we can infer *Q*.  That is to say, we will give an incorrect "proof" that $(P)\vdash Q$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -833,19 +932,22 @@ Here we give an invalid proof that from *P* we can infer *Q*.
 
 2. contradiction sub-proof
 
-| **Index** | **Formula** | **Reason** |
-| --- | --- | --- |
-| 2.1. | $Q\land \neg Q$ | Assumption for Proof by Contradiction |
-| 2.2. | *Q* | Conjunction Elimination from 2.1 |
-| 2.3. | $Q\land \neg Q$ | Reiteration from 2.1 |
+| **Index** | **Formula**                 | **Reason**                            |
+| --------- | --------------------------- | ------------------------------------- |
+| 2.1.      | $\neg(\neg(Q\land \neg Q))$ | Assumption for Proof by Contradiction |
+| 2.2.      | $Q\land\neg Q$                | Double negation from 2.1              |
+| 2.3.      | *Q*                         | Conjunction Elimination from 2.2      |
+| 2.4.      | $Q\land \neg Q$             | Reiteration from 2.2                  |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
 | 3. | *Q* | Reiteration from 2.2 |
 
-As we saw before, it is invalid to infer from *P* that *Q*.  
+As we saw before, $P\vDash Q$ and therefore our proof rules should not show $P\vdash Q$.  So something about this proof must be wrong.
 
-It was possible here because of the invalid reference, in line 3, to the line 2.2.  Since line 2.2 came from a sub-proof which had ended, this reference is not permitted.
+It was possible to infer *Q* on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof.
+
+Therefore when we eventually give the formal definition of proof by contradiction below, we will again require that lines inside of a subproof cannot be referenced outside of them.
 
 ---
 

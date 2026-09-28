@@ -79,6 +79,27 @@ The structure of this text is intended to be unlike the usual mathematics textbo
 * Chapter 1 gives a case study in how logic is used in the study of mathematics.  In particular I show the use of logic to study elementary number theory.  As we later discuss logic, the reader can apply all of the broad and abstract lessons of logic, to the concrete example of number theory.
 * Where possible I try to explain not just the proofs of theorems, but *how to write* the proofs of theorems.  That means explaining writing style, structure, and discovery of proofs.
 * This resource provides an "theorem assistant".  This is very similar to Lean, but written in Python, and it places a higher priority on making proofs readable even when written in code.  This is helpful for understanding the logic and level of detail in which proofs should be written.  
+# Advice on Studying
+
+The most important advice that I can give you about how to study this subject, and how to study more generally, is: ***be curious, and be tough.***
+
+Go into this with the understanding that it will be hard and confusing. No author will ever be able to make advanced mathematics easy. I hope to make it more accessible with this text, but studying mathematical reasoning will still demand that the reader is up for a challenge and a time commitment. 
+
+But if you genuinely find the ideas interesting, take heart! You *can* learn them with enough exercise. Do not be intimidated by notation or abstraction. With time, exposure, focus, and use of these ideas, what initially seems obscure can come to feel natural and clear. 
+
+Being curious and wanting to know this content is necessary to keep you motivated. You'll need to be so motivated that, when you are inevitably frustrated by something you don't immediately understand, you will spend minutes, hours, or even days living in that confusion. You'll find that your endurance grows, as if you were a long distance runner. 
+
+But notices what I emphasized: This becomes possible with enough *exercise*. Not enough reading, not enough thinking. There is a famous saying in mathematics, 
+
+> A mathematician reads with a pencil in her hand. 
+
+Every mathematician, whenever reading any new piece of mathematics, always finds exercises, or makes up their own exercises to ensure that they fully understand what they are reading. You should begin to develop the same habit. 
+
+This text puts exercises throughout the body of the text, as well as after each chapter. The exercises inside the body are intended to be quick, direct, easy. That doesn't mean they will take no time. Just that they are intended to be a easy as I can make them while still exercising what is necessary. 
+
+Do not rely just on the exercises that I provide here. These exercises are intended to be *minimal* to ensure understanding. I don't want to give too many exercises, if you're already understanding the material well, and would benefit from just getting in with it. But if you find that you struggle with any exercise, then you should make up more exercises until you solve them with mastery. If you cannot think of exercises to give yourself, then seek out exercises written by someone else. That could mean exercises that I have written after the end of the chapter. You could also seek out other resources, like asking an AI for an unlimited number of similar exercises, or using another textbook as a supplement to this one. 
+
+The exercises at the end of the chapter are intended to be more challenging: They don't just make sure that you've understood what you've read, like the exercises in the middle of the chapter do. They ask you to become increasingly creative, thinking beyond merely what you've been told. You will have to find solutions to problems, for which you haven't seen the solution to perfectly similar examples. This is unavoidable with many proofs of theorems: once a theorem is proved, there is not necessarily another theorem that is similar enough to act as a direct exercise of the same ideas and methods. 
 
 # Chapters
 
