@@ -269,8 +269,7 @@ Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefor
 Now that we have formulas, we can compose them together in exactly the same way that we did in propositional logic, using $\text{Conn}=\{\neg,\land,\lor,\to,\leftrightarrow\}$. 
 
 > [!definition] ***Definition***
-> *Syntax* 
-> Let $\text{Objs},\text{Preds}$ be any set of object and predicate symbols.  Let $\text{Arity}$ be an arity function for $\text{Preds}$.
+> *Syntax*
 > 
 > Let $\phi,\psi$ be any predicate formulas.  Then each of the following is also a predicate formula.  
 > 
@@ -284,11 +283,15 @@ Now that we have formulas, we can compose them together in exactly the same way 
 >
 > The semantics are exactly the same as they were for propositional logic.  To rehearse it, if TODO is any predicate model, and $\phi,\psi$ are any formulas then 
 > 
-> * $(\neg\phi)^TODO = TODO$
-> * $(\neg\phi)^TODO = TODO$
-> * $(\neg\phi)^TODO = TODO$
-> * $(\neg\phi)^TODO = TODO$
-> * $(\neg\phi)^TODO = TODO$
+> * $(\neg\phi)^TODO = \sim(\phi^TODO)$
+> * $(\phi\land\psi)^TODO = (\phi^TODO)\curlywedge(\psi^TODO)$
+> * $(\phi\lor\psi)^TODO = (\phi^TODO)\curlyvee (\psi^TODO)$
+> * $(\phi\to\psi)^TODO = (\phi^TODO)\leadsto(\psi^TODO)$
+> * $(\phi\leftrightarrow)^TODO = (\phi^TODO)\curlyleftrightarrow (\psi^TODO)$
+
+To demonstrate, suppose that $P$ has arity 2, $Q$ has arity 3, and 
+
+$$ P^TODO = \{ 
 
 ---
 
