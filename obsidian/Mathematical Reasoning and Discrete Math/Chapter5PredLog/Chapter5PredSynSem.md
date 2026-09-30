@@ -141,6 +141,7 @@ An example usage would be “the ball is red”, in which case we might choose t
 If the arity is greater than one, like in the example “3 is less than 2”, then we will have names for each constant.  Here we might use *b* for 2, and *c* for 3, and then *L* for “is less than”.  In that case, we would write $L(c,b)$ to express that 3 is less than 2.  
 
 > [!definition] ***Definition***
+> *Syntax*
 >
 > Let $\text{Objs},\text{Preds}$ be two disjoint nonempty sets of symbols, not containing the symbols from $\text{Conns}$.  
 >
@@ -210,8 +211,9 @@ From all of these components, we know that syntactically, we can form the propos
 In the definition below, TODO does the job of (1) and (2).  After that, TODO takes over and does the job of (3).
 
 > [!definition] ***Definition***
+> *Semantics*
 >
-> Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively. Let $\text{Arity}$ be the arity function for $\text{Preds}$.
+> Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively. Let $\text{Arity}$ be an arity function for $\text{Preds}$.
 >
 > Let $उ$ be any nonempty set, which we will refer to as the **universe**.  
 >
@@ -262,7 +264,31 @@ To evaluate the proposition means that we find the value of $(P(o))^{म}$.  The
 
 Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefore by the rule which determines truth-value, $(P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain: "one is an even number" is false.  
 
+# Propositional Connectives
 
+Now that we have formulas, we can compose them together in exactly the same way that we did in propositional logic, using $\text{Conn}=\{\neg,\land,\lor,\to,\leftrightarrow\}$. 
+
+> [!definition] ***Definition***
+> *Syntax* 
+> Let $\text{Objs},\text{Preds}$ be any set of object and predicate symbols.  Let $\text{Arity}$ be an arity function for $\text{Preds}$.
+> 
+> Let $\phi,\psi$ be any predicate formulas.  Then each of the following is also a predicate formula.  
+> 
+> * $\neg\phi$
+> * $\phi\land\psi$
+> * $\phi\lor\psi$
+> * $\phi\to\psi$
+> * $\phi\leftrightarrow \psi$
+> 
+> *Semantics*
+>
+> The semantics are exactly the same as they were for propositional logic.  To rehearse it, if TODO is any predicate model, and $\phi,\psi$ are any formulas then 
+> 
+> * $(\neg\phi)^TODO = TODO$
+> * $(\neg\phi)^TODO = TODO$
+> * $(\neg\phi)^TODO = TODO$
+> * $(\neg\phi)^TODO = TODO$
+> * $(\neg\phi)^TODO = TODO$
 
 ---
 
