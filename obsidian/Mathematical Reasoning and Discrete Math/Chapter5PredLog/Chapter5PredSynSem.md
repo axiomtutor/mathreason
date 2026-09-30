@@ -36,6 +36,8 @@ We can also find examples like “Ljubljana is in the middle of Zagreb, Graz, an
 > If the arity of a predicate is 2, then we call it a **binary relation**.
 >
 > If the arity of a predicate is 3, then we call it a **ternary relation**.
+>
+> If the arity is larger than *n* then we simply say that *P* is an ***n*-ary relation**.
 
 > [!exercise] ***Exercise***
 > Consider the proposition “The average of 5, 6, and 7, is 6.”
@@ -54,9 +56,9 @@ Let's get even more specific.  Let's suppose that the people at the party are na
 
 In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{ \text{a,b,c,d,e,f,g,h,i,j} \}$.  
 
-Keep in mind that the symbols are *a* through *j*, but we are giving them meaning by identifying each symbol with a person.  
+Keep in mind that the symbols are *a* through *j*, but the meanings of the symbols are the corresponding people.  
 
-The correspondence between symbol and its meaning is tracked by an "interpretation".  We will use the symbol $इ$ for an interpretation.
+The correspondence between a symbol and its meaning is tracked by an "interpretation".  We will use the symbol $इ$ for an interpretation. It is most nearly pronounced as the English 'i' in the word "bit".  
 
 $$
 \begin{aligned}
@@ -73,13 +75,13 @@ $$
 \end{aligned}
 $$
 
-We choose the predicate names *M, P, C*.  Each predicate name will denote the set of people in each major.  For example, if the math majors are Adam, Brooke, Cecil, Dale, and Eudoxus, then 
+We choose the predicate names *M, P, C* to denote the math, philosophy, and computer science majors, respectively.  For example, if the math majors are Adam, Brooke, Cecil, Dale, and Eudoxus, then 
 
 $$
 M^{इ} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
 $$
 
-If the philosophy majors are Adam, Brooke, Cecil, Gyanesh, and Irene, then these are the denotation of *P*.
+If the philosophy majors are Adam, Brooke, Cecil, Gyanesh, and Irene, then the denotation of *P* is
 
 $$
 P^{इ} = \{\text{Adam, Brooke, Cecil, Gyanesh, Irene}\}
@@ -87,14 +89,7 @@ $$
 
 > [!exercise] ***Exercise***
 >
-> Make up a denotation of the symbol *C*, which denotes the set of computer science majors.  There is more than one valid way to decide which names are in *C*, so just find one that is consistent with everything that we’ve said above.  
->
-> But note that not every denotation of *C* is correct.  
->
-> - $C^{इ}$ must contain five people, and
-> - it must overlap $M^{इ}$ in exactly three people, and
-> - it must overlap $P^{इ}$ in exactly three people, and
-> - $C^{इ}, M^{इ}, P^{इ}$ must overlap in exactly two people.
+> Make up a denotation of the symbol *C* so that it is consistent with the example we have described above.  That is to say, $C^TODO$ contains five people at the party, but shares exactly two members with $M^TODO$ and $P^TODO$, and there is only one person in all three $M^TODO,P^TODO,C^TODO$.  There is more than one correct way to do this.  
 
 # Relation Diagrams
 
@@ -120,7 +115,7 @@ In this example, since $(1,2)\in L^{इ}$ then there is an arrow pointing from 1
 >
 > Consider a family of 
 >
-> - a mother, Sun,
+> - a mother, named Sun,
 > - a father, Albert,
 > - a son, Ryan,
 > - a daughter, Yuna.
@@ -138,14 +133,12 @@ We will use upper-case italic Latin letters as symbols for predicates, also allo
 Therefore an expression like $C_{10}(x_{100})$ roughly means 
 
 - $x_{100}$ is the name of some object.
-- $C_{10}$ is the name of some predicate.
-- $C_{10}(x_{100})$ is the proposition that $x_{100}$ has property $C_{10}$.
+- $C_{3}$ is the name of some predicate. (Because it is applied to a single object, we can infer that the arity of $C_{3}$ is 1.)
+- $C_{3}(x_{100})$ is the proposition that $x_{100}$ has property $C_{3}$.
 
 An example usage would be “the ball is red”, in which case we might choose the object symbol *b* for the ball, and the predicate symbol *R* for “is red”.  Then the proposition is symbolized as $R(b)$.
 
 If the arity is greater than one, like in the example “3 is less than 2”, then we will have names for each constant.  Here we might use *b* for 2, and *c* for 3, and then *L* for “is less than”.  In that case, we would write $L(c,b)$ to express that 3 is less than 2.  
-
-Although these are our usual conventions, note that the technical definition allows the symbols to be anything at all.  We only require that the set of object and predicate symbols be nonempty and not overlapping.  
 
 > [!definition] ***Definition***
 >
@@ -184,39 +177,41 @@ Although these are our usual conventions, note that the technical definition all
 
 # Predicate and Object Semantics
 
-To give meaning to these symbols, we will speak of a model, written as $म$.  This time $म$ does not immediately tell us which propositions are true and false—instead, $म$ determines the meanings of object and predicate symbols.  From those meanings, we can then determine which propositions are true and false.
+To give meaning to these symbols, we will speak of a model, written as $म$.  This is the extension of the idea of a propositional logic model, to our new predicate logic.  However, instead of $म$ directly dictating the truth or falsehood of any proposition, it first decides the "interpretation" of the object and predicate symbols.  From the interpretation, we can then determine which propositions are true and false.
 
-You should think of the main job of a model, as *interpreting* the symbols.  By analogy, imagine that you meet someone who speaks a strange and unfamiliar version of English.  They tell you “This gibblestrump is whifterstrook.”  Of course you have no idea what that means.  
+To understand what an "interpretation" is, imagine that you meet someone who speaks a strange and unfamiliar version of English.  They tell you “This gibblestrump is whifterstrook.”  Of course you have no idea what that means.  
 
-But then later you find out that “gibblestrump” is just this person’s word for a cat.  And then you also find out that “whifterstrook” is an adjective which roughly translates to “a jerk”.  Now you know at the person was saying “This cat is a jerk.”  
+But then later you find out that “gibblestrump” is just this person’s word for a cat.  And then you also find out that “whifterstrook” is an adjective which roughly translates to “rude”.  Now you know at the person was saying “This cat is rude.”  
 
-That is essentially what an interpretation does: For a object symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.
+That is essentially what an interpretation does: For an object symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.  Choosing to use one particular interpretation, is a choice of how we will match symbols to their meaning.
 
-In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  In any given setting, you choose your so-called “domain of discourse”.  
+In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  Whatever we choose for this set or universe, we call it the “domain of discourse”.  
 
 [!note]- The domain of discourse is usually determined by context, in natural languages.
     
     We will sometimes be explicit about just what our domain of discourse is.  When it’s obvious or unimportant, we won’t declare the universe explicitly.  
     
-    In practice, in natural languages, the domain of discourse is almost always determined by context.  This usually causes no confusion, although it sometimes can.
+    In practice, in natural languages, the domain of discourse is almost always determined by context.  This usually causes no confusion.
     
-    For the reader interested in linguistics, you may want to read up on this subject more.
+    For the reader interested in related concepts in linguistics, you may want to read the following Wikipedia article.
     
     [https://en.wikipedia.org/wiki/Domain_of_discourse](https://en.wikipedia.org/wiki/Domain_of_discourse)
 
-We regard the universe as a set, which we’ll call $उ$.  
+We regard the universe as a set, which we’ll call $उ$.  This is the last Devanagari symbol that you'll need to learn for this course!  It is most nearly pronounced as the English 'u' in "put".
 
-If we have any constant symbol, say *a*, then the semantics tells us which element in $उ$ the symbol *a* refers to.  
+If we have any constant symbol, say $a\in\text{Objs}$, then the semantics tells us which element in $उ$ the symbol *a* refers to.  
 
-For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in उ$.  
+For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in उ$.  If so then we write $o^TODO\in TODO$.
 
 The model could also determine that the predicate *P* refers to the set of all even numbers.  
 
-From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should agree with this.  
+From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should then tell us, (1) the denotation of $o$, (2) the denotation of $P$, and (3) a rule which explains why $P(o)$ is assigned the truth-value TODO.
+
+In the definition below, TODO does the job of (1) and (2).  After that, TODO takes over and does the job of (3).
 
 > [!definition] ***Definition***
 >
-> Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively.
+> Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively. Let $\text{Arity}$ be the arity function for $\text{Preds}$.
 >
 > Let $उ$ be any nonempty set, which we will refer to as the **universe**.  
 >
@@ -225,14 +220,13 @@ From all of these components, we know that syntactically, we can form the propos
 > $$
 > a^{इ} \in उ
 > $$
->
-> Let $P\in\text{Preds}$ and let $n = \text{Arity}(P)$.  Then
->
+> 
+> The interpretation, TODO, also assigns to each predicate symbol a relation on TODO.  If $P\in\text{Preds}$ and $n=\text{Arity}(P)$, then the assigned subset of $TODO^n$ is written $P^TODO$.  Therefore 
+> $$
+> P^TODO \in TODO^n
 > $$
 >
-> Now the pair $म = (उ,इ)$ is called a **predicate model** (or just **model** for short).
->
-> Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in उ$.  
+> A **model**, TODO, assigns to each formula a truth-value. Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in उ$.  
 >
 > Then 
 >
@@ -248,25 +242,27 @@ From all of these components, we know that syntactically, we can form the propos
 
 > [!note]- What is the difference between a superscript $म$ and a superscript $इ$?
 >
-> Note that the job of the interpretation, $इ$, is *only* to track the association between symbols in the syntax and elements in the universe.  A superscript $इ$ only makes sense when it is written over a symbol that refers to the domain (objects and predicates).
+> Note that the job of the interpretation, $इ$, is *only* to track the association between symbols in the syntax and meaning of symbols.  A superscript $इ$ only makes sense when it is written over an object or predicate symbol.
 >
-> A superscript $म$ is used to determine truth-values of formulas.  Therefore a superscript $म$ only makes sense when it is written over a formula.
+> The job of a model, TODO, is to determine truth-values of formulas, after TODO has determined the meanings of the symbols.  Therefore a superscript $म$ only makes sense when it is written over a formula.
 
-The picture below represents these ideas, focusing initially on a predicate with arity 1.  As a predicate with arity 1, this means that its interpretation $P^{इ}$ will just be a subset of the universe.  
+The picture below represents these ideas for a property.  As a predicate with arity 1, this means that its interpretation $P^{इ}$ will just be a subset of the universe, TODO.  
 
 The left side contains our basic syntax: constant symbols like *c*, and predicate symbols like *P*.  These are the symbols we use to express propositions.  
 
 ![image.png](Chapter%204%20Predicate%20Syntax%20and%20Semantics/image%201.png)
 
-On the right is the basic semantic object, the universe, $उ$—the set of things our symbols “talk about”
+On the right is the basic semantic object, the universe, $उ$—the set of things our symbols “talk about”.
 
-The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with *c*.  This is $c^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with *P*.  This is $P^{इ}=X$.
+The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Objs}$.  This is $c^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with *P*.  This is $P^{इ}=X$.
 
-Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{इ} = 1$.  We also said that $P^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$.  
+Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol *o* to denote the number 1, so that means our interpretation assigns $o^{इ} = 1$.  We also said that $P^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$, where these are the universe and interpretation thta we have now chosen.  
 
 To evaluate the proposition means that we find the value of $(P(o))^{म}$.  The definition of this tells us to check whether $o^{इ}\in P^{इ}$.  But this is the same as checking whether 1 is in the set of even numbers.  
 
-Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefore $(P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain.  
+Since 1 is not in the set of even numbers, $o^{इ}\notin P^{इ}$, and therefore by the rule which determines truth-value, $(P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain: "one is an even number" is false.  
+
+
 
 ---
 
