@@ -289,9 +289,76 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > * $(\phi\to\psi)^TODO = (\phi^TODO)\leadsto(\psi^TODO)$
 > * $(\phi\leftrightarrow)^TODO = (\phi^TODO)\curlyleftrightarrow (\psi^TODO)$
 
-To demonstrate, suppose that $P$ has arity 2, $Q$ has arity 3, and 
+To demonstrate, suppose that $\text{Objs}=\{a,b\}$, and $\text{Preds}=\{P,Q\}$, and $P$ has arity 2, $Q$ has arity 3.  On the semantic side, assume that $TODO = \{1,2,3\}$, and 
 
-$$ P^TODO = \{ 
+$$ a^TODO = 1, b^TODO = 2, c^TODO = 2 $$
+
+> [!note]- Not every element gets a symbol.
+> You may notice that in this example, there is an element of the domain (3) for which no object symbol denotes it.  That may seem odd, but note that nothing in our definitions says that this is forbidden.  
+> 
+> It is a bit silly, though.  Since nothing denotes 3, there is no way to talk about it, and therefore it is useless in this example.  
+> 
+> That is true for now.  In the next chapter, where we introduce quantifiers, this will change.  
+
+and 
+
+$$ P^TODO = \{ (1,2) \},\ Q^TODO = \{ (1,2,3), (3,1,2), (2,3,1) \} $$
+
+Let's now evaluate, for example, $Q(a,b,c)\to \neg P(a,b)$.
+
+$$
+\begin{aligned}
+ (Q(a,b,c)\to P(a,b))^TODO &= (Q(a,b,c))^TODO \leadsto (\neg P(a,b))^TODO \\
+ &= (Q(a,b,c))^TODO \leadsto \sim (P(a,b))^TODO
+\end{aligned}$$
+
+Now we have to determine the values of $Q(a,b,c)^TODO$ and $P(a,b)^TODO$.  To do this we refer to the interpretation.  Note that $(a^TODO,b^TODO,c^TODO) = (1,2,2)\notin Q^TODO$.  Therefore $Q(a,b,c)^TODO = TODO$.  
+
+And since $(a^TODO,b^TODO)=(1,2)\in P^TODO$ therefore $P(a,b)^TODO = TODO$.
+
+Now we may infer that 
+
+$$\begin{aligned}
+ (Q(a,b,c)\to \neg P(a,b))^TODO &= TODO \leadsto \sim TODO \\
+ & TODO \leadsto TODO \\
+ & TODO 
+\end{aligned}$$
+
+> [!exercise] ***Exercise***
+> Using the same syntax and semantics as the example above, evaluate $(P(a,a)\leftrightarrow Q(a,a,a))^TODO$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
