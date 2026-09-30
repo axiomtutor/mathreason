@@ -3,11 +3,11 @@ title: "Chapter 5: Predicate Syntax and Semantics"
 ---
 In the previous chapters we developed propositional logic, both its syntax and semantics.  
 
-In this chapter we will discuss a new and more expressive system of logic, predicate logic.  Predicate logic uses the same propositional logic structure, but adds detail to the nature of propositions.  Rather than propositions being the fundamental components of a formula, propositions are themselves constructed from predicates and objects.
+In this chapter we will discuss a new and more expressive system of logic, predicate logic.  Predicate logic uses the same propositional logic structure, but adds detail to the nature of propositions.  Rather than propositions being the fundamental components of a formula, propositions are themselves constructed from constituent predicates and objects.
 
 # Predicates and Objects
 
-As you consider many examples of propositions, you notice a pattern.  They are always made up of an “object” and a “predicate”.  
+As you consider many examples of propositions, you notice a pattern.  They are always made up of an “object” and a “predicate”.  Predicates and objects are linguistic notions that we will now explain. 
 
 For example, in the sentence “The ball is red”, the object is “the ball”.  The predicate is “is red”.  
 

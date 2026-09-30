@@ -871,7 +871,7 @@ In the example below I show you how we'll draw a proof by cases in tabular form.
 
 > [!exercise] ***Exercise***
 >
-> Use a proof by cases to prove, from $P\to Q$ and $R\to S$, that $(P\lor R)\to (Q\lor S)$.
+> Use a proof by cases to prove, from $P\to Q$ and $R\to S$, and $T\to (Q\land U)$, the conclusion $(P\lor R\lor T)\to (Q\lor S)$.
 
 # Proof by Contradiction
 
@@ -910,18 +910,16 @@ Let’s now see an example in practice.  From $P\to Q$ and $\neg Q$, we prove $\
 | 3.3. | *Q* | Conditional Elimination from 1, 3.2 |
 | 3.4. | $Q\land \neg Q$ | Conjunction Introduction from 2, 3.3. |
 
-Look over this proof and see how it aligns with what we described earlier.  The sub-proof:
+Look over this proof and see how it aligns with what we described earlier.  The sub-proof is structured by:
 
 - We are trying to prove $\neg P$.
 - Therefore we assume $\neg(\neg P)$.
 - We go through some reasoning steps after that (lines 3.2 to 3.4).
 - The last line of the sub-proof is the contradiction $Q\land \neg Q$.
 
-Just as before, a subproof is allowed to reference lines above it.  It can reference, for example, lines 1 and 2.
-
 ---
 
-However, once the sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inference using Proof by Contradiction.
+Once a sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inferences using Proof by Contradiction.
 
 Here we give an invalid proof that from *P* we can infer *Q*.  That is to say, we will give an incorrect "proof" that $(P)\vdash Q$.
 
@@ -943,11 +941,11 @@ Here we give an invalid proof that from *P* we can infer *Q*.  That is to say, w
 | --- | --- | --- |
 | 3. | *Q* | Reiteration from 2.2 |
 
-As we saw before, $P\vDash Q$ and therefore our proof rules should not show $P\vdash Q$.  So something about this proof must be wrong.
+We have said before that $P\not\vDash Q$ and therefore our proof rules should not show $P\vdash Q$. (To reiterate, the entire point of a proof, like $P\vdash Q$, is to ensure that the argument is valid, i.e. $P\vDash Q$.) So something about the proof above must be wrong.
 
-It was possible to infer *Q* on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof.
+Here is what is wrong: It was possible to infer *Q* on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof. 
 
-Therefore when we eventually give the formal definition of proof by contradiction below, we will again require that lines inside of a subproof cannot be referenced outside of them.
+We saw that the same sort of invalid reference when using Conditional Introduction as well. So there is a general phenomenon here: lines inside of any kind of subproof should never be referenced from a line outside the subproof. 
 
 ---
 
@@ -983,3 +981,29 @@ Here we prove from no premises, that $\neg(P\land \neg P)$.
 > Also prove, from no premises, that $(P\land \neg P)\to Q$.
 >
 > Also prove, from $P\land \neg P$, that *Q*.
+
+# The Principle of Explosion
+
+As you presumably showed in the previous exercise, $(P\land \neg P) \vdash Q$. You should feel invited to also confirm that $(P\land \neg P) \vDash Q$, which only further confirms that our proof rules can prove valid arguments. 
+
+This particular argument is interesting, though. It shows that, from $P\land \neg P$ it is possible to infer *any* propositions. We describe this as an "explosion", because the set of propositions that one can prove "explodes" to include every formula.
+
+To be clear: this is a *bad* thing. You want to accept the premises which allow you to prove the true propositions and not the false ones. When you can prove all the true, and all the false propositions, you lose the ability to distinguish between the two. 
+
+The following is a generalization of this fact.
+
+> [!definition] ***Definition***
+> Let $\phi$ be any contradiction, and $\psi$ any formula. Let $\Gamma$ be any sequence of formulas such that $\phi \in\Gamma$.
+> 
+>  The fact that $(\Gamma, \psi)$ is a valid argument, is called **the principle of explosion**.
+
+> [!exercise] ***Exercise***
+> Prove that the principle of explosion is true. That is to say, prove
+> $$\Gamma \vDash \psi$$
+> if $\Gamma$ contains a contradiction. 
+> 
+> Also prove that
+> $$\Gamma \vdash \psi$$
+> by exhibiting a proof. You you may find it more convenient to not represent this proof as a table, and instead merely represent it as a sequence of formulas meeting the conditions of a proof. 
+
+
