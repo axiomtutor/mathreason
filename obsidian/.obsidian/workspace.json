@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Chapter4_PropositionalProofTheory"
+              "title": "Chapter6FOLSynSem"
             }
           }
         ]
@@ -191,15 +191,16 @@
   },
   "active": "95d3d5075504da6f",
   "lastOpenFiles": [
-    "Mathematical Reasoning and Discrete Math/Chapter3PropLog/Chapter3_PropLog.md",
-    "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
+    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
+    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/lessthanrel.png",
     "Mathematical Reasoning and Discrete Math.md",
+    "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
+    "Mathematical Reasoning and Discrete Math/Chapter3PropLog/Chapter3_PropLog.md",
     "Mathematical Reasoning and Discrete Math/Chapter3PropLog/notobtuseiso.png",
     "Mathematical Reasoning and Discrete Math/Chapter3PropLog/obtusenotiso.png",
     "Mathematical Reasoning and Discrete Math/Chapter3PropLog/obtuseiso.png",
     "Mathematical Reasoning and Discrete Math/Chapter3PropLog/obtusenotiso.png",
     "Mathematical Reasoning and Discrete Math/Chapter3PropLog/busterkeaton.png",
-    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
     "Mathematical Reasoning and Discrete Math/Chapter7AppFOL",
     "Mathematical Reasoning and Discrete Math/Chapter6FOL",
     "Mathematical Reasoning and Discrete Math/Chapter5PredLog",

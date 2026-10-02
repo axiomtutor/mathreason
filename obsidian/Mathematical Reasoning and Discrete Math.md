@@ -91,7 +91,9 @@ But if you genuinely find the ideas interesting, take heart! You *can* learn the
 
 Being curious and wanting to know this content is necessary to keep you motivated. You'll need to be so motivated that, when you are inevitably frustrated by something you don't immediately understand, you will spend minutes, hours, or even days living in that confusion. You'll find that your endurance grows, as if you were a long distance runner. 
 
-But notices what I emphasized: This becomes possible with enough *exercise*. Not enough reading, not enough thinking. There is a famous saying in mathematics, 
+But notice that I said you get better with *exercise*.  Not reading, not thinking.  *Exercise.*  
+
+There is a common saying in mathematics:
 
 > A mathematician reads with a pencil in her hand. 
 
@@ -99,9 +101,11 @@ Every mathematician, whenever reading any new piece of mathematics, always finds
 
 This text puts exercises throughout the body of the text, as well as after each chapter. The exercises inside the body are intended to be quick, direct, easy. That doesn't mean they will take no time. Just that they are intended to be a easy as I can make them while still exercising what is necessary. 
 
-Do not rely just on the exercises that I provide here. These exercises are intended to be *minimal* to ensure understanding. I don't want to give too many exercises, if you're already understanding the material well, and would benefit from just getting in with it. But if you find that you struggle with any exercise, then you should make up more exercises until you solve them with mastery. If you cannot think of exercises to give yourself, then seek out exercises written by someone else. That could mean exercises that I have written after the end of the chapter. You could also seek out other resources, like asking an AI for an unlimited number of similar exercises, or using another textbook as a supplement to this one. 
+The exercises in the body of the text are intended to be *minimal* to ensure understanding. You should be doing exercises constantly, but the ones that you do while you read should be just enough to make sure you're following what the text says. 
 
 The exercises at the end of the chapter are intended to be more challenging: They don't just make sure that you've understood what you've read, like the exercises in the middle of the chapter do. They ask you to become increasingly creative, thinking beyond merely what you've been told. You will have to find solutions to problems, for which you haven't seen the solution to perfectly similar examples. This is unavoidable with many proofs of theorems: once a theorem is proved, there is not necessarily another theorem that is similar enough to act as a direct exercise of the same ideas and methods. 
+
+If there are exercises that you continue to struggle with, you should seek out more exercises, and do them until you reach at least a medium level of comfort and mastery.  On the other hand, don't feel the need to reach perfection at the end of any chapter.  A medium level of mastery is perfectly adequate to move on to the next chapter.  Moreover, later chapters continue to exercise the information in earlier chapters--so by moving on, you will both acquire new skills while simultaneously sharpening your old skills.
 
 # Chapters
 

@@ -89,7 +89,7 @@ $$
 
 > [!exercise] ***Exercise***
 >
-> Make up a denotation of the symbol *C* so that it is consistent with the example we have described above.  That is to say, $C^TODO$ contains five people at the party, but shares exactly two members with $M^TODO$ and $P^TODO$, and there is only one person in all three $M^TODO,P^TODO,C^TODO$.  There is more than one correct way to do this.  
+> Make up a denotation of the symbol *C* so that it is consistent with the example we have described above.  That is to say, $C^इ$ contains five people at the party, but shares exactly two members with $M^इ$ and $P^इ$, and there is only one person in all three $M^इ,P^इ,C^इ$.  There is more than one correct way to do this.  
 
 # Relation Diagrams
 
@@ -99,7 +99,7 @@ Just to take a fresh example, consider the relation “less than” on the set o
 
 If we use the symbol *L* to represent the relation, then $(1,2)\in L^{इ}$ because 1 < 2.  Also $(2, 5)\in L^{इ}$ because 2 < 5.  On the other hand $(2, 2)\notin L^{इ}$ and $(2,3)\notin L^{इ}$.
 
-![image.png](Chapter%204%20Predicate%20Syntax%20and%20Semantics/image.png)
+![[lessthanrel.png]]
 
 When drawing a node-and-arrow diagram for a relation, we put an arrow from *x* to *y* if the ordered pair $(x,y)$ is in the relation.  
 
@@ -130,7 +130,7 @@ We will often use lower-case italic Latin letters as symbols for objects, like $
 
 We will use upper-case italic Latin letters as symbols for predicates, also allowing for indices.  So the predicate symbols are $A, A_1, A_2,\dots,B,B_1,B_2,\dots,Z,Z_1,Z_2,\dots$
 
-Therefore an expression like $C_{10}(x_{100})$ roughly means 
+Therefore an expression like $C_{3}(x_{100})$ roughly means 
 
 - $x_{100}$ is the name of some object.
 - $C_{3}$ is the name of some predicate. (Because it is applied to a single object, we can infer that the arity of $C_{3}$ is 1.)
@@ -178,9 +178,13 @@ If the arity is greater than one, like in the example “3 is less than 2”, th
 
 # Predicate and Object Semantics
 
-To give meaning to these symbols, we will speak of a model, written as $म$.  This is the extension of the idea of a propositional logic model, to our new predicate logic.  However, instead of $म$ directly dictating the truth or falsehood of any proposition, it first decides the "interpretation" of the object and predicate symbols.  From the interpretation, we can then determine which propositions are true and false.
+To give meaning to these symbols, we will speak of a model, written as $म$.  You guessed it!  This is like the notion of a model in propositional logic.  
 
-To understand what an "interpretation" is, imagine that you meet someone who speaks a strange and unfamiliar version of English.  They tell you “This gibblestrump is whifterstrook.”  Of course you have no idea what that means.  
+However, in propositional logic, $म$ directly dictates the truth or falsehood of any propositional variable.  In predicate logic that would make no sense--it would not use the information about the predicate and the object.  
+
+So a predicate logic model must first decide the "interpretation" of the object and predicate symbols.  From the interpretation, we can then determine which propositions are true and false.
+
+To understand what an "interpretation" is, imagine that you meet someone who speaks a strange and unfamiliar version of English.  They tell you “This gibblestrump is whifterstrook.”  Of course you have no idea what that means.  (That is assuming you are not British.  This example sentence is exactly how British people sound to my American ear.)
 
 But then later you find out that “gibblestrump” is just this person’s word for a cat.  And then you also find out that “whifterstrook” is an adjective which roughly translates to “rude”.  Now you know at the person was saying “This cat is rude.”  
 
@@ -202,13 +206,13 @@ We regard the universe as a set, which we’ll call $उ$.  This is the last Dev
 
 If we have any constant symbol, say $a\in\text{Objs}$, then the semantics tells us which element in $उ$ the symbol *a* refers to.  
 
-For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in उ$.  If so then we write $o^TODO\in TODO$.
+For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol *o* refer to the number $1\in उ$.  If so then we write $o^इ\in उ$.
 
 The model could also determine that the predicate *P* refers to the set of all even numbers.  
 
-From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should then tell us, (1) the denotation of $o$, (2) the denotation of $P$, and (3) a rule which explains why $P(o)$ is assigned the truth-value TODO.
+From all of these components, we know that syntactically, we can form the proposition $P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should then tell us, (1) the denotation of $o$, (2) the denotation of $P$, and (3) a rule which explains why $P(o)$ is assigned the truth-value फ.
 
-In the definition below, TODO does the job of (1) and (2).  After that, TODO takes over and does the job of (3).
+In the definition below, इ does the job of (1) and (2).  After that, म takes over and does the job of (3).
 
 > [!definition] ***Definition***
 > *Semantics*
@@ -223,12 +227,12 @@ In the definition below, TODO does the job of (1) and (2).  After that, TODO tak
 > a^{इ} \in उ
 > $$
 > 
-> The interpretation, TODO, also assigns to each predicate symbol a relation on TODO.  If $P\in\text{Preds}$ and $n=\text{Arity}(P)$, then the assigned subset of $TODO^n$ is written $P^TODO$.  Therefore 
+> The interpretation, इ, also assigns to each predicate symbol a relation on उ.  If $P\in\text{Preds}$ and $n=\text{Arity}(P)$, then the assigned subset of $उ^n$ is written $P^इ$.  Therefore 
 > $$
-> P^TODO \in TODO^n
+> P^इ \in उ^n
 > $$
 >
-> A **model**, TODO, assigns to each formula a truth-value. Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in उ$.  
+> A **model**, म, assigns to each formula a truth-value. Let $P\in \text{Preds}$ and $n=\text{Arity}(P)$, and $a_1,\dots,a_n\in उ$.  
 >
 > Then 
 >
@@ -246,9 +250,9 @@ In the definition below, TODO does the job of (1) and (2).  After that, TODO tak
 >
 > Note that the job of the interpretation, $इ$, is *only* to track the association between symbols in the syntax and meaning of symbols.  A superscript $इ$ only makes sense when it is written over an object or predicate symbol.
 >
-> The job of a model, TODO, is to determine truth-values of formulas, after TODO has determined the meanings of the symbols.  Therefore a superscript $म$ only makes sense when it is written over a formula.
+> The job of a model, म, is to determine truth-values of formulas, after इ has determined the meanings of the symbols.  Therefore a superscript $म$ only makes sense when it is written over a formula.
 
-The picture below represents these ideas for a property.  As a predicate with arity 1, this means that its interpretation $P^{इ}$ will just be a subset of the universe, TODO.  
+The picture below represents these ideas for a property.  As a predicate with arity 1, this means that its interpretation $P^{इ}$ will just be a subset of the universe, उ.  
 
 The left side contains our basic syntax: constant symbols like *c*, and predicate symbols like *P*.  These are the symbols we use to express propositions.  
 
@@ -281,17 +285,17 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > 
 > *Semantics*
 >
-> The semantics are exactly the same as they were for propositional logic.  To rehearse it, if TODO is any predicate model, and $\phi,\psi$ are any formulas then 
+> The semantics are exactly the same as they were for propositional logic.  To rehearse it, if म is any predicate model, and $\phi,\psi$ are any formulas then 
 > 
-> * $(\neg\phi)^TODO = \sim(\phi^TODO)$
-> * $(\phi\land\psi)^TODO = (\phi^TODO)\curlywedge(\psi^TODO)$
-> * $(\phi\lor\psi)^TODO = (\phi^TODO)\curlyvee (\psi^TODO)$
-> * $(\phi\to\psi)^TODO = (\phi^TODO)\leadsto(\psi^TODO)$
-> * $(\phi\leftrightarrow)^TODO = (\phi^TODO)\curlyleftrightarrow (\psi^TODO)$
+> * $(\neg\phi)^म = \sim(\phi^म)$
+> * $(\phi\land\psi)^म = (\phi^म)\curlywedge(\psi^म)$
+> * $(\phi\lor\psi)^म = (\phi^म)\curlyvee (\psi^म)$
+> * $(\phi\to\psi)^म = (\phi^म)\leadsto(\psi^म)$
+> * $(\phi\leftrightarrow)^म = (\phi^म)\curlyleftrightarrow (\psi^म)$
 
-To demonstrate, suppose that $\text{Objs}=\{a,b\}$, and $\text{Preds}=\{P,Q\}$, and $P$ has arity 2, $Q$ has arity 3.  On the semantic side, assume that $TODO = \{1,2,3\}$, and 
+To demonstrate, suppose that $\text{Objs}=\{a,b\}$, and $\text{Preds}=\{P,Q\}$, and $P$ has arity 2, $Q$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
 
-$$ a^TODO = 1, b^TODO = 2, c^TODO = 2 $$
+$$ a^इ = 1, b^इ = 2, c^इ = 2 $$
 
 > [!note]- Not every element gets a symbol.
 > You may notice that in this example, there is an element of the domain (3) for which no object symbol denotes it.  That may seem odd, but note that nothing in our definitions says that this is forbidden.  
@@ -302,30 +306,30 @@ $$ a^TODO = 1, b^TODO = 2, c^TODO = 2 $$
 
 and 
 
-$$ P^TODO = \{ (1,2) \},\ Q^TODO = \{ (1,2,3), (3,1,2), (2,3,1) \} $$
+$$ P^इ = \{ (1,2) \},\ Q^इ = \{ (1,2,3), (3,1,2), (2,3,1) \} $$
 
 Let's now evaluate, for example, $Q(a,b,c)\to \neg P(a,b)$.
 
 $$
 \begin{aligned}
- (Q(a,b,c)\to P(a,b))^TODO &= (Q(a,b,c))^TODO \leadsto (\neg P(a,b))^TODO \\
- &= (Q(a,b,c))^TODO \leadsto \sim (P(a,b))^TODO
+ (Q(a,b,c)\to P(a,b))^म &= (Q(a,b,c))^म \leadsto (\neg P(a,b))^म \\
+ &= (Q(a,b,c))^म \leadsto \sim (P(a,b))^म
 \end{aligned}$$
 
-Now we have to determine the values of $Q(a,b,c)^TODO$ and $P(a,b)^TODO$.  To do this we refer to the interpretation.  Note that $(a^TODO,b^TODO,c^TODO) = (1,2,2)\notin Q^TODO$.  Therefore $Q(a,b,c)^TODO = TODO$.  
+Now we have to determine the values of $Q(a,b,c)^म$ and $P(a,b)^म$.  To do this we refer to the interpretation.  Note that $(a^इ,b^इ,c^इ) = (1,2,2)\notin Q^इ$.  Therefore $Q(a,b,c)^म = फ$.  
 
-And since $(a^TODO,b^TODO)=(1,2)\in P^TODO$ therefore $P(a,b)^TODO = TODO$.
+And since $(a^इ,b^इ)=(1,2)\in P^इ$ therefore $P(a,b)^म = ट$.
 
 Now we may infer that 
 
 $$\begin{aligned}
- (Q(a,b,c)\to \neg P(a,b))^TODO &= TODO \leadsto \sim TODO \\
- & TODO \leadsto TODO \\
- & TODO 
+ (Q(a,b,c)\to \neg P(a,b))^म &= फ \leadsto \sim ट \\
+ & फ \leadsto फ \\
+ & ठ 
 \end{aligned}$$
 
 > [!exercise] ***Exercise***
-> Using the same syntax and semantics as the example above, evaluate $(P(a,a)\leftrightarrow Q(a,a,a))^TODO$.
+> Using the same syntax and semantics as the example above, evaluate $(P(a,a)\leftrightarrow Q(a,a,a))^म$.
 
 
 

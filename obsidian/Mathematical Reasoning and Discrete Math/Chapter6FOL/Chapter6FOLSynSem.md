@@ -2,6 +2,16 @@
 title: "Chapter 6: First-order Syntax and Semantics"
 ---
 
+We have developed propositional logic, and expanded it to predicate logic.  We now continue the project further by expanding the expressive power of predicate logic, into what is called first-order logic.
+
+# What Predicate Logic Can't Do
+
+
+
+
+---
+
+Old content:
 
 We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”.
 
