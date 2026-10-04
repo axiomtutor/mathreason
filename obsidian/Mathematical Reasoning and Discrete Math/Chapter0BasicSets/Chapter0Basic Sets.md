@@ -98,14 +98,14 @@ Note that the set {1, 2} is equal to the set {1, 1, 2, 2, 2, 2}, because again, 
 
 > [!exercise] ***Exercise***
 > Decide on the truth of the following expressions.
-> 2. $\pi\in\{1,2\}$
-> 3. $2\in\{1,2\}$
-> 4. $\pi\notin \{1,2\}$
-> 5. $2\notin\{1,2\}$
-> 6. $\{1,2\}\in \{1,2\}$
-> 7. $\{1\}\in\{1,2\}$
-> 8. $\{1,2,3\}=\{1,2\}$
-> 9. $\{1,2,1,2,1\} = \{1,2\}$
+> 1. $\pi\in\{1,2\}$
+> 2. $2\in\{1,2\}$
+> 3. $\pi\notin \{1,2\}$
+> 4. $2\notin\{1,2\}$
+> 5. $\{1,2\}\in \{1,2\}$
+> 6. $\{1\}\in\{1,2\}$
+> 7. $\{1,2,3\}=\{1,2\}$
+> 8. $\{1,2,1,2,1\} = \{1,2\}$
 > > [!note]- ***Solution***
 > > 1. False
 > > 2. True
@@ -316,16 +316,10 @@ The way to read this is:
 - The $\in \Bbb N$ tells us that *x* will be a natural number. This essentially establishes the "*type*" of object that *x* is.
 
 - Everything after the colon, “:”, states the property that *x* must have.
-
   
-
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image.png)
-
-  
+TODO: Make an image illustrating the setbuilder notation.
 
 You can imagine it working like this:
-
-  
 
 Consider the number 1. Since $1\in \Bbb N$, then 1 is a possible value of *x*. So we temporarily set $x=1$.  We then check whether *x* satisfies the property, “*x* is even”.  It does not have the property, so $1\notin X$.
 
@@ -601,7 +595,7 @@ When working with sets it is common to need to “put sets together” in a vari
 
   
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%201.png)
+TODO: Venn diagram.
 
   
 
@@ -837,7 +831,7 @@ $$[5..9] = \{5,6,7,8,9\}$$
 > \end{aligned}$$
 > The **exclusive integer interval from *a* to *b*** is 
 > $$\begin{aligned}
-> (a..b) &= \{a+1,a+2,...,b-1,b\} \\
+> (a..b) &= \{a+1,a+2,...,b-1\} \\
 > &= \{x\in\Bbb Z: a < x < b\}
 > \end{aligned}$$
 > The **out-in integer interval from *a* to *b*** is 
@@ -1138,7 +1132,7 @@ We can graph this input-output relationship like so:
 
   
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%202.png)
+TODO: Function visualizations.
 
   
 
@@ -1152,7 +1146,7 @@ Not every possible curve in the coordinate plane is the graph of a function.  Re
 
   
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%203.png)
+TODO: Non-function graph.
 
   
 
@@ -1160,7 +1154,7 @@ That is because, for a particular choice of *x*, like say $x=1$, we can trace th
 
   
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%204.png)
+TODO: graph.
 
   
 
@@ -1172,9 +1166,9 @@ This means that a function must pass the “vertical line test”. The idea of t
 
   
 
-Conversely, if *every* vertical line that you can draw intersects the graph at one point, then it is the graph of some function.
+The converse is also true: Suppose you draw any vertical line.  Suppose that the line intersects the graph either at one point (because the function is defined there and has one value) or at zero points (because you picked an *x* value not in the domain, so the function doesn't exist there).  Then this is the graph of some function.  
 
-  
+Put more briefly: A graph passes the vertical line test if and only if it is the graph of some function.  
 
 > [!exercise] ***Exercise***
 > Determine which of the following equations has a graph that is a function.  This means that you'll need to determine the graph of each equation.
@@ -1214,13 +1208,13 @@ You can identify the domain of a function by looking at its graph. For example, 
 
 Here is the graph for $g(x)=\frac 1 x$.
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%205.png)
+TODO: Graph 1/x.
 
 You can see that when $x=0$ there is no corresponding value on the graph.
 
 And here is the graph of $h(x)=\sqrt x$.
 
-![image.png](Chapter%200%20The%20Bare%20Necessities%20of%20Sets%20and%20Functio/image%206.png)
+TODO: Graph sqrtx
 
 Again you can see where the domain is missing: negative numbers.
 
