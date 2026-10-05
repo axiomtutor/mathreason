@@ -792,11 +792,11 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > *Syntax*
 >
-> Note that we will use a bold comma: $\boldsymbol ,$. This is a distinct symbol from our simple comma. We do so in order to tell the difference between a comma used in our regular language, and a comma used inside our first-order syntax.
+> Note that we will use a bold comma: $\tt \boldsymbol ,$. This is a distinct symbol from our simple comma. We do so in order to tell the difference between a comma used in our regular language, and a comma used inside our first-order syntax.
 >
 > Let $\text{Un}=\{\tt \neg\}$, $\text{Bins} = \{\tt \land,\tt \lor,\tt \to,\tt \leftrightarrow\}$, and $\text{Quants} = \{\tt \forall, \tt \exists\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
 >
-> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{ (, ), \boldsymbol ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
+> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{\tt (,\tt ),\tt \boldsymbol ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
 >
 > The set
 >
@@ -804,7 +804,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > \begin{aligned}
 > \Sigma=&\text{Objs}\cup\text{Vars}\\
 > &\cup\text{Funcs}\cup\text{Preds}\\&\cup\text{Un}\cup\text{Bins}\\
-> &\cup\text{Quants}\cup\{(,),\boldsymbol,\}
+> &\cup\text{Quants}\cup\{\tt (,\tt ),\tt \boldsymbol,\}
 > \end{aligned}
 > $$
 >
