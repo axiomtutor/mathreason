@@ -203,18 +203,18 @@ This says that there exists an integer, ${\tt x}$, which is *both even and odd*.
 
 We are studying logic, to study math.  One of the most central things that we understand in mathematics, is how to solve an equation, like 
 
-$$ 2x+1=13 $$
+$$ \tt 2x+1=13 $$
 
 How are we going to represent such a thing in logic?
 
 We're not entirely ready to address this question in its entirety.  But certainly any answer is going to have to say something about functions.
 
-In particular, the part of the expression $2x+1$ is a function.
+In particular, the part of the expression $\tt 2x+1$ is a function.
 
 Let's say that we use the symbols ${\tt o}$ for 1 and ${\tt t}$ for 2.  Let's now further agree that we use the symbol ${\tt f}$ for the "times two" function.  That is to say, we will use ${\tt f}$ to denote the function $g(x)=2x$. 
 
-> [!note]- ${\tt f}$ is in the object language, not ${\tt g}$.
- > Note that we are using the symbol ${\tt f}$ for a symbol in the logical language.  $g$ is not in the logical language (called the "object language").  ${\tt g}$ is in the function itself, which we say is in the "metalanguage".  The metalanguage is the language that I am writing to you in: English, or a mathy version of English.  
+> [!note]- ${\tt f}$ is in the object language, not $g$.
+ > Note that we are using the symbol ${\tt f}$ for a symbol in the logical language.  $g$ is not in the logical language (called the "object language").  $g$ is in the function itself, which we say is in the "metalanguage".  The metalanguage is the language that I am writing to you in: English, or a mathy version of English.  
 > 
 > If this is confusing, note that it is exactly the same distinction as having a symbol like '${\tt a}$' in the logical language, but the symbol refers to the person, Adam.  It is the distinction between syntax and semantics: ${\tt a}$ is in the syntax, the person to whom it refers, Adam, is in the semantics.
 > 
@@ -234,7 +234,7 @@ These sets of symbols are allowed to be literally any nonempty sets, with the ca
 
 Similarly none of these sets are allowed to contain parentheses, since that would create readability issues.  For example if the left paren, ), were a constant symbol then we would have annoying difficulty reading "${\tt P}{\tt (}{\tt )}{\tt )}$".  For similar reasons, none of the sets may contain logical connectives, like ${\tt \neg}$ or ${\tt \forall}$, nor may they contain commas.
 
-Finally let's notice that not all functions have just one input.  Consider the function ${\tt h}(x,y)=2x + \pi y$.  
+Finally let's notice that not all functions have just one input.  Consider the function $h(x,y)=2x + \pi y$.  
 
 We have already discused the concept of "arity" with regard to predicates, and the same idea applies to functions.  The function above has arity 2.  If it is represented by the symbol **
 

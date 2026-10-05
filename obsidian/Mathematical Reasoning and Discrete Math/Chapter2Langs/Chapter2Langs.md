@@ -223,7 +223,7 @@ Because ${\tt 10}\in L$ we may this time take ${\tt x}={\tt 10}$ in the recursiv
 > 
 > *Hint*: ${\tt 1}{\tt x}$.
 
-Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
+Here is another language that will be relevant to things we do later on: Let $\Sigma = \{\mathtt (,\mathtt )\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
 
 $$
 \begin{aligned}
