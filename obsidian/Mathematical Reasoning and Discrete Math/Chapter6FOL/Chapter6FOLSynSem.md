@@ -347,7 +347,7 @@ However $({\tt \exists} {\tt x}{\tt R}({\tt x}))^{म}=ट$ because some object 
 >
 > 1. $उ = \Bbb Z$.
 > 2. $उ = \Bbb N$.
-> 3. $उ = \{\tt x\in\Bbb N: \tt x \text{ is prime}\}$.
+> 3. $उ = \{{\tt x}\in\Bbb N: {\tt x} \text{ is prime}\}$.
 > 4. $उ = \{2\}$.
 
 Of course we don’t have to live with only simple predicates—we can join them into more complex expressions, using the propositional logic from before.
@@ -466,7 +466,7 @@ Let *U* be a universal set and $A,B\subseteq U$.
 Then the union, $A\cup B$, is the set of all elements in ${\tt A}$ or ${\tt B}$. Put into a logical expression,
 
 $$
-{\tt A}\cup {\tt B} = \{\tt x\in \tt U: \tt x\in \tt A\tt \lor \tt x\in \tt B\}
+{\tt A}\cup {\tt B} = \{{\tt x}\in {\tt U}: {\tt x}\in {\tt A}{\tt \lor} {\tt x}\in {\tt B}\}
 $$
 
 Notice the use of the logical operator, ${\tt \lor}$.
@@ -794,9 +794,9 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > Note that we will use a bold comma: ${\tt \boldsymbol ,}$. This is a distinct symbol from our simple comma. We do so in order to tell the difference between a comma used in our regular language, and a comma used inside our first-order syntax.
 >
-> Let $\text{Un}=\{\tt \neg\}$, $\text{Bins} = \{\tt \land,\tt \lor,\tt \to,\tt \leftrightarrow\}$, and $\text{Quants} = \{\tt \forall, \tt \exists\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
+> Let $\text{Un}=\{{\tt \neg}\}$, $\text{Bins} = \{{\tt \land},{\tt \lor},{\tt \to},{\tt \leftrightarrow}\}$, and $\text{Quants} = \{{\tt \forall}, {\tt \exists}\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
 >
-> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{\tt (,\tt ),\tt \boldsymbol ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
+> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{{\tt (},{\tt )},{\tt \boldsymbol} ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
 >
 > The set
 >
@@ -804,7 +804,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > \begin{aligned}
 > \Sigma=&\text{Objs}\cup\text{Vars}\\
 > &\cup\text{Funcs}\cup\text{Preds}\\&\cup\text{Un}\cup\text{Bins}\\
-> &\cup\text{Quants}\cup\{\tt (,\tt ),\tt \boldsymbol,\}
+> &\cup\text{Quants}\cup\{{\tt (},{\tt )},{\tt \boldsymbol},\}
 > \end{aligned}
 > $$
 >
@@ -819,7 +819,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > We define $\text{Term}$ to be the **set of terms**,
 >
 > $$
-> \text{Term} = \{\tt t \in \Sigma^*:\tt t\text{ is a term}\}
+> \text{Term} = \{{\tt t} \in \Sigma^*:{\tt t}\text{ is a term}\}
 > $$
 >
 > Let ${\tt P}\in \text{Preds}$ and $n = \text{Arity}({\tt P})$, and let ${\tt t_1},...,{\tt t_n}$ be terms. Then ${\tt P}({\tt t_1}\boldsymbol ,{\tt t_2}\boldsymbol ,…\boldsymbol,{\tt t_n})$ is called an **atomic formula**. Every atomic formula is a **first-order formula**.
@@ -833,13 +833,13 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > We define $\text{Forms}$ to be the **set of first-order formulas**,
 >
 > $$
-> \text{Forms} = \{\tt \phi\in\Sigma^*:\tt \phi \text{ is a first-order formula}\}
+> \text{Forms} = \{{\tt \phi}\in\Sigma^*:{\tt \phi} \text{ is a first-order formula}\}
 > $$
 >
 > We define a function $\text{Free}:\text{Term}\cup\text{Forms}\to \mathcal P(\text{Vars})$ recursively. Let ${\tt \Box}\in\text{Bins}$ and ${\tt \Diamond}\in\text{Quants}$ and ${\tt x}\in \text{Vars}$. Let ${\tt \phi},{\tt \psi}\in\text{Forms}$.
 >
 > - If ${\tt x}\in \text{Objs}$ then $\text{Free}({\tt x}) = \emptyset$.
-> - If ${\tt x}\in \text{Vars}$ then $\text{Free}({\tt x}) = \{\tt x\}$.
+> - If ${\tt x}\in \text{Vars}$ then $\text{Free}({\tt x}) = \{{\tt x}\}$.
 > - If ${\tt f}\in \text{Funcs}$ and $n=\text{Arity}({\tt f})$ and if ${\tt t_1},…,{\tt t_n}\in\text{Terms}$, then
 >
 >     $$
@@ -854,7 +854,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > - $\text{Free}(({\tt \neg} {\tt \phi})) = \text{Free}({\tt \phi})$
 > - $\text{Free}(({\tt \phi}{\tt \Box}{\tt \psi})) = \text{Free}({\tt \phi})\cup \text{Free}({\tt \psi})$
-> - $\text{Free}(({\tt \Diamond} {\tt x}{\tt \phi})) = \text{Free}({\tt \phi})\smallsetminus \{\tt x\}$
+> - $\text{Free}(({\tt \Diamond} {\tt x}{\tt \phi})) = \text{Free}({\tt \phi})\smallsetminus \{{\tt x}\}$
 >
 > We call $\text{Free}({\tt \phi})$ the **set of free variables of ${\tt \phi}$**.
 >
@@ -863,7 +863,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > We denote the **set of closed formulas**,
 >
 > $$
-> \text{Closeds} = \{\tt \phi\in\text{Forms}: \text{Free}(\tt \phi) = \emptyset\}
+> \text{Closeds} = \{{\tt \phi}\in\text{Forms}: \text{Free}({\tt \phi}) = \emptyset\}
 > $$
 
 > [!definition] ***Definition***
