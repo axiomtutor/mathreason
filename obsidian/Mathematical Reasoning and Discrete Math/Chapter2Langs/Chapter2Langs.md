@@ -196,7 +196,7 @@ Because $\tt 10\in L$ we may this time take $\tt x=\tt 10$ in the recursive case
 
 > [!exercise] ***Exercise***
 >
-> Show that $110\in L$.
+> Show that $\tt 110\in L$.
 
 > [!exercise] ***Exercise***
 >
