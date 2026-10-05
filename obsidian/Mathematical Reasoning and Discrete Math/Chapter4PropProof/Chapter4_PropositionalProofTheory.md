@@ -27,11 +27,11 @@ So what logic is interested in, for the purposes of the argument above, is the i
 So logic is interested in *inferences*: the act of using established facts to infer other propositions which must be true because of the premises.  
 
 > [!definition] ***Definition***
-> Any sequence of propositions, $\Gamma = (\phi_1,\phi_2,...,\phi_m)$, may be called **premises**, where each of the propositions $\phi_i$ is called a **premise** ($1\le i\le m$).  
+> Any sequence of propositions, $\tt \Gamma = (\phi_1,\phi_2,...,\phi_m)$, may be called **premises**, where each of the propositions $\phi_i$ is called a **premise** ($1\le i\le m$).  
 > 
 > Any proposition, $\tt \psi$, may be called a **conclusion**.  
 > 
-> In that case, the pair $(\Gamma,\tt \psi)$ is called an **argument**.  
+> In that case, the pair $(\tt \Gamma,\tt \psi)$ is called an **argument**.  
 > 
 > We say that the argument is **valid** if 
 > 
@@ -41,17 +41,17 @@ So logic is interested in *inferences*: the act of using established facts to in
 > 
 > is a tautology.  Otherwise the argument is called **invalid**.
 > 
-> If the argument $(\Gamma,\tt \psi)$ is valid, then we write 
+> If the argument $(\tt \Gamma,\tt \psi)$ is valid, then we write 
 > 
-> $$\Gamma \vDash \tt \psi$$
+> $$\tt \Gamma \tt \vDash \tt \psi$$
 > 
-> which is pronounced $\Gamma$ **semantically entails** $\tt \psi$.
+> which is pronounced $\tt \Gamma$ **semantically entails** $\tt \psi$.
 > 
-> If $(\Gamma,\tt \psi)$ is not valid then we write 
+> If $(\tt \Gamma,\tt \psi)$ is not valid then we write 
 > 
-> $$\Gamma\not\vDash \tt \psi$$
+> $$\tt \Gamma\not\tt \vDash \tt \psi$$
 > 
-> and we say that $\Gamma$ does not semantically entail $\tt \psi$.
+> and we say that $\tt \Gamma$ does not semantically entail $\tt \psi$.
 
 > [!exercise] ***Exercise***
 > 
@@ -77,11 +77,11 @@ So logic is interested in *inferences*: the act of using established facts to in
 > 
 > Make a truth-table which demonstrates 
 > 
-> $$ (\tt P) \vDash \tt P\tt \lor \tt Q $$
+> $$ (\tt P) \tt \vDash \tt P\tt \lor \tt Q $$
 > 
 > and another which demonstrates 
 > 
-> $$ (\tt P) \not\vDash \tt P\tt \land \tt Q $$
+> $$ (\tt P) \not\tt \vDash \tt P\tt \land \tt Q $$
 
 # Simple Inference Rules
 
@@ -113,7 +113,7 @@ The last two bullet points represent the use of an inference rule.  The collecti
 
 This proof demonstrates the validity claim,
 
-$$ (\tt P\tt \to \tt Q, \tt Q\tt \to \tt \neg \tt R, \tt R)\vDash \tt \neg \tt P$$
+$$ (\tt P\tt \to \tt Q, \tt Q\tt \to \tt \neg \tt R, \tt R)\tt \vDash \tt \neg \tt P$$
 
 Below we list several inference rules.  
 
@@ -342,7 +342,7 @@ Now that we understand substitution, we can state the following inference rules.
 
 > [!definition] ***Definition***
 >
-> Let $\tt \phi,\tt \chi,\tt \psi,\omega$ be propositional formulas.  
+> Let $\tt \phi,\tt \chi,\tt \psi,\tt \omega$ be propositional formulas.  
 >
 > **Double negation** is the inference rule that, from $\tt \phi$, one can infer either $[\tt \phi]_{\tt \chi:= \tt \neg(\tt \neg\tt \chi)}$ or $[\tt \phi]_{\tt \neg(\tt \neg\tt \chi):= \tt \chi}$. 
 > > [!note]- What double negation says.
@@ -352,17 +352,17 @@ Now that we understand substitution, we can state the following inference rules.
 >
 > **Conjunction commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \land\tt \psi := \tt \psi\tt \land\tt \chi}$.
 >
-> **Conjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \land\omega) := (\tt \chi\tt \land\tt \psi)\tt \land\omega}$ or $\phi_{(\tt \chi\tt \land\tt \psi)\tt \land\omega:= \tt \chi\tt \land(\tt \psi\tt \land\omega)}$.
+> **Conjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \land\tt \omega) := (\tt \chi\tt \land\tt \psi)\tt \land\tt \omega}$ or $\phi_{(\tt \chi\tt \land\tt \psi)\tt \land\tt \omega:= \tt \chi\tt \land(\tt \psi\tt \land\tt \omega)}$.
 >
 > **Disjunction commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \lor\tt \psi:=\tt \psi\tt \lor\tt \chi}$.
 >
-> **Disjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \lor(\tt \psi\tt \lor\omega) := (\tt \chi\tt \lor\tt \psi)\tt \lor\omega}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \lor\omega:= \tt \chi\tt \lor(\tt \psi\tt \lor\omega)}$.
+> **Disjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \lor(\tt \psi\tt \lor\tt \omega) := (\tt \chi\tt \lor\tt \psi)\tt \lor\tt \omega}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \lor\tt \omega:= \tt \chi\tt \lor(\tt \psi\tt \lor\tt \omega)}$.
 >
 > **De Morgan’s** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \neg(\tt \chi\tt \lor\tt \psi):=(\tt \neg\tt \chi)\tt \land(\tt \neg\tt \psi)}$ or $\phi_{(\tt \neg\tt \chi)\tt \land(\tt \neg\tt \psi):=\tt \neg(\tt \chi\tt \lor\tt \psi)}$ or $\phi_{\tt \neg(\tt \chi\tt \land\tt \psi):= (\tt \neg\tt \chi)\tt \lor(\tt \neg\tt \psi)}$ or $\phi_{(\tt \neg \tt \chi)\tt \lor(\tt \neg\tt \psi):=\tt \neg(\tt \chi\tt \land\tt \psi)}$.
 >
-> **Distribution** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \lor\omega) := (\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land \omega)}$ or $\phi_{\tt \chi\tt \lor(\tt \psi\tt \land\omega):= (\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\omega)}$.
+> **Distribution** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \lor\tt \omega) := (\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land \tt \omega)}$ or $\phi_{\tt \chi\tt \lor(\tt \psi\tt \land\tt \omega):= (\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\tt \omega)}$.
 >
-> **Factorization** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{(\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land\omega):=\tt \chi\tt \land(\tt \psi\tt \lor\omega)}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\omega):=\tt \chi\tt \lor(\tt \psi\tt \land\omega)}$.
+> **Factorization** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{(\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land\tt \omega):=\tt \chi\tt \land(\tt \psi\tt \lor\tt \omega)}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\tt \omega):=\tt \chi\tt \lor(\tt \psi\tt \land\tt \omega)}$.
 >
 > **Material implication** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\to\tt \psi:= (\tt \neg \tt \chi)\tt \lor\tt \psi}$ or $\phi_{(\tt \neg\tt \chi)\tt \lor\tt \psi:=\tt \chi\to\tt \psi}$.
 >
@@ -469,58 +469,58 @@ But note that a proof is not just *any* two sequences of propositions.  There mu
 
 > [!definition] ***Definition***
 > 
-> Let $\Gamma = (\phi_1, \phi_2,...,\phi_m)$ be a finite sequence of formulas, which we will call the **(sequence of) assumptions**.  
+> Let $\tt \Gamma = (\phi_1, \phi_2,...,\phi_m)$ be a finite sequence of formulas, which we will call the **(sequence of) assumptions**.  
 > 
-> Let $\Psi = (\psi_1,\psi_2,...,\psi_n)$ be a finite sequence of formulas.  We say that $\Psi$ is a **proof of $\psi_n$ from $\Gamma$** if the following conditions hold.  
+> Let $\tt \Psi = (\psi_1,\psi_2,...,\psi_n)$ be a finite sequence of formulas.  We say that $\tt \Psi$ is a **proof of $\psi_n$ from $\tt \Gamma$** if the following conditions hold.  
 > 
 > For every $1\le i\le n$, 
-> * Either $\psi_i \in\Gamma$, or 
+> * Either $\psi_i \in\tt \Gamma$, or 
 > * there is an inference rule such that the formulas $\phi_1,\phi_2,...,\phi_m, \psi_1,\psi_2,...,\psi_{i-1}$ allow one to infer $\psi_i$.
 > 
 > We call $\psi_n$ the **conclusion** of the proof. 
 > 
-> Let $\Gamma$ be a sequence or formulas, and $\tt \psi$ a formula. If there exists a proof of $\tt \psi$ from $\Gamma$, then we write
-> $$\Gamma \vdash \tt \psi$$
-> which is pronounced, $\Gamma$ **syntactically entails** (or **proves**) $\tt \psi$.
+> Let $\tt \Gamma$ be a sequence or formulas, and $\tt \psi$ a formula. If there exists a proof of $\tt \psi$ from $\tt \Gamma$, then we write
+> $$\tt \Gamma \tt \vdash \tt \psi$$
+> which is pronounced, $\tt \Gamma$ **syntactically entails** (or **proves**) $\tt \psi$.
 > 
 
 
  > [!note]- The definition put simply.  
  > 
- > The simple version of what this definition says, is that a proof is a sequence (the sequence is made up of both $\Gamma$ and $\Psi$) of formulas, each with a justification.  A formula may be justified by being an assumption.  (If there are any assumptions, we traditionally place these at the beginning of the proof, but it's not technically required.) 
+ > The simple version of what this definition says, is that a proof is a sequence (the sequence is made up of both $\tt \Gamma$ and $\tt \Psi$) of formulas, each with a justification.  A formula may be justified by being an assumption.  (If there are any assumptions, we traditionally place these at the beginning of the proof, but it's not technically required.) 
  > 
  > If a formula is not an assumption, then it must be justified by an inference rule.  An inference rule must refer only to propositions which have already been accepted earlier in the proof.  
  > 
  > And a proof must always end on with the concluding formula.  
 
-Notice the difference between semantic and syntactic entailment. Let $\Gamma$ be a finite sequence of formulas, and $\tt \psi$ a formula. 
+Notice the difference between semantic and syntactic entailment. Let $\tt \Gamma$ be a finite sequence of formulas, and $\tt \psi$ a formula. 
 
 The expression
 
-$$\Gamma \vDash \tt \psi$$
+$$\tt \Gamma \tt \vDash \tt \psi$$
 is a semantic notion. It is stated in terms of truth values. 
 
 The expression
 
-$$\Gamma \vdash \tt \psi$$
+$$\tt \Gamma \tt \vdash \tt \psi$$
 
 is a syntactic notion. It is stated entirely in terms of the existence of certain formulas.
 
-The point of a proof, is to demonstrate that an argument is valid. That is to say, we hope that $\Gamma\vdash\tt \psi$ will ensure that $\Gamma\vDash\tt \psi$. We will have more to say about this later. 
+The point of a proof, is to demonstrate that an argument is valid. That is to say, we hope that $\tt \Gamma\tt \vdash\tt \psi$ will ensure that $\tt \Gamma\tt \vDash\tt \psi$. We will have more to say about this later. 
 
 ---
 
 Based on the formal definition of a proof above, the following is a proof: 
 
-$$ \Gamma = (\tt P, \tt Q), \Psi = (\tt P\tt \land \tt Q, (\tt P\tt \land \tt Q)\tt \land \tt P) $$
+$$ \tt \Gamma = (\tt P, \tt Q), \tt \Psi = (\tt P\tt \land \tt Q, (\tt P\tt \land \tt Q)\tt \land \tt P) $$
 
-Notice that $\Gamma$ is allowed to be any finite sequence of propositions.  
+Notice that $\tt \Gamma$ is allowed to be any finite sequence of propositions.  
 
-The propositions of $\Psi$, however, must be inferrable. That is to say, for each proposition in $\Psi$, there must be an inference rule which can infer that proposition from $\Gamma$ or the earlier propositions. 
+The propositions of $\tt \Psi$, however, must be inferrable. That is to say, for each proposition in $\tt \Psi$, there must be an inference rule which can infer that proposition from $\tt \Gamma$ or the earlier propositions. 
 
-For example, $\psi_1 = \tt P\tt \land \tt Q$ is justified by Conjunction Introduction with reference to $\phi_1 = \tt P \in \Gamma$ and $\phi_2=\tt Q\in\Gamma$. 
+For example, $\psi_1 = \tt P\tt \land \tt Q$ is justified by Conjunction Introduction with reference to $\phi_1 = \tt P \in \tt \Gamma$ and $\phi_2=\tt Q\in\tt \Gamma$. 
 
-Next $\psi_2 = (\tt P\tt \land \tt Q)\tt \land \tt P$ is justified by Conjunction Introduction with reference to $\phi_1=\tt P\in\Gamma$ and $\psi_1 = \tt P\tt \land \tt Q$.  
+Next $\psi_2 = (\tt P\tt \land \tt Q)\tt \land \tt P$ is justified by Conjunction Introduction with reference to $\phi_1=\tt P\in\tt \Gamma$ and $\psi_1 = \tt P\tt \land \tt Q$.  
 
 The conclusion of a proof is always the last proposition, so the conclusion is $(\tt P\tt \land \tt Q)\tt \land \tt P$.  
 
@@ -528,9 +528,9 @@ The conclusion of a proof is always the last proposition, so the conclusion is $
 > 
 > Decide whether the following pairs of sequences of propositions is a proof or not.  If it is a proof, identify the conclusion of the proof.
 > 
-> 1. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt R, \tt S)$.
-> 2. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt P)$.
-> 3. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt Q,\tt P,\tt P\tt \land \tt Q,\tt P)$.
+> 1. $\tt \Gamma = (\tt P,\tt Q)$ and $\tt \Psi = (\tt R, \tt S)$.
+> 2. $\tt \Gamma = (\tt P,\tt Q)$ and $\tt \Psi = (\tt P)$.
+> 3. $\tt \Gamma = (\tt P,\tt Q)$ and $\tt \Psi = (\tt Q,\tt P,\tt P\tt \land \tt Q,\tt P)$.
 
 We now know the formal definition of a proof. From now on, we mostly ignore the formalism—we will only use tabular proofs.
 
@@ -543,7 +543,7 @@ Below is a long and challenging proof.  Don’t worry if it seems like something
 
 From the assumptions $\tt P\tt \to \tt Q$ and $\tt R\tt \to \tt Q$ and $\tt P\tt \lor \tt R$, we will prove $\tt Q$. That is to say, the proof below demonstrates
 
-$$ (\tt P\tt \to \tt Q, \tt R\tt \to \tt Q, \tt P\tt \lor \tt R) \vdash \tt Q $$
+$$ (\tt P\tt \to \tt Q, \tt R\tt \to \tt Q, \tt P\tt \lor \tt R) \tt \vdash \tt Q $$
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -563,13 +563,13 @@ $$ (\tt P\tt \to \tt Q, \tt R\tt \to \tt Q, \tt P\tt \lor \tt R) \vdash \tt Q $$
 > [!exercise] ***Exercise***
 >
 > From the assumptions $\tt P$ and $\tt P\tt \to \tt Q$ and $\tt Q\tt \to \tt R$, prove $\tt R$. That is to say, show that
-> $$(\tt P, \tt P\tt \to \tt Q, \tt Q\tt \to \tt R)\vdash \tt R$$
+> $$(\tt P, \tt P\tt \to \tt Q, \tt Q\tt \to \tt R)\tt \vdash \tt R$$
 >
 > From the assumption $(\tt P\tt \land \tt Q)\tt \lor (\tt P\tt \land \tt R)$ prove $\tt P$. That is to say, show
-> $$((\tt P\tt \land \tt Q)\tt \lor (\tt P\tt \land \tt R)) \vdash \tt P$$
+> $$((\tt P\tt \land \tt Q)\tt \lor (\tt P\tt \land \tt R)) \tt \vdash \tt P$$
 >
 > From the assumptions $(\tt \neg \tt P)\tt \lor \tt Q$ and $\tt P$, prove $\tt Q$. That is to say, 
-> $$((\tt \neg \tt P)\tt \lor \tt Q, \tt P) \vdash \tt Q$$
+> $$((\tt \neg \tt P)\tt \lor \tt Q, \tt P) \tt \vdash \tt Q$$
 >
 > (The first proof requires six lines, and the others require significantly fewer.)
 
@@ -921,7 +921,7 @@ Look over this proof and see how it aligns with what we described earlier.  The 
 
 Once a sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inferences using Proof by Contradiction.
 
-Here we give an invalid proof that from $\tt P$ we can infer $\tt Q$.  That is to say, we will give an incorrect "proof" that $(\tt P)\vdash \tt Q$.
+Here we give an invalid proof that from $\tt P$ we can infer $\tt Q$.  That is to say, we will give an incorrect "proof" that $(\tt P)\tt \vdash \tt Q$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
@@ -941,7 +941,7 @@ Here we give an invalid proof that from $\tt P$ we can infer $\tt Q$.  That is t
 | --- | --- | --- |
 | 3. | $\tt Q$ | Reiteration from 2.2 |
 
-We have said before that $\tt P\not\vDash \tt Q$ and therefore our proof rules should not show $\tt P\vdash \tt Q$. (To reiterate, the entire point of a proof, like $\tt P\vdash \tt Q$, is to ensure that the argument is valid, i.e. $\tt P\vDash \tt Q$.) So something about the proof above must be wrong.
+We have said before that $\tt P\not\tt \vDash \tt Q$ and therefore our proof rules should not show $\tt P\tt \vdash \tt Q$. (To reiterate, the entire point of a proof, like $\tt P\tt \vdash \tt Q$, is to ensure that the argument is valid, i.e. $\tt P\tt \vDash \tt Q$.) So something about the proof above must be wrong.
 
 Here is what is wrong: It was possible to infer $\tt Q$ on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof. 
 
@@ -984,7 +984,7 @@ Here we prove from no premises, that $\tt \neg(\tt P\tt \land \tt \neg \tt P)$.
 
 # The Principle of Explosion
 
-As you presumably showed in the previous exercise, $(\tt P\tt \land \tt \neg \tt P) \vdash \tt Q$. You should feel invited to also confirm that $(\tt P\tt \land \tt \neg \tt P) \vDash \tt Q$, which only further confirms that our proof rules can prove valid arguments. 
+As you presumably showed in the previous exercise, $(\tt P\tt \land \tt \neg \tt P) \tt \vdash \tt Q$. You should feel invited to also confirm that $(\tt P\tt \land \tt \neg \tt P) \tt \vDash \tt Q$, which only further confirms that our proof rules can prove valid arguments. 
 
 This particular argument is interesting, though. It shows that, from $\tt P\tt \land \tt \neg \tt P$ it is possible to infer *any* propositions. We describe this as an "explosion", because the set of propositions that one can prove "explodes" to include every formula.
 
@@ -993,17 +993,17 @@ To be clear: this is a *bad* thing. You want to accept the premises which allow 
 The following is a generalization of this fact.
 
 > [!definition] ***Definition***
-> Let $\tt \phi$ be any contradiction, and $\tt \psi$ any formula. Let $\Gamma$ be any sequence of formulas such that $\tt \phi \in\Gamma$.
+> Let $\tt \phi$ be any contradiction, and $\tt \psi$ any formula. Let $\tt \Gamma$ be any sequence of formulas such that $\tt \phi \in\tt \Gamma$.
 > 
->  The fact that $(\Gamma, \tt \psi)$ is a valid argument, is called **the principle of explosion**.
+>  The fact that $(\tt \Gamma, \tt \psi)$ is a valid argument, is called **the principle of explosion**.
 
 > [!exercise] ***Exercise***
 > Prove that the principle of explosion is true. That is to say, prove
-> $$\Gamma \vDash \tt \psi$$
-> if $\Gamma$ contains a contradiction. 
+> $$\tt \Gamma \tt \vDash \tt \psi$$
+> if $\tt \Gamma$ contains a contradiction. 
 > 
 > Also prove that
-> $$\Gamma \vdash \tt \psi$$
+> $$\tt \Gamma \tt \vdash \tt \psi$$
 > by exhibiting a proof. You you may find it more convenient to not represent this proof as a table, and instead merely represent it as a sequence of formulas meeting the conditions of a proof. 
 
 
