@@ -54,7 +54,7 @@ There is an obvious connection between properties and sets.  Consider the proper
 
 Let's get even more specific.  Let's suppose that the people at the party are named Adam, Brooke, Cecil, ..., Jelani.  
 
-In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{\tt a,\tt b,\tt c,\tt d,\tt e,\tt f,\tt g,\tt h,\tt i,\tt j\}$.  
+In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{{\tt a},{\tt b},{\tt c},{\tt d},{\tt e},{\tt f},{\tt g},{\tt h},{\tt i},{\tt j}\}$.  
 
 Keep in mind that the symbols are ${\tt a}$ through ${\tt j}$, but the meanings of the symbols are the corresponding people.  
 
@@ -161,7 +161,7 @@ If the arity is greater than one, like in the example “3 is less than 2”, th
 
 > [!exercise] ***Exercise***
 >
-> Let $\text{Objs} = \{\tt a,\tt b\}$ and $\text{Preds}=\{\tt P,\tt Q\}$.  Let $\text{Arity}({\tt P})=1$ and $\text{Arity}({\tt Q})=2$.
+> Let $\text{Objs} = \{{\tt a},{\tt b}\}$ and $\text{Preds}=\{{\tt P},{\tt Q}\}$.  Let $\text{Arity}({\tt P})=1$ and $\text{Arity}({\tt Q})=2$.
 >
 > For each of the following strings, decide which are object symbols, which are predicate symbols, which are atomic formulas, and which are none of the above.
 >
@@ -270,7 +270,7 @@ Since 1 is not in the set of even numbers, ${\tt o}^{इ}\notin {\tt P}^{इ}$, 
 
 # Propositional Connectives
 
-Now that we have formulas, we can compose them together in exactly the same way that we did in propositional logic, using $\text{Conn}=\{\tt \neg,\tt \land,\tt \lor,\tt \to,\tt \leftrightarrow\}$. 
+Now that we have formulas, we can compose them together in exactly the same way that we did in propositional logic, using $\text{Conn}=\{{\tt \neg},{\tt \land},{\tt \lor},{\tt \to},{\tt \leftrightarrow}\}$. 
 
 > [!definition] ***Definition***
 > *Syntax*
@@ -293,7 +293,7 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > * $({\tt \phi}{\tt \to}{\tt \psi})^म = ({\tt \phi}^म)\leadsto({\tt \psi}^म)$
 > * $({\tt \phi}{\tt \leftrightarrow})^म = ({\tt \phi}^म)\curlyleftrightarrow ({\tt \psi}^म)$
 
-To demonstrate, suppose that $\text{Objs}=\{\tt a,\tt b\}$, and $\text{Preds}=\{\tt P,\tt Q\}$, and ${\tt P}$ has arity 2, ${\tt Q}$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
+To demonstrate, suppose that $\text{Objs}=\{{\tt a},{\tt b}\}$, and $\text{Preds}=\{{\tt P},{\tt Q}\}$, and ${\tt P}$ has arity 2, ${\tt Q}$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
 
 $$ {\tt a}^इ = 1, {\tt b}^इ = 2, {\tt c}^इ = 2 $$
 
@@ -481,8 +481,8 @@ $$
 \begin{aligned}
  {\tt a}^{इ} &= 0 \\
  {\tt b}^{इ} &= 1 \\
- {\tt P}^{इ} &= \{\tt x\in\Bbb Z:\tt x \text{ is even}\} \\
- {\tt Q}^{इ} &= \{\tt x\in\Bbb Z: \tt x < 10\}
+ {\tt P}^{इ} &= \{{\tt x}\in\Bbb Z:{\tt x} \text{ is even}\} \\
+ {\tt Q}^{इ} &= \{{\tt x}\in\Bbb Z: {\tt x} < 10\}
 \end{aligned}
 $$
 
@@ -518,9 +518,9 @@ The following now summarizes everything that we have said so far, and consolidat
 
 But also notice that there is one small tedious issue.  We have agreed to use the notation ${\tt R}({\tt a},{\tt b})$, for example, when writing a binary relation for two objects.  This means that we now have to include in the alphabet of predicate logic, the comma!
 
-Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{\tt (,\tt ),\tt \boldsymbol,\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
+Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{{\tt (},{\tt )},{\tt \boldsymbol},\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
 
-Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{\tt (,\tt ),\tt \boldsymbol, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
+Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{{\tt (},{\tt )},{\tt \boldsymbol}, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
 
 > [!definition] ***Definition***
 >
