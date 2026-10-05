@@ -167,18 +167,18 @@ Therefore ${\tt 2}\in S$ because of the base case.  But also ${\tt 2+2}\in S$ if
 
 But now that we have ${\tt 4}\in S$ it follows that ${\tt 4+2} = {\tt 6}\in S$, by another application of the recursive case.  And then because ${\tt 6}\in S$ it follows that ${\tt 6+2}={\tt 8}\in S$, and so on.  
 
-Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\Sigma = \{\tt 0,\tt 1\}$.  That is to say, the only characters that we will consider are ‘${\tt 0}$’ and ‘${\tt 1}$’.  Examples of strings over $\Sigma$ are ‘${\tt 010}$’ and ‘${\tt 11011011}$’.  
+Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\Sigma = \{{\tt 0},{\tt 1}\}$.  That is to say, the only characters that we will consider are ‘${\tt 0}$’ and ‘${\tt 1}$’.  Examples of strings over $\Sigma$ are ‘${\tt 010}$’ and ‘${\tt 11011011}$’.  
 
 > [!note]- This is an example of a "binary language". 
 > 
-> Any language with alphabet $\{\tt 0,\tt 1\}$ is called a "binary language".  This is often a good model for the low-level language of computer code.  
+> Any language with alphabet $\{{\tt 0},{\tt 1}\}$ is called a "binary language".  This is often a good model for the low-level language of computer code.  
 > 
 > Therefore binary languages are often studied in computer science.
 
 Consider the language of all strings which begin with a ${\tt 1}$.  
 
 $$
-L = \{\tt 1, 10, 11, 100, 101, 110, ...\}
+L = \{{\tt 1}, 10, 11, 100, 101, 110, ...\}
 $$
 
 Let’s practice how we could express this language recursively.  We could say:
@@ -200,7 +200,7 @@ Because ${\tt 10}\in L$ we may this time take ${\tt x}={\tt 10}$ in the recursiv
 
 > [!exercise] ***Exercise***
 >
-> Let $\Sigma=\{\tt 0,\tt 1\}$ still.
+> Let $\Sigma=\{{\tt 0},{\tt 1}\}$ still.
 > 
 > However, let’s define a new language, *M*.  Let *M* be the language of all strings which begin with 11.  So ${\tt 11}\in M$ and ${\tt 110}\in M$ but for example, ${\tt 1}\notin M$ and ${\tt 10}\notin M$.  
 > 
@@ -208,7 +208,7 @@ Because ${\tt 10}\in L$ we may this time take ${\tt x}={\tt 10}$ in the recursiv
 
 > [!exercise] ***Exercise***
 >
-> Let $\Sigma = \{\tt 0,\tt 1\}$ and define *N* to be the language of strings that represent a binary number.  
+> Let $\Sigma = \{{\tt 0},{\tt 1}\}$ and define *N* to be the language of strings that represent a binary number.  
 > 
 > A string represents a binary number if:
 > 
