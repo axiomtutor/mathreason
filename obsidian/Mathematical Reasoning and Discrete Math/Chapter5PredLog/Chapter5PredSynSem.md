@@ -54,7 +54,7 @@ There is an obvious connection between properties and sets.  Consider the proper
 
 Let's get even more specific.  Let's suppose that the people at the party are named Adam, Brooke, Cecil, ..., Jelani.  
 
-In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{{\tt a},{\tt b},{\tt c},{\tt d},{\tt e},{\tt f},{\tt g},{\tt h},{\tt i},{\tt j}\}$.  
+In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "constant symbols".  Therefore let's use the symbols $\text{Consts} = \{{\tt a},{\tt b},{\tt c},{\tt d},{\tt e},{\tt f},{\tt g},{\tt h},{\tt i},{\tt j}\}$.  
 
 Keep in mind that the symbols are ${\tt a}$ through ${\tt j}$, but the meanings of the symbols are the corresponding people.  
 
@@ -136,16 +136,16 @@ Therefore an expression like ${\tt C_{3}}({\tt x_{100}})$ roughly means
 - ${\tt C_{3}}$ is the name of some predicate. (Because it is applied to a single object, we can infer that the arity of ${\tt C_{3}}$ is 1.)
 - ${\tt C_{3}}({\tt x_{100}})$ is the proposition that ${\tt x_{100}}$ has property ${\tt C_{3}}$.
 
-An example usage would be “the ball is red”, in which case we might choose the object symbol ${\tt b}$ for the ball, and the predicate symbol ${\tt R}$ for “is red”.  Then the proposition is symbolized as ${\tt R}({\tt b})$.
+An example usage would be “the ball is red”, in which case we might choose the constant symbol ${\tt b}$ for the ball, and the predicate symbol ${\tt R}$ for “is red”.  Then the proposition is symbolized as ${\tt R}({\tt b})$.
 
 If the arity is greater than one, like in the example “3 is less than 2”, then we will have names for each constant.  Here we might use ${\tt b}$ for 2, and ${\tt c}$ for 3, and then ${\tt L}$ for “is less than”.  In that case, we would write ${\tt L}({\tt c},{\tt b})$ to express that 3 is less than 2.  
 
 > [!definition] ***Definition***
 > *Syntax*
 >
-> Let $\text{Objs},\text{Preds}$ be two disjoint nonempty sets of symbols, not containing the symbols from $\text{Conns}$.  
+> Let $\text{Consts},\text{Preds}$ be two disjoint nonempty sets of symbols, not containing the symbols from $\text{Conns}$.  
 >
-> The elements of $\text{Objs}$ we call **object symbols** or **constant symbols**.  
+> The elements of $\text{Consts}$ we call **constant symbols** or **constant symbols**.  
 >
 > The elements of $\text{Preds}$ we call the **predicate symbols**.  
 >
@@ -155,15 +155,15 @@ If the arity is greater than one, like in the example “3 is less than 2”, th
 > \text{Arity}({\tt P})=n
 > $$
 >
-> Now let ${\tt P}\in \text{Preds}$, and $\text{Arity}({\tt P})=n$, and ${\tt a_1},\dots,{\tt a_n}\in \text{Objs}$.  
+> Now let ${\tt P}\in \text{Preds}$, and $\text{Arity}({\tt P})=n$, and ${\tt a_1},\dots,{\tt a_n}\in \text{Consts}$.  
 >
 > Then we call ${\tt P}({\tt a_1},\dots,{\tt a_n})$ an **atomic formula**.
 
 > [!exercise] ***Exercise***
 >
-> Let $\text{Objs} = \{{\tt a},{\tt b}\}$ and $\text{Preds}=\{{\tt P},{\tt Q}\}$.  Let $\text{Arity}({\tt P})=1$ and $\text{Arity}({\tt Q})=2$.
+> Let $\text{Consts} = \{{\tt a},{\tt b}\}$ and $\text{Preds}=\{{\tt P},{\tt Q}\}$.  Let $\text{Arity}({\tt P})=1$ and $\text{Arity}({\tt Q})=2$.
 >
-> For each of the following strings, decide which are object symbols, which are predicate symbols, which are atomic formulas, and which are none of the above.
+> For each of the following strings, decide which are constant symbols, which are predicate symbols, which are atomic formulas, and which are none of the above.
 >
 > 1. 1
 > 2. one
@@ -188,7 +188,7 @@ To understand what an "interpretation" is, imagine that you meet someone who spe
 
 But then later you find out that “gibblestrump” is just this person’s word for a cat.  And then you also find out that “whifterstrook” is an adjective which roughly translates to “rude”.  Now you know at the person was saying “This cat is rude.”  
 
-That is essentially what an interpretation does: For an object symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.  Choosing to use one particular interpretation, is a choice of how we will match symbols to their meaning.
+That is essentially what an interpretation does: For an constant symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.  Choosing to use one particular interpretation, is a choice of how we will match symbols to their meaning.
 
 In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  Whatever we choose for this set or universe, we call it the “domain of discourse”.  
 
@@ -204,7 +204,7 @@ In any given setting, we will always need a universe of things that our statemen
 
 We regard the universe as a set, which we’ll call $उ$.  This is the last Devanagari symbol that you'll need to learn for this course!  It is most nearly pronounced as the English 'u' in "put".
 
-If we have any constant symbol, say $a\in\text{Objs}$, then the semantics tells us which element in $उ$ the symbol ${\tt a}$ refers to.  
+If we have any constant symbol, say $a\in\text{Consts}$, then the semantics tells us which element in $उ$ the symbol ${\tt a}$ refers to.  
 
 For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We could have the symbol ${\tt o}$ refer to the number $1\in उ$.  If so then we write $o^इ\in उ$.
 
@@ -217,11 +217,11 @@ In the definition below, इ does the job of (1) and (2).  After that, म takes
 > [!definition] ***Definition***
 > *Semantics*
 >
-> Let $\text{Objs},\text{Preds}$ be sets of object and predicate symbols respectively. Let $\text{Arity}$ be an arity function for $\text{Preds}$.
+> Let $\text{Consts},\text{Preds}$ be sets of constant and predicate symbols respectively. Let $\text{Arity}$ be an arity function for $\text{Preds}$.
 >
 > Let $उ$ be any nonempty set, which we will refer to as the **universe**.  
 >
-> An **interpretation**, $इ$, assigns to each object symbol, an element of the universe.  If $a\in\text{Objs}$, then the assigned element is written ${\tt a}^{इ}$.  Therefore 
+> An **interpretation**, $इ$, assigns to each constant symbol, an element of the universe.  If $a\in\text{Consts}$, then the assigned element is written ${\tt a}^{इ}$.  Therefore 
 >
 > $$
 > {\tt a}^{इ} \in उ
@@ -260,7 +260,7 @@ The left side contains our basic syntax: constant symbols like ${\tt c}$, and pr
 
 On the right is the basic semantic object, the universe, $उ$—the set of things our symbols “talk about”.
 
-The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Objs}$.  This is ${\tt c}^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with ${\tt P}$.  This is ${\tt P}^{इ}=X$.
+The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Consts}$.  This is ${\tt c}^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with ${\tt P}$.  This is ${\tt P}^{इ}=X$.
 
 Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol ${\tt o}$ to denote the number 1, so that means our interpretation assigns ${\tt o}^{इ} = 1$.  We also said that ${\tt P}^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$, where these are the universe and interpretation thta we have now chosen.  
 
@@ -293,12 +293,12 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > * $({\tt \phi}{\tt \to}{\tt \psi})^म = ({\tt \phi}^म)\leadsto({\tt \psi}^म)$
 > * $({\tt \phi}{\tt \leftrightarrow})^म = ({\tt \phi}^म)\curlyleftrightarrow ({\tt \psi}^म)$
 
-To demonstrate, suppose that $\text{Objs}=\{{\tt a},{\tt b}\}$, and $\text{Preds}=\{{\tt P},{\tt Q}\}$, and ${\tt P}$ has arity 2, ${\tt Q}$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
+To demonstrate, suppose that $\text{Consts}=\{{\tt a},{\tt b}\}$, and $\text{Preds}=\{{\tt P},{\tt Q}\}$, and ${\tt P}$ has arity 2, ${\tt Q}$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
 
 $$ {\tt a}^इ = 1, {\tt b}^इ = 2, {\tt c}^इ = 2 $$
 
 > [!note]- Not every element gets a symbol.
-> You may notice that in this example, there is an element of the domain (3) for which no object symbol denotes it.  That may seem odd, but note that nothing in our definitions says that this is forbidden.  
+> You may notice that in this example, there is an element of the domain (3) for which no constant symbol denotes it.  That may seem odd, but note that nothing in our definitions says that this is forbidden.  
 > 
 > It is a bit silly, though.  Since nothing denotes 3, there is no way to talk about it, and therefore it is useless in this example.  
 > 
@@ -374,7 +374,7 @@ We can also think of this in a Venn diagram: Given a constant ${\tt c}$ and pred
 
 Let’s see a non-mathematical example.  Consider the proposition “The ball is red”, uttered in a room with a red ball.  
 
-Let’s choose ${\tt b}$ to be the object symbol, and ${\tt R}$ to be the predicate symbol.  Therefore we represent “The ball is red,” by the formula ${\tt R}({\tt b})$.
+Let’s choose ${\tt b}$ to be the constant symbol, and ${\tt R}$ to be the predicate symbol.  Therefore we represent “The ball is red,” by the formula ${\tt R}({\tt b})$.
 
 At this point we have only established the syntax.  Let’s now “wire it up to” the semantics.  In this context, a reasonable choice of universe, $उ$, is the set of objects in the room where the proposition was uttered.  
 
@@ -402,7 +402,7 @@ This is everything that we need to now evaluate $({\tt R}({\tt b}))^{म}$.  Bec
 
 > [!exercise] ***Exercise***
 >
-> Suppose that we have a syntax with one object symbol, ${\tt a}$, and one predicate symbol, ${\tt P}$.  
+> Suppose that we have a syntax with one constant symbol, ${\tt a}$, and one predicate symbol, ${\tt P}$.  
 >
 > Suppose that we consider only models with universe $उ=\{1\}$.
 >
@@ -475,7 +475,7 @@ The way that formulas are then combined with propositional connectives, is exact
 
 Let’s see an example.
 
-Suppose that we have a syntax with object symbols ${\tt a}$ and ${\tt b}$, and predicates ${\tt P}$ and ${\tt Q}$.  Suppose we have a model, $म = (उ,इ)$, with universe $उ = \Bbb Z$ and the interpretation is defined by 
+Suppose that we have a syntax with constant symbols ${\tt a}$ and ${\tt b}$, and predicates ${\tt P}$ and ${\tt Q}$.  Suppose we have a model, $म = (उ,इ)$, with universe $उ = \Bbb Z$ and the interpretation is defined by 
 
 $$
 \begin{aligned}
@@ -526,21 +526,21 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > *Syntax*
 >
-> Let $\text{Objs}, \text{Preds}$ be two nonempty disjoint sets of symbols which do not contain the elements of $\text{Conns}$. 
+> Let $\text{Consts}, \text{Preds}$ be two nonempty disjoint sets of symbols which do not contain the elements of $\text{Conns}$. 
 >
-> We call $\text{Objs}$ the **set of object symbols** and $\text{Preds}$ the **set of predicate symbols**.
+> We call $\text{Consts}$ the **set of constant symbols** and $\text{Preds}$ the **set of predicate symbols**.
 >
 > Let $\text{Arity}({\tt P})$ be a positive integer for each ${\tt P}\in \text{Preds}$.
 >
 > Define 
 >
 > $$
-> \Sigma = \text{Objs}\cup \text{Preds}\cup \text{Conns}\cup \{(,),\boldsymbol, \}
+> \Sigma = \text{Consts}\cup \text{Preds}\cup \text{Conns}\cup \{(,),\boldsymbol, \}
 > $$
 >
 > The set $\Sigma$ is then called **an alphabet for a predicate language**.
 >
-> If ${\tt P}\in \text{Preds}$ and $n = \text{Arity}({\tt P})$, and ${\tt a_1},\dots,{\tt a_n}\in\text{Objs}$, then 
+> If ${\tt P}\in \text{Preds}$ and $n = \text{Arity}({\tt P})$, and ${\tt a_1},\dots,{\tt a_n}\in\text{Consts}$, then 
 >
 > $$
 > {\tt P}({\tt a_1},...,{\tt a_n}) 
@@ -559,7 +559,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > Let $उ$ be any nonempty set.
 >
-> Let $इ$ be an assignment of elements in $उ$ to the elements in $\text{Objs}$.  If $a\in\text{Objs}$ then the element assigned to it is denoted ${\tt a}^{इ}$.  
+> Let $इ$ be an assignment of elements in $उ$ to the elements in $\text{Consts}$.  If $a\in\text{Consts}$ then the element assigned to it is denoted ${\tt a}^{इ}$.  
 >>>>>>> origin/main
 >
 > For each ${\tt P}\in\text{Preds}$, if $n=\text{Arity}$ then $इ$ assigns a ${\tt P}$ to a subset of $उ^n$.  That is to say, ${\tt P}^{इ}\subseteq उ^n$.
@@ -568,7 +568,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > For any formula ${\tt \phi}\in {\tt L}$ we denote its **evaluation in $म$** by ${\tt \phi}^{म}$.  We define this recursively by 
 >
-> - If ${\tt \phi}\in\text{Atom}$ and ${\tt \phi}={\tt P}({\tt a_1},\dots,{\tt a_n})$ for some ${\tt P}\in\text{Preds}$ and $n = \text{Arity}({\tt P})$ and ${\tt a_1},\dots,{\tt a_n}\in\text{Objs}$, then
+> - If ${\tt \phi}\in\text{Atom}$ and ${\tt \phi}={\tt P}({\tt a_1},\dots,{\tt a_n})$ for some ${\tt P}\in\text{Preds}$ and $n = \text{Arity}({\tt P})$ and ${\tt a_1},\dots,{\tt a_n}\in\text{Consts}$, then
 >     
 >     $$
 >     {\tt \phi}^{म} = ट \text{ \ \ if } ({\tt a_1}^{इ},...,{\tt a_n}^{इ})\in {\tt P}^{इ}
