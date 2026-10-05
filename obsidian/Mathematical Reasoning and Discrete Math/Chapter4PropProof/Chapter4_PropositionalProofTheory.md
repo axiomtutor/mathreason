@@ -29,29 +29,29 @@ So logic is interested in *inferences*: the act of using established facts to in
 > [!definition] ***Definition***
 > Any sequence of propositions, $\Gamma = (\phi_1,\phi_2,...,\phi_m)$, may be called **premises**, where each of the propositions $\phi_i$ is called a **premise** ($1\le i\le m$).  
 > 
-> Any proposition, $\psi$, may be called a **conclusion**.  
+> Any proposition, $\tt \psi$, may be called a **conclusion**.  
 > 
-> In that case, the pair $(\Gamma,\psi)$ is called an **argument**.  
+> In that case, the pair $(\Gamma,\tt \psi)$ is called an **argument**.  
 > 
 > We say that the argument is **valid** if 
 > 
 > $$ 
-> (\phi_1 \land \phi_2 \land \cdots \land \phi_m) \to \psi 
+> (\phi_1 \tt \land \phi_2 \tt \land \cdots \tt \land \phi_m) \tt \to \tt \psi 
 > $$ 
 > 
 > is a tautology.  Otherwise the argument is called **invalid**.
 > 
-> If the argument $(\Gamma,\psi)$ is valid, then we write 
+> If the argument $(\Gamma,\tt \psi)$ is valid, then we write 
 > 
-> $$\Gamma \vDash \psi$$
+> $$\Gamma \vDash \tt \psi$$
 > 
-> which is pronounced $\Gamma$ **semantically entails** $\psi$.
+> which is pronounced $\Gamma$ **semantically entails** $\tt \psi$.
 > 
-> If $(\Gamma,\psi)$ is not valid then we write 
+> If $(\Gamma,\tt \psi)$ is not valid then we write 
 > 
-> $$\Gamma\not\vDash \psi$$
+> $$\Gamma\not\vDash \tt \psi$$
 > 
-> and we say that $\Gamma$ does not semantically entail $\psi$.
+> and we say that $\Gamma$ does not semantically entail $\tt \psi$.
 
 > [!exercise] ***Exercise***
 > 
@@ -60,28 +60,28 @@ So logic is interested in *inferences*: the act of using established facts to in
 > > If you committed the murder then you must have been in the room with Mr. Higginswaddle when it happened.  If you were in the room when it happened, then you could not be in Guadalajara that day.  You were in Guadalajara that day.  Therefore you could not have committed the murder.
 > 
 > Let us symbolize the premises as 
-> * $P\to Q$
-> * $Q\to \neg R$
-> * $R$
+> * $\tt P\tt \to \tt Q$
+> * $\tt Q\tt \to \tt \neg \tt R$
+> * $\tt R$
 > 
-> The conclusion of the argument is then $\neg P$.
+> The conclusion of the argument is then $\tt \neg \tt P$.
 > 
-> Show that $((P\to Q)\land (Q\to \neg R) \land R)\to \neg P$ is a tautology.  
+> Show that $((\tt P\tt \to \tt Q)\tt \land (\tt Q\tt \to \tt \neg \tt R) \tt \land \tt R)\tt \to \tt \neg \tt P$ is a tautology.  
 > 
 > Infer that the given argument is valid.  
 
 > [!exercise] ***Exercise***
-> Intuitvely, if you assume $P$ then it is valid to infer $P\lor Q$.  I mean, if *P* is true then $P\lor Q$ will have to be true, no matter what *Q* is.  (Put formally, I am claiming that if $P^म = ट$ then $(P\lor Q)^म = ट$.  This is true whether $Q^म=ट$ or $Q^म=फ$.)
+> Intuitvely, if you assume $\tt P$ then it is valid to infer $\tt P\tt \lor \tt Q$.  I mean, if $\tt P$ is true then $\tt P\tt \lor \tt Q$ will have to be true, no matter what $\tt Q$ is.  (Put formally, I am claiming that if $\tt P^म = ट$ then $(\tt P\tt \lor \tt Q)^म = ट$.  This is true whether $\tt Q^म=ट$ or $\tt Q^म=फ$.)
 > 
-> Also intuitively, if you assume *P* then it is invalid to infer $P\land Q$.  Since we don't assume the truth of *Q* then it is possible for *Q* to be false, and in that case $P\land Q$ will be false.  (Put formally, there is a model in which $P^म=ट$ and $(P\land Q)^म=फ$.)
+> Also intuitively, if you assume $\tt P$ then it is invalid to infer $\tt P\tt \land \tt Q$.  Since we don't assume the truth of $\tt Q$ then it is possible for $\tt Q$ to be false, and in that case $\tt P\tt \land \tt Q$ will be false.  (Put formally, there is a model in which $\tt P^म=ट$ and $(\tt P\tt \land \tt Q)^म=फ$.)
 > 
 > Make a truth-table which demonstrates 
 > 
-> $$ (P) \vDash P\lor Q $$
+> $$ (\tt P) \vDash \tt P\tt \lor \tt Q $$
 > 
 > and another which demonstrates 
 > 
-> $$ (P) \not\vDash P\land Q $$
+> $$ (\tt P) \not\vDash \tt P\tt \land \tt Q $$
 
 # Simple Inference Rules
 
@@ -105,31 +105,31 @@ Therefore another small and direct step is to infer that you did not commit the 
 
 If we abstract the above proof into symbols, we would say:
 
-* We accept $P\to Q$ and $Q\to \neg R$, and *R*.
-* Because $Q\to \neg R$ and *R*, we therefore infer $\neg Q$.
-* Because $\neg Q$ and $P\to Q$, we therefore infer $\neg P$.
+* We accept $\tt P\tt \to \tt Q$ and $\tt Q\tt \to \tt \neg \tt R$, and $\tt R$.
+* Because $\tt Q\tt \to \tt \neg \tt R$ and $\tt R$, we therefore infer $\tt \neg \tt Q$.
+* Because $\tt \neg \tt Q$ and $\tt P\tt \to \tt Q$, we therefore infer $\tt \neg \tt P$.
 
 The last two bullet points represent the use of an inference rule.  The collection of all three bullet points is the entire proof.  The first bullet point represents the premises of the proof, while the last line ends at the conclusion of the proof.
 
 This proof demonstrates the validity claim,
 
-$$ (P\to Q, Q\to \neg R, R)\vDash \neg P$$
+$$ (\tt P\tt \to \tt Q, \tt Q\tt \to \tt \neg \tt R, \tt R)\vDash \tt \neg \tt P$$
 
 Below we list several inference rules.  
 
 > [!definition] ***Definition***
 >
-> **Conjunction Introduction** is the inference rule “From $\phi$ and $\psi$ we may infer $\phi\land\psi$.”
+> **Conjunction Introduction** is the inference rule “From $\tt \phi$ and $\tt \psi$ we may infer $\tt \phi\tt \land\tt \psi$.”
 >
-> **Conjunction Elimination** is the inference rule “From $\phi\land\psi$ we may infer $\phi$, and we may infer $\psi$.”
+> **Conjunction Elimination** is the inference rule “From $\tt \phi\tt \land\tt \psi$ we may infer $\tt \phi$, and we may infer $\tt \psi$.”
 >
-> **Disjunction Introduction** is “From $\phi$ we may infer $\phi\lor\psi$, or we may infer $\psi\lor\phi$, for any formula $\psi$.”
+> **Disjunction Introduction** is “From $\tt \phi$ we may infer $\tt \phi\tt \lor\tt \psi$, or we may infer $\tt \psi\tt \lor\tt \phi$, for any formula $\tt \psi$.”
 >
-> **Disjunction Elimination** is “From $\phi\lor\psi$ and $\neg \phi$ we may infer $\psi$.  From $\phi\lor\psi$ and $\neg \psi$ we may infer $\phi$.”
+> **Disjunction Elimination** is “From $\tt \phi\tt \lor\tt \psi$ and $\tt \neg \tt \phi$ we may infer $\tt \psi$.  From $\tt \phi\tt \lor\tt \psi$ and $\tt \neg \tt \psi$ we may infer $\tt \phi$.”
 >
-> **Conditional Elimination** is “From $\phi\to\psi$ and $\phi$ we may infer $\psi$.”
+> **Conditional Elimination** is “From $\tt \phi\tt \to\tt \psi$ and $\tt \phi$ we may infer $\tt \psi$.”
 >
-> **Biconditional Elimination** is “From $\phi\leftrightarrow \psi$ and $\phi$ we may infer $\psi$.  From $\phi\leftrightarrow \psi$ and $\psi$ we may infer $\phi$.”
+> **Biconditional Elimination** is “From $\tt \phi\tt \leftrightarrow \tt \psi$ and $\tt \phi$ we may infer $\tt \psi$.  From $\tt \phi\tt \leftrightarrow \tt \psi$ and $\tt \psi$ we may infer $\tt \phi$.”
 
 
 Each of the above inference rules are justified by the fact that, when its assumptions are true, then its conclusion is guaranteed to also be true.  This can always be confirmed by a truth-table.  
@@ -140,7 +140,7 @@ Here is a demonstration for Conjunction Elimination:
 $$
 \begin{array}{|c|c||c|c|c||c|}
 \hline
-P & Q & P & \land & Q & P \\ \hline
+\tt P & \tt Q & \tt P & \tt \land & \tt Q & \tt P \\ \hline
 \color{red} ट & \color{red}ट & & \color{red}ट & & \color{red}ट \\
 ट & फ & & फ & & ट \\
 \color{red}फ & \color{red}ट & & \color{red}फ & & \color{red}फ \\
@@ -150,20 +150,20 @@ $$
 
 
 
-Here we have the truth-table for the premise $P\land Q$ and the conclusion *P*.  The first two columns show all possible combinations of truth-values for *P* and *Q*.  The next three columns show the truth-value of the premise, $P\land Q$, with the truth-value placed under its main connective, $\land$.  The final column shows the truth-value of the conclusion, *P*.
+Here we have the truth-table for the premise $\tt P\tt \land \tt Q$ and the conclusion $\tt P$.  The first two columns show all possible combinations of truth-values for $\tt P$ and $\tt Q$.  The next three columns show the truth-value of the premise, $\tt P\tt \land \tt Q$, with the truth-value placed under its main connective, $\tt \land$.  The final column shows the truth-value of the conclusion, $\tt P$.
 
-There is just one row where $P\land Q$ is true, on row number 1.  In this row, we also have that *P* is true.  
+There is just one row where $\tt P\tt \land \tt Q$ is true, on row number 1.  In this row, we also have that $\tt P$ is true.  
 
-So this shows that “Whenever $P\land Q$ is true, we have *P* is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
+So this shows that “Whenever $\tt P\tt \land \tt Q$ is true, we have $\tt P$ is true.”  This means that the inference rule is valid, because it will never take us from a true proposition to a false one.
 
-Let’s check the Disjunction Elimination rule.  Here is the truth-table for $P\lor Q$ and $\neg P$ and *Q*.
+Let’s check the Disjunction Elimination rule.  Here is the truth-table for $\tt P\tt \lor \tt Q$ and $\tt \neg \tt P$ and $\tt Q$.
 
 $$
 \begin{array}{|c|c||c|c|c||c|c||c|}\hline
- P & Q &
- P & \lor & Q &
- \neg & P &
- Q \\\hline
+ \tt P & \tt Q &
+ \tt P & \tt \lor & \tt Q &
+ \tt \neg & \tt P &
+ \tt Q \\\hline
  \color{red}{ट} & \color{red}{ट} &
   & \color{red}{ट} & &
  \color{red}{फ} & &
@@ -185,21 +185,21 @@ $$
 \end{array}
 $$
 
-Let’s look only at the rows in which the assumptions of the inference rule are true.  These would be the rows where both $P\lor Q$ and $\neg P$ are true.  This happens only at one row, which is row number 3.
+Let’s look only at the rows in which the assumptions of the inference rule are true.  These would be the rows where both $\tt P\tt \lor \tt Q$ and $\tt \neg \tt P$ are true.  This happens only at one row, which is row number 3.
 
-In this row, the value of *Q* is true.  So yet again, the inference rule is valid.
+In this row, the value of $\tt Q$ is true.  So yet again, the inference rule is valid.
 
 ---
 
 It can be helpful to see an example of an inference rule that is *not* valid.  This would require a rule in which the premises can be true but the inferred proposition false.
 
-An example would be "From $P$ we can infer $P\land Q$".  Let's see a truth-table which demonstrates why this is invalid.
+An example would be "From $\tt P$ we can infer $\tt P\tt \land \tt Q$".  Let's see a truth-table which demonstrates why this is invalid.
 
 $$
 \begin{array}{|c|c||c||c|c|c|}\hline
-P & Q &
-P &
-P & \land & Q \\\hline
+\tt P & \tt Q &
+\tt P &
+\tt P & \tt \land & \tt Q \\\hline
 \color{red}{ट} & \color{red}{ट} &
 \color{red}{ट} &
 & \color{red}{ट} &
@@ -219,15 +219,15 @@ P & \land & Q \\\hline
 \end{array}
 $$
 
-Here we have the truth-table for *P* and then $P\land Q$.  
+Here we have the truth-table for $\tt P$ and then $\tt P\tt \land \tt Q$.  
 
-For the inference "If *P* then $P\land Q$" to be valid, we should look at each model (row of the truth-table).  If there is a model where *P* is true, we check that in that model also $P\land Q$ is true.  
+For the inference "If $\tt P$ then $\tt P\tt \land \tt Q$" to be valid, we should look at each model (row of the truth-table).  If there is a model where $\tt P$ is true, we check that in that model also $\tt P\tt \land \tt Q$ is true.  
 
 However, this time, that's not true!  There is an offending row!  
 
-It is row 2, the model in which $P^म=ट$ and $Q^म=फ$.  In this model, *P* is true while $P\land Q$ is false.  
+It is row 2, the model in which $\tt P^म=ट$ and $\tt Q^म=फ$.  In this model, $\tt P$ is true while $\tt P\tt \land \tt Q$ is false.  
 
-For this reason, the inference "If *P* then $P\land Q$" is invalid.
+For this reason, the inference "If $\tt P$ then $\tt P\tt \land \tt Q$" is invalid.
 
 > [!note]- It just takes one model.
 > 
@@ -241,7 +241,7 @@ For this reason, the inference "If *P* then $P\land Q$" is invalid.
 
 > [!exercise] ***Exercise***
 >
-> We could (but will not) have an inference rule “From $\neg(\neg \phi)$ we may infer $\phi$.”
+> We could (but will not) have an inference rule “From $\tt \neg(\tt \neg \tt \phi)$ we may infer $\tt \phi$.”
 >
 > Prove that this inference rule is valid.
 
@@ -253,17 +253,17 @@ In the section above we mostly focused on inference rules, but of course, infere
 
 For example, suppose that we accept the formulas 
 
-- $\neg P$
-- $P\lor Q$
-- $Q\to R$.
+- $\tt \neg \tt P$
+- $\tt P\tt \lor \tt Q$
+- $\tt Q\tt \to \tt R$.
 
-Let’s write a "paragraph-style" proof, from these assumptions, to the conclusion *R*.
+Let’s write a "paragraph-style" proof, from these assumptions, to the conclusion $\tt R$.
 
-Because we accept $\neg P$ and $P\lor Q$, therefore we may use the Disjunction Elimination rule to infer *Q*.  Therefore we now accept *Q*.
+Because we accept $\tt \neg \tt P$ and $\tt P\tt \lor \tt Q$, therefore we may use the Disjunction Elimination rule to infer $\tt Q$.  Therefore we now accept $\tt Q$.
 
-Because we now accept *Q* and $Q\to R$, then we may use the Conditional Elimination rule to infer *R*.  
+Because we now accept $\tt Q$ and $\tt Q\tt \to \tt R$, then we may use the Conditional Elimination rule to infer $\tt R$.  
 
-Because we now accept *R*, which is the intended conclusion of the proof, then this proof is complete.
+Because we now accept $\tt R$, which is the intended conclusion of the proof, then this proof is complete.
 
 ---
 
@@ -274,9 +274,9 @@ Notice the way that the proof above works:
 
 > [!exercise] ***Exercise***
 >
-> Assume the formulas $(P\land Q)\to (R\land S)$, and *P,* and *Q.*
+> Assume the formulas $(\tt P\tt \land \tt Q)\tt \to (\tt R\tt \land \tt S)$, and *P,* and *Q.*
 >
-> Prove the formula $R\lor T$.
+> Prove the formula $\tt R\tt \lor \tt T$.
 
 # Substitution
 
@@ -284,22 +284,22 @@ In this section, we are going to discuss substitution, because it will help us t
 
 Let's start with an example.
 
-Suppose that we already accept $(P\lor Q)\land R$.  Notice that the formula $P\lor Q$ is a subformula.
+Suppose that we already accept $(\tt P\tt \lor \tt Q)\tt \land \tt R$.  Notice that the formula $\tt P\tt \lor \tt Q$ is a subformula.
 
-Moreover notice that $Q\lor P$ is equivalent to $P\lor Q$.  
+Moreover notice that $\tt Q\tt \lor \tt P$ is equivalent to $\tt P\tt \lor \tt Q$.  
 
-Therefore if we substitute $P\lor Q$ with $Q\lor P$, it shouldn’t change the value of the formula.  That is to say, $(P\lor Q)\land R$ should be equivalent to $(Q\lor P)\land R$.
+Therefore if we substitute $\tt P\tt \lor \tt Q$ with $\tt Q\tt \lor \tt P$, it shouldn’t change the value of the formula.  That is to say, $(\tt P\tt \lor \tt Q)\tt \land \tt R$ should be equivalent to $(\tt Q\tt \lor \tt P)\tt \land \tt R$.
 
 > [!exercise] ***Exercise***
 >
-> Draw a truth-table to prove that $(P\lor Q)\land R$ is equivalent to $(Q\lor P)\land R$.
+> Draw a truth-table to prove that $(\tt P\tt \lor \tt Q)\tt \land \tt R$ is equivalent to $(\tt Q\tt \lor \tt P)\tt \land \tt R$.
 
 More generally suppose that 
-* $\phi$ is a formula, 
-* $\chi$ is a subformula of $\phi$, 
-* and $\psi$ is equivalent to $\chi$.  
+* $\tt \phi$ is a formula, 
+* $\tt \chi$ is a subformula of $\tt \phi$, 
+* and $\tt \psi$ is equivalent to $\tt \chi$.  
 
-Then it should be true that, if you substitute $\psi$ for $\chi$ then the result should be equivalent to $\phi$.  
+Then it should be true that, if you substitute $\tt \psi$ for $\tt \chi$ then the result should be equivalent to $\tt \phi$.  
 
 > Substitution of a subformula with an equivalent subformula results in an equivalent formula.
 
@@ -307,116 +307,116 @@ In order to define an inference rule for substitution, we first have to define s
 
 > [!definition] ***Definition***
 >
-> Suppose that $\phi,\chi,\psi$ are all propositional formulas.  We define $[\phi]_{\chi := \psi}$ to mean “everywhere that $\chi$ is a subformula of $\phi$, replace it with $\psi$.”
+> Suppose that $\tt \phi,\tt \chi,\tt \psi$ are all propositional formulas.  We define $[\tt \phi]_{\tt \chi := \tt \psi}$ to mean “everywhere that $\tt \chi$ is a subformula of $\tt \phi$, replace it with $\tt \psi$.”
 
 We will mostly be interested in substituting equivalent subformulas, but in principle it is possible to substitute non-equivalent subformulas.  
 
-For example, let’s calculate $[(P\land ((\neg Q)\lor R))]_{\neg Q := P\land S}$.
+For example, let’s calculate $[(\tt P\tt \land ((\tt \neg \tt Q)\tt \lor \tt R))]_{\tt \neg \tt Q := \tt P\tt \land \tt S}$.
 
-First we take the formula $P\land ((\neg Q)\lor R)$ and identify where it has the subformula $\neg Q$.  We see that it has the subformula here:
-
-$$
-P\land (\colorbox{yellow}{$(\neg Q)$}\lor R)
-$$
-
-We then replace this subformula with the subformula $P\land S$, to obtain the result, 
+First we take the formula $\tt P\tt \land ((\tt \neg \tt Q)\tt \lor \tt R)$ and identify where it has the subformula $\tt \neg \tt Q$.  We see that it has the subformula here:
 
 $$
-P\land ((P\land S)\lor R)
+\tt P\tt \land (\colorbox{yellow}{$(\tt \neg \tt Q)$}\tt \lor \tt R)
+$$
+
+We then replace this subformula with the subformula $\tt P\tt \land \tt S$, to obtain the result, 
+
+$$
+\tt P\tt \land ((\tt P\tt \land \tt S)\tt \lor \tt R)
 $$
 
 There ya go, that's how do you do substitution in general!
 
 > [!exercise] ***Exercise***
 >
-> Show that $[P\land (Q\to P)]_{P:= \neg P}$ is equal to $(\neg P)\land (Q\to\neg P)$.
+> Show that $[\tt P\tt \land (\tt Q\to \tt P)]_{\tt P:= \tt \neg \tt P}$ is equal to $(\tt \neg \tt P)\tt \land (\tt Q\tt \to\tt \neg \tt P)$.
 >
-> Show that $[P\land Q]_{R:= S}$ is equal to $P\land Q$.
+> Show that $[\tt P\tt \land \tt Q]_{\tt R:= \tt S}$ is equal to $\tt P\tt \land \tt Q$.
 
 > [!exercise]
-> Suppose that $\phi$ is a propositional formula such that $\chi$ does not occur as a subformula of $\phi$.  Let $\psi$ be any formula.
+> Suppose that $\tt \phi$ is a propositional formula such that $\tt \chi$ does not occur as a subformula of $\tt \phi$.  Let $\tt \psi$ be any formula.
 >
-> Explain why $\phi_{\chi:= \psi}=\phi$.
+> Explain why $\phi_{\tt \chi:= \tt \psi}=\tt \phi$.
 
 Now that we understand substitution, we can state the following inference rules.
 
 > [!definition] ***Definition***
 >
-> Let $\phi,\chi,\psi,\omega$ be propositional formulas.  
+> Let $\tt \phi,\tt \chi,\tt \psi,\omega$ be propositional formulas.  
 >
-> **Double negation** is the inference rule that, from $\phi$, one can infer either $[\phi]_{\chi:= \neg(\neg\chi)}$ or $[\phi]_{\neg(\neg\chi):= \chi}$. 
+> **Double negation** is the inference rule that, from $\tt \phi$, one can infer either $[\tt \phi]_{\tt \chi:= \tt \neg(\tt \neg\tt \chi)}$ or $[\tt \phi]_{\tt \neg(\tt \neg\tt \chi):= \tt \chi}$. 
 > > [!note]- What double negation says.
-> > What does "$[\phi]_{\chi := \neg(\neg \chi)}$" mean?  
+> > What does "$[\tt \phi]_{\tt \chi := \tt \neg(\tt \neg \tt \chi)}$" mean?  
 > > 
-> > It means "In any formula ($\phi$), you can always replace any part ($\chi$) with its double-negation ($\neg(\neg \chi)$)."
+> > It means "In any formula ($\tt \phi$), you can always replace any part ($\tt \chi$) with its double-negation ($\tt \neg(\tt \neg \tt \chi)$)."
 >
-> **Conjunction commutativity** is the inference rule that, from $\phi$ one can infer $\phi_{\chi\land\psi := \psi\land\chi}$.
+> **Conjunction commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \land\tt \psi := \tt \psi\tt \land\tt \chi}$.
 >
-> **Conjunction associativity** is the inference rule that, from $\phi$ one can infer either $\phi_{\chi\land(\psi\land\omega) := (\chi\land\psi)\land\omega}$ or $\phi_{(\chi\land\psi)\land\omega:= \chi\land(\psi\land\omega)}$.
+> **Conjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \land\omega) := (\tt \chi\tt \land\tt \psi)\tt \land\omega}$ or $\phi_{(\tt \chi\tt \land\tt \psi)\tt \land\omega:= \tt \chi\tt \land(\tt \psi\tt \land\omega)}$.
 >
-> **Disjunction commutativity** is the inference rule that, from $\phi$ one can infer $\phi_{\chi\lor\psi:=\psi\lor\chi}$.
+> **Disjunction commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \lor\tt \psi:=\tt \psi\tt \lor\tt \chi}$.
 >
-> **Disjunction associativity** is the inference rule that, from $\phi$ one can infer either $\phi_{\chi\lor(\psi\lor\omega) := (\chi\lor\psi)\lor\omega}$ or $\phi_{(\chi\lor\psi)\lor\omega:= \chi\lor(\psi\lor\omega)}$.
+> **Disjunction associativity** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \lor(\tt \psi\tt \lor\omega) := (\tt \chi\tt \lor\tt \psi)\tt \lor\omega}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \lor\omega:= \tt \chi\tt \lor(\tt \psi\tt \lor\omega)}$.
 >
-> **De Morgan’s** is the inference rule that, from $\phi$ one can infer either $\phi_{\neg(\chi\lor\psi):=(\neg\chi)\land(\neg\psi)}$ or $\phi_{(\neg\chi)\land(\neg\psi):=\neg(\chi\lor\psi)}$ or $\phi_{\neg(\chi\land\psi):= (\neg\chi)\lor(\neg\psi)}$ or $\phi_{(\neg \chi)\lor(\neg\psi):=\neg(\chi\land\psi)}$.
+> **De Morgan’s** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \neg(\tt \chi\tt \lor\tt \psi):=(\tt \neg\tt \chi)\tt \land(\tt \neg\tt \psi)}$ or $\phi_{(\tt \neg\tt \chi)\tt \land(\tt \neg\tt \psi):=\tt \neg(\tt \chi\tt \lor\tt \psi)}$ or $\phi_{\tt \neg(\tt \chi\tt \land\tt \psi):= (\tt \neg\tt \chi)\tt \lor(\tt \neg\tt \psi)}$ or $\phi_{(\tt \neg \tt \chi)\tt \lor(\tt \neg\tt \psi):=\tt \neg(\tt \chi\tt \land\tt \psi)}$.
 >
-> **Distribution** is the inference rule that, from $\phi$ one can infer either $\phi_{\chi\land(\psi\lor\omega) := (\chi\land\psi)\lor(\chi\land \omega)}$ or $\phi_{\chi\lor(\psi\land\omega):= (\chi\lor\psi)\land(\chi\lor\omega)}$.
+> **Distribution** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{\tt \chi\tt \land(\tt \psi\tt \lor\omega) := (\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land \omega)}$ or $\phi_{\tt \chi\tt \lor(\tt \psi\tt \land\omega):= (\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\omega)}$.
 >
-> **Factorization** is the inference rule that, from $\phi$ one can infer either $\phi_{(\chi\land\psi)\lor(\chi\land\omega):=\chi\land(\psi\lor\omega)}$ or $\phi_{(\chi\lor\psi)\land(\chi\lor\omega):=\chi\lor(\psi\land\omega)}$.
+> **Factorization** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{(\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land\omega):=\tt \chi\tt \land(\tt \psi\tt \lor\omega)}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\omega):=\tt \chi\tt \lor(\tt \psi\tt \land\omega)}$.
 >
-> **Material implication** is the inference rule that, from $\phi$ one can infer $\phi_{\chi\to\psi:= (\neg \chi)\lor\psi}$ or $\phi_{(\neg\chi)\lor\psi:=\chi\to\psi}$.
+> **Material implication** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\to\tt \psi:= (\tt \neg \tt \chi)\tt \lor\tt \psi}$ or $\phi_{(\tt \neg\tt \chi)\tt \lor\tt \psi:=\tt \chi\to\tt \psi}$.
 >
-> **Biconditional commutativity** is the inference rule that, from $\phi$ one can infer $\phi_{\chi\leftrightarrow\psi := \psi\leftrightarrow\chi}$.
+> **Biconditional commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \leftrightarrow\tt \psi := \tt \psi\tt \leftrightarrow\tt \chi}$.
 >
-> **Reiteration** is the inference rule that, if $\phi$ has been proved before, then it can be used later in a proof, at any time.
+> **Reiteration** is the inference rule that, if $\tt \phi$ has been proved before, then it can be used later in a proof, at any time.
 
-Let's see how we can use these rules to show that from *P* we can infer $\neg(\neg P)$.  To do so we'll use the double negation rule.  
+Let's see how we can use these rules to show that from $\tt P$ we can infer $\tt \neg(\tt \neg \tt P)$.  To do so we'll use the double negation rule.  
 
-In this example, $\phi=P$ and $\chi = P$.
+In this example, $\tt \phi=\tt P$ and $\tt \chi = \tt P$.
 
-We are using the version of double negation, in which we infer $\phi_{\chi:=\neg(\neg\chi)}$.  In this case, that means we are inferring $P_{P:=\neg(\neg P)}$.  
+We are using the version of double negation, in which we infer $\phi_{\tt \chi:=\tt \neg(\tt \neg\tt \chi)}$.  In this case, that means we are inferring $\tt P_{\tt P:=\tt \neg(\tt \neg \tt P)}$.  
 
 Let's calculate that
 
 $$
-P_{P:=\neg(\neg P)} = \neg(\neg P)
+\tt P_{\tt P:=\tt \neg(\tt \neg \tt P)} = \tt \neg(\tt \neg \tt P)
 $$
 
-The double negation rule therefore says that from *P* we may infer $\neg(\neg P)$.  
+The double negation rule therefore says that from $\tt P$ we may infer $\tt \neg(\tt \neg \tt P)$.  
 
 ---
 
 Here is another worked example, again using double negation but this time in the other direction.  
 
-From $P\lor \neg(\neg Q)$ we can infer $P\lor Q$.  
+From $\tt P\tt \lor \tt \neg(\tt \neg \tt Q)$ we can infer $\tt P\tt \lor \tt Q$.  
 
-In this example, we use $\phi=P\lor \neg(\neg Q)$ and $\chi = Q$.  We use the version of double negation which lets us infer $\phi_{\neg(\neg \chi):=\chi}$.
+In this example, we use $\tt \phi=\tt P\tt \lor \tt \neg(\tt \neg \tt Q)$ and $\tt \chi = \tt Q$.  We use the version of double negation which lets us infer $\phi_{\tt \neg(\tt \neg \tt \chi):=\tt \chi}$.
 
 Since 
 
 $$
-P\lor\neg(\neg Q)_{\neg(\neg Q):= Q} = P\lor Q
+\tt P\tt \lor\tt \neg(\tt \neg \tt Q)_{\tt \neg(\tt \neg \tt Q):= \tt Q} = \tt P\tt \lor \tt Q
 $$
 
-this explains how the rule allows us to infer $P\lor Q$.
+this explains how the rule allows us to infer $\tt P\tt \lor \tt Q$.
 
 > [!exercise] ***Exercise***
 >
-> Use conjunction commutativity to infer, from $P\land(Q\lor R)$, that $(Q\lor R)\land P$.
+> Use conjunction commutativity to infer, from $\tt P\tt \land(\tt Q\tt \lor \tt R)$, that $(\tt Q\tt \lor \tt R)\tt \land \tt P$.
 >
-> Identify $\phi,\chi,\psi$ as you apply the rule.
+> Identify $\tt \phi,\tt \chi,\tt \psi$ as you apply the rule.
 
 > [!exercise] ***Exercise***
 >
-> Use disjunction commutativity to infer, from $P\land (Q\lor R)$, that $P\land (R\lor Q)$.
+> Use disjunction commutativity to infer, from $\tt P\tt \land (\tt Q\tt \lor \tt R)$, that $\tt P\tt \land (\tt R\tt \lor \tt Q)$.
 
 > [!exercise] ***Exercise***
 >
-> Use distribution to infer, from $P\land (Q\lor R)$, that $(P\land Q)\lor(P\land R)$.
+> Use distribution to infer, from $\tt P\tt \land (\tt Q\tt \lor \tt R)$, that $(\tt P\tt \land \tt Q)\tt \lor(\tt P\tt \land \tt R)$.
 
 > [!exercise] ***Exercise***
 >
-> Infer from $P\land (Q\lor R)$ that $(R\lor P)\land (Q\lor P)$.
+> Infer from $\tt P\tt \land (\tt Q\tt \lor \tt R)$ that $(\tt R\tt \lor \tt P)\tt \land (\tt Q\tt \lor \tt P)$.
 >
 > Note: This inference requires several steps.  One way to do it is to first use distribution, and then use commutativity three times.
 
@@ -424,7 +424,7 @@ this explains how the rule allows us to infer $P\lor Q$.
 
 We will now develop a formal system of writing proofs.  
 
-Let's begin from an example.  From the assumption $P\land (Q\land R)$ we will prove *R*.
+Let's begin from an example.  From the assumption $\tt P\tt \land (\tt Q\tt \land \tt R)$ we will prove $\tt R$.
 
 Here is a presentation of the proof in a "Fitch-style" sequence of lines.  Each line carries an index (numbering), the formula, and the inference rule which allows us to infer it together with the previously accepted formula indices which are used in the inference rule.
 
@@ -432,27 +432,27 @@ I've colored assumptions in red and the conclusion in green.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\land (Q\land R)$ | Assumption |
-| 2. | $Q\land R$ | Conjunction Elimination from 1 |
-| 3. | *R* | Conjunction Elimination from 2. |
+| 1. | $\tt P\tt \land (\tt Q\tt \land \tt R)$ | Assumption |
+| 2. | $\tt Q\tt \land \tt R$ | Conjunction Elimination from 1 |
+| 3. | $\tt R$ | Conjunction Elimination from 2. |
 
 ---
 
 
-Let’s see another example.  From the assumptions $\neg Q$ and $P\to Q$, we prove $\neg P$.  
+Let’s see another example.  From the assumptions $\tt \neg \tt Q$ and $\tt P\tt \to \tt Q$, we prove $\tt \neg \tt P$.  
 
 | **Index** | **Formula**      | **Reason**                        |
 | --------- | ---------------- | --------------------------------- |
-| 1.        | $\neg Q$         | Assumption                        |
-| 2.        | $P\to Q$         | Assumption                        |
-| 3.        | $(\neg P)\lor Q$ | Material Implication from 2       |
-| 4.        | $\neg P$         | Disjunction Elimination from 1, 3. |
+| 1.        | $\tt \neg \tt Q$         | Assumption                        |
+| 2.        | $\tt P\tt \to \tt Q$         | Assumption                        |
+| 3.        | $(\tt \neg \tt P)\tt \lor \tt Q$ | Material Implication from 2       |
+| 4.        | $\tt \neg \tt P$         | Disjunction Elimination from 1, 3. |
 
 ---
 
 The table is a nice way to display the proof, but it is just a visual aid.  
 
-The proof *itself* is just the sequence of propositions.  Consider the first table proof that I presented above.  It is a sequence of assumptions, $P\land (Q\land R)$, and then a sequence of inferences, $Q\land R, R$.  
+The proof *itself* is just the sequence of propositions.  Consider the first table proof that I presented above.  It is a sequence of assumptions, $\tt P\tt \land (\tt Q\tt \land \tt R)$, and then a sequence of inferences, $\tt Q\tt \land \tt R, \tt R$.  
 
 If we did not care about readability at all, we would write proofs as mere sequences.  This is, in fact, how we will formally define what a proof is.
 
@@ -479,9 +479,9 @@ But note that a proof is not just *any* two sequences of propositions.  There mu
 > 
 > We call $\psi_n$ the **conclusion** of the proof. 
 > 
-> Let $\Gamma$ be a sequence or formulas, and $\psi$ a formula. If there exists a proof of $\psi$ from $\Gamma$, then we write
-> $$\Gamma \vdash \psi$$
-> which is pronounced, $\Gamma$ **syntactically entails** (or **proves**) $\psi$.
+> Let $\Gamma$ be a sequence or formulas, and $\tt \psi$ a formula. If there exists a proof of $\tt \psi$ from $\Gamma$, then we write
+> $$\Gamma \vdash \tt \psi$$
+> which is pronounced, $\Gamma$ **syntactically entails** (or **proves**) $\tt \psi$.
 > 
 
 
@@ -493,44 +493,44 @@ But note that a proof is not just *any* two sequences of propositions.  There mu
  > 
  > And a proof must always end on with the concluding formula.  
 
-Notice the difference between semantic and syntactic entailment. Let $\Gamma$ be a finite sequence of formulas, and $\psi$ a formula. 
+Notice the difference between semantic and syntactic entailment. Let $\Gamma$ be a finite sequence of formulas, and $\tt \psi$ a formula. 
 
 The expression
 
-$$\Gamma \vDash \psi$$
+$$\Gamma \vDash \tt \psi$$
 is a semantic notion. It is stated in terms of truth values. 
 
 The expression
 
-$$\Gamma \vdash \psi$$
+$$\Gamma \vdash \tt \psi$$
 
 is a syntactic notion. It is stated entirely in terms of the existence of certain formulas.
 
-The point of a proof, is to demonstrate that an argument is valid. That is to say, we hope that $\Gamma\vdash\psi$ will ensure that $\Gamma\vDash\psi$. We will have more to say about this later. 
+The point of a proof, is to demonstrate that an argument is valid. That is to say, we hope that $\Gamma\vdash\tt \psi$ will ensure that $\Gamma\vDash\tt \psi$. We will have more to say about this later. 
 
 ---
 
 Based on the formal definition of a proof above, the following is a proof: 
 
-$$ \Gamma = (P, Q), \Psi = (P\land Q, (P\land Q)\land P) $$
+$$ \Gamma = (\tt P, \tt Q), \Psi = (\tt P\tt \land \tt Q, (\tt P\tt \land \tt Q)\tt \land \tt P) $$
 
 Notice that $\Gamma$ is allowed to be any finite sequence of propositions.  
 
 The propositions of $\Psi$, however, must be inferrable. That is to say, for each proposition in $\Psi$, there must be an inference rule which can infer that proposition from $\Gamma$ or the earlier propositions. 
 
-For example, $\psi_1 = P\land Q$ is justified by Conjunction Introduction with reference to $\phi_1 = P \in \Gamma$ and $\phi_2=Q\in\Gamma$. 
+For example, $\psi_1 = \tt P\tt \land \tt Q$ is justified by Conjunction Introduction with reference to $\phi_1 = \tt P \in \Gamma$ and $\phi_2=\tt Q\in\Gamma$. 
 
-Next $\psi_2 = (P\land Q)\land P$ is justified by Conjunction Introduction with reference to $\phi_1=P\in\Gamma$ and $\psi_1 = P\land Q$.  
+Next $\psi_2 = (\tt P\tt \land \tt Q)\tt \land \tt P$ is justified by Conjunction Introduction with reference to $\phi_1=\tt P\in\Gamma$ and $\psi_1 = \tt P\tt \land \tt Q$.  
 
-The conclusion of a proof is always the last proposition, so the conclusion is $(P\land Q)\land P$.  
+The conclusion of a proof is always the last proposition, so the conclusion is $(\tt P\tt \land \tt Q)\tt \land \tt P$.  
 
 > [!exercise] ***Exercise***
 > 
 > Decide whether the following pairs of sequences of propositions is a proof or not.  If it is a proof, identify the conclusion of the proof.
 > 
-> 1. $\Gamma = (P,Q)$ and $\Psi = (R, S)$.
-> 2. $\Gamma = (P,Q)$ and $\Psi = (P)$.
-> 3. $\Gamma = (P,Q)$ and $\Psi = (Q,P,P\land Q,P)$.
+> 1. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt R, \tt S)$.
+> 2. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt P)$.
+> 3. $\Gamma = (\tt P,\tt Q)$ and $\Psi = (\tt Q,\tt P,\tt P\tt \land \tt Q,\tt P)$.
 
 We now know the formal definition of a proof. From now on, we mostly ignore the formalism—we will only use tabular proofs.
 
@@ -541,42 +541,42 @@ For emphasis, I will color the assumptions with red and the conclusion with gree
 
 Below is a long and challenging proof.  Don’t worry if it seems like something you couldn’t do yourself—working out these proofs is a skill that grows with exercise and time.
 
-From the assumptions $P\to Q$ and $R\to Q$ and $P\lor R$, we will prove *Q*. That is to say, the proof below demonstrates
+From the assumptions $\tt P\tt \to \tt Q$ and $\tt R\tt \to \tt Q$ and $\tt P\tt \lor \tt R$, we will prove $\tt Q$. That is to say, the proof below demonstrates
 
-$$ (P\to Q, R\to Q, P\lor R) \vdash Q $$
+$$ (\tt P\tt \to \tt Q, \tt R\tt \to \tt Q, \tt P\tt \lor \tt R) \vdash \tt Q $$
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\to Q$ | Assumption |
-| 2. | $R\to Q$ | Assumption |
-| 3.  | $P\lor R$ | Assumption |
-| 4. | $(\neg P)\lor Q$ | Material Implication from 1 |
-| 5. | $(\neg R)\lor Q$ | Material Implication from 2 |
-| 6. | $Q\lor \neg P$ | Disjunction Commutativity from 4 |
-| 7. | $Q\lor \neg R$ | Disjunction Commutativity from 5 |
-| 8. | $(Q\lor \neg P)\land (Q\lor \neg R)$ | Conjunction Introduction from 6, 7 |
-| 9. | $Q\lor ((\neg P)\land (\neg R))$ | Factorization from 8 |
-| 10. | $Q\lor\neg(P\lor R)$ | De Morgan’s from 9 |
-| 11. | $\neg(\neg(P\lor R))$ | Double Negation from 3 |
-| 12. | *Q* | Disjunction Elimination from 10, 11. |
+| 1. | $\tt P\tt \to \tt Q$ | Assumption |
+| 2. | $\tt R\tt \to \tt Q$ | Assumption |
+| 3.  | $\tt P\tt \lor \tt R$ | Assumption |
+| 4. | $(\tt \neg \tt P)\tt \lor \tt Q$ | Material Implication from 1 |
+| 5. | $(\tt \neg \tt R)\tt \lor \tt Q$ | Material Implication from 2 |
+| 6. | $\tt Q\tt \lor \tt \neg \tt P$ | Disjunction Commutativity from 4 |
+| 7. | $\tt Q\tt \lor \tt \neg \tt R$ | Disjunction Commutativity from 5 |
+| 8. | $(\tt Q\tt \lor \tt \neg \tt P)\tt \land (\tt Q\tt \lor \tt \neg \tt R)$ | Conjunction Introduction from 6, 7 |
+| 9. | $\tt Q\tt \lor ((\tt \neg \tt P)\tt \land (\tt \neg \tt R))$ | Factorization from 8 |
+| 10. | $\tt Q\tt \lor\tt \neg(\tt P\tt \lor \tt R)$ | De Morgan’s from 9 |
+| 11. | $\tt \neg(\tt \neg(\tt P\tt \lor \tt R))$ | Double Negation from 3 |
+| 12. | $\tt Q$ | Disjunction Elimination from 10, 11. |
 
 > [!exercise] ***Exercise***
 >
-> From the assumptions *P* and $P\to Q$ and $Q\to R$, prove *R*. That is to say, show that
-> $$(P, P\to Q, Q\to R)\vdash R$$
+> From the assumptions $\tt P$ and $\tt P\tt \to \tt Q$ and $\tt Q\tt \to \tt R$, prove $\tt R$. That is to say, show that
+> $$(\tt P, \tt P\tt \to \tt Q, \tt Q\tt \to \tt R)\vdash \tt R$$
 >
-> From the assumption $(P\land Q)\lor (P\land R)$ prove *P*. That is to say, show
-> $$((P\land Q)\lor (P\land R)) \vdash P$$
+> From the assumption $(\tt P\tt \land \tt Q)\tt \lor (\tt P\tt \land \tt R)$ prove $\tt P$. That is to say, show
+> $$((\tt P\tt \land \tt Q)\tt \lor (\tt P\tt \land \tt R)) \vdash \tt P$$
 >
-> From the assumptions $(\neg P)\lor Q$ and *P*, prove *Q*. That is to say, 
-> $$((\neg P)\lor Q, P) \vdash Q$$
+> From the assumptions $(\tt \neg \tt P)\tt \lor \tt Q$ and $\tt P$, prove $\tt Q$. That is to say, 
+> $$((\tt \neg \tt P)\tt \lor \tt Q, \tt P) \vdash \tt Q$$
 >
 > (The first proof requires six lines, and the others require significantly fewer.)
 
 
 # Conditional Introduction
 
-Consider the argument that, from $P\to Q$ and $Q\to R$ it should follow that $P\to R$.
+Consider the argument that, from $\tt P\tt \to \tt Q$ and $\tt Q\tt \to \tt R$ it should follow that $\tt P\tt \to \tt R$.
 
 This is a valid argument, because whenever the assumptions are true, you will find that the conclusion is true.  We could demonstrate this fact using a truth-table.  
 
@@ -596,90 +596,90 @@ Without rehearsing the entire proof, the broad structure of the proof was:
 - Go through a few reasoning steps. 
 - We were able to show that $\frac n a$ was a natural number. (I.e. prove the consequent.)
 
-That is exactly the structure of a Conditional Introduction proof.  If you want to prove the conditional $\phi\to\psi$ then 
+That is exactly the structure of a Conditional Introduction proof.  If you want to prove the conditional $\tt \phi\tt \to\tt \psi$ then 
 
-- Assume $\phi$.
+- Assume $\tt \phi$.
 - Go through a few reasoning steps.
-- Show $\psi$.
+- Show $\tt \psi$.
 
-Let's demonstrate with an example.  We will now prove, from $P\to Q$ and $Q\to R$ the conclusion that $P\to R$.
+Let's demonstrate with an example.  We will now prove, from $\tt P\tt \to \tt Q$ and $\tt Q\tt \to \tt R$ the conclusion that $\tt P\tt \to \tt R$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\to Q$ | Assumption |
-| 2. | $Q\to R$ | Assumption |
-| 3. | $P\to R$ | Conditional Introduction from sub-proof below. |
+| 1. | $\tt P\tt \to \tt Q$ | Assumption |
+| 2. | $\tt Q\tt \to \tt R$ | Assumption |
+| 3. | $\tt P\tt \to \tt R$ | Conditional Introduction from sub-proof below. |
 
  3. conditional sub-proof
  
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.1. | *P* | Assumption for Conditional Introduction |
-| 3.2. | *Q* | Conditional Elimination from 1, 3.1 |
+| 3.1. | $\tt P$ | Assumption for Conditional Introduction |
+| 3.2. | $\tt Q$ | Conditional Elimination from 1, 3.1 |
 | 3.3. | R | Conditional Elimination from 2, 3.2. |
 
-To explain how this works, notice line 3, which holds the proposition $P\to R$.  This line is justified by the subproof below it.   
+To explain how this works, notice line 3, which holds the proposition $\tt P\tt \to \tt R$.  This line is justified by the subproof below it.   
 
 The sub-proof mirrors what we said generally:
 
-- It assumes the antecedent, *P* (line 3.1).
+- It assumes the antecedent, $\tt P$ (line 3.1).
 - It goes through some reasoning steps (lines 3.2 and 3.3).
-- It shows the consequent, *R* (line 3.3).
+- It shows the consequent, $\tt R$ (line 3.3).
 
 As a comment about how we *write* sub-proofs in tabular form: 
 
 - They are written with extra indentation.
-- They use a sub-indexing system.  Since the conditional $P\to R$ was on line 3, then the indices of the sub-proof are 3.1, 3.2, and so on.
+- They use a sub-indexing system.  Since the conditional $\tt P\tt \to \tt R$ was on line 3, then the indices of the sub-proof are 3.1, 3.2, and so on.
 
 ---
 
-Here is another example.  From $P\to R$, and $P\to S$, and $(P\to (R\land S))\to Q$ we can prove that *Q*.
+Here is another example.  From $\tt P\tt \to \tt R$, and $\tt P\tt \to \tt S$, and $(\tt P\tt \to (\tt R\tt \land \tt S))\tt \to \tt Q$ we can prove that $\tt Q$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\to R$ | Assumption |
-| 2. | $P\to S$ | Assumption |
-| 3. | $(P\to (R\land S))\to Q$ | Assumption |
-| 4. | $P\to (R\land S)$ | Conditional Introduction from subproof below |
+| 1. | $\tt P\tt \to \tt R$ | Assumption |
+| 2. | $\tt P\tt \to \tt S$ | Assumption |
+| 3. | $(\tt P\tt \to (\tt R\tt \land \tt S))\tt \to \tt Q$ | Assumption |
+| 4. | $\tt P\tt \to (\tt R\tt \land \tt S)$ | Conditional Introduction from subproof below |
 
 4. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 4.1. | *P* | Assumption for Conditional Introduction |
-| 4.2. | *R* | Conditional Elimination from 1, 4.1 |
-| 4.3. | *S* | Conditional Elimination from 2, 4.1 |
-| 4.4. | $R\land S$ | Conjunction Introduction from 4.2, 4.3. |
+| 4.1. | $\tt P$ | Assumption for Conditional Introduction |
+| 4.2. | $\tt R$ | Conditional Elimination from 1, 4.1 |
+| 4.3. | $\tt S$ | Conditional Elimination from 2, 4.1 |
+| 4.4. | $\tt R\tt \land \tt S$ | Conjunction Introduction from 4.2, 4.3. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 5. | *Q* | Conditional Elimination from 3, 4. |
+| 5. | $\tt Q$ | Conditional Elimination from 3, 4. |
 
 ---
 
 Let’s now see how a sub-proof can go wrong.
 
-Consider the following invalid proof that, from *P*, we can infer *Q*.
+Consider the following invalid proof that, from $\tt P$, we can infer $\tt Q$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | *P* | Assumption |
-| 2. | $Q\to P$ | Conditional Introduction from subproof below |
+| 1. | $\tt P$ | Assumption |
+| 2. | $\tt Q\tt \to \tt P$ | Conditional Introduction from subproof below |
 
 2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 2.1. | *Q* | Assumption for Conditional Introduction |
-| 2.2. | *P* | Reiteration from 1. |
+| 2.1. | $\tt Q$ | Assumption for Conditional Introduction |
+| 2.2. | $\tt P$ | Reiteration from 1. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3. | *Q* | Reiteration from 2.1. |
+| 3. | $\tt Q$ | Reiteration from 2.1. |
 
-This proof must be invalid—*P* does not imply *Q*.  It is intuitively true that, from a given proposition (*P*) one should not be able to infer some other random and unrelated proposition (*Q*).  
+This proof must be invalid—$\tt P$ does not imply $\tt Q$.  It is intuitively true that, from a given proposition ($\tt P$) one should not be able to infer some other random and unrelated proposition ($\tt Q$).  
 
-We can also demonstrate that the argument is invalid using a truth-table.  I will leave that to you to work out in detail, but I promise: In the truth-table, there is a row at which *P* is true while *Q* is false.  
+We can also demonstrate that the argument is invalid using a truth-table.  I will leave that to you to work out in detail, but I promise: In the truth-table, there is a row at which $\tt P$ is true while $\tt Q$ is false.  
 
 Therefore something must have gone wrong.  But specifically, where?  It seems like we have only used inference rules at each step, which we previously accepted as valid.  
 
@@ -695,74 +695,74 @@ Therefore when we formally define the Conditional Introduction inference rule, b
 
 > [!definition] ***Definition***
 >
-> Let $\phi,\psi$ be propositional formulas.
+> Let $\tt \phi,\tt \psi$ be propositional formulas.
 >
 > **Conditional Introduction** is the following inference rule.
 >
-> > The following allows you to infer $\phi\to\psi$.
+> > The following allows you to infer $\tt \phi\tt \to\tt \psi$.
 > > 
-> > First, assume $\phi$.
+> > First, assume $\tt \phi$.
 > > 
-> > Using $\phi$ and any other formulas already accepted, then prove $\psi$.
+> > Using $\tt \phi$ and any other formulas already accepted, then prove $\tt \psi$.
 > > 
-> > Once this is done, you must stop assuming $\phi$ and any of the formulas proved after assuming $\phi$.
+> > Once this is done, you must stop assuming $\tt \phi$ and any of the formulas proved after assuming $\tt \phi$.
 
-We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof from $(P\land Q)\to R$ that $P\to (Q\to R)$.
+We can also have sub-proofs within sub-proofs.  To demonstrate, here is a proof from $(\tt P\tt \land \tt Q)\tt \to \tt R$ that $\tt P\tt \to (\tt Q\tt \to \tt R)$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $(P\land Q)\to R$ | Assumption |
-| 2. | $P\to(Q\to R)$ | Conditional Introduction from subproof below. |
+| 1. | $(\tt P\tt \land \tt Q)\tt \to \tt R$ | Assumption |
+| 2. | $\tt P\tt \to(\tt Q\tt \to \tt R)$ | Conditional Introduction from subproof below. |
 
 2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 2.1. | *P* | Assumption |
-| 2.2.  | $Q\to R$ | Conditional Introduction from subproof below. |
+| 2.1. | $\tt P$ | Assumption |
+| 2.2.  | $\tt Q\tt \to \tt R$ | Conditional Introduction from subproof below. |
 
 2.2. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 2.2.1. | *Q* | Assumption |
-| 2.2.2. | $P\land Q$ | Conjunction Introduction from 2.1, 2.2.1 |
-| 2.2.3. | *R* | Conditional Elimination from 1, 2.2.2. |
+| 2.2.1. | $\tt Q$ | Assumption |
+| 2.2.2. | $\tt P\tt \land \tt Q$ | Conjunction Introduction from 2.1, 2.2.1 |
+| 2.2.3. | $\tt R$ | Conditional Elimination from 1, 2.2.2. |
 
 ---
 
 In fact, we can now have proofs which use *no premises at all*!
 
-In the example below, I give a proof, from no premises, to the conclusion that $P\to P$.  It makes sense that we should be able to prove tautologies like this: they are always true, regardless of your assumptions.
+In the example below, I give a proof, from no premises, to the conclusion that $\tt P\tt \to \tt P$.  It makes sense that we should be able to prove tautologies like this: they are always true, regardless of your assumptions.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\to P$ | Conditional Introduction from subproof below. |
+| 1. | $\tt P\tt \to \tt P$ | Conditional Introduction from subproof below. |
 
 1. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1.1. | *P* | Assumption for Conditional Introduction |
-| 1.2. | *P* | Reiteration from 1.1. |
+| 1.1. | $\tt P$ | Assumption for Conditional Introduction |
+| 1.2. | $\tt P$ | Reiteration from 1.1. |
 
 > [!note]- Why proofs?
 > Any proof which is 
 
 > [!exercise] ***Exercise***
 >
-> 1. Prove, from no premises, that $P\to (Q\to P)$.
-> 2. Prove, from *P* and *Q* and $(P\leftrightarrow Q) \to (R\land S)$, that *R*.
+> 1. Prove, from no premises, that $\tt P\tt \to (\tt Q\tt \to \tt P)$.
+> 2. Prove, from $\tt P$ and $\tt Q$ and $(\tt P\tt \leftrightarrow \tt Q) \tt \to (\tt R\tt \land \tt S)$, that $\tt R$.
 
 > [!exercise] ***Exercise***
 >
-> There are times in mathematics when one wants to prove an “or” statement.  This can be difficult if we approach it directly.  In the most interesting cases, one cannot prove $P\lor Q$ simply by proving each of *P* and *Q*.  If you could that, then you could prove the stronger claim $P\land Q$!  So why bother even stating the weaker claim, $P\lor Q$?
+> There are times in mathematics when one wants to prove an “or” statement.  This can be difficult if we approach it directly.  In the most interesting cases, one cannot prove $\tt P\tt \lor \tt Q$ simply by proving each of $\tt P$ and $\tt Q$.  If you could that, then you could prove the stronger claim $\tt P\tt \land \tt Q$!  So why bother even stating the weaker claim, $\tt P\tt \lor \tt Q$?
 >
-> In these interesting cases, you need a more sophisticated strategy.  In order to prove $P\lor Q$ it is typical to prove the logically equivalent proposition $(\neg P)\to Q$.
+> In these interesting cases, you need a more sophisticated strategy.  In order to prove $\tt P\tt \lor \tt Q$ it is typical to prove the logically equivalent proposition $(\tt \neg \tt P)\tt \to \tt Q$.
 >
-> Prove, from $R \to S$, and $T\to U$, and $R\lor T$, that $S\lor U$.  
+> Prove, from $\tt R \tt \to \tt S$, and $\tt T\tt \to \tt U$, and $\tt R\tt \lor \tt T$, that $\tt S\tt \lor \tt U$.  
 >
-> Hint: Since what you want to prove is $S\lor U$ then I recommend instead proving $(\neg S)\to U$.  Once you have this, then use the Material Implication inference rule.
+> Hint: Since what you want to prove is $\tt S\tt \lor \tt U$ then I recommend instead proving $(\tt \neg \tt S)\tt \to \tt U$.  Once you have this, then use the Material Implication inference rule.
 
 # Biconditional Introduction
 
@@ -770,47 +770,47 @@ In the example below, I give a proof, from no premises, to the conclusion that $
 >
 > **Biconditional Introduction** is the following inference rule.
 >
-> > The following allows you to infer $\phi\leftrightarrow \psi$.
+> > The following allows you to infer $\tt \phi\tt \leftrightarrow \tt \psi$.
 > > 
-> > Assume $\phi$.
+> > Assume $\tt \phi$.
 > > 
-> > Using $\phi$ and any formulas already proved, then prove $\psi$.  Then stop assuming $\phi$ and any of the formulas proved after it.
+> > Using $\tt \phi$ and any formulas already proved, then prove $\tt \psi$.  Then stop assuming $\tt \phi$ and any of the formulas proved after it.
 > > 
-> > Now assume $\psi$.
+> > Now assume $\tt \psi$.
 > > 
-> > Using $\psi$ and any formulas already proved, then prove $\phi$.
-> > Then stop assuming $\psi$ and any of the formulas proved after it.
+> > Using $\tt \psi$ and any formulas already proved, then prove $\tt \phi$.
+> > Then stop assuming $\tt \psi$ and any of the formulas proved after it.
 
-Here is a demonstration.  We prove, from no premises, that $P\leftrightarrow (P\land P)$.
+Here is a demonstration.  We prove, from no premises, that $\tt P\tt \leftrightarrow (\tt P\tt \land \tt P)$.
 
 Notice that we must effectively do two separate conditional introduction proofs, one going in each of the directions.  
 
-The sub-indexing is designed to reflect each direction.  We use the notation 1.only.1 to indicate the sub-proof in the “only if” direction.  In this case, that means the $P\to (P\land P)$ direction.  
+The sub-indexing is designed to reflect each direction.  We use the notation 1.only.1 to indicate the sub-proof in the “only if” direction.  In this case, that means the $\tt P\tt \to (\tt P\tt \land \tt P)$ direction.  
 
-We use the notation 1.if.1 to indicate the “if” direction.  In this case, that means $(P\land P)\to P$.
+We use the notation 1.if.1 to indicate the “if” direction.  In this case, that means $(\tt P\tt \land \tt P)\tt \to \tt P$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $P\leftrightarrow (P\land P)$ | Biconditional Introduction from subproof below. |
+| 1. | $\tt P\tt \leftrightarrow (\tt P\tt \land \tt P)$ | Biconditional Introduction from subproof below. |
 
 1. "Only" sub-proof
 
 | **Index** | **Formula** | **Reason**                                        |
 | --------- | ----------- | ------------------------------------------------- |
-| 1.only.1  | *P*         | Assumption for Biconditional Introduction         |
-| 1.only.2  | $P\land P$  | Conjunction Introduction from 1.only.1, 1.only.1. |
+| 1.only.1  | $\tt P$         | Assumption for Biconditional Introduction         |
+| 1.only.2  | $\tt P\tt \land \tt P$  | Conjunction Introduction from 1.only.1, 1.only.1. |
 
 
 1. "If" sub-proof
 
 | **Index** | **Formula** | **Reason**                                |
 | --------- | ----------- | ----------------------------------------- |
-| 1.if.1    | $P\land P$  | Assumption for Biconditional Introduction |
-| 1.if.2    | *P*         | Conjunction Elimination from 1.if.1.      |
+| 1.if.1    | $\tt P\tt \land \tt P$  | Assumption for Biconditional Introduction |
+| 1.if.2    | $\tt P$         | Conjunction Elimination from 1.if.1.      |
 
 > [!exercise] ***Exercise***
 >
-> Prove $((P\to Q)\to R) \leftrightarrow ((P\land \neg Q)\lor R)$.
+> Prove $((\tt P\tt \to \tt Q)\tt \to \tt R) \tt \leftrightarrow ((\tt P\tt \land \tt \neg \tt Q)\tt \lor \tt R)$.
 
 # Proof by Cases
 
@@ -820,58 +820,58 @@ By a very brief summary, let the number be *n.*  Then if $n \mod 2 = 0$, we prov
 
 This generally is called a “proof by cases”.  The two “cases” are $n\mod 2=0$ or $n\mod 2 = 1$.
 
-In propositional logic it is structured like so:  Let $\phi,\chi,\psi$ be formulas.  Suppose we have already accepted $\phi\lor\psi$, and we’ve accepted $\phi\to \chi$, and we’ve accepted $\psi\to\chi$.  Then we can infer $\chi$.
+In propositional logic it is structured like so:  Let $\tt \phi,\tt \chi,\tt \psi$ be formulas.  Suppose we have already accepted $\tt \phi\tt \lor\tt \psi$, and we’ve accepted $\tt \phi\tt \to \tt \chi$, and we’ve accepted $\tt \psi\tt \to\tt \chi$.  Then we can infer $\tt \chi$.
 
-This is stated for two cases, when we have $\phi\lor\psi$. However, we can generalize this to a rule for longer disjunction. 
+This is stated for two cases, when we have $\tt \phi\tt \lor\tt \psi$. However, we can generalize this to a rule for longer disjunction. 
 
 > [!definition] ***Definition***
 >
-> **Proof by cases** is the following inference rule.  Let $\phi_1,\phi_2,\dots,\phi_n,\psi$ be formulas.
+> **Proof by cases** is the following inference rule.  Let $\phi_1,\phi_2,\dots,\phi_n,\tt \psi$ be formulas.
 >
-> > From $\phi_1\lor\cdots\lor\phi_n$, and $\phi_1\to\psi$ and $\phi_2\to\psi$ and … and $\phi_n\to\psi$, you may infer $\psi$.
+> > From $\phi_1\tt \lor\cdots\tt \lor\phi_n$, and $\phi_1\tt \to\tt \psi$ and $\phi_2\tt \to\tt \psi$ and … and $\phi_n\tt \to\tt \psi$, you may infer $\tt \psi$.
 
-In the example below I show you how we'll draw a proof by cases in tabular form.  Let's prove that from $P\to Q$ and $R\to S$ we have $(P\lor R)\to (Q\lor S)$.
+In the example below I show you how we'll draw a proof by cases in tabular form.  Let's prove that from $\tt P\tt \to \tt Q$ and $\tt R\tt \to \tt S$ we have $(\tt P\tt \lor \tt R)\tt \to (\tt Q\tt \lor \tt S)$.
 
 | **Index** | **Formula**              | **Reason**                                    |
 | --------- | ------------------------ | --------------------------------------------- |
-| 1.        | $P\to Q$                 | Assumption                                    |
-| 2.        | $R\to S$                 | Assumption                                    |
-| 3.        | $(P\lor R)\to (Q\lor S)$ | Conditional Introduction from subproof below |
+| 1.        | $\tt P\tt \to \tt Q$                 | Assumption                                    |
+| 2.        | $\tt R\tt \to \tt S$                 | Assumption                                    |
+| 3.        | $(\tt P\tt \lor \tt R)\tt \to (\tt Q\tt \lor \tt S)$ | Conditional Introduction from subproof below |
 
 3. conditional sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.1. | $P\lor R$ | Assumption for conditional introduction |
-| 3.2. | $P\to (Q\lor S)$ | Conditional Introduction from subproof below. | 
+| 3.1. | $\tt P\tt \lor \tt R$ | Assumption for conditional introduction |
+| 3.2. | $\tt P\tt \to (\tt Q\tt \lor \tt S)$ | Conditional Introduction from subproof below. | 
 
 3.2. conditional subproof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.2.1. | *P* | Assumption for Conditional Introduction |
-| 3.2.2. | *Q* | Conditional Elimination from 1 and 3.2.1 |
-| 3.2.3. | $Q\lor S$ | Disjunction Introduction from 3.2.2. |
+| 3.2.1. | $\tt P$ | Assumption for Conditional Introduction |
+| 3.2.2. | $\tt Q$ | Conditional Elimination from 1 and 3.2.1 |
+| 3.2.3. | $\tt Q\tt \lor \tt S$ | Disjunction Introduction from 3.2.2. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.3. | $R\to (Q\lor S)$ | Conditional Introduction from subproof below |
+| 3.3. | $\tt R\tt \to (\tt Q\tt \lor \tt S)$ | Conditional Introduction from subproof below |
 
 3.3. conditional subproof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.3.1. | *R* | Assumption for Conditional Introduction |
-| 3.3.2. | *S* | Conditional Elimination from 2 and 3.3.1 |
-| 3.3.3. | $Q\lor S$ | Disjunction Introduction from 3.3.2. |
+| 3.3.1. | $\tt R$ | Assumption for Conditional Introduction |
+| 3.3.2. | $\tt S$ | Conditional Elimination from 2 and 3.3.1 |
+| 3.3.3. | $\tt Q\tt \lor \tt S$ | Disjunction Introduction from 3.3.2. |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.4. | $Q\lor S$ | Proof by Cases from 3.1, 3.2, and 3.3. |
+| 3.4. | $\tt Q\tt \lor \tt S$ | Proof by Cases from 3.1, 3.2, and 3.3. |
 
 > [!exercise] ***Exercise***
 >
-> Use a proof by cases to prove, from $P\to Q$ and $R\to S$, and $T\to (Q\land U)$, the conclusion $(P\lor R\lor T)\to (Q\lor S)$.
+> Use a proof by cases to prove, from $\tt P\tt \to \tt Q$ and $\tt R\tt \to \tt S$, and $\tt T\tt \to (\tt Q\tt \land \tt U)$, the conclusion $(\tt P\tt \lor \tt R\tt \lor \tt T)\tt \to (\tt Q\tt \lor \tt S)$.
 
 # Proof by Contradiction
 
@@ -883,67 +883,67 @@ The butler says “No, I was in the garden when Mr. Hitchens was killed in the k
 
 The detective’s eyes widen, “Oh?  If you were in the garden, then you couldn’t hear Mr. Hitchens scream. The gardnen is walled, and the kitchen too far away.  But you said that you did hear Mr. Hitchens scream!  This is a contradiction!”
 
-Let’s describe the general structure of a proof by contradiction.  Suppose that you want to infer $\phi$.  Then to give a proof of $\phi$ by contradiction, 
+Let’s describe the general structure of a proof by contradiction.  Suppose that you want to infer $\tt \phi$.  Then to give a proof of $\tt \phi$ by contradiction, 
 
-- Assume $\neg\phi$ (only for the sake of argument).
+- Assume $\tt \neg\tt \phi$ (only for the sake of argument).
 - Take some reasoning steps.
 - Prove a contradiction.
 
-This justifies $\phi$.  
+This justifies $\tt \phi$.  
 
-Why?  Well it shows that $\neg \phi$ leads to a contradiction.  Therefore $\neg\phi$ must be *false* and so $\phi$ must be *true*.
+Why?  Well it shows that $\tt \neg \tt \phi$ leads to a contradiction.  Therefore $\tt \neg\tt \phi$ must be *false* and so $\tt \phi$ must be *true*.
 
-Let’s now see an example in practice.  From $P\to Q$ and $\neg Q$, we prove $\neg P$.
+Let’s now see an example in practice.  From $\tt P\tt \to \tt Q$ and $\tt \neg \tt Q$, we prove $\tt \neg \tt P$.
 
 | **Index** | **Formula** | **Reason**                                  |
 | --------- | ----------- | ------------------------------------------- |
-| 1.        | $P\to Q$    | Assumption                                  |
-| 2.        | $\neg Q$    | Assumption                                  |
-| 3.        | $\neg P$    | Proof by Contradiction from subproof below. |
+| 1.        | $\tt P\tt \to \tt Q$    | Assumption                                  |
+| 2.        | $\tt \neg \tt Q$    | Assumption                                  |
+| 3.        | $\tt \neg \tt P$    | Proof by Contradiction from subproof below. |
 
 3. contradiction sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3.1. | $\neg(\neg P)$ | Assumption for Proof by Contradiction |
-| 3.2. | *P* | Double Negation from 3.1 |
-| 3.3. | *Q* | Conditional Elimination from 1, 3.2 |
-| 3.4. | $Q\land \neg Q$ | Conjunction Introduction from 2, 3.3. |
+| 3.1. | $\tt \neg(\tt \neg \tt P)$ | Assumption for Proof by Contradiction |
+| 3.2. | $\tt P$ | Double Negation from 3.1 |
+| 3.3. | $\tt Q$ | Conditional Elimination from 1, 3.2 |
+| 3.4. | $\tt Q\tt \land \tt \neg \tt Q$ | Conjunction Introduction from 2, 3.3. |
 
 Look over this proof and see how it aligns with what we described earlier.  The sub-proof is structured by:
 
-- We are trying to prove $\neg P$.
-- Therefore we assume $\neg(\neg P)$.
+- We are trying to prove $\tt \neg \tt P$.
+- Therefore we assume $\tt \neg(\tt \neg \tt P)$.
 - We go through some reasoning steps after that (lines 3.2 to 3.4).
-- The last line of the sub-proof is the contradiction $Q\land \neg Q$.
+- The last line of the sub-proof is the contradiction $\tt Q\tt \land \tt \neg \tt Q$.
 
 ---
 
 Once a sub-proof is closed off, the remaining proof is never allowed to refer to lines inside a finished sub-proof.  We already saw how this can lead to invalid inferences in Conditional Introduction.  Let’s see an example of how breaking this rule can lead to invalid inferences using Proof by Contradiction.
 
-Here we give an invalid proof that from *P* we can infer *Q*.  That is to say, we will give an incorrect "proof" that $(P)\vdash Q$.
+Here we give an invalid proof that from $\tt P$ we can infer $\tt Q$.  That is to say, we will give an incorrect "proof" that $(\tt P)\vdash \tt Q$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | *P* | Assumption |
-| 2. | $\neg(Q\land \neg Q)$ | Proof by Contradiction from subproof below |
+| 1. | $\tt P$ | Assumption |
+| 2. | $\tt \neg(\tt Q\tt \land \tt \neg \tt Q)$ | Proof by Contradiction from subproof below |
 
 2. contradiction sub-proof
 
 | **Index** | **Formula**                 | **Reason**                            |
 | --------- | --------------------------- | ------------------------------------- |
-| 2.1.      | $\neg(\neg(Q\land \neg Q))$ | Assumption for Proof by Contradiction |
-| 2.2.      | $Q\land\neg Q$                | Double negation from 2.1              |
-| 2.3.      | *Q*                         | Conjunction Elimination from 2.2      |
-| 2.4.      | $Q\land \neg Q$             | Reiteration from 2.2                  |
+| 2.1.      | $\tt \neg(\tt \neg(\tt Q\tt \land \tt \neg \tt Q))$ | Assumption for Proof by Contradiction |
+| 2.2.      | $\tt Q\tt \land\tt \neg \tt Q$                | Double negation from 2.1              |
+| 2.3.      | $\tt Q$                         | Conjunction Elimination from 2.2      |
+| 2.4.      | $\tt Q\tt \land \tt \neg \tt Q$             | Reiteration from 2.2                  |
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 3. | *Q* | Reiteration from 2.2 |
+| 3. | $\tt Q$ | Reiteration from 2.2 |
 
-We have said before that $P\not\vDash Q$ and therefore our proof rules should not show $P\vdash Q$. (To reiterate, the entire point of a proof, like $P\vdash Q$, is to ensure that the argument is valid, i.e. $P\vDash Q$.) So something about the proof above must be wrong.
+We have said before that $\tt P\not\vDash \tt Q$ and therefore our proof rules should not show $\tt P\vdash \tt Q$. (To reiterate, the entire point of a proof, like $\tt P\vdash \tt Q$, is to ensure that the argument is valid, i.e. $\tt P\vDash \tt Q$.) So something about the proof above must be wrong.
 
-Here is what is wrong: It was possible to infer *Q* on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof. 
+Here is what is wrong: It was possible to infer $\tt Q$ on line (3) because it made an invalid reference to line (2.3).  This reference is invalid because line (2.3) is inside of a subproof, while line (3) is outside of that subproof. 
 
 We saw that the same sort of invalid reference when using Conditional Introduction as well. So there is a general phenomenon here: lines inside of any kind of subproof should never be referenced from a line outside the subproof. 
 
@@ -951,59 +951,59 @@ We saw that the same sort of invalid reference when using Conditional Introducti
 
 Yet again, as with Conditional Introduction, Proof by Contradiction allows us to prove things from no premises at all.
 
-Here we prove from no premises, that $\neg(P\land \neg P)$.
+Here we prove from no premises, that $\tt \neg(\tt P\tt \land \tt \neg \tt P)$.
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1. | $\neg(P\land \neg P)$ | Proof by Contradiction from subproof below |
+| 1. | $\tt \neg(\tt P\tt \land \tt \neg \tt P)$ | Proof by Contradiction from subproof below |
 
 1. contradiction sub-proof
 
 | **Index** | **Formula** | **Reason** |
 | --- | --- | --- |
-| 1.1. | $\neg(\neg(P\land\neg P))$ | Assumption for Proof by Contradiction |
-| 1.2. | $P\land \neg P$ | Double Negation from 1.1 |
+| 1.1. | $\tt \neg(\tt \neg(\tt P\tt \land\tt \neg \tt P))$ | Assumption for Proof by Contradiction |
+| 1.2. | $\tt P\tt \land \tt \neg \tt P$ | Double Negation from 1.1 |
 
 > [!definition] ***Definition***
 >
 > **Proof by Contradiction** is the following inference rule.
 >
-> > The following allows you to infer $\phi$.
-> > Assume $\neg \phi$.
-> > Infer other formulas, from $\neg \phi$ and any other formulas already inferred.
+> > The following allows you to infer $\tt \phi$.
+> > Assume $\tt \neg \tt \phi$.
+> > Infer other formulas, from $\tt \neg \tt \phi$ and any other formulas already inferred.
 > > Prove any contradiction.
-> > Stop assuming $\neg \phi$ and any of the formulas which followed from it.
+> > Stop assuming $\tt \neg \tt \phi$ and any of the formulas which followed from it.
 
 > [!exercise] ***Exercise***
 >
-> Use Proof by Contradiction to prove, from $P\leftrightarrow Q$ and $\neg P$, that *Q*.
+> Use Proof by Contradiction to prove, from $\tt P\tt \leftrightarrow \tt Q$ and $\tt \neg \tt P$, that $\tt Q$.
 >
-> Also prove, from no premises, that $(P\land \neg P)\to Q$.
+> Also prove, from no premises, that $(\tt P\tt \land \tt \neg \tt P)\tt \to \tt Q$.
 >
-> Also prove, from $P\land \neg P$, that *Q*.
+> Also prove, from $\tt P\tt \land \tt \neg \tt P$, that $\tt Q$.
 
 # The Principle of Explosion
 
-As you presumably showed in the previous exercise, $(P\land \neg P) \vdash Q$. You should feel invited to also confirm that $(P\land \neg P) \vDash Q$, which only further confirms that our proof rules can prove valid arguments. 
+As you presumably showed in the previous exercise, $(\tt P\tt \land \tt \neg \tt P) \vdash \tt Q$. You should feel invited to also confirm that $(\tt P\tt \land \tt \neg \tt P) \vDash \tt Q$, which only further confirms that our proof rules can prove valid arguments. 
 
-This particular argument is interesting, though. It shows that, from $P\land \neg P$ it is possible to infer *any* propositions. We describe this as an "explosion", because the set of propositions that one can prove "explodes" to include every formula.
+This particular argument is interesting, though. It shows that, from $\tt P\tt \land \tt \neg \tt P$ it is possible to infer *any* propositions. We describe this as an "explosion", because the set of propositions that one can prove "explodes" to include every formula.
 
 To be clear: this is a *bad* thing. You want to accept the premises which allow you to prove the true propositions and not the false ones. When you can prove all the true, and all the false propositions, you lose the ability to distinguish between the two. 
 
 The following is a generalization of this fact.
 
 > [!definition] ***Definition***
-> Let $\phi$ be any contradiction, and $\psi$ any formula. Let $\Gamma$ be any sequence of formulas such that $\phi \in\Gamma$.
+> Let $\tt \phi$ be any contradiction, and $\tt \psi$ any formula. Let $\Gamma$ be any sequence of formulas such that $\tt \phi \in\Gamma$.
 > 
->  The fact that $(\Gamma, \psi)$ is a valid argument, is called **the principle of explosion**.
+>  The fact that $(\Gamma, \tt \psi)$ is a valid argument, is called **the principle of explosion**.
 
 > [!exercise] ***Exercise***
 > Prove that the principle of explosion is true. That is to say, prove
-> $$\Gamma \vDash \psi$$
+> $$\Gamma \vDash \tt \psi$$
 > if $\Gamma$ contains a contradiction. 
 > 
 > Also prove that
-> $$\Gamma \vdash \psi$$
+> $$\Gamma \vdash \tt \psi$$
 > by exhibiting a proof. You you may find it more convenient to not represent this proof as a table, and instead merely represent it as a sequence of formulas meeting the conditions of a proof. 
 
 
