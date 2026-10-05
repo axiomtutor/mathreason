@@ -233,6 +233,15 @@ Well, luckly, we do not rely on tradition.  If there is ever ambiguity, we can a
 These sets of symbols are allowed to be literally any nonempty sets, with the caveat that they cannot overlap.  If any object were both a constant and a function symbol, it would introduce unnecessary and unpleasant ambiguity when trying to read a formula.
 
 Similarly none of these sets are allowed to contain parentheses, since that would create readability issues.  For example if the left paren, ), were a constant symbol then we would have annoying difficulty reading "$P())$".  For similar reasons, none of the sets may contain logical connectives, like $\neg$ or $\forall$, nor may they contain commas.
+
+Finally let's notice that not all functions have just one input.  Consider the function $h(x,y)=2x + \pi y$.  
+
+We have already discused the concept of "arity" with regard to predicates, and the same idea applies to functions.  The function above has arity 2.  If it is represented by the symbol **
+
+# Terms
+
+"Terms" are a generalization of functions.  
+
 # First-order Syntax
 
 > [!definition] ***Definition***

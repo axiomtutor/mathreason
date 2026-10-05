@@ -118,7 +118,7 @@ We may take any nonempty set to serve as our alphabet.
 
 > [!definition] ***Definition***
 >
-> Let $\Sigma$ be any nonempty set.  We call $\Sigma$ an **alphabet**, and any element $x\in\Sigma$ is called a **character**.  
+> Let $\tt \Sigma$ be any nonempty set.  We call $\tt \Sigma$ an **alphabet**, and any element $\tt x\in\tt \Sigma$ is called a **character**.  
 > 
 > Any finite sequence of characters from $\Sigma$ is called a **string over** $\Sigma$.  The set of all possible strings is written as $\Sigma^\ast$.
 > 
