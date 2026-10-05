@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Chapter 0 Basic Sets.md",
+                "file": "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -171,7 +171,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -185,11 +185,10 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "terminal:Open terminal": false
+      "bases:Create new base": false
     }
   },
-  "active": "95d3d5075504da6f",
+  "active": "3e95d3641e66c4a3",
   "lastOpenFiles": [
     "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
     "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",

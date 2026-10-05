@@ -128,6 +128,8 @@ The backwards 'E' is read as "there exists".  So the literal reading of this exp
 
 > There exists an *x* in the domain, *x* deserves pets.
 
+The symbols $\forall$ and $\exists$ are called "quantifiers".
+
 Notice that the syntax uses a variable, like *x* above. However, we will still want to have constant symbols, as we did with predicate logic.  
 
 For example, suppose that the domain is all integers, *o* denotes the number 1, and the predicate $D(x,y)$ denotes the relation "*x* is divisible by *y*".  Then to express that every number is divisible by 1, we write 
@@ -142,7 +144,75 @@ Traditionally we will use the letters *a* through *t* for constants, and the let
 > Establish a reasonable domain and symbols to express the proposition 
 > > There is some integer greater than $\pi$.
 
+Note that we can also quantify over formulas.  For example, suppose that the domain is all integers, *t* denotes 2, *f* denotes 4, and $D(x,y)$ denotes "*x* is divisible by *y*".  Then consider the expression 
 
+$$ \forall x(D(x,f) \to D(x,t)) $$
+
+This expresses that "for every integer *x*, if *x* is divisible by 4, then *x* is divisible by 2".  
+
+If *E* expresses "is even" and *P* expresses "is prime" then 
+
+$$ \exists x (E(x)\land P(x)) $$
+
+expresses that there exists an even prime integer.  
+
+> [!exercise] ***Exercise***
+> Choose a reasonable domain and symbols to express that "every differentiable function of a real variable is continuous".  
+> 
+> Choose another reasonable domain and symbols to express that "every cat is a mammal".
+
+Not only can we quantify over formulas, but in fact, we can make formulas out of quantified expressions.  For example, if the domain is integers, *E* denotes "is even", *O* denotes "is odd", then the expression 
+
+$$ (\exists x E(x)) \land (\exists x O(x)) $$ 
+expresses that "there is some number which is even, and there is some number which is odd".  This is a true proposition, since there does exist an even integer, 2, and there does exist an odd integer, 3.  
+
+Note how different this expression is from the seemingly similar expression 
+
+$$\exists x(E(x)\land O(x))$$
+This says that there exists an integer, *x*, which is *both even and odd*.  That is not true, of course, since any number which is even cannot also be odd.  
+
+> [!exercise] ***Exercise***
+> Choose a domain and symbols to express "All cats are mammals but not all mammals are cats."
+
+> [!exercise] ***Exercise***
+> Suppose that the domain is all polygons in a two dimensional plane.  Just for example, this means that one of the elements in the domain is a triangle with vertices at (0,0), and (1,0), and (0,1).  The domain also contains many other triangles, quadrilaterals, pentagons, and so on.  
+> 
+> Suppose that *E* denotes the equilateral polygons, *R* the rectangles.
+> 
+> ***Part 1.***
+> 
+> Interpret the meaning of the expression 
+> $$ \forall x(\neg(E(x)\land R(x))) $$
+> and decide whether it's a true proposition.  
+> 
+> ***Part 2.***
+> 
+> Contrast this with the meaning of 
+> $$ \neg \forall x(E(x)\land R(x)) $$ 
+> and decide wehther this is a true proposition.  
+> 
+> ***Part 3.***
+> 
+> Come up with symbols that express the proposition: 
+> 
+> > Every equilateral rectangle is a square.
+> 
+> (This is, of course, a true proposition.)
+
+# Functions
+
+We are studying logic, to study math.  One of the most central things that we understand in mathematics, is how to solve an equation, like 
+
+$$ 2x+1=13 $$
+
+How are we going to represent such a thing in logic?
+
+We're not entirely ready to address this question in its entirety.  But certainly any answer is going to have to say something about functions.
+
+In particular, the part of the expression $2x+1$ is a function.
+
+Let's say that we use the symbols *o* for 1 and *t* for 2.  Let's now further agree that we use the symbol *f* for the "times two" function.  That is to say, we will use *f* to denote the function $f(x)=2x$.  
+# First-order Syntax
 
 > [!definition] ***Definition***
 >
