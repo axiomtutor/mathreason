@@ -63,15 +63,15 @@ The correspondence between a symbol and its meaning is tracked by an "interpreta
 $$
 \begin{aligned}
  \tt a^{इ} &= \text{Adam} \\
- \tt b^{इ} &= \text{Brooke} \\
- \tt c^{इ} &= \text{Cecil} \\
- \tt d^{इ} &= \text{Dale} \\
- \tt e^{इ} &= \text{Eudoxus} \\
- \tt f^{इ} &= \text{Francis} \\
- \tt g^{इ} &= \text{Gyanesh} \\
- \tt h^{इ} &= \text{Hilary} \\
- \tt i^{इ} &= \text{Irene} \\
- \tt j^{इ} &= \text{Jelani} \\
+ \tt \tt b^{इ} &= \text{Brooke} \\
+ \tt \tt c^{इ} &= \text{Cecil} \\
+ \tt \tt d^{इ} &= \text{Dale} \\
+ \tt \tt e^{इ} &= \text{Eudoxus} \\
+ \tt \tt f^{इ} &= \text{Francis} \\
+ \tt \tt g^{इ} &= \text{Gyanesh} \\
+ \tt \tt h^{इ} &= \text{Hilary} \\
+ \tt \tt i^{इ} &= \text{Irene} \\
+ \tt \tt j^{इ} &= \text{Jelani} \\
 \end{aligned}
 $$
 
@@ -262,11 +262,11 @@ On the right is the basic semantic object, the universe, $उ$—the set of thin
 
 The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Objs}$.  This is $\tt c^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with $\tt P$.  This is $\tt P^{इ}=X$.
 
-Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol $\tt o$ to denote the number 1, so that means our interpretation assigns $o^{इ} = 1$.  We also said that $\tt P^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$, where these are the universe and interpretation thta we have now chosen.  
+Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol $\tt o$ to denote the number 1, so that means our interpretation assigns $\tt o^{इ} = 1$.  We also said that $\tt P^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$, where these are the universe and interpretation thta we have now chosen.  
 
-To evaluate the proposition means that we find the value of $(\tt P(o))^{म}$.  The definition of this tells us to check whether $o^{इ}\in \tt P^{इ}$.  But this is the same as checking whether 1 is in the set of even numbers.  
+To evaluate the proposition means that we find the value of $(\tt P(\tt o))^{म}$.  The definition of this tells us to check whether $o^{इ}\in \tt P^{इ}$.  But this is the same as checking whether 1 is in the set of even numbers.  
 
-Since 1 is not in the set of even numbers, $o^{इ}\notin \tt P^{इ}$, and therefore by the rule which determines truth-value, $(\tt P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain: "one is an even number" is false.  
+Since 1 is not in the set of even numbers, $\tt o^{इ}\notin \tt P^{इ}$, and therefore by the rule which determines truth-value, $(\tt P(o))^{म}=फ$.  This is exactly the result that we intuitively know that we should obtain: "one is an even number" is false.  
 
 # Propositional Connectives
 
@@ -568,7 +568,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > For any formula $\tt \phi\in \tt L$ we denote its **evaluation in $म$** by $\tt \phi^{म}$.  We define this recursively by 
 >
-> - If $\tt \phi\in\text{Atom}$ and $\tt \phi=\tt P(\tt a_1,\dots,\tt a_n)$ for some $\tt P\in\text{Preds}$ and $n = \text{Arity}(\tt P)$ and $a_1,\dots,a_n\in\text{Objs}$, then
+> - If $\tt \phi\in\text{Atom}$ and $\tt \phi=\tt P(\tt a_1,\dots,\tt a_n)$ for some $\tt P\in\text{Preds}$ and $n = \text{Arity}(\tt P)$ and $\tt a_1,\dots,\tt a_n\in\text{Objs}$, then
 >     
 >     $$
 >     \tt \phi^{म} = ट \text{ \ \ if } (\tt a_1^{इ},...,\tt a_n^{इ})\in \tt P^{इ}
