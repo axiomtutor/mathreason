@@ -118,19 +118,19 @@ We may take any nonempty set to serve as our alphabet.
 
 > [!definition] ***Definition***
 >
-> Let $\tt \Sigma$ be any nonempty set.  We call $\tt \Sigma$ an **alphabet**, and any element $\tt x\in\tt \Sigma$ is called a **character**.  
+> Let $\Sigma$ be any nonempty set.  We call $\Sigma$ an **alphabet**, and any element $\tt x\in\tt \Sigma$ is called a **character**.  
 > 
-> Any finite sequence of characters from $\tt \Sigma$ is called a **string over** $\tt \Sigma$.  The set of all possible strings is written as $\tt \Sigma^\ast$.
+> Any finite sequence of characters from $\Sigma$ is called a **string over** $\Sigma$.  The set of all possible strings is written as $\Sigma^\ast$.
 > 
-> A **language over** $\tt \Sigma$ is any subset of $\tt \Sigma^*$.  That is to say, if $L\subseteq \tt \Sigma^*$ then we call *L* a language over $\tt \Sigma$.  
+> A **language over** $\Sigma$ is any subset of $\Sigma^*$.  That is to say, if $L\subseteq \Sigma^*$ then we call *L* a language over $\Sigma$.  
 > 
-> If *L* is a language, and $m\in L$, we will call *m* a **signifier in *L***.
+> If *L* is a language, and $\tt m\in L$, we will call *m* a **signifier in *L***.
 > 
-> For short, we often call a string over $\tt \Sigma$ just a **string**.  We call a language over $\tt \Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
+> For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $ \Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
 
-For example, if we use these definitions to describe English, then $\tt \Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
+For example, if we use these definitions to describe English, then $\Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
 
-Then a string would just be any finite sequence of these symbols (or characters).  For example “jhb88qtio weqir?j]—…, ” is a string.  It’s a nonsense string, but it still counts as a string.  
+Then a string would just be any finite sequence of these symbols (or characters).  For example “${\tt jhb88qtio weqir?j]—…,}$ ” is a string.  It’s a nonsense string, but it still counts as a string.  
 
 The sentence “Hello friend.” is another example of a string, but it is also a signifier in English because it is meaningful.  Also just the word “hello” is a signifier in English, because “hello” means something.  
 
@@ -138,17 +138,17 @@ Another language, like say Hindi, might have strings like “झैठृ ङौ
 
 > [!exercise] ***Exercise***
 >
-> How many strings of length 2 are possible, if your only characters are ‘0’ and ‘1’?
+> How many strings of length 2 are possible, if your only characters are ‘$\tt 0$’ and ‘$\tt 1$’?
 > 
-> How many strings of length 3 are possible, if your only characters are ‘0’, ‘1’, ‘2’, and ‘3’?
+> How many strings of length 3 are possible, if your only characters are ‘$\tt 0$’, ‘$\tt 1$’, ‘$\tt 2$’, and ‘$\tt 3$’?
 
 > [!exercise] ***Exercise***
 >
 > Decide whether the following strings are signifiers in mathematics.
 > 
-> 1. $\tt x^2+1$
-> 2. $+$
-> 3. $1+$
+> 1. ${\tt x^2+1}$
+> 2. $\tt +$
+> 3. ${\tt 1+}$
 
 # Recursive Definition
 
