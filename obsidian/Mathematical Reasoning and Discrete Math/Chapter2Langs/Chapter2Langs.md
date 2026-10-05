@@ -239,7 +239,7 @@ Let’s define the language, *L*, of “balanced parentheses”.
 
 So this means that ‘${\tt ()}$’ is a signifier in the language of balanced parentheses.  
 
-Also ‘${\tt ()}()$’ is a signifier.  Why?  Well we can explain it like before.  
+Also ‘${\tt ()()}$’ is a signifier.  Why?  Well we can explain it like before.  
 
 We know from the base case that ${\tt ()}\in L$.
 
@@ -247,5 +247,5 @@ Because ${\tt ()}\in L$ we can then take ${\tt x}={\tt ()}$ in the recursive cas
 
 > [!exercise] ***Exercise*** 
 >
-> Using the same *L* as immediately above, show that ${\tt (}(()()()))\in L$.
+> Using the same *L* as immediately above, show that ${\tt ((()()()))}\in L$.
 
