@@ -186,13 +186,13 @@ Let’s practice how we could express this language recursively.  We could say:
 - Base case: $\tt 1\in L$.
 - Recursive case: For any $\tt x\in L$, we have $\tt x0\in L$ and $\tt x1\in L$.
 
-Let me demonstrate, from the recursive definition, that $101\in L$.
+Let me demonstrate, from the recursive definition, that $\tt 101\in L$.
 
 We know that $\tt 1\in L$ from the base-case.  
 
-Because $\tt 1\in L$ we may take $\tt x=\tt 1$ in the recursive case.  Therefore, from the first part of the recursive case, $10\in L$.
+Because $\tt 1\in L$ we may take $\tt x=\tt 1$ in the recursive case.  Therefore, from the first part of the recursive case, $\tt 10\in L$.
 
-Because $10\in L$ we may this time take $\tt x=10$ in the recursive case.  Therefore, from the second part of the recursive case, $101\in L$.
+Because $\tt 10\in L$ we may this time take $\tt x=\tt 10$ in the recursive case.  Therefore, from the second part of the recursive case, $\tt 101\in L$.
 
 > [!exercise] ***Exercise***
 >
@@ -200,52 +200,52 @@ Because $10\in L$ we may this time take $\tt x=10$ in the recursive case.  There
 
 > [!exercise] ***Exercise***
 >
-> Let $\tt \Sigma=\{\tt 0,\tt 1\}$ still.
+> Let $\Sigma=\{\tt 0,\tt 1\}$ still.
 > 
-> However, let’s define a new language, *M*.  Let *M* be the language of all strings which begin with 11.  So $11\in M$ and $110\in M$ but for example, $\tt 1\notin M$ and $10\notin M$.  
+> However, let’s define a new language, *M*.  Let *M* be the language of all strings which begin with 11.  So $\tt 11\in M$ and $\tt 110\in M$ but for example, $\tt 1\notin M$ and $\tt 10\notin M$.  
 > 
 > Give a recursive definition of *M*.
 
 > [!exercise] ***Exercise***
 >
-> Let $\tt \Sigma = \{\tt 0,\tt 1\}$ and define *N* to be the language of strings that represent a binary number.  
+> Let $\Sigma = \{\tt 0,\tt 1\}$ and define *N* to be the language of strings that represent a binary number.  
 > 
 > A string represents a binary number if:
 > 
-> - It is 0 or,
-> - It begins with 1.
+> - It is $\tt 0$ or,
+> - It begins with $\tt 1$.
 > 
-> So for example, 0 is a binary number, and so is 1, and so is 10, and so is 11, and so on.
+> So for example, $\tt 0$ is a binary number, and so is $\tt 1$, and so is $\tt 10$, and so is $\tt 11$, and so on.
 > 
-> Effectively, *N* is just the same thing as *L* above, except that *N* contains one extra string, 0.  
+> Effectively, *N* is just the same thing as *L* above, except that *N* contains one extra string, $\tt 0$.  
 > 
 > Give a recursive definition of *N*.  
 > 
 > *Hint*: $\tt 1\tt x$.
 
-Here is another language that will be relevant to things we do later on: Let $\tt \Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
+Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
 
 $$
 \begin{aligned}
- (\ \ &\in\tt \Sigma \\
- )\ \ &\in \tt \Sigma
+ \tt (\ \ &\in\Sigma \\
+ \tt )\ \ &\in \Sigma
 \end{aligned}
 $$
 
 Let’s define the language, *L*, of “balanced parentheses”.
 
-- Base case: $()\in L$.
-- Recursive case: If $\tt x\in L$ then also $()\tt x\in L$ and $(\tt x)\in L$, and $\tt x()\in L$.
+- Base case: $\tt ()\in L$.
+- Recursive case: If $\tt x\in L$ then also $\tt ()\tt x\in L$ and $\tt (\tt x\tt )\in L$, and $\tt x\tt ()\in L$.
 
-So this means that ‘()’ is a signifier in the language of balanced parentheses.  
+So this means that ‘\tt ()’ is a signifier in the language of balanced parentheses.  
 
-Also ‘()()’ is a signifier.  Why?  Well we can explain it like before.  
+Also ‘\tt ()()’ is a signifier.  Why?  Well we can explain it like before.  
 
-We know from the base case that $()\in L$.
+We know from the base case that $\tt ()\in L$.
 
-Because $()\in L$ we can then take $\tt x=()$ in the recursive case, and consider the first part of the recursive case.  That tells us $()\tt x=()()\in L$.
+Because $\tt ()\in L$ we can then take $\tt x=\tt ()$ in the recursive case, and consider the first part of the recursive case.  That tells us $\tt ()\tt x=\tt ()()\in L$.
 
 > [!exercise] ***Exercise*** 
 >
-> Using the same *L* as immediately above, show that $((()()()))\in L$.
+> Using the same *L* as immediately above, show that $\tt ((()()()))\in L$.
 
