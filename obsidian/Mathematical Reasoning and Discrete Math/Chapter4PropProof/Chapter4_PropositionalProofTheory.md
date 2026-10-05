@@ -329,7 +329,7 @@ There ya go, that's how do you do substitution in general!
 
 > [!exercise] ***Exercise***
 >
-> Show that $[\tt P\tt \land (\tt Q\to \tt P)]_{\tt P:= \tt \neg \tt P}$ is equal to $(\tt \neg \tt P)\tt \land (\tt Q\tt \to\tt \neg \tt P)$.
+> Show that $[\tt P\tt \land (\tt Q\tt \to \tt P)]_{\tt P:= \tt \neg \tt P}$ is equal to $(\tt \neg \tt P)\tt \land (\tt Q\tt \to\tt \neg \tt P)$.
 >
 > Show that $[\tt P\tt \land \tt Q]_{\tt R:= \tt S}$ is equal to $\tt P\tt \land \tt Q$.
 
@@ -364,7 +364,7 @@ Now that we understand substitution, we can state the following inference rules.
 >
 > **Factorization** is the inference rule that, from $\tt \phi$ one can infer either $\phi_{(\tt \chi\tt \land\tt \psi)\tt \lor(\tt \chi\tt \land\tt \omega):=\tt \chi\tt \land(\tt \psi\tt \lor\tt \omega)}$ or $\phi_{(\tt \chi\tt \lor\tt \psi)\tt \land(\tt \chi\tt \lor\tt \omega):=\tt \chi\tt \lor(\tt \psi\tt \land\tt \omega)}$.
 >
-> **Material implication** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\to\tt \psi:= (\tt \neg \tt \chi)\tt \lor\tt \psi}$ or $\phi_{(\tt \neg\tt \chi)\tt \lor\tt \psi:=\tt \chi\to\tt \psi}$.
+> **Material implication** is the inference rule that, from $\tt \phi$ one can infer $\tt \phi_{\tt \chi\tt \to\tt \psi:= (\tt \neg \tt \chi)\tt \lor\tt \psi}$ or $\tt \phi_{(\tt \neg\tt \chi)\tt \lor\tt \psi:=\tt \chi\tt \to\tt \psi}$.
 >
 > **Biconditional commutativity** is the inference rule that, from $\tt \phi$ one can infer $\phi_{\tt \chi\tt \leftrightarrow\tt \psi := \tt \psi\tt \leftrightarrow\tt \chi}$.
 >
