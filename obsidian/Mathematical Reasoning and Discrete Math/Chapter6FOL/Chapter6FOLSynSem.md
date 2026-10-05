@@ -146,7 +146,7 @@ Traditionally we will use the letters $\tt a$ through $\tt t$ for constants, and
 
 Note that we can also quantify over formulas.  For example, suppose that the domain is all integers, $\tt t$ denotes 2, $\tt f$ denotes 4, and $\tt D(\tt x,\tt y)$ denotes "$\tt x$ is divisible by $\tt y$".  Then consider the expression 
 
-$$ \tt \forall \tt x(\tt D(\tt x,\tt f) \to \tt D(\tt x,\tt t)) $$
+$$ \tt \forall \tt x(\tt D(\tt x,\tt f) \tt \to \tt D(\tt x,\tt t)) $$
 
 This expresses that "for every integer $\tt x$, if $\tt x$ is divisible by 4, then $\tt x$ is divisible by 2".  
 
@@ -354,11 +354,11 @@ Of course we don’t have to live with only simple predicates—we can join them
 
 If we refer back to the colorful shapes in the image above, here are some true quantified statements about them:
 
-$\tt \forall \tt x(\tt B(\tt x)\to \tt \neg \tt C(\tt x))$
+$\tt \forall \tt x(\tt B(\tt x)\tt \to \tt \neg \tt C(\tt x))$
 
 $\tt \exists \tt x(\tt W(\tt x)\tt \land \tt S(\tt x))$
 
-$\tt \forall \tt x(\tt K(\tt x)\to \tt W(\tt x))$
+$\tt \forall \tt x(\tt K(\tt x)\tt \to \tt W(\tt x))$
 
 $\tt \neg \tt \exists \tt x \tt K(\tt x)$
 
@@ -376,11 +376,11 @@ Notice that (3) above is kind of funny—but technically true!
 
 Don’t believe me? Test it out using the official semantics!
 
-Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(\tt K(u)\to \tt W(u))^{म}$. By the semantics of the conditional, this is $(\tt K(u))^{म} \leadsto (\tt W(u))^{म}$. Because *u* is not black, $\tt K(u)^{म}=फ$. Because *u* is not white, $\tt W(u)^{म}=फ$. Therefore
+Pick any object, like say, the red cube. Let’s call it *u*. Now let’s evaluate $(\tt K(u)\tt \to \tt W(u))^{म}$. By the semantics of the conditional, this is $(\tt K(u))^{म} \leadsto (\tt W(u))^{म}$. Because *u* is not black, $\tt K(u)^{म}=फ$. Because *u* is not white, $\tt W(u)^{म}=फ$. Therefore
 
 $$
 \begin{aligned}
- (\tt K(u)\to \tt W(u))^{म} &= \tt K(u)^{म}\leadsto \tt W(u)^{म} \\
+ (\tt K(u)\tt \to \tt W(u))^{म} &= \tt K(u)^{म}\leadsto \tt W(u)^{म} \\
  &= फ\leadsto फ \\
  &= ट
 \end{aligned}
@@ -390,9 +390,9 @@ So it’s true for the red cube!
 
 > [!exercise] ***Exercise***
 >
-> Now let *u* be the white cylinder. Evaluate $(\tt K(u)\to \tt W(u))^{म}$.
+> Now let *u* be the white cylinder. Evaluate $(\tt K(u)\tt \to \tt W(u))^{म}$.
 >
-> Next, explain why $(\tt \forall \tt x (\tt K(\tt x)\to \tt W(\tt x)))^{म} = ट$.
+> Next, explain why $(\tt \forall \tt x (\tt K(\tt x)\tt \to \tt W(\tt x)))^{म} = ट$.
 
 > [!exercise] ***Exercise***
 >
@@ -567,12 +567,12 @@ Let’s also use $\tt N(\tt x,\tt y)$ to mean “$\tt x$ is lexically next after
 Here is a sentence that should be true: For any two cities, $\tt x$ and $\tt y$, if $\tt x$ is lexically next after $\tt y$ then $\tt x$ is linked to $\tt y$. In a formula, this is
 
 $$
-\tt \forall \tt x\tt \forall \tt y(\tt N(\tt x,\tt y) \to \tt L(\tt x,\tt y))
+\tt \forall \tt x\tt \forall \tt y(\tt N(\tt x,\tt y) \tt \to \tt L(\tt x,\tt y))
 $$
 
 Intuitively this is true because we see four pairs where one city is lexically next: A and B, B and C, C and D, and D and E. In every case, the pair of cities are linked, as you can see in the graph.
 
-To evaluate $(\tt \forall \tt x\tt \forall \tt y(\tt N(\tt x,\tt y)\to \tt L(\tt x,\tt y)))^{म}$ formally, we need to consider five total possible assignments to $\tt x$.
+To evaluate $(\tt \forall \tt x\tt \forall \tt y(\tt N(\tt x,\tt y)\tt \to \tt L(\tt x,\tt y)))^{म}$ formally, we need to consider five total possible assignments to $\tt x$.
 
 - $\tt x\mapsto \tt a$
 - $\tt x\mapsto \tt b$
@@ -584,15 +584,15 @@ Let’s consider these each in turn.
 
 - $\tt x\mapsto \tt a$
 
-With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\tt y)\to \tt L(\tt a,\tt y)))^{म}$. To do this we again need to consider five possible assignments to $\tt y$.
+With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\tt y)\tt \to \tt L(\tt a,\tt y)))^{म}$. To do this we again need to consider five possible assignments to $\tt y$.
 
   - $\tt y\mapsto \tt a$
 
-    With this assignment we now have to evaluate $(\tt N(\tt a,\tt a)\to \tt L(\tt a,\tt a))^{म}$. Noting that $\tt N(\tt a,\tt a)^{म}=फ$ and $\tt L(\tt a,\tt a)^{म}=ट$, then
+    With this assignment we now have to evaluate $(\tt N(\tt a,\tt a)\tt \to \tt L(\tt a,\tt a))^{म}$. Noting that $\tt N(\tt a,\tt a)^{म}=फ$ and $\tt L(\tt a,\tt a)^{म}=ट$, then
 
     $$
     \begin{aligned}
-     (\tt N(\tt a,\tt a)\to \tt L(\tt a,\tt a))^{म} &= \tt N(\tt a,\tt a)^{म} \leadsto \tt L(\tt a,\tt a)^{म} \\
+     (\tt N(\tt a,\tt a)\tt \to \tt L(\tt a,\tt a))^{म} &= \tt N(\tt a,\tt a)^{म} \leadsto \tt L(\tt a,\tt a)^{म} \\
      &= फ\leadsto ट \\
      &= ट
     \end{aligned}
@@ -604,7 +604,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt a,\tt b)\to \tt L(\tt a,\tt b))^{म} &= \tt N(\tt a,\tt b)^{म} \leadsto \tt L(\tt a,\tt b)^{म} \\
+     (\tt N(\tt a,\tt b)\tt \to \tt L(\tt a,\tt b))^{म} &= \tt N(\tt a,\tt b)^{म} \leadsto \tt L(\tt a,\tt b)^{म} \\
      &= फ\leadsto ट \\
      &= ट
     \end{aligned}
@@ -614,7 +614,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt a,\tt c)\to \tt L(\tt a,\tt c))^{म} &= \tt N(\tt a,\tt c)^{म} \leadsto \tt L(\tt a,\tt c)^{म} \\
+     (\tt N(\tt a,\tt c)\tt \to \tt L(\tt a,\tt c))^{म} &= \tt N(\tt a,\tt c)^{म} \leadsto \tt L(\tt a,\tt c)^{म} \\
      &= फ\leadsto ट \\
      &= ट
     \end{aligned}
@@ -624,7 +624,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt a,\tt d)\to \tt L(\tt a,\tt d))^{म} &= \tt N(\tt a,\tt d)^{म} \leadsto \tt L(\tt a,\tt d)^{म} \\
+     (\tt N(\tt a,\tt d)\tt \to \tt L(\tt a,\tt d))^{म} &= \tt N(\tt a,\tt d)^{म} \leadsto \tt L(\tt a,\tt d)^{म} \\
      &= फ\leadsto फ \\
      &= ट
     \end{aligned}
@@ -634,7 +634,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt a,\tt e)\to \tt L(\tt a,\tt e))^{म} &= \tt N(\tt a,\tt e)^{म} \leadsto \tt L(\tt a,\tt e)^{म} \\
+     (\tt N(\tt a,\tt e)\tt \to \tt L(\tt a,\tt e))^{म} &= \tt N(\tt a,\tt e)^{म} \leadsto \tt L(\tt a,\tt e)^{म} \\
      &= फ\leadsto फ \\
      &= ट
     \end{aligned}
@@ -642,13 +642,13 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     As we see, when $\tt x\mapsto \tt a$, then for every possible mapping of $\tt y$, we get a true proposition.
 
-    Therefore $(\tt \forall \tt y(\tt N(\tt a,\tt y)\to \tt L(\tt a,\tt y)))^{म} = ट$.
+    Therefore $(\tt \forall \tt y(\tt N(\tt a,\tt y)\tt \to \tt L(\tt a,\tt y)))^{म} = ट$.
 
 - $\tt x\mapsto \tt b$
 
   > [!exercise] ***Exercise***
   >
-  > Perform this assignment and evaluate $(\tt \forall \tt y(\tt N(\tt b,\tt y)\to \tt L(\tt b,\tt y)))^{म}$.
+  > Perform this assignment and evaluate $(\tt \forall \tt y(\tt N(\tt b,\tt y)\tt \to \tt L(\tt b,\tt y)))^{म}$.
 
 - $\tt x\mapsto \tt c$
 
@@ -662,7 +662,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt d,\tt a)\to \tt L(\tt d,\tt a))^{म} &= \tt N(\tt d,\tt a)^{म} \leadsto \tt L(\tt d,\tt a)^{म} \\
+     (\tt N(\tt d,\tt a)\tt \to \tt L(\tt d,\tt a))^{म} &= \tt N(\tt d,\tt a)^{म} \leadsto \tt L(\tt d,\tt a)^{म} \\
      &= फ\leadsto फ \\
      &= ट
     \end{aligned}
@@ -674,7 +674,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-      (\tt N(\tt d,\tt b)\to \tt L(\tt d,\tt b))^{म} &= \tt N(\tt d,\tt b)^{म} \leadsto \tt L(\tt d,\tt b)^{म} \\
+      (\tt N(\tt d,\tt b)\tt \to \tt L(\tt d,\tt b))^{म} &= \tt N(\tt d,\tt b)^{म} \leadsto \tt L(\tt d,\tt b)^{म} \\
      &= फ\leadsto ट \\
      &= ट
     \end{aligned}
@@ -684,7 +684,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt d,\tt c)\to \tt L(\tt d,\tt c))^{म} &= \tt N(\tt d,\tt c)^{म} \leadsto \tt L(\tt d,\tt c)^{म} \\
+     (\tt N(\tt d,\tt c)\tt \to \tt L(\tt d,\tt c))^{म} &= \tt N(\tt d,\tt c)^{म} \leadsto \tt L(\tt d,\tt c)^{म} \\
      &= ट\leadsto ट \\
      &= ट
     \end{aligned}
@@ -694,7 +694,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt d,\tt d)\to \tt L(\tt d,\tt d))^{म} &= \tt N(\tt d,\tt d)^{म} \leadsto \tt L(\tt d,\tt d)^{म} \\
+     (\tt N(\tt d,\tt d)\tt \to \tt L(\tt d,\tt d))^{म} &= \tt N(\tt d,\tt d)^{म} \leadsto \tt L(\tt d,\tt d)^{म} \\
      &= फ\leadsto फ \\
      &= ट
     \end{aligned}
@@ -704,7 +704,7 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     $$
     \begin{aligned}
-     (\tt N(\tt d,\tt e)\to \tt L(\tt d,\tt e))^{म} &= \tt N(\tt d,\tt e)^{म} \leadsto \tt L(\tt d,\tt e)^{म} \\
+     (\tt N(\tt d,\tt e)\tt \to \tt L(\tt d,\tt e))^{म} &= \tt N(\tt d,\tt e)^{म} \leadsto \tt L(\tt d,\tt e)^{म} \\
      &= फ\leadsto ट \\
      &= ट
     \end{aligned}
@@ -712,15 +712,15 @@ With this assignment we now have to evaluate $(\tt \forall \tt y (\tt N(\tt a,\t
 
     As we see, when $\tt x\mapsto \tt d$, then for every possible mapping of $\tt y$, we get a true proposition.
 
-    Therefore $(\tt \forall \tt y(\tt N(\tt d,\tt y)\to \tt L(\tt d,\tt y)))^{म} = ट$.
+    Therefore $(\tt \forall \tt y(\tt N(\tt d,\tt y)\tt \to \tt L(\tt d,\tt y)))^{म} = ट$.
 
 - $\tt x\mapsto \tt e$
 
-We should check this case too, but I promise $(\tt \forall \tt y(\tt N(\tt e,\tt y)\to \tt L(\tt e,\tt y)))^{म}=ट$. However, you are invited to check for yourself if you would like more exercise.
+We should check this case too, but I promise $(\tt \forall \tt y(\tt N(\tt e,\tt y)\tt \to \tt L(\tt e,\tt y)))^{म}=ट$. However, you are invited to check for yourself if you would like more exercise.
 
 The above now confirms that, for every possible assignment to $\tt x$, the resulting proposition is true.
 
-Therefore it demonstrates $(\tt \forall \tt x\tt \forall \tt y (\tt N(\tt x,\tt y)\to \tt L(\tt x,\tt y)))^{म}$.
+Therefore it demonstrates $(\tt \forall \tt x\tt \forall \tt y (\tt N(\tt x,\tt y)\tt \to \tt L(\tt x,\tt y)))^{म}$.
 
 > [!exercise] ***Exercise***
 >
@@ -759,7 +759,7 @@ Therefore it demonstrates $(\tt \forall \tt x\tt \forall \tt y (\tt N(\tt x,\tt 
 > 4. Show that
 >
 >     $$
->     \tt \forall \tt x\tt \forall \tt y(\tt L(\tt x,\tt y)\to \tt N(\tt x,\tt y))
+>     \tt \forall \tt x\tt \forall \tt y(\tt L(\tt x,\tt y)\tt \to \tt N(\tt x,\tt y))
 >     $$
 >
 >     is false. (With an appropriate choice of assignments, this only requires evaluating one proposition.)
@@ -781,7 +781,7 @@ Up to this point I’ve been pretty dogged in presenting the formal syntax and s
 But now consider a formula like the following.
 
 $$
-\tt \forall \tt x\tt \exists \tt y(\tt R(\tt x,\tt y) \to \tt S(\tt y,\tt y,\tt a))
+\tt \forall \tt x\tt \exists \tt y(\tt R(\tt x,\tt y) \tt \to \tt S(\tt y,\tt y,\tt a))
 $$
 
 This has many-place relations, and nested quantifiers. This is a more general instance of a first-order formula.
@@ -794,7 +794,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > Note that we will use a bold comma: $\boldsymbol ,$. This is a distinct symbol from our simple comma. We do so in order to tell the difference between a comma used in our regular language, and a comma used inside our first-order syntax.
 >
-> Let $\text{Un}=\{\tt \neg\}$, $\text{Bins} = \{\tt \land,\tt \lor,\to,\tt \leftrightarrow\}$, and $\text{Quants} = \{\tt \forall, \tt \exists\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
+> Let $\text{Un}=\{\tt \neg\}$, $\text{Bins} = \{\tt \land,\tt \lor,\tt \to,\tt \leftrightarrow\}$, and $\text{Quants} = \{\tt \forall, \tt \exists\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
 >
 > Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{ (, ), \boldsymbol ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
 >
@@ -937,8 +937,8 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >     - If $म,v\not\vDash \tt \phi$ then $म,v\vDash (\tt \neg \tt \phi)$.
 >     - If $म,v\vDash \tt \phi$ and $म,v\vDash \tt \psi$ then $म,v\vDash (\tt \phi\tt \land\tt \psi)$.
 >     - If $म,v\vDash \tt \phi$ or $म,v\vDash \tt \psi$ then $म,v\vDash (\tt \phi\tt \lor\tt \psi)$.
->     - If $म,v\not\vDash \tt \phi$ or $म,v\vDash \tt \psi$ then $म,v\vDash (\tt \phi\to\tt \psi)$.
->     - If $म,v\vDash \tt \phi \to \tt \psi$ and $म,v\vDash \tt \psi\to\tt \phi$ then $म,v\vDash (\tt \phi\tt \leftrightarrow\tt \psi)$.
+>     - If $म,v\not\vDash \tt \phi$ or $म,v\vDash \tt \psi$ then $म,v\vDash (\tt \phi\tt \to\tt \psi)$.
+>     - If $म,v\vDash \tt \phi \tt \to \tt \psi$ and $म,v\vDash \tt \psi\tt \to\tt \phi$ then $म,v\vDash (\tt \phi\tt \leftrightarrow\tt \psi)$.
 >     - Suppose that $\tt x\in \text{Vars}$, and for every $u\inउ$ we have $म,v[\tt x\mapsto u]\vDash \tt \phi$. Then $म,v\vDash (\tt \forall \tt x\tt \phi)$.
 >     - Suppose that $\tt x\in \text{Vars}$ and for some $u\inउ$ we have $म,v[\tt x\mapsto u]\vDash \tt \phi$. Then $म,v\vDash (\tt \exists \tt x\tt \phi)$.
 >
@@ -955,5 +955,5 @@ However, we will need a few ideas, even if we do not emphasize their rigorous de
 In the following expression, the variables $\tt x$ and $\tt y$ are free while $\tt w$ and $\tt z$ are not.
 
 $$
-\tt \forall \tt x(\tt P(\tt x)\to \tt \exists \tt y((\tt \neg \tt R(\tt x,\tt y)\tt \land \tt Q(\tt f(\tt y,\tt z))))
+\tt \forall \tt x(\tt P(\tt x)\tt \to \tt \exists \tt y((\tt \neg \tt R(\tt x,\tt y)\tt \land \tt Q(\tt f(\tt y,\tt z))))
 $$
