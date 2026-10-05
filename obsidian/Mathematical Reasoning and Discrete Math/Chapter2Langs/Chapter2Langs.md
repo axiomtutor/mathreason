@@ -118,7 +118,7 @@ We may take any nonempty set to serve as our alphabet.
 
 > [!definition] ***Definition***
 >
-> Let $\Sigma$ be any nonempty set.  We call $\Sigma$ an **alphabet**, and any element $\tt x\in\tt \Sigma$ is called a **character**.  
+> Let $\Sigma$ be any nonempty set.  We call $\Sigma$ an **alphabet**, and any element $\tt x\in \Sigma$ is called a **character**.  
 > 
 > Any finite sequence of characters from $\Sigma$ is called a **string over** $\Sigma$.  The set of all possible strings is written as $\Sigma^\ast$.
 > 
@@ -159,15 +159,15 @@ To define a set recursively means to:
 1. Define a few elements of the set. This is the "base case".
 2. Show how to construct new elements, using elements which already exist in the set. This is the "recursive case".
 
-Here is a simple example: we can define the set of even positive integers, *S*, recursively.  To define it, we begin by defining $2\in S$.  This is the base case.
+Here is a simple example: we can define the set of even positive integers, *S*, recursively.  To define it, we begin by defining $\tt 2\in S$.  This is the base case.
 
-Next, if $x\in S$ is any element of the set, then also $x+2\in S$.  That is to say, we may construct a new element of *S* by taking any existing element and adding 2.  This is the "recursive case".
+Next, if $\tt x\in S$ is any element of the set, then also ${\tt x+2}\in S$.  That is to say, we may construct a new element of *S* by taking any existing element and adding $\tt 2$.  This is the "recursive case".
 
-Therefore $2\in S$ because of the base case.  But also $2+2\in S$ if we apply the recursive case, where $x=2$.  This shows that $4\in S$.
+Therefore $\tt 2\in S$ because of the base case.  But also ${\tt 2+2}\in S$ if we apply the recursive case, where $\tt x=\tt 2$.  This shows that $\tt 4\in S$.
 
-But now that we have $4\in S$ it follows that $4+2 = 6\in S$, by another application of the recursive case.  And then because $6\in S$ it follows that $6+2=8\in S$, and so on.  
+But now that we have $\tt 4\in S$ it follows that ${\tt 4+2} = \tt 6\in S$, by another application of the recursive case.  And then because $\tt 6\in S$ it follows that ${\tt 6+2}=\tt 8\in S$, and so on.  
 
-Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\tt \Sigma = \{\tt 0,\tt 1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\tt \Sigma$ are ‘010’ and ‘11011011’.  
+Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\Sigma = \{\tt 0,\tt 1\}$.  That is to say, the only characters that we will consider are ‘$\tt 0$’ and ‘$\tt 1$’.  Examples of strings over $\Sigma$ are ‘${\tt 010}$’ and ‘${\tt 11011011}$’.  
 
 > [!note]- This is an example of a "binary language". 
 > 
@@ -175,7 +175,7 @@ Here is an example more obviously relevant to languages: Let’s consider the ve
 > 
 > Therefore binary languages are often studied in computer science.
 
-Consider the language of all strings which begin with a 1.  
+Consider the language of all strings which begin with a $\tt 1$.  
 
 $$
 L = \{\tt 1, 10, 11, 100, 101, 110, ...\}
