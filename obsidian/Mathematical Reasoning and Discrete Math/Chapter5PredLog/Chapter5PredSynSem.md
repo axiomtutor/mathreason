@@ -145,7 +145,7 @@ If the arity is greater than one, like in the example “3 is less than 2”, th
 >
 > Let $\text{Consts},\text{Preds}$ be two disjoint nonempty sets of symbols, not containing the symbols from $\text{Conns}$.  
 >
-> The elements of $\text{Consts}$ we call **constant symbols** or **constant symbols**.  
+> The elements of $\text{Consts}$ we call **constant symbols**.  
 >
 > The elements of $\text{Preds}$ we call the **predicate symbols**.  
 >
@@ -188,7 +188,7 @@ To understand what an "interpretation" is, imagine that you meet someone who spe
 
 But then later you find out that “gibblestrump” is just this person’s word for a cat.  And then you also find out that “whifterstrook” is an adjective which roughly translates to “rude”.  Now you know at the person was saying “This cat is rude.”  
 
-That is essentially what an interpretation does: For an constant symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.  Choosing to use one particular interpretation, is a choice of how we will match symbols to their meaning.
+That is essentially what an interpretation does: For a constant symbol, it tells you which thing in the universe, the symbol refers to.  For a predicate symbol, it tells you which things in the universe, the symbol describes.  Choosing to use one particular interpretation, is a choice of how we will match symbols to their meaning.
 
 In any given setting, we will always need a universe of things that our statements can talk about.  The universe could be “the numbers 1 to 10” or “the people in this room right now” or “all physical objects in the universe”.  Whatever we choose for this set or universe, we call it the “domain of discourse”.  
 
