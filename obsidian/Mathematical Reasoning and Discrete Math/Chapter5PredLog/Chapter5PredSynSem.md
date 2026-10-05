@@ -78,13 +78,13 @@ $$
 We choose the predicate names ${\tt M}, {\tt P}, {\tt C}$ to denote the math, philosophy, and computer science majors, respectively.  For example, if the math majors are Adam, Brooke, Cecil, Dale, and Eudoxus, then 
 
 $$
-M^{इ} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
+{\tt M}^{इ} = \{\text{Adam, Brooke, Cecil, Dale, Eudoxus}\}
 $$
 
 If the philosophy majors are Adam, Brooke, Cecil, Gyanesh, and Irene, then the denotation of ${\tt P}$ is
 
 $$
-P^{इ} = \{\text{Adam, Brooke, Cecil, Gyanesh, Irene}\}
+{\tt P}^{इ} = \{\text{Adam, Brooke, Cecil, Gyanesh, Irene}\}
 $$
 
 > [!exercise] ***Exercise***
@@ -97,13 +97,13 @@ There is a nice graphical representation of binary relations.
 
 Just to take a fresh example, consider the relation “less than” on the set of numbers {1, 2, 3, 4, 5}.  
 
-If we use the symbol ${\tt L}$ to represent the relation, then $(1,2)\in L^{इ}$ because 1 < 2.  Also $(2, 5)\in L^{इ}$ because 2 < 5.  On the other hand $(2, 2)\notin L^{इ}$ and $(2,3)\notin L^{इ}$.
+If we use the symbol ${\tt L}$ to represent the relation, then $(1,2)\in L^{इ}$ because 1 < 2.  Also $(2, 5)\in {\tt L}^{इ}$ because 2 < 5.  On the other hand $(2, 2)\notin {\tt L}^{इ}$ and $(2,3)\notin {\tt L}^{इ}$.
 
 ![[lessthanrel.png]]
 
 When drawing a node-and-arrow diagram for a relation, we put an arrow from $x$ to $y$ if the ordered pair $(x,y)$ is in the relation.  
 
-In this example, since $(1,2)\in L^{इ}$ then there is an arrow pointing from 1 to 2.
+In this example, since $(1,2)\in {\tt L}^{इ}$ then there is an arrow pointing from 1 to 2.
 
 > [!exercise] ***Exercise***
 >
