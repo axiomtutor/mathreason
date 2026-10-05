@@ -54,7 +54,7 @@ There is an obvious connection between properties and sets.  Consider the proper
 
 Let's get even more specific.  Let's suppose that the people at the party are named Adam, Brooke, Cecil, ..., Jelani.  
 
-In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{ \text{a,b,c,d,e,f,g,h,i,j} \}$.  
+In our symbolic system of logic we'll want symbols for each of these individuals, and we tend to prefer lower-case Latin letters for "object symbols".  Therefore let's use the symbols $\text{Objs} = \{\tt a,\tt b,\tt c,\tt d,\tt e,\tt f,\tt g,\tt h,\tt i,\tt j\}$.  
 
 Keep in mind that the symbols are $\tt a$ through $\tt j$, but the meanings of the symbols are the corresponding people.  
 
@@ -62,16 +62,16 @@ The correspondence between a symbol and its meaning is tracked by an "interpreta
 
 $$
 \begin{aligned}
- a^{इ} &= \text{Adam} \\
- b^{इ} &= \text{Brooke} \\
- c^{इ} &= \text{Cecil} \\
- d^{इ} &= \text{Dale} \\
- e^{इ} &= \text{Eudoxus} \\
- f^{इ} &= \text{Francis} \\
- g^{इ} &= \text{Gyanesh} \\
- h^{इ} &= \text{Hilary} \\
- i^{इ} &= \text{Irene} \\
- j^{इ} &= \text{Jelani} \\
+ \tt a^{इ} &= \text{Adam} \\
+ \tt b^{इ} &= \text{Brooke} \\
+ \tt c^{इ} &= \text{Cecil} \\
+ \tt d^{इ} &= \text{Dale} \\
+ \tt e^{इ} &= \text{Eudoxus} \\
+ \tt f^{इ} &= \text{Francis} \\
+ \tt g^{इ} &= \text{Gyanesh} \\
+ \tt h^{इ} &= \text{Hilary} \\
+ \tt i^{इ} &= \text{Irene} \\
+ \tt j^{इ} &= \text{Jelani} \\
 \end{aligned}
 $$
 
@@ -89,7 +89,7 @@ $$
 
 > [!exercise] ***Exercise***
 >
-> Make up a denotation of the symbol $\tt C$ so that it is consistent with the example we have described above.  That is to say, $C^इ$ contains five people at the party, but shares exactly two members with $M^इ$ and $P^इ$, and there is only one person in all three $M^इ,P^इ,C^इ$.  There is more than one correct way to do this.  
+> Make up a denotation of the symbol $\tt C$ so that it is consistent with the example we have described above.  That is to say, $\tt C^इ$ contains five people at the party, but shares exactly two members with $\tt M^इ$ and $\tt P^इ$, and there is only one person in all three $\tt M^इ,\tt P^इ,\tt C^इ$.  There is more than one correct way to do this.  
 
 # Relation Diagrams
 
@@ -101,7 +101,7 @@ If we use the symbol $\tt L$ to represent the relation, then $(1,2)\in L^{इ}$ 
 
 ![[lessthanrel.png]]
 
-When drawing a node-and-arrow diagram for a relation, we put an arrow from $\tt x$ to $\tt y$ if the ordered pair $(x,y)$ is in the relation.  
+When drawing a node-and-arrow diagram for a relation, we put an arrow from $x$ to $y$ if the ordered pair $(x,y)$ is in the relation.  
 
 In this example, since $(1,2)\in L^{इ}$ then there is an arrow pointing from 1 to 2.
 
@@ -126,7 +126,7 @@ In this example, since $(1,2)\in L^{इ}$ then there is an arrow pointing from 1
 
 # Predicate and Object Syntax
 
-We will often use lower-case italic Latin letters as symbols for objects, like $\tt a,\tt b,\dots,z$.  If we need more symbols we will use indexed symbols, like $\tt a_1,\tt a_2,\dots,\tt b_1,\tt b_2,\dots,z_1,z_2,...$ as well.  
+We will often use lower-case italic Latin letters as symbols for objects, like $\tt a,\tt b,\dots,\tt z$.  If we need more symbols we will use indexed symbols, like $\tt a_1,\tt a_2,\dots,\tt b_1,\tt b_2,\dots,\tt z_1,\tt z_2,...$ as well.  
 
 We will use upper-case italic Latin letters as symbols for predicates, also allowing for indices.  So the predicate symbols are $\tt A, \tt A_1, \tt A_2,\dots,\tt B,\tt B_1,\tt B_2,\dots,\tt Z,\tt Z_1,\tt Z_2,\dots$
 
@@ -210,7 +210,7 @@ For example, we could have $उ$ be the set of integers, so $उ = \Bbb Z$.  We 
 
 The model could also determine that the predicate $\tt P$ refers to the set of all even numbers.  
 
-From all of these components, we know that syntactically, we can form the proposition $\tt P(o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should then tell us, (1) the denotation of $o$, (2) the denotation of $\tt P$, and (3) a rule which explains why $\tt P(o)$ is assigned the truth-value फ.
+From all of these components, we know that syntactically, we can form the proposition $\tt P(\tt o)$, which is supposed to represent the (false) proposition “one is an even number”.  How we define our semantics should then tell us, (1) the denotation of $\tt o$, (2) the denotation of $\tt P$, and (3) a rule which explains why $\tt P(\tt o)$ is assigned the truth-value फ.
 
 In the definition below, इ does the job of (1) and (2).  After that, म takes over and does the job of (3).
 
@@ -260,7 +260,7 @@ The left side contains our basic syntax: constant symbols like $\tt c$, and pred
 
 On the right is the basic semantic object, the universe, $उ$—the set of things our symbols “talk about”.
 
-The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Objs}$.  This is $\tt c^{इ}=\tt u$.  It also means choosing which subset, $X\subseteq उ$, is associated with $\tt P$.  This is $\tt P^{इ}=\tt X$.
+The model, $म=(उ,इ)$, is first a choice of which universe to pick.  Then it also requires choosing an interpretation, $इ$.  That means choosing which element, $u\in उ$, should be associated with each $c\in \text{Objs}$.  This is $\tt c^{इ}=u$.  It also means choosing which subset, $X\subseteq उ$, is associated with $\tt P$.  This is $\tt P^{इ}=X$.
 
 Let’s practice by applying these ideas to the earlier example.  In that example we said that the domain was the integers, so $उ = \Bbb Z$.  We said that we would use the symbol $\tt o$ to denote the number 1, so that means our interpretation assigns $o^{इ} = 1$.  We also said that $\tt P^{इ}$ is the set of even numbers.  The model is then $म=(उ,इ)$, where these are the universe and interpretation thta we have now chosen.  
 
@@ -293,7 +293,7 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > * $(\tt \phi\tt \to\tt \psi)^म = (\tt \phi^म)\leadsto(\tt \psi^म)$
 > * $(\tt \phi\tt \leftrightarrow)^म = (\tt \phi^म)\curlyleftrightarrow (\tt \psi^म)$
 
-To demonstrate, suppose that $\text{Objs}=\{a,b\}$, and $\text{Preds}=\{\tt P,\tt Q\}$, and $\tt P$ has arity 2, $\tt Q$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
+To demonstrate, suppose that $\text{Objs}=\{\tt a,\tt b\}$, and $\text{Preds}=\{\tt P,\tt Q\}$, and $\tt P$ has arity 2, $\tt Q$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
 
 $$ \tt a^इ = 1, \tt b^इ = 2, \tt c^इ = 2 $$
 
@@ -427,9 +427,9 @@ This is a *conjunction* of the two propositions, because both are required for 1
 
 In order to symbolically represent the first proposition, “1 is a lower bound of *A,*” we will make up a symbol to stand for this.  Say that we use $\tt L(\tt a)$.  Here $\tt a$ is a constant symbol, which is intended to represent the number $1\in \Bbb Z$. And $\tt L$ is a predicate symbol which I have chosen to represent the predicate “$\tt x$ is a lower bound of $\tt A$”.
 
-This means that, in the model I intend for this example, $म=(\Bbb Z, इ)$.  That is to say, the universe is $\Bbb Z$.  And $इ$ is an association between the symbols $\tt a$ and $\tt L$, with the elements of $\Bbb Z$.  More specifically, it is the association $\tt a^{इ}=1$ and $\tt P^{इ} = \{\tt x\in \Bbb Z: \tt x \text{ is a lower bound of } \tt A\}$.
+This means that, in the model I intend for this example, $म=(\Bbb Z, इ)$.  That is to say, the universe is $\Bbb Z$.  And $इ$ is an association between the symbols $\tt a$ and $\tt L$, with the elements of $\Bbb Z$.  More specifically, it is the association $\tt a^{इ}=1$ and $\tt P^{इ} = \{x\in \Bbb Z: x \text{ is a lower bound of } A\}$.
 
-Next, we can represent the second proposition, “$1\in A$”, by the symbolic expression $\tt M(\tt a)$.  Here $\tt M$ is a symbol that I’m using for the predicate “$x\in A$”.  In the intended model, $\tt M^{इ} = \{\tt x\in \Bbb Z: \tt x \in \tt A\}$.  Of course, in this case, $\tt M^{इ}=\tt A$. 
+Next, we can represent the second proposition, “$1\in A$”, by the symbolic expression $\tt M(\tt a)$.  Here $\tt M$ is a symbol that I’m using for the predicate “$x\in A$”.  In the intended model, $\tt M^{इ} = \{x\in \Bbb Z: x \in A\}$.  Of course, in this case, $\tt M^{इ}=A$. 
 
 Now, finally, we can symbolically express the conjunction of these two propositions by 
 
@@ -518,9 +518,9 @@ The following now summarizes everything that we have said so far, and consolidat
 
 But also notice that there is one small tedious issue.  We have agreed to use the notation $\tt R(\tt a,\tt b)$, for example, when writing a binary relation for two objects.  This means that we now have to include in the alphabet of predicate logic, the comma!
 
-Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{(,),,\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
+Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{\tt (,\tt ),\tt \boldsymbol,\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
 
-Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{(,),\boldsymbol, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
+Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{\tt (,\tt ),\tt \boldsymbol, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
 
 > [!definition] ***Definition***
 >
@@ -540,7 +540,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > The set $\Sigma$ is then called **an alphabet for a predicate language**.
 >
-> If $\tt P\in \text{Preds}$ and $n = \text{Arity}(\tt P)$, and $a_1,\dots,a_n\in\text{Objs}$,, then 
+> If $\tt P\in \text{Preds}$ and $n = \text{Arity}(\tt P)$, and $\tt a_1,\dots,\tt a_n\in\text{Objs}$, then 
 >
 > $$
 > \tt P(\tt a_1,...,\tt a_n) 
@@ -548,12 +548,12 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >
 > is called an **atomic formula**.  We denote the set of atomic formulas by $\text{Atom}$.
 >
-> Let $\tt L\subseteq \Sigma^*$ be defined by the following recursion.
+> Let $L\subseteq \Sigma^*$ be defined by the following recursion.
 >
-> - $\text{Atom}\subseteq \tt L$.
+> - $\text{Atom}\subseteq L$.
 > - For any $\tt \phi,\tt \psi\in \tt L$ we have $(\tt \neg\tt \phi),(\tt \phi\tt \land\tt \psi),(\tt \phi\tt \lor\tt \psi),(\tt \phi\tt \to\tt \psi),(\tt \phi\tt \leftrightarrow \tt \psi)\in \tt L$.
 >
-> Then $\tt L$ is called **a predicate language**.  Any element $\tt \phi\in \tt L$ is called a **predicate formula** (or just **formula** for short).
+> Then $L$ is called **a predicate language**.  Any element $\tt \phi\in L$ is called a **predicate formula** (or just **formula** for short).
 >
 > *Semantics*
 >
@@ -580,7 +580,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 >     \tt \phi^{म} = फ \text{ \ \ if } (\tt a_1^{इ},...,\tt a_n^{इ})\notin \tt P^{इ}
 >     $$
 >     
-> - If there is a $\tt \chi\in \tt L$ such that $\tt \phi=\tt \neg\tt \chi$ then
+> - If there is a $\tt \chi\in L$ such that $\tt \phi=\tt \neg\tt \chi$ then
 >     
 >     $$
 >     \tt \phi^{म}  = \ \sim \tt \chi^{म}
