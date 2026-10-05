@@ -63,15 +63,15 @@ The correspondence between a symbol and its meaning is tracked by an "interpreta
 $$
 \begin{aligned}
  \tt a^{इ} &= \text{Adam} \\
- \tt \tt b^{इ} &= \text{Brooke} \\
- \tt \tt c^{इ} &= \text{Cecil} \\
- \tt \tt d^{इ} &= \text{Dale} \\
- \tt \tt e^{इ} &= \text{Eudoxus} \\
- \tt \tt f^{इ} &= \text{Francis} \\
- \tt \tt g^{इ} &= \text{Gyanesh} \\
- \tt \tt h^{इ} &= \text{Hilary} \\
- \tt \tt i^{इ} &= \text{Irene} \\
- \tt \tt j^{इ} &= \text{Jelani} \\
+ \tt b^{इ} &= \text{Brooke} \\
+ \tt c^{इ} &= \text{Cecil} \\
+ \tt d^{इ} &= \text{Dale} \\
+ \tt e^{इ} &= \text{Eudoxus} \\
+ \tt f^{इ} &= \text{Francis} \\
+ \tt g^{इ} &= \text{Gyanesh} \\
+ \tt h^{इ} &= \text{Hilary} \\
+ \tt i^{इ} &= \text{Irene} \\
+ \tt j^{इ} &= \text{Jelani} \\
 \end{aligned}
 $$
 
