@@ -48,13 +48,13 @@ has several non-logical concepts, like "men" and "Socrates".  These are specific
 
 The following is the abstraction of the argument.
 
-> All *A* are *B*.
+> All $\tt A$ are $\tt B$.
 > 
-> *x* is an *A*.
+> $\tt x$ is an $\tt A$.
 > 
-> Therefore *x* is *B*.
+> Therefore $\tt x$ is $\tt B$.
 
-This replaces the non-logical components with symbols like *A* and *B*.  These symbols act as place-holders for any non-logical content that you might like to use.
+This replaces the non-logical components with symbols like $\tt A$ and $\tt B$.  These symbols act as place-holders for any non-logical content that you might like to use.
 
 For example, consider the argument 
 
@@ -68,13 +68,13 @@ This argument has exactly the same structure as the argument regarding Socrates'
 
 From the abstract form, 
 
-> All *A* are *B*.
+> All $\tt A$ are $\tt B$.
 > 
-> *x* is an *A*.
+> $\tt x$ is an $\tt A$.
 > 
-> Therefore *x* is *B*.
+> Therefore $\tt x$ is $\tt B$.
 
-we can obtain either the argument about Socrates or the argument about Tabby, by an appropriate substitution of the symbols *A*, *B*, and *x*.  
+we can obtain either the argument about Socrates or the argument about Tabby, by an appropriate substitution of the symbols $\tt A$, $\tt B$, and $\tt x$.  
 
 > [!exercise] ***Exercise***
 > Consider the argument "James Brown was a funk singer, and a dancer.  Every funk singer is a musician.  Therefore James Brown was a musician and a dancer."
@@ -120,15 +120,15 @@ We may take any nonempty set to serve as our alphabet.
 >
 > Let $\tt \Sigma$ be any nonempty set.  We call $\tt \Sigma$ an **alphabet**, and any element $\tt x\in\tt \Sigma$ is called a **character**.  
 > 
-> Any finite sequence of characters from $\Sigma$ is called a **string over** $\Sigma$.  The set of all possible strings is written as $\Sigma^\ast$.
+> Any finite sequence of characters from $\tt \Sigma$ is called a **string over** $\tt \Sigma$.  The set of all possible strings is written as $\tt \Sigma^\ast$.
 > 
-> A **language over** $\Sigma$ is any subset of $\Sigma^*$.  That is to say, if $L\subseteq \Sigma^*$ then we call *L* a language over $\Sigma$.  
+> A **language over** $\tt \Sigma$ is any subset of $\tt \Sigma^*$.  That is to say, if $L\subseteq \tt \Sigma^*$ then we call *L* a language over $\tt \Sigma$.  
 > 
 > If *L* is a language, and $m\in L$, we will call *m* a **signifier in *L***.
 > 
-> For short, we often call a string over $\Sigma$ just a **string**.  We call a language over $\Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
+> For short, we often call a string over $\tt \Sigma$ just a **string**.  We call a language over $\tt \Sigma$ just a **language**.  We call a signifier in *L* just a **signifier**.  Context usually makes it clear what the alphabet is.
 
-For example, if we use these definitions to describe English, then $\Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
+For example, if we use these definitions to describe English, then $\tt \Sigma$ would contain at least the 26 standard letters, but then also spaces, upper-case letters, punctuation, and so on.  
 
 Then a string would just be any finite sequence of these symbols (or characters).  For example “jhb88qtio weqir?j]—…, ” is a string.  It’s a nonsense string, but it still counts as a string.  
 
@@ -146,7 +146,7 @@ Another language, like say Hindi, might have strings like “झैठृ ङौ
 >
 > Decide whether the following strings are signifiers in mathematics.
 > 
-> 1. $x^2+1$
+> 1. $\tt x^2+1$
 > 2. $+$
 > 3. $1+$
 
@@ -167,32 +167,32 @@ Therefore $2\in S$ because of the base case.  But also $2+2\in S$ if we apply th
 
 But now that we have $4\in S$ it follows that $4+2 = 6\in S$, by another application of the recursive case.  And then because $6\in S$ it follows that $6+2=8\in S$, and so on.  
 
-Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\Sigma = \{0,1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\Sigma$ are ‘010’ and ‘11011011’.  
+Here is an example more obviously relevant to languages: Let’s consider the very simple alphabet $\tt \Sigma = \{\tt 0,\tt 1\}$.  That is to say, the only characters that we will consider are ‘0’ and ‘1’.  Examples of strings over $\tt \Sigma$ are ‘010’ and ‘11011011’.  
 
 > [!note]- This is an example of a "binary language". 
 > 
-> Any language with alphabet $\{0,1\}$ is called a "binary language".  This is often a good model for the low-level language of computer code.  
+> Any language with alphabet $\{\tt 0,\tt 1\}$ is called a "binary language".  This is often a good model for the low-level language of computer code.  
 > 
 > Therefore binary languages are often studied in computer science.
 
 Consider the language of all strings which begin with a 1.  
 
 $$
-L = \{1, 10, 11, 100, 101, 110, ...\}
+L = \{\tt 1, 10, 11, 100, 101, 110, ...\}
 $$
 
 Let’s practice how we could express this language recursively.  We could say:
 
-- Base case: $1\in L$.
-- Recursive case: For any $x\in L$, we have $x0\in L$ and $x1\in L$.
+- Base case: $\tt 1\in L$.
+- Recursive case: For any $\tt x\in L$, we have $\tt x0\in L$ and $\tt x1\in L$.
 
 Let me demonstrate, from the recursive definition, that $101\in L$.
 
-We know that $1\in L$ from the base-case.  
+We know that $\tt 1\in L$ from the base-case.  
 
-Because $1\in L$ we may take $x=1$ in the recursive case.  Therefore, from the first part of the recursive case, $10\in L$.
+Because $\tt 1\in L$ we may take $\tt x=\tt 1$ in the recursive case.  Therefore, from the first part of the recursive case, $10\in L$.
 
-Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore, from the second part of the recursive case, $101\in L$.
+Because $10\in L$ we may this time take $\tt x=10$ in the recursive case.  Therefore, from the second part of the recursive case, $101\in L$.
 
 > [!exercise] ***Exercise***
 >
@@ -200,15 +200,15 @@ Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore
 
 > [!exercise] ***Exercise***
 >
-> Let $\Sigma=\{0,1\}$ still.
+> Let $\tt \Sigma=\{\tt 0,\tt 1\}$ still.
 > 
-> However, let’s define a new language, *M*.  Let *M* be the language of all strings which begin with 11.  So $11\in M$ and $110\in M$ but for example, $1\notin M$ and $10\notin M$.  
+> However, let’s define a new language, *M*.  Let *M* be the language of all strings which begin with 11.  So $11\in M$ and $110\in M$ but for example, $\tt 1\notin M$ and $10\notin M$.  
 > 
 > Give a recursive definition of *M*.
 
 > [!exercise] ***Exercise***
 >
-> Let $\Sigma = \{0,1\}$ and define *N* to be the language of strings that represent a binary number.  
+> Let $\tt \Sigma = \{\tt 0,\tt 1\}$ and define *N* to be the language of strings that represent a binary number.  
 > 
 > A string represents a binary number if:
 > 
@@ -221,21 +221,21 @@ Because $10\in L$ we may this time take $x=10$ in the recursive case.  Therefore
 > 
 > Give a recursive definition of *N*.  
 > 
-> *Hint*: $1x$.
+> *Hint*: $\tt 1\tt x$.
 
-Here is another language that will be relevant to things we do later on: Let $\Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
+Here is another language that will be relevant to things we do later on: Let $\tt \Sigma = \{(,)\}$.  That is to say, the alphabet contains two elements, the left- and right-parentheses.
 
 $$
 \begin{aligned}
- (\ \ &\in\Sigma \\
- )\ \ &\in \Sigma
+ (\ \ &\in\tt \Sigma \\
+ )\ \ &\in \tt \Sigma
 \end{aligned}
 $$
 
 Let’s define the language, *L*, of “balanced parentheses”.
 
 - Base case: $()\in L$.
-- Recursive case: If $x\in L$ then also $()x\in L$ and $(x)\in L$, and $x()\in L$.
+- Recursive case: If $\tt x\in L$ then also $()\tt x\in L$ and $(\tt x)\in L$, and $\tt x()\in L$.
 
 So this means that ‘()’ is a signifier in the language of balanced parentheses.  
 
@@ -243,7 +243,7 @@ Also ‘()()’ is a signifier.  Why?  Well we can explain it like before.
 
 We know from the base case that $()\in L$.
 
-Because $()\in L$ we can then take $x=()$ in the recursive case, and consider the first part of the recursive case.  That tells us $()x=()()\in L$.
+Because $()\in L$ we can then take $\tt x=()$ in the recursive case, and consider the first part of the recursive case.  That tells us $()\tt x=()()\in L$.
 
 > [!exercise] ***Exercise*** 
 >
