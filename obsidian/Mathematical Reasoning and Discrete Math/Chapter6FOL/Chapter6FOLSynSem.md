@@ -211,7 +211,28 @@ We're not entirely ready to address this question in its entirety.  But certainl
 
 In particular, the part of the expression $2x+1$ is a function.
 
-Let's say that we use the symbols *o* for 1 and *t* for 2.  Let's now further agree that we use the symbol *f* for the "times two" function.  That is to say, we will use *f* to denote the function $f(x)=2x$.  
+Let's say that we use the symbols *o* for 1 and *t* for 2.  Let's now further agree that we use the symbol *f* for the "times two" function.  That is to say, we will use *f* to denote the function $g(x)=2x$. 
+
+> [!note]- *f* is in the object language, not *g*.
+> Note that we are using the symbol *f* for a symbol in the logical language.  *g* is not in the logical language (called the "object language").  *g* is in the function itself, which we say is in the "metalanguage".  The metalanguage is the language that I am writing to you in: English, or a mathy version of English.  
+> 
+> If this is confusing, note that it is exactly the same distinction as having a symbol like '*a*' in the logical language, but the symbol refers to the person, Adam.  It is the distinction between syntax and semantics: *a* is in the syntax, the person to whom it refers, Adam, is in the semantics.
+> 
+> In the current context, *f* is the symbol in the syntax, *g* is the actal function that it refers to, in the semantics.
+
+Then suppose that we want to interpret the object referred to by $f(o)$.  Intuitively this should be the function, *g*, applied to the number 1.  That is 
+
+$$ g(1) = 2(1) = 2 $$
+
+This is what we will eventually ensure when we define the semantics of functions.
+
+But now notice that we will also need to have a certain collection of symbols that are reserved for functions.  It is tradition to use *f, g, h* and perhaps more after that.  But here, the tradition is not especially clear: Is *i* a constant or function?
+
+Well, luckly, we do not rely on tradition.  If there is ever ambiguity, we can always just resolve it by declaring explicitly our symbol sets for constants (recall, $\text{Consts}$), variables (from now on, $\text{Vars}$), functions ($\text{Funcs}$), and predicates ($\text{Preds}$).  
+
+These sets of symbols are allowed to be literally any nonempty sets, with the caveat that they cannot overlap.  If any object were both a constant and a function symbol, it would introduce unnecessary and unpleasant ambiguity when trying to read a formula.
+
+Similarly none of these sets are allowed to contain parentheses, since that would create readability issues.  For example if the left paren, ), were a constant symbol then we would have annoying difficulty reading "$P())$".  For similar reasons, none of the sets may contain logical connectives, like $\neg$ or $\forall$, nor may they contain commas.
 # First-order Syntax
 
 > [!definition] ***Definition***
@@ -220,10 +241,10 @@ Let's say that we use the symbols *o* for 1 and *t* for 2.  Let's now further ag
 >
 > We assume that we have sets of symbols for
 >
-> - Objects, $\text{Objs}$,
-> - Functions
-> - Variables
-> - Properties
+> - Objects, $\text{Consts}$,
+> - Variables, $\text{Vars}$,
+> - Functions, $\text{Funcs}$,
+> - Predicates, $\text{Preds}$
 >
 > None of these sets overlap, and none of them contain parentheses, logical connectives, or commas.
 >
