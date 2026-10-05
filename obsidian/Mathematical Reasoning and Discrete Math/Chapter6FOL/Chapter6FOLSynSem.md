@@ -2,24 +2,17 @@
 title: "Chapter 6: First-order Syntax and Semantics"
 ---
 
-We have developed propositional logic, and expanded it to predicate logic.  We now continue the project further by expanding the expressive power of predicate logic, into what is called first-order logic.
+We have developed propositional logic, and expanded it to predicate logic.  We now continue the project.  This time we expand predicate logic to what is called first-order logic.
 
-# What Predicate Logic Can't Do
+# Keep $\Bbb R$ in Your Heart
 
+Throughout this chapter it will help to keep in mind how you would develop a language to talk about the real numbers. 
 
-
-
----
-
-Old content:
-
-We now take the scaffolding of propositional logic, and develop it into a more powerful system called “first-order logic”.
-
-Throughout this chapter it will help to keep in mind how you would develop a language to talk about the real numbers. Recall that the real numbers can be thought of as “every possible decimal expansion”. The decimal expansion, for example, of 3/2 is 1.5. And the decimal expansion of 1/3 is the infinite expansion 0.333…
+Recall that the real numbers can be thought of, roughly, as “every possible decimal expansion”. The decimal expansion, for example, of 3/2 is 1.5. And the decimal expansion of 1/3 is the infinite expansion 0.333…
 
 Later we’ll have more to say about decimal expansions and the formal construction of real numbers. But at least for now, this is a simple start to thinking about the real numbers.
 
-Some examples: Every integer and rational number is a real number. But then there are some real numbers, like $\sqrt 2$ and $\pi$, which are real numbers but not rational. Later in this course we will actually *prove* that $\sqrt 2$ is real but not rational, whereas proving this for $\pi$ is a bit beyond the scope of this course.
+Some examples: Every integer and rational number is a real number. But then there are some real numbers, like $\sqrt 2$ and $\pi$, which are real numbers but not rational. Later in this course we will actually *prove* that $\sqrt 2$ is real but not rational, whereas proving this for $\pi$ is beyond the scope of this course.
 
 Note that $\sqrt 2$ doesn’t look like a “decimal expansion”. But there is a sequence of decimal numerals which is equivalent to $\sqrt 2$.
 
@@ -33,21 +26,21 @@ First of all notice that the “number of real numbers” is enormous. It is cle
 
 But one thing is clear: Our language cannot, in any practical sense, name every single real number. Of course each real number is an infinite decimal sequence — you might therefore argue that one can regard the decimal sequence as the “name” of the number.
 
-However, that’s not practical. We can only practically write down finitely many digits of any decimal expansion. We will never fully name any number, if we were to use that system.
+However, that’s not practical. We can only practically write down finitely many digits of any decimal expansion. We will never fully name any number, if we name it by its decimal expansion.
 
-Alternately, we can name a real number by symbols like $\sqrt 2$ and $\pi$. These names fully identify the decimal sequence. When we write $\sqrt 2$, this refers to the exact number — in a sense, referring to its entire completed decimal expansion.
+Alternately, we can name a real number by symbols like $\sqrt 2$ and $\pi$. These names fully identify the number, without an infinite representation. When we write $\sqrt 2$, this refers to the exact number — in a sense, referring to its entire completed decimal expansion.
 
-But for all practical purposes, our collection of names can only be finite. We might grow the set of names, but at any given moment in our use of language, we will only have specifically named finitely many real numbers. And yet there is an infinity of real numbers, and we will often want to reason about all of them, or certain infinite subsets of them.
+But for all practical purposes, our collection of names can only be finite. And yet there is an infinity of real numbers, and we will often want to reason about all of them, or certain infinite subsets of them.
 
-In this chapter we will introduce the notion of predicates and objects. These ideas help us to analyze language. They help to make our logical system a bit more expressive. But they have relatively little to do with the issue of trying to talk about an infinite set of objects.
+In this chapter we will introduce “quantifiers”, which will allow us to easily reason about sets which are either large or infinite.  In particular we will discuss the syntax and semantics of our expanded logical system.  
 
-After that we introduce “quantifiers”. We use quantifiers to represent our how our logical system will express statements regarding “all” or “some” elements of the domain. Especially in the case of the real numbers, quantifiers are our solution to the question “how do we productively talk and reason about an infinite set, when we can only name finitely many of its elements?”
+Some of the ways that we define our semantics, in particular, may seem odd and complicated.  Many of the complexities of first-order semantics are due to the issues raised by the real numbers: The need to have a reasonably small collection of names, while trying to reason about a very large infinite set.  So keep this example in mind as you read the rest of this chapter.
 
 # “All” and “Some”
 
 Consider a sentence like “every dog deserves pets”.
 
-![image.png](Chapter%205%20First-order%20Logic/image.png)
+![[Pasted image 20261004205111.png]]
 
 If we were to express this in predicate syntax, first we would need a name for every dog. That would be a lot of names, like
 
@@ -55,9 +48,7 @@ $$
 d_1,d_2,d_3,...,d_{10^{9}}
 $$
 
-for each of about a billion doggies.
-
-Already this is uncomfortably large, to be listing every individual. But then we would need to say that each dog deserves pets. Ok, so we make a predicate “deserves pets”, let’s say it’s *D*.
+for each of about a billion doggies.  Then we need a predicate, like $D(x)$, to represent "*x* deserves pets".
 
 Then we need to form the very long conjunction
 
@@ -65,17 +56,19 @@ $$
 D(d_1)\land D(d_2)\land\cdots\land D(d_{10^9})
 $$
 
-But in English, the sentence is much simpler and shorter—we just use a phrase like “all”.
+But in English, the sentence is much simpler and shorter—we just use a phrase like “all”.  
 
-Of course there is a parallel idea for disjunction: Consider the sentence “Some chimpanzee deserves pets.”
+> "All doggies deserve pets."
 
-![image.png](Chapter%205%20First-order%20Logic/image%201.png)
+Much simpler!
 
-Yep, this chimp deserves pets!
+Of course there is a parallel idea for disjunction: Consider the sentence “Some chimpanzee deserves pets.”  This one might deserve pets:
 
-But maybe not the next one.
+![[Pasted image 20261004211041.png]]
 
-![image.png](Chapter%205%20First-order%20Logic/image%202.png)
+This one gives me "no pets" vibes.
+
+![[Pasted image 20261004211251.png]]
 
 To express “some chimps deserve pets” we’ll need to name every chimp,
 
@@ -95,13 +88,13 @@ The point being that “all” indicates a long conjunction of a predicate, over
 
 The above only considers a finite domain, like the set of all doggies or the set of all chimps.
 
-But in math we’ll often need to discuss an infinite domain, like in the sentence “Every number divisible by 4 is divisible by 2.” The natural domain for this statement is the set of integers, and so we are claiming “If 0 is divisible by 4 then 0 is divisible by 2, and if 1 is divisible by 4 then 1 is divisible by 2, and if -1 …”
+But in math we’ll often need to discuss an infinite domain, like in the sentence “Every number divisible by 4 is divisible by 2.” The natural domain for this statement is the set of integers, and so we are claiming 
 
-This is like an “infinitely long conjunction”. But an infinitely long sentence is not actually possible.
+> “If 0 is divisible by 4 then 0 is divisible by 2, and if 1 is divisible by 4 then 1 is divisible by 2, and if -1 …”
 
-Therefore we need a system of finite expressions, which is able to make claims about an infinite domain.
+This is like an “infinitely long conjunction”, although an *actual* infinitely long sentence is not possible.  Therefore we need a system of finite expressions, which is able to make claims about an infinite domain.
 
-And of course there is a parallel for disjunction. In the sentence “there is an integer larger than $\pi^{100}$” we are essentially saying “either 0 is larger than $\pi^{100}$, or 1 is larger than $\pi^{100}$, or -1 is larger than $\pi^{100}$, or …”
+Of course we could repeat much of this for disjunction. In the sentence “there is an integer larger than $\pi^{100}$” we are essentially saying “either 0 is larger than $\pi^{100}$, or 1 is larger than $\pi^{100}$, or -1 is larger than $\pi^{100}$, or …”
 
 ---
 
@@ -109,7 +102,7 @@ Whenever we want to make a claim about all objects within the domain, we call th
 
 Whenever we want to make a claim that there is some object within the domain, we call this “existential quantification”. This is indicated by words like “there is”, “there exists”, “some”, and so on.
 
-# Quantifiers over Properties
+# Quantifiers 
 
 We are now going to add quantifiers to our predicate logic. The result is called first-order logic, which we officially define later.
 
@@ -121,19 +114,35 @@ $$
 
 The upside-down ‘A’ is read as “for all”. So the literal reading of this expression is
 
-> For all *x*, *x* deserves pets.
+> For all *x* in the domain, *x* deserves pets.
 
-We assume that the “domain of discourse” here is the set of all dogs.
+This expresses that all dogs deserve pets, so long as the "domain of discourse" is the set of all dogs.  If the domain were all chimps, then $\forall x D(x)$ would express that all chimps deserve pets.
 
-To express “some chimp deserves pets” we write
+To express “some chimp deserves pets”, if the domain is all chimps then we would write 
 
 $$
 \exists xD(x)
 $$
 
-Note that here we are switching the domain of discourse, and now we assume that “$\exists x$” means “exists a chimp”.
+The backwards 'E' is read as "there exists".  So the literal reading of this expression is 
 
-How do we know what the domain of discourse is, at any moment? It is usually understood from context. If we are ever worried about a misunderstanding, we can always state the domain of discourse explicitly.
+> There exists an *x* in the domain, *x* deserves pets.
+
+Notice that the syntax uses a variable, like *x* above. However, we will still want to have constant symbols, as we did with predicate logic.  
+
+For example, suppose that the domain is all integers, *o* denotes the number 1, and the predicate $D(x,y)$ denotes the relation "*x* is divisible by *y*".  Then to express that every number is divisible by 1, we write 
+
+$$ \forall x D(x,o) $$
+
+This demonstrates that our logical language will need two kinds of object symbols, one for variables and one for constants.  
+
+Traditionally we will use the letters *a* through *t* for constants, and the letters *u* through *z* for variables.  Of course we also allow indices, so that $a_{101}$ and $t_0$ may be constants, and $u_{123}$ could be a variable. 
+
+> [!exercise] ***Exercise***
+> Establish a reasonable domain and symbols to express the proposition 
+> > There is some integer greater than $\pi$.
+
+
 
 > [!definition] ***Definition***
 >
@@ -141,7 +150,7 @@ How do we know what the domain of discourse is, at any moment? It is usually und
 >
 > We assume that we have sets of symbols for
 >
-> - Objects
+> - Objects, $\text{Objs}$,
 > - Functions
 > - Variables
 > - Properties
