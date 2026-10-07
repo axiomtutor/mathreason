@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2026-09-28 — Mathematical Reasoning and Discrete Math</title>
+<meta name="description" content="Mathematical Reasoning and Discrete Math" />
+<meta property="og:title" content="2026-09-28 — Mathematical Reasoning and Discrete Math" />
+<meta property="og:description" content="Mathematical Reasoning and Discrete Math" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="assets/katex.min.css" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button class="menu-toggle" aria-label="Toggle chapter list" aria-expanded="false">Chapters</button>
+  <a class="brand" href="index.html">Mathematical Reasoning and Discrete Math</a>
+</header>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="side-brand" href="index.html">Mathematical Reasoning and Discrete Math</a>
+    <p class="side-label">Contents</p>
+    <ul class="nav"><li><a class="nav-link" href="chapter0-basic-sets.html">Chapter 0: The Bare Necessities of Sets and Functions</a></li>
+<li><a class="nav-link" href="chapter1-basic-number-theory.html">Chapter 1: A Case Study in Number Theory</a></li>
+<li><a class="nav-link" href="chapter2-langs.html">Chapter 2: Syntax and Semantics of Languages</a></li>
+<li><a class="nav-link" href="chapter3-prop-log.html">Chapter 3: Propositional Logic</a></li>
+<li><a class="nav-link" href="chapter4-propositional-proof-theory.html">Chapter 4: Propositional Proof Theory</a></li>
+<li><a class="nav-link" href="chapter5-pred-syn-sem.html">Chapter 5: Predicate Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter6-folsyn-sem.html">Chapter 6: First-order Syntax and Semantics</a></li>
+<li><a class="nav-link" href="chapter7-app-fol.html">Chapter 7: Applications of First-order Logic</a></li></ul>
+  </aside>
+  <main class="content" id="main">
+    <article class="prose">
+      <h1>2026-09-28</h1>
+      
+      
+      
+    </article>
+  </main>
+</div>
+<script>
+  document.querySelector(".menu-toggle").addEventListener("click", function () {
+    var open = document.body.classList.toggle("nav-open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+
+  // ---- Remember which dropdowns were left open, per page ----------------
+  // Keys are derived from each dropdown's own heading/label text (not its
+  // position), so editing a chapter cannot make stale state apply to the
+  // wrong dropdown.
+  var STORE_KEY = "mr-details:" + location.pathname;
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch (e) {}
+  var seenKeys = {};
+  document.querySelectorAll("details").forEach(function (d) {
+    var s = d.querySelector(":scope > summary");
+    var label = (s ? s.textContent : "").replace(/s+/g, " ").trim().slice(0, 80) || "d";
+    seenKeys[label] = (seenKeys[label] || 0) + 1;
+    var key = label + "#" + seenKeys[label];
+    d.dataset.dkey = key;
+    if (Object.prototype.hasOwnProperty.call(saved, key)) d.open = !!saved[key];
+    d.addEventListener("toggle", function () {
+      saved[key] = d.open;
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+
+
+  // Sections load collapsed; open (and scroll to) the one holding a hash target.
+  function revealHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var p = el.closest("details");
+    while (p) {
+      p.open = true;
+      p = p.parentElement && p.parentElement.closest("details");
+    }
+    el.scrollIntoView();
+  }
+  window.addEventListener("hashchange", revealHash);
+  revealHash();
+</script>
+
+</body>
+</html>
