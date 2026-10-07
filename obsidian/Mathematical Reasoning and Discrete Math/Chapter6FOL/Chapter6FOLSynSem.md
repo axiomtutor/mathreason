@@ -240,7 +240,54 @@ We have already discused the concept of "arity" with regard to predicates, and t
 
 # Terms
 
-"Terms" are a generalization of functions.  
+"Terms" are a generalization of functions.  Consider for example the functions $f(x)=2\sqrt{x}$ and $g(x)=x+3$.  The fundamental way that we form new functions from already existing functions, is by "composition".  You may be familiar with composition from earlier math courses.  For example, you may already know that that the composition of $f$ with $g$ is written $f\circ g$, and its definition is given by 
+
+$$ (f\circ g)(x) = f(g(x)) $$
+
+In this particular example, this means 
+
+$$\begin{aligned}
+ (f\circ g)(x) &= f(g(x)) \\
+ & = f(x+3) \\
+ & = 2\sqrt{x+3}
+\end{aligned}$$
+
+This means that if we wanted to evaluate the function $f\circ g$ at input $x=2$ then we may calculate 
+
+$$ \begin{aligned}
+ (f\circ g)(2) &= 2\sqrt{2+3}\\
+ &= 2\sqrt 5
+\end{aligned}$$
+
+It may be gratifying to know that function composition is, in fact, *substitution*!  You already learned about substitution for the purposes of an inference rule in an earlier chapter.  Well, happily, your understanding of substitution will now start paying dividends.  
+
+Using notation like we previously have for substitution, $f(g(x))$ means the same thing as $[f(x)]_{x:=g(x)}$.  That is to say, the composition $f(g(x))$ means 
+
+> Take $f(x)$ and replace every instance of *x* with $g(x)$.  
+
+Therefore 
+$$\begin{aligned}
+ f(g(x)) &= [f(x)]_{x:= g(x)} \\
+ &= [2\sqrt x]_{x:=x+3} \\
+ &= 2\sqrt{x+3}
+\end{aligned}$$
+
+Let's see another and more complex example.  For instance, let $h(x)=x^2+2x-1$ and $i(x)=2^x-\frac 1 x$.  We will find an equivalent expression for $h\circ i$.  Again, the idea is that every instance of *x* in *h* is replaced by *i*.
+
+$$\begin{aligned}
+ (h\circ i)(x) = [h(x)]_{x:= i(x)} \\
+ &= [x^2+2x-1]_{x:= 2^x - \frac 1 x} \\
+ &= \left(2^x-\frac 1 x\right)^2 + 2\left(2^x-\frac 1 x\right) - 1
+\end{aligned}$$
+
+We will not bother with so-called "simplifcation", and leave this as our representation of $(h\circ i)(x)$.  
+
+> [!exercise] ***Exercise***
+> Using *h* and *i* as above, find the formula for the composition $i\circ h$.
+>
+> Using *f* and *g* above, find $g\circ f$.
+
+
 
 # First-order Syntax
 
