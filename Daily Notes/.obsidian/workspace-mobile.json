@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "523c32a899b1f877",
+    "id": "5763dd55d1066a6e",
     "type": "split",
     "children": [
       {
-        "id": "e38b1d94d14f9d5d",
+        "id": "87fd7f93123f9e7d",
         "type": "tabs",
         "children": [
           {
-            "id": "e28a9a0108c82034",
+            "id": "54a7e429f26241b6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
+                "file": "2026-09-28.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter6FOLSynSem"
+              "title": "2026-09-28"
             }
           }
         ]
@@ -27,11 +27,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6d10f8dcce986fb1",
+    "id": "705bf4ca7d516f94",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "b598147ca835d4c7",
+        "id": "12ea8f1f19161937",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -46,7 +46,7 @@
         }
       },
       {
-        "id": "1df96164c10a1e49",
+        "id": "5a58380daaaf9523",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -63,7 +63,7 @@
         }
       },
       {
-        "id": "0f2badc173af0772",
+        "id": "8a74c457974ec82a",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -78,7 +78,7 @@
         }
       },
       {
-        "id": "0b4c2b7564778481",
+        "id": "978d5129272d22d7",
         "type": "leaf",
         "state": {
           "type": "all-properties",
@@ -92,7 +92,7 @@
         }
       },
       {
-        "id": "362d704b8cffe596",
+        "id": "19c55136a9f54e53",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -108,16 +108,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "671522d850468e52",
+    "id": "ff3db0e264344c92",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "5e6d84d7d6c7d852",
+        "id": "93090f36559cff49",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
+            "file": "2026-09-28.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -131,12 +131,12 @@
         }
       },
       {
-        "id": "60c93382fd88129f",
+        "id": "d916b182c99f4a0a",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
+            "file": "2026-09-28.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -145,12 +145,12 @@
         }
       },
       {
-        "id": "0422b8b28ebe4874",
+        "id": "6fbadbda53149916",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
+            "file": "2026-09-28.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -164,24 +164,17 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "publish:Publish changes...": false,
       "bases:Create new base": false
     }
   },
-  "active": "e28a9a0108c82034",
+  "active": "54a7e429f26241b6",
   "lastOpenFiles": [
-    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/Chapter5PredSynSem.md",
-    "Mathematical Reasoning and Discrete Math/Chapter5PredLog/lessthanrel.png",
-    "Mathematical Reasoning and Discrete Math/Chapter4PropProof/Chapter4_PropositionalProofTheory.md",
-    "Mathematical Reasoning and Discrete Math.md",
-    "Mathematical Reasoning and Discrete Math/Chapter6FOL/Chapter6FOLSynSem.md",
-    "2026-09-28.md",
-    "New file.md",
-    "2026-09-27.md"
+    "2026-09-28.md"
   ]
 }
