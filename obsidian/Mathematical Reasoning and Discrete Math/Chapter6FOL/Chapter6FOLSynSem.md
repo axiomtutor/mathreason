@@ -217,25 +217,9 @@ Now consider the different meanings of each of the following propositions.
 - ${\tt \exists} {\tt x}{\tt \exists} {\tt y} {\tt L}({\tt x},{\tt y})$
   "Somebody loves somebody", a statement that love is not dead.
 
-Note a few important facts here.  
+I hope that the above gives you an intuition for what the quantifiers mean and how their order can impact the meaning of an expression.
 
-First, the order of quantifiers can matter.  We see above that $\tt \forall x\exists y L(x,y)$ does not mean the same thing as $\tt \exists y\forall  x L(x,y)$.
-
-This should make good sense based on previous lessons:  A "for all" expression is like a conjunction.  An "exists" expression is like a disjunction.  And we already know that 
-
-$$ (P \lor Q)\land (R\lor S) $$
-
-is not equivalent to 
-
-$$ (P\land Q)\lor (R\land S) $$
-
-On the other hand, the order of the quantifiers *does not matter* when the quantifiers are the same.  That is to say, $\tt \forall x\forall y L(x,y)$ is equivalent to $\tt \forall y\forall x L(x,y)$, and $\tt \exists x\exists y L(x,y)$ is equivalent to $\tt \exists y\exists x L(x,y)$.  
-
-Again this can be made intuitive by thinking about the similarities with conjunction and disjunction.  The proposition 
-
-$$ (P\land Q)\land (R\land S) $$
-
-is equivalent to 
+But now let's take an example which is more computational.  Suppose that our domain contains just three people, {Axel, Benicio, 
 
 
 
