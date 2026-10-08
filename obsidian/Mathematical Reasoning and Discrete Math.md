@@ -5,7 +5,7 @@ author: Adam Frank
 > [!note]- TODOs
 > I still need to 
 > * Finish remaining chapters until completing the discussion of number theory.
-> * Add videos.
+> * Add videos and other visualizations.
 > * Clean the bottom of the main page.
 > * Give every chapter a consolidated set of definitions and theorems at the top.  Also give every page a set of extra exercises.  
 > * Write theorems with "premises" and "conclusion" indicators.
