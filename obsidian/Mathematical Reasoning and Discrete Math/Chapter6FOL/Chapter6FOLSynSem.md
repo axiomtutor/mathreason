@@ -209,29 +209,35 @@ Consider the domain of all humans on the planet, and the relation ${\tt L}({\tt 
 Now consider the different meanings of each of the following propositions.
 
 - ${\tt \forall} {\tt x}{\tt \forall} {\tt y} {\tt L}({\tt x},{\tt y})$
+  "Everybody loves everybody" like a utopia.
 - ${\tt \forall} {\tt x}{\tt \exists} {\tt y} {\tt L}({\tt x},{\tt y})$
+  "Everybody loves somebody" like the [Dean Martin](https://youtu.be/z-2_OstpR5c?si=clF5yupNWFhjfujf) song.
 - ${\tt \exists} {\tt x}{\tt \forall} {\tt y} {\tt L}({\tt x},{\tt y})$
+  "Somebody loves everybody" like a Jesus figure.
 - ${\tt \exists} {\tt x}{\tt \exists} {\tt y} {\tt L}({\tt x},{\tt y})$
+  "Somebody loves somebody", a statement that love is not dead.
 
-The first one says “everyone loves everyone”. This would perhaps be true in some futuristic utopia.
+Note a few important facts here.  
 
-TODO
+First, the order of quantifiers can matter.  We see above that $\tt \forall x\exists y L(x,y)$ does not mean the same thing as $\tt \exists y\forall  x L(x,y)$.
 
-The second says that “everyone loves someone”. That’s the content of an old-timey pop song.
+This should make good sense based on previous lessons:  A "for all" expression is like a conjunction.  An "exists" expression is like a disjunction.  And we already know that 
 
-[Dean Martin](https://youtu.be/z-2_OstpR5c?si=clF5yupNWFhjfujf)
+$$ (P \lor Q)\land (R\lor S) $$
 
-The third one says that “someone loves everyone”, which seems to describe a kind of Jesus figure.
+is not equivalent to 
 
-TODO
+$$ (P\land Q)\lor (R\land S) $$
 
-And finally the last one says that “someone loves someone”, which seems almost like a truism.
+On the other hand, the order of the quantifiers *does not matter* when the quantifiers are the same.  That is to say, $\tt \forall x\forall y L(x,y)$ is equivalent to $\tt \forall y\forall x L(x,y)$, and $\tt \exists x\exists y L(x,y)$ is equivalent to $\tt \exists y\exists x L(x,y)$.  
 
-TODO
+Again this can be made intuitive by thinking about the similarities with conjunction and disjunction.  The proposition 
 
-Let’s see an example. Suppose that we have the following road network between cities.
+$$ (P\land Q)\land (R\land S) $$
 
-TODO
+is equivalent to 
+
+
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
