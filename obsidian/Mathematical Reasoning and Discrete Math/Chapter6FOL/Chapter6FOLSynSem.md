@@ -236,11 +236,13 @@ Similarly none of these sets are allowed to contain parentheses, since that woul
 
 Finally let's notice that not all functions have just one input.  Consider the function $h(x,y)=2x + \pi y$.  
 
-We have already discused the concept of "arity" with regard to predicates, and the same idea applies to functions.  The function above has arity 2.  If it is represented by the symbol **
+We have already discused the concept of "arity" with regard to predicates, and the same idea applies to functions.  The function above has arity 2.  If it is represented by the symbol $\tt h$, then we also say that $\tt h$ has arity 2.
 
-# Terms
+# Function Composition
 
-"Terms" are a generalization of functions.  Consider for example the functions $f(x)=2\sqrt{x}$ and $g(x)=x+3$.  The fundamental way that we form new functions from already existing functions, is by "composition".  You may be familiar with composition from earlier math courses.  For example, you may already know that that the composition of $f$ with $g$ is written $f\circ g$, and its definition is given by 
+Just as propositions can be "put together" using the connectives, also functions can be "put together".  The fundamental way that we put functions together is by "composition".
+
+Consider for example the functions $f(x)=2\sqrt{x}$ and $g(x)=x+3$.  You may be familiar with composition from earlier math courses.  For example, you may already know that that the composition of $f$ with $g$ is written $f\circ g$, and its definition is given by 
 
 $$ (f\circ g)(x) = f(g(x)) $$
 
@@ -269,15 +271,17 @@ Therefore
 $$\begin{aligned}
  f(g(x)) &= [f(x)]_{x:= g(x)} \\
  &= [2\sqrt x]_{x:=x+3} \\
- &= 2\sqrt{x+3}
+ &= 2\sqrt{\colorbox{yellow}{$x+3$}}
 \end{aligned}$$
+
+I have highlighted where *x* has been substituted for $x+3$ above.
 
 Let's see another and more complex example.  For instance, let $h(x)=x^2+2x-1$ and $i(x)=2^x-\frac 1 x$.  We will find an equivalent expression for $h\circ i$.  Again, the idea is that every instance of *x* in *h* is replaced by *i*.
 
 $$\begin{aligned}
- (h\circ i)(x) = [h(x)]_{x:= i(x)} \\
+ (h\circ i)(x) &= [h(x)]_{x:= i(x)} \\
  &= [x^2+2x-1]_{x:= 2^x - \frac 1 x} \\
- &= \left(2^x-\frac 1 x\right)^2 + 2\left(2^x-\frac 1 x\right) - 1
+ &= \colorbox{yellow}{$\left(2^x-\frac 1 x \right)$} ^2 + 2 \colorbox{yellow}{$\left(2^x-\frac 1 x\right)$} - 1
 \end{aligned}$$
 
 We will not bother with so-called "simplifcation", and leave this as our representation of $(h\circ i)(x)$.  
@@ -287,8 +291,51 @@ We will not bother with so-called "simplifcation", and leave this as our represe
 >
 > Using *f* and *g* above, find $g\circ f$.
 
+# Terms 
 
+"Terms" are a generalization of objects.  We have already established that constants are objects.  Also variables are objects.  Although variables do not name a particular element in the domain, they do refer to various elements in the domain.  
 
+Anything that refers to an object, we call a term.  So constants and variables are all instances of terms.
+
+But also, functions refer to elements in the domain. For example, suppose we use the domain of natural numbers, and the function $f(x,y) = x+y$.  Then $f(2,1) = 2+1$ refers to the element 3.
+
+If $\tt f$ is a function symbol of arity *n*, and $\tt x_1,x_2,...,x_n$ are *n* object symbols, then 
+
+$$ \tt f(x_1,x_2,...,x_n)$$
+
+is a term.  
+
+Moreover, if $\tt g$ and $\tt h$ are function symbols with arity 1, and $\tt x$ an object symbol (either constant or variable), then $\tt f(g(x))$ is also a term.  
+
+> [!definition] ***Definition***
+> Suppose that we have sets of symbols, $\text{Consts}, \text{Vars, Funcs}$, which respectively denote the sets of constant symbols, variable symbols, and function symbols.  We assume that none of these overlap, and none of them contains parentheses, logical connectives, or commas.  
+> 
+> Any ${\tt a}\in \text{Consts}\cup\text{Vars}$ is called an **object symbol** and is a **term**.
+> 
+> Let ${\tt f}\in\text{Funcs}$ and assume $\text{Arity}(\mathtt f) = n$.  Let ${\tt t_1,t_2,...,t_n}$ be a collection of terms.  
+> 
+> Then $\tt f(t_1,t_2,...,t_n)$ is a **term**. 
+
+Suppose that we have
+* $\text{Consts} = \{{\tt a,b,c}\}$,
+* $\text{Vars}=\{{\tt x,y,z}\}$,
+* $\text{Funcs} = \{{\tt f,g,h}\}$.
+* $\text{Arity}(\mathtt f)=1, \text{Arity}(\mathtt g) = 2,\text{Arity}(\mathtt h) = 3$
+Then $\tt a$ is a term, because it is an object symbol.
+
+Likewise $\tt x$ is a term.
+
+$\tt f$ is not a term.  However, since its arity is 1, and since $\tt a$ is a term, then 
+$$\tt f(a) $$
+
+is a term.  
+
+$\tt g(a)$ is not a term, because the arity of $\tt g$ is 2.  But 
+$$\tt g(x,b) $$
+
+is a term.  
+
+> [!exercise]
 # First-order Syntax
 
 > [!definition] ***Definition***
@@ -297,7 +344,7 @@ We will not bother with so-called "simplifcation", and leave this as our represe
 >
 > We assume that we have sets of symbols for
 >
-> - Objects, $\text{Consts}$,
+> - Constants, $\text{Consts}$,
 > - Variables, $\text{Vars}$,
 > - Functions, $\text{Funcs}$,
 > - Predicates, $\text{Preds}$
