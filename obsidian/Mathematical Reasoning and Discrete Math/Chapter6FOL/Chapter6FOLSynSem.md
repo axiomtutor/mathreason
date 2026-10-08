@@ -308,7 +308,10 @@ is a term.
 Moreover, if $\tt g$ and $\tt h$ are function symbols with arity 1, and $\tt x$ an object symbol (either constant or variable), then $\tt f(g(x))$ is also a term.  
 
 > [!definition] ***Definition***
-> Suppose that we have sets of symbols, $\text{Consts}, \text{Vars, Funcs}$, which respectively denote the sets of constant symbols, variable symbols, and function symbols.  We assume that none of these overlap, and none of them contains parentheses, logical connectives, or commas.  
+> 
+> *Syntax*
+> 
+> Suppose that we have sets of symbols, $\text{Consts}, \text{Vars, Funcs}$, which respectively denote the sets of constant symbols, variable symbols, and function symbols.  We assume that none of these overlap, and none of them contains parentheses, logical connectives, or commas.  Let $\text{Arity}$ be an arity function.
 > 
 > Any ${\tt a}\in \text{Consts}\cup\text{Vars}$ is called an **object symbol** and is a **term**.
 > 
@@ -321,6 +324,7 @@ Suppose that we have
 * $\text{Vars}=\{{\tt x,y,z}\}$,
 * $\text{Funcs} = \{{\tt f,g,h}\}$.
 * $\text{Arity}(\mathtt f)=1, \text{Arity}(\mathtt g) = 2,\text{Arity}(\mathtt h) = 3$
+
 Then $\tt a$ is a term, because it is an object symbol.
 
 Likewise $\tt x$ is a term.
@@ -331,11 +335,17 @@ $$\tt f(a) $$
 is a term.  
 
 $\tt g(a)$ is not a term, because the arity of $\tt g$ is 2.  But 
-$$\tt g(x,b) $$
+$$\tt g(b,f(x)) $$
 
 is a term.  
 
-> [!exercise]
+> [!exercise]  ***Exercise***
+> Decide which of the following are terms and which are not.
+> 
+> 1. $\tt ax$
+> 2. $\tt fa$
+> 3. $\tt g(f(x), g(a,b))$
+> 4. $\tt h(h,h,h)$
 # First-order Syntax
 
 > [!definition] ***Definition***
@@ -351,8 +361,6 @@ is a term.
 >
 > None of these sets overlap, and none of them contain parentheses, logical connectives, or commas.
 >
-> **Terms** are defined as before, except that now both objects and variables are terms.
->
 > Let ${\tt P}$ be a property symbol, and ${\tt x}$ a variable symbol.
 >
 > The expression ${\tt \forall} {\tt x} {\tt P}({\tt x})$ is called the **universal quantification of ${\tt P}$ over ${\tt x}$**.
@@ -361,9 +369,8 @@ is a term.
 >
 > Any proposition that is formed as a predicate formula, or a predicate formula with universal or existential quantification over all of its variables, is called a **first-order formula** (or just **formula** for short). #TODO
 
-- Note, this only defines a narrowly restricted case.
-    
-    The above definition does not define quantification over general predicates. It only defines quantification over properties.
+ > [!note]- Note, this only defines a narrowly restricted case.
+ > The above definition does not define quantification over general predicates. It only defines quantification over properties.
 
 All of these are examples of first-order propositions.
 
@@ -890,7 +897,7 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 >
 > Let $\text{Un}=\{{\tt \neg}\}$, $\text{Bins} = \{{\tt \land},{\tt \lor},{\tt \to},{\tt \leftrightarrow}\}$, and $\text{Quants} = \{{\tt \forall}, {\tt \exists}\}$. These, respectively, are the sets of **unary connectives**, **binary** **connectives**, and **quantifier symbols**.
 >
-> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{{\tt (},{\tt )},{\tt \boldsymbol} ,\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
+> Let $\text{Objs}, \text{Vars}, \text{Funcs}$, and $\text{Preds}$ be three nonempty sets such that each of the following sets are disjoint: $\text{Objs},\text{Vars},\text{Funcs},\text{Preds},\text{Un},\text{Bins},\text{Quants}$, and $\{{\tt (},{\tt )},{\tt \boldsymbol ,}\}$. The first four of these are, respectively, the set of **object symbols**, **variable symbols**, **function symbols**, **predicate symbols**.
 >
 > The set
 >
@@ -898,11 +905,11 @@ As you can see below, the rigorous definition of the syntax and semantics for fi
 > \begin{aligned}
 > \Sigma=&\text{Objs}\cup\text{Vars}\\
 > &\cup\text{Funcs}\cup\text{Preds}\\&\cup\text{Un}\cup\text{Bins}\\
-> &\cup\text{Quants}\cup\{{\tt (},{\tt )},{\tt \boldsymbol},\}
+> &\cup\text{Quants}\cup\{{\tt (},{\tt )},{\tt \boldsymbol,}\}
 > \end{aligned}
 > $$
 >
-> is the **alphabet of a first-order language**.
+> is an **alphabet of a first-order language**.
 >
 > Let $\text{Arity}: \text{Funcs}\cup \text{Preds}\to \{0,1,2,...\}$ be a function, called **the arity function**.
 >
