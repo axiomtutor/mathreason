@@ -219,9 +219,23 @@ Now consider the different meanings of each of the following propositions.
 
 I hope that the above gives you an intuition for what the quantifiers mean and how their order can impact the meaning of an expression.
 
-But now let's take an example which is more computational.  Suppose that our domain contains just three people, {Axel, Benicio, 
+But now let's take an example which is more computational.  Suppose that our domain contains just three people, {Axel, Benicio, Cici, Dakota}.  Moreover suppose that Axel loves Axel, Benicio, Cici, and Dakota.  Benicio loves Cici and Dakota.  Nobody else loves anyone else.
 
+Then which of the expressions, $\tt \forall x\forall y L(x,y), \forall x\exists y L(x,y), \exists x\forall y L(x,y), \exists x\exists y L(x,y)$ are true?
 
+Here is how we check $\tt \forall x\forall y L(x,y)$: First, run through every choice of assignment to the variable $\tt x$. 
+* If $\tt x = Axel$: Now run through every choice of assignment to $\tt y$.
+	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we must decide if Axel loves Axel.  Because he does, then this is a true proposition.
+	* If $\tt y = Benicio$: Because Axel loves Benicio then $\tt L(x,y)$ is true.
+	* If $\tt y = Cici$: Axel loves Cici so $\tt L(x,y)$ is true.
+	* If $\tt y = Dakota$: Axel loves Dakota so $\tt L(x,y)$ is true.
+  Because $\tt L(x,y)$ is true for every choice of $\tt y$, therefore $\tt \forall y L(x,y)$ is true in the case where $\tt x=Axel$.  
+* If $\tt x = Benicio$: Now run through every choice of assignment to $\tt y$.
+	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we decide if Benicio loves Axel.  Because he does not, therefore $\tt L(x,y)$ is false.
+  Now normally we should continue iterating through the remaining choices of assignment to $\tt y$.  But in fact, we can already stop.  
+  We are trying to decide the truth of $\tt \forall y L(x,y)$ in the case where $\tt x = Benicio$.  It is true when $\tt L(x,y)$ is true for every single assignment to $\tt y$, but we just found a case ($\tt y = Axel$) in which $\tt L(x,y)$ is false.  Therefore, regardless of what we find for the remaining cases, we already know that $\tt \forall y L(x,y)$ is false.
+
+In principle we should continue iterating through the rem
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
