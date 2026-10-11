@@ -361,12 +361,12 @@ const decorateFalseValueCells = (tokens) => {
           .filter((child) => ["text", "code_inline", "math_inline"].includes(child.type))
           .map((child) => child.content)
           .join("")
-          .replace(/\\s+/g, " ")
+          .replace(/\s+/g, " ")
           .trim();
         break;
       }
 
-      if (/^(?:false|फ|\\text\\{\\s*false\\s*\\})$/i.test(value)) {
+      if (/^(?:false|फ|\\text\{\s*false\s*\})$/i.test(value)) {
         tokens[j].attrJoin("class", "false-value");
       }
     }
