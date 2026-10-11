@@ -234,10 +234,28 @@ Here is how we check $\tt \forall x\forall y L(x,y)$: First, run through every c
   Because $\tt L(x,y)$ is true for every choice of $\tt y$, therefore $\tt \forall y L(x,y)$ is true in the case where $\tt x=Axel$.  
 * If $\tt x = Benicio$: Now run through every choice of assignment to $\tt y$.
 	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we decide if Benicio loves Axel.  Because he does not, therefore $\tt L(x,y)$ is false.
+
   Because $\tt L(x,y)$ is false for some choice of $\tt y$ then $\tt \forall y L(x,y)$ is false.
+
 Because $\tt\forall y L(x,y)$ is false for some $\tt x$, then $\tt\forall x\forall y L(x,y)$ is false.
 
+## $\tt \exists x\forall y L(x,y)$
 
+Next let's assess the truth of $\tt \exists x\forall y L(x,y)$. We iterate through all assignments to $\tt x$.
+
+I won't continue to iterate through all bullet points, since we've seen the process a couple times by now. But you should feel invited to do the explicit iteration on your own paper. 
+
+In summary, you should find that when $\tt x=Axel$ then when $y=Axel$, and then when $\tt y=Benicio$, and $\tt Cici$, and $\tt Dakota$, we have $\tt L(x,y)$ is true. 
+
+Therefore when $\tt x =Axel$ the proposition $\tt \forall L(x,y)$ is true. 
+
+Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\tt \exists x\forall yL(x,y)$ is true. 
+
+> [!exercise] Exercise
+> Complete the last evaluation by showing that $\tt\exists x\exists y L(x,y)$ is true. 
+
+> [!exercise] Exercise
+> Let TODO be any domain of two elements, $TODO = \{a,b\}$. 
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
