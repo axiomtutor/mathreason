@@ -235,9 +235,30 @@ Here is how we check $\tt \forall x\forall y L(x,y)$: First, run through every c
 * If $\tt x = Benicio$: Now run through every choice of assignment to $\tt y$.
 	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we decide if Benicio loves Axel.  Because he does not, therefore $\tt L(x,y)$ is false.
   Because $\tt L(x,y)$ is false for some choice of $\tt y$ then $\tt \forall y L(x,y)$ is false.
+
 Because $\tt\forall y L(x,y)$ is false for some $\tt x$, then $\tt\forall x\forall y L(x,y)$ is false.
 
+## $\tt \forall x \exists y L(x,y)$
 
+Now we check $\tt\forall x\exists y L(x,y)$.  Just as before, we iterate through every assignment of $\tt x$.
+* If $\tt x=Axel$: We now run through every choice of $\tt y$.
+	* If $\tt y = Axel$: We've seen that in this case $\tt L(x,y)$ is true.  
+	But already we can conclude that $\tt \exists y L(x,y)$ is true when $\tt x=Axel$.
+* If $\tt x = Benicio$: Run through every choice of assignment to $\tt y$.
+	* If $\tt y=Axel$: Here $\tt L(x,y)$ is false.
+	* If $\tt y = Benicio$: Here $\tt L(x,y)$ is false.
+	* If $\tt y = Cici$: Here $\tt L(x,y)$ is true.
+	We can conclude that $\tt \exists y L(x,y)$ is true when $\tt x = Benicio$.
+* If $\tt x = Cici$: Run through every choice of assignment to $\tt y$.
+	* If $\tt y = Axel$: Here $\tt L(x,y)$ is false.
+	* If $\tt y = Benicio$: Here $\tt L(x,y)$ is false.
+	* If $\tt y = Cici$: Here $\tt L(x,y)$ is false.
+	* If $\tt y = Dakota$: Here $\tt L(x,y)$ is false.
+	Since $\tt L(x,y)$ is false for every choice of $\tt y$, then $\tt \exists y L(x,y)$ is false when $\tt x = Cici$.
+
+Because $\tt \exists y L(x,y)$ is false for some $\tt x$, then $\tt \forall x\exists y L(x,y)$ is false.
+
+## $\tt \exists x\forall y L(x,y)$
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
