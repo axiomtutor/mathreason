@@ -255,7 +255,12 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 > Complete the last evaluation by showing that $\tt\exists x\exists y L(x,y)$ is true. 
 
 > [!exercise] Exercise
-> Let TODO be any domain of two elements, $TODO = \{a,b\}$. 
+> Using the same $\tt L$ as above, with the same meaning, decide the truth of the propositions $\tt \neg \forall x\forall y L(x,y)$ and $\tt $\forall x\forall y \neg L(x,y)$, and $\tt \exists x \exists y \neg L(x,y)$.
+
+> [!exercise] Exercise
+> Consider a domain $TODO =\{a,b\}$ if just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property such that $\tt P
+
+# Row and Column Quantifier Evaluation
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
