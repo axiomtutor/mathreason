@@ -341,10 +341,43 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use
   errorColor: "#b3261e",
 });
 
+// Automatically style truth-table cells whose entire value is false. Accept both
+// the English word and the Devanagari truth-value symbol used in these notes.
+const decorateFalseValueCells = (tokens) => {
+  for (let i = 0; i < tokens.length; i++) {
+    if (tokens[i].type !== "table_open") continue;
+
+    const tableEnd = tokens.slice(i + 1).findIndex((t) => t.type === "table_close");
+    if (tableEnd < 0) continue;
+    const end = i + 1 + tableEnd;
+
+    for (let j = i + 1; j < end; j++) {
+      if (tokens[j].type !== "td_open") continue;
+
+      let value = "";
+      for (let k = j + 1; k < end && tokens[k].type !== "td_close"; k++) {
+        if (tokens[k].type !== "inline") continue;
+        value = (tokens[k].children ?? [])
+          .filter((child) => ["text", "code_inline", "math_inline"].includes(child.type))
+          .map((child) => child.content)
+          .join("")
+          .replace(/\\s+/g, " ")
+          .trim();
+        break;
+      }
+
+      if (/^(?:false|फ|\\text\\{\\s*false\\s*\\})$/i.test(value)) {
+        tokens[j].attrJoin("class", "false-value");
+      }
+    }
+  }
+};
+
 const renderPage = (page) => {
   const env = {};
   const tokens = md.parse(fixMath(page.raw), env);
   decorateProofTables(tokens);
+  decorateFalseValueCells(tokens);
   const withProofSubproofs = wrapProofSubproofs(tokens);
   const headings = [];
   const seenIds = new Set();
