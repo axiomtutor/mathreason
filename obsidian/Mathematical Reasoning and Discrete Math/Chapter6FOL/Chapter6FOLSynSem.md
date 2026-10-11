@@ -258,9 +258,15 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 > Using the same $\tt L$ as above, with the same meaning, decide the truth of the propositions $\tt \neg \forall x\forall y L(x,y)$ and $\tt $\forall x\forall y \neg L(x,y)$, and $\tt \exists x \exists y \neg L(x,y)$.
 
 > [!exercise] Exercise
-> Consider a domain $TODO =\{a,b\}$ if just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property such that $\tt P
+> Consider a domain $TODO =\{a,b\}$ if just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property.
+>
+> Explain why $\tt \forall x P(x)$ is equivalent to $\tt P(c) \land P(d)$, regardless of the meaning of $\tt P$. Also explain why $\tt \exists x P(x)$ is equivalent to $P(c)\lor P(d)$.
+>
+> Now let $\tt Q$ be another property. Then explain why $\tt \forall x \forall y (P(x) \lor Q(y))$ is equivalent to $\tt (\forall y (P(c)\lor Q(y)) \land (\forall y (P(c) \lor Q(y))$, which is also equivalent to $\tt ( (P(c)\lor P(c)) \land (P(c)\lor P(d))) \land ((P(d)\lor P(c)) \land (P(d)\lor P(d))$.
 
 # Row and Column Quantifier Evaluation
+
+
 
 Let’s use ${\tt L}({\tt x},{\tt y})$ to mean “${\tt x}$ is linked to ${\tt y}$ by a road”. So for example ${\tt L}({\tt a},{\tt b})$ is true while ${\tt L}({\tt a},{\tt d})$ is not.
 
