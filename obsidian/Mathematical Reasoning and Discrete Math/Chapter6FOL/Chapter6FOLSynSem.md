@@ -255,28 +255,49 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 > Complete the last evaluation by showing that $\tt\exists x\exists y L(x,y)$ is true. 
 
 > [!exercise] Exercise
-> Using the same $\tt L$ as above, with the same meaning, decide the truth of the propositions $\tt \neg \forall x\forall y L(x,y)$ and $\tt $\forall x\forall y \neg L(x,y)$, and $\tt \exists x \exists y \neg L(x,y)$.
+> Using the same $\tt L$ as above, with the same meaning, decide the truth of the propositions $\tt \neg \forall x\forall y L(x,y)$ and $\tt \forall x\forall y \neg L(x,y)$, and $\tt \exists x \exists y \neg L(x,y)$.
 
 > [!exercise] Exercise
-> Consider a domain $TODO =\{a,b\}$ if just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property.
+> Consider a domain $उ =\{a,b\}$ of just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property.
 >
 > 1. Explain why $\tt \forall x P(x)$ is equivalent to $\tt P(c) \land P(d)$, regardless of the meaning of $\tt P$. Also explain why $\tt \exists x P(x)$ is equivalent to $P(c)\lor P(d)$.
 >
 > 2. Now let $\tt Q$ be another property. Then explain why $\tt \forall x \forall y (P(x) \lor Q(y))$ is equivalent to $\tt (\forall y (P(c)\lor Q(y)) \land (\forall y (P(c) \lor Q(y))$, which is also equivalent to $\tt ( (P(c)\lor P(c)) \land (P(c)\lor P(d))) \land ((P(d)\lor P(c)) \land (P(d)\lor P(d))$.
 >
-> 3. We could regard the equivalences above as a kind of "expansion" of the propositions. Find the expansion of $\tt \exists x \forall y (P(x)\to Q(y))$, and \tt \forall x\forall y \forall z ((P(x)\lor Q(y))\to \neg P(z))$.
+> 3. We could regard the equivalences above as a kind of "expansion" of the propositions. Find the expansion of $\tt \exists x \forall y (P(x)\to Q(y))$, and $\tt \forall x\forall y \forall z ((P(x)\lor Q(y))\to \neg P(z))$.
 > 
 > 4. What changes if the number of domain elements increases to 3, and we have 3 constant symbols that refer to each domain element?
 > 
 > 5. Explain why $\tt\forall xP(x)$ always implies $\tt\exists x P(x)$.
 
-# Row and Column Quantifier Evaluation
+# Quantifiers and Tables
 
-There is a nice way to display these evaluations in a tabular form. Consider the domain... TODO
+There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$, and let the constant symbols $\tt e, f, g, h$ denote each domain element respectively.  
+
+Further suppose that $\tt P$ and $\tt Q$ are properties and the following table summarizes their truth-values.
+
+| $\tt x$    | $\tt e$ | $\tt f$ | $\tt g$ | $\tt h$ |
+| ---------- | ------- | ------- | ------- | ------- |
+| $\tt P(x)$ | ट       | ट       | ट       | ट       |
+| $\tt Q(x)$ | ट       | फ       | फ       | फ       |
+This tells us that, for instance, $\tt P(e)$ is true, and $\tt Q(f)$ is false.
+
+Moreover, suppose that $\tt R$ is a binary relation, and the following table summarizes its truth values.
+
+| $\tt R(x,y)$ | $\tt e$ | $\tt f$ | $\tt g$ | $\tt h$ |
+| ------------ | ------- | ------- | ------- | ------- |
+| $\tt e$      | फ       | ट       | फ       | ट       |
+| $\tt f$      | ट       | फ       | ट       | फ       |
+| $\tt g$      | फ       | फ       | फ       | ट       |
+| $\tt h$      | फ       | फ       | फ       | फ       |
+This tells us that, for example, $\tt R(g,e)$ is false.  We find this by looking at row $\tt g$ and column $\tt e$.
+
+For another example, $\tt R(f,g)$ is true, which we see on row $\tt f$ and column $\tt g$.
 
 Now let's evaluate the proposition $\tt \exists x P(x)$. The following table summarizes the truth values for all assignments to $\tt x$.
 
-TODO
+
+
 
 Because *some* assignment is true (some coordinate of the table), then the "exists" proposition is true. 
 

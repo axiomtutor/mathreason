@@ -518,9 +518,9 @@ The following now summarizes everything that we have said so far, and consolidat
 
 But also notice that there is one small tedious issue.  We have agreed to use the notation ${\tt R}({\tt a},{\tt b})$, for example, when writing a binary relation for two objects.  This means that we now have to include in the alphabet of predicate logic, the comma!
 
-Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{{\tt (},{\tt )},{\tt \boldsymbol},\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
+Well that’s going to make it awkward when we have to list this symbol in a collection of other symbols.  Consider the set of symbols $\{{\tt (},{\tt )},{\tt \boldsymbol,}\}$.  This is intended to have three symbols: The ‘(’ symbol, the ‘)’ symbol, and the comma, ‘,’.  But you can’t tell because the comma is already used as the separator in set notation.
 
-Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{{\tt (},{\tt )},{\tt \boldsymbol}, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
+Therefore when talking about the comma symbol as a part of the formal language, I will write it in bold.  Therefore, the set above will instead be written as $\{{\tt (},{\tt )},\tt \boldsymbol, \}$.  The bold comma is just a symbol in the set, while the un-bold commas are separators.  
 
 > [!definition] ***Definition***
 >
