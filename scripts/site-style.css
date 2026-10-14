@@ -164,6 +164,10 @@ a:hover { text-decoration-color: currentColor; }
 
 /* ---------------------------------------------------------------- math, toc */
 
+/* KaTeX truth tables: alternate horizontal-rule colors, not truth-value colors. */
+.katex-display .vlist > span:nth-child(odd) > .hline { border-bottom-color: var(--accent); }
+.katex-display .vlist > span:nth-child(even) > .hline { border-bottom-color: var(--rule); }
+
 .katex { font-size: 1.04em; }
 .katex-display {
   margin: 1.5rem 0; padding: .25rem 0;
