@@ -542,6 +542,17 @@ Therefore it demonstrates $({\tt \forall} {\tt x}{\tt \forall} {\tt y} ({\tt N}(
 >
 > 6. Show that ${\tt \exists} {\tt x} {\tt L}({\tt x},{\tt x})$ is false. This requires evaluating five propositions.
 
+# Subsets and Vacuous Quantification
+
+We're now finally in a good position to review something we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
+
+Recall that, if we translate what "subset" means, it says that 
+
+...
+
+> [!exercise] Exercise
+> Let *X* be a set and *S* a collection of properties.  Define N(S) as the number of elements which satisfy every property.  Show that if S = \emptyset then N(S)=|X|.
+
 # First-order Logic
 
 Up to this point I’ve been pretty dogged in presenting the formal syntax and semantics of each logical system that we consider: First with propositional logic and then with predicate logic.
