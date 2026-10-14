@@ -122,7 +122,7 @@ a:hover { text-decoration-color: currentColor; }
   margin: 1.75rem auto; border: 1px solid var(--rule); border-radius: .5rem; background: var(--paper-raised);
 }
 
-.prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; }
+.prose table { width: max-content; max-width: 100%; height: fit-content; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; }
 .prose th, .prose td { border: 1px solid var(--rule); padding: .5rem .7rem; text-align: left; }
 .prose th { background: var(--accent-soft); font-family: var(--sans); font-size: .82rem; letter-spacing: .03em; }
 
