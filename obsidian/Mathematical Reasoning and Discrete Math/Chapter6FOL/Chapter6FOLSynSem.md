@@ -280,6 +280,7 @@ Further suppose that $\tt P$ and $\tt Q$ are unary predicates, and the following
 | ---------- | ------- | ------- | ------- | ------- |
 | $\tt P(x)$ | ट       | ट       | ट       | ट       |
 | $\tt Q(x)$ | ट       | फ       | फ       | फ       |
+
 This tells us that, for instance, $\tt P(e)$ is true, and $\tt Q(f)$ is false.
 
 Moreover, suppose that $\tt R$ is a binary relation, and the following table summarizes its truth values.
@@ -290,6 +291,7 @@ Moreover, suppose that $\tt R$ is a binary relation, and the following table sum
 | $\tt f$      | ट       | फ       | ट       | फ       |
 | $\tt g$      | फ       | फ       | फ       | ट       |
 | $\tt h$      | फ       | फ       | फ       | फ       |
+
 This tells us that, for example, $\tt R(g,e)$ is false.  We find this by looking at row $\tt g$ and column $\tt e$.
 
 For another example, $\tt R(f,g)$ is true, which we see on row $\tt f$ and column $\tt g$.
