@@ -366,7 +366,7 @@ const isFalseTruthValue = (value) =>
   /^(?:false|फ)$/.test(normalizeTruthValue(value));
 
 // Style a standalone inline false-value expression on its outer KaTeX wrapper.
-// This covers both the Devanagari symbol and text commands such as \\text{false}
+// This covers both the Devanagari symbol and text commands such as \text{false}
 // without changing false symbols that occur within larger formulas.
 const originalInlineMathRenderer = md.renderer.rules.math_inline;
 md.renderer.rules.math_inline = (tokens, idx, options, env, self) => {
