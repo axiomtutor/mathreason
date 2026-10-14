@@ -341,8 +341,30 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: false }).use
   errorColor: "#b3261e",
 });
 
-// Automatically style truth-table cells whose entire value is false. Accept both
-// the English word and the Devanagari truth-value symbol used in these notes.
+// Style every table cell whose entire value denotes false. Accept plain text,
+// code, and common TeX wrappers (e.g. \text{false} and {\tt फ}).
+const normalizeTruthValue = (value) => {
+  let normalized = String(value ?? "").replace(/\s+/g, " ").trim();
+
+  // Unwrap common text/font commands iteratively, so nested forms such as
+  // {\tt \text{false}} are recognized as well.
+  for (let i = 0; i < 4; i++) {
+    const unwrapped = normalized
+      .replace(/^\{\s*\\(?:tt|texttt)\s+([\s\S]*?)\s*\}$/i, "$1")
+      .replace(/^\{\s*\\(?:text|mathrm|mathsf|mathbf|mathtt|texttt)\s*\{\s*([\s\S]*?)\s*\}\s*\}$/i, "$1")
+      .replace(/^\\(?:text|mathrm|mathsf|mathbf|mathtt|texttt)\s*\{\s*([\s\S]*?)\s*\}$/i, "$1")
+      .replace(/^\\tt\s+(.+)$/i, "$1")
+      .trim();
+    if (unwrapped === normalized) break;
+    normalized = unwrapped;
+  }
+
+  return normalized.toLowerCase();
+};
+
+const isFalseTruthValue = (value) =>
+  /^(?:false|फ)$/.test(normalizeTruthValue(value));
+
 const decorateFalseValueCells = (tokens) => {
   for (let i = 0; i < tokens.length; i++) {
     if (tokens[i].type !== "table_open") continue;
@@ -352,22 +374,23 @@ const decorateFalseValueCells = (tokens) => {
     const end = i + 1 + tableEnd;
 
     for (let j = i + 1; j < end; j++) {
-      if (tokens[j].type !== "td_open") continue;
+      const cellToken = tokens[j];
+      if (cellToken.type !== "td_open" && cellToken.type !== "th_open") continue;
 
-      let value = "";
-      for (let k = j + 1; k < end && tokens[k].type !== "td_close"; k++) {
+      const closeType = cellToken.type === "td_open" ? "td_close" : "th_close";
+      const valueParts = [];
+      for (let k = j + 1; k < end && tokens[k].type !== closeType; k++) {
         if (tokens[k].type !== "inline") continue;
-        value = (tokens[k].children ?? [])
-          .filter((child) => ["text", "code_inline", "math_inline"].includes(child.type))
-          .map((child) => child.content)
-          .join("")
-          .replace(/\s+/g, " ")
-          .trim();
-        break;
+        valueParts.push(
+          (tokens[k].children ?? [])
+            .filter((child) => ["text", "code_inline", "math_inline"].includes(child.type))
+            .map((child) => child.content)
+            .join("")
+        );
       }
 
-      if (/^(?:false|फ|\\text\{\s*false\s*\})$/i.test(value)) {
-        tokens[j].attrJoin("class", "false-value");
+      if (isFalseTruthValue(valueParts.join(" ").replace(/\s+/g, " ").trim())) {
+        cellToken.attrJoin("class", "false-value");
       }
     }
   }
