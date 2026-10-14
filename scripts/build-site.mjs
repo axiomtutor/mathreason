@@ -474,7 +474,20 @@ const renderPage = (page) => {
     : wrapObsidianCallouts(withProofSubproofs, md, env);
   const withSections = wrapSections(withCallouts, md, env);
 
-  return { html: md.renderer.render(withSections, md.options, env), headings };
+  const rendered = md.renderer.render(withSections, md.options, env);
+
+  // KaTeX renders LaTeX arrays (including the truth-tables in Chapters 3–4)
+  // as mathematical HTML, not Markdown table tokens. Mark standalone false
+  // symbols inside those arrays so the shared CSS can style them consistently.
+  const html = rendered.replace(/<p class="katex-block">[\\s\\S]*?<\\/p>/g, (block) => {
+    if (!block.includes('class="mtable"')) return block;
+    return block.replace(
+      /class="mord brahmic_fallback">फ<\\/span>/g,
+      'class="mord brahmic_fallback false-value">फ</span>'
+    );
+  });
+
+  return { html, headings };
 };
 
 /* ------------------------------------------------- callouts & collapsibles */
