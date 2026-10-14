@@ -219,7 +219,7 @@ Now consider the different meanings of each of the following propositions.
 
 I hope that the above gives you an intuition for what the quantifiers mean and how their order can impact the meaning of an expression.
 
-But now let's take an example which is more computational.  Suppose that our domain contains just three people, {Axel, Benicio, Cici, Dakota}.  Moreover suppose that Axel loves Axel, Benicio, Cici, and Dakota.  Benicio loves Cici and Dakota.  Nobody else loves anyone else.
+But now let's take an example which is more computational.  Suppose that our domain contains just four people, {Axel, Benicio, Cici, Dakota}.  Moreover suppose that Axel loves Axel, Benicio, Cici, and Dakota.  Benicio loves Cici and Dakota.  Nobody else loves anyone else.
 
 Then which of the expressions, $\tt \forall x\forall y L(x,y), \forall x\exists y L(x,y), \exists x\forall y L(x,y), \exists x\exists y L(x,y)$ are true?
 
@@ -274,7 +274,7 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 
 There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$, and let the constant symbols $\tt e, f, g, h$ denote each domain element respectively.  
 
-Further suppose that $\tt P$ and $\tt Q$ are properties and the following table summarizes their truth-values.
+Further suppose that $\tt P$ and $\tt Q$ are unary predicates, and the following table summarizes their truth-values.
 
 | $\tt x$    | $\tt e$ | $\tt f$ | $\tt g$ | $\tt h$ |
 | ---------- | ------- | ------- | ------- | ------- |
@@ -303,9 +303,16 @@ Because *some* assignment is true (some coordinate of the table), then the "exis
 
 In fact, not just some, but *every* coordinate of the table is true. Therefore we could even say that $\tt\forall x P(x)$ is true. 
 
-Now let's evaluate $\tt \exists x \forall y Q(x,y)$. Here is a helpful table of truth values. 
+Now let's evaluate the proposition $\tt \exists x \forall y R(x,y)$. Recall that $\tt R$ is the binary relation in the table above. For each possible value of $\tt x$, we check whether $\tt R(x,y)$ is true for every value of $\tt y$.
 
-TODO
+| $\tt x$ | $\tt \forall y R(x,y)$ | A value of $\tt y$ for which $\tt R(x,y)$ is false |
+| --- | --- | --- |
+| $\tt e$ | फ | $\tt e$ |
+| $\tt f$ | फ | $\tt f$ |
+| $\tt g$ | फ | $\tt e$ |
+| $\tt h$ | फ | $\tt e$ |
+
+Each row of the previously given table for $\tt R$ contains at least one false value. Thus $\tt \forall y R(x,y)$ is false for every assignment to $\tt x$, and $\tt \exists x \forall y R(x,y)$ is false.
 
 
 Now we check $\tt\forall x\exists y L(x,y)$.  Just as before, we iterate through every assignment of $\tt x$.
