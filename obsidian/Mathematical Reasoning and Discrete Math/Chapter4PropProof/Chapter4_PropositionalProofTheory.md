@@ -138,12 +138,12 @@ Here is a demonstration for Conjunction Elimination:
 
 
 $$
-\begin{array}{|c|c||c|c|c||c|}
+\begin{array}{cccccc}
 \hline
 {\tt P} & {\tt Q} & {\tt P} & {\tt \land} & {\tt Q} & {\tt P} \\ \hline
-\color{red} ट & \color{red}ट & & \color{red}ट & & \color{red}ट \\
-ट & फ & & फ & & ट \\
-\color{red}फ & \color{red}ट & & \color{red}फ & & \color{red}फ \\
+ट & ट & & ट & & ट \\\hline
+ट & फ & & फ & & ट \\\hline
+फ & ट & & फ & & फ \\\hline
 फ & फ & & फ & & फ \\ \hline
 \end{array}
 $$
@@ -159,24 +159,24 @@ So this shows that “Whenever ${\tt P}{\tt \land} {\tt Q}$ is true, we have ${\
 Let’s check the Disjunction Elimination rule.  Here is the truth-table for ${\tt P}{\tt \lor} {\tt Q}$ and ${\tt \neg} {\tt P}$ and ${\tt Q}$.
 
 $$
-\begin{array}{|c|c||c|c|c||c|c||c|}\hline
+\begin{array}{cccccccc}\hline
  {\tt P} & {\tt Q} &
  {\tt P} & {\tt \lor} & {\tt Q} &
  {\tt \neg} & {\tt P} &
  {\tt Q} \\\hline
- \color{red}{ट} & \color{red}{ट} &
-  & \color{red}{ट} & &
- \color{red}{फ} & &
- \color{red}{ट}
+ {ट} & {ट} &
+  & {ट} & &
+ {फ} & &
+ {ट}
  \\\hline
  ट & फ &
   & ट & &
  फ & & फ
  \\\hline
- \color{red}{फ} & \color{red}{ट} &
-  & \color{red}{ट} & &
- \color{red}{ट} & &
- \color{red}{ट}
+ {फ} & {ट} &
+  & {ट} & &
+ {ट} & &
+ {ट}
  \\\hline
  फ & फ &
   & फ & &
@@ -196,21 +196,21 @@ It can be helpful to see an example of an inference rule that is *not* valid.  T
 An example would be "From ${\tt P}$ we can infer ${\tt P}{\tt \land} {\tt Q}$".  Let's see a truth-table which demonstrates why this is invalid.
 
 $$
-\begin{array}{|c|c||c||c|c|c|}\hline
+\begin{array}{cccccc}\hline
 {\tt P} & {\tt Q} &
 {\tt P} &
 {\tt P} & {\tt \land} & {\tt Q} \\\hline
-\color{red}{ट} & \color{red}{ट} &
-\color{red}{ट} &
-& \color{red}{ट} &
+{ट} & {ट} &
+{ट} &
+& {ट} &
 \\\hline
 ट & फ &
 ट &
 & फ &
 \\\hline
-\color{red}{फ} & \color{red}{ट} &
-\color{red}{फ} &
-& \color{red}{फ} &
+{फ} & {ट} &
+{फ} &
+& {फ} &
 \\\hline
 फ & फ &
 फ &
