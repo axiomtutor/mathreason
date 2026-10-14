@@ -127,7 +127,14 @@ a:hover { text-decoration-color: currentColor; }
 .prose th { background: var(--accent-soft); font-family: var(--sans); font-size: .82rem; letter-spacing: .03em; }
 
 .prose td.false-value,
-.prose th.false-value { background-color: #000; color: #fff; }
+.prose th.false-value,
+.prose .katex .false-value { background-color: #000; color: #fff; }
+
+.prose .katex .false-value {
+  display: inline-block;
+  padding: 0 .12em;
+  border-radius: .1em;
+}
 
 .prose table.proof-table tbody tr.proof-assumption { background-color: #fce4e4; }
 .prose table.proof-table tbody tr.proof-conclusion { background-color: #e4f4e4; }
