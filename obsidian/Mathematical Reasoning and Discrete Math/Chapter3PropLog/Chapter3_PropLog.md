@@ -288,17 +288,17 @@ The recursive case, is “recursive” because it computes the value from simple
 It can help to display how the conjunction acts on truth-values, by putting this information into a table.  It’s just a nice, dense summary of all the same information that we discussed above.
 
 $$
-\begin{array}{|c|c||c|c|c|}
+\begin{array}{ccccc}
  \hline
  {\tt P} & {\tt Q} & {\tt P} & {\tt \land} & {\tt Q} \\\hline
- \color{red} ट & \color{red}ट & & \color{red}ट &  \\
-ट &फ & &फ & \\
- \color{red}फ & \color{red}ट &  & \color{red}फ & \\
+ ट & ट & & ट &  \\\hline
+ट &फ & &फ & \\\hline
+ फ & ट &  & फ & \\\hline
 फ &फ &  &फ &  \\\hline
 \end{array}
 $$
 
-The rows are in alternating colors just for readability—the colors don’t mean anything.
+The horizontal rules alternate colors just for readability; the colors do not encode truth-values.
 
 Each row corresponds to a model.  For example, if $म$ is the model which assigns ${\tt P}^{म}=फ$ and ${\tt Q}^{म}=फ$, then this is represented in the last row of the table.  
 
@@ -350,12 +350,12 @@ All of this is very similar to the conversation for conjunction.
 Here is the truth-table for disjunction: 
 
 $$
-\begin{array}{|c|c||c|c|c|}
+\begin{array}{ccccc}
  \hline
  {\tt P} & {\tt Q} & {\tt P} & {\tt \lor} & {\tt Q} \\\hline
- \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ & & ट & \\
- \color{red}फ & \color{red}ट & & \color{red}ट & \\
+ ट & ट & & ट & \\\hline
+ ट & फ & & ट & \\\hline
+ फ & ट & & ट & \\\hline
  फ & फ &  & फ &  \\\hline
 \end{array}
 $$
@@ -405,9 +405,9 @@ $$
 The truth-table for negation is 
 
 $$
-\begin{array}{|c||c|c|}\hline
+\begin{array}{ccc}\hline
   {\tt P} & {\tt \neg} & {\tt P} \\\hline
- \color{red}ट & \color{red}फ & \\
+ ट & फ & \\\hline
 फ &ट & \\\hline
 \end{array}
 $$
@@ -441,9 +441,9 @@ If ${\tt P}$ and ${\tt Q}$ are propositional variables, then ${\tt P}{\tt \to} {
 Most people would guess that ${\tt P}{\tt \to} {\tt Q}$ is true when both ${\tt P}$ and ${\tt Q}$ are true.  Hence we have the first row of the truth-table. 
 
 $$
-\begin{array}{|c|c||c|c|c|}\hline
+\begin{array}{ccccc}\hline
  {\tt P}&{\tt Q}&{\tt P}&{\tt \to} &{\tt Q}\\\hline
- \color{red}ट & \color{red}ट & & \color{red}ट & \\
+ ट & ट & & ट & \\\hline
 \end{array}
 $$
 
@@ -452,10 +452,10 @@ Now what if ${\tt P}$ is true and ${\tt Q}$ false?  For example what if we state
 Therefore the next row of the table is:
 
 $$
-\begin{array}{|c|c||c|c|c|}\hline
+\begin{array}{ccccc}\hline
  {\tt P}&{\tt Q}&{\tt P}&{\tt \to} &{\tt Q}\\\hline
- \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ & & फ & \\
+ ट & ट & & ट & \\\hline
+ ट & फ & & फ & \\\hline
 \end{array}
 $$
 
@@ -481,11 +481,11 @@ In the first example, ${\tt P}$ is false, and ${\tt Q}$ is true.  In the second 
 The conditional truth-table is 
 
 $$
-\begin{array}{|c|c||c|c|c|}\hline
+\begin{array}{ccccc}\hline
  {\tt P}&{\tt Q}&{\tt P}&{\tt \to} &{\tt Q}\\\hline
- \color{red}ट & \color{red}ट & & \color{red}ट & \\
- ट & फ & & फ & \\
- \color{red} फ & \color{red} ट & & \color{red} ट & \\
+ ट & ट & & ट & \\\hline
+ ट & फ & & फ & \\\hline
+ फ & ट & & ट & \\\hline
 फ & फ & & ट & \\\hline
 \end{array}
 $$
