@@ -40,13 +40,14 @@ Because it is valuable to keep straight, which things are syntax and which are s
 
 We will use $ट$ for “true”, which is a Devanagari letter, pronounced similar to an English 'T'.  So when you think of this, imagine the letter 'T' for "true".  
 
-We will use फ for "false", which is a Devanagari letter, pronounced like an English 'F'.  So when you think of फ, imagine the letter 'F' for "false".  
+We will use $फ$ for "false", which is a Devanagari letter, pronounced like an English 'F'.  So when you think of $फ$, imagine the letter 'F' for "false".  
 
 > [!note]- Notes on the use of Devanagari.
 > 
-> 1. Placing a dot below the letter फ, to make फ, produces a sound in Devanagari which is closer to the English 'F' sound.  But I figure, why bother? For our purposes I just want a distinct symbol, which somehow gestures at the idea of "false".  The simpler letter फ is good enough!
-> 2. I know that many English-speaking readers may be intimidated by letters from a language as different as Hindi.  However, I promise that the number of Devanagari letters will be kept small.  You will, in fact, learn many more new symbols which are standard logical symbols, than you will learn Devanagari letters.
-> 3. In the definition below, we will write a sentence like ${\tt P}^म=ट$.  I recommend pronouncing this as "${\tt P}$ in *M* is true."
+> 1. I have colored $फ$ with a black background so that it is visually easier to distinguish it as the false value.
+> 2. Placing a dot below the letter $फ$, to make $फ$, produces a sound in Devanagari which is closer to the English 'F' sound.  But I figure, why bother? For our purposes I just want a distinct symbol, which somehow gestures at the idea of "false".  The simpler letter फ is good enough!
+> 3. I know that many English-speaking readers may be intimidated by letters from a language as different as Hindi.  However, I promise that the number of Devanagari letters will be kept small.  You will, in fact, learn many more new symbols which are standard logical symbols, than you will learn Devanagari letters.
+> 4. In the definition below, we will write a sentence like ${\tt P}^म=ट$.  I recommend pronouncing this as "${\tt P}$ in *M* is true."
 
 > [!definition] ***Definition***
 >
@@ -82,7 +83,7 @@ We will use फ for "false", which is a Devanagari letter, pronounced like an En
     >
     >Technically, a model is a function.  The inputs are the propositional variables and the outputs are truth-values.  
 
-Let’s see an example.  Suppose that we begin from the proposition "This triangle is obtuse and isosceles".  We might use ${\tt P}$ to reprensent "this triangle is obtuse" and ${\tt Q}$ to represent "this triangle is isosceles".  
+Let’s see an example.  Suppose that we begin from the proposition "This triangle is obtuse and isosceles".  We might use ${\tt P}$ to represent "this triangle is obtuse" and ${\tt Q}$ to represent "this triangle is isosceles".  
 
 If the triangle that we are discussing is this one:
 
