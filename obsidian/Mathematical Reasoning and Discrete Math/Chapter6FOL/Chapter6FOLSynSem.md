@@ -270,73 +270,6 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 > 
 > 5. Explain why $\tt\forall xP(x)$ always implies $\tt\exists x P(x)$.
 
-# Quantifiers and Tables
-
-There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$.  
-
-Further suppose that $\tt P$ and $\tt Q$ are unary predicates, and the following table summarizes their truth-values.
-
-| $\tt x$    | $a$ | $b$ | $c$ | $d$ |
-| ---------- | --- | --- | --- | --- |
-| $\tt P(x)$ | ट   | ट   | ट   | ट   |
-| $\tt Q(x)$ | ट   | फ   | फ   | फ   |
-
-This tells us that, for instance, $\tt P$ is true for $a$, and $\tt Q$ is false for $b$.
-
-Moreover, suppose that $\tt R$ is a binary relation, and the following table summarizes its truth values.
-
-| $\tt R(x,y)$ | $a$ | $b$ | $c$ | $d$ |
-| ------------ | --- | --- | --- | --- |
-| $a$          | फ   | ट   | फ   | ट   |
-| $b$          | ट   | फ   | ट   | फ   |
-| $c$          | फ   | फ   | फ   | ट   |
-| $d$          | फ   | फ   | फ   | फ   |
-
-This tells us that, for example, $\tt R$ is false for the pair $(a,a)$ but is true for the pair $(d,b)$.  We find the first one by looking at row *a* and column *a*, and the second we find in row *d* column *b*.  
-
-> [!note] These two tables are structured differently.
-> 
-> Note that the tables for $\tt P$ and $\tt Q$ are "one dimensional".  The columns indicate elements from the domain.  The row indicates the predicate.
-> 
-> However, the table for $\tt R$ is "two dimensional".  The columns indicate domain elements, yes, just like before.  But now also the rows indicate domain elements too.  
-> 
-> Where is the predicate indicated? Well, there's no room for it now that both rows and columns are taken up.  So the predicate is indicated by *the entire table* (not just one row of the table).
-> 
-> So the two tables are not meant to be read in exactly the same way.
-
-
-Now let's evaluate the proposition $\tt \exists x P(x)$. The table makes this immediately obvious: The row for $\tt P$ has a ट and therefore $\tt \exists x P(x)$ is true.  
-
-In fact, *every* cell of this row is ट and therefore we could even say that $\tt \forall x P(x)$ is true.
-
-How about $\tt \exists x Q(x)$? There is some cell (under $a$) where $\tt Q$ is true, and therefore the existential claim is true.  How about $\tt\forall x Q(x)$? For that to be true we we need *every* cell to hold ट.  Since not every cell is ट, therefore the universal claim is false.
-
-Now let's assess each possible way of stacking quantifiers on $\tt R(x,y)$.
-
-* $\tt \forall x \forall y R(x,y)$: This requires every row and every column to hold ट.  Since there is some $फ$, then this proposition is false.
-* $\tt \forall x \exists y R(x,y)$: This requires every row to contains *some* ट.  Since there is some row (*d*) which contains no ट, then this proposition is false.
-* $\tt \exists x \forall y R(x,y)$: This requires some row to contain only ट.  There is no row like this, and therefore this proposition is false.
-* $\tt \exists x \exists y R(x,y)$: This requires some row and some column to hold ट.  This is true, and therefore the proposition is true.
-
-> [!exercise] Exercise
-> 
-> 
-
-Because *some* assignment is true (some coordinate of the table), then the "exists" proposition is true. 
-
-In fact, not just some, but *every* coordinate of the table is true. Therefore we could even say that $\tt\forall x P(x)$ is true. 
-
-Now let's evaluate the proposition $\tt \exists x \forall y R(x,y)$. Recall that $\tt R$ is the binary relation in the table above. For each possible value of $\tt x$, we check whether $\tt R(x,y)$ is true for every value of $\tt y$.
-
-| $\tt x$ | $\tt \forall y R(x,y)$ | A value of $\tt y$ for which $\tt R(x,y)$ is false |
-| --- | --- | --- |
-| $\tt e$ | फ | $\tt e$ |
-| $\tt f$ | फ | $\tt f$ |
-| $\tt g$ | फ | $\tt e$ |
-| $\tt h$ | फ | $\tt e$ |
-
-Each row of the previously given table for $\tt R$ contains at least one false value. Thus $\tt \forall y R(x,y)$ is false for every assignment to $\tt x$, and $\tt \exists x \forall y R(x,y)$ is false.
-
 
 Now we check $\tt\forall x\exists y L(x,y)$.  Just as before, we iterate through every assignment of $\tt x$.
 * If $\tt x=Axel$: We now run through every choice of $\tt y$.
@@ -572,9 +505,71 @@ Therefore it demonstrates $({\tt \forall} {\tt x}{\tt \forall} {\tt y} ({\tt N}(
 >
 > 6. Show that ${\tt \exists} {\tt x} {\tt L}({\tt x},{\tt x})$ is false. This requires evaluating five propositions.
 
+# Quantifiers and Tables
+
+There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$.  
+
+Further suppose that $\tt P$ and $\tt Q$ are unary predicates, and the following table summarizes their truth-values.
+
+| $\tt x$    | $a$ | $b$ | $c$ | $d$ |
+| ---------- | --- | --- | --- | --- |
+| $\tt P(x)$ | ट   | ट   | ट   | ट   |
+| $\tt Q(x)$ | ट   | फ   | फ   | फ   |
+
+This tells us that, for instance, $\tt P$ is true for $a$, and $\tt Q$ is false for $b$.
+
+Moreover, suppose that $\tt R$ is a binary relation, and the following table summarizes its truth values.
+
+| $\tt R(x,y)$ | $a$ | $b$ | $c$ | $d$ |
+| ------------ | --- | --- | --- | --- |
+| $a$          | फ   | ट   | फ   | ट   |
+| $b$          | ट   | फ   | ट   | फ   |
+| $c$          | फ   | फ   | फ   | ट   |
+| $d$          | फ   | फ   | फ   | फ   |
+
+This tells us that, for example, $\tt R$ is false for the pair $(a,a)$ but is true for the pair $(d,b)$.  We find the first one by looking at row *a* and column *a*, and the second we find in row *d* column *b*.  
+
+> [!note] These two tables are structured differently.
+> 
+> Note that the tables for $\tt P$ and $\tt Q$ are "one dimensional".  The columns indicate elements from the domain.  The row indicates the predicate.
+> 
+> However, the table for $\tt R$ is "two dimensional".  The columns indicate domain elements, yes, just like before.  But now also the rows indicate domain elements too.  
+> 
+> Where is the predicate indicated? Well, there's no room for it now that both rows and columns are taken up.  So the predicate is indicated by *the entire table* (not just one row of the table).
+> 
+> So the two tables are not meant to be read in exactly the same way.
+
+
+Now let's evaluate the proposition $\tt \exists x P(x)$. The table makes this immediately obvious: The row for $\tt P$ has a ट and therefore $\tt \exists x P(x)$ is true.  
+
+In fact, *every* cell of this row is ट and therefore we could even say that $\tt \forall x P(x)$ is true.
+
+How about $\tt \exists x Q(x)$? There is some cell (under $a$) where $\tt Q$ is true, and therefore the existential claim is true.  How about $\tt\forall x Q(x)$? For that to be true we we need *every* cell to hold ट.  Since not every cell is ट, therefore the universal claim is false.
+
+Now let's assess each possible way of stacking quantifiers on $\tt R(x,y)$.
+
+* $\tt \forall x \forall y R(x,y)$: This requires every row and every column to hold ट.  Since there is some $फ$, then this proposition is false.
+* $\tt \forall x \exists y R(x,y)$: This requires every row to contains *some* ट.  Since there is some row (*d*) which contains no ट, then this proposition is false.
+* $\tt \exists x \forall y R(x,y)$: This requires some row to contain only ट.  There is no row like this, and therefore this proposition is false.
+* $\tt \exists x \exists y R(x,y)$: This requires some row and some column to hold ट.  This is true, and therefore the proposition is true.
+
+> [!exercise] Exercise
+> Using the same predicates and meaning above, assess the truth of the following propositions.
+> 
+> 1. $\tt \forall x \neg P(x)$
+> 2. $\tt \forall x (P(x)\lor Q(x))$
+> 3. $\tt \forall x(P(x)\to Q(x))$
+> 4. $\tt \forall x\forall y \neg R(x,y)$
+> 5. $\tt \forall x \exists y \neg R(x,y)$
+>    
+> For more exercise, you can of course create more formulas like these and assess their truth.
+> 
+
+
+
 # Subsets and Vacuous Quantification
 
-We're now finally in a good position to review something we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
+We're now finally in a good position to review something that we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
 
 Recall that, if we translate what "subset" means, it says that 
 
