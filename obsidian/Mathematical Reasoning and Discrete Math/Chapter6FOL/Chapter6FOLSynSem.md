@@ -272,34 +272,55 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 
 # Quantifiers and Tables
 
-There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$, and let the constant symbols $\tt e, f, g, h$ denote each domain element respectively.  
+There is a nice way to display these evaluations in a tabular form. Consider the domain $उ = \{a,b,c,d\}$.  
 
 Further suppose that $\tt P$ and $\tt Q$ are unary predicates, and the following table summarizes their truth-values.
 
-| $\tt x$    | $\tt e$ | $\tt f$ | $\tt g$ | $\tt h$ |
-| ---------- | ------- | ------- | ------- | ------- |
-| $\tt P(x)$ | ट       | ट       | ट       | ट       |
-| $\tt Q(x)$ | ट       | फ       | फ       | फ       |
+| $\tt x$    | $a$ | $b$ | $c$ | $d$ |
+| ---------- | --- | --- | --- | --- |
+| $\tt P(x)$ | ट   | ट   | ट   | ट   |
+| $\tt Q(x)$ | ट   | फ   | फ   | फ   |
 
-This tells us that, for instance, $\tt P(e)$ is true, and $\tt Q(f)$ is false.
+This tells us that, for instance, $\tt P$ is true for $a$, and $\tt Q$ is false for $b$.
 
 Moreover, suppose that $\tt R$ is a binary relation, and the following table summarizes its truth values.
 
-| $\tt R(x,y)$ | $\tt e$ | $\tt f$ | $\tt g$ | $\tt h$ |
-| ------------ | ------- | ------- | ------- | ------- |
-| $\tt e$      | फ       | ट       | फ       | ट       |
-| $\tt f$      | ट       | फ       | ट       | फ       |
-| $\tt g$      | फ       | फ       | फ       | ट       |
-| $\tt h$      | फ       | फ       | फ       | फ       |
+| $\tt R(x,y)$ | $a$ | $b$ | $c$ | $d$ |
+| ------------ | --- | --- | --- | --- |
+| $a$          | फ   | ट   | फ   | ट   |
+| $b$          | ट   | फ   | ट   | फ   |
+| $c$          | फ   | फ   | फ   | ट   |
+| $d$          | फ   | फ   | फ   | फ   |
 
-This tells us that, for example, $\tt R(g,e)$ is false.  We find this by looking at row $\tt g$ and column $\tt e$.
+This tells us that, for example, $\tt R$ is false for the pair $(a,a)$ but is true for the pair $(d,b)$.  We find the first one by looking at row *a* and column *a*, and the second we find in row *d* column *b*.  
 
-For another example, $\tt R(f,g)$ is true, which we see on row $\tt f$ and column $\tt g$.
+> [!note] These two tables are structured differently.
+> 
+> Note that the tables for $\tt P$ and $\tt Q$ are "one dimensional".  The columns indicate elements from the domain.  The row indicates the predicate.
+> 
+> However, the table for $\tt R$ is "two dimensional".  The columns indicate domain elements, yes, just like before.  But now also the rows indicate domain elements too.  
+> 
+> Where is the predicate indicated? Well, there's no room for it now that both rows and columns are taken up.  So the predicate is indicated by *the entire table* (not just one row of the table).
+> 
+> So the two tables are not meant to be read in exactly the same way.
 
-Now let's evaluate the proposition $\tt \exists x P(x)$. The following table summarizes the truth values for all assignments to $\tt x$.
 
+Now let's evaluate the proposition $\tt \exists x P(x)$. The table makes this immediately obvious: The row for $\tt P$ has a ट and therefore $\tt \exists x P(x)$ is true.  
 
+In fact, *every* cell of this row is ट and therefore we could even say that $\tt \forall x P(x)$ is true.
 
+How about $\tt \exists x Q(x)$? There is some cell (under $a$) where $\tt Q$ is true, and therefore the existential claim is true.  How about $\tt\forall x Q(x)$? For that to be true we we need *every* cell to hold ट.  Since not every cell is ट, therefore the universal claim is false.
+
+Now let's assess each possible way of stacking quantifiers on $\tt R(x,y)$.
+
+* $\tt \forall x \forall y R(x,y)$: This requires every row and every column to hold ट.  Since there is some $फ$, then this proposition is false.
+* $\tt \forall x \exists y R(x,y)$: This requires every row to contains *some* ट.  Since there is some row (*d*) which contains no ट, then this proposition is false.
+* $\tt \exists x \forall y R(x,y)$: This requires some row to contain only ट.  There is no row like this, and therefore this proposition is false.
+* $\tt \exists x \exists y R(x,y)$: This requires some row and some column to hold ट.  This is true, and therefore the proposition is true.
+
+> [!exercise] Exercise
+> 
+> 
 
 Because *some* assignment is true (some coordinate of the table), then the "exists" proposition is true. 
 
