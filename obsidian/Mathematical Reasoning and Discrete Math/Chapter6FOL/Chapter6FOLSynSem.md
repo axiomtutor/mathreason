@@ -529,7 +529,7 @@ Moreover, suppose that $\tt R$ is a binary relation, and the following table sum
 
 This tells us that, for example, $\tt R$ is false for the pair $(a,a)$ but is true for the pair $(d,b)$.  We find the first one by looking at row *a* and column *a*, and the second we find in row *d* column *b*.  
 
-> [!note] These two tables are structured differently.
+> [!note]- These two tables are structured differently.
 > 
 > Note that the tables for $\tt P$ and $\tt Q$ are "one dimensional".  The columns indicate elements from the domain.  The row indicates the predicate.
 > 
@@ -567,6 +567,12 @@ Now let's assess each possible way of stacking quantifiers on $\tt R(x,y)$.
 
 
 
+
+# Quantification over Infinite Domains
+
+Now we've looked a lot at quantification over finite domains, because it's a good starting place.
+
+However, one of the major motivations for having quantification is so that we can speak and reason about infinite domains.  
 # Subsets and Vacuous Quantification
 
 We're now finally in a good position to review something that we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
