@@ -367,7 +367,7 @@ const isFalseTruthValue = (value) =>
 
 // Apply false-value styling inside inline math, including formulas that contain
 // a false value alongside other symbols (common inside definitions and callouts).
-// Standalone textual forms such as \`$\text{false}$\` style the whole expression;
+// Standalone textual forms such as $\text{false}$ style the whole expression;
 // the Devanagari glyph is marked individually wherever it occurs.
 const originalInlineMathRenderer = md.renderer.rules.math_inline;
 md.renderer.rules.math_inline = (tokens, idx, options, env, self) => {
