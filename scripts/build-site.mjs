@@ -486,16 +486,13 @@ const renderPage = (page) => {
 
   const rendered = md.renderer.render(withSections, md.options, env);
 
-  // KaTeX renders LaTeX arrays (including the truth-tables in Chapters 3–4)
-  // as mathematical HTML, not Markdown table tokens. Mark standalone false
-  // symbols inside those arrays so the shared CSS can style them consistently.
-  const html = rendered.replace(/<p class="katex-block">[\s\S]*?<\/p>/g, (block) => {
-    if (!block.includes('class="mtable"')) return block;
-    return block.replace(
-      /class="mord brahmic_fallback">फ<\/span>/g,
-      'class="mord brahmic_fallback false-value">फ</span>'
-    );
-  });
+  // KaTeX renders both inline and display math as HTML, bypassing Markdown
+  // table-cell decoration. Mark each Devanagari false-value glyph in the final
+  // rendered output, after callouts have been wrapped, so callout contents work too.
+  const html = rendered.replace(
+    /class="mord brahmic_fallback">फ<\/span>/g,
+    'class="mord brahmic_fallback false-value">फ</span>'
+  );
 
   return { html, headings };
 };
