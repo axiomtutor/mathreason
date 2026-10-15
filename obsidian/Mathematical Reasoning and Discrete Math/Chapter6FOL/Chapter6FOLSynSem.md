@@ -130,13 +130,23 @@ The backwards 'E' is read as "there exists".  So the literal reading of this exp
 
 The symbols ${\tt \forall}$ and ${\tt \exists}$ are called "quantifiers".
 
-Notice that the syntax uses a variable, like ${\tt x}$ above. However, we will still want to have constant symbols, as we did with predicate logic.  
+Notice that the syntax uses a variable, like ${\tt x}$ above. However, we still want to have constant symbols, as we did with predicate logic.  Variables and constants mean very different things!  A variable "varies", i.e. takes on the value of several different domain elements.  A constant has its meaning fixed to one specified domain element.  
 
-For example, suppose that the domain is all integers, ${\tt o}$ denotes the number 1, and the predicate ${\tt D}({\tt x},{\tt y})$ denotes the relation "${\tt x}$ is divisible by ${\tt y}$".  Then to express that every number is divisible by 1, we write 
+For example, suppose that the domain is all integers, ${\tt o}$ denotes the number 1, and the predicate ${\tt D}({\tt x},{\tt y})$ denotes the relation "${\tt x}$ is divisible by ${\tt y}$".  
+
+We can continue to use the semantic notation from the previous chapter, and write 
+
+$$\begin{aligned}
+ TODO &= \Bbb Z\\
+ {\tt o}^TODO &= 1\\
+ {\tt D}^TODO &= \{(x,y)\in\Bbb Z^2: x \text{ is divisible by } y\} 
+\end{aligned}$$
+
+Then to express that every number is divisible by 1, we write 
 
 $$ {\tt \forall} {\tt x} {\tt D}({\tt x},{\tt o}) $$
 
-This demonstrates that our logical language will need two kinds of object symbols, one for variables and one for constants.  
+Both variables and constants will be represented by lower-case letters, as you see above.  And yet our logical language will need two kinds of object symbols, one for variables and one for constants, and we don't want them to get confused for each other.  
 
 Traditionally we will use the letters ${\tt a}$ through ${\tt t}$ for constants, and the letters ${\tt u}$ through ${\tt z}$ for variables.  Of course we also allow indices, so that ${\tt a_{101}}$ and ${\tt t_0}$ may be constants, and ${\tt u_{123}}$ could be a variable. 
 
@@ -573,6 +583,21 @@ Now let's assess each possible way of stacking quantifiers on $\tt R(x,y)$.
 Now we've looked a lot at quantification over finite domains, because it's a good starting place.
 
 However, one of the major motivations for having quantification is so that we can speak and reason about infinite domains.  
+
+Let's set the domain to be $TODO = \Bbb Z$, and define some predicates.  
+
+We could have $\tt P$ be the property that an integer, $x$, is greater than 10.  Then $\tt P$ is true for 11, 12, and so on.  
+
+We could have $\tt Q$ be the property that an integer has no digit 0 (in its standard base-10 representation).  Then $\tt Q$ is true for 1, 2, and so on up to 9.  And it is true for 11, 12, and so on.  
+
+> [!exercise] Exercise
+> 1. Can you find a negative number for which $\tt P$ is true?  Can you find a negative number for which $\tt Q$ is true?  
+> 
+> 2. Can you find a multiple of 10 for which $\tt Q$ is true? Can you find a number which is true for $\tt Q$ which is not a multiple of 10?
+
+Also let $\tt R$ be the binary relation on integers $x,y$ which is true when $x$ has an equal or greater number of 0 digits than $y$ in its standard base-10 representation.  So $\tt R$ is true for the ordered pair $(1,2)$ because 1 has an equal or greater number of 0 digits than 2.  Also $(2,1)$ is true for $\tt R$.
+
+
 # Subsets and Vacuous Quantification
 
 We're now finally in a good position to review something that we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
