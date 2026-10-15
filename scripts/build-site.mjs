@@ -365,14 +365,21 @@ const normalizeTruthValue = (value) => {
 const isFalseTruthValue = (value) =>
   /^(?:false|फ)$/.test(normalizeTruthValue(value));
 
-// Style a standalone inline false-value expression on its outer KaTeX wrapper.
-// This covers both the Devanagari symbol and text commands such as \text{false}
-// without changing false symbols that occur within larger formulas.
+// Apply false-value styling inside inline math, including formulas that contain
+// a false value alongside other symbols (common inside definitions and callouts).
+// Standalone textual forms such as `$\\text{false}$` style the whole expression;
+// the Devanagari glyph is marked individually wherever it occurs.
 const originalInlineMathRenderer = md.renderer.rules.math_inline;
 md.renderer.rules.math_inline = (tokens, idx, options, env, self) => {
   const rendered = originalInlineMathRenderer(tokens, idx, options, env, self);
-  if (!isFalseTruthValue(tokens[idx].content)) return rendered;
-  return rendered.replace('class="katex"', 'class="katex false-value"');
+  const content = tokens[idx].content;
+  if (isFalseTruthValue(content)) {
+    return rendered.replace('class="katex"', 'class="katex false-value"');
+  }
+  return rendered.replace(
+    /class="mord brahmic_fallback">फ<\\/span>/g,
+    'class="mord brahmic_fallback false-value">फ</span>'
+  );
 };
 
 const decorateFalseValueCells = (tokens) => {
