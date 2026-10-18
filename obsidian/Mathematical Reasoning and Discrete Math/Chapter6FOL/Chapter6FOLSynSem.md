@@ -597,6 +597,7 @@ We could have $\tt Q$ be the property that an integer has no digit 0 (in its sta
 
 Also let $\tt R$ be the binary relation on integers $x,y$ which is true when $x$ has an equal or greater number of 0 digits than $y$ in its standard base-10 representation.  So $\tt R$ is true for the ordered pair $(1,2)$ because 1 has an equal or greater number of 0 digits than 2.  Also $(2,1)$ is true for $\tt R$.
 
+# All A's Are B's
 
 # Subsets and Vacuous Quantification
 
