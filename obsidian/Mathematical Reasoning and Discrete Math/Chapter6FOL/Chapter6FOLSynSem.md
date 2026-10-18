@@ -597,7 +597,20 @@ We could have $\tt Q$ be the property that an integer has no digit 0 (in its sta
 
 Also let $\tt R$ be the binary relation on integers $x,y$ which is true when $x$ has an equal or greater number of 0 digits than $y$ in its standard base-10 representation.  So $\tt R$ is true for the ordered pair $(1,2)$ because 1 has an equal or greater number of 0 digits than 2.  Also $(2,1)$ is true for $\tt R$.
 
-# All A's Are B's
+# All and Some with Two Predicates
+
+In the history of the study of logic, there is a famous diagram (called the "Square of Opposition" TODO) due to Aristotle which represents the relationships between "contraries" and "subalterns".
+
+TODO: Diagram
+
+Let *A* and *B* be two predicates.  The corners of the square represent the propositions 
+
+- "All *A*'s are *B*'s."
+- "No *A*'s are *B*'s."
+- "Some *A*'s are *B*'s."
+- "Not all *A*'s are *B*'s."
+
+
 
 # Subsets and Vacuous Quantification
 
@@ -622,7 +635,7 @@ $$
 
 This has many-place relations, and nested quantifiers. This is a more general instance of a first-order formula.
 
-As you can see below, the rigorous definition of the syntax and semantics for first-order logic is long and complex. I don’t recommend that you actually read the following definition in detail—we will not use it through the rest of the course.
+As you can see below, the rigorous definition of the syntax and semantics for first-order logic is long and complex. I don’t recommend that you actually  read the following definition in detail—we will not use it through the rest of the course.
 
 > [!definition] ***Definition***
 >
