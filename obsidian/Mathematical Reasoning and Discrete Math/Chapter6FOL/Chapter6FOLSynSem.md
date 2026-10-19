@@ -610,7 +610,16 @@ Let *A* and *B* be two predicates.  The corners of the square represent the prop
 - "Some *A*'s are *B*'s."
 - "Not all *A*'s are *B*'s."
 
+## All
 
+Consider the proposition 
+> All cats are mammals.  
+
+This is the same as saying "If anything is a cat then it is a mammal."  The direct translation of this into our logical symbols is therefore 
+
+$$ \forall x(C(x)\to M(x)) $$
+
+where the properties *C* and *M* respectively denote cats and mammals.
 
 # Subsets and Vacuous Quantification
 
