@@ -619,9 +619,48 @@ This is the same as saying "If anything is a cat then it is a mammal."  The dire
 
 $$ \forall x(C(x)\to M(x)) $$
 
-where the properties *C* and *M* respectively denote cats and mammals.
+where the properties *C* and *M* respectively denote cats and mammals. We assume any reasonable domain (could be things, animals, any domain that holds all mammals will suffice).  
 
-# Subsets and Vacuous Quantification
+> [!exercise] Exercise
+> Write the formal symbols for the following propositions. Assume each has some reasonable domain.
+> 1. All mammals are cats.
+> 2. All primes are not square.  (It is unimportant for this exercise, but the "square numbers" are 0, 1, 4, 9, 16, and so on.  These are square because they are the square of some integer.  0 is the square of 0, 1 is the square of 1, 4 is the square of 2, and so on.)
+> 3. If anything is both triangular and equiangular, then it is equilateral.
+> 4. Every animal with a heart has a kidney, and every animal with a kidney has a heart.
+
+Note that this is merely the assertion of a subset!  The set of cats is a subset of the set of mammals.  The set of primes are a subset of the non-square numbers.  The proposition "all mammals are cats" is false because the set of mammals is *not* a subset of cats.
+
+Therefore, if $A$ and $B$ are sets, then to state that $A\subseteq B$ is the same as the proposition
+
+$$ \forall x(x\in A\to x\in B) $$
+
+Of course, to say that any two sets are *equal* is simply the conjunction of two subset statements.  In symbols, $A=B$ if and only if $A\subseteq B$ and $B\subseteq A$.  In our logical formalism, $A=B$ is equivalent to 
+
+$$\forall x(x\in A\to x\in B)\land \forall x(x\in B\to x\in A)$$
+
+It is worth wondering: Is this equivalent to $\forall x(x\in A\leftrightarrow x\in B)$?  Intuitively the answer is "yes".  It says that "for all objects in the domain, if it is in $A$ then it is in $B$, and if it is in $B$ then it is in $A$".  We will see a rigorous proof of this fact later.
+
+Here is another worthwhile observation: Suppose that we set the domain to be all cats, and then want to express "All cats are mammals.". Yes, we could continue to represent this as $\forall x(C(x)\to M(x))$.  However, with the domain being set to all cats, this now just means the same as $\forall x M(x)$.  For now this is an idle observation, although when we discuss the idea of "types" we will make more use of this idea.
+
+## No
+
+Let's turn our attention to a sentence like 
+
+> No prime is square.
+
+or 
+
+> No polygon is cicular.  
+
+This states, equivalently, that "every prime is not square", or in symbols,
+
+$$ \forall x(P(x)\to \neg S(x)) $$
+
+where the domain and meaning of the predicates are reasonable.
+
+
+
+# Vacuous Quantification
 
 We're now finally in a good position to review something that we discussed much earlier: vacuous quantification.  Recall that the empty set is a subset of every set.  In formalism, if $X$ is any set then $\emptyset \subseteq X$.  
 
