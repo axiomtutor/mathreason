@@ -1,5 +1,5 @@
 ---
-title: "Chapter 7: Applications of First-order Logic"
+title: "Chapter 8: Applications of First-order Logic"
 ---
 
 

@@ -121,9 +121,9 @@ If there are exercises that you continue to struggle with, you should seek out m
 
 [[Chapter5PredSynSem| Chapter 5: Predicate Syntax and Semantics]]
 
-[[Chapter6FOLSynSem| Chapter 6: First-order Logic, Syntax and Semantics]]
+[[Chapter7FOLSynSem| Chapter 6: First-order Logic, Syntax and Semantics]]
 
-[[Chapter7_AppFOL| Chapter 7: Applications of First-order Logic]]
+[[Chapter8_AppFOL| Chapter 7: Applications of First-order Logic]]
 
 
 ---
