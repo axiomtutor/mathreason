@@ -175,13 +175,19 @@ expresses that there exists an even prime integer.
 
 Not only can we quantify over formulas, but in fact, we can make formulas out of quantified expressions.  For example, if the domain is integers, ${\tt E}$ denotes "is even", ${\tt O}$ denotes "is odd", then the expression 
 
-$$ \tt ( \exists x E(x)) \land (\exists x O(x)) $$ 
+$$
+\tt (\exists x E(x)) \land (\exists x O(x))
+$$ 
+
 
 expresses that "there is some number which is even, and there is some number which is odd".  This is a true proposition, since there does exist an even integer, 2, and there does exist an odd integer, 3.  
 
 Note how different this expression is from the seemingly similar expression 
 
-$${\tt \exists} {\tt x}({\tt E}({\tt x}){\tt \land} {\tt O}({\tt x}))$$
+$$
+{\tt \exists} {\tt x}({\tt E}({\tt x}){\tt \land} {\tt O}({\tt x}))
+$$
+
 This says that there exists an integer, ${\tt x}$, which is *both even and odd*.  That is not true, of course, since any number which is even cannot also be odd.  
 
 > [!exercise] ***Exercise***
