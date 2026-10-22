@@ -262,6 +262,8 @@ It will help if we have some notation for the idea of a variable being assigned 
 
 Therefore we can summarize what we saw above: $\tt \forall x\forall y L(x,y)$ was false because, when $s({\tt x}) = \text{Benicio}$ and $s({\tt y}) = \text{Axel}$ the proposition $\tt L(x,y)$ was false.
 
+Notice that, when variables are involved, the truth of a proposition can 
+
 ## $\tt \exists x\forall y L(x,y)$
 
 Next let's assess the truth of $\tt \exists x\forall y L(x,y)$. We iterate through all assignments to $\tt x$.

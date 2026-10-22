@@ -221,7 +221,7 @@ Notice that $\tt \land$ is a syntactic symbol, used in our logical language.  It
 > 
 > Then $({\tt \phi}{\tt \land} {\tt \psi})^{म}$ is defined to be equal to ${\tt \phi}^{म}\curlywedge {\tt \psi}^{म}$.  Whatever this value is, we call it **the (truth-)value of ${\tt \phi}{\tt \land} {\tt \psi}$ in $म$**.  We may also refer to this as the **evaluation of ${\tt \phi}{\tt \land}{\tt \psi}$ in $म$**.
 > 
-> It is also a common notation to write that $म\vDash \tt \phi$ to express that $({\tt \phi)^म=ट$.  Likewise $म\not\vDash \tt \phi$ expresses that $({\tt \phi})^म = फ$.  
+> It is also a common notation to write that $म\vDash \tt \phi$ to express that $\phi^म=ट$.  Likewise $म\not\vDash \tt \phi$ expresses that $\phi^म = फ$.  
 
 > [!exercise] ***Exercise***
 > In the same way that one can read "$ट\curlywedge ट = ट$" as saying 
@@ -273,11 +273,15 @@ Here is an explanation of each equation above.
 4. The resulting value is $फ$.
 5. The resulting value is $फ$.
 
+Therefore 
+
+$$ म\not\vDash {\tt (P\land Q)\land R} $$
+
 > [!exercise] ***Exercise***
 >
 > Let ${\tt P}$ represent a false proposition, ${\tt Q}$ and ${\tt R}$ represent true propositions.  
 > 
-> Find $(({\tt P}{\tt \land} {\tt Q}){\tt \land} ({\tt Q}{\tt \land} {\tt R}))^{म}$.
+> Determine whether $म\vDash \tt (P\land Q)\land (Q\land R)$.
 
 Note that the semantics here are defined recursively.
 
