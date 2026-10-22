@@ -198,9 +198,13 @@ Although the definition of conjunction above is correct, notice that it doesn’
 
 Recall that the semantics of propositional logic is concerned with truth-value.
 
-In the following definition, we will state the rule that "true and true is true".  For example, the sentence "3 is more than 2 and 3 is odd" is true, because it conjoins two true propositions.  This rule is formally expressed by the equation 
+In the following definition, we will state the rule that "true and true is true".  For example, the sentence "3 is more than 2 and 3 is odd" is true, because it conjoins two true propositions.  
 
-$$ट {\tt \land} ट = ट $$
+This rule is formally expressed by the equation 
+
+$$ट \curlywedge ट = ट $$
+
+Notice that $\tt \land$ is a syntactic symbol, used in our logical language.  It is related to the semantic symbol $\curlywedge$, which acts not on *propositions* but on *truth-values* (which are semantic objects).  
 
 > [!definition] ***Definition***
 >
@@ -216,6 +220,8 @@ $$ट {\tt \land} ट = ट $$
 > Let ${\tt \phi}$ and ${\tt \psi}$ be formulas, and let $म$ be a model defined for ${\tt \phi}$ and ${\tt \psi}$.  
 > 
 > Then $({\tt \phi}{\tt \land} {\tt \psi})^{म}$ is defined to be equal to ${\tt \phi}^{म}\curlywedge {\tt \psi}^{म}$.  Whatever this value is, we call it **the (truth-)value of ${\tt \phi}{\tt \land} {\tt \psi}$ in $म$**.  We may also refer to this as the **evaluation of ${\tt \phi}{\tt \land}{\tt \psi}$ in $म$**.
+> 
+> It is also a common notation to write that $म\vDash \tt \phi$ to express that $({\tt \phi)^म=ट$.  Likewise $म\not\vDash \tt \phi$ expresses that $({\tt \phi})^म = फ$.  
 
 > [!exercise] ***Exercise***
 > In the same way that one can read "$ट\curlywedge ट = ट$" as saying 
@@ -241,7 +247,9 @@ $$
 \end{aligned}
 $$
 
-The above calculation demonstrates that, in this model, we have $({\tt P}{\tt \land} {\tt Q})^म = ट$.
+The above calculation demonstrates that, in this model, we have $({\tt P}{\tt \land} {\tt Q})^म = ट$.  Equivalently, it demonstrates 
+
+$$ म\vDash \tt P\land Q $$
 
 ---
 

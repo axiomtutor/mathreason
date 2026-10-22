@@ -139,9 +139,9 @@ For example, suppose that the domain is all integers, ${\tt o}$ denotes the numb
 We can continue to use the semantic notation from the previous chapter, and write 
 
 $$\begin{aligned}
- TODO &= \Bbb Z\\
- {\tt o}^TODO &= 1\\
- {\tt D}^TODO &= \{(x,y)\in\Bbb Z^2: x \text{ is divisible by } y\} 
+ म &= \Bbb Z\\
+ {\tt o}^म &= 1\\
+ {\tt D}^म &= \{(x,y)\in\Bbb Z^2: x \text{ is divisible by } y\} 
 \end{aligned}$$
 
 Then to express that every number is divisible by 1, we write 
@@ -245,18 +245,22 @@ Then which of the expressions, $\tt \forall x\forall y L(x,y), \forall x\exists 
 ## $\tt\forall x\forall y L(x,y)$
 
 Here is how we check $\tt \forall x\forall y L(x,y)$: First, run through every choice of assignment to the variable $\tt x$. 
-* If $\tt x = Axel$: Now run through every choice of assignment to $\tt y$.
-	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we must decide if Axel loves Axel.  Because he does, then this is a true proposition.
-	* If $\tt y = Benicio$: Because Axel loves Benicio then $\tt L(x,y)$ is true.
-	* If $\tt y = Cici$: Axel loves Cici so $\tt L(x,y)$ is true.
-	* If $\tt y = Dakota$: Axel loves Dakota so $\tt L(x,y)$ is true.
-  Because $\tt L(x,y)$ is true for every choice of $\tt y$, therefore $\tt \forall y L(x,y)$ is true in the case where $\tt x=Axel$.  
-* If $\tt x = Benicio$: Now run through every choice of assignment to $\tt y$.
-	* If $\tt y = Axel$: To evaluate $\tt L(x,y)$ we decide if Benicio loves Axel.  Because he does not, therefore $\tt L(x,y)$ is false.
+* If $\tt x$ is assigned Axel: Now run through every choice of assignment to $\tt y$.
+	* If $\tt y$ is assigned Axel: To evaluate $\tt L(x,y)$ we must decide if Axel loves Axel.  Because he does, then this is a true proposition.
+	* If $\tt y$ is assigned Benicio: Because Axel loves Benicio then $\tt L(x,y)$ is true.
+	* If $\tt y$ is Cici: Axel loves Cici so $\tt L(x,y)$ is true.
+	* If $\tt y$ is Dakota: Axel loves Dakota so $\tt L(x,y)$ is true.
+  Because $\tt L(x,y)$ is true for every choice of $\tt y$, therefore $\tt \forall y L(x,y)$ is true in the case where $\tt x$ is Axel.  
+* If $\tt x$ is Benicio: Now run through every choice of assignment to $\tt y$.
+	* If $\tt y$ is Axel: To evaluate $\tt L(x,y)$ we decide if Benicio loves Axel.  Because he does not, therefore $\tt L(x,y)$ is false.
 
   Because $\tt L(x,y)$ is false for some choice of $\tt y$ then $\tt \forall y L(x,y)$ is false.
 
 Because $\tt\forall y L(x,y)$ is false for some $\tt x$, then $\tt\forall x\forall y L(x,y)$ is false.
+
+It will help if we have some notation for the idea of a variable being assigned to some individual.  It is common in mathematical logic to write, for example, $s({\tt x}) = \text{Axel}$ if the variable $\tt x$ is assigned to Axel.  
+
+Therefore we can summarize what we saw above: $\tt \forall x\forall y L(x,y)$ was false because, when $s({\tt x}) = \text{Benicio}$ and $s({\tt y}) = \text{Axel}$ the proposition $\tt L(x,y)$ was false.
 
 ## $\tt \exists x\forall y L(x,y)$
 
@@ -264,9 +268,9 @@ Next let's assess the truth of $\tt \exists x\forall y L(x,y)$. We iterate throu
 
 I won't continue to iterate through all bullet points, since we've seen the process a couple times by now. But you should feel invited to do the explicit iteration on your own paper. 
 
-In summary, you should find that when $\tt x=Axel$ then when $y=Axel$, and then when $\tt y=Benicio$, and $\tt Cici$, and $\tt Dakota$, we have $\tt L(x,y)$ is true. 
+In summary, you should find that when $\tt x$ is assigned Axel, then when $\tt y$ is Axel $\tt L(x,y)$ is true, and then when $\tt y$ is Benicio $\tt L(x,y)$ is true, and when $\tt y$ is Cici $\tt L(x,y)$ is true, and when $\tt y$ is Dakota  $\tt L(x,y)$ is true. 
 
-Therefore when $\tt x =Axel$ the proposition $\tt \forall L(x,y)$ is true. 
+Therefore when $\tt x$ denotes Axel, the proposition $\tt \forall L(x,y)$ is true. 
 
 Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\tt \exists x\forall yL(x,y)$ is true. 
 
@@ -291,20 +295,20 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 
 
 Now we check $\tt\forall x\exists y L(x,y)$.  Just as before, we iterate through every assignment of $\tt x$.
-* If $\tt x=Axel$: We now run through every choice of $\tt y$.
-	* If $\tt y = Axel$: We've seen that in this case $\tt L(x,y)$ is true.  
-	But already we can conclude that $\tt \exists y L(x,y)$ is true when $\tt x=Axel$.
-* If $\tt x = Benicio$: Run through every choice of assignment to $\tt y$.
-	* If $\tt y=Axel$: Here $\tt L(x,y)$ is false.
-	* If $\tt y = Benicio$: Here $\tt L(x,y)$ is false.
-	* If $\tt y = Cici$: Here $\tt L(x,y)$ is true.
-	We can conclude that $\tt \exists y L(x,y)$ is true when $\tt x = Benicio$.
-* If $\tt x = Cici$: Run through every choice of assignment to $\tt y$.
-	* If $\tt y = Axel$: Here $\tt L(x,y)$ is false.
-	* If $\tt y = Benicio$: Here $\tt L(x,y)$ is false.
-	* If $\tt y = Cici$: Here $\tt L(x,y)$ is false.
-	* If $\tt y = Dakota$: Here $\tt L(x,y)$ is false.
-	Since $\tt L(x,y)$ is false for every choice of $\tt y$, then $\tt \exists y L(x,y)$ is false when $\tt x = Cici$.
+* If $\tt x$ is Axel: We now run through every choice of $\tt y$.
+	* If $\tt y$ is Axel: We've seen that in this case $\tt L(x,y)$ is true.  
+	But already we can conclude that $\tt \exists y L(x,y)$ is true when $\tt x$ is Axel.
+* If $\tt x$ is Benicio: Run through every choice of assignment to $\tt y$.
+	* If $\tt y$ is Axel: Here $\tt L(x,y)$ is false.
+	* If $\tt y$ is Benicio: Here $\tt L(x,y)$ is false.
+	* If $\tt y$ is Cici: Here $\tt L(x,y)$ is true.
+	We can conclude that $\tt \exists y L(x,y)$ is true when $\tt x$ is Benicio.
+* If $\tt x$ is Cici: Run through every choice of assignment to $\tt y$.
+	* If $\tt y$ is Axel: Here $\tt L(x,y)$ is false.
+	* If $\tt y$ is Benicio: Here $\tt L(x,y)$ is false.
+	* If $\tt y$ is Cici: Here $\tt L(x,y)$ is false.
+	* If $\tt y$ is Dakota: Here $\tt L(x,y)$ is false.
+	Since $\tt L(x,y)$ is false for every choice of $\tt y$, then $\tt \exists y L(x,y)$ is false when $\tt x$ is Cici.
 
 Because $\tt \exists y L(x,y)$ is false for some $\tt x$, then $\tt \forall x\exists y L(x,y)$ is false.
 
@@ -390,7 +394,7 @@ With this assignment we now have to evaluate $({\tt \forall} {\tt y} ({\tt N}({\
     \end{aligned}
     $$
 
-    As we see, when ${\tt x}\mapsto {\tt a}$, then for every possible mapping of ${\tt y}$, we get a true proposition.
+    As we see, when ${\tt x}$ is assigned to $a$, then for every possible mapping of ${\tt y}$, we get a true proposition.
 
     Therefore $({\tt \forall} {\tt y}({\tt N}({\tt a},{\tt y}){\tt \to} {\tt L}({\tt a},{\tt y})))^{म} = ट$.
 
