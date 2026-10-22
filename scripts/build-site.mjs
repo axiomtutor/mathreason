@@ -475,7 +475,12 @@ const renderPage = (page) => {
     if (t.type !== "heading_open" && t.type !== "heading_close") continue;
     t.tag = demote[t.tag] ?? t.tag;
     if (t.type === "heading_open" && (t.meta?.origTag === "h1" || t.meta?.origTag === "h2")) {
-      headings.push({ id: t.meta.id, text: t.meta.text, level: t.tag });
+      headings.push({
+        id: t.meta.id,
+        text: t.meta.text,
+        html: md.renderer.renderInline(tokens[i + 1]?.children ?? [], md.options, env),
+        level: t.tag
+      });
     }
   }
 
@@ -918,7 +923,7 @@ const layout = ({ page, body, headings }) => {
 
   const tocHtml = headings.length
     ? `<nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul>${headings
-        .map((h) => `<li class="toc-${h.level}"><a href="#${h.id}">${esc(h.text)}</a></li>`)
+        .map((h) => `<li class="toc-${h.level}"><a href="#${h.id}">${h.html}</a></li>`)
         .join("")}</ul></nav>`
     : "";
 
