@@ -285,7 +285,7 @@ Since $\tt \forall L(x,y)$ is true for some assignment to $\tt x$, therefore $\t
 > [!exercise] Exercise
 > Consider a domain $उ =\{a,b\}$ of just two elements. Let $\tt c,d$ be constant symbols such that $\tt c$ denotes $a$ and $\tt d$ denotes $b$. Let $\tt P$ be a property.
 >
-> 1. Explain why $\tt \forall x P(x)$ is equivalent to $\tt P(c) \land P(d)$, regardless of the meaning of $\tt P$. Also explain why $\tt \exists x P(x)$ is equivalent to $P(c)\lor P(d)$.
+> 1. Explain why $\tt \forall x P(x)$ is equivalent to $\tt P(c) \land P(d)$, regardless of the meaning of $\tt P$. Also explain why $\tt \exists x P(x)$ is equivalent to $\tt P(c)\lor P(d)$.
 >
 > 2. Now let $\tt Q$ be another property. Then explain why $\tt \forall x \forall y (P(x) \lor Q(y))$ is equivalent to $\tt (\forall y (P(c)\lor Q(y)) \land (\forall y (P(c) \lor Q(y))$, which is also equivalent to $\tt ( (P(c)\lor P(c)) \land (P(c)\lor P(d))) \land ((P(d)\lor P(c)) \land (P(d)\lor P(d))$.
 >
@@ -312,7 +312,7 @@ Now we check $\tt\forall x\exists y L(x,y)$.  Just as before, we iterate through
 	* If $\tt y$ is Dakota: Here $\tt L(x,y)$ is false.
 	Since $\tt L(x,y)$ is false for every choice of $\tt y$, then $\tt \exists y L(x,y)$ is false when $\tt x$ is Cici.
 
-Because $\tt \exists y L(x,y)$ is false for some $\tt x$, then $\tt \forall x\exists y L(x,y)$ is false.
+Because $\tt \exists y L(x,y)$ is false for some $s({\tt x})$, then $\tt \forall x\exists y L(x,y)$ is false.
 
 ## $\tt \exists x\forall y L(x,y)$
 
