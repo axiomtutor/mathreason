@@ -24,19 +24,14 @@ $$
 
 Now what does this have to do with logic?
 
-First of all notice that the “number of real numbers” is enormous. It is clearly infinite, and bigger than the rational numbers in the sense that the rational numbers are a subset of the real numbers. In fact, this doesn’t even fully capture the way in which the real numbers are bigger than the rational numbers — we’ll have more to say about that later.
+First of all notice that the “number of real numbers” is enormous. It is clearly infinite.  But even more than being infinite, there's just no good way to list all of the real numbers.  
 
-But one thing is clear: Our language cannot, in any practical sense, name every single real number. Of course each real number is an infinite decimal sequence — you might therefore argue that one can regard the decimal sequence as the “name” of the number.
+> [!note]- Reals cannot be listed.
+> We will have more to say about the fact that the real numbers cannot be listed.  The more professional way to say this is that the real numbers are "uncountable".
 
-However, that’s not practical. We can only practically write down finitely many digits of any decimal expansion. We will never fully name any number, if we name it by its decimal expansion.
+Therefore a language cannot, in any practical sense, name every single real number.  Therefore we must have some way to manage the fact that our names run out, before we run out of objects that we want to talk about.
 
-Alternately, we can name a real number by symbols like $\sqrt 2$ and $\pi$. These names fully identify the number, without an infinite representation. When we write $\sqrt 2$, this refers to the exact number — in a sense, referring to its entire completed decimal expansion.
-
-But for all practical purposes, our collection of names can only be finite. And yet there is an infinity of real numbers, and we will often want to reason about all of them, or certain infinite subsets of them.
-
-In this chapter we will introduce “quantifiers”, which will allow us to easily reason about sets which are either large or infinite.  In particular we will discuss the syntax and semantics of our expanded logical system.  
-
-Some of the ways that we define our semantics, in particular, may seem odd and complicated.  Many of the complexities of first-order semantics are due to the issues raised by the real numbers: The need to have a reasonably small collection of names, while trying to reason about a very large infinite set.  So keep this example in mind as you read the rest of this chapter.
+In the chapter on predicate logic we had names for objects that we wanted to talk about.  In this chapter we discuss the idea of "variables" and "quantifiers" which allow us to speak about infinite sets, since the variables are able to "vary over the infinite set".
 
 # “All” and “Some”
 
@@ -106,7 +101,7 @@ Whenever we want to make a claim that there is some object within the domain, we
 
 # Quantifiers 
 
-We are now going to add quantifiers to our predicate logic. The result is called first-order logic, which we officially define later.
+We are now going to add quantifiers to our predicate logic. The resulting language is called first-order logic, which we officially define later.
 
 To express “every dog deserves pets” in first-order logic, we will write
 
@@ -140,8 +135,8 @@ We can continue to use the semantic notation from the previous chapter, and writ
 
 $$\begin{aligned}
  म &= \Bbb Z\\
- {\tt o}^म &= 1\\
- {\tt D}^म &= \{(x,y)\in\Bbb Z^2: x \text{ is divisible by } y\} 
+ {\tt o}^इ &= 1\\
+ {\tt D}^इ &= \{(x,y)\in\Bbb Z^2: x \text{ is divisible by } y\} 
 \end{aligned}$$
 
 Then to express that every number is divisible by 1, we write 
@@ -155,6 +150,8 @@ Traditionally we will use the letters ${\tt a}$ through ${\tt t}$ for constants,
 > [!exercise] ***Exercise***
 > Establish a reasonable domain and symbols to express the proposition 
 > > There is some integer greater than $\pi$.
+
+
 
 Note that we can also quantify over formulas.  For example, suppose that the domain is all integers, ${\tt t}$ denotes 2, ${\tt f}$ denotes 4, and ${\tt D}({\tt x},{\tt y})$ denotes "${\tt x}$ is divisible by ${\tt y}$".  Then consider the expression 
 
