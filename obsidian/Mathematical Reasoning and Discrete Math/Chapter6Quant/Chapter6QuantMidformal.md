@@ -115,7 +115,14 @@ The upside-down ‘A’ is read as “for all”. So the literal reading of this
 
 This expresses that all dogs deserve pets, so long as the "domain of discourse" is the set of all dogs.  If the domain were all chimps, then ${\tt \forall} {\tt x} {\tt D}({\tt x})$ would express that all chimps deserve pets.
 
-To express “some chimp deserves pets”, if the domain is all chimps then we would write 
+> [!exercise] Exercise
+> Suppose that the domain is the set of all real numbers, TODO. Let $S(x)$ be a property which means "*x* is less than 10."
+> 
+> Decide whether the proposition $\forall x S(x)$ is true. 
+>
+> If the domain is instead all negative numbers, is $\forall x S(x)$ true?
+
+To express “some chimp deserves pets”, if the domain is all chimps, then we would write 
 
 $$
 {\tt \exists} {\tt x} {\tt D}({\tt x})
