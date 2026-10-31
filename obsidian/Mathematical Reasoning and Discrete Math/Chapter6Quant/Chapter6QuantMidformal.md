@@ -136,7 +136,7 @@ The symbols ${\tt \forall}$ and ${\tt \exists}$ are called "quantifiers".
 
 Notice that the syntax uses a variable, like ${\tt x}$ above. However, we still want to have constant symbols, as we did with predicate logic.  Variables and constants mean very different things!  A variable "varies", i.e. takes on the value of several different domain elements.  A constant has its meaning fixed to one specified domain element.  
 
-For example, suppose that the domain is all integers, ${\tt o}$ denotes the number 1, and the predicate ${\tt D}({\tt x},{\tt y})$ denotes the relation "${\tt x}$ is divisible by ${\tt y}$".  
+For example, suppose that the domain is all integers, ${\tt o}$ denotes the number 1, and the predicate ${\tt D}({\tt x},{\tt y})$ denotes the relation "$x$ is divisible by $y$".  
 
 We can continue to use the semantic notation from the previous chapter, and write 
 
@@ -160,11 +160,11 @@ Traditionally we will use the letters ${\tt a}$ through ${\tt t}$ for constants,
 
 
 
-Note that we can also quantify over formulas.  For example, suppose that the domain is all integers, ${\tt t}$ denotes 2, ${\tt f}$ denotes 4, and ${\tt D}({\tt x},{\tt y})$ denotes "${\tt x}$ is divisible by ${\tt y}$".  Then consider the expression 
+Note that we can also quantify over formulas, not just simple predicates.  For example, suppose that the domain is all integers, ${\tt t}$ denotes 2, ${\tt f}$ denotes 4, and ${\tt D}({\tt x},{\tt y})$ denotes "$x$ is divisible by $y$".  Then consider the expression 
 
 $$ {\tt \forall} {\tt x}({\tt D}({\tt x},{\tt f}) {\tt \to} {\tt D}({\tt x},{\tt t})) $$
 
-This expresses that "for every integer ${\tt x}$, if ${\tt x}$ is divisible by 4, then ${\tt x}$ is divisible by 2".  
+This expresses that "for every integer $x$, if $x$ is divisible by 4, then $x$ is divisible by 2".  
 
 If ${\tt E}$ expresses "is even" and ${\tt P}$ expresses "is prime" then 
 
@@ -221,6 +221,36 @@ This says that there exists an integer, ${\tt x}$, which is *both even and odd*.
 > > Every equilateral rectangle is a square.
 > 
 > (This is, of course, a true proposition.)
+
+# Quantifiers as For-loops
+
+In computer science it is common to have some set of data, and to "loop over" the data in order to perform some computation. 
+
+For example, consider a data set of heights of people. Let's represent this as a list of numbers, `heights = [1.5, 2, 1.6, 1.7]` which we interpret as the heights of four people in some units (meters, say).
+
+If we want to compute the average height, we need to: (1) Find the sum of all heights, let's call this $s$, (2) find how many numbers there are (obviously 4 but the computer can't see this immediately), call this $n$, then (3) return the value $s/n$.
+
+To find $s$, we "initialize a variable" by writing $\tt s = 0$. Then we write a for-loop.
+
+```
+heights = [1.5, 2, 1.6, 1.7]
+s = 0
+for height in heights:
+    s = s+height
+```
+
+The logic of this code is:
+
+1. We get the data into the program with `heights = [1.5, 2, 1.6, 1.7]`. 
+2. Our sum total, `s`, begins empty before we've encountered any data. Hence `s = 0`.
+3. We start a for-loop, declaring a new variable `height`. The code `for height in heights:` tells the computer that we should first put `1.5` into `height`. 
+ 1. Now that `height` contains `1.5`, we add this to `s`. This is commanded by the line `s + height`, which evaluates to `0+1.5` which is `1.5`.
+ 2. In a computer, it's not enough just to compute a value! You must explicitly tell the computer where to *store* the value. Hence the line `s = s + height`, which says that the value should be stored back into the variable `s`. So at this point in the run of the program, `s` holds `1.5`.
+ 3. Here is where the for-loop kicks in. Now that we have finished the indented code, we need to loop back to the beginning and do it over again, this time with `height` set to the next value in `heights`. So `height` gets set to `2`, and we repeat the indented code. 
+ 4. Therefore we compute `s+height` which now evaluates to `1.5+2` which is `2.5`.
+ 5. Because of `s = s+height` this value gets stored back into `s`, so now `s` holds `2.5`.
+ 6. 
+
 
 
 # Nested Quantifiers
