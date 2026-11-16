@@ -3,5 +3,6 @@
   "enabledCssSnippets": [
     "custom-callouts"
   ],
-  "interfaceFontFamily": ""
+  "interfaceFontFamily": "",
+  "showRibbon": true
 }
