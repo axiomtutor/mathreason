@@ -226,31 +226,49 @@ This says that there exists an integer, ${\tt x}$, which is *both even and odd*.
 
 In computer science it is common to have some set of data, and to "loop over" the data in order to perform some computation. 
 
-For example, consider a data set of heights of people. Let's represent this as a list of numbers, `heights = [1.5, 2, 1.6, 1.7]` which we interpret as the heights of four people in some units (meters, say).
+To give an example that is easy to understand, consider a program that looks at a list of numbers and prints a message every time it encounters a prime number.  
 
-If we want to compute the average height, we need to: (1) Find the sum of all heights, let's call this $s$, (2) find how many numbers there are (obviously 4 but the computer can't see this immediately), call this $n$, then (3) return the value $s/n$.
+> [!note]- This example is very simple.
+> 
+> Note that the example that I give here will seem kind of dumb.  All it does is print "Found a prime!" every time it finds a prime.  That's not very useful.
+> 
+> It may leave you wondering "Why not use an actually useful example?"  
+> 
+> Well, any example of code that is *actually* useful, is always going to be so complicated that a beginner could not understand it.  Therefore our earliest examples always have to be so simple that a beginner can understand, but will then necessarily be useless.
 
-To find $s$, we "initialize a variable" by writing $\tt s = 0$. Then we write a for-loop.
+Let's assume the computer comes equipped with a function, `isPrime`, which returns `True` if the input is prime, and returns `False` if the input is not prime.  So for example `isPrime(1)` evaluates to `False` and `isPrime(2)` evaluates to `True`.  
+
+Here is the program:
 
 ```
-heights = [1.5, 2, 1.6, 1.7]
-s = 0
-for height in heights:
-    s = s+height
+listOfNumbers = [1,2,3,4,5,6]
+for num in listOfNumbers:
+    if isPrime(num):
+        print("Found a prime!")
 ```
 
-The logic of this code is:
+This program will print the message "Found a prime!" three times.  Here is the logic of how it works:
 
-1. We get the data into the program with `heights = [1.5, 2, 1.6, 1.7]`. 
-2. Our sum total, `s`, begins empty before we've encountered any data. Hence `s = 0`.
-3. We start a for-loop, declaring a new variable `height`. The code `for height in heights:` tells the computer that we should first put `1.5` into `height`. 
- 1. Now that `height` contains `1.5`, we add this to `s`. This is commanded by the line `s + height`, which evaluates to `0+1.5` which is `1.5`.
- 2. In a computer, it's not enough just to compute a value! You must explicitly tell the computer where to *store* the value. Hence the line `s = s + height`, which says that the value should be stored back into the variable `s`. So at this point in the run of the program, `s` holds `1.5`.
- 3. Here is where the for-loop kicks in. Now that we have finished the indented code, we need to loop back to the beginning and do it over again, this time with `height` set to the next value in `heights`. So `height` gets set to `2`, and we repeat the indented code. 
- 4. Therefore we compute `s+height` which now evaluates to `1.5+2` which is `2.5`.
- 5. Because of `s = s+height` this value gets stored back into `s`, so now `s` holds `2.5`.
- 6. 
+1. The line `listOfNumbers = [1,2,3,4,5,6]` creates the list of numbers `[1,2,3,4,5,6]` and then stores this list into the variable `listOfNumbers`.  
+2. The line `for num in listOfNumbers:` begins a "for-loop".  This means that eventually every value in `listOfNumbers` will be placed into `num`.  It starts by placing `1` in `num`.
+3. Then the line `if isPrime(num):` takes the current value in `num` and inputs it to the function `isPrime`. Because `1` is not prime, this returns `False`.  Because `isPrime(num)` evaluates to `False`.  
+   
+   Then this value gets read by the `if`.  The `if` reads a truth-value and, if it is `True`, will cause the later code to execute.  But if the truth-value is `False` then the later code does not execute.  
+   
+   Because `isPrime(num)` evaluates to `False` then the `if` dictates the later code does not execute.  Therefore, the command `print("Found a prime!")` is not run.
+4. Now that we have reached the end of the indented code, the for-loop repeats.  We go back to the line `for num in listOfNumbers:` but this time the computer puts `2` into `num`.  We now repeat the rest of the program. 
+5. Again we evaluate `isPrime(num)`, but because `num` now holds 2, this evaluates to `True`.
+6. The `if` now reads a `True` value, and therefore causes the later code to execute.  
+7. The code `print("Found a prime!")` now executes, which causes the computer to display this message.  
+8. We have again reached the end.  Therefore the for-loop begins again.  We go back up, place `3` in `num`.  You can now understand why it's called a "loop".  
+9. Since `3` is prime, `isPrime(num)` evaluates to `True`, and the program prints "Found a prime!".
+10. Do it all over again with 4, since 4 is not prime no message will be printed.
+11. Do it all over again with 5, since 5 is prime it will print the message.
+12. Do it all over again with 6, since 6 is not prime no message will be printed.
 
+The evaluation of a quantifier is extremely similar.  
+
+Consider evaluating $\tt \forall x P(x)$ where there are only the constants 
 
 
 # Nested Quantifiers

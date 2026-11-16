@@ -223,26 +223,60 @@ Come up with symbols that express the proposition:
 </span></p>
 </div></section></div></details><details class="section"><summary class="section-summary"><h2 id="quantifiers-as-for-loops">Quantifiers as For-loops</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>In computer science it is common to have some set of data, and to &quot;loop over&quot; the data in order to perform some computation.</p>
-<p>For example, consider a data set of heights of people. Let's represent this as a list of numbers, <code>heights = [1.5, 2, 1.6, 1.7]</code> which we interpret as the heights of four people in some units (meters, say).</p>
-<p>If we want to compute the average height, we need to: (1) Find the sum of all heights, let's call this <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>, (2) find how many numbers there are (obviously 4 but the computer can't see this immediately), call this <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>, then (3) return the value <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">s/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span>.</p>
-<p>To find <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>, we &quot;initialize a variable&quot; by writing <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">s</mi><mo>=</mo><mn mathvariant="monospace">0</mn></mrow><annotation encoding="application/x-tex">\tt s = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6111em;"></span><span class="mord"><span class="mord mathtt">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathtt">0</span></span></span></span></span>. Then we write a for-loop.</p>
-<pre><code>heights = [1.5, 2, 1.6, 1.7]
-s = 0
-for height in heights:
-    s = s+height
+<p>To give an example that is easy to understand, consider a program that looks at a list of numbers and prints a message every time it encounters a prime number.</p>
+<details class="callout callout-note callout-fold"><summary class="callout-label">This example is very simple.<span class="callout-chevron" aria-hidden="true"></span></summary><div class="callout-body"><p>Note that the example that I give here will seem kind of dumb.  All it does is print &quot;Found a prime!&quot; every time it finds a prime.  That's not very useful.</p>
+<p>It may leave you wondering &quot;Why not use an actually useful example?&quot;</p>
+<p>Well, any example of code that is <em>actually</em> useful, is always going to be so complicated that a beginner could not understand it.  Therefore our earliest examples always have to be so simple that a beginner can understand, but will then necessarily be useless.</p>
+</div></details><p>Let's assume the computer comes equipped with a function, <code>isPrime</code>, which returns <code>True</code> if the input is prime, and returns <code>False</code> if the input is not prime.  So for example <code>isPrime(1)</code> evaluates to <code>False</code> and <code>isPrime(2)</code> evaluates to <code>True</code>.</p>
+<p>Here is the program:</p>
+<pre><code>listOfNumbers = [1,2,3,4,5,6]
+for num in listOfNumbers:
+    if isPrime(num):
+        print(&quot;Found a prime!&quot;)
 </code></pre>
-<p>The logic of this code is:</p>
+<p>This program will print the message &quot;Found a prime!&quot; three times.  Here is the logic of how it works:</p>
 <ol>
-<li>We get the data into the program with <code>heights = [1.5, 2, 1.6, 1.7]</code>.</li>
-<li>Our sum total, <code>s</code>, begins empty before we've encountered any data. Hence <code>s = 0</code>.</li>
-<li>We start a for-loop, declaring a new variable <code>height</code>. The code <code>for height in heights:</code> tells the computer that we should first put <code>1.5</code> into <code>height</code>.</li>
-<li>Now that <code>height</code> contains <code>1.5</code>, we add this to <code>s</code>. This is commanded by the line <code>s + height</code>, which evaluates to <code>0+1.5</code> which is <code>1.5</code>.</li>
-<li>In a computer, it's not enough just to compute a value! You must explicitly tell the computer where to <em>store</em> the value. Hence the line <code>s = s + height</code>, which says that the value should be stored back into the variable <code>s</code>. So at this point in the run of the program, <code>s</code> holds <code>1.5</code>.</li>
-<li>Here is where the for-loop kicks in. Now that we have finished the indented code, we need to loop back to the beginning and do it over again, this time with <code>height</code> set to the next value in <code>heights</code>. So <code>height</code> gets set to <code>2</code>, and we repeat the indented code.</li>
-<li>Therefore we compute <code>s+height</code> which now evaluates to <code>1.5+2</code> which is <code>2.5</code>.</li>
-<li>Because of <code>s = s+height</code> this value gets stored back into <code>s</code>, so now <code>s</code> holds <code>2.5</code>.</li>
-<li></li>
+<li>
+<p>The line <code>listOfNumbers = [1,2,3,4,5,6]</code> creates the list of numbers <code>[1,2,3,4,5,6]</code> and then stores this list into the variable <code>listOfNumbers</code>.</p>
+</li>
+<li>
+<p>The line <code>for num in listOfNumbers:</code> begins a &quot;for-loop&quot;.  This means that eventually every value in <code>listOfNumbers</code> will be placed into <code>num</code>.  It starts by placing <code>1</code> in <code>num</code>.</p>
+</li>
+<li>
+<p>Then the line <code>if isPrime(num):</code> takes the current value in <code>num</code> and inputs it to the function <code>isPrime</code>. Because <code>1</code> is not prime, this returns <code>False</code>.  Because <code>isPrime(num)</code> evaluates to <code>False</code>.</p>
+<p>Then this value gets read by the <code>if</code>.  The <code>if</code> reads a truth-value and, if it is <code>True</code>, will cause the later code to execute.  But if the truth-value is <code>False</code> then the later code does not execute.</p>
+<p>Because <code>isPrime(num)</code> evaluates to <code>False</code> then the <code>if</code> dictates the later code does not execute.  Therefore, the command <code>print(&quot;Found a prime!&quot;)</code> is not run.</p>
+</li>
+<li>
+<p>Now that we have reached the end of the indented code, the for-loop repeats.  We go back to the line <code>for num in listOfNumbers:</code> but this time the computer puts <code>2</code> into <code>num</code>.  We now repeat the rest of the program.</p>
+</li>
+<li>
+<p>Again we evaluate <code>isPrime(num)</code>, but because <code>num</code> now holds 2, this evaluates to <code>True</code>.</p>
+</li>
+<li>
+<p>The <code>if</code> now reads a <code>True</code> value, and therefore causes the later code to execute.</p>
+</li>
+<li>
+<p>The code <code>print(&quot;Found a prime!&quot;)</code> now executes, which causes the computer to display this message.</p>
+</li>
+<li>
+<p>We have again reached the end.  Therefore the for-loop begins again.  We go back up, place <code>3</code> in <code>num</code>.  You can now understand why it's called a &quot;loop&quot;.</p>
+</li>
+<li>
+<p>Since <code>3</code> is prime, <code>isPrime(num)</code> evaluates to <code>True</code>, and the program prints &quot;Found a prime!&quot;.</p>
+</li>
+<li>
+<p>Do it all over again with 4, since 4 is not prime no message will be printed.</p>
+</li>
+<li>
+<p>Do it all over again with 5, since 5 is prime it will print the message.</p>
+</li>
+<li>
+<p>Do it all over again with 6, since 6 is not prime no message will be printed.</p>
+</li>
 </ol>
+<p>The evaluation of a quantifier is extremely similar.</p>
+<p>Consider evaluating <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">∀</mi><mi mathvariant="monospace">x</mi><mi mathvariant="monospace">P</mi><mo stretchy="false">(</mo><mi mathvariant="monospace">x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tt \forall x P(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">∀</span><span class="mord mathtt">xP</span><span class="mopen">(</span><span class="mord mathtt">x</span><span class="mclose">)</span></span></span></span></span> where there are only the constants</p>
 </div></details><details class="section"><summary class="section-summary"><h2 id="nested-quantifiers">Nested Quantifiers</h2>
 <span class="section-chevron" aria-hidden="true"></span></summary><div class="section-body"><p>Things get more interesting still when we consider multiple quantifiers.</p>
 <p>Consider the domain of all humans on the planet, and the relation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">L</mi><mo stretchy="false">(</mo><mi mathvariant="monospace">x</mi><mo separator="true">,</mo><mi mathvariant="monospace">y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">{\tt L}({\tt x},{\tt y})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathtt">L</span></span></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathtt">x</span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord"><span class="mord mathtt">y</span></span></span><span class="mclose">)</span></span></span></span> which represents “<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">x</mi></mrow><annotation encoding="application/x-tex">{\tt x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord"><span class="mord"><span class="mord mathtt">x</span></span></span></span></span></span> loves <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">{\tt y}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6528em;vertical-align:-0.2222em;"></span><span class="mord"><span class="mord"><span class="mord mathtt">y</span></span></span></span></span></span>”.</p>

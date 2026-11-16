@@ -291,7 +291,7 @@ Now that we have formulas, we can compose them together in exactly the same way 
 > * $({\tt \phi}{\tt \land}{\tt \psi})^म = ({\tt \phi}^म)\curlywedge({\tt \psi}^म)$
 > * $({\tt \phi}{\tt \lor}{\tt \psi})^म = ({\tt \phi}^म)\curlyvee ({\tt \psi}^म)$
 > * $({\tt \phi}{\tt \to}{\tt \psi})^म = ({\tt \phi}^म)\leadsto({\tt \psi}^म)$
-> * $({\tt \phi}{\tt \leftrightarrow})^म = ({\tt \phi}^म)\curlyleftrightarrow ({\tt \psi}^म)$
+> * $({\tt \phi}{\tt \leftrightarrow})^म = ({\tt \phi}^म) \leftrightsquigarrow ({\tt \psi}^म)$
 
 To demonstrate, suppose that $\text{Consts}=\{{\tt a},{\tt b}\}$, and $\text{Preds}=\{{\tt P},{\tt Q}\}$, and ${\tt P}$ has arity 2, ${\tt Q}$ has arity 3.  On the semantic side, assume that $उ = \{1,2,3\}$, and 
 
@@ -560,7 +560,7 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 > Let $उ$ be any nonempty set.
 >
 > Let $इ$ be an assignment of elements in $उ$ to the elements in $\text{Consts}$.  If $a\in\text{Consts}$ then the element assigned to it is denoted ${\tt a}^{इ}$.  
->>>>>>> origin/main
+
 >
 > For each ${\tt P}\in\text{Preds}$, if $n=\text{Arity}$ then $इ$ assigns a ${\tt P}$ to a subset of $उ^n$.  That is to say, ${\tt P}^{इ}\subseteq उ^n$.
 >
@@ -571,42 +571,44 @@ Therefore when talking about the comma symbol as a part of the formal language, 
 > - If ${\tt \phi}\in\text{Atom}$ and ${\tt \phi}={\tt P}({\tt a_1},\dots,{\tt a_n})$ for some ${\tt P}\in\text{Preds}$ and $n = \text{Arity}({\tt P})$ and ${\tt a_1},\dots,{\tt a_n}\in\text{Consts}$, then
 >     
 >     $$
->     {\tt \phi}^{म} = ट \text{ \ \ if } ({\tt a_1}^{इ},...,{\tt a_n}^{इ})\in {\tt P}^{इ}
->     $$
+      \text{ if } ({\tt a_1}^{इ},...,{\tt a_n}^{इ})\in {\tt P}^{इ} \text{ then }\\
+      {\tt \phi}^{म} = ट
+     $$
 >     
 >     and
 >     
 >     $$
->     {\tt \phi}^{म} = फ \text{ \ \ if } ({\tt a_1}^{इ},...,{\tt a_n}^{इ})\notin {\tt P}^{इ}
->     $$
+      \text{ if } ({\tt a_1}^{इ},...,{\tt a_n}^{इ})\notin {\tt P}^{इ} \text{ then } \\
+      {\tt \phi}^{म} = फ
+     $$
 >     
 > - If there is a ${\tt \chi}\in L$ such that ${\tt \phi}={\tt \neg}{\tt \chi}$ then
 >     
 >     $$
->     {\tt \phi}^{म}  = \ \sim {\tt \chi}^{म}
->     $$
+     {\tt \phi}^{म}  = \ \sim {\tt \chi}^{म}
+     $$
 >     
 > - If there are ${\tt \chi},{\tt \psi}\in {\tt L}$
 >     - If ${\tt \phi}={\tt \chi}{\tt \land}{\tt \psi}$ then
 >         
 >         $$
->         {\tt \phi}^{म} = {\tt \chi}^{म}\curlywedge {\tt \psi}^{म}
->         $$
+         {\tt \phi}^{म} = {\tt \chi}^{म}\curlywedge {\tt \psi}^{म}
+         $$
 >         
 >     - If ${\tt \phi}={\tt \chi}{\tt \lor}{\tt \psi}$ then
 >         
 >         $$
->         {\tt \phi}^{म} = {\tt \chi}^{म}\curlyvee {\tt \psi}^{म}
->         $$
+         {\tt \phi}^{म} = {\tt \chi}^{म}\curlyvee {\tt \psi}^{म}
+         $$
 >         
 >     - If ${\tt \phi}={\tt \chi}{\tt \to}{\tt \psi}$ then
 >         
 >         $$
->         {\tt \phi}^{म} = {\tt \chi}^{म}\leadsto {\tt \psi}^{म}
->         $$
+         {\tt \phi}^{म} = {\tt \chi}^{म}\leadsto {\tt \psi}^{म}
+         $$
 >         
 >     - If ${\tt \phi}={\tt \chi}{\tt \leftrightarrow}{\tt \psi}$ then
 >         
 >         $$
->         {\tt \phi}^{म} = {\tt \chi}^{म}\leftrightsquigarrow {\tt \psi}^{म}
->         $$
+         {\tt \phi}^{म} = {\tt \chi}^{म}\leftrightsquigarrow {\tt \psi}^{म}
+         $$
